@@ -37,47 +37,65 @@ import org.eclipse.jdt.internal.compiler.lookup.WildcardBinding;
 /**
  * Performs matching of null type annotations.
  * Instances are used to encode result from this analysis.
+ *
  * @since 3.10
  */
 public class NullAnnotationMatching {
-	
+
 	public static final NullAnnotationMatching NULL_ANNOTATIONS_OK = new NullAnnotationMatching(0, FlowInfo.UNKNOWN, null);
 	public static final NullAnnotationMatching NULL_ANNOTATIONS_OK_NONNULL = new NullAnnotationMatching(0, FlowInfo.NON_NULL, null);
 	public static final NullAnnotationMatching NULL_ANNOTATIONS_UNCHECKED = new NullAnnotationMatching(1, FlowInfo.UNKNOWN, null);
 	public static final NullAnnotationMatching NULL_ANNOTATIONS_MISMATCH = new NullAnnotationMatching(2, FlowInfo.UNKNOWN, null);
 
 	public enum CheckMode {
-		/** in this mode we check normal assignment compatibility. */
+		/**
+		 * in this mode we check normal assignment compatibility.
+		 */
 		COMPATIBLE,
-		/** in this mode we do not tolerate incompatibly missing annotations on type parameters (for overriding analysis) */
+		/**
+		 * in this mode we do not tolerate incompatibly missing annotations on type parameters (for overriding analysis)
+		 */
 		OVERRIDE
 	}
 
-	/** 0 = OK, 1 = unchecked, 2 = definite mismatch */
+	/**
+	 * 0 = OK, 1 = unchecked, 2 = definite mismatch
+	 */
 	public final int severity;
-	
-	/** If non-null this field holds the supertype of the provided type which was used for direct matching. */
+
+	/**
+	 * If non-null this field holds the supertype of the provided type which was used for direct matching.
+	 */
 	public final TypeBinding superTypeHint;
 	public final int nullStatus;
-	
+
 	public NullAnnotationMatching(int severity, int nullStatus, TypeBinding superTypeHint) {
 		this.severity = severity;
 		this.superTypeHint = superTypeHint;
 		this.nullStatus = nullStatus;
 	}
 
-	public boolean isAnyMismatch()      { return this.severity != 0; }
-	public boolean isUnchecked()        { return this.severity == 1; }
-	public boolean isDefiniteMismatch() { return this.severity == 2; }
-	
+	public boolean isAnyMismatch() {
+		return this.severity != 0;
+	}
+
+	public boolean isUnchecked() {
+		return this.severity == 1;
+	}
+
+	public boolean isDefiniteMismatch() {
+		return this.severity == 2;
+	}
+
 	public String superTypeHintName(CompilerOptions options, boolean shortNames) {
 		return String.valueOf(this.superTypeHint.nullAnnotatedReadableName(options, shortNames));
 	}
-	
-	/** Check null-ness of 'var' against a possible null annotation */
+
+	/**
+	 * Check null-ness of 'var' against a possible null annotation
+	 */
 	public static int checkAssignment(BlockScope currentScope, FlowContext flowContext,
-									   VariableBinding var, int nullStatus, Expression expression, TypeBinding providedType)
-	{
+	                                  VariableBinding var, int nullStatus, Expression expression, TypeBinding providedType) {
 		long lhsTagBits = 0L;
 		boolean hasReported = false;
 		if (currentScope.compilerOptions().sourceLevel < ClassFileConstants.JDK1_8) {
@@ -108,30 +126,33 @@ public class NullAnnotationMatching {
 			if (!hasReported)
 				flowContext.recordNullityMismatch(currentScope, expression, providedType, var.type, nullStatus);
 			return FlowInfo.NON_NULL;
-		} else if (lhsTagBits == TagBits.AnnotationNullable && nullStatus == FlowInfo.UNKNOWN) {	// provided a legacy type?
-			return FlowInfo.POTENTIALLY_NULL;			// -> use more specific info from the annotation
+		} else if (lhsTagBits == TagBits.AnnotationNullable && nullStatus == FlowInfo.UNKNOWN) {    // provided a legacy type?
+			return FlowInfo.POTENTIALLY_NULL;            // -> use more specific info from the annotation
 		}
 		return nullStatus;
 	}
 
 	/**
 	 * Find any mismatches between the two given types, which are caused by null type annotations.
+	 *
 	 * @param requiredType
 	 * @param providedType
-	 * @param nullStatus we are only interested in NULL or NON_NULL, -1 indicates that we are in a recursion, where flow info is ignored
+	 * @param nullStatus   we are only interested in NULL or NON_NULL, -1 indicates that we are in a recursion, where flow info is ignored
 	 * @return a status object representing the severity of mismatching plus optionally a supertype hint
 	 */
 	public static NullAnnotationMatching analyse(TypeBinding requiredType, TypeBinding providedType, int nullStatus) {
 		return analyse(requiredType, providedType, null, nullStatus, CheckMode.COMPATIBLE);
 	}
+
 	/**
 	 * Find any mismatches between the two given types, which are caused by null type annotations.
+	 *
 	 * @param requiredType
 	 * @param providedType
 	 * @param providedSubstitute in inheritance situations this maps the providedType into the realm of the subclass, needed for TVB identity checks.
-	 * 		Pass null if not interested in these added checks.
-	 * @param nullStatus we are only interested in NULL or NON_NULL, -1 indicates that we are in a recursion, where flow info is ignored
-	 * @param mode controls the kind of check performed (see {@link CheckMode}).
+	 *                           Pass null if not interested in these added checks.
+	 * @param nullStatus         we are only interested in NULL or NON_NULL, -1 indicates that we are in a recursion, where flow info is ignored
+	 * @param mode               controls the kind of check performed (see {@link CheckMode}).
 	 * @return a status object representing the severity of mismatching plus optionally a supertype hint
 	 */
 	public static NullAnnotationMatching analyse(TypeBinding requiredType, TypeBinding providedType, TypeBinding providedSubstitute, int nullStatus, CheckMode mode) {
@@ -144,15 +165,15 @@ public class NullAnnotationMatching {
 			return okStatus;
 		}
 		if (requiredType instanceof ArrayBinding) {
-			long[] requiredDimsTagBits = ((ArrayBinding)requiredType).nullTagBitsPerDimension;
+			long[] requiredDimsTagBits = ((ArrayBinding) requiredType).nullTagBitsPerDimension;
 			if (requiredDimsTagBits != null) {
 				int dims = requiredType.dimensions();
 				if (requiredType.dimensions() == providedType.dimensions()) {
-					long[] providedDimsTagBits = ((ArrayBinding)providedType).nullTagBitsPerDimension;
+					long[] providedDimsTagBits = ((ArrayBinding) providedType).nullTagBitsPerDimension;
 					if (providedDimsTagBits == null) {
 						severity = 1; // required is annotated, provided not, need unchecked conversion
 					} else {
-						for (int i=0; i<=dims; i++) {
+						for (int i = 0; i <= dims; i++) {
 							long requiredBits = validNullTagBits(requiredDimsTagBits[i]);
 							long providedBits = validNullTagBits(providedDimsTagBits[i]);
 							if (i > 0)
@@ -181,10 +202,10 @@ public class NullAnnotationMatching {
 				TypeBinding providedSuper = providedType.findSuperTypeOriginatingFrom(requiredType);
 				if (providedSuper != providedType) //$IDENTITY-COMPARISON$
 					superTypeHint = providedSuper;
-				if (requiredType.isParameterizedType()  && providedSuper instanceof ParameterizedTypeBinding) { // TODO(stephan): handle providedType.isRaw()
+				if (requiredType.isParameterizedType() && providedSuper instanceof ParameterizedTypeBinding) { // TODO(stephan): handle providedType.isRaw()
 					TypeBinding[] requiredArguments = ((ParameterizedTypeBinding) requiredType).arguments;
 					TypeBinding[] providedArguments = ((ParameterizedTypeBinding) providedSuper).arguments;
-					TypeBinding[] providedSubstitutes = (providedSubstitute instanceof ParameterizedTypeBinding) ? ((ParameterizedTypeBinding)providedSubstitute).arguments : null;
+					TypeBinding[] providedSubstitutes = (providedSubstitute instanceof ParameterizedTypeBinding) ? ((ParameterizedTypeBinding) providedSubstitute).arguments : null;
 					if (requiredArguments != null && providedArguments != null && requiredArguments.length == providedArguments.length) {
 						for (int i = 0; i < requiredArguments.length; i++) {
 							TypeBinding providedArgSubstitute = providedSubstitutes != null ? providedSubstitutes[i] : null;
@@ -209,7 +230,9 @@ public class NullAnnotationMatching {
 		return new NullAnnotationMatching(severity, nullStatus, superTypeHint);
 	}
 
-	/** Are both types identical wrt the unannotated type and any null type annotations? Only unstructured types and captures are considered. */
+	/**
+	 * Are both types identical wrt the unannotated type and any null type annotations? Only unstructured types and captures are considered.
+	 */
 	protected static boolean areSameTypes(TypeBinding requiredType, TypeBinding providedType, TypeBinding providedSubstitute) {
 		if (requiredType == providedType)  //$IDENTITY-COMPARISON$ // short cut for really-really-same types
 			return true;
@@ -218,14 +241,14 @@ public class NullAnnotationMatching {
 		if (TypeBinding.notEquals(requiredType, providedType)) {
 			if (requiredType instanceof CaptureBinding) {
 				// when providing exactly the lower bound of the required type we're definitely fine:
-				TypeBinding lowerBound = ((CaptureBinding)requiredType).lowerBound;
+				TypeBinding lowerBound = ((CaptureBinding) requiredType).lowerBound;
 				if (lowerBound != null && areSameTypes(lowerBound, providedType, providedSubstitute))
 					return true;
 			} else if (requiredType.kind() == Binding.TYPE_PARAMETER && requiredType == providedSubstitute) { //$IDENTITY-COMPARISON$
 				return true;
 			} else if (providedType instanceof CaptureBinding) {
 				// when requiring exactly the upper bound of the provided type we're fine, too:
-				TypeBinding upperBound = ((CaptureBinding)providedType).upperBound();
+				TypeBinding upperBound = ((CaptureBinding) providedType).upperBound();
 				if (upperBound != null && areSameTypes(requiredType, upperBound, providedSubstitute))
 					return true;
 			}
@@ -243,25 +266,25 @@ public class NullAnnotationMatching {
 			return validNullTagBits(tagBits);
 
 		if (type.isWildcard()) {
-			WildcardBinding wildcard = (WildcardBinding)type;
+			WildcardBinding wildcard = (WildcardBinding) type;
 			if (wildcard.boundKind == Wildcard.UNBOUND)
 				return 0;
 			tagBits = wildcard.bound.tagBits & TagBits.AnnotationNullMASK;
 			if (tagBits == 0)
 				return 0;
 			switch (wildcard.boundKind) {
-				case Wildcard.EXTENDS :
+				case Wildcard.EXTENDS:
 					if (tagBits == TagBits.AnnotationNonNull)
 						return TagBits.AnnotationNonNull;
 					return TagBits.AnnotationNullMASK; // wildcard accepts @Nullable or better
-				case Wildcard.SUPER :
+				case Wildcard.SUPER:
 					if (tagBits == TagBits.AnnotationNullable)
 						return TagBits.AnnotationNullable;
 					return TagBits.AnnotationNullMASK; // wildcard accepts @NonNull or worse
 			}
 			return 0;
-		} 
-		
+		}
+
 		if (type.isTypeVariable()) {
 			// assume we must require @NonNull, unless lower @Nullable bound
 			// (annotation directly on the TV has already been checked above)
@@ -286,29 +309,29 @@ public class NullAnnotationMatching {
 		long tagBits = type.tagBits & TagBits.AnnotationNullMASK;
 		if (tagBits != 0)
 			return validNullTagBits(tagBits);
-		
+
 		if (type.isWildcard()) { // wildcard can be 'provided' during inheritance checks
-			WildcardBinding wildcard = (WildcardBinding)type;
+			WildcardBinding wildcard = (WildcardBinding) type;
 			if (wildcard.boundKind == Wildcard.UNBOUND)
 				return 0;
 			tagBits = wildcard.bound.tagBits & TagBits.AnnotationNullMASK;
 			if (tagBits == 0)
 				return 0;
 			switch (wildcard.boundKind) {
-				case Wildcard.EXTENDS :
+				case Wildcard.EXTENDS:
 					if (tagBits == TagBits.AnnotationNonNull)
 						return TagBits.AnnotationNonNull;
 					return TagBits.AnnotationNullMASK; // @Nullable or better
-				case Wildcard.SUPER :
+				case Wildcard.SUPER:
 					if (tagBits == TagBits.AnnotationNullable)
 						return TagBits.AnnotationNullable;
 					return TagBits.AnnotationNullMASK; // @NonNull or worse
 			}
 			return 0;
 		}
-	
+
 		if (type.isTypeVariable()) { // incl. captures
-			TypeVariableBinding typeVariable = (TypeVariableBinding)type;
+			TypeVariableBinding typeVariable = (TypeVariableBinding) type;
 			boolean haveNullBits = false;
 			if (typeVariable.isCapture()) {
 				TypeBinding lowerBound = ((CaptureBinding) typeVariable).lowerBound;
@@ -336,24 +359,26 @@ public class NullAnnotationMatching {
 		bits &= TagBits.AnnotationNullMASK;
 		return bits == TagBits.AnnotationNullMASK ? 0 : bits;
 	}
-	
-	/** Provided that both types are {@link TypeBinding#equalsEquals}, return the one that is more likely to show null at runtime. */
+
+	/**
+	 * Provided that both types are {@link TypeBinding#equalsEquals}, return the one that is more likely to show null at runtime.
+	 */
 	public static TypeBinding moreDangerousType(TypeBinding one, TypeBinding two) {
 		if (one == null) return null;
 		long oneNullBits = validNullTagBits(one.tagBits);
 		long twoNullBits = validNullTagBits(two.tagBits);
 		if (oneNullBits != twoNullBits) {
 			if (oneNullBits == TagBits.AnnotationNullable)
-				return one;			// nullable is dangerous
+				return one;            // nullable is dangerous
 			if (twoNullBits == TagBits.AnnotationNullable)
-				return two;			// nullable is dangerous
+				return two;            // nullable is dangerous
 			// below this point we have unknown vs. nonnull, which is which?
 			if (oneNullBits == 0)
-				return one;			// unknown is more dangerous than nonnull
-			return two;				// unknown is more dangerous than nonnull
+				return one;            // unknown is more dangerous than nonnull
+			return two;                // unknown is more dangerous than nonnull
 		} else if (one != two) { //$IDENTITY-COMPARISON$
 			if (analyse(one, two, -1).isAnyMismatch())
-				return two;			// two doesn't snugly fit into one, so it must be more dangerous
+				return two;            // two doesn't snugly fit into one, so it must be more dangerous
 		}
 		return one;
 	}
@@ -380,9 +405,10 @@ public class NullAnnotationMatching {
 	 */
 	public static MethodBinding checkForContraditions(
 			final MethodBinding method, final InvocationSite invocationSite, final Scope scope) {
-		
+
 		class SearchContradictions extends TypeBindingVisitor {
 			ReferenceBinding typeWithContradiction;
+
 			@Override
 			public boolean visit(ReferenceBinding referenceBinding) {
 				if ((referenceBinding.tagBits & TagBits.AnnotationNullMASK) == TagBits.AnnotationNullMASK) {
@@ -391,13 +417,15 @@ public class NullAnnotationMatching {
 				}
 				return true;
 			}
+
 			@Override
 			public boolean visit(TypeVariableBinding typeVariable) {
-				return visit((ReferenceBinding)typeVariable);
+				return visit((ReferenceBinding) typeVariable);
 			}
+
 			@Override
 			public boolean visit(RawTypeBinding rawType) {
-				return visit((ReferenceBinding)rawType);
+				return visit((ReferenceBinding) rawType);
 			}
 		}
 
@@ -413,7 +441,7 @@ public class NullAnnotationMatching {
 
 		Expression[] arguments = null;
 		if (invocationSite instanceof Invocation)
-			arguments = ((Invocation)invocationSite).arguments();
+			arguments = ((Invocation) invocationSite).arguments();
 		for (int i = 0; i < method.parameters.length; i++) {
 			TypeBindingVisitor.visit(searchContradiction, method.parameters[i]);
 			if (searchContradiction.typeWithContradiction != null) {

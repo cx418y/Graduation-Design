@@ -31,12 +31,18 @@ public class Tokenizer {
 			tokenList.add(0, eStart);
 			Token eEnd = new Token(Token.episolonSymbol, null, instance, -1, -1);
 			tokenList.add(tokenList.size(), eEnd);
-			
+//			for(Token token:tokenList){
+//				System.out.println(token.getTokenName()+"   "+token.getStartPosition()+"   "+token.getEndPosition()+"   "+token.getRelativePositionRatio());
+//			}
+			System.out.println();
+			System.out.println();
+
 			System.currentTimeMillis();
 			
 			instance.setTokenList(tokenList);
 			instance.computeInnerTokenRelativePosition();
 		}
+
 	}
 
 	/**
@@ -53,8 +59,8 @@ public class Tokenizer {
 		
 		
 		CompilationUnit cu = ASTUtil.generateCompilationUnit(instance, project);
+
 		int baseLinePosition = cu.getPosition(instance.getStartLine(), 0);
-		
 		String content = ASTUtil.retrieveContent(instance);
 		IScanner scanner = ToolFactory.createScanner(false, false, false, false);
 		scanner.setSource(content.toCharArray());

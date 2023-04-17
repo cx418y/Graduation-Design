@@ -19,8 +19,8 @@ public class TokenSimilarityComparator{
 			
 			double positionSim = 1-Math.abs(token1.getRelativePositionRatio() - token2.getRelativePositionRatio());
 			
-			double textualSim = positionSim;
-			double contextualSim = positionSim;
+			double textualSim = positionSim; // 文本相似
+			double contextualSim = positionSim; // 上下文相似
 			
 			// the idea is that if the two to-be-compared synonym tokens are very far way considering
 			// their relative position, they are highly likely to be unmatched

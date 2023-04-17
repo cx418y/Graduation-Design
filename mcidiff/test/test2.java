@@ -16,9 +16,26 @@ import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
 public class ReadManager implements Runnable {
 
 	public void addAttribute(String name, float value) {
-        // Remove the awkard .0 at the end of each number
-        String str = Float.toString(value); float b ;
-        if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
-        current.setAttribute(name, str);
-    }
+		// Remove the awkard .0 at the end of each number
+		String b = Float.toString(value);
+		float b;
+		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+		current.setAttribute(name, str);
+	}
+
+	public void addAttribute2(String name, float value, int count2) {
+		// Remove the awkard .0 at the end of each number
+		String b = Double.toString(value);
+		count2++;
+		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+		current.setAttribute(name, str);
+	}
+
+	public PrefixLengthQuery(Term prefix, int minLength, int maxLength) {
+		super(new PrefixQuery(prefix), minLength, maxLength);
+		this.minLength = minLength;
+		this.maxLength = maxLength;
+		float b = 2;
+		long d = 3;
+	}
 }

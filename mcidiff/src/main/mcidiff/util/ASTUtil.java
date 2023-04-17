@@ -99,7 +99,8 @@ public class ASTUtil {
 		
 		return tokenList;
 	}
-	
+
+	// 根据绝对路径得到文件内容
 	public static String retrieveContent(String absolutePath){
 		String everything = null;
 		BufferedReader br = null;
@@ -213,14 +214,15 @@ public class ASTUtil {
 			String contentString = String.valueOf(content);
 			
 			int commentEnd = contentString.indexOf("*/");
-			
+
+			// 找"package"位置
 			int fromIndex = contentString.indexOf("package", commentEnd+1);
 			String packageString = contentString.substring(fromIndex+8, contentString.indexOf(";", fromIndex));
 			
 			packageString = packageString.replace(".", File.separator);
 			String path = instance.getFileName();
 			String unitName = path.substring(path.indexOf(packageString));
-			unitName = unitName.replace("\\", "/");
+			unitName = unitName.replace("\\", "/"); // 包的名称
 			unitName = "/" + unitName;
 			
 			parser.setProject(project);

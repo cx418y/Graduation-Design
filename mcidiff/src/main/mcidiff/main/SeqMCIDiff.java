@@ -1,7 +1,11 @@
 package mcidiff.main;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-
+import java.util.HashMap;
+import java.util.Map;
 import mcidiff.action.Tokenizer;
 import mcidiff.comparator.SeqMultisetPositionComparator;
 import mcidiff.model.CloneInstance;
@@ -28,31 +32,266 @@ public class SeqMCIDiff{
 	public ArrayList<SeqMultiset> diff(CloneSet set, IJavaProject project) throws Exception{
 		
 		new Tokenizer().tokenize(set, project);
-		
+		for(CloneInstance instance :set.getInstances()){
+			for(Token token : instance.getTokenList()){
+				System.out.print(token.getTokenName() + "    "+token.getNode() );
+				if(token.getNode() != null) {
+					System.out.println( "    "+ token.getNode().getNodeType() +" "+token.getNode().getClass());
+					if (token.getNode().getParent() != null) {
+						System.out.print("    " + token.getNode().getParent()+"    "+ token.getNode().getParent().getNodeType() +" "+token.getNode().getParent().getClass());
+						if (token.getNode().getParent().getParent() != null) {
+							System.out.print("    " + token.getNode().getParent().getParent() + "    "+ token.getNode().getParent().getParent().getNodeType() +" "+token.getNode().getParent().getParent().getClass());
+						}
+					}
+				}
+				System.out.println();
+				System.out.println();
+			}
+		}
 		ArrayList<Token>[] lists = set.getTokenLists();
-		
+
+//		for(Token token : set.getTokenLists()[0]){
+//			System.out.println(token.getTokenName()+"   "+token.getStartPosition()+"   "+token.getEndPosition());
+//		}
 		long t1 = System.currentTimeMillis();
 		CorrespondentListAndSet cls = DiffUtil.generateMatchedTokenListFromMultiSequence(lists);
+
+		System.out.println("初始");
+		for(TokenMultiset token : cls.getMultisetList()){
+			System.out.println(token+ " " + token.isCommon());
+		}
+//		System.out.println(cls.getMultisetList().length+"   " + cls.getCommonTokenList().length);
+//		for(Token token:cls.getCommonTokenList()){
+//			System.out.println(token.getTokenName());
+//		}
+
+
 		long t2 = System.currentTimeMillis();
 		System.out.println("Time for optimal subsequence generation: " + (t2-t1));
 		
 		TokenSequence[] sequences = MCIDiffUtil.transferToModel(set);
+
+		// 找到diff token并且合并成对应的tokenseq，并且将diff seq分割成只包含一个完整单元的seqs
 		ArrayList<Multiset> results = computeDiff(cls, sequences);
-		
+
+		System.out.println("计算diff以后");
+		for(Multiset multi:results ){
+			System.out.println(multi.toString());
+
+		}
+		System.out.println();
+
 		results = mergeDiffRanges(results);
-		
+
+//		System.out.println("合并diff以后");
+//		for(Multiset multi:results ){
+//			System.out.println(multi.toString());
+//		}
+//		System.out.println();
 		identifyEpsilonTokenPosition(results);
-		
-		MCIDiffUtil.filterCommonSet(results);
-		
-		ArrayList<SeqMultiset> seqResults = transferSeqMultiset(results);
+
+//		MCIDiffUtil.filterCommonSet(results);
+//
+//		System.out.println("过滤后");
+//
+//		for(Multiset multi:results ){
+//			System.out.println(multi.getDiffElements().get(0));
+//			System.out.println();
+//		}
+		//ArrayList<SeqMultiset> seqResults = transferSeqMultiset(results);
+		ArrayList<SeqMultiset> seqResults = generate(results);
 		computeText(seqResults);
-		
+
 		System.currentTimeMillis();
-		
+//		System.out.print("结果");
+		for(SeqMultiset multi:seqResults ){
+			//System.out.println(multi.getSequences().get(0).getText()+"   "+multi.isCommon());
+//			String text = multi.getSequences().get(0).toString();
+//
+//			System.out.print(text);
+//			if(text.contains(";") || text.contains("{") || text.contains("}")) {
+//				System.out.println();
+//			}
+			//System.out.print(multi.getSequences().get(0).getText());
+			System.out.println(multi.toString());
+
+		}
+
+		TokenSeq seq = generateNewTokenSeq(seqResults);
+//		for(Token token : set.getTokenLists()[0]){
+//			System.out.println(token.getTokenName()+"   "+token.getStartPosition()+"   "+token.getEndPosition());
+//		}
+//		System.out.println(seq.toString());
+		for(Token token: seq.getTokens()){
+			System.out.print(token.toString()+"   ");
+		}
+		System.out.println();
+		System.out.println(formatText(seq));
 		return seqResults;
 	}
-	
+
+	public ArrayList<SeqMultiset> generate(ArrayList<Multiset> multisetList){
+		ArrayList<SeqMultiset> results = new ArrayList<>();
+		for(Multiset multiset :multisetList){
+			if(multiset instanceof TokenMultiset){
+				TokenMultiset tokenMultiset = (TokenMultiset) multiset;
+				SeqMultiset set = new SeqMultiset();
+				for(int i = 0; i < tokenMultiset.getTokens().size();i++){
+					Token token = tokenMultiset.getTokens().get(i);
+					TokenSeq sequences = new TokenSeq();
+					sequences.addToken(token);
+					set.addTokenSeq(sequences);
+				}
+				set.setCommon(true);
+				results.add(set);
+			}else{
+				SeqMultiset set = (SeqMultiset)multiset;
+				results.add(set);
+			}
+		}
+		return results;
+	}
+
+	public TokenSeq generateNewTokenSeq(ArrayList<SeqMultiset> seqResults ){
+		TokenSeq result= new TokenSeq();
+		int size = seqResults.get(0).getSequences().size();
+		for(SeqMultiset set:seqResults ){
+			if(set.isCommon()) {
+				TokenSeq tokenSeq = set.getSequences().get(0);
+
+				for (Token token : tokenSeq.getTokens()) {
+					result.addToken(token);
+					break;
+				}
+
+			}
+			else{
+				HashMap<String, Integer> map = new HashMap<>();
+				for(TokenSeq tokenSeq :set.getSequences() ){
+					String text = tokenSeq.getText();
+					if(map.get(text) == null){
+						map.put(text,1);
+					}else{
+						map.put(text,map.get(text)+1);
+					}
+				}
+				int max = 0;
+				String maxText = "";
+				for (Map.Entry<String,Integer> entry: map.entrySet()) {
+					if(entry.getValue()>max){
+						max = entry.getValue();
+						maxText = entry.getKey();
+					}
+				}
+				if(max >= size/2) {
+					for (TokenSeq tokenSeq : set.getSequences()) {
+						if (tokenSeq.getText().equals(maxText)) {
+							for (Token token : tokenSeq.getTokens()) {
+								result.addToken(token);
+							}
+							break;
+						}
+					}
+				}else{
+					for (TokenSeq tokenSeq : set.getSequences()) {
+						if (tokenSeq.getText().equals(maxText)) {
+							for (Token token : tokenSeq.getTokens()) {
+								token.setTokenName("*e");
+								result.addToken(token);
+							}
+							break;
+						}
+					}
+					//result.addToken(new Token());
+				}
+
+			}
+
+		}
+		return result;
+	}
+
+	public String formatText(TokenSeq tokenSeq) {
+		int lineTab = 0;
+		int curTab = 0;
+		StringBuilder sb = new StringBuilder();
+		for (Token token : tokenSeq.getTokens()) {
+//			System.out.println(token.getTokenName()+"    ");
+//			System.out.println(token.getPreviousToken() == null);
+			if (token.getPreviousToken() == null) {
+				appendTab(sb, 0);
+				sb.append(token.getTokenName());
+			} else {
+				Token preToken = token.getPreviousToken();
+				curTab = token.getStartPosition() - preToken.getEndPosition();
+//				System.out.println(curTab);
+				if (curTab == 0) {
+					sb.append(token.getTokenName());
+				} else if (curTab > 1) {
+					sb.append(System.lineSeparator());
+					if(token.getTokenName().equals("}")){
+						appendTab(sb,--lineTab);
+					}else {
+						String preName = preToken.getTokenName();
+						if (preName.equals("{")) {
+							appendTab(sb, ++lineTab);
+						} else {
+							appendTab(sb, lineTab);
+						}
+					}
+					sb.append(token.getTokenName());
+				} else {
+					String preName = preToken.getTokenName();
+					if(token.getTokenName().equals("}")){
+						sb.append(System.lineSeparator());
+						appendTab(sb,--lineTab);
+					}else if (preName.equals("{") || preName.equals("}") || preName.equals(";")){
+						sb.append(System.lineSeparator());
+						appendTab(sb,lineTab);
+					}else{
+						sb.append(" ");
+					}
+					sb.append(token.getTokenName());
+
+				}
+			}
+		}
+
+		try{
+
+			File file =new File("result.txt");
+
+			if(!file.exists()){
+				System.out.println("not exist");
+				file.createNewFile();
+			}
+
+
+
+			FileWriter fileWritter = new FileWriter(file.getName(),true);
+
+
+			fileWritter.write(sb.toString());
+
+			fileWritter.flush();
+			fileWritter.close();
+
+			System.out.println("finish");
+
+		}catch(IOException e){
+
+			e.printStackTrace();
+
+		}
+		return sb.toString();
+	}
+
+	public void appendTab(StringBuilder sb,int index){
+		while(index>0){
+			sb.append("    ");
+			index--;
+		}
+	}
 	private ArrayList<SeqMultiset> transferSeqMultiset(ArrayList<Multiset> results){
 		ArrayList<SeqMultiset> sets = new ArrayList<>();
 		
@@ -208,6 +447,7 @@ public class SeqMCIDiff{
 	/**
 	 * Find the first sequence multiset appearing after the {@code index}th multiset.  
 	 * The {@code index}th multiset is not included.
+	 * 找到第一个tokenseq（diff 的）
 	 * 
 	 * If not found, return -1.
 	 * 
@@ -239,26 +479,46 @@ public class SeqMCIDiff{
 		ArrayList<Multiset> seqMultisetList = new ArrayList<>();
 		
 		ArrayList<TokenMultiset> tokenMultisets = new TokenMCIDiff().computeDiff(cls, sequences);
+//		System.out.println("合并前");
+//		for(TokenMultiset set:tokenMultisets){
+//			System.out.println(set.toString()+"    "+set.isCommon());
+//		}
 		for(TokenSequence sequence: sequences){
 			sequence.setStartIndex(0);
 			sequence.setCursorIndex(0);
 		}
-		
+//		for(Token token:cls.getCommonTokenList()){
+//			System.out.println(token.toString());
+//		}
+//		System.out.println();
+		//System.out.println("合并后：");
 		for(int i=1; i<cls.getCommonTokenList().length; i++){
 			
 			TokenMultiset commonSet = cls.getMultisetList()[i];
 			commonSet.setCommon(true);
+			//System.out.println(commonSet.getTokens().toString());
 			for(int j=0; j<sequences.length; j++){
 				CloneInstance instance = sequences[j].getCloneInstance();
 				Token cToken = commonSet.findToken(instance);
 				sequences[j].moveEndCursorTo(cToken);
+				//System.out.println(sequences[j].getStartIndex()+"  "+sequences[j].getEndIndex());
 			}
-			
+
+			// 只有diff set
 			SeqMultiset seqMultiset = generateSeqMultiset(sequences);
+
+//			for(TokenSeq seq : seqMultiset.getSequences()){
+//				System.out.println(seq.toString());
+//			}
+			//System.out.println(seqMultiset.getSequences().size());
 			if(!seqMultiset.isAllEmpty()){
 				ArrayList<SeqMultiset> splitedMultisets = splitDiffRanges(seqMultiset, tokenMultisets);
 				seqMultisetList.addAll(splitedMultisets);
 				System.currentTimeMillis();
+//				for(SeqMultiset seq : splitedMultisets) {
+//					System.out.println(seq.toString());
+//				}
+//				System.out.println();
 				//seqMultisetList.add(seqMultiset);
 			}
 			
@@ -267,6 +527,7 @@ public class SeqMCIDiff{
 			for(int j=0; j<sequences.length; j++){
 				sequences[j].moveStartCursorToEndCursor();
 			}
+
 		}
 		
 		return seqMultisetList;
@@ -352,6 +613,9 @@ public class SeqMCIDiff{
 	 * @return
 	 */
 	private ArrayList<SeqMultiset> splitDiffRanges(SeqMultiset seqMultiset, ArrayList<TokenMultiset> tokenMultisets) {
+//		System.out.println("split");
+//		System.out.println(seqMultiset.toString());
+//		System.out.println();
 		ArrayList<ArrayList<TokenSeq>> lists = new ArrayList<>();
 		for(TokenSeq seq: seqMultiset.getSequences()){
 			ArrayList<TokenSeq> list = new ArrayList<>();
@@ -367,10 +631,12 @@ public class SeqMCIDiff{
 					ArrayList<ASTNode> completeUnit = csVisitor.getCompleteSyntacticUnits();
 					
 					if(completeUnit.size() == 0){
+						// 通过分隔符';'分割，得到两个
 						ArrayList<TokenSeq> seqList = trySplitingByDelimiter(seq);
 						list.addAll(seqList);
 					}
 					else{
+						// 通过AST分割，得到三个
 						ArrayList<TokenSeq> seqList = generateSeparateRanges(seq, completeUnit);
 						list.addAll(seqList);
 					}
@@ -383,7 +649,13 @@ public class SeqMCIDiff{
 			
 			lists.add(list);
 		}
-		
+//		for(ArrayList<TokenSeq> seq:lists){
+//			for(TokenSeq s:seq){
+//				System.out.println(s.toString());
+//			}
+//			System.out.println("line");
+//		}
+//		System.out.println("end");
 		
 		ArrayList<SeqMultiset> multisets = matchRanges(lists, tokenMultisets);
 		
@@ -434,7 +706,15 @@ public class SeqMCIDiff{
 
 	private ArrayList<SeqMultiset> matchRanges(ArrayList<ArrayList<TokenSeq>> lists,
 			ArrayList<TokenMultiset> tokenMultisets) {
-		
+//		System.out.println();
+//		System.out.println(lists.size());
+//		for(ArrayList<TokenSeq> seq:lists){
+//			System.out.println(seq.size());
+//		}
+		//System.out.println();
+//		System.out.println(lists.get(1).size());
+//		System.out.println(lists.get(1).size());
+//		System.out.println(lists.get(1).size());
 		System.currentTimeMillis();
 		
 		ArrayList<SeqMultiset> seqMultisetList = new ArrayList<>();
@@ -479,8 +759,15 @@ public class SeqMCIDiff{
 		}
 		
 		SeqMultisetPositionComparator comparator = new SeqMultisetPositionComparator(seqMultisetList);
+//		System.out.println("sortsort前");
+//		for(SeqMultiset set:seqMultisetList){
+//			System.out.println(set.toString());
+//		}
 		ASTUtil.sort(seqMultisetList, comparator);
-		
+//		System.out.println("sortsort后");
+//		for(SeqMultiset set:seqMultisetList){
+//			System.out.println(set.toString());
+//		}
 		return seqMultisetList;
 	}
 
@@ -559,7 +846,7 @@ public class SeqMCIDiff{
 		return bestSeq;
 	}
 
-	private double computeTokenSeqSimilarity(TokenSeq seq, TokenSeq otherSeq,
+	private double                                                                                                                                         computeTokenSeqSimilarity(TokenSeq seq, TokenSeq otherSeq,
 			ArrayList<TokenMultiset> tokenMultisets) {
 		if(seq.isEpisolonTokenSeq() && otherSeq.isEpisolonTokenSeq()){
 			return 1;

@@ -6,7 +6,14 @@ import java.util.ArrayList;
 public class CloneInstance {
 	
 	private CloneSet set;
-	
+	private String fileName;
+	private int startLine;
+	private int endLine;
+
+	private String fileContent;
+
+	private ArrayList<Token> tokenList = new ArrayList<>();
+
 	/**
 	 * @return the set
 	 */
@@ -21,13 +28,6 @@ public class CloneInstance {
 		this.set = set;
 	}
 
-	private String fileName;
-	private int startLine;
-	private int endLine;
-	
-	private String fileContent;
-	
-	private ArrayList<Token> tokenList = new ArrayList<>();
 	
 	/**
 	 * @param fileName

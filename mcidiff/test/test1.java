@@ -15,10 +15,36 @@ import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
 
 public class ReadManager implements Runnable {
 
-	public void addAttribute(String name, double value) throws Exception{
-        // Remove the awkard .0 at the end of each number
-        Str str = Double.toString(value);  System.out.println();
-        if (str.endsWith(".0") && str.endsWith("ff")) str = str.substring(0, str.length() - 2);
-		current.setAttribute(name, str);;
-    }
+	public void addAttribute(String name, double value) throws Exception {
+		// Remove the awkard .0 at the end of each number
+		String str = Double.toString(value);
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		for(int i = 0 ;i < 3;i++){
+			a = 0;
+			for(int j = 0 ; j < 3; j++){
+				a++;
+			}
+		}
+		if (str.endsWith(".0") && str.endsWith("ff")) str = str.substring(0, str.length() - 2);
+		current.setAttribute(name, str);
+	}
+
+	public void addAttribute2(String name, double value, int count1) throws Exception {
+		// Remove the awkard .0 at the end of each number
+		String a = Double.toString(value);
+		count1++;
+		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+		current.setAttribute(name, str);
+	}
+
+	public PrefixLengthFilter(Term prefix, int minLength, int maxLength) {
+		super(new MultiTermQueryTermEnumLengthFilter(new PrefixQuery(prefix), minLength, maxLength));
+		this.minLength = minLength;
+		this.maxLength = maxLength;
+		int c = 4;
+		double a = 1;
+	}
+
 }

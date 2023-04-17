@@ -223,6 +223,7 @@ public class Token implements DiffElement{
 			return 0;
 		}
 		else{
+			System.out.println(seedNode.getNodeType()+"   "+thisNode.getNodeType());
 			if(seedNode.getNodeType() == ASTNode.SIMPLE_NAME 
 					&& thisNode.getNodeType() == ASTNode.SIMPLE_NAME){
 				SimpleName seedName = (SimpleName)seedNode;
@@ -265,7 +266,7 @@ public class Token implements DiffElement{
 			
 			boolean isSeedDeclaration = ASTUtil.isSimpleNameDeclaration(seedBinding, seedName);
 			boolean isThisDeclaration = ASTUtil.isSimpleNameDeclaration(thisBinding, thisName);
-
+			//System.out.print( isSeedDeclaration +"     " + isThisDeclaration);
 			if(isSeedDeclaration ^ isThisDeclaration){
 				return true;
 			}
@@ -276,18 +277,25 @@ public class Token implements DiffElement{
 			}
 		}
 		else{
+			//System.out.println("null");
 			ASTNode seedParent = seedName.getParent();
 			ASTNode thisParent = thisName.getParent();
 			/**
 			 * type should not be matched to method/field/variable
 			 */
+//			System.out.println(seedParent.getNodeType());
+//			System.out.println(thisParent.getNodeType());
+			if(seedParent.getNodeType() != thisParent.getNodeType()){
+				return true;
+			}
 			if(seedParent instanceof Type || thisParent instanceof Type){
+				//System.out.println(seedParent.getNodeType() +"   "+thisParent.getNodeType());
 				if(seedParent.getNodeType() != thisParent.getNodeType()){
 					return true;
 				}
 			}
 		}
-		
+		//System.out.println("return false");
 		return false;
 	}
 	

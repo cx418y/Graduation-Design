@@ -1,0 +1,3271 @@
+/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=55615:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/jre/lib/rt.jar:/Users/macbook/Desktop/design/Graduation-Design/mcidiff/target/test-classes:/Users/macbook/Desktop/design/Graduation-Design/mcidiff/target/classes:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/jdt/core/3.3.0-v_771/core-3.3.0-v_771.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/resources/3.3.0-v20070604/resources-3.3.0-v20070604.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/expressions/3.3.0-v20070606-0010/expressions-3.3.0-v20070606-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/runtime/3.10.0-v20140318-2214/runtime-3.10.0-v20140318-2214.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/osgi/3.10.0-v20140606-1445/osgi-3.10.0-v20140606-1445.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/equinox/common/3.6.200-v20130402-1505/common-3.6.200-v20130402-1505.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/jobs/3.6.0-v20140424-0053/jobs-3.6.0-v20140424-0053.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/equinox/registry/3.5.400-v20140428-1507/registry-3.5.400-v20140428-1507.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/equinox/preferences/3.5.200-v20140224-1527/preferences-3.5.200-v20140224-1527.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/contenttype/3.4.200-v20140207-1251/contenttype-3.4.200-v20140207-1251.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/equinox/app/1.3.200-v20130910-1609/app-1.3.200-v20130910-1609.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/filesystem/1.1.0-v20070606/filesystem-1.1.0-v20070606.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/text/3.3.0-v20070606-0010/text-3.3.0-v20070606-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/commands/3.3.0-I20070605-0010/commands-3.3.0-I20070605-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/ui/editors/3.3.0-v20070606-0010/editors-3.3.0-v20070606-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/ui/ide/3.3.0-I20070620/ide-3.3.0-I20070620.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/help/3.3.0-v20070524/help-3.3.0-v20070524.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/ui/views/3.2.100-I20070319-0010/views-3.2.100-I20070319-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/update/configurator/3.2.100-v20070615/configurator-3.2.100-v20070615.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/update/core/3.2.100-v20070615/core-3.2.100-v20070615.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/net/1.0.0-I20070531/net-1.0.0-I20070531.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/update/ui/3.2.100-v20070615/ui-3.2.100-v20070615.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/ui/forms/3.3.0-v20070511/forms-3.3.0-v20070511.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/ui/workbench/texteditor/3.3.0-v20070606-0010/texteditor-3.3.0-v20070606-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/ui/3.3.0-I20070614-0800/ui-3.3.0-I20070614-0800.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/swt/3.3.0-v3346/swt-3.3.0-v3346.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/jface/3.3.0-I20070606-0010/jface-3.3.0-I20070606-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/ui/workbench/3.3.0-I20070608-1100/workbench-3.3.0-I20070608-1100.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/jface/databinding/1.1.0-I20070606-0010/databinding-1.1.0-I20070606-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/databinding/1.0.0-I20070606-0010/databinding-1.0.0-I20070606-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/jface/text/3.3.0-v20070606-0010/text-3.3.0-v20070606-0010.jar:/Users/macbook/Downloads/apache-maven-3.9.0/localRepository/org/eclipse/core/filebuffers/3.3.0-v20070606-0010/filebuffers-3.3.0-v20070606-0010.jar example.tokenseq.TestMain1
+
+
+
+
+
+
+e*    null
+
+public    public    83 class org.eclipse.jdt.core.dom.Modifier
+    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+void    void    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+addAttribute    addAttribute    42 class org.eclipse.jdt.core.dom.SimpleName
+    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+(    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+String    String    42 class org.eclipse.jdt.core.dom.SimpleName
+    String    43 class org.eclipse.jdt.core.dom.SimpleType    String name    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration
+
+name    name    42 class org.eclipse.jdt.core.dom.SimpleName
+    String name    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+,    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+double    double    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    double value    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+value    value    42 class org.eclipse.jdt.core.dom.SimpleName
+    double value    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+)    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+throws    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+Exception    Exception    42 class org.eclipse.jdt.core.dom.SimpleName
+    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+{    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+String    String    42 class org.eclipse.jdt.core.dom.SimpleName
+    String    43 class org.eclipse.jdt.core.dom.SimpleType    String str=Double.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str=Double.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String str=Double.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+=    str=Double.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+    String str=Double.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+Double    Double    42 class org.eclipse.jdt.core.dom.SimpleName
+    Double.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=Double.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+
+.    Double.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=Double.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String str=Double.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+toString    toString    42 class org.eclipse.jdt.core.dom.SimpleName
+    Double.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=Double.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+
+(    Double.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=Double.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String str=Double.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+value    value    42 class org.eclipse.jdt.core.dom.SimpleName
+    Double.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=Double.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+
+)    Double.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=Double.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String str=Double.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+;    String str=Double.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+System    System    42 class org.eclipse.jdt.core.dom.SimpleName
+    System.out    40 class org.eclipse.jdt.core.dom.QualifiedName    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+.    System.out    40 class org.eclipse.jdt.core.dom.QualifiedName
+    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+out    out    42 class org.eclipse.jdt.core.dom.SimpleName
+    System.out    40 class org.eclipse.jdt.core.dom.QualifiedName    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+.    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+println    println    42 class org.eclipse.jdt.core.dom.SimpleName
+    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+(    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+)    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+;    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+System    System    42 class org.eclipse.jdt.core.dom.SimpleName
+    System.out    40 class org.eclipse.jdt.core.dom.QualifiedName    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+.    System.out    40 class org.eclipse.jdt.core.dom.QualifiedName
+    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+out    out    42 class org.eclipse.jdt.core.dom.SimpleName
+    System.out    40 class org.eclipse.jdt.core.dom.QualifiedName    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+.    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+println    println    42 class org.eclipse.jdt.core.dom.SimpleName
+    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+(    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+)    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+;    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+System    System    42 class org.eclipse.jdt.core.dom.SimpleName
+    System.out    40 class org.eclipse.jdt.core.dom.QualifiedName    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+.    System.out    40 class org.eclipse.jdt.core.dom.QualifiedName
+    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+out    out    42 class org.eclipse.jdt.core.dom.SimpleName
+    System.out    40 class org.eclipse.jdt.core.dom.QualifiedName    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+.    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+println    println    42 class org.eclipse.jdt.core.dom.SimpleName
+    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+(    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+)    System.out.println()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+;    System.out.println();
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+for    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+(    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+int    int    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    int i=0    58 class org.eclipse.jdt.core.dom.VariableDeclarationExpression    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+i    i    42 class org.eclipse.jdt.core.dom.SimpleName
+    i=0    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    int i=0    58 class org.eclipse.jdt.core.dom.VariableDeclarationExpression
+
+=    i=0    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+    int i=0    58 class org.eclipse.jdt.core.dom.VariableDeclarationExpression    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+0    0    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    i=0    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    int i=0    58 class org.eclipse.jdt.core.dom.VariableDeclarationExpression
+
+;    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+i    i    42 class org.eclipse.jdt.core.dom.SimpleName
+    i < 3    27 class org.eclipse.jdt.core.dom.InfixExpression    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+<    i < 3    27 class org.eclipse.jdt.core.dom.InfixExpression
+    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+3    3    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    i < 3    27 class org.eclipse.jdt.core.dom.InfixExpression    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+;    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+i    i    42 class org.eclipse.jdt.core.dom.SimpleName
+    i++    37 class org.eclipse.jdt.core.dom.PostfixExpression    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+++    i++    37 class org.eclipse.jdt.core.dom.PostfixExpression
+    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+)    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+{    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+a    a    42 class org.eclipse.jdt.core.dom.SimpleName
+    a=0    7 class org.eclipse.jdt.core.dom.Assignment    a=0;
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+=    a=0    7 class org.eclipse.jdt.core.dom.Assignment
+    a=0;
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+0    0    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    a=0    7 class org.eclipse.jdt.core.dom.Assignment    a=0;
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+;    a=0;
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+for    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+(    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+int    int    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    int j=0    58 class org.eclipse.jdt.core.dom.VariableDeclarationExpression    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+j    j    42 class org.eclipse.jdt.core.dom.SimpleName
+    j=0    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    int j=0    58 class org.eclipse.jdt.core.dom.VariableDeclarationExpression
+
+=    j=0    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+    int j=0    58 class org.eclipse.jdt.core.dom.VariableDeclarationExpression    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+0    0    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    j=0    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    int j=0    58 class org.eclipse.jdt.core.dom.VariableDeclarationExpression
+
+;    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+j    j    42 class org.eclipse.jdt.core.dom.SimpleName
+    j < 3    27 class org.eclipse.jdt.core.dom.InfixExpression    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+<    j < 3    27 class org.eclipse.jdt.core.dom.InfixExpression
+    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+3    3    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    j < 3    27 class org.eclipse.jdt.core.dom.InfixExpression    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+;    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+j    j    42 class org.eclipse.jdt.core.dom.SimpleName
+    j++    37 class org.eclipse.jdt.core.dom.PostfixExpression    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+++    j++    37 class org.eclipse.jdt.core.dom.PostfixExpression
+    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+)    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+{    {
+  a++;
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+a    a    42 class org.eclipse.jdt.core.dom.SimpleName
+    a++    37 class org.eclipse.jdt.core.dom.PostfixExpression    a++;
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+++    a++    37 class org.eclipse.jdt.core.dom.PostfixExpression
+    a++;
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  a++;
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+;    a++;
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    {
+  a++;
+}
+    8 class org.eclipse.jdt.core.dom.Block    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement
+
+}    {
+  a++;
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    for (int j=0; j < 3; j++) {
+  a++;
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+}    {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    for (int i=0; i < 3; i++) {
+  a=0;
+  for (int j=0; j < 3; j++) {
+    a++;
+  }
+}
+    24 class org.eclipse.jdt.core.dom.ForStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+if    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+(    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+.    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+endsWith    endsWith    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+(    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+".0"    ".0"    45 class org.eclipse.jdt.core.dom.StringLiteral
+    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+)    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+&&    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression
+    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.endsWith("ff")    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+.    str.endsWith("ff")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+endsWith    endsWith    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.endsWith("ff")    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+(    str.endsWith("ff")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+"ff"    "ff"    45 class org.eclipse.jdt.core.dom.StringLiteral
+    str.endsWith("ff")    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+)    str.endsWith("ff")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.endsWith(".0") && str.endsWith("ff")    27 class org.eclipse.jdt.core.dom.InfixExpression    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+)    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+=    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+.    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+substring    substring    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+(    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+0    0    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+,    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+.    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+length    length    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+(    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+)    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+-    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+2    2    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+)    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+;    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    if (str.endsWith(".0") && str.endsWith("ff")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+current    current    42 class org.eclipse.jdt.core.dom.SimpleName
+    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+.    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+setAttribute    setAttribute    42 class org.eclipse.jdt.core.dom.SimpleName
+    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+(    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+name    name    42 class org.eclipse.jdt.core.dom.SimpleName
+    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+,    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+)    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+;    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+}    {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    public void addAttribute(String name,double value) throws Exception {
+  String str=Double.toString(value);
+  System.out.println();
+  System.out.println();
+  System.out.println();
+  for (int i=0; i < 3; i++) {
+    a=0;
+    for (int j=0; j < 3; j++) {
+      a++;
+    }
+  }
+  if (str.endsWith(".0") && str.endsWith("ff"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  double value) throws Exception {
+    String str=Double.toString(value);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for (int i=0; i < 3; i++) {
+      a=0;
+      for (int j=0; j < 3; j++) {
+        a++;
+      }
+    }
+    if (str.endsWith(".0") && str.endsWith("ff"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  double value,  int count1) throws Exception {
+    String a=Double.toString(value);
+    count1++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+e*    null
+
+e*    null
+
+public    public    83 class org.eclipse.jdt.core.dom.Modifier
+    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+void    void    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+addAttribute    addAttribute    42 class org.eclipse.jdt.core.dom.SimpleName
+    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+(    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+String    String    42 class org.eclipse.jdt.core.dom.SimpleName
+    String    43 class org.eclipse.jdt.core.dom.SimpleType    String name    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration
+
+name    name    42 class org.eclipse.jdt.core.dom.SimpleName
+    String name    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+,    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+float    float    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    float value    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+value    value    42 class org.eclipse.jdt.core.dom.SimpleName
+    float value    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+)    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+{    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+String    String    42 class org.eclipse.jdt.core.dom.SimpleName
+    String    43 class org.eclipse.jdt.core.dom.SimpleType    String b=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+b    b    42 class org.eclipse.jdt.core.dom.SimpleName
+    b=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String b=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+=    b=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+    String b=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+Float    Float    42 class org.eclipse.jdt.core.dom.SimpleName
+    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation    b=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+
+.    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    b=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String b=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+toString    toString    42 class org.eclipse.jdt.core.dom.SimpleName
+    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation    b=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+
+(    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    b=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String b=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+value    value    42 class org.eclipse.jdt.core.dom.SimpleName
+    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation    b=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+
+)    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    b=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String b=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+;    String b=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+float    float    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    float b;
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+b    b    42 class org.eclipse.jdt.core.dom.SimpleName
+    b    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    float b;
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+;    float b;
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+if    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+(    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+.    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+endsWith    endsWith    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+(    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+".0"    ".0"    45 class org.eclipse.jdt.core.dom.StringLiteral
+    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+)    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+)    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+=    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+.    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+substring    substring    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+(    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+0    0    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+,    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+.    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+length    length    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+(    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+)    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+-    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+2    2    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+)    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+;    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+current    current    42 class org.eclipse.jdt.core.dom.SimpleName
+    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+.    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+setAttribute    setAttribute    42 class org.eclipse.jdt.core.dom.SimpleName
+    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+(    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+name    name    42 class org.eclipse.jdt.core.dom.SimpleName
+    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+,    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+)    current.setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+;    current.setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+}    {
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    public void addAttribute(String name,float value){
+  String b=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  current.setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String b=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+  public void addAttribute2(  String name,  float value,  int count2){
+    String b=Double.toString(value);
+    count2++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    current.setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+e*    null
+
+e*    null
+
+public    public    83 class org.eclipse.jdt.core.dom.Modifier
+    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+void    void    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+addAttribute    addAttribute    42 class org.eclipse.jdt.core.dom.SimpleName
+    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+(    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+String    String    42 class org.eclipse.jdt.core.dom.SimpleName
+    String    43 class org.eclipse.jdt.core.dom.SimpleType    String name    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration
+
+name    name    42 class org.eclipse.jdt.core.dom.SimpleName
+    String name    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+,    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+float    float    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    float value    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+value    value    42 class org.eclipse.jdt.core.dom.SimpleName
+    float value    44 class org.eclipse.jdt.core.dom.SingleVariableDeclaration    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+)    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration    package org.eclipse.jdt.internal.compiler;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    15 class org.eclipse.jdt.core.dom.CompilationUnit
+
+{    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+String    String    42 class org.eclipse.jdt.core.dom.SimpleName
+    String    43 class org.eclipse.jdt.core.dom.SimpleType    String c=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+c    c    42 class org.eclipse.jdt.core.dom.SimpleName
+    c=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String c=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+=    c=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+    String c=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+Float    Float    42 class org.eclipse.jdt.core.dom.SimpleName
+    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation    c=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+
+.    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    c=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String c=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+toString    toString    42 class org.eclipse.jdt.core.dom.SimpleName
+    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation    c=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+
+(    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    c=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String c=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+value    value    42 class org.eclipse.jdt.core.dom.SimpleName
+    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation    c=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment
+
+)    Float.toString(value)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    c=Float.toString(value)    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    String c=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+;    String c=Float.toString(value);
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+float    float    39 class org.eclipse.jdt.core.dom.PrimitiveType
+    float b;
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+b    b    42 class org.eclipse.jdt.core.dom.SimpleName
+    b    59 class org.eclipse.jdt.core.dom.VariableDeclarationFragment    float b;
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+
+;    float b;
+    60 class org.eclipse.jdt.core.dom.VariableDeclarationStatement
+    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+if    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+(    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+.    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+endsWith    endsWith    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+(    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+".0"    ".0"    45 class org.eclipse.jdt.core.dom.StringLiteral
+    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+)    str.endsWith(".0")    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+)    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+=    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+.    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+substring    substring    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+(    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+0    0    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+,    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+.    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+length    length    42 class org.eclipse.jdt.core.dom.SimpleName
+    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression
+
+(    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+)    str.length()    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+-    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression
+    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment
+
+2    2    34 class org.eclipse.jdt.core.dom.NumberLiteral
+    str.length() - 2    27 class org.eclipse.jdt.core.dom.InfixExpression    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+)    str.substring(0,str.length() - 2)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    str=str.substring(0,str.length() - 2)    7 class org.eclipse.jdt.core.dom.Assignment    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+;    str=str.substring(0,str.length() - 2);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    if (str.endsWith(".0")) str=str.substring(0,str.length() - 2);
+    25 class org.eclipse.jdt.core.dom.IfStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+(    ((Element)current)    36 class org.eclipse.jdt.core.dom.ParenthesizedExpression
+    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+(    (Element)current    11 class org.eclipse.jdt.core.dom.CastExpression
+    ((Element)current)    36 class org.eclipse.jdt.core.dom.ParenthesizedExpression    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+Element    Element    42 class org.eclipse.jdt.core.dom.SimpleName
+    Element    43 class org.eclipse.jdt.core.dom.SimpleType    (Element)current    11 class org.eclipse.jdt.core.dom.CastExpression
+
+)    (Element)current    11 class org.eclipse.jdt.core.dom.CastExpression
+    ((Element)current)    36 class org.eclipse.jdt.core.dom.ParenthesizedExpression    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+
+current    current    42 class org.eclipse.jdt.core.dom.SimpleName
+    (Element)current    11 class org.eclipse.jdt.core.dom.CastExpression    ((Element)current)    36 class org.eclipse.jdt.core.dom.ParenthesizedExpression
+
+)    ((Element)current)    36 class org.eclipse.jdt.core.dom.ParenthesizedExpression
+    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+.    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+setAttribute    setAttribute    42 class org.eclipse.jdt.core.dom.SimpleName
+    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+(    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+name    name    42 class org.eclipse.jdt.core.dom.SimpleName
+    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+,    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+str    str    42 class org.eclipse.jdt.core.dom.SimpleName
+    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+
+)    ((Element)current).setAttribute(name,str)    32 class org.eclipse.jdt.core.dom.MethodInvocation
+    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+
+;    ((Element)current).setAttribute(name,str);
+    21 class org.eclipse.jdt.core.dom.ExpressionStatement
+    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration
+
+}    {
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    8 class org.eclipse.jdt.core.dom.Block
+    public void addAttribute(String name,float value){
+  String c=Float.toString(value);
+  float b;
+  if (str.endsWith(".0"))   str=str.substring(0,str.length() - 2);
+  ((Element)current).setAttribute(name,str);
+}
+    31 class org.eclipse.jdt.core.dom.MethodDeclaration    public class ReadManager implements Runnable {
+  public void addAttribute(  String name,  float value){
+    String c=Float.toString(value);
+    float b;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+  public void addAttribute3(  String name,  float value,  int count3){
+    String c=Double.toString(value);
+    count3++;
+    if (str.endsWith(".0"))     str=str.substring(0,str.length() - 2);
+    ((Element)current).setAttribute(name,str);
+  }
+}
+    55 class org.eclipse.jdt.core.dom.TypeDeclaration
+
+e*    null
+
+filename: test/test2.java
+len1: 131, len2: 62
+compute() invocation times: 366
+total time for invoking compute(): 169.0
+average time for invoking compute(): 0.46174863387978143
+time for building table: 174.0
+filename: test/test3.java
+len1: 57, len2: 67
+compute() invocation times: 224
+total time for invoking compute(): 29.0
+average time for invoking compute(): 0.12946428571428573
+time for building table: 33.0
+Time for optimal subsequence generation: 222
+39   39
+39   39
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+42   42
+39   39
+39   39
+42   42
+42   42
+42   42
+42   42
+42   42
+[for ( int i = 0 ; i < 3 , e* , e* ]is not comparable with [float b , e* , float b ]
+[System . out . println ( ) ; System . out . println ( ) ; System . out . println ( ) ; , e* , e* ]is not comparable with [float b , e* , float b ]
+计算diff以后
+[public, public, public]
+[void, void, void]
+[addAttribute, addAttribute, addAttribute]
+[(, (, (]
+[String, String, String]
+[name, name, name]
+[,, ,, ,]
+[double , float , float ]
+[value, value, value]
+[), ), )]
+[throws Exception , e* , e* ]
+[{, {, {]
+[String, String, String]
+[str , b , c ]
+[=, =, =]
+[Double , Float , Float ]
+[., ., .]
+[toString, toString, toString]
+[(, (, (]
+[value, value, value]
+[), ), )]
+[;, ;, ;]
+[float b , e* , float b ]
+[System . out . println ( ) ; System . out . println ( ) ; System . out . println ( ) ; , e* , e* ]
+[for ( int i = 0 ; i < 3 , e* , e* ]
+[;, ;, ;]
+[i ++ ) , e* , e* ]
+[{ a = 0 ; for ( int j = 0 ; j < 3 ; j ++ ) { a ++ ; } } , e* , e* ]
+[if, if, if]
+[(, (, (]
+[str, str, str]
+[., ., .]
+[endsWith, endsWith, endsWith]
+[(, (, (]
+[".0", ".0", ".0"]
+[), ), )]
+[&& str . endsWith ( "ff" ) , e* , e* ]
+[), ), )]
+[str, str, str]
+[=, =, =]
+[str, str, str]
+[., ., .]
+[substring, substring, substring]
+[(, (, (]
+[0, 0, 0]
+[,, ,, ,]
+[str, str, str]
+[., ., .]
+[length, length, length]
+[(, (, (]
+[), ), )]
+[-, -, -]
+[2, 2, 2]
+[), ), )]
+[;, ;, ;]
+[current , current , ( ( Element ) current ) ]
+[., ., .]
+[setAttribute, setAttribute, setAttribute]
+[(, (, (]
+[name, name, name]
+[,, ,, ,]
+[str, str, str]
+[), ), )]
+[;, ;, ;]
+[}, }, }]
+[e*, e*, e*]
+
+[public , public , public ]
+[void , void , void ]
+[addAttribute , addAttribute , addAttribute ]
+[( , ( , ( ]
+[String , String , String ]
+[name , name , name ]
+[, , , , , ]
+[double , float , float ]
+[value , value , value ]
+[) , ) , ) ]
+[throws Exception , e* , e* ]
+[{ , { , { ]
+[String , String , String ]
+[str , b , c ]
+[= , = , = ]
+[Double , Float , Float ]
+[. , . , . ]
+[toString , toString , toString ]
+[( , ( , ( ]
+[value , value , value ]
+[) , ) , ) ]
+[; , ; , ; ]
+[float b , e* , float b ]
+[System . out . println ( ) ; System . out . println ( ) ; System . out . println ( ) ; , e* , e* ]
+[for ( int i = 0 ; i < 3 , e* , e* ]
+[; , ; , ; ]
+[i ++ ) , e* , e* ]
+[{ a = 0 ; for ( int j = 0 ; j < 3 ; j ++ ) { a ++ ; } } , e* , e* ]
+[if , if , if ]
+[( , ( , ( ]
+[str , str , str ]
+[. , . , . ]
+[endsWith , endsWith , endsWith ]
+[( , ( , ( ]
+[".0" , ".0" , ".0" ]
+[) , ) , ) ]
+[&& str . endsWith ( "ff" ) , e* , e* ]
+[) , ) , ) ]
+[str , str , str ]
+[= , = , = ]
+[str , str , str ]
+[. , . , . ]
+[substring , substring , substring ]
+[( , ( , ( ]
+[0 , 0 , 0 ]
+[, , , , , ]
+[str , str , str ]
+[. , . , . ]
+[length , length , length ]
+[( , ( , ( ]
+[) , ) , ) ]
+[- , - , - ]
+[2 , 2 , 2 ]
+[) , ) , ) ]
+[; , ; , ; ]
+[current , current , ( ( Element ) current ) ]
+[. , . , . ]
+[setAttribute , setAttribute , setAttribute ]
+[( , ( , ( ]
+[name , name , name ]
+[, , , , , ]
+[str , str , str ]
+[) , ) , ) ]
+[; , ; , ; ]
+[} , } , } ]
+[e* , e* , e* ]
+public   void   addAttribute   (   String   name   ,   float   value   )   {   String   *e   =   Float   .   toString   (   value   )   ;   float   b   ;   if   (   str   .   endsWith   (   ".0"   )   )   str   =   str   .   substring   (   0   ,   str   .   length   (   )   -   2   )   ;   current   .   setAttribute   (   name   ,   str   )   ;   }   
+finish
+public void addAttribute(String name, float value) {
+    String *e = Float.toString(value);
+    float b;
+    if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+    current.setAttribute(name, str);
+}
+
+Process finished with exit code 0

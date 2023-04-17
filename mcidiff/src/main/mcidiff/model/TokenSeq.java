@@ -46,7 +46,7 @@ public class TokenSeq implements DiffElement{
 	public String toString(){
 		StringBuffer buffer = new StringBuffer();
 		for(Token token: tokens){
-			buffer.append(token.getTokenName() + " ");
+			buffer.append(token.getTokenName()+" ");
 		}
 		
 		return buffer.toString();

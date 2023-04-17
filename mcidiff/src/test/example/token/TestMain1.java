@@ -15,18 +15,20 @@ public class TestMain1 {
 		String path1 = "test/test1.java";
 		String path2 = "test/test2.java";
 		String path3 = "test/test3.java";
-		
-		CloneInstance instance1 = new CloneInstance(path1, 18, 23);
-		CloneInstance instance2 = new CloneInstance(path2, 18, 23);
-		CloneInstance instance3 = new CloneInstance(path3, 18, 23);
+		System.out.println();
+		float b;
+		CloneInstance instance1 = new CloneInstance(path1, 42, 48);
+		CloneInstance instance2 = new CloneInstance(path2, 34, 40);
+		//CloneInstance instance3 = new CloneInstance(path3, 26, 32);
 		
 		CloneSet set = new CloneSet("0");
 		set.addInstance(instance1);
 		set.addInstance(instance2);
-		set.addInstance(instance3);
+		//set.addInstance(instance3);
 		
 		try {
 			ArrayList<TokenMultiset> multisets = new TokenMCIDiff().diff(set, null);
+
 			//System.out.println("multisets: "+multisets);
 //			for(TokenMultiset tokens : multisets){
 //				for(Token token :tokens.getTokens() ){
@@ -55,7 +57,15 @@ public class TestMain1 {
 //					}
 //
 //				}
-				//System.out.println(tokens.getTokens().get(0).getNode());
+//				System.out.println(tokens.getTokens().get(0).getTokenName());
+//				System.out.println(tokens.getTokens().get(0).getNode().getClass());
+//				System.out.println(tokens.getTokens().get(0).getNode().getStartPosition());
+//				System.out.println(tokens.getTokens().get(0).getNode().getLength());
+//
+//				System.out.println(tokens.getTokens().get(0).getStartPosition());
+//				System.out.println(tokens.getTokens().get(0).getEndPosition());
+//				System.out.println();
+
 			}
 
 

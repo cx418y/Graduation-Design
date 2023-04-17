@@ -53,6 +53,7 @@ public class DiffUtil {
 
 	public static CorrespondentListAndSet generateMatchedTokenListFromMultiSequence(ArrayList<Token>[] lists){
 		Token[] commonTokenList = lists[0].toArray(new Token[0]);
+		// 存放多集，每一个setList[i]含有n个token
 		TokenMultiset[] setList = new TokenMultiset[commonTokenList.length];
 		for(int i=0; i<commonTokenList.length; i++){
 			TokenMultiset set = new TokenMultiset();
@@ -66,13 +67,35 @@ public class DiffUtil {
 			return cls;
 		}
 		else if(lists.length == 2){
-			return generateMatchedTokenList(cls, lists[1].toArray(new Token[0]));
+			return  generateMatchedTokenList(cls, lists[1].toArray(new Token[0]));
 		}
 		else{
+//			System.out.println("111111");System.out.println();System.out.println();
+//			for(TokenMultiset token : cls.getMultisetList()){
+//				System.out.println(token+ " " + token.isCommon());
+//			}
+//			System.out.println();
+//			System.out.println(cls.getMultisetList().length+"   " + cls.getCommonTokenList().length);
+//			for(Token token:cls.getCommonTokenList()){
+//				System.out.println(token.getTokenName());
+//			}
 			if (lists.length > 2) {
 				for (int k = 1; k < lists.length; k++) {
-					System.out.println("filename: "+lists[k].get(0).getCloneInstance().getFileName());
+					System.out.println("filename: " + lists[k].get(0).getCloneInstance().getFileName());
 					cls = generateMatchedTokenList(cls, lists[k].toArray(new Token[0]));
+
+//					System.out.println();
+//					System.out.println();
+//					System.out.println(k + "    11111");
+//					for (TokenMultiset token : cls.getMultisetList()) {
+//						System.out.println(token + " " + token.isCommon());
+//					}
+//					System.out.println(cls.getMultisetList().length+"   " + cls.getCommonTokenList().length);
+//					for(Token token:cls.getCommonTokenList()){
+//						System.out.println(token.getTokenName());
+//					}
+					//System.out.println();
+
 				}
 			}
 			return cls;

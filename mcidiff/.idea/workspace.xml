@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa7da4dd-e05d-4c25-bac4-aa5ac1bbfd8c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/mcidiff/comparator/SeqMultisetPositionComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/comparator/SeqMultisetPositionComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/mcidiff/action/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/action/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/mcidiff/main/SeqMCIDiff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/main/SeqMCIDiff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/mcidiff/main/TokenMCIDiff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/main/TokenMCIDiff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/mcidiff/model/CloneInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/model/CloneInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/mcidiff/model/SeqMultiset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/model/SeqMultiset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/mcidiff/model/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/model/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/mcidiff/model/TokenSeq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/model/TokenSeq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/mcidiff/util/ASTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/util/ASTUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/mcidiff/util/DiffUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/util/DiffUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/mcidiff/util/TokenSimilarityComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mcidiff/util/TokenSimilarityComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/example/token/TestMain1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/example/token/TestMain1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/example/token/TestMain2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/example/token/TestMain2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/example/tokenseq/TestMain1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/example/tokenseq/TestMain1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/example/tokenseq/TestMain2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/example/tokenseq/TestMain2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/MemberDeclarationVisitor1.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MemberDeclarationVisitor1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/MemberDeclarationVisitor2.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MemberDeclarationVisitor2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/test2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test3.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/test3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +59,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/macbook/Desktop/mcidiff3/mcidiff/mcidiff&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/macbook/Desktop/design/Graduation-Design/mcidiff&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -54,11 +67,11 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.example.token.TestMain2">
+  <component name="RunManager" selected="Application.example.tokenseq.TestMain1">
     <configuration name="TestMain1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="example.token.TestMain1" />
       <module name="mcidiff (1)" />
@@ -113,10 +126,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.example.token.TestMain2" />
+        <item itemvalue="Application.example.tokenseq.TestMain1" />
         <item itemvalue="Application.TestMain1" />
         <item itemvalue="Application.TestMain2" />
-        <item itemvalue="Application.example.tokenseq.TestMain1" />
+        <item itemvalue="Application.example.token.TestMain2" />
       </list>
     </recent_temporary>
   </component>
@@ -148,6 +161,18 @@
       <workItem from="1679968383677" duration="599000" />
       <workItem from="1680071645142" duration="363000" />
       <workItem from="1680099375700" duration="59000" />
+      <workItem from="1680751016400" duration="8788000" />
+      <workItem from="1680779238156" duration="9415000" />
+      <workItem from="1680940127174" duration="6778000" />
+      <workItem from="1681020628586" duration="9680000" />
+      <workItem from="1681089746375" duration="4731000" />
+      <workItem from="1681138371414" duration="3646000" />
+      <workItem from="1681178415036" duration="10451000" />
+      <workItem from="1681206488778" duration="8808000" />
+      <workItem from="1681258637500" duration="8795000" />
+      <workItem from="1681306714464" duration="530000" />
+      <workItem from="1681351011748" duration="18209000" />
+      <workItem from="1681438383165" duration="17186000" />
     </task>
     <servers />
   </component>
@@ -168,5 +193,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mcidiff$example_tokenseq_TestMain1.ic" NAME="example.tokenseq.TestMain1 Coverage Results" MODIFIED="1681440642341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>example.tokenseq.*</FILTER>
+    </SUITE>
   </component>
 </project>

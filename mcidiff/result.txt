@@ -1,0 +1,84 @@
+public void addAttribute(String name, float value) {
+    String *e = Float.toString(value);
+    float b;
+    if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+    current.setAttribute(name, str);
+}public void addAttribute2(String name, float value, int *e) {
+    String *e = Double.toString(value);
+    *e++;
+    if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+    current.setAttribute(name, str);
+}*e
+    *e *e *e *e*e*e*e*e*e*e
+    *e*e*e
+    if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+    current.setAttribute(name, str);
+}public void addAttribute(String name, float value) {
+    String *e = Float.toString(value);
+    float b;
+    if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+    current.setAttribute(name, str);
+}public void addAttribute(String name, float value) {
+    String *e = Float.toString(value);
+    float b;
+    if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+    current.setAttribute(name, str);
+}public void addAttribute(String name, float value) {
+    String *e = Float.toString(value);
+    float b;
+    if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+    current.setAttribute(name, str);
+}public void addAttribute(String name, float value) {
+    String *e = Float.toString(value);
+    float b;
+    if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+    current.setAttribute(name, str);
+}public *e(Term prefix, int minLength, int maxLength) {
+    super(new *e PrefixQuery(prefix), minLength, *e*e);
+    this.minLength = minLength;
+    this.maxLength = maxLength;
+}public *e(Term prefix, int minLength, int maxLength) {
+    super(new *e PrefixQuery(prefix), minLength, *e*e);
+    this.minLength = minLength;
+    this.maxLength = maxLength;
+    double *e = *e;public *e(Term prefix, int minLength, int maxLength) {
+    super(new *e PrefixQuery(prefix), minLength, *e*e);
+    this.minLength = minLength;
+    this.maxLength = maxLength;
+    double *e = *e;public *e(Term prefix, int minLength, int maxLength) {
+    super(new *e PrefixQuery(prefix), minLength, *e*e);
+    this.minLength = minLength;
+    this.maxLength = maxLength;
+    double *e = *e;
+    *e *e *e d*e;
+}public *e(Term prefix, int minLength, int maxLength) {
+    super(new *e PrefixQuery(prefix), minLength, *e*e);
+    this.minLength = minLength;
+    this.maxLength = maxLength;
+    *e *e = *e;
+    *e *e *e d*e;
+}public *e(Term prefix, int minLength, int maxLength) {
+    super(new *e PrefixQuery(prefix), minLength, *e*e);
+    this.minLength = minLength;
+    this.maxLength = maxLength;
+    *e *e = *e;
+    *e *e *e d*e;
+}public *e(Term prefix, int minLength, int maxLength) {
+    super(new *e PrefixQuery(prefix), minLength, *e*e);
+    this.minLength = minLength;
+    this.maxLength = maxLength;
+    *e *e = *e;
+    *e *e = *e;
+}public *e(Term prefix, int minLength, int maxLength) {
+    super(new *e PrefixQuery(prefix), minLength, *e*e);
+    this.minLength = minLength;
+    this.maxLength = maxLength;
+    *e *e = *e;
+    *e *e = *e;
+}public PrefixLengthFilter(Term prefix, int minLength, int maxLength) {
+    super(new PrefixQuery(prefix), minLength, maxLength));
+    this.minLength = minLength;
+    this.maxLength = maxLength;
+    int c = 4;
+    double a = 3;
+}

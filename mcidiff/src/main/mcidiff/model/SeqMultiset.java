@@ -6,6 +6,8 @@ import java.util.List;
 public class SeqMultiset extends Multiset{
 	private ArrayList<TokenSeq> sequences = new ArrayList<>();
 
+	private boolean isCommon = false;
+
 	@Override
 	public String toString(){
 		return this.sequences.toString();
@@ -84,5 +86,13 @@ public class SeqMultiset extends Multiset{
 	@Override
 	public List<? extends DiffElement> getDiffElements() {
 		return sequences;
+	}
+
+	public boolean isCommon() {
+		return isCommon;
+	}
+
+	public void setCommon(boolean common) {
+		isCommon = common;
 	}
 }

@@ -25,10 +25,10 @@ public class TokenMCIDiff{
 	 * @return
 	 */
 	public ArrayList<TokenMultiset> diff(CloneSet set, IJavaProject project){
+		// 生成每个实例的token序列
 		new Tokenizer().tokenize(set, project);
 		
 		ArrayList<Token>[] lists = set.getTokenLists();
-		System.out.println(lists);
 		CorrespondentListAndSet cls = DiffUtil.generateMatchedTokenListFromMultiSequence(lists);
 //		System.out.println("commonTokenList");
 //		for(Token token : cls.getCommonTokenList()){
@@ -46,17 +46,69 @@ public class TokenMCIDiff{
 //		for(Token token : cls.getCommonTokenList()){
 //			System.out.println(token);
 //		}
-//		System.out.println("MultisetList");
+		System.out.println("MultisetList");
 //		for(TokenMultiset token : cls.getMultisetList()){
 //			System.out.println(token+ " " + token.isCommon());
 //		}
-//		System.out.println();
+		for(TokenMultiset token : results){
+			System.out.println(token+ " " + token.isCommon()+"，   ");
+		}
+		System.out.println();
 
 		ASTUtil.sort(results, new TokenMultisetPositionComparator(results));
+		System.out.println("sort后");
+		for(TokenMultiset token : results){
+			System.out.println(token+ " " + token.isCommon()+"，   ");
+		}
+
+//		for(TokenMultiset token : results){
+//			System.out.print(token+ " " + token.isCommon()+"，   ");
+//		}
+		TokenMultiset set1 =  results.get(1);
+		for(Token token : set1.getTokens()){
+			System.out.print(token.getTokenName()+"---   ");
+			while(token.getPostToken()!= null){
+				token = token.getPostToken();
+				System.out.print(token.getTokenName()+"---   ");
+			}
+			System.out.println();
+		}
+
+		System.out.println();
+		// 将占位符插入token序列中，且占位符的长度为零，
 		identifyEpsilonTokenPosition(results);
-		
-		//MCIDiffUtil.filterCommonSet(results);
-		
+		TokenMultiset set2 =  results.get(1);
+		for(Token token : set2.getTokens()){
+			System.out.print(token.getTokenName()+"---   ");
+			while(token.getPostToken()!= null){
+				token = token.getPostToken();
+				System.out.print(token.getTokenName()+"---   ");
+			}
+			System.out.println();
+		}
+
+//		for(TokenMultiset token : results){
+//			System.out.print(token+ " " + token.isCommon()+"，   ");
+//		}
+		System.out.println();
+
+		System.out.println("过滤前");
+		for(TokenMultiset token : results){
+			System.out.println(token.toString() + "      "+token.isCommon());
+			for(Token t:token.getTokens()) {
+				if (t.getNode() != null) {
+					//System.out.println(t.getNode().getClass() + "    " + t.getNode().getNodeType() + "   " + t.getNode().getLength() + "   " + t.getNode());
+				}
+			}
+			//System.out.println(token.getTokens().get(0).getTokenName());
+		}
+		System.out.println();
+		System.out.println();
+		MCIDiffUtil.filterCommonSet(results);
+		System.out.println("过滤后");
+		for(TokenMultiset token : results){
+			System.out.println(token.toString()+ "      "+token.isCommon());
+		}
 		return results;
 	}
 	
@@ -174,6 +226,7 @@ public class TokenMCIDiff{
 					if(i != 0){
 						Token prevToken = findPreviousNonEpisolonToken(i, results, token);
 						if(prevToken != null){
+							prevToken.setPostToken(token);
 							token.setPreviousToken(prevToken);
 							//token.setStartPosition(prevToken.getEndPosition()+3);
 							//token.setEndPosition(prevToken.getEndPosition()+3);		
@@ -186,6 +239,7 @@ public class TokenMCIDiff{
 					if(i != results.size()-1){
 						Token postToken = findPostNonEpisolonToken(i, results, token);
 						if(postToken != null){
+							postToken.setPreviousToken(token);
 							token.setPostToken(postToken);		
 							token.setStartPosition(postToken.getStartPosition());
 							token.setEndPosition(postToken.getStartPosition());	
@@ -201,10 +255,12 @@ public class TokenMCIDiff{
 		while(cursor >= 0){
 			TokenMultiset prevSet = results.get(cursor);
 			Token previousToken = prevSet.findToken(episolonToken.getCloneInstance());
-			if(!previousToken.isEpisolon()){
-				return previousToken;
-			}
-			cursor--;
+//			if(!previousToken.isEpisolon()){
+//				return previousToken;
+//			}
+
+			//cursor--;
+			return previousToken;
 		}
 		
 		return null;
@@ -215,10 +271,11 @@ public class TokenMCIDiff{
 		while(cursor < results.size()){
 			TokenMultiset postSet = results.get(cursor);
 			Token postToken = postSet.findToken(episolonToken.getCloneInstance());
-			if(!postToken.isEpisolon()){
-				return postToken;
-			}
-			cursor++;
+//			if(!postToken.isEpisolon()){
+//				return postToken;
+//			}
+//			cursor++;
+			return postToken;
 		}
 		
 		return null;
@@ -236,12 +293,18 @@ public class TokenMCIDiff{
 				Token cToken = commonSet.findToken(instance);
 				sequences[j].moveEndCursorTo(cToken);
 			}
-			multisetList.add(commonSet);
-			
+
+
+
+			//从上一个commonSet到下一个commomSet之间的差异set
 			ArrayList<TokenMultiset> partialSet = computeInDiffRange(sequences);
+//			for(TokenMultiset set :partialSet){
+//				System.out.println(set.toString());
+//			}
 			if(partialSet.size() != 0){
 				multisetList.addAll(partialSet);
 			}
+			multisetList.add(commonSet);
 			
 			for(int j=0; j<sequences.length; j++){
 				sequences[j].moveStartCursorToEndCursor();
@@ -295,6 +358,7 @@ public class TokenMCIDiff{
 	 * @return
 	 */
 	private Token findBestMatchToken(Token seedToken, TokenSequence otherSeq) {
+		//System.out.println("best");
 		double similarity = -1;
 		Token bestMatcher = null;
 		
@@ -320,6 +384,7 @@ public class TokenMCIDiff{
 		if(bestMatcher == null){
 			bestMatcher = new Token(Token.episolonSymbol, null, otherSeq.getCloneInstance(), -1, -1);
 		}
+		//System.out.print(seedToken+"    "+bestMatcher);
 		
 		return bestMatcher;
 	}
