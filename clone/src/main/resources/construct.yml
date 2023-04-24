@@ -1,0 +1,26 @@
+code-base:
+  process: true
+  repo-path: 'dataset'
+  thread-num: 1
+  sep-num: 1000
+
+  clone:
+    detect: true
+    saga-path: 'tools/saga/SAGACloneDetector.jar'
+
+clone:
+  detect:
+    saga:
+      config:
+        language: 'java'
+        extensions: 'java'
+        threshold: 0.7f
+        mlc: 50
+        mlcc: 20
+        min-line: 2
+        sep-num: 100000000
+        exe: './executable/method_mac'
+        open-string-hash: 1
+        use-long-type: 0
+        tokenize: 1
+        thread-num: 8

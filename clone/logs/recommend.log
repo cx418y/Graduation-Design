@@ -1,0 +1,38 @@
+ INFO [main] 2023-04-24 17:46:07 [StartupInfoLogger.java:51]: Starting CloneApplication using Java 17.0.6 with PID 13998 (/Users/macbook/Desktop/design/Graduation-Design/clone/build/classes/java/main started by macbook in /Users/macbook/Desktop/design/Graduation-Design/clone)
+ INFO [main] 2023-04-24 17:46:07 [SpringApplication.java:632]: No active profile set, falling back to 1 default profile: "default"
+ INFO [main] 2023-04-24 17:46:09 [TomcatWebServer.java:108]: Tomcat initialized with port(s): 8181 (http)
+ INFO [main] 2023-04-24 17:46:09 [DirectJDKLog.java:173]: Starting service [Tomcat]
+ INFO [main] 2023-04-24 17:46:09 [DirectJDKLog.java:173]: Starting Servlet engine: [Apache Tomcat/10.1.7]
+ INFO [main] 2023-04-24 17:46:09 [DirectJDKLog.java:173]: Initializing Spring embedded WebApplicationContext
+ INFO [main] 2023-04-24 17:46:09 [ServletWebServerApplicationContext.java:291]: Root WebApplicationContext: initialization completed in 1359 ms
+ INFO [main] 2023-04-24 17:46:09 [DirectJDKLog.java:173]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+ INFO [main] 2023-04-24 17:46:09 [FrameworkServlet.java:532]: Initializing Servlet 'dispatcherServlet'
+ INFO [main] 2023-04-24 17:46:09 [FrameworkServlet.java:554]: Completed initialization in 1 ms
+ INFO [main] 2023-04-24 17:46:09 [TomcatWebServer.java:220]: Tomcat started on port(s): 8181 (http) with context path ''
+ INFO [main] 2023-04-24 17:46:09 [StartupInfoLogger.java:57]: Started CloneApplication in 2.65 seconds (process running for 3.369)
+ INFO [main] 2023-04-24 17:46:09 [FirstPipeline.java:25]: start constructing codebase
+ INFO [main] 2023-04-24 17:46:09 [CodeBasePipeline.java:60]: load saga configuration
+ INFO [main] 2023-04-24 17:46:09 [CodeBasePipeline.java:65]: tokenize & build & parse method result
+ERROR [main] 2023-04-24 17:46:10 [CodeBasePipeline.java:82]: mkdir /Users/macbook/Desktop/design/Graduation-Design/clone/codebase error
+ INFO [main] 2023-04-24 17:46:10 [FirstPipeline.java:27]: construct codebase finished
+ INFO [main] 2023-04-24 17:58:02 [StartupInfoLogger.java:51]: Starting CloneApplication using Java 17.0.6 with PID 14580 (/Users/macbook/Desktop/design/Graduation-Design/clone/build/classes/java/main started by macbook in /Users/macbook/Desktop/design/Graduation-Design/clone)
+ INFO [main] 2023-04-24 17:58:02 [SpringApplication.java:632]: No active profile set, falling back to 1 default profile: "default"
+ INFO [main] 2023-04-24 17:58:03 [TomcatWebServer.java:108]: Tomcat initialized with port(s): 8181 (http)
+ INFO [main] 2023-04-24 17:58:03 [DirectJDKLog.java:173]: Starting service [Tomcat]
+ INFO [main] 2023-04-24 17:58:03 [DirectJDKLog.java:173]: Starting Servlet engine: [Apache Tomcat/10.1.7]
+ INFO [main] 2023-04-24 17:58:03 [DirectJDKLog.java:173]: Initializing Spring embedded WebApplicationContext
+ INFO [main] 2023-04-24 17:58:03 [ServletWebServerApplicationContext.java:291]: Root WebApplicationContext: initialization completed in 1524 ms
+ INFO [main] 2023-04-24 17:58:04 [DirectJDKLog.java:173]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+ INFO [main] 2023-04-24 17:58:04 [FrameworkServlet.java:532]: Initializing Servlet 'dispatcherServlet'
+ INFO [main] 2023-04-24 17:58:04 [FrameworkServlet.java:554]: Completed initialization in 1 ms
+ INFO [main] 2023-04-24 17:58:04 [TomcatWebServer.java:220]: Tomcat started on port(s): 8181 (http) with context path ''
+ INFO [main] 2023-04-24 17:58:04 [StartupInfoLogger.java:57]: Started CloneApplication in 2.766 seconds (process running for 3.434)
+ INFO [main] 2023-04-24 17:58:04 [FirstPipeline.java:25]: start constructing codebase
+ INFO [main] 2023-04-24 17:58:04 [CodeBasePipeline.java:60]: load saga configuration
+ INFO [main] 2023-04-24 17:58:04 [CodeBasePipeline.java:65]: tokenize & build & parse method result
+ INFO [main] 2023-04-24 17:58:05 [CodeBasePipeline.java:90]: gather method result
+ INFO [main] 2023-04-24 17:58:05 [MethodResultHandler.java:61]: total method groups:2
+ INFO [main] 2023-04-24 17:58:05 [MethodResultHandler.java:71]: process method results...
+ INFO [pool-1-thread-1] 2023-04-24 17:58:05 [ProcessCounter.java:26]: process method divide:50%
+ INFO [pool-1-thread-1] 2023-04-24 17:58:05 [ProcessCounter.java:26]: process method divide:100%
+ INFO [main] 2023-04-24 17:58:05 [FirstPipeline.java:27]: construct codebase finished

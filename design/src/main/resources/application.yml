@@ -1,0 +1,18 @@
+spring:
+  mvc:
+    servlet:
+      load-on-startup: 100
+  config:
+    additional-location: construct.yml
+
+server:
+  port: 8181
+  server-header:
+
+
+logging:
+  pattern:
+    console: '%highlight(%5p) [%magenta(%t)] %green(%d{yyyy-MM-dd HH:mm:ss}) [%cyan(%F):%yellow(%L)]: %m%n'
+    file: '%5p [%t] %d{yyyy-MM-dd HH:mm:ss} [%F:%L]: %m%n'
+  file:
+    name: 'logs/recommend.log'

@@ -1,0 +1,22 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"2","1","5","4","0","/Users/macbook/Desktop/design/Graduation-Design/clone/tools/saga/dataset/test2.java","18","24","-2147483536","-2147483486","0","0","void addAttribute(String name, float value)","
+	public void addAttribute(String name, float value) {
+				String b = Float.toString(value);
+		float b;
+		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
+		current.setAttribute(name, str);
+	}"
+"3","1","7","6","0","/Users/macbook/Desktop/design/Graduation-Design/clone/tools/saga/dataset/test2.java","26","32","-2147483486","-2147483435","0","0","void addAttribute2(String name, float value, int count2)","
+	public void addAttribute2(String name, float value, int count2) {
+				String b = Double.toString(value);
+		count2++;
+		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
+		current.setAttribute(name, str);
+	}"
+"5","1","7","8","0","/Users/macbook/Desktop/design/Graduation-Design/clone/tools/saga/dataset/test1.java","34","40","-2147483318","-2147483267","0","0","void addAttribute2(String name, float value, int count1)","
+	public void addAttribute2(String name, float value, int count1){
+				String a = Double.toString(value);
+		count1++;
+		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
+		current.setAttribute(name, str);
+	}"

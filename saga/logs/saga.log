@@ -1,0 +1,140 @@
+ERROR [main] 2023-04-17 21:49:21 [Pipeline.java:79]: http://10.176.34.79:8888/files/home/cq/Dataset/newCodeBase-pure 不存在
+
+ INFO [main] 2023-04-18 12:40:36 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-04-18 12:40:36 [Pipeline.java:50]: 2 files have been loaded
+ INFO [main] 2023-04-18 12:40:36 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-04-18 12:40:36 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-04-18 12:40:36 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-04-18 12:40:36 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-04-18 12:40:36 [Tokenizer.java:124]: 50%
+ INFO [main] 2023-04-18 12:40:36 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-04-18 12:40:36 [Tokenizer.java:171]: total token num is: 904
+ INFO [main] 2023-04-18 12:40:36 [Tokenizer.java:172]: total measure num is: 6
+ INFO [main] 2023-04-18 12:40:36 [Tokenizer.java:173]: total line is: 91
+ INFO [main] 2023-04-18 12:40:36 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-04-18 12:40:36 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-04-18 12:40:36 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-04-18 12:40:36 [SuffixArrayBuilder.java:36]: data trunk size:904 0
+ INFO [main] 2023-04-18 12:40:36 [SuffixArrayBuilder.java:41]: ./executable/psacd_mac 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-04-18 12:40:36 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-04-18 12:40:36 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-04-18 12:40:36 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-04-18 12:40:36 [Pipeline.java:139]: total time cost: PT0.195S
+ INFO [main] 2023-04-18 16:50:37 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-04-18 16:50:37 [Pipeline.java:50]: 2 files have been loaded
+ INFO [main] 2023-04-18 16:50:37 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-04-18 16:50:37 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-04-18 16:50:37 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-04-18 16:50:37 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-04-18 16:50:37 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-04-18 16:50:37 [Tokenizer.java:171]: total token num is: 904
+ INFO [main] 2023-04-18 16:50:37 [Tokenizer.java:172]: total measure num is: 6
+ INFO [main] 2023-04-18 16:50:37 [Tokenizer.java:173]: total line is: 91
+ INFO [main] 2023-04-18 16:50:37 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-04-18 16:50:37 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-04-18 16:50:37 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-04-18 16:50:37 [SuffixArrayBuilder.java:36]: data trunk size:904 0
+ INFO [main] 2023-04-18 16:50:37 [SuffixArrayBuilder.java:41]: ./executable/psacd_win10.exe 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-04-18 16:50:37 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-04-18 16:50:37 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-04-18 16:50:37 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-04-18 16:50:37 [Pipeline.java:139]: total time cost: PT0.106S
+ INFO [main] 2023-04-18 17:04:08 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-04-18 17:04:08 [Pipeline.java:50]: 2 files have been loaded
+ INFO [main] 2023-04-18 17:04:08 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-04-18 17:04:08 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-04-18 17:04:08 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-04-18 17:04:08 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-04-18 17:04:08 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-04-18 17:04:08 [Tokenizer.java:171]: total token num is: 904
+ INFO [main] 2023-04-18 17:04:08 [Tokenizer.java:172]: total measure num is: 6
+ INFO [main] 2023-04-18 17:04:08 [Tokenizer.java:173]: total line is: 91
+ INFO [main] 2023-04-18 17:04:08 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-04-18 17:04:08 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-04-18 17:04:08 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-04-18 17:04:08 [SuffixArrayBuilder.java:36]: data trunk size:904 0
+ INFO [main] 2023-04-18 17:04:08 [SuffixArrayBuilder.java:41]: ./executable-old/executable_cpu_mac 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-04-18 17:04:08 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-04-18 17:04:08 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-04-18 17:04:08 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-04-18 17:04:08 [Pipeline.java:139]: total time cost: PT0.111S
+ INFO [main] 2023-04-18 17:04:39 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-04-18 17:04:39 [Pipeline.java:50]: 2 files have been loaded
+ INFO [main] 2023-04-18 17:04:39 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-04-18 17:04:39 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-04-18 17:04:39 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-04-18 17:04:39 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-04-18 17:04:39 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-04-18 17:04:39 [Tokenizer.java:171]: total token num is: 904
+ INFO [main] 2023-04-18 17:04:39 [Tokenizer.java:172]: total measure num is: 6
+ INFO [main] 2023-04-18 17:04:39 [Tokenizer.java:173]: total line is: 91
+ INFO [main] 2023-04-18 17:04:39 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-04-18 17:04:39 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-04-18 17:04:39 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-04-18 17:04:39 [SuffixArrayBuilder.java:36]: data trunk size:904 0
+ INFO [main] 2023-04-18 17:04:39 [SuffixArrayBuilder.java:41]: ./executable-old/executable_cpu_mac 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-04-18 17:04:39 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-04-18 17:04:39 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-04-18 17:04:39 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-04-18 17:04:39 [Pipeline.java:139]: total time cost: PT0.105S
+ INFO [main] 2023-04-18 17:05:31 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-04-18 17:05:31 [Pipeline.java:50]: 2 files have been loaded
+ INFO [main] 2023-04-18 17:05:31 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-04-18 17:05:31 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-04-18 17:05:31 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-04-18 17:05:31 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-04-18 17:05:31 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-04-18 17:05:31 [Tokenizer.java:171]: total token num is: 904
+ INFO [main] 2023-04-18 17:05:31 [Tokenizer.java:172]: total measure num is: 6
+ INFO [main] 2023-04-18 17:05:31 [Tokenizer.java:173]: total line is: 91
+ INFO [main] 2023-04-18 17:05:31 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-04-18 17:05:31 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-04-18 17:05:31 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-04-18 17:05:31 [SuffixArrayBuilder.java:36]: data trunk size:904 0
+ INFO [main] 2023-04-18 17:05:31 [SuffixArrayBuilder.java:41]: ./executable-old/executable_cpu_mac 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-04-18 17:05:32 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-04-18 17:05:32 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-04-18 17:05:32 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-04-18 17:05:32 [Pipeline.java:139]: total time cost: PT1.196S
+ INFO [main] 2023-04-19 18:45:43 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-04-19 18:45:43 [Pipeline.java:50]: 2 files have been loaded
+ INFO [main] 2023-04-19 18:45:43 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-04-19 18:45:43 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-04-19 18:45:43 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-04-19 18:45:43 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-04-19 18:45:43 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-04-19 18:45:43 [Tokenizer.java:171]: total token num is: 904
+ INFO [main] 2023-04-19 18:45:43 [Tokenizer.java:172]: total measure num is: 6
+ INFO [main] 2023-04-19 18:45:43 [Tokenizer.java:173]: total line is: 91
+ INFO [main] 2023-04-19 18:45:43 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-04-19 18:45:43 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-04-19 18:45:43 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-04-19 18:45:43 [SuffixArrayBuilder.java:36]: data trunk size:904 0
+ INFO [main] 2023-04-19 18:45:43 [SuffixArrayBuilder.java:41]: ./executable/method_mac 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-04-19 18:45:43 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-04-19 18:45:43 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-04-19 18:45:43 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-04-19 18:45:43 [UnionFindParser.java:57]: result group: 1
+ INFO [main] 2023-04-19 18:45:43 [Pipeline.java:139]: total time cost: PT0.275S
+ INFO [main] 2023-04-19 18:47:01 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-04-19 18:47:01 [Pipeline.java:50]: 3 files have been loaded
+ INFO [main] 2023-04-19 18:47:01 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-04-19 18:47:01 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-04-19 18:47:01 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-04-19 18:47:01 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-04-19 18:47:01 [Tokenizer.java:124]: 33%
+ INFO [main] 2023-04-19 18:47:01 [Tokenizer.java:124]: 66%
+ INFO [main] 2023-04-19 18:47:01 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-04-19 18:47:01 [Tokenizer.java:171]: total token num is: 1177
+ INFO [main] 2023-04-19 18:47:01 [Tokenizer.java:172]: total measure num is: 8
+ INFO [main] 2023-04-19 18:47:01 [Tokenizer.java:173]: total line is: 124
+ INFO [main] 2023-04-19 18:47:01 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-04-19 18:47:01 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-04-19 18:47:01 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-04-19 18:47:01 [SuffixArrayBuilder.java:36]: data trunk size:1177 0
+ INFO [main] 2023-04-19 18:47:01 [SuffixArrayBuilder.java:41]: ./executable/method_mac 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-04-19 18:47:01 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-04-19 18:47:01 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-04-19 18:47:01 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-04-19 18:47:01 [UnionFindParser.java:57]: result group: 2
+ INFO [main] 2023-04-19 18:47:01 [Pipeline.java:139]: total time cost: PT0.185S

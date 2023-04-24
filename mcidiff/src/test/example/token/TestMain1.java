@@ -1,6 +1,9 @@
 package example.token;
 
+import java.awt.*;
+import java.awt.font.TextAttribute;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import mcidiff.main.TokenMCIDiff;
 import mcidiff.model.CloneInstance;
@@ -28,6 +31,13 @@ public class TestMain1 {
 		
 		try {
 			ArrayList<TokenMultiset> multisets = new TokenMCIDiff().diff(set, null);
+			HashMap<TextAttribute, Object> hm = new HashMap<TextAttribute, Object>();
+			hm.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON); // 定义是否有下划线
+			hm.put(TextAttribute.SIZE, 12); // 定义字号
+			hm.put(TextAttribute.FAMILY, "Simsun"); // 定义字体名
+			Font font = new Font(hm);
+			fo
+			System.out.println(font);
 
 			//System.out.println("multisets: "+multisets);
 //			for(TokenMultiset tokens : multisets){

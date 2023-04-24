@@ -15,6 +15,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0'
+    implementation 'name.remal.gradle-plugins.lombok:lombok:2.0.2'
     runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
