@@ -29,7 +29,8 @@ dependencies {
     implementation 'com.opencsv:opencsv:5.7.1'
     implementation 'org.antlr:antlr4:4.11.1'
     implementation 'antlr:antlr:3.0b5'
-    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch:3.0.4'
+    implementation 'org.springframework.data:spring-data-elasticsearch:5.0.3'
+    implementation 'org.elasticsearch.client:elasticsearch-rest-client:8.5.3'
     annotationProcessor 'de.scravy:lexer:1.0.0'
     implementation 'net.morimekta.utils:lexer:4.0.0'
     implementation 'io.github.therealmone.tdf4j:lexer:1.0.0'
@@ -41,6 +42,7 @@ dependencies {
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 
 }
 

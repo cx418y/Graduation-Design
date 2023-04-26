@@ -5,9 +5,9 @@ spring:
   config:
     additional-location: construct.yml
   elasticsearch:
-    cluster-name: my-cluster-name
-    rest:
-      uris: http://localhost:9200
+    uris: http://localhost:9200
+    # rest:
+
 
 server:
   port: 8181
