@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"560","79","295","294","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/junit/WireMockRuleFailOnUnmatchedRequestsTest.java","50","55","-2147431115","-2147431065","0","0","void singleUnmatchedRequestShouldThrowVerificationException()","void singleUnmatchedRequestShouldThrowVerificationException(){
+    expectedException.expect(VerificationException.class);
+    expectedException.expectMessage(containsString(""A request was unmatched by any stub mapping""));
+    wm.stubFor(get(urlEqualTo(""/hit"")).willReturn(aResponse().withStatus(200)));
+    client.get(""/near-misssss"");
+  }"
+"561","79","297","296","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/junit/WireMockRuleFailOnUnmatchedRequestsTest.java","58","66","-2147431065","-2147431001","0","0","void manyUnmatchedRequestsShouldThrowVerificationException()","void manyUnmatchedRequestsShouldThrowVerificationException(){
+    expectedException.expect(VerificationException.class);
+    expectedException.expectMessage(
+        containsString(""3 requests were unmatched by any stub mapping""));
+    wm.stubFor(get(urlEqualTo(""/hit"")).willReturn(aResponse().withStatus(200)));
+    client.get(""/near-misssss"");
+    client.get(""/hat"");
+    client.get(""/whatevs"");
+  }"
+"562","79","303","302","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/junit/WireMockRuleFailOnUnmatchedRequestsTest.java","69","75","-2147431001","-2147430944","0","0","void unmatchedRequestButMatchedStubShouldThrowVerificationException()","void unmatchedRequestButMatchedStubShouldThrowVerificationException(){
+    expectedException.expect(VerificationException.class);
+    expectedException.expectMessage(containsString(""A request was unmatched by any stub mapping""));
+    wm.stubFor(get(urlEqualTo(""/hit"")).willReturn(aResponse().withStatus(200)));
+    client.get(""/near-misssss"");
+    client.get(""/hit"");
+  }"

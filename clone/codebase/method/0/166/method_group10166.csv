@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1208","166","603","602","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/client/CountMatchingStrategyTest.java","36","43","-2147372549","-2147372489","0","0","void shouldMatchLessThanOrEqualCorrectly()","void shouldMatchLessThanOrEqualCorrectly(){
+    CountMatchingStrategy countStrategy =
+        new CountMatchingStrategy(CountMatchingStrategy.LESS_THAN_OR_EQUAL, 5);
+
+    assertThat(countStrategy.match(3), is(true));
+    assertThat(countStrategy.match(5), is(true));
+    assertThat(countStrategy.match(7), is(false));
+  }"
+"1209","166","603","604","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/client/CountMatchingStrategyTest.java","46","53","-2147372489","-2147372429","0","0","void shouldMatchEqualToCorrectly()","void shouldMatchEqualToCorrectly(){
+    CountMatchingStrategy countStrategy =
+        new CountMatchingStrategy(CountMatchingStrategy.EQUAL_TO, 5);
+
+    assertThat(countStrategy.match(3), is(false));
+    assertThat(countStrategy.match(5), is(true));
+    assertThat(countStrategy.match(7), is(false));
+  }"
+"1210","166","603","605","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/client/CountMatchingStrategyTest.java","56","63","-2147372429","-2147372369","0","0","void shouldMatchGreaterThanOrEqualCorrectly()","void shouldMatchGreaterThanOrEqualCorrectly(){
+    CountMatchingStrategy countStrategy =
+        new CountMatchingStrategy(CountMatchingStrategy.GREATER_THAN_OR_EQUAL, 5);
+
+    assertThat(countStrategy.match(3), is(false));
+    assertThat(countStrategy.match(5), is(true));
+    assertThat(countStrategy.match(7), is(true));
+  }"

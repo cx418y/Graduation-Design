@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"956","128","465","464","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ResponseDefinitionTest.java","40","47","-2147397420","-2147397370","0","0","void getProxyUrlGivesBackTheProxyUrlWhenNotBrowserProxy()","void getProxyUrlGivesBackTheProxyUrlWhenNotBrowserProxy(){
+    ResponseDefinition response =
+        ResponseDefinitionBuilder.responseDefinition().proxiedFrom(""http://my.proxy.url"").build();
+
+    response.setOriginalRequest(MockRequest.mockRequest().url(""/path""));
+
+    assertThat(response.getProxyUrl(), equalTo(""http://my.proxy.url/path""));
+  }"
+"959","128","465","464","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ResponseDefinitionTest.java","76","83","-2147397260","-2147397210","0","0","void getProxyUrlGivesBackTheProxyUrlWhenProxiedUrlBeginWithWhiteSpace()","void getProxyUrlGivesBackTheProxyUrlWhenProxiedUrlBeginWithWhiteSpace(){
+    ResponseDefinition response =
+        ResponseDefinitionBuilder.responseDefinition().proxiedFrom("" http://my.proxy.url"").build();
+
+    response.setOriginalRequest(MockRequest.mockRequest().url(""/path""));
+
+    assertThat(response.getProxyUrl(), equalTo(""http://my.proxy.url/path""));
+  }"

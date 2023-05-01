@@ -1,0 +1,13 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"304","43","157","156","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/BrowserProxyAcceptanceTest.java","58","63","-2147452849","-2147452795","0","0","void canProxyHttp()","void canProxyHttp(){
+    target.stubFor(get(""/whatever"").willReturn(aResponse().withBody(""Got it"")));
+
+    assertThat(
+        testClient.getViaProxy(target.url(""/whatever""), proxy.port()).content(), is(""Got it""));
+  }"
+"1248","43","171","170","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/HttpsBrowserProxyAcceptanceTest.java","119","124","-2147369291","-2147369234","0","0","void canProxyHttpsInBrowserProxyMode()","void canProxyHttpsInBrowserProxyMode(){
+    target.stubFor(get(urlEqualTo(""/whatever"")).willReturn(aResponse().withBody(""Got it"")));
+
+    assertThat(
+        testClient.getViaProxy(target.url(""/whatever""), proxy.getPort()).content(), is(""Got it""));
+  }"

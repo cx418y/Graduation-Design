@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"621","88","328","327","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","888","896","-2147426172","-2147426121","0","0","void copesWithRequestCharactersThatReallyShouldBeEscapedWhenMatchingOnWholeUrlRegex()","void copesWithRequestCharactersThatReallyShouldBeEscapedWhenMatchingOnWholeUrlRegex(){
+    stubFor(get(urlMatching(""/dodgy-chars.*"")).willReturn(ok()));
+
+    String url =
+        ""http://localhost:"" + wireMockServer.port() + ""/dodgy-chars?filter={\""accountid\"":\""1\""}"";
+    int code = getStatusCodeUsingJavaUrlConnection(url);
+
+    assertThat(code, is(200));
+  }"
+"622","88","328","341","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","900","908","-2147426121","-2147426070","0","0","void copesWithRequestCharactersThatReallyShouldBeEscapedWhenMatchingOnExactUrlPath()","void copesWithRequestCharactersThatReallyShouldBeEscapedWhenMatchingOnExactUrlPath(){
+    stubFor(get(urlPathEqualTo(""/dodgy-chars"")).willReturn(ok()));
+
+    String url =
+        ""http://localhost:"" + wireMockServer.port() + ""/dodgy-chars?filter={\""accountid\"":\""1\""}"";
+    int code = getStatusCodeUsingJavaUrlConnection(url);
+
+    assertThat(code, is(200));
+  }"

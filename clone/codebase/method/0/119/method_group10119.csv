@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"873","119","437","436","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/NetworkAddressRangeTest.java","56","62","-2147403498","-2147403441","0","0","void domainNameWithWholeNameWildcard()","void domainNameWithWholeNameWildcard(){
+    NetworkAddressRange exclusion = NetworkAddressRange.of(""*.stuff.wiremock.org"");
+
+    assertThat(exclusion.isIncluded(""my.stuff.wiremock.org""), is(true));
+    assertThat(exclusion.isIncluded(""alsomy.stuff.wiremock.org""), is(true));
+    assertThat(exclusion.isIncluded(""notmy.things.wiremock.org""), is(false));
+  }"
+"874","119","437","436","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/NetworkAddressRangeTest.java","65","71","-2147403441","-2147403384","0","0","void domainNameWithPartialNameWildcard()","void domainNameWithPartialNameWildcard(){
+    NetworkAddressRange exclusion = NetworkAddressRange.of(""my.*uff.wiremock.org"");
+
+    assertThat(exclusion.isIncluded(""my.stuff.wiremock.org""), is(true));
+    assertThat(exclusion.isIncluded(""my.fluff.wiremock.org""), is(true));
+    assertThat(exclusion.isIncluded(""notmy.stuff.wiremock.org""), is(false));
+  }"

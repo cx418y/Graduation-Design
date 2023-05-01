@@ -1,0 +1,75 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"24","5","9","8","0","/Users/macbook/Desktop/design/open/wiremock/perf-test/src/main/java/wiremock/LoadTestConfiguration.java","82","118","-2147480766","-2147480588","0","0","void onlyGet6000StubScenario()","void onlyGet6000StubScenario(){
+        System.out.println(""Registering stubs"");
+
+        ExecutorService executorService = Executors.newFixedThreadPool(100);
+
+        wm.register(any(anyUrl()).atPriority(10)
+            .willReturn(notFound())
+        );
+
+        List<Future<?>> futures = new ArrayList<>();
+        for (int i = 1; i <= 6000; i++) {
+            final int count = i;
+            futures.add(executorService.submit(new Runnable() {
+                @Override
+                public void run() {
+                    wm.register(get(""/load-test/"" + count)
+                            .willReturn(ok(randomAscii(2000, 5000))));
+
+                    if (count % 100 == 0) {
+                        System.out.print(count + "" "");
+                    }
+
+                }
+            }));
+
+        }
+
+        for (Future<?> future: futures) {
+            try {
+                future.get(30, SECONDS);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        executorService.shutdown();
+    }"
+"25","5","9","8","0","/Users/macbook/Desktop/design/open/wiremock/perf-test/src/main/java/wiremock/LoadTestConfiguration.java","120","156","-2147480588","-2147480410","0","0","void getLargeStubScenario()","void getLargeStubScenario(){
+        System.out.println(""Registering stubs"");
+
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+        wm.register(any(anyUrl()).atPriority(10)
+                .willReturn(notFound())
+        );
+
+        List<Future<?>> futures = new ArrayList<>();
+        for (int i = 1; i <= 100; i++) {
+            final int count = i;
+            futures.add(executorService.submit(new Runnable() {
+                @Override
+                public void run() {
+                    wm.register(get(""/load-test/"" + count)
+                            .willReturn(ok(randomAscii(50000, 90000))));
+
+                    if (count % 100 == 0) {
+                        System.out.print(count + "" "");
+                    }
+
+                }
+            }));
+
+        }
+
+        for (Future<?> future: futures) {
+            try {
+                future.get(30, SECONDS);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        executorService.shutdown();
+    }"

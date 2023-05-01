@@ -1,0 +1,24 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"886","121","441","440","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/ProxySettingsTest.java","65","72","-2147402639","-2147402563","0","0","void shouldRetrieveProxyCredsFromUrl()","void shouldRetrieveProxyCredsFromUrl(){
+    ProxySettings proxySettings =
+        ProxySettings.fromString(USER + "":"" + PASSWORD + ""@"" + PROXYVIA_URL);
+    assertThat(proxySettings.host(), is(PROXYVIA_URL));
+    assertThat(proxySettings.port(), is(DEFAULT_PORT));
+    assertThat(proxySettings.getUsername(), is(USER));
+    assertThat(proxySettings.getPassword(), is(PASSWORD));
+  }"
+"887","121","441","442","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/ProxySettingsTest.java","75","82","-2147402563","-2147402487","0","0","void shouldRetrieveProxyCredsAndPortFromUrl()","void shouldRetrieveProxyCredsAndPortFromUrl(){
+    ProxySettings proxySettings =
+        ProxySettings.fromString(USER + "":"" + PASSWORD + ""@"" + PROXYVIA_URL_WITH_PORT);
+    assertThat(proxySettings.host(), is(PROXYVIA_URL));
+    assertThat(proxySettings.port(), is(PROXYVIA_PORT));
+    assertThat(proxySettings.getUsername(), is(USER));
+    assertThat(proxySettings.getPassword(), is(PASSWORD));
+  }"
+"888","121","444","443","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/ProxySettingsTest.java","85","91","-2147402487","-2147402413","0","0","void shouldRetrieveProxyCredsWithOnlyUserFromUrl()","void shouldRetrieveProxyCredsWithOnlyUserFromUrl(){
+    ProxySettings proxySettings = ProxySettings.fromString(USER + ""@"" + PROXYVIA_URL);
+    assertThat(proxySettings.host(), is(PROXYVIA_URL));
+    assertThat(proxySettings.port(), is(DEFAULT_PORT));
+    assertThat(proxySettings.getUsername(), is(USER));
+    assertThat(proxySettings.getPassword(), is(emptyOrNullString()));
+  }"

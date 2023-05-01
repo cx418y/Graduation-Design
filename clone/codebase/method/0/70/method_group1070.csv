@@ -1,0 +1,16 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"494","70","237","236","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/standalone/CommandLineOptionsTest.java","258","264","-2147436414","-2147436325","0","0","void returnsCorrectlyParsedProxyViaParameter()","void returnsCorrectlyParsedProxyViaParameter(){
+    CommandLineOptions options = new CommandLineOptions(""--proxy-via"", ""somehost.mysite.com:8080"");
+    assertThat(options.proxyVia().host(), is(""somehost.mysite.com""));
+    assertThat(options.proxyVia().port(), is(8080));
+    assertThat(options.proxyVia().getUsername(), is(emptyOrNullString()));
+    assertThat(options.proxyVia().getPassword(), is(emptyOrNullString()));
+  }"
+"495","70","241","240","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/standalone/CommandLineOptionsTest.java","267","274","-2147436325","-2147436240","0","0","void returnsCorrectlyParsedProxyViaParameterWithCredentials()","void returnsCorrectlyParsedProxyViaParameterWithCredentials(){
+    CommandLineOptions options =
+        new CommandLineOptions(""--proxy-via"", ""user:password@somehost.mysite.com:8080"");
+    assertThat(options.proxyVia().host(), is(""somehost.mysite.com""));
+    assertThat(options.proxyVia().port(), is(8080));
+    assertThat(options.proxyVia().getUsername(), is(""user""));
+    assertThat(options.proxyVia().getPassword(), is(""password""));
+  }"

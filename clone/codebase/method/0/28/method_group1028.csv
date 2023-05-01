@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"164","28","103","102","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/LogicalAndTest.java","89","104","-2147467085","-2147466918","0","0","void objectsShouldBeEqualOnSameExpectedValue()","void objectsShouldBeEqualOnSameExpectedValue(){
+    LogicalAnd a =
+        new LogicalAnd(WireMock.equalTo(""A""), WireMock.equalTo(""B""), WireMock.equalTo(""C""));
+    LogicalAnd b =
+        new LogicalAnd(WireMock.equalTo(""A""), WireMock.equalTo(""B""), WireMock.equalTo(""C""));
+    LogicalAnd c = new LogicalAnd(WireMock.equalTo(""D""), WireMock.equalTo(""E""));
+
+    assertEquals(a, b);
+    assertEquals(a.hashCode(), b.hashCode());
+    assertEquals(b, a);
+    assertEquals(b.hashCode(), a.hashCode());
+    assertNotEquals(a, c);
+    assertNotEquals(a.hashCode(), c.hashCode());
+    assertNotEquals(b, c);
+    assertNotEquals(b.hashCode(), c.hashCode());
+  }"
+"196","28","103","108","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/LogicalOrTest.java","104","119","-2147464271","-2147464104","0","0","void objectsShouldBeEqualOnSameExpectedValue()","void objectsShouldBeEqualOnSameExpectedValue(){
+    LogicalOr a =
+        new LogicalOr(WireMock.equalTo(""A""), WireMock.equalTo(""B""), WireMock.equalTo(""C""));
+    LogicalOr b =
+        new LogicalOr(WireMock.equalTo(""A""), WireMock.equalTo(""B""), WireMock.equalTo(""C""));
+    LogicalOr c = new LogicalOr(WireMock.equalTo(""D""), WireMock.equalTo(""E""));
+
+    assertEquals(a, b);
+    assertEquals(a.hashCode(), b.hashCode());
+    assertEquals(b, a);
+    assertEquals(b.hashCode(), a.hashCode());
+    assertNotEquals(a, c);
+    assertNotEquals(a.hashCode(), c.hashCode());
+    assertNotEquals(b, c);
+    assertNotEquals(b.hashCode(), c.hashCode());
+  }"

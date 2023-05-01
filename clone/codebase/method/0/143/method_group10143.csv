@@ -1,0 +1,66 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1031","143","516","515","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/MultipartBodyMatchingAcceptanceTest.java","45","65","-2147390661","-2147390514","0","0","void acceptsAMultipartRequestContainingATextAndAFilePart()","void acceptsAMultipartRequestContainingATextAndAFilePart(){
+    stubFor(
+        post(""/multipart"")
+            .withMultipartRequestBody(aMultipart().withName(""text"").withBody(containing(""hello"")))
+            .withMultipartRequestBody(
+                aMultipart().withName(""file"").withBody(binaryEqualTo(""ABCD"".getBytes())))
+            .willReturn(ok()));
+
+    ClassicHttpRequest request =
+        ClassicRequestBuilder.post(wireMockServer.baseUrl() + ""/multipart"")
+            .setEntity(
+                MultipartEntityBuilder.create()
+                    .addTextBody(""text"", ""hello"")
+                    .addBinaryBody(""file"", ""ABCD"".getBytes())
+                    .build())
+            .build();
+
+    ClassicHttpResponse response = httpClient.execute(request);
+
+    assertThat(EntityUtils.toString(response.getEntity()), response.getCode(), is(200));
+  }"
+"1033","143","518","517","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/MultipartBodyMatchingAcceptanceTest.java","89","110","-2147390415","-2147390263","0","0","void acceptsAMultipartMixedRequestContainingATextAndAFilePart()","void acceptsAMultipartMixedRequestContainingATextAndAFilePart(){
+    stubFor(
+        post(""/multipart-mixed"")
+            .withMultipartRequestBody(aMultipart().withName(""text"").withBody(containing(""hello"")))
+            .withMultipartRequestBody(
+                aMultipart().withName(""file"").withBody(binaryEqualTo(""ABCD"".getBytes())))
+            .willReturn(ok()));
+
+    ClassicHttpRequest request =
+        ClassicRequestBuilder.post(wireMockServer.baseUrl() + ""/multipart-mixed"")
+            .setEntity(
+                MultipartEntityBuilder.create()
+                    .setMimeSubtype(""mixed"")
+                    .addTextBody(""text"", ""hello"")
+                    .addBinaryBody(""file"", ""ABCD"".getBytes())
+                    .build())
+            .build();
+
+    ClassicHttpResponse response = httpClient.execute(request);
+
+    assertThat(EntityUtils.toString(response.getEntity()), response.getCode(), is(200));
+  }"
+"1034","143","518","517","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/MultipartBodyMatchingAcceptanceTest.java","114","135","-2147390263","-2147390111","0","0","void acceptsAMultipartRelatedRequestContainingATextAndAFilePart()","void acceptsAMultipartRelatedRequestContainingATextAndAFilePart(){
+    stubFor(
+        post(""/multipart-related"")
+            .withMultipartRequestBody(aMultipart().withName(""text"").withBody(containing(""hello"")))
+            .withMultipartRequestBody(
+                aMultipart().withName(""file"").withBody(binaryEqualTo(""ABCD"".getBytes())))
+            .willReturn(ok()));
+
+    ClassicHttpRequest request =
+        ClassicRequestBuilder.post(wireMockServer.baseUrl() + ""/multipart-related"")
+            .setEntity(
+                MultipartEntityBuilder.create()
+                    .setMimeSubtype(""related"")
+                    .addTextBody(""text"", ""hello"")
+                    .addBinaryBody(""file"", ""ABCD"".getBytes())
+                    .build())
+            .build();
+
+    ClassicHttpResponse response = httpClient.execute(request);
+
+    assertThat(EntityUtils.toString(response.getEntity()), response.getCode(), is(200));
+  }"

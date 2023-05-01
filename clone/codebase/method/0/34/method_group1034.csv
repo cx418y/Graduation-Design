@@ -1,0 +1,43 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"207","34","114","113","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/BeforeDateTimePatternTest.java","291","300","-2147463242","-2147463150","0","0","void deserialisesNegativeOffsetFormFromJson()","void deserialisesNegativeOffsetFormFromJson(){
+    StringValuePattern matcher =
+        Json.read(""{\n"" + ""  \""before\"": \""-15 days\""\n"" + ""}"", BeforeDateTimePattern.class);
+
+    ZonedDateTime good = ZonedDateTime.now().minus(16, ChronoUnit.DAYS);
+    ZonedDateTime bad = ZonedDateTime.now().minus(14, ChronoUnit.DAYS);
+
+    assertTrue(matcher.match(good.toString()).isExactMatch());
+    assertFalse(matcher.match(bad.toString()).isExactMatch());
+  }"
+"208","34","127","126","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/BeforeDateTimePatternTest.java","303","318","-2147463150","-2147463054","0","0","void deserialisesOffsetWithSeparateAmountAndUnitAttributesFromJson()","void deserialisesOffsetWithSeparateAmountAndUnitAttributesFromJson(){
+    BeforeDateTimePattern matcher =
+        Json.read(
+            ""{\n""
+                + ""  \""before\"": \""now\"",\n""
+                + ""  \""expectedOffset\"": -15,\n""
+                + ""  \""expectedOffsetUnit\"": \""days\""\n""
+                + ""}\n"",
+            BeforeDateTimePattern.class);
+
+    ZonedDateTime good = ZonedDateTime.now().minus(16, ChronoUnit.DAYS);
+    ZonedDateTime bad = ZonedDateTime.now().minus(14, ChronoUnit.DAYS);
+
+    assertTrue(matcher.match(good.toString()).isExactMatch());
+    assertFalse(matcher.match(bad.toString()).isExactMatch());
+  }"
+"217","34","127","126","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/AfterDateTimePatternTest.java","141","156","-2147462385","-2147462289","0","0","void deserialisesOffsetWithSeparateAmountAndUnitAttributesFromJson()","void deserialisesOffsetWithSeparateAmountAndUnitAttributesFromJson(){
+    AfterDateTimePattern matcher =
+        Json.read(
+            ""{\n""
+                + ""  \""after\"": \""now\"",\n""
+                + ""  \""expectedOffset\"": -15,\n""
+                + ""  \""expectedOffsetUnit\"": \""days\""\n""
+                + ""}\n"",
+            AfterDateTimePattern.class);
+
+    ZonedDateTime good = ZonedDateTime.now().minus(14, ChronoUnit.DAYS);
+    ZonedDateTime bad = ZonedDateTime.now().minus(16, ChronoUnit.DAYS);
+
+    assertTrue(matcher.match(good.toString()).isExactMatch());
+    assertFalse(matcher.match(bad.toString()).isExactMatch());
+  }"

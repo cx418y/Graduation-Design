@@ -1,0 +1,54 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"50","7","15","14","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/ignored/MassiveNearMissTest.java","49","75","-2147477241","-2147477036","0","0","void timeToCalculateBigNearMissDiffXml()","void timeToCalculateBigNearMissDiffXml(){
+    final int stubs = 1000;
+    for (int i = 0; i < stubs; i++) {
+      wm.stubFor(
+          post(urlPathMatching(""/things/.*/"" + i))
+              .withRequestBody(equalToXml(requestXml(i)))
+              .willReturn(ok(""i: "" + i)));
+    }
+
+    final int drop = 2;
+    final int reps = 10;
+    List<Long> times = new ArrayList<>(reps);
+    long sum = 0;
+    for (int i = 0; i < reps; i++) {
+      Stopwatch stopwatch = Stopwatch.createStarted();
+      client.postXml(
+          ""/things/blah123/"" + (stubs / 2), ""<?xml version=\""1.0\""?><things id=\"""" + i + ""\""/>"");
+      stopwatch.stop();
+      long time = stopwatch.elapsed(MILLISECONDS);
+      times.add(time);
+      if (i > drop) sum += time;
+    }
+
+    System.out.printf(""Times:\n%s\n"", Joiner.on(""\n"").join(times));
+    long mean = sum / (reps - drop);
+    System.out.printf(""Mean: %dms\n"", mean);
+  }"
+"52","7","17","16","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/ignored/MassiveNearMissTest.java","103","128","-2147476986","-2147476785","0","0","void timeToCalculateBigNearMissDiffJson()","void timeToCalculateBigNearMissDiffJson(){
+    final int stubs = 1000;
+    for (int i = 0; i < stubs; i++) {
+      wm.stubFor(
+          post(urlPathMatching(""/things/.*/"" + i))
+              .withRequestBody(equalToJson(requestJson(i)))
+              .willReturn(ok(""i: "" + i)));
+    }
+
+    final int drop = 2;
+    final int reps = 30;
+    List<Long> times = new ArrayList<>(reps);
+    long sum = 0;
+    for (int i = 0; i < reps; i++) {
+      Stopwatch stopwatch = Stopwatch.createStarted();
+      client.postJson(""/things/blah123/"" + (stubs / 2), ""{ \""wrong\"": [1,2,3]}"");
+      stopwatch.stop();
+      long time = stopwatch.elapsed(MILLISECONDS);
+      times.add(time);
+      if (i > drop) sum += time;
+    }
+
+    System.out.printf(""Times:\n%s\n"", Joiner.on(""\n"").join(times));
+    long mean = sum / (reps - drop);
+    System.out.printf(""Mean: %dms\n"", mean);
+  }"

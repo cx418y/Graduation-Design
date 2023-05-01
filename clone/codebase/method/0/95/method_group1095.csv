@@ -1,0 +1,40 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"684","95","334","333","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/JsonSchemaMatchingAcceptanceTest.java","29","41","-2147420604","-2147420534","0","0","void matchesStubWhenRequestBodyJsonValidatesAgainstSchema()","void matchesStubWhenRequestBodyJsonValidatesAgainstSchema(){
+    String schema = file(""schema-validation/new-pet.schema.json"");
+    String json = file(""schema-validation/new-pet.json"");
+
+    stubFor(
+        post(urlPathEqualTo(""/schema-match""))
+            .withRequestBody(matchingJsonSchema(schema))
+            .willReturn(ok()));
+
+    WireMockResponse response = testClient.postJson(""/schema-match"", json);
+
+    assertThat(response.statusCode(), is(200));
+  }"
+"685","95","334","333","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/JsonSchemaMatchingAcceptanceTest.java","44","56","-2147420534","-2147420464","0","0","void doesNotMatchStubWhenRequestBodyJsonDoesNotValidateAgainstSchema()","void doesNotMatchStubWhenRequestBodyJsonDoesNotValidateAgainstSchema(){
+    String schema = file(""schema-validation/new-pet.schema.json"");
+    String json = file(""schema-validation/new-pet.invalid.json"");
+
+    stubFor(
+        post(urlPathEqualTo(""/schema-match""))
+            .withRequestBody(matchingJsonSchema(schema))
+            .willReturn(ok()));
+
+    WireMockResponse response = testClient.postJson(""/schema-match"", json);
+
+    assertThat(response.statusCode(), is(404));
+  }"
+"686","95","334","333","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/JsonSchemaMatchingAcceptanceTest.java","59","71","-2147420464","-2147420394","0","0","void doesNotMatchStubWhenRequestBodyIsNotValidJson()","void doesNotMatchStubWhenRequestBodyIsNotValidJson(){
+    String schema = file(""schema-validation/new-pet.schema.json"");
+    String json = file(""schema-validation/new-pet.unparseable.json"");
+
+    stubFor(
+        post(urlPathEqualTo(""/schema-match""))
+            .withRequestBody(matchingJsonSchema(schema))
+            .willReturn(ok()));
+
+    WireMockResponse response = testClient.postJson(""/schema-match"", json);
+
+    assertThat(response.statusCode(), is(404));
+  }"

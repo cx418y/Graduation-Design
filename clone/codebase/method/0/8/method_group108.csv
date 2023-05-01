@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"54","8","24","23","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/ignored/JUnit5ProxyTest.java","62","74","-2147476722","-2147476600","0","0","void testViaProxyUsingRule()","void testViaProxyUsingRule(){
+    wm.stubFor(get(""/things"").withHost(equalTo(""my.first.domain"")).willReturn(ok(""Domain 1"")));
+
+    wm.stubFor(get(""/things"").withHost(equalTo(""my.second.domain"")).willReturn(ok(""Domain 2"")));
+
+    ClassicHttpResponse response = httpClient.execute(new HttpGet(""http://my.first.domain/things""));
+    String responseBody = EntityUtils.toString(response.getEntity());
+    assertEquals(""Domain 1"", responseBody);
+
+    response = httpClient.execute(new HttpGet(""http://my.second.domain/things""));
+    responseBody = EntityUtils.toString(response.getEntity());
+    assertEquals(""Domain 2"", responseBody);
+  }"
+"55","8","30","29","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/ignored/JUnit5ProxyTest.java","77","99","-2147476600","-2147476433","0","0","void testViaProxyUsingServer()","void testViaProxyUsingServer(){
+    WireMockServer wireMockServer =
+        new WireMockServer(options().dynamicPort().enableBrowserProxying(true));
+    wireMockServer.start();
+    JvmProxyConfigurer.configureFor(wireMockServer);
+
+    wireMockServer.stubFor(
+        get(""/things"").withHost(equalTo(""my.first.domain"")).willReturn(ok(""Domain 1"")));
+
+    wireMockServer.stubFor(
+        get(""/things"").withHost(equalTo(""my.second.domain"")).willReturn(ok(""Domain 2"")));
+
+    ClassicHttpResponse response = httpClient.execute(new HttpGet(""http://my.first.domain/things""));
+    String responseBody = EntityUtils.toString(response.getEntity());
+    assertEquals(""Domain 1"", responseBody);
+
+    response = httpClient.execute(new HttpGet(""http://my.second.domain/things""));
+    responseBody = EntityUtils.toString(response.getEntity());
+    assertEquals(""Domain 2"", responseBody);
+
+    wireMockServer.stop();
+    JvmProxyConfigurer.restorePrevious();
+  }"

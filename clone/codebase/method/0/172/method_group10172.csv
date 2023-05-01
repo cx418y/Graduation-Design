@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1297","172","619","618","0","/Users/macbook/Desktop/design/open/wiremock/src/main/java/com/github/tomakehurst/wiremock/matching/StringValuePattern.java","89","94","-2147364603","-2147364552","0","0","boolean equals(Object o)","boolean equals(Object o){
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    StringValuePattern that = (StringValuePattern) o;
+    return Objects.equal(expectedValue, that.expectedValue);
+  }"
+"1359","172","619","622","0","/Users/macbook/Desktop/design/open/wiremock/src/main/java/com/github/tomakehurst/wiremock/matching/SingleMatchMultiValuePattern.java","59","68","-2147357623","-2147357572","0","0","boolean equals(Object o)","boolean equals(Object o){
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    SingleMatchMultiValuePattern that = (SingleMatchMultiValuePattern) o;
+    return Objects.equal(valuePattern, that.valuePattern);
+  }"
+"1360","172","628","627","0","/Users/macbook/Desktop/design/open/wiremock/src/main/java/com/github/tomakehurst/wiremock/matching/BinaryEqualToPattern.java","63","70","-2147357572","-2147357517","0","0","boolean equals(Object o)","boolean equals(Object o){
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    BinaryEqualToPattern that = (BinaryEqualToPattern) o;
+
+    return Objects.equals(getExpected(), that.getExpected());
+  }"

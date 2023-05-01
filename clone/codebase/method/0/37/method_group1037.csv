@@ -1,0 +1,45 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"239","37","133","132","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/testsupport/WireMatchers.java","81","100","-2147459576","-2147459514","0","0","Matcher<byte[]> bytesEqualToJson(
+      final String expectedJson, final JSONCompareMode jsonCompareMode)","Matcher<byte[]> bytesEqualToJson(
+      final String expectedJson, final JSONCompareMode jsonCompareMode){
+    return new TypeSafeMatcher<>() {
+
+      @Override
+      public void describeTo(Description desc) {
+        desc.appendText(""Expected:\n"" + expectedJson);
+      }
+
+      @Override
+      public boolean matchesSafely(byte[] actualJson) {
+        try {
+          JSONAssert.assertEquals(
+              expectedJson, Strings.stringFromBytes(actualJson), jsonCompareMode);
+          return true;
+        } catch (Throwable e) {
+          return false;
+        }
+      }
+    };
+  }"
+"241","37","139","138","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/testsupport/WireMatchers.java","124","143","-2147459459","-2147459394","0","0","Matcher<byte[]> equalToBinaryJson(
+      final String expectedJson, final JSONCompareMode jsonCompareMode)","Matcher<byte[]> equalToBinaryJson(
+      final String expectedJson, final JSONCompareMode jsonCompareMode){
+    return new TypeSafeMatcher<byte[]>() {
+
+      @Override
+      public void describeTo(Description desc) {
+        desc.appendText(""Expected:\n"" + expectedJson);
+      }
+
+      @Override
+      public boolean matchesSafely(byte[] actualJson) {
+        try {
+          JSONAssert.assertEquals(
+              expectedJson, Strings.stringFromBytes(actualJson), jsonCompareMode);
+          return true;
+        } catch (Throwable e) {
+          return false;
+        }
+      }
+    };
+  }"

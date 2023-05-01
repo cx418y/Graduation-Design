@@ -1,0 +1,51 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"983","135","488","487","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java","210","234","-2147395485","-2147395314","0","0","void addsEmptyEntityIfEmptyBodyForwardProxyPOST()","void addsEmptyEntityIfEmptyBodyForwardProxyPOST(){
+    ProxyResponseRenderer trustAllProxyResponseRenderer = buildProxyResponseRenderer(true);
+    CloseableHttpClient clientSpy =
+        reflectiveSpyField(
+            CloseableHttpClient.class, ""forwardProxyClient"", trustAllProxyResponseRenderer);
+
+    origin.stubFor(post(""/proxied/empty-post"").willReturn(aResponse().withBody(""Result"")));
+
+    ServeEvent serveEvent =
+        serveEvent(
+            ""/proxied/empty-post"",
+            true,
+            new byte[0],
+            RequestMethod.POST,
+            new HttpHeaders(new HttpHeader(""Content-Length"", ""0"")));
+
+    trustAllProxyResponseRenderer.render(serveEvent);
+    Mockito.verify(clientSpy).execute(argThat(request -> request.getEntity() != null));
+    List<LoggedRequest> requests =
+        origin.findAll(postRequestedFor(urlPathMatching(""/proxied/empty-post"")));
+    Assertions.assertThat(requests)
+        .hasSizeGreaterThan(0)
+        .allMatch(r -> ""0"".equals(r.getHeader(""Content-Length"")))
+        .noneMatch(r -> r.containsHeader(""Content-Type""));
+  }"
+"984","135","488","489","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java","237","261","-2147395314","-2147395143","0","0","void addsEmptyEntityIfEmptyBodyForwardProxyGET()","void addsEmptyEntityIfEmptyBodyForwardProxyGET(){
+    ProxyResponseRenderer trustAllProxyResponseRenderer = buildProxyResponseRenderer(true);
+    CloseableHttpClient clientSpy =
+        reflectiveSpyField(
+            CloseableHttpClient.class, ""forwardProxyClient"", trustAllProxyResponseRenderer);
+
+    origin.stubFor(get(""/proxied/empty-get"").willReturn(aResponse().withBody(""Result"")));
+
+    ServeEvent serveEvent =
+        serveEvent(
+            ""/proxied/empty-get"",
+            true,
+            new byte[0],
+            RequestMethod.GET,
+            new HttpHeaders(new HttpHeader(""Content-Length"", ""0"")));
+
+    trustAllProxyResponseRenderer.render(serveEvent);
+    Mockito.verify(clientSpy).execute(argThat(request -> request.getEntity() != null));
+    List<LoggedRequest> requests =
+        origin.findAll(getRequestedFor(urlPathMatching(""/proxied/empty-get"")));
+    Assertions.assertThat(requests)
+        .hasSizeGreaterThan(0)
+        .allMatch(r -> ""0"".equals(r.getHeader(""Content-Length"")))
+        .noneMatch(r -> r.containsHeader(""Content-Type""));
+  }"

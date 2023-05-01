@@ -1,0 +1,28 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"927","123","448","447","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ResponseDefinitionTransformerAcceptanceTest.java","84","97","-2147399563","-2147399473","0","0","void supportsSpecifiyingExtensionsByInstance()","void supportsSpecifiyingExtensionsByInstance(){
+    wm =
+        new WireMockServer(
+            wireMockConfig()
+                .dynamicPort()
+                .extensions(new ExampleTransformer(), new MultiTransformer2()));
+    wm.start();
+    client = new WireMockTestClient(wm.port());
+    createStub(""/to-instance-transform"");
+
+    WireMockResponse response = client.get(""/to-instance-transform"");
+    assertThat(response.statusCode(), is(200));
+    assertThat(response.content(), is(""Expect this""));
+  }"
+"928","123","452","451","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ResponseDefinitionTransformerAcceptanceTest.java","100","112","-2147399473","-2147399397","0","0","void doesNotApplyNonGlobalExtensionsWhenNotExplicitlySpecfiedByStub()","void doesNotApplyNonGlobalExtensionsWhenNotExplicitlySpecfiedByStub(){
+    wm =
+        new WireMockServer(
+            wireMockConfig()
+                .dynamicPort()
+                .extensions(new ExampleTransformer(), new NonGlobalTransformer()));
+    wm.start();
+    client = new WireMockTestClient(wm.port());
+    createStub(""/non-global-transform"");
+
+    WireMockResponse response = client.get(""/non-global-transform"");
+    assertThat(response.content(), is(""Transformed body""));
+  }"

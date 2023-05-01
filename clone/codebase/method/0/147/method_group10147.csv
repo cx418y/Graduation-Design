@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1075","147","540","539","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/stubbing/StubMappingJsonRecorderTest.java","311","329","-2147386464","-2147386344","0","0","void matchesBodyOnEqualToJsonIfJsonInRequestContentTypeHeader()","void matchesBodyOnEqualToJsonIfJsonInRequestContentTypeHeader(){
+    when(admin.countRequestsMatching((any(RequestPattern.class))))
+        .thenReturn(VerificationResult.withCount(0));
+
+    Request request =
+        new MockRequestBuilder()
+            .withMethod(POST)
+            .withUrl(""/json/content"")
+            .withHeader(""Content-Type"", ""application/json "")
+            .withBody(""{}"")
+            .build();
+
+    listener.requestReceived(
+        request, response().status(200).body(""anything"").fromProxy(true).build());
+    verify(mappingsBlobStore)
+        .put(
+            (any(String.class)),
+            argThat(equalToBinaryJson(SAMPLE_REQUEST_MAPPING_WITH_JSON_BODY, STRICT_ORDER)));
+  }"
+"1076","147","540","547","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/stubbing/StubMappingJsonRecorderTest.java","347","365","-2147386344","-2147386224","0","0","void matchesBodyOnEqualToXmlIfXmlInRequestContentTypeHeader()","void matchesBodyOnEqualToXmlIfXmlInRequestContentTypeHeader(){
+    when(admin.countRequestsMatching((any(RequestPattern.class))))
+        .thenReturn(VerificationResult.withCount(0));
+    Request request =
+        new MockRequestBuilder()
+            .withMethod(POST)
+            .withUrl(""/xml/content"")
+            .withHeader(""Content-Type"", ""text/xml; content-type=utf-8"")
+            .withBody(""<stuff />"")
+            .build();
+
+    listener.requestReceived(
+        request, response().status(200).body(""anything"").fromProxy(true).build());
+
+    verify(mappingsBlobStore)
+        .put(
+            (any(String.class)),
+            argThat(equalToBinaryJson(SAMPLE_REQUEST_MAPPING_WITH_XML_BODY, STRICT_ORDER)));
+  }"

@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"579","81","301","300","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","140","156","-2147429837","-2147429737","0","0","void mappingWithHeaderMatchers()","void mappingWithHeaderMatchers(){
+    stubFor(
+        put(urlEqualTo(""/some/url""))
+            .withHeader(""One"", equalTo(""abcd1234""))
+            .withHeader(""Two"", matching(""[a-z]{5}""))
+            .withHeader(""Three"", notMatching(""[A-Z]+""))
+            .willReturn(aResponse().withStatus(204)));
+
+    WireMockResponse response =
+        testClient.put(
+            ""/some/url"",
+            withHeader(""One"", ""abcd1234""),
+            withHeader(""Two"", ""thing""),
+            withHeader(""Three"", ""something""));
+
+    assertThat(response.statusCode(), is(204));
+  }"
+"580","81","301","306","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","159","175","-2147429737","-2147429637","0","0","void mappingWithCaseInsensitiveHeaderMatchers()","void mappingWithCaseInsensitiveHeaderMatchers(){
+    stubFor(
+        put(urlEqualTo(""/case/insensitive""))
+            .withHeader(""ONE"", equalTo(""abcd1234""))
+            .withHeader(""two"", matching(""[a-z]{5}""))
+            .withHeader(""Three"", notMatching(""[A-Z]+""))
+            .willReturn(aResponse().withStatus(204)));
+
+    WireMockResponse response =
+        testClient.put(
+            ""/case/insensitive"",
+            withHeader(""one"", ""abcd1234""),
+            withHeader(""TWO"", ""thing""),
+            withHeader(""tHrEe"", ""something""));
+
+    assertThat(response.statusCode(), is(204));
+  }"

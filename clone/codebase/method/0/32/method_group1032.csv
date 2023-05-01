@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"185","32","118","117","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/EqualToJsonTest.java","421","437","-2147465126","-2147465069","0","0","void doesNotMatchWhenValueIsNull()","void doesNotMatchWhenValueIsNull(){
+    MatchResult match =
+        new EqualToJsonPattern(
+                ""{\n""
+                    + ""    \""outer\"": {\n""
+                    + ""        \""inner:\"": {\n""
+                    + ""            \""wrong\"": 1\n""
+                    + ""        }\n""
+                    + ""    }\n""
+                    + ""}"",
+                false,
+                false)
+            .match(null);
+
+    assertFalse(match.isExactMatch());
+    assertThat(match.getDistance(), is(1.0));
+  }"
+"186","32","118","128","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/EqualToJsonTest.java","440","456","-2147465069","-2147465012","0","0","void doesNotMatchWhenValueIsEmptyString()","void doesNotMatchWhenValueIsEmptyString(){
+    MatchResult match =
+        new EqualToJsonPattern(
+                ""{\n""
+                    + ""    \""outer\"": {\n""
+                    + ""        \""inner:\"": {\n""
+                    + ""            \""wrong\"": 1\n""
+                    + ""        }\n""
+                    + ""    }\n""
+                    + ""}"",
+                false,
+                false)
+            .match("""");
+
+    assertFalse(match.isExactMatch());
+    assertThat(match.getDistance(), is(1.0));
+  }"

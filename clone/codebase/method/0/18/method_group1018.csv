@@ -1,0 +1,51 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"114","18","67","66","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/RequestPatternTest.java","94","110","-2147471329","-2147471245","0","0","void doesNotMatchWhenHeaderDoesNotMatch()","void doesNotMatchWhenHeaderDoesNotMatch(){
+    RequestPattern requestPattern =
+        newRequestPattern(GET, urlPathEqualTo(""/my/url""))
+            .withHeader(""My-Header"", equalTo(""my-expected-header-val""))
+            .withHeader(""My-Other-Header"", equalTo(""my-other-expected-header-val""))
+            .build();
+
+    MatchResult matchResult =
+        requestPattern.match(
+            mockRequest()
+                .method(GET)
+                .header(""My-Header"", ""my-expected-header-val"")
+                .header(""My-Other-Header"", ""wrong"")
+                .url(""/my/url""));
+
+    assertFalse(matchResult.isExactMatch());
+  }"
+"115","18","76","75","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/RequestPatternTest.java","113","128","-2147471245","-2147471169","0","0","void matchesExactlyWhenRequiredAbsentHeaderIsAbsent()","void matchesExactlyWhenRequiredAbsentHeaderIsAbsent(){
+    RequestPattern requestPattern =
+        newRequestPattern(GET, urlPathEqualTo(""/my/url""))
+            .withHeader(""My-Header"", absent())
+            .withHeader(""My-Other-Header"", equalTo(""my-other-expected-header-val""))
+            .build();
+
+    MatchResult matchResult =
+        requestPattern.match(
+            mockRequest()
+                .method(GET)
+                .header(""My-Other-Header"", ""my-other-expected-header-val"")
+                .url(""/my/url""));
+
+    assertTrue(matchResult.isExactMatch());
+  }"
+"116","18","87","86","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/RequestPatternTest.java","131","147","-2147471169","-2147471086","0","0","void doesNotMatchWhenRequiredAbsentHeaderIsPresent()","void doesNotMatchWhenRequiredAbsentHeaderIsPresent(){
+    RequestPattern requestPattern =
+        newRequestPattern(GET, urlPathEqualTo(""/my/url""))
+            .withHeader(""My-Header"", absent())
+            .withHeader(""My-Other-Header"", equalTo(""my-other-expected-header-val""))
+            .build();
+
+    MatchResult matchResult =
+        requestPattern.match(
+            mockRequest()
+                .method(GET)
+                .header(""My-Header"", ""my-expected-header-val"")
+                .header(""My-Other-Header"", ""wrong"")
+                .url(""/my/url""));
+
+    assertFalse(matchResult.isExactMatch());
+  }"

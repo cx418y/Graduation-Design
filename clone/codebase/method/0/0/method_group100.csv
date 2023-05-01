@@ -1,17 +1,19 @@
 "methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
-"0","0","1","0","0","/Volumes/ExtremePro/tools/saga/dataset1/test3.java","18","26","-2147483647","-2147483592","0","0","void addAttribute(String name, float value)","void addAttribute(String name, float value){
-				String c = Float.toString(value);
-		float b;
+"0","0","5","4","0","/Users/macbook/Desktop/design/open/wiremock/wiremock-webhooks-extension/src/test/java/testsupport/WireMockResponse.java","57","65","-2147483647","-2147483594","0","0","String> headers()","String> headers(){
+    ImmutableListMultimap.Builder<String, String> builder = ImmutableListMultimap.builder();
 
+    for (Header header : httpResponse.getHeaders()) {
+      builder.put(header.getName(), header.getValue());
+    }
 
-		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
-		((Element) current).setAttribute(name, str);
-	}"
-"1","0","3","2","0","/Volumes/ExtremePro/tools/saga/dataset1/test3.java","28","36","-2147483592","-2147483536","0","0","void addAttribute3(String name, float value, int count3)","void addAttribute3(String name, float value, int count3){
-				String c = Double.toString(value);
-		count3++;
+    return builder.build();
+  }"
+"252","0","5","4","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/testsupport/WireMockResponse.java","57","65","-2147458518","-2147458465","0","0","String> headers()","String> headers(){
+    ImmutableListMultimap.Builder<String, String> builder = ImmutableListMultimap.builder();
 
+    for (Header header : httpResponse.getHeaders()) {
+      builder.put(header.getName(), header.getValue());
+    }
 
-		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
-		((Element) current).setAttribute(name, str);
-	}"
+    return builder.build();
+  }"

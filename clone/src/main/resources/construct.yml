@@ -1,14 +1,15 @@
 code-base:
   process: true
-  # repo-path: '/Users/macbook/Desktop/design/open/java-faker'
-  repo-path: 'dataset1'
+  repo-path: '/Users/macbook/Desktop/design/open/wiremock'
+  # repo-path: 'dataset1'
 
-  thread-num: 1
+  thread-num: 8
   sep-num: 1000
 
   clone:
     detect: true
-    saga-path: '/Volumes/ExtremePro/tools/saga/SAGACloneDetector.jar'
+    # saga-path: '/Volumes/ExtremePro/tools/saga/SAGACloneDetector.jar'
+    saga-path: 'tools/saga/SAGACloneDetector.jar'
 
 clone:
   detect:

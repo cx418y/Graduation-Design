@@ -1,0 +1,61 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"945","125","454","453","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ssl/CertificateGeneratingX509ExtendedKeyManagerChooseEngineServerAliasDefaultsTest.java","84","98","-2147398287","-2147398228","0","0","void returnsDefaultIfHandshakeSessionIsNotSupported()","void returnsDefaultIfHandshakeSessionIsNotSupported(){
+    given(sslEngineMock.getHandshakeSession()).willThrow(new UnsupportedOperationException());
+
+    String alias =
+        certificateGeneratingKeyManager.chooseEngineServerAlias(
+            ""RSA"", nullPrincipals, sslEngineMock);
+
+    assertEquals(""default_alias"", alias);
+    assertThat(
+        testNotifier.getErrorMessages(),
+        contains(
+            ""Dynamic certificate generation is not supported because your SSL Provider does not support SSLEngine.getHandshakeSession()""
+                + lineSeparator()
+                + ""All sites will be served using the normal WireMock HTTPS certificate.""));
+  }"
+"946","125","454","455","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ssl/CertificateGeneratingX509ExtendedKeyManagerChooseEngineServerAliasDefaultsTest.java","112","127","-2147398228","-2147398169","0","0","void returnsDefaultIfGetRequestedServerNamesIsNotSupported()","void returnsDefaultIfGetRequestedServerNamesIsNotSupported(){
+    given(extendedSslSessionMock.getRequestedServerNames())
+        .willThrow(new UnsupportedOperationException());
+
+    String alias =
+        certificateGeneratingKeyManager.chooseEngineServerAlias(
+            ""RSA"", nullPrincipals, sslEngineMock);
+
+    assertEquals(""default_alias"", alias);
+    assertThat(
+        testNotifier.getErrorMessages(),
+        contains(
+            ""Dynamic certificate generation is not supported because your SSL Provider does not support ExtendedSSLSession.getRequestedServerNames()""
+                + lineSeparator()
+                + ""All sites will be served using the normal WireMock HTTPS certificate.""));
+  }"
+"952","125","454","453","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ssl/CertificateGeneratingX509ExtendedKeyManagerChooseServerAliasDefaultsTest.java","96","109","-2147397691","-2147397632","0","0","void returnsDefaultIfHandshakeSessionIsNotSupported()","void returnsDefaultIfHandshakeSessionIsNotSupported(){
+    given(sslSocketMock.getHandshakeSession()).willThrow(new UnsupportedOperationException());
+
+    String alias =
+        certificateGeneratingKeyManager.chooseServerAlias(""RSA"", nullPrincipals, sslSocketMock);
+
+    assertEquals(""default_alias"", alias);
+    assertThat(
+        testNotifier.getErrorMessages(),
+        contains(
+            ""Dynamic certificate generation is not supported because your SSL Provider does not support SSLSocket.getHandshakeSession()""
+                + lineSeparator()
+                + ""All sites will be served using the normal WireMock HTTPS certificate.""));
+  }"
+"953","125","454","455","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ssl/CertificateGeneratingX509ExtendedKeyManagerChooseServerAliasDefaultsTest.java","122","136","-2147397632","-2147397573","0","0","void returnsDefaultIfGetRequestedServerNamesIsNotSupported()","void returnsDefaultIfGetRequestedServerNamesIsNotSupported(){
+    given(extendedSslSessionMock.getRequestedServerNames())
+        .willThrow(new UnsupportedOperationException());
+
+    String alias =
+        certificateGeneratingKeyManager.chooseServerAlias(""RSA"", nullPrincipals, sslSocketMock);
+
+    assertEquals(""default_alias"", alias);
+    assertThat(
+        testNotifier.getErrorMessages(),
+        contains(
+            ""Dynamic certificate generation is not supported because your SSL Provider does not support ExtendedSSLSession.getRequestedServerNames()""
+                + lineSeparator()
+                + ""All sites will be served using the normal WireMock HTTPS certificate.""));
+  }"

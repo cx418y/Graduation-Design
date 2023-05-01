@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"538","75","282","281","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/VerificationAcceptanceTest.java","829","844","-2147433284","-2147433173","0","0","void doesNothingWhenAttemptingToRemoveANonExistentServeEvent()","void doesNothingWhenAttemptingToRemoveANonExistentServeEvent(){
+      stubFor(get(anyUrl()).willReturn(ok()));
+
+      testClient.get(""/one"", withHeader(""My-Header"", ""one""));
+      testClient.get(""/one"", withHeader(""My-Header"", ""two""));
+      testClient.get(""/two"");
+
+      List<ServeEvent> initialServeEvents = getAllServeEvents();
+      assertThat(initialServeEvents.size(), is(3));
+
+      removeServeEvent(UUID.randomUUID());
+
+      List<ServeEvent> finalServeEvents = getAllServeEvents();
+
+      assertThat(finalServeEvents.size(), is(3));
+    }"
+"540","75","293","292","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/VerificationAcceptanceTest.java","872","887","-2147432974","-2147432855","0","0","void returnsEmptyListWhenNoEventsMatchedForRemoval()","void returnsEmptyListWhenNoEventsMatchedForRemoval(){
+      stubFor(get(anyUrl()).willReturn(ok()));
+
+      testClient.get(""/one"", withHeader(""My-Header"", ""one""));
+      testClient.get(""/one"", withHeader(""My-Header"", ""two""));
+      testClient.get(""/two"");
+
+      List<ServeEvent> removedEvents =
+          removeServeEvents(
+              getRequestedFor(urlPathEqualTo(""/one"")).withHeader(""My-Header"", equalTo(""wrong"")));
+
+      assertThat(removedEvents.size(), is(0));
+
+      List<ServeEvent> serveEvents = getAllServeEvents();
+      assertThat(serveEvents.size(), is(3));
+    }"

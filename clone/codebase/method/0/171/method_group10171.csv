@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1279","171","626","625","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/RecordingDslAcceptanceTest.java","196","210","-2147366247","-2147366128","0","0","void startsRecordingWithDefaultSpecFromTheSpecifiedProxyBaseUrlWhenServeEventsAlreadyExist()","void startsRecordingWithDefaultSpecFromTheSpecifiedProxyBaseUrlWhenServeEventsAlreadyExist(){
+    targetService.stubFor(post(""/record-this-with-body"").willReturn(ok()));
+
+    adminClient.startStubRecording(
+        recordSpec().forTarget(targetBaseUrl).matchRequestBodyWithEqualToJson(true, true));
+
+    client.postJson(""/record-this-with-body"", ""{}"");
+
+    List<StubMapping> returnedMappings = adminClient.stopStubRecording().getStubMappings();
+
+    EqualToJsonPattern bodyPattern =
+        (EqualToJsonPattern) returnedMappings.get(0).getRequest().getBodyPatterns().get(0);
+    assertThat(bodyPattern.isIgnoreArrayOrder(), is(true));
+    assertThat(bodyPattern.isIgnoreExtraElements(), is(true));
+  }"
+"1280","171","626","631","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/RecordingDslAcceptanceTest.java","213","227","-2147366128","-2147366009","0","0","void startsRecordingWithDefaultSpecFromTheSpecifiedProxyBaseUrlWhenServeEventsAlreadyExist()","void startsRecordingWithDefaultSpecFromTheSpecifiedProxyBaseUrlWhenServeEventsAlreadyExist(){
+    targetService.stubFor(post(""/record-this-with-body"").willReturn(ok()));
+
+    proxyingService.startRecording(
+        recordSpec().forTarget(targetBaseUrl).matchRequestBodyWithEqualToJson(true, true));
+
+    client.postJson(""/record-this-with-body"", ""{}"");
+
+    List<StubMapping> returnedMappings = proxyingService.stopRecording().getStubMappings();
+
+    EqualToJsonPattern bodyPattern =
+        (EqualToJsonPattern) returnedMappings.get(0).getRequest().getBodyPatterns().get(0);
+    assertThat(bodyPattern.isIgnoreArrayOrder(), is(true));
+    assertThat(bodyPattern.isIgnoreExtraElements(), is(true));
+  }"

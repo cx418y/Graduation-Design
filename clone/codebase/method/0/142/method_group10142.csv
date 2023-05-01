@@ -1,0 +1,36 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1013","142","510","509","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ResponseDelayAcceptanceTest.java","72","82","-2147392540","-2147392463","0","0","void responseWithFixedDelay()","void responseWithFixedDelay(){
+    stubFor(
+        get(urlEqualTo(""/delayed/resource""))
+            .willReturn(aResponse().withStatus(200).withBody(""Content"").withFixedDelay(500)));
+
+    long start = System.currentTimeMillis();
+    testClient.get(""/delayed/resource"");
+    int duration = (int) (System.currentTimeMillis() - start);
+
+    assertThat(duration, greaterThanOrEqualTo(500));
+  }"
+"1016","142","512","511","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ResponseDelayAcceptanceTest.java","136","147","-2147392146","-2147392065","0","0","void responseWithLogNormalDistributedDelay()","void responseWithLogNormalDistributedDelay(){
+    stubFor(
+        get(urlEqualTo(""/lognormal/delayed/resource""))
+            .willReturn(
+                aResponse().withStatus(200).withBody(""Content"").withLogNormalRandomDelay(90, 0.1)));
+
+    long start = System.currentTimeMillis();
+    testClient.get(""/lognormal/delayed/resource"");
+    int duration = (int) (System.currentTimeMillis() - start);
+
+    assertThat(duration, greaterThanOrEqualTo(60));
+  }"
+"1017","142","514","513","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ResponseDelayAcceptanceTest.java","150","161","-2147392065","-2147391986","0","0","void responseWithUniformDistributedDelay()","void responseWithUniformDistributedDelay(){
+    stubFor(
+        get(urlEqualTo(""/uniform/delayed/resource""))
+            .willReturn(
+                aResponse().withStatus(200).withBody(""Content"").withUniformRandomDelay(50, 60)));
+
+    long start = System.currentTimeMillis();
+    testClient.get(""/uniform/delayed/resource"");
+    int duration = (int) (System.currentTimeMillis() - start);
+
+    assertThat(duration, greaterThanOrEqualTo(50));
+  }"

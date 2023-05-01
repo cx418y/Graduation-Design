@@ -15,8 +15,8 @@ public class JavaTemplateExtractor {
 	public static List<TemplateLine> extract(String code) {
 
 		String formattedCode = CppCodeUtil.removeComment(code);
-		formattedCode = CppCodeUtil.formatCode(formattedCode);
-
+		//formattedCode = CppCodeUtil.formatCode(formattedCode);
+		System.out.println("formatted: "+formattedCode);
 		JavaLexer lexer = new JavaLexer(CharStreams.fromString(formattedCode));
 		List<? extends Token> tokens = lexer.getAllTokens();
 		List<Token> tmp = new ArrayList<>();
@@ -26,9 +26,9 @@ public class JavaTemplateExtractor {
 		int lineOffset = 0;
 
 		for (Token tk : tokens) {
-//			System.out.println("type:" + JavaLexer.VOCABULARY.getSymbolicName(tk.getType()) +
-//					"@pos" + tk.getLine() + "(" + tk.getStartIndex() + "," +
-//					tk.getStopIndex() + ")" + ":" + tk.getText());
+			System.out.println("type:" + JavaLexer.VOCABULARY.getSymbolicName(tk.getType()) +
+					"@pos" + tk.getLine() + "(" + tk.getStartIndex() + "," +
+					tk.getStopIndex() + ")" + ":" + tk.getText());
 			int tkLineNum = tk.getLine();
 			if(tkLineNum == lineNum) {
 				if (isLiteral(tk) || isIdentifier(tk)) {

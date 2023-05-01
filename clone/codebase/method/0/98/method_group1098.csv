@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"695","98","352","351","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ResponseDelayAsynchronousAcceptanceTest.java","62","73","-2147419875","-2147419784","0","0","void addsFixedDelayAsynchronously()","void addsFixedDelayAsynchronously(){
+    stubFor(get(""/delayed"").willReturn(ok().withFixedDelay(SHORTER_THAN_SOCKET_TIMEOUT)));
+
+    List<Future<TimedHttpResponse>> responses =
+        httpClientExecutor.invokeAll(getHttpRequestCallables(5));
+
+    for (Future<TimedHttpResponse> response : responses) {
+      TimedHttpResponse timedResponse = response.get();
+      assertThat(timedResponse.response.getCode(), is(200));
+      assertThat(timedResponse.milliseconds, greaterThan((double) SHORTER_THAN_SOCKET_TIMEOUT));
+    }
+  }"
+"696","98","356","355","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ResponseDelayAsynchronousAcceptanceTest.java","76","87","-2147419784","-2147419692","0","0","void addsRandomDelayAsynchronously()","void addsRandomDelayAsynchronously(){
+    stubFor(get(""/delayed"").willReturn(ok().withUniformRandomDelay(100, 300)));
+
+    List<Future<TimedHttpResponse>> responses =
+        httpClientExecutor.invokeAll(getHttpRequestCallables(5));
+
+    for (Future<TimedHttpResponse> response : responses) {
+      TimedHttpResponse timedResponse = response.get();
+      assertThat(timedResponse.response.getCode(), is(200));
+      assertThat(timedResponse.milliseconds, greaterThan(100.0));
+    }
+  }"

@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"401","56","197","196","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/ParseJsonHelperTest.java","40","49","-2147445925","-2147445837","0","0","void parsesASimpleJsonObject()","void parsesASimpleJsonObject(){
+    String inputJson = ""{\""testKey1\"": \""val1\"", \""testKey2\"": \""val2\""}"";
+    Object output = render(inputJson, new Object[] {}, TagType.VAR);
+
+    assertThat(output, instanceOf(Map.class));
+    Map<String, Object> result = (Map<String, Object>) output;
+    assertThat(result, aMapWithSize(2));
+    assertThat(result, hasEntry(""testKey1"", ""val1""));
+    assertThat(result, hasEntry(""testKey2"", ""val2""));
+  }"
+"406","56","199","198","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/ParseJsonHelperTest.java","107","115","-2147445419","-2147445355","0","0","void parsesNullJsonIfNotSection()","void parsesNullJsonIfNotSection(){
+    String inputJson = null;
+    Object output = render(inputJson, new Object[] {}, TagType.VAR);
+
+    // Check that it returns empty object
+    assertThat(output, instanceOf(Map.class));
+    Map<String, Object> result = (Map<String, Object>) output;
+    assertThat(result, aMapWithSize(0));
+  }"
+"408","56","199","204","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/ParseJsonHelperTest.java","129","137","-2147445291","-2147445227","0","0","void parsesEmptyJsonIfNotSection()","void parsesEmptyJsonIfNotSection(){
+    String inputJson = ""{}"";
+    Object output = render(inputJson, new Object[] {}, TagType.VAR);
+
+    // Check that it returns empty object
+    assertThat(output, instanceOf(Map.class));
+    Map<String, Object> result = (Map<String, Object>) output;
+    assertThat(result, aMapWithSize(0));
+  }"

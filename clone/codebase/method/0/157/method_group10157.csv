@@ -1,0 +1,22 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1145","157","578","577","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ResponseTemplatingAcceptanceTest.java","344","353","-2147378773","-2147378718","0","0","void rendersPermittedSystemProperty()","void rendersPermittedSystemProperty(){
+      System.setProperty(""allowed.thing"", ""123"");
+
+      wm.stubFor(
+          get(urlPathEqualTo(""/templated""))
+              .willReturn(
+                  aResponse().withBody(""{{systemValue type='PROPERTY' key='allowed.thing'}}"")));
+
+      assertThat(client.get(""/templated"").content(), is(""123""));
+    }"
+"1146","157","578","580","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ResponseTemplatingAcceptanceTest.java","356","366","-2147378718","-2147378663","0","0","void refusesToRenderForbiddenSystemProperty()","void refusesToRenderForbiddenSystemProperty(){
+      System.setProperty(""forbidden.thing"", ""456"");
+
+      wm.stubFor(
+          get(urlPathEqualTo(""/templated""))
+              .willReturn(
+                  aResponse().withBody(""{{systemValue type='PROPERTY' key='forbidden.thing'}}"")));
+
+      assertThat(
+          client.get(""/templated"").content(), is(""[ERROR: Access to forbidden.thing is denied]""));
+    }"

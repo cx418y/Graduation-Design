@@ -1,0 +1,41 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1012","140","504","503","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/WireMockClientWithProxyAcceptanceTest.java","67","86","-2147392659","-2147392540","0","0","void supportsProxyingWithTheStaticClient()","void supportsProxyingWithTheStaticClient(){
+    WireMock wireMock =
+        WireMock.create()
+            .scheme(""http"")
+            .host(""localhost"")
+            .port(wireMockServer.port())
+            .urlPathPrefix("""")
+            .hostHeader(null)
+            .proxyHost(proxyServer.getListenAddress().getHostString())
+            .proxyPort(proxyServer.getListenAddress().getPort())
+            .build();
+
+    wireMock.register(
+        get(urlEqualTo(""/my/new/resource""))
+            .willReturn(
+                aResponse().withBody(""{\""address\"":\""Puerto Banús, Málaga\""}"").withStatus(200)));
+
+    assertThat(
+        testClient.get(""/my/new/resource"").content(), is(""{\""address\"":\""Puerto Banús, Málaga\""}""));
+  }"
+"1223","140","504","503","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/client/WireMockClientWithProxyAcceptanceTest.java","67","86","-2147371453","-2147371334","0","0","void supportsProxyingWithTheStaticClient()","void supportsProxyingWithTheStaticClient(){
+    WireMock wireMock =
+        WireMock.create()
+            .scheme(""http"")
+            .host(""localhost"")
+            .port(wireMockServer.port())
+            .urlPathPrefix("""")
+            .hostHeader(null)
+            .proxyHost(proxyServer.getListenAddress().getHostString())
+            .proxyPort(proxyServer.getListenAddress().getPort())
+            .build();
+
+    wireMock.register(
+        get(urlEqualTo(""/my/new/resource""))
+            .willReturn(
+                aResponse().withBody(""{\""address\"":\""Puerto Banús, Málaga\""}"").withStatus(200)));
+
+    assertThat(
+        testClient.get(""/my/new/resource"").content(), is(""{\""address\"":\""Puerto Banús, Málaga\""}""));
+  }"

@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"631","90","338","337","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","1046","1053","-2147425365","-2147425310","0","0","void matchesMultipleQueryParametersUsingExactMatch(
+      final String queryParams, final int statusCode)","void matchesMultipleQueryParametersUsingExactMatch(
+      final String queryParams, final int statusCode){
+    stubFor(
+        get(urlPathEqualTo(""/match""))
+            .withQueryParam(""q"", havingExactly(""1"", ""2"", ""3""))
+            .willReturn(ok()));
+
+    assertThat(testClient.get(""/match"" + queryParams).statusCode(), is(statusCode));
+  }"
+"637","90","338","360","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","1146","1153","-2147424908","-2147424853","0","0","void matchesMultipleQueryParametersUsingIncludeMatch(
+      final String queryParams, final int statusCode)","void matchesMultipleQueryParametersUsingIncludeMatch(
+      final String queryParams, final int statusCode){
+    stubFor(
+        get(urlPathEqualTo(""/match""))
+            .withQueryParam(""q"", including(""1"", ""2"", ""3""))
+            .willReturn(ok()));
+
+    assertThat(testClient.get(""/match"" + queryParams).statusCode(), is(statusCode));
+  }"

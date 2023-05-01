@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 @Slf4j
 public class CppCodeUtil {
-    private static final String CPP_SINGLE_LINE_COMMENT_PATTERN = "//[\\s\\S]*?\n";
+    private static final String CPP_SINGLE_LINE_COMMENT_PATTERN = "^[\n\s]+//[\\s\\S]*?\n";
     private static final String CPP_MULTI_LINE_COMMENT_PATTERN = "/\\*[\\s\\S]*?\\*/";
     private static final String CPP_STRING_PATTERN = "\"[\\s\\S]*?\"";
     //private static final String CONST_KEYWORD = "const";
@@ -266,9 +266,11 @@ public class CppCodeUtil {
     public static String formatCode(String codeText) {
         String code;
         code = codeText.replaceAll("\\s+", " ");
+        code = code.replaceAll("\\\\\"", "\"");
         code = code.replaceAll(";", ";\n");
         code = code.replaceAll("\\{", "{\n");
         code = code.replaceAll("}", "}\n");
+
         return code;
     }
 

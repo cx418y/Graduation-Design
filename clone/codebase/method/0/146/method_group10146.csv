@@ -1,0 +1,48 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1069","146","524","523","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/stubbing/StubMappingJsonRecorderTest.java","91","110","-2147387244","-2147387104","0","0","void writesMappingFileAndCorrespondingBodyFileOnRequest()","void writesMappingFileAndCorrespondingBodyFileOnRequest(){
+    when(admin.countRequestsMatching((any(RequestPattern.class))))
+        .thenReturn(VerificationResult.withCount(0));
+
+    Request request =
+        new MockRequestBuilder().withMethod(RequestMethod.GET).withUrl(""/recorded/content"").build();
+
+    Response response =
+        response().status(200).fromProxy(true).body(""Recorded body content"").build();
+
+    listener.requestReceived(request, response);
+
+    verify(mappingsBlobStore)
+        .put(
+            (eq(""mapping-recorded-content-1$2!3.json"")),
+            argThat(equalToBinaryJson(SAMPLE_REQUEST_MAPPING, STRICT_ORDER)));
+    verify(filesBlobStore)
+        .put(
+            (eq(""body-recorded-content-1$2!3.txt"")), (eq(""Recorded body content"".getBytes(UTF_8))));
+  }"
+"1070","146","530","529","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/stubbing/StubMappingJsonRecorderTest.java","129","155","-2147387104","-2147386953","0","0","void addsResponseHeaders()","void addsResponseHeaders(){
+    when(admin.countRequestsMatching((any(RequestPattern.class))))
+        .thenReturn(VerificationResult.withCount(0));
+
+    Request request =
+        new MockRequestBuilder().withMethod(RequestMethod.GET).withUrl(""/headered/content"").build();
+
+    Response response =
+        response()
+            .status(200)
+            .fromProxy(true)
+            .body(""Recorded body content"")
+            .headers(
+                new HttpHeaders(
+                    httpHeader(""Content-Type"", ""text/plain""),
+                    httpHeader(""Cache-Control"", ""no-cache"")))
+            .build();
+
+    listener.requestReceived(request, response);
+
+    verify(mappingsBlobStore)
+        .put(
+            (eq(""mapping-headered-content-1$2!3.json"")),
+            argThat(equalToBinaryJson(SAMPLE_REQUEST_MAPPING_WITH_HEADERS, STRICT_ORDER)));
+    verify(filesBlobStore)
+        .put(""body-headered-content-1$2!3.txt"", ""Recorded body content"".getBytes(UTF_8));
+  }"

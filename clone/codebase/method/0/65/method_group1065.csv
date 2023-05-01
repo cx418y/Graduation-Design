@@ -1,0 +1,55 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"462","65","245","244","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java","604","632","-2147439740","-2147439610","0","0","void returnsBadEntityStatusWhenInvalidRegexUsedInBodyPattern()","void returnsBadEntityStatusWhenInvalidRegexUsedInBodyPattern(){
+    WireMockResponse response =
+        testClient.postJson(
+            ""/__admin/mappings"",
+            ""{\n""
+                + ""    \""request\"": {\n""
+                + ""        \""bodyPatterns\"": [\n""
+                + ""            {\n""
+                + ""                \""equalTo\"": \""fine\""\n""
+                + ""            },\n""
+                + ""            {\n""
+                + ""                \""matches\"": \""somebad]]][[stuff\""\n""
+                + ""            }\n""
+                + ""        ]\n""
+                + ""    }\n""
+                + ""}"");
+
+    assertThat(response.statusCode(), is(422));
+
+    Errors errors = Json.read(response.content(), Errors.class);
+    assertThat(errors.first().getSource().getPointer(), is(""/request/bodyPatterns/1""));
+    assertThat(errors.first().getTitle(), is(""Error parsing JSON""));
+    assertThat(
+        errors.first().getDetail(),
+        equalsMultiLine(
+            ""Unclosed character class near index 16\n""
+                + ""somebad]]][[stuff\n""
+                + ""                ^""));
+  }"
+"464","65","255","254","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java","659","683","-2147439508","-2147439400","0","0","void returnsBadEntityStatusWhenInvalidMatchOperatorManyBodyPatterns()","void returnsBadEntityStatusWhenInvalidMatchOperatorManyBodyPatterns(){
+    WireMockResponse response =
+        testClient.postJson(
+            ""/__admin/mappings"",
+            ""{\n""
+                + ""    \""request\"": {\n""
+                + ""        \""bodyPatterns\"": [\n""
+                + ""            {\n""
+                + ""                \""equalTo\"": \""fine\""\n""
+                + ""            },\n""
+                + ""            {\n""
+                + ""                \""matching\"": \""somebad]]][[stuff\""\n""
+                + ""            }\n""
+                + ""        ]\n""
+                + ""    }\n""
+                + ""}"");
+
+    assertThat(response.statusCode(), is(422));
+
+    Errors errors = Json.read(response.content(), Errors.class);
+    assertThat(errors.first().getSource().getPointer(), is(""/request/bodyPatterns/1""));
+    assertThat(
+        errors.first().getDetail(),
+        is(""{\""matching\"":\""somebad]]][[stuff\""} is not a valid match operation""));
+  }"

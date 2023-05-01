@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"263","38","141","140","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/servlet/AltHttpServerFactory.java","94","107","-2147457061","-2147456977","0","0","ServletContextHandler addMockServiceContext(
+      Server jettyServer,
+      StubRequestHandler stubRequestHandler,
+      FileSource fileSource,
+      Notifier notifier)","ServletContextHandler addMockServiceContext(
+      Server jettyServer,
+      StubRequestHandler stubRequestHandler,
+      FileSource fileSource,
+      Notifier notifier){
+    ServletContextHandler mockServiceContext = new ServletContextHandler(jettyServer, ""/"");
+
+    mockServiceContext.setAttribute(StubRequestHandler.class.getName(), stubRequestHandler);
+    mockServiceContext.setAttribute(Notifier.KEY, notifier);
+    ServletHolder servletHolder =
+        mockServiceContext.addServlet(WireMockHandlerDispatchingServlet.class, ""/"");
+    servletHolder.setInitParameter(
+        RequestHandler.HANDLER_CLASS_KEY, StubRequestHandler.class.getName());
+    servletHolder.setInitParameter(
+        WireMockHandlerDispatchingServlet.SHOULD_FORWARD_TO_FILES_CONTEXT, ""false"");
+
+    return mockServiceContext;
+  }"
+"264","38","143","142","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/servlet/AltHttpServerFactory.java","110","119","-2147456977","-2147456904","0","0","ServletContextHandler addAdminContext(
+      Server jettyServer, AdminRequestHandler adminRequestHandler, Notifier notifier)","ServletContextHandler addAdminContext(
+      Server jettyServer, AdminRequestHandler adminRequestHandler, Notifier notifier){
+    ServletContextHandler adminContext = new ServletContextHandler(jettyServer, ADMIN_CONTEXT_ROOT);
+    ServletHolder servletHolder =
+        adminContext.addServlet(WireMockHandlerDispatchingServlet.class, ""/"");
+    servletHolder.setInitParameter(
+        RequestHandler.HANDLER_CLASS_KEY, AdminRequestHandler.class.getName());
+    adminContext.setAttribute(AdminRequestHandler.class.getName(), adminRequestHandler);
+    adminContext.setAttribute(Notifier.KEY, notifier);
+    return adminContext;
+  }"

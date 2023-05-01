@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"715","99","362","361","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ProxyAcceptanceTest.java","271","284","-2147417630","-2147417487","0","0","void returnsContentLengthHeaderFromTargetResponseIfPresentAndChunkedEncodingEnabled()","void returnsContentLengthHeaderFromTargetResponseIfPresentAndChunkedEncodingEnabled(){
+    init(wireMockConfig().useChunkedTransferEncoding(Options.ChunkedEncodingPolicy.ALWAYS));
+
+    String path = ""/response/length"";
+    target.register(head(urlPathEqualTo(path)).willReturn(ok().withHeader(""Content-Length"", ""4"")));
+    proxy.register(any(anyUrl()).willReturn(aResponse().proxiedFrom(targetServiceBaseUrl)));
+
+    CloseableHttpClient httpClient = HttpClientFactory.createClient();
+    HttpHead request = new HttpHead(proxyingService.baseUrl() + path);
+    try (CloseableHttpResponse response = httpClient.execute(request)) {
+      assertThat(response.getCode(), is(200));
+      assertThat(response.getFirstHeader(""Content-Length"").getValue(), is(""4""));
+    }
+  }"
+"716","99","362","363","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ProxyAcceptanceTest.java","288","301","-2147417487","-2147417344","0","0","void returnsContentLengthHeaderFromTargetResponseIfPresentAndChunkedEncodingDisabled()","void returnsContentLengthHeaderFromTargetResponseIfPresentAndChunkedEncodingDisabled(){
+    init(wireMockConfig().useChunkedTransferEncoding(Options.ChunkedEncodingPolicy.NEVER));
+
+    String path = ""/response/length"";
+    target.register(head(urlPathEqualTo(path)).willReturn(ok().withHeader(""Content-Length"", ""4"")));
+    proxy.register(any(anyUrl()).willReturn(aResponse().proxiedFrom(targetServiceBaseUrl)));
+
+    CloseableHttpClient httpClient = HttpClientFactory.createClient();
+    HttpHead request = new HttpHead(proxyingService.baseUrl() + path);
+    try (CloseableHttpResponse response = httpClient.execute(request)) {
+      assertThat(response.getCode(), is(200));
+      assertThat(response.getFirstHeader(""Content-Length"").getValue(), is(""4""));
+    }
+  }"

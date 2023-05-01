@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"609","86","317","316","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","648","661","-2147427433","-2147427361","0","0","void matchesFormParamUnencoded()","void matchesFormParamUnencoded(){
+    stubFor(
+        put(urlPathEqualTo(""/form""))
+            .withFormParam(""key-one"", equalTo(""one two three ?""))
+            .willReturn(aResponse().withStatus(200)));
+
+    WireMockResponse response =
+        testClient.putWithBody(
+            ""/form"",
+            ""key-one=one%20two%20three%20%3F"",
+            ""application/x-www-form-urlencoded"",
+            TestHttpHeader.withHeader(""Content-Type"", ""application/x-www-form-urlencoded""));
+    assertThat(response.statusCode(), is(200));
+  }"
+"610","86","317","323","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","664","677","-2147427361","-2147427289","0","0","void matchesFormParamWithKeyInArrayStyle()","void matchesFormParamWithKeyInArrayStyle(){
+    stubFor(
+        put(urlPathEqualTo(""/form""))
+            .withFormParam(""key[one]"", equalTo(""firstValue""))
+            .willReturn(aResponse().withStatus(200)));
+
+    WireMockResponse response =
+        testClient.putWithBody(
+            ""/form"",
+            ""key[one]=firstValue"",
+            ""application/x-www-form-urlencoded"",
+            TestHttpHeader.withHeader(""Content-Type"", ""application/x-www-form-urlencoded""));
+    assertThat(response.statusCode(), is(200));
+  }"

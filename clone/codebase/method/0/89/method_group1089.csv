@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"626","89","330","329","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","942","959","-2147425873","-2147425793","0","0","void matchesInRequestBodyOnLiteralZonedDate()","void matchesInRequestBodyOnLiteralZonedDate(){
+    stubFor(
+        post(""/date"")
+            .withRequestBody(matchingJsonPath(""$.date"", before(""2021-10-11T00:00:00Z"")))
+            .willReturn(ok()));
+
+    assertThat(
+        testClient
+            .postJson(""/date"", ""{\n"" + ""  \""date\"": \""2021-06-22T23:59:59Z\""\n"" + ""}"")
+            .statusCode(),
+        is(200));
+
+    assertThat(
+        testClient
+            .postJson(""/date"", ""{\n"" + ""  \""date\"": \""2121-06-22T23:59:59Z\""\n"" + ""}"")
+            .statusCode(),
+        is(404));
+  }"
+"629","89","332","331","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","1010","1029","-2147425547","-2147425459","0","0","void matchesWithLogicalAnd()","void matchesWithLogicalAnd(){
+    stubFor(
+        post(""/date"")
+            .withRequestBody(
+                matchingJsonPath(
+                    ""$.date"", after(""2020-05-01T00:00:00Z"").and(before(""2021-05-01T00:00:00Z""))))
+            .willReturn(ok()));
+
+    assertThat(
+        testClient
+            .postJson(""/date"", ""{\n"" + ""  \""date\"": \""2020-12-31T00:00:00Z\""\n"" + ""}"")
+            .statusCode(),
+        is(200));
+
+    assertThat(
+        testClient
+            .postJson(""/date"", ""{\n"" + ""  \""date\"": \""2011-12-31T00:00:00Z\""\n"" + ""}"")
+            .statusCode(),
+        is(404));
+  }"

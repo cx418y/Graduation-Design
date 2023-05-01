@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"910","122","446","445","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StandaloneAcceptanceTest.java","295","311","-2147400928","-2147400825","0","0","void recordsProxiedRequestsWhenSpecifiedOnCommandLine()","void recordsProxiedRequestsWhenSpecifiedOnCommandLine(){
+    WireMock otherServerClient = startOtherServerAndClient();
+    startRunner(""--record-mappings"");
+    givenThat(
+        get(urlEqualTo(""/please/record-this""))
+            .willReturn(aResponse().proxiedFrom(""http://localhost:"" + otherServer.port())));
+    otherServerClient.register(
+        get(urlEqualTo(""/please/record-this""))
+            .willReturn(aResponse().withStatus(HTTP_OK).withBody(""Proxied body"")));
+
+    testClient.get(""/please/record-this"");
+
+    assertThat(mappingsDirectory, containsAFileContaining(""/please/record-this""));
+    assertThat(
+        contentsOfFirstFileNamedLike(""please-record-this""),
+        containsString(""bodyFileName\"" : \""body-please-record-this""));
+  }"
+"915","122","459","458","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StandaloneAcceptanceTest.java","387","401","-2147400443","-2147400346","0","0","void doesNotRecordRequestWhenAlreadySeen()","void doesNotRecordRequestWhenAlreadySeen(){
+    WireMock otherServerClient = startOtherServerAndClient();
+    startRunner(""--record-mappings"");
+    givenThat(
+        get(urlEqualTo(""/try-to/record-this""))
+            .willReturn(aResponse().proxiedFrom(""http://localhost:"" + otherServer.port())));
+    otherServerClient.register(
+        get(urlEqualTo(""/try-to/record-this""))
+            .willReturn(aResponse().withStatus(HTTP_OK).withBody(""Proxied body"")));
+
+    testClient.get(""/try-to/record-this"");
+    testClient.get(""/try-to/record-this"");
+
+    assertThat(mappingsDirectory, containsExactlyOneFileWithNameContaining(""try-to-record""));
+  }"

@@ -1,0 +1,22 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"284","40","153","152","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/SnapshotDslAcceptanceTest.java","374","383","-2147454342","-2147454263","0","0","void staticClientIsSupportedWithSpecProvided()","void staticClientIsSupportedWithSpecProvided(){
+    client.get(""/get-this"");
+    client.get(""/but-not-this"");
+
+    snapshotRecord(recordSpec().onlyRequestsMatching(getRequestedFor(urlEqualTo(""/get-this""))));
+
+    List<StubMapping> serverMappings = proxyingService.getStubMappings();
+    assertThat(serverMappings, hasItem(WireMatchers.stubMappingWithUrl(""/get-this"")));
+    assertThat(serverMappings, not(hasItem(WireMatchers.stubMappingWithUrl(""/but-not-this""))));
+  }"
+"285","40","159","158","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/SnapshotDslAcceptanceTest.java","395","405","-2147454263","-2147454182","0","0","void instanceClientIsSupportedWithSpecProvided()","void instanceClientIsSupportedWithSpecProvided(){
+    client.get(""/get-this"");
+    client.get(""/but-not-this"");
+
+    adminClient.takeSnapshotRecording(
+        recordSpec().onlyRequestsMatching(getRequestedFor(urlEqualTo(""/get-this""))));
+
+    List<StubMapping> serverMappings = proxyingService.getStubMappings();
+    assertThat(serverMappings, hasItem(WireMatchers.stubMappingWithUrl(""/get-this"")));
+    assertThat(serverMappings, not(hasItem(WireMatchers.stubMappingWithUrl(""/but-not-this""))));
+  }"

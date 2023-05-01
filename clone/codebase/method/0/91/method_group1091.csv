@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"633","91","358","357","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","1070","1085","-2147425236","-2147425148","0","0","void matchesMultipleValuesForHeaderUsingIncludesMatch()","void matchesMultipleValuesForHeaderUsingIncludesMatch(){
+    stubFor(
+        get(urlPathEqualTo(""/match"")).withHeader(""q"", including(""1"", ""2"", ""3"")).willReturn(ok()));
+
+    assertThat(
+        testClient
+            .get(
+                ""/match"",
+                withHeader(""q"", ""1""),
+                withHeader(""q"", ""2""),
+                withHeader(""q"", ""3""),
+                withHeader(""q"", ""4""),
+                withHeader(""q"", ""5""))
+            .statusCode(),
+        is(200));
+  }"
+"634","91","358","368","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","1088","1103","-2147425148","-2147425060","0","0","void matchesMultipleValuesForHeaderUsingIncludesMatchReturnsNotFound()","void matchesMultipleValuesForHeaderUsingIncludesMatchReturnsNotFound(){
+    stubFor(
+        get(urlPathEqualTo(""/match"")).withHeader(""q"", including(""1"", ""8"", ""3"")).willReturn(ok()));
+
+    assertThat(
+        testClient
+            .get(
+                ""/match"",
+                withHeader(""q"", ""1""),
+                withHeader(""q"", ""2""),
+                withHeader(""q"", ""3""),
+                withHeader(""q"", ""4""),
+                withHeader(""q"", ""5""))
+            .statusCode(),
+        is(404));
+  }"

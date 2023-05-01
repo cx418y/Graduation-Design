@@ -1,0 +1,27 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"3","3","1","0","0","/Users/macbook/Desktop/design/open/wiremock/wiremock-webhooks-extension/src/test/java/testsupport/WireMockTestClient.java","251","261","-2147483339","-2147483283","0","0","WireMockResponse executeMethodAndConvertExceptions(
+      HttpUriRequest httpRequest, TestHttpHeader... headers)","WireMockResponse executeMethodAndConvertExceptions(
+      HttpUriRequest httpRequest, TestHttpHeader... headers){
+    try {
+      for (TestHttpHeader header : headers) {
+        httpRequest.addHeader(header.getName(), header.getValue());
+      }
+      ClassicHttpResponse httpResponse = httpClient().execute(httpRequest);
+      return new WireMockResponse(httpResponse);
+    } catch (IOException ioe) {
+      throw new RuntimeException(ioe);
+    }
+  }"
+"256","3","1","0","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/testsupport/WireMockTestClient.java","290","300","-2147458122","-2147458066","0","0","WireMockResponse executeMethodAndConvertExceptions(
+      HttpUriRequest httpRequest, TestHttpHeader... headers)","WireMockResponse executeMethodAndConvertExceptions(
+      HttpUriRequest httpRequest, TestHttpHeader... headers){
+    try {
+      for (TestHttpHeader header : headers) {
+        httpRequest.addHeader(header.getName(), header.getValue());
+      }
+      ClassicHttpResponse httpResponse = httpClient().execute(httpRequest);
+      return new WireMockResponse(httpResponse);
+    } catch (IOException ioe) {
+      throw new RuntimeException(ioe);
+    }
+  }"

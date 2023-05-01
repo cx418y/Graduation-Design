@@ -5903,3 +5903,1030 @@ ERROR [main] 2023-04-29 10:47:09 [Pipeline.java:79]: ../../newCodeBase-pure дЄНе
  INFO [main] 2023-04-30 18:14:23 [UnionFindParser.java:181]: ==========================================
  INFO [main] 2023-04-30 18:14:23 [UnionFindParser.java:57]: result group: 8
  INFO [main] 2023-04-30 18:14:23 [Pipeline.java:139]: total time cost: PT0.155S
+ INFO [main] 2023-05-01 16:11:37 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:11:37 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:11:37 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 1%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 2%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 3%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 4%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 5%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 6%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 7%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 8%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 9%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 10%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 11%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 12%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 13%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 14%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 15%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 16%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 17%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 18%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 19%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 20%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 21%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 22%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 23%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 24%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 25%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 26%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 27%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 28%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 29%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 30%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 31%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 32%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 33%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 34%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 35%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 36%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 37%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 38%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 39%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 40%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 41%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 42%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 43%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 44%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 45%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 46%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 47%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 48%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 49%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 50%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 51%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 52%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 53%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 54%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 55%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 56%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 57%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 58%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 59%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 60%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 61%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 62%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 63%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 64%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 65%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 66%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 67%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 68%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 69%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 70%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 71%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 72%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 73%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 74%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 75%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 76%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 77%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 78%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 79%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 80%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 81%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 82%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 83%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 84%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 85%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 86%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 87%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 88%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 89%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 90%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 91%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 92%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 93%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 94%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 95%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 96%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 97%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 98%
+ INFO [main] 2023-05-01 16:11:37 [Tokenizer.java:124]: 99%
+ INFO [main] 2023-05-01 16:11:38 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:11:38 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:11:38 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:11:38 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:11:38 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:11:38 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:11:38 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:11:38 [SuffixArrayBuilder.java:36]: data trunk size:167043 0
+ INFO [main] 2023-05-01 16:11:38 [SuffixArrayBuilder.java:41]: ./executable/method_mac 0 -1 -2147483647 0 1 1 20 20
+ INFO [main] 2023-05-01 16:11:38 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:11:38 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:11:38 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:11:38 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:11:38 [Pipeline.java:139]: total time cost: PT1.075S
+ INFO [main] 2023-05-01 16:14:41 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:14:41 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:14:41 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:14:41 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:14:41 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:14:41 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:14:41 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:14:41 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:14:41 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:14:41 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:14:41 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:14:41 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:14:41 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:14:41 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:14:41 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:14:41 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:14:41 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:14:41 [Pipeline.java:139]: total time cost: PT0.301S
+ INFO [main] 2023-05-01 16:14:53 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:14:53 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:14:53 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:14:53 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:14:53 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:14:53 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:14:53 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:14:53 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:14:53 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:14:53 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:14:53 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:14:53 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:14:53 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:14:53 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:14:53 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:14:53 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:14:53 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:14:53 [Pipeline.java:139]: total time cost: PT0.292S
+ INFO [main] 2023-05-01 16:17:25 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:17:25 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:17:25 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:17:25 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:17:25 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:17:25 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:17:25 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:17:25 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:17:25 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:17:25 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:17:25 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:17:25 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:17:25 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:17:25 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:17:25 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:17:25 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:17:25 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:17:25 [Pipeline.java:139]: total time cost: PT0.309S
+ INFO [main] 2023-05-01 16:17:35 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:17:35 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:17:35 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:17:35 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:17:35 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:17:35 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:17:35 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:17:35 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:17:35 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:17:35 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:17:35 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:17:35 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:17:35 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:17:35 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:17:35 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:17:35 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:17:35 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:17:35 [Pipeline.java:139]: total time cost: PT0.334S
+ INFO [main] 2023-05-01 16:24:00 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:24:01 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:24:01 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:24:01 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:24:01 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:24:01 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:24:01 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:24:01 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:24:01 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:24:01 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:24:01 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:24:01 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:24:01 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:24:01 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:24:01 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:24:01 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:24:01 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:24:01 [Pipeline.java:139]: total time cost: PT0.32S
+ INFO [main] 2023-05-01 16:24:17 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:24:17 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:24:17 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:24:17 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:24:17 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:24:17 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:24:17 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:24:17 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:24:17 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:24:17 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:24:17 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:24:17 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:24:17 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:24:17 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:24:17 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:24:17 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:24:17 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:24:17 [Pipeline.java:139]: total time cost: PT0.445S
+ INFO [main] 2023-05-01 16:24:46 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:24:46 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:24:46 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 1%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 2%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 3%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 4%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 5%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 6%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 7%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 8%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 9%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 10%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 11%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 12%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 13%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 14%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 15%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 16%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 17%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 18%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 19%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 20%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 21%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 22%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 23%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 24%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 25%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 26%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 27%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 28%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 29%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 30%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 31%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 32%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 33%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 34%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 35%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 36%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 37%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 38%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 39%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 40%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 41%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 42%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 43%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 44%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 45%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 46%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 47%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 48%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 49%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 50%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 51%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 52%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 53%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 54%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 55%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 56%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 57%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 58%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 59%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 60%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 61%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 62%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 63%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 64%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 65%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 66%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 67%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 68%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 69%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 70%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 71%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 72%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 73%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 74%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 75%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 76%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 77%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 78%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 79%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 80%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 81%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 82%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 83%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 84%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 85%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 86%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 87%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 88%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 89%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 90%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 91%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 92%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 93%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 94%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 95%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 96%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 97%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 98%
+ INFO [main] 2023-05-01 16:24:46 [Tokenizer.java:124]: 99%
+ INFO [main] 2023-05-01 16:24:47 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:24:47 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:24:47 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:24:47 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:24:47 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:24:47 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:24:47 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:24:47 [SuffixArrayBuilder.java:36]: data trunk size:167043 0
+ INFO [main] 2023-05-01 16:24:47 [SuffixArrayBuilder.java:41]: ./executable/method_mac 0 -1 -2147483647 0 1 1 20 20
+ INFO [main] 2023-05-01 16:24:47 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:24:47 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:24:47 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:24:47 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:24:47 [Pipeline.java:139]: total time cost: PT1.026S
+ INFO [main] 2023-05-01 16:24:59 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:25:00 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:25:00 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:25:00 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:25:00 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:25:00 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:25:00 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:25:00 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:25:00 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:25:00 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:25:00 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:25:00 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:25:00 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:25:00 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:25:00 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:25:00 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:25:00 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:25:00 [Pipeline.java:139]: total time cost: PT0.452S
+ INFO [main] 2023-05-01 16:25:29 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:25:29 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:25:29 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:25:29 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:25:29 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:25:29 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:25:29 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:25:29 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:25:29 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:25:29 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:25:29 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:25:29 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:25:29 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:25:29 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:25:29 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:25:29 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:25:29 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:25:29 [Pipeline.java:139]: total time cost: PT0.401S
+ INFO [main] 2023-05-01 16:25:50 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:25:50 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:25:50 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 1%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 2%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 3%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 4%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 5%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 6%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 7%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 8%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 9%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 10%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 11%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 12%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 13%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 14%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 15%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 16%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 17%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 18%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 19%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 20%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 21%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 22%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 23%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 24%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 25%
+ INFO [main] 2023-05-01 16:25:50 [Tokenizer.java:124]: 26%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 27%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 28%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 29%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 30%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 31%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 32%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 33%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 34%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 35%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 36%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 37%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 38%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 39%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 40%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 41%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 42%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 43%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 44%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 45%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 46%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 47%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 48%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 49%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 50%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 51%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 52%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 53%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 54%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 55%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 56%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 57%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 58%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 59%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 60%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 61%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 62%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 63%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 64%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 65%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 66%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 67%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 68%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 69%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 70%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 71%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 72%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 73%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 74%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 75%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 76%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 77%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 78%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 79%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 80%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 81%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 82%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 83%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 84%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 85%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 86%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 87%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 88%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 89%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 90%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 91%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 92%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 93%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 94%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 95%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 96%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 97%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 98%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:124]: 99%
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:25:51 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:25:51 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:25:51 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:25:51 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:25:51 [SuffixArrayBuilder.java:36]: data trunk size:167043 0
+ INFO [main] 2023-05-01 16:25:51 [SuffixArrayBuilder.java:41]: ./executable/method_mac 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-05-01 16:25:51 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:25:51 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:25:51 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:25:51 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:25:51 [Pipeline.java:139]: total time cost: PT1.032S
+ INFO [main] 2023-05-01 16:31:33 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:31:33 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:31:33 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 1%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 2%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 3%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 4%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 5%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 6%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 7%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 8%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 9%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 10%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 11%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 12%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 13%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 14%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 15%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 16%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 17%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 18%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 19%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 20%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 21%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 22%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 23%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 24%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 25%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 26%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 27%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 28%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 29%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 30%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 31%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 32%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 33%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 34%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 35%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 36%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 37%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 38%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 39%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 40%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 41%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 42%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 43%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 44%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 45%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 46%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 47%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 48%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 49%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 50%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 51%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 52%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 53%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 54%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 55%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 56%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 57%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 58%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 59%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 60%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 61%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 62%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 63%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 64%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 65%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 66%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 67%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 68%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 69%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 70%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 71%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 72%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 73%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 74%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 75%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 76%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 77%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 78%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 79%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 80%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 81%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 82%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 83%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 84%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 85%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 86%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 87%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 88%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 89%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 90%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 91%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 92%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 93%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 94%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 95%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 96%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 97%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 98%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:124]: 99%
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:31:33 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:31:33 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:31:33 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:31:33 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:31:33 [SuffixArrayBuilder.java:36]: data trunk size:167043 0
+ INFO [main] 2023-05-01 16:31:33 [SuffixArrayBuilder.java:41]: ./executable/method_mac 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-05-01 16:31:33 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:31:33 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:31:33 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:31:34 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:31:34 [Pipeline.java:139]: total time cost: PT1.08S
+ INFO [main] 2023-05-01 16:31:44 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:31:44 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:31:44 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:31:44 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:31:44 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:31:44 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:31:44 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:31:44 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:31:44 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:31:44 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:31:44 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:31:44 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:31:44 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:31:44 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:31:44 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:31:44 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:31:44 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:31:44 [Pipeline.java:139]: total time cost: PT0.35S
+ INFO [main] 2023-05-01 16:34:06 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:34:06 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:34:06 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 1%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 2%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 3%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 4%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 5%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 6%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 7%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 8%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 9%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 10%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 11%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 12%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 13%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 14%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 15%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 16%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 17%
+ INFO [main] 2023-05-01 16:34:06 [Tokenizer.java:124]: 18%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 19%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 20%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 21%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 22%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 23%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 24%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 25%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 26%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 27%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 28%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 29%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 30%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 31%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 32%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 33%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 34%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 35%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 36%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 37%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 38%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 39%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 40%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 41%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 42%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 43%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 44%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 45%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 46%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 47%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 48%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 49%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 50%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 51%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 52%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 53%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 54%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 55%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 56%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 57%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 58%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 59%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 60%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 61%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 62%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 63%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 64%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 65%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 66%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 67%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 68%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 69%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 70%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 71%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 72%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 73%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 74%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 75%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 76%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 77%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 78%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 79%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 80%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 81%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 82%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 83%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 84%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 85%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 86%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 87%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 88%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 89%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 90%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 91%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 92%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 93%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 94%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 95%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 96%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 97%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 98%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:124]: 99%
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:34:07 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:34:07 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:34:07 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:34:07 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:34:07 [SuffixArrayBuilder.java:36]: data trunk size:167043 0
+ INFO [main] 2023-05-01 16:34:07 [SuffixArrayBuilder.java:41]: ./executable/method_mac 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2023-05-01 16:34:07 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:34:07 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:34:07 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:34:07 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:34:07 [Pipeline.java:139]: total time cost: PT0.988S
+ INFO [main] 2023-05-01 16:34:17 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 16:34:17 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 16:34:17 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 16:34:17 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 16:34:17 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 16:34:17 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 16:34:17 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 16:34:17 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 16:34:17 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 16:34:17 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 16:34:17 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 16:34:17 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 16:34:17 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 16:34:17 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 16:34:17 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 16:34:17 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 16:34:17 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 16:34:17 [Pipeline.java:139]: total time cost: PT0.345S
+ INFO [main] 2023-05-01 17:48:23 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 17:48:23 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 17:48:23 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 17:48:23 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 17:48:23 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 17:48:23 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 17:48:23 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 17:48:23 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 17:48:23 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 17:48:23 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 17:48:23 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 17:48:23 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 17:48:23 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 17:48:23 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 17:48:23 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 17:48:23 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 17:48:23 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 17:48:23 [Pipeline.java:139]: total time cost: PT0.351S
+ INFO [main] 2023-05-01 17:48:41 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 17:48:41 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 17:48:41 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 17:48:41 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 17:48:41 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 17:48:41 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 17:48:41 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 17:48:41 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 17:48:41 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 17:48:41 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 17:48:41 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 17:48:41 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 17:48:41 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 17:48:41 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 17:48:41 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 17:48:41 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 17:48:41 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 17:48:41 [Pipeline.java:139]: total time cost: PT0.304S
+ INFO [main] 2023-05-01 17:49:35 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 17:49:35 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 17:49:35 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 17:49:35 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 17:49:35 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 17:49:35 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 17:49:35 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 17:49:35 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 17:49:35 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 17:49:35 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 17:49:36 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 17:49:36 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 17:49:36 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 17:49:36 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 17:49:36 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 17:49:36 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 17:49:36 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 17:49:36 [Pipeline.java:139]: total time cost: PT0.307S
+ INFO [main] 2023-05-01 17:49:45 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 17:49:45 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 17:49:45 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 17:49:45 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 17:49:45 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 17:49:45 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 17:49:45 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 17:49:45 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 17:49:45 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 17:49:45 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 17:49:45 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 17:49:45 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 17:49:45 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 17:49:45 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 17:49:45 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 17:49:45 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 17:49:46 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 17:49:46 [Pipeline.java:139]: total time cost: PT0.285S
+ INFO [main] 2023-05-01 17:52:57 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 17:52:57 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 17:52:57 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 17:52:57 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 17:52:57 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 17:52:57 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 17:52:57 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 17:52:57 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 17:52:57 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 17:52:57 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 17:52:57 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 17:52:57 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 17:52:57 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 17:52:57 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 17:52:57 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 17:52:57 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 17:52:57 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 17:52:57 [Pipeline.java:139]: total time cost: PT0.295S
+ INFO [main] 2023-05-01 17:53:11 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 17:53:11 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 17:53:11 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 17:53:11 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 17:53:11 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 17:53:11 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 17:53:11 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 17:53:11 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 17:53:11 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 17:53:11 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 17:53:11 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 17:53:11 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 17:53:11 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 17:53:11 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 17:53:11 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 17:53:11 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 17:53:11 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 17:53:11 [Pipeline.java:139]: total time cost: PT0.307S
+ INFO [main] 2023-05-01 17:54:42 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 17:54:42 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 17:54:42 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 17:54:42 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 17:54:42 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 17:54:42 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 17:54:42 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 17:54:42 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 17:54:42 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 17:54:42 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 17:54:42 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 17:54:42 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 17:54:42 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 17:54:42 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 17:54:42 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 17:54:42 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 17:54:42 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 17:54:42 [Pipeline.java:139]: total time cost: PT0.304S
+ INFO [main] 2023-05-01 17:54:49 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 17:54:49 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 17:54:49 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 17:54:50 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 17:54:50 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 17:54:50 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 17:54:50 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 17:54:50 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 17:54:50 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 17:54:50 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 17:54:50 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 17:54:50 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 17:54:50 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 17:54:50 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 17:54:50 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 17:54:50 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 17:54:50 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 17:54:50 [Pipeline.java:139]: total time cost: PT0.29S
+ INFO [main] 2023-05-01 18:02:26 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 18:02:26 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 18:02:26 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 18:02:26 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 18:02:26 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 18:02:26 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 18:02:26 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 18:02:26 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 18:02:26 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 18:02:26 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 18:02:26 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 18:02:26 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 18:02:26 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 18:02:26 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 18:02:26 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 18:02:26 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 18:02:26 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 18:02:26 [Pipeline.java:139]: total time cost: PT0.308S
+ INFO [main] 2023-05-01 18:02:34 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 18:02:34 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 18:02:34 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 18:02:34 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 18:02:34 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 18:02:34 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 18:02:34 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 18:02:34 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 18:02:34 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 18:02:34 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 18:02:34 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 18:02:34 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 18:02:34 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 18:02:34 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 18:02:34 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 18:02:34 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 18:02:34 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 18:02:34 [Pipeline.java:139]: total time cost: PT0.295S
+ INFO [main] 2023-05-01 18:19:47 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 18:19:47 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 18:19:47 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 18:19:47 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 18:19:47 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 18:19:47 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 18:19:47 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 18:19:47 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 18:19:47 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 18:19:47 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 18:19:47 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 18:19:47 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 18:19:47 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 18:19:47 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 18:19:47 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 18:19:47 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 18:19:47 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 18:19:47 [Pipeline.java:139]: total time cost: PT0.323S
+ INFO [main] 2023-05-01 18:20:02 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 18:20:02 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 18:20:02 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 18:20:02 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 18:20:02 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 18:20:02 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 18:20:02 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 18:20:02 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 18:20:02 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 18:20:02 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 18:20:02 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 18:20:02 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 18:20:02 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 18:20:02 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 18:20:02 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 18:20:02 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 18:20:02 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 18:20:02 [Pipeline.java:139]: total time cost: PT0.29S
+ INFO [main] 2023-05-01 18:22:18 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 18:22:18 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 18:22:18 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 18:22:18 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 18:22:18 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 18:22:18 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 18:22:18 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 18:22:18 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 18:22:18 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 18:22:18 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 18:22:18 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 18:22:18 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 18:22:18 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 18:22:18 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 18:22:18 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 18:22:18 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 18:22:18 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 18:22:18 [Pipeline.java:139]: total time cost: PT0.317S
+ INFO [main] 2023-05-01 18:22:27 [Pipeline.java:27]: loading file list...
+ INFO [main] 2023-05-01 18:22:27 [Pipeline.java:50]: 769 files have been loaded
+ INFO [main] 2023-05-01 18:22:27 [Pipeline.java:57]: loading state...
+ INFO [main] 2023-05-01 18:22:27 [Tokenizer.java:71]: ==========================================
+ INFO [main] 2023-05-01 18:22:27 [Tokenizer.java:72]:                  tokenize                 
+ INFO [main] 2023-05-01 18:22:27 [Tokenizer.java:73]: ==========================================
+ INFO [main] 2023-05-01 18:22:27 [Tokenizer.java:170]: tokenIndexList: [-2147483647]
+ INFO [main] 2023-05-01 18:22:27 [Tokenizer.java:171]: total token num is: 167043
+ INFO [main] 2023-05-01 18:22:27 [Tokenizer.java:172]: total measure num is: 1741
+ INFO [main] 2023-05-01 18:22:27 [Tokenizer.java:173]: total line is: 88144
+ INFO [main] 2023-05-01 18:22:27 [SuffixArrayBuilder.java:20]: ==========================================
+ INFO [main] 2023-05-01 18:22:27 [SuffixArrayBuilder.java:21]:                   build                   
+ INFO [main] 2023-05-01 18:22:27 [SuffixArrayBuilder.java:22]: ==========================================
+ INFO [main] 2023-05-01 18:22:27 [UnionFindParser.java:179]: ==========================================
+ INFO [main] 2023-05-01 18:22:27 [UnionFindParser.java:180]:                   parse                   
+ INFO [main] 2023-05-01 18:22:27 [UnionFindParser.java:181]: ==========================================
+ INFO [main] 2023-05-01 18:22:27 [UnionFindParser.java:57]: result group: 178
+ INFO [main] 2023-05-01 18:22:27 [Pipeline.java:139]: total time cost: PT0.285S

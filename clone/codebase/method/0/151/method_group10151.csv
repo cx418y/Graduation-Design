@@ -1,0 +1,55 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1109","151","549","548","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/stubbing/ScenariosTest.java","83","109","-2147382490","-2147382346","0","0","void removesPossibleStateFromScenarioWhenStubThatIsNotTheLastInTheScenarioIsDeleted()","void removesPossibleStateFromScenarioWhenStubThatIsNotTheLastInTheScenarioIsDeleted(){
+    StubMapping mapping1 =
+        get(""/scenarios/1"")
+            .inScenario(""one"")
+            .whenScenarioStateIs(STARTED)
+            .willSetStateTo(""step_2"")
+            .willReturn(ok())
+            .build();
+    scenarios.onStubMappingAdded(mapping1);
+
+    StubMapping mapping2 =
+        get(""/scenarios/1"")
+            .inScenario(""one"")
+            .whenScenarioStateIs(""step_2"")
+            .willSetStateTo(""step_3"")
+            .willReturn(ok())
+            .build();
+    scenarios.onStubMappingAdded(mapping2);
+
+    Scenario scenario = scenarios.getByName(""one"");
+    assertThat(scenario.getPossibleStates(), hasItems(STARTED, ""step_2"", ""step_3""));
+
+    scenarios.onStubMappingRemoved(mapping2);
+
+    scenario = scenarios.getByName(""one"");
+    assertThat(scenario.getPossibleStates(), hasItems(STARTED, ""step_2""));
+  }"
+"1110","151","553","552","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/stubbing/ScenariosTest.java","112","138","-2147382346","-2147382207","0","0","void removesScenarioCompletelyWhenNoMoreMappingsReferToItDueToRemoval()","void removesScenarioCompletelyWhenNoMoreMappingsReferToItDueToRemoval(){
+    StubMapping mapping1 =
+        get(""/scenarios/1"")
+            .inScenario(""one"")
+            .whenScenarioStateIs(STARTED)
+            .willSetStateTo(""step_2"")
+            .willReturn(ok())
+            .build();
+    scenarios.onStubMappingAdded(mapping1);
+
+    StubMapping mapping2 =
+        get(""/scenarios/1"")
+            .inScenario(""one"")
+            .whenScenarioStateIs(""step_2"")
+            .willSetStateTo(""step_3"")
+            .willReturn(ok())
+            .build();
+    scenarios.onStubMappingAdded(mapping2);
+
+    Scenario scenario = scenarios.getByName(""one"");
+    assertThat(scenario.getPossibleStates(), hasItems(STARTED, ""step_2"", ""step_3""));
+
+    scenarios.onStubMappingRemoved(mapping1);
+    scenarios.onStubMappingRemoved(mapping2);
+
+    assertThat(scenarios.getAll(), empty());
+  }"

@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1003","138","497","496","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ServeEventLogAcceptanceTest.java","85","94","-2147393603","-2147393543","0","0","void returnsNoResultsAfterReset()","void returnsNoResultsAfterReset(){
+    testClient.get(""/blah"");
+    testClient.get(""/blah"");
+    testClient.get(""/blah"");
+
+    WireMock.reset();
+    List<LoggedRequest> requests = findAll(getRequestedFor(urlEqualTo(""/blah"")));
+
+    assertThat(requests.size(), is(0));
+  }"
+"1004","138","497","500","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ServeEventLogAcceptanceTest.java","97","106","-2147393543","-2147393483","0","0","void returnsNoResultsAfterRequestsReset()","void returnsNoResultsAfterRequestsReset(){
+    testClient.get(""/blah"");
+    testClient.get(""/blah"");
+    testClient.get(""/blah"");
+
+    WireMock.resetAllRequests();
+    List<LoggedRequest> requests = findAll(getRequestedFor(urlEqualTo(""/blah"")));
+
+    assertThat(requests.size(), is(0));
+  }"

@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"405","57","203","202","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/ParseJsonHelperTest.java","96","104","-2147445483","-2147445419","0","0","void parsesNullJsonIfSection()","void parsesNullJsonIfSection(){
+    String inputJson = null;
+    Object output = render(inputJson, new Object[] {}, TagType.SECTION);
+
+    // Check that it returns empty object
+    assertThat(output, instanceOf(Map.class));
+    Map<String, Object> result = (Map<String, Object>) output;
+    assertThat(result, aMapWithSize(0));
+  }"
+"407","57","203","209","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/ParseJsonHelperTest.java","118","126","-2147445355","-2147445291","0","0","void parsesEmptyJsonIfSection()","void parsesEmptyJsonIfSection(){
+    String inputJson = ""{}"";
+    Object output = render(inputJson, new Object[] {}, TagType.SECTION);
+
+    // Check that it returns empty object
+    assertThat(output, instanceOf(Map.class));
+    Map<String, Object> result = (Map<String, Object>) output;
+    assertThat(result, aMapWithSize(0));
+  }"

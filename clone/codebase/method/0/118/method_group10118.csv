@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"844","118","435","434","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/UrlsTest.java","86","93","-2147405509","-2147405434","0","0","void splitsQueryFromUrl()","void splitsQueryFromUrl(){
+    Map<String, QueryParameter> query = Urls.splitQueryFromUrl(""/a/b?one=1&one=11&two=2"");
+
+    List<String> oneValues = query.get(""one"").values();
+    assertThat(oneValues, hasItems(""1"", ""11""));
+    assertThat(oneValues, hasItem(""11""));
+    assertThat(query.get(""two"").firstValue(), is(""2""));
+  }"
+"845","118","435","434","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/UrlsTest.java","96","103","-2147405434","-2147405359","0","0","void splitsQueryFromUrlWithTrailingSlash()","void splitsQueryFromUrlWithTrailingSlash(){
+    Map<String, QueryParameter> query = Urls.splitQueryFromUrl(""/a/b/?one=1&one=11&two=2"");
+
+    List<String> oneValues = query.get(""one"").values();
+    assertThat(oneValues, hasItems(""1"", ""11""));
+    assertThat(oneValues, hasItem(""11""));
+    assertThat(query.get(""two"").firstValue(), is(""2""));
+  }"

@@ -1,0 +1,101 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"226","36","110","109","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/RemoveStubMappingAcceptanceTest.java","32","56","-2147461405","-2147461190","0","0","void removeStubThatExistsUsingUUID()","void removeStubThatExistsUsingUUID(){
+
+    UUID id1 = UUID.randomUUID();
+
+    stubFor(get(urlEqualTo(""/stub-1"")).withId(id1).willReturn(aResponse().withBody(""Stub-1-Body"")));
+
+    assertThat(testClient.get(""/stub-1"").content(), is(""Stub-1-Body""));
+
+    UUID id2 = UUID.randomUUID();
+    stubFor(get(urlEqualTo(""/stub-2"")).withId(id2).willReturn(aResponse().withBody(""Stub-2-Body"")));
+
+    assertThat(testClient.get(""/stub-2"").content(), is(""Stub-2-Body""));
+
+    assertThat(getMatchingStubCount(""/stub-1"", ""/stub-2""), is(2));
+
+    removeStub(
+        get(urlEqualTo(""/stub-2"")).withId(id2).willReturn(aResponse().withBody(""Stub-2-Body"")));
+
+    assertThat(getMatchingStubCount(""/stub-1"", ""/stub-2""), is(1));
+
+    removeStub(
+        get(urlEqualTo(""/stub-1"")).withId(id1).willReturn(aResponse().withBody(""Stub-1-Body"")));
+
+    assertThat(getMatchingStubCount(""/stub-1"", ""/stub-2""), is(0));
+  }"
+"227","36","116","115","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/RemoveStubMappingAcceptanceTest.java","59","87","-2147461190","-2147460957","0","0","void removeStubThatExistsUsingRequestMatchUUIDNotMatch()","void removeStubThatExistsUsingRequestMatchUUIDNotMatch(){
+
+    UUID id1 = UUID.randomUUID();
+
+    stubFor(
+        get(urlEqualTo(""/stub-11"")).withId(id1).willReturn(aResponse().withBody(""Stub-11-Body"")));
+
+    assertThat(testClient.get(""/stub-11"").content(), is(""Stub-11-Body""));
+
+    UUID id2 = UUID.randomUUID();
+    stubFor(
+        get(urlEqualTo(""/stub-22"")).withId(id2).willReturn(aResponse().withBody(""Stub-22-Body"")));
+
+    assertThat(testClient.get(""/stub-22"").content(), is(""Stub-22-Body""));
+
+    assertThat(getMatchingStubCount(""/stub-11"", ""/stub-22""), is(2));
+
+    UUID id3 = UUID.randomUUID();
+    removeStub(
+        get(urlEqualTo(""/stub-22"")).withId(id3).willReturn(aResponse().withBody(""Stub-22-Body"")));
+
+    assertThat(getMatchingStubCount(""/stub-11"", ""/stub-22""), is(1));
+
+    UUID id4 = UUID.randomUUID();
+    removeStub(
+        get(urlEqualTo(""/stub-11"")).withId(id4).willReturn(aResponse().withBody(""Stub-11-Body"")));
+
+    assertThat(getMatchingStubCount(""/stub-11"", ""/stub-22""), is(0));
+  }"
+"228","36","122","121","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/RemoveStubMappingAcceptanceTest.java","90","114","-2147460957","-2147460752","0","0","void removeStubThatExistsWithRequestMatchNoUUIDPresent()","void removeStubThatExistsWithRequestMatchNoUUIDPresent(){
+
+    UUID id1 = UUID.randomUUID();
+
+    stubFor(
+        get(urlEqualTo(""/stub-111"")).withId(id1).willReturn(aResponse().withBody(""Stub-111-Body"")));
+
+    assertThat(testClient.get(""/stub-111"").content(), is(""Stub-111-Body""));
+
+    UUID id2 = UUID.randomUUID();
+    stubFor(
+        get(urlEqualTo(""/stub-222"")).withId(id2).willReturn(aResponse().withBody(""Stub-222-Body"")));
+
+    assertThat(testClient.get(""/stub-222"").content(), is(""Stub-222-Body""));
+
+    assertThat(getMatchingStubCount(""/stub-111"", ""/stub-222""), is(2));
+
+    removeStub(get(urlEqualTo(""/stub-222"")).willReturn(aResponse().withBody(""Stub-222-Body"")));
+
+    assertThat(getMatchingStubCount(""/stub-111"", ""/stub-222""), is(1));
+
+    removeStub(get(urlEqualTo(""/stub-111"")).willReturn(aResponse().withBody(""Stub-111-Body"")));
+
+    assertThat(getMatchingStubCount(""/stub-111"", ""/stub-222""), is(0));
+  }"
+"229","36","130","129","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/RemoveStubMappingAcceptanceTest.java","117","137","-2147460752","-2147460571","0","0","void removeStubThatDoesNotExists()","void removeStubThatDoesNotExists(){
+
+    UUID id1 = UUID.randomUUID();
+
+    stubFor(get(urlEqualTo(""/stb-1"")).withId(id1).willReturn(aResponse().withBody(""Stb-1-Body"")));
+
+    assertThat(testClient.get(""/stb-1"").content(), is(""Stb-1-Body""));
+
+    UUID id2 = UUID.randomUUID();
+    stubFor(get(urlEqualTo(""/stb-2"")).withId(id2).willReturn(aResponse().withBody(""Stb-2-Body"")));
+
+    assertThat(testClient.get(""/stb-2"").content(), is(""Stb-2-Body""));
+
+    assertThat(getMatchingStubCount(""/stb-1"", ""/stb-2""), is(2));
+
+    UUID id3 = UUID.randomUUID();
+    removeStub(
+        get(urlEqualTo(""/stb-3"")).withId(id3).willReturn(aResponse().withBody(""Stb-3-Body"")));
+
+    assertThat(getMatchingStubCount(""/stb-1"", ""/stb-2""), is(2));
+  }"

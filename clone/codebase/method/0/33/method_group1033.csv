@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"201","33","124","123","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/BeforeDateTimePatternTest.java","163","171","-2147463699","-2147463624","0","0","void matchesAgainstNow()","void matchesAgainstNow(){
+    StringValuePattern matcher = WireMock.beforeNow();
+
+    String right = ZonedDateTime.now().minusDays(2).toString();
+    assertTrue(matcher.match(right).isExactMatch());
+
+    String wrong = ZonedDateTime.now().plusHours(4).toString();
+    assertFalse(matcher.match(wrong).isExactMatch());
+  }"
+"202","33","135","134","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/BeforeDateTimePatternTest.java","174","182","-2147463624","-2147463548","0","0","void matchesAgainstOffsetFromNow()","void matchesAgainstOffsetFromNow(){
+    StringValuePattern matcher = WireMock.before(""now -5 days"");
+
+    String right = ZonedDateTime.now().minusDays(7).toString();
+    assertTrue(matcher.match(right).isExactMatch());
+
+    String wrong = ZonedDateTime.now().minusDays(4).toString();
+    assertFalse(matcher.match(wrong).isExactMatch());
+  }"

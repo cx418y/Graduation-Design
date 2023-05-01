@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"104","17","59","58","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/EqualToXmlPatternTest.java","341","349","-2147472193","-2147472129","0","0","void returnsMatchWhenTextNodeIsIgnored()","void returnsMatchWhenTextNodeIsIgnored(){
+    String expectedXml = ""<a>#{xmlunit.ignore}</a>"";
+    String actualXml = ""<a>123</a>"";
+    EqualToXmlPattern pattern = new EqualToXmlPattern(expectedXml, true, ""#\\{"", ""}"", null);
+    MatchResult matchResult = pattern.match(actualXml);
+
+    assertTrue(matchResult.isExactMatch());
+    assertThat(matchResult.getDistance(), is(0.0));
+  }"
+"105","17","59","64","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/EqualToXmlPatternTest.java","352","360","-2147472129","-2147472065","0","0","void returnsMatchWhenTextNodeIsIgnored_DefaultDelimiters()","void returnsMatchWhenTextNodeIsIgnored_DefaultDelimiters(){
+    String expectedXml = ""<a>${xmlunit.ignore}</a>"";
+    String actualXml = ""<a>123</a>"";
+    EqualToXmlPattern pattern = new EqualToXmlPattern(expectedXml, true, null, null, null);
+    MatchResult matchResult = pattern.match(actualXml);
+
+    assertTrue(matchResult.isExactMatch());
+    assertThat(matchResult.getDistance(), is(0.0));
+  }"

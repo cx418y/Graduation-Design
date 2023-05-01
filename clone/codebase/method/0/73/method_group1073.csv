@@ -1,0 +1,54 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"529","73","262","261","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/VerificationAcceptanceTest.java","622","644","-2147433969","-2147433880","0","0","void showsExpectedRequestAndCountShortfallWhenWrongNumberOfMatchingRequestsAreReceived()","void showsExpectedRequestAndCountShortfallWhenWrongNumberOfMatchingRequestsAreReceived(){
+      testClient.get(""/hit"");
+      testClient.get(""/hit"");
+      testClient.get(""/hit"");
+      testClient.get(""/hit"");
+
+      try {
+        verify(lessThan(2), getRequestedFor(urlEqualTo(""/hit"")));
+        fail();
+      } catch (VerificationException e) {
+        assertThat(
+            e.getMessage(),
+            is(
+                ""Expected less than 2 requests matching the following pattern but received 4:\n""
+                    + ""{""
+                    + lineSeparator()
+                    + ""  \""url\"" : \""/hit\"",""
+                    + lineSeparator()
+                    + ""  \""method\"" : \""GET\""""
+                    + lineSeparator()
+                    + ""}""));
+      }
+    }"
+"531","73","274","273","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/VerificationAcceptanceTest.java","663","678","-2147433816","-2147433746","0","0","void showsExpectedAndReceivedRequestsOnVerificationExceptionForLessThan()","void showsExpectedAndReceivedRequestsOnVerificationExceptionForLessThan(){
+      testClient.get(""/some/request"");
+      testClient.get(""/some/request"");
+      testClient.get(""/some/request"");
+
+      try {
+        verify(lessThan(2), getRequestedFor(urlEqualTo(""/some/request"")));
+        fail();
+      } catch (VerificationException e) {
+        assertThat(
+            e.getMessage(),
+            allOf(
+                containsString(""Expected less than 2 requests matching""),
+                containsString(""/some/request"")));
+      }
+    }"
+"534","73","276","275","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/VerificationAcceptanceTest.java","718","731","-2147433620","-2147433564","0","0","void showsExpectedAndReceivedRequestsOnVerificationExceptionForMoreThan()","void showsExpectedAndReceivedRequestsOnVerificationExceptionForMoreThan(){
+      testClient.get(""/some/request"");
+
+      try {
+        verify(moreThan(12), getRequestedFor(urlEqualTo(""/some/request"")));
+        fail();
+      } catch (VerificationException e) {
+        assertThat(
+            e.getMessage(),
+            allOf(
+                containsString(""Expected more than 12 requests matching""),
+                containsString(""/some/request"")));
+      }
+    }"

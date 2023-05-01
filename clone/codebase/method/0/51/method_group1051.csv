@@ -1,0 +1,49 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"368","51","173","172","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsSoapHelperTest.java","52","66","-2147448272","-2147448209","0","0","void rendersASimpleValue()","void rendersASimpleValue(){
+    final ResponseDefinition responseDefinition =
+        this.transformer.transform(
+            mockRequest()
+                .url(""/soap"")
+                .body(
+                    ""<soap:Envelope xmlns:soap=\""http://www.w3.org/2003/05/soap-envelope/\""><soap:Body><m:a><m:test>success</m:test></m:a></soap:Body></soap:Envelope>""),
+            aResponse()
+                .withBody(""<test>{{soapXPath request.body '/a/test/text()'}}</test>"")
+                .build(),
+            noFileSource(),
+            Parameters.empty());
+
+    assertThat(responseDefinition.getBody(), is(""<test>success</test>""));
+  }"
+"369","51","173","172","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsSoapHelperTest.java","69","81","-2147448209","-2147448146","0","0","void negativeTestResponseTemplate()","void negativeTestResponseTemplate(){
+    final ResponseDefinition responseDefinition =
+        this.transformer.transform(
+            mockRequest()
+                .url(""/soap"")
+                .body(
+                    ""<soap:Envelope xmlns:soap=\""http://www.w3.org/2003/05/soap-envelope/\""><soap:Body><m:a><m:test>success</m:test></m:a></soap:Body></soap:Envelope>""),
+            aResponse().withBody(""<test>{{soapXPath request.body '/b/test'}}</test>"").build(),
+            noFileSource(),
+            Parameters.empty());
+
+    assertThat(responseDefinition.getBody(), is(""<test></test>""));
+  }"
+"409","51","173","181","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsXPathHelperTest.java","43","52","-2147445227","-2147445164","0","0","void rendersASimpleValue()","void rendersASimpleValue(){
+    final ResponseDefinition responseDefinition =
+        this.transformer.transform(
+            mockRequest().url(""/xml"").body(""<a><test>success</test></a>""),
+            aResponse().withBody(""<test>{{xPath request.body '/a/test/text()'}}</test>"").build(),
+            noFileSource(),
+            Parameters.empty());
+
+    assertThat(responseDefinition.getBody(), is(""<test>success</test>""));
+  }"
+"410","51","173","192","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsXPathHelperTest.java","55","64","-2147445164","-2147445101","0","0","void rendersNothingWhenTheXPathExpressionResolvesNoContent()","void rendersNothingWhenTheXPathExpressionResolvesNoContent(){
+    final ResponseDefinition responseDefinition =
+        this.transformer.transform(
+            mockRequest().url(""/xml"").body(""<a><test>success</test></a>""),
+            aResponse().withBody(""<test>{{xPath request.body '/b/test'}}</test>"").build(),
+            noFileSource(),
+            Parameters.empty());
+
+    assertThat(responseDefinition.getBody(), startsWith(""<test></test>""));
+  }"

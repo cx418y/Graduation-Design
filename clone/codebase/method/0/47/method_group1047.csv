@@ -1,0 +1,24 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"338","47","167","166","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","351","360","-2147450162","-2147450098","0","0","void transformerParametersAreAppliedToTemplate()","void transformerParametersAreAppliedToTemplate(){
+    ResponseDefinition responseDefinition =
+        transformer.transform(
+            mockRequest().url(""/json"").body(""{\""a\"": {\""test\"": \""look at my 'single quotes'\""}}""),
+            aResponse().withBody(""{\""test\"": \""{{parameters.variable}}\""}"").build(),
+            noFileSource(),
+            Parameters.one(""variable"", ""some.value""));
+
+    assertThat(responseDefinition.getBody(), is(""{\""test\"": \""some.value\""}""));
+  }"
+"339","47","167","166","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","363","375","-2147450098","-2147450034","0","0","void unknownTransformerParametersAreNotCausingIssues()","void unknownTransformerParametersAreNotCausingIssues(){
+    ResponseDefinition responseDefinition =
+        transformer.transform(
+            mockRequest().url(""/json"").body(""{\""a\"": {\""test\"": \""look at my 'single quotes'\""}}""),
+            aResponse()
+                .withBody(
+                    ""{\""test1\"": \""{{parameters.variable}}\"", \""test2\"": \""{{parameters.unknown}}\""}"")
+                .build(),
+            noFileSource(),
+            Parameters.one(""variable"", ""some.value""));
+
+    assertThat(responseDefinition.getBody(), is(""{\""test1\"": \""some.value\"", \""test2\"": \""\""}""));
+  }"

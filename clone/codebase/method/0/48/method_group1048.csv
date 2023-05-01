@@ -1,0 +1,122 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"340","48","164","163","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","378","389","-2147450034","-2147449979","0","0","void requestLineScheme()","void requestLineScheme(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""https"")
+                .host(""my.domain.io"")
+                .port(8080)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""scheme: {{{request.requestLine.scheme}}}""));
+
+    assertThat(transformedResponseDef.getBody(), is(""scheme: https""));
+  }"
+"341","48","164","186","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","392","403","-2147449979","-2147449924","0","0","void requestLineHost()","void requestLineHost(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""https"")
+                .host(""my.domain.io"")
+                .port(8080)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""host: {{{request.requestLine.host}}}""));
+
+    assertThat(transformedResponseDef.getBody(), is(""host: my.domain.io""));
+  }"
+"342","48","164","193","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","406","417","-2147449924","-2147449869","0","0","void requestLinePort()","void requestLinePort(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""https"")
+                .host(""my.domain.io"")
+                .port(8080)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""port: {{{request.requestLine.port}}}""));
+
+    assertThat(transformedResponseDef.getBody(), is(""port: 8080""));
+  }"
+"343","48","164","206","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","420","431","-2147449869","-2147449814","0","0","void requestLinePath()","void requestLinePath(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""https"")
+                .host(""my.domain.io"")
+                .port(8080)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""path: {{{request.path}}}""));
+
+    assertThat(transformedResponseDef.getBody(), is(""path: /the/entire/path""));
+  }"
+"344","48","164","186","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","434","446","-2147449814","-2147449759","0","0","void requestLineUrl()","void requestLineUrl(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""https"")
+                .host(""my.domain.io"")
+                .port(8080)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""path: {{{request.url}}}""));
+
+    assertThat(
+        transformedResponseDef.getBody(), is(""path: /the/entire/path?query1=one&query2=two""));
+  }"
+"345","48","164","193","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","449","460","-2147449759","-2147449704","0","0","void requestLineBaseUrlNonStandardPort()","void requestLineBaseUrlNonStandardPort(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""https"")
+                .host(""my.domain.io"")
+                .port(8080)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""baseUrl: {{{request.baseUrl}}}""));
+
+    assertThat(transformedResponseDef.getBody(), is(""baseUrl: https://my.domain.io:8080""));
+  }"
+"346","48","164","217","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","463","474","-2147449704","-2147449649","0","0","void requestLineBaseUrlHttp()","void requestLineBaseUrlHttp(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""http"")
+                .host(""my.domain.io"")
+                .port(80)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""baseUrl: {{{request.baseUrl}}}""));
+
+    assertThat(transformedResponseDef.getBody(), is(""baseUrl: http://my.domain.io""));
+  }"
+"347","48","164","186","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","477","488","-2147449649","-2147449594","0","0","void requestLineBaseUrlHttps()","void requestLineBaseUrlHttps(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""https"")
+                .host(""my.domain.io"")
+                .port(443)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""baseUrl: {{{request.baseUrl}}}""));
+
+    assertThat(transformedResponseDef.getBody(), is(""baseUrl: https://my.domain.io""));
+  }"
+"348","48","164","206","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","491","502","-2147449594","-2147449539","0","0","void requestLinePathSegment()","void requestLinePathSegment(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""https"")
+                .host(""my.domain.io"")
+                .port(8080)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""path segments: {{{request.pathSegments}}}""));
+
+    assertThat(transformedResponseDef.getBody(), is(""path segments: /the/entire/path""));
+  }"
+"349","48","164","218","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/ResponseTemplateTransformerTest.java","505","516","-2147449539","-2147449484","0","0","void requestLinePathSegment0()","void requestLinePathSegment0(){
+    ResponseDefinition transformedResponseDef =
+        transform(
+            mockRequest()
+                .scheme(""https"")
+                .host(""my.domain.io"")
+                .port(8080)
+                .url(""/the/entire/path?query1=one&query2=two""),
+            aResponse().withBody(""path segments 0: {{{request.pathSegments.[0]}}}""));
+
+    assertThat(transformedResponseDef.getBody(), is(""path segments 0: the""));
+  }"

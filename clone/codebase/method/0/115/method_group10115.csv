@@ -1,0 +1,51 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"828","115","414","413","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/SingleRootFileSourceTest.java","41","58","-2147406656","-2147406580","0","0","void listsTextFilesRecursively()","void listsTextFilesRecursively(){
+    SingleRootFileSource fileSource = new SingleRootFileSource(ROOT_PATH);
+
+    List<TextFile> files = fileSource.listFilesRecursively();
+
+    assertThat(
+        files,
+        hasExactlyIgnoringOrder(
+            fileNamed(""one""),
+            fileNamed(""two""),
+            fileNamed(""three""),
+            fileNamed(""four""),
+            fileNamed(""five""),
+            fileNamed(""six""),
+            fileNamed(""seven""),
+            fileNamed(""eight""),
+            fileNamed(""deepfile.json"")));
+  }"
+"885","115","418","417","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/ServletContextFileSourceTest.java","45","60","-2147402706","-2147402639","0","0","void listsTextFilesRecursively()","void listsTextFilesRecursively(){
+    List<TextFile> files = fileSource.listFilesRecursively();
+
+    assertThat(
+        files,
+        hasExactlyIgnoringOrder(
+            fileNamed(""one""),
+            fileNamed(""two""),
+            fileNamed(""three""),
+            fileNamed(""four""),
+            fileNamed(""five""),
+            fileNamed(""six""),
+            fileNamed(""seven""),
+            fileNamed(""eight""),
+            fileNamed(""deepfile.json"")));
+  }"
+"1262","115","418","417","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/store/files/BlobStoreFileSourceTest.java","48","63","-2147367924","-2147367857","0","0","void list_all_files()","void list_all_files(){
+    List<TextFile> files = fileSource.listFilesRecursively();
+
+    assertThat(
+        files,
+        hasExactlyIgnoringOrder(
+            fileNamed(""one""),
+            fileNamed(""two""),
+            fileNamed(""three""),
+            fileNamed(""four""),
+            fileNamed(""five""),
+            fileNamed(""six""),
+            fileNamed(""seven""),
+            fileNamed(""eight""),
+            fileNamed(""deepfile.json"")));
+  }"

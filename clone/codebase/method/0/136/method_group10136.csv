@@ -1,0 +1,28 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"986","136","491","490","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java","275","288","-2147395063","-2147394967","0","0","T reflectiveInnerSpyField(Class<T> fieldType, String outerFieldName, String innerFieldName,
+                                               Object object)","T reflectiveInnerSpyField(Class<T> fieldType, String outerFieldName, String innerFieldName,
+                                               Object object){
+    try {
+      Field outerField = object.getClass().getDeclaredField(outerFieldName);
+      outerField.setAccessible(true);
+      Object outerFieldObject = outerField.get(object);
+      Field innerField = outerFieldObject.getClass().getDeclaredField(innerFieldName);
+      innerField.setAccessible(true);
+      T spy = spy(fieldType.cast(innerField.get(outerFieldObject)));
+      innerField.set(outerFieldObject, spy);
+      return spy;
+    } catch (NoSuchFieldException | IllegalAccessException e) {
+      throw new RuntimeException(e);
+    }
+  }"
+"987","136","499","498","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/ProxyResponseRendererTest.java","290","300","-2147394967","-2147394902","0","0","T reflectiveSpyField(Class<T> fieldType, String fieldName, Object object)","T reflectiveSpyField(Class<T> fieldType, String fieldName, Object object){
+    try {
+      Field field = object.getClass().getDeclaredField(fieldName);
+      field.setAccessible(true);
+      T spy = spy(fieldType.cast(field.get(object)));
+      field.set(object, spy);
+      return spy;
+    } catch (NoSuchFieldException | IllegalAccessException e) {
+      throw new RuntimeException(e);
+    }
+  }"

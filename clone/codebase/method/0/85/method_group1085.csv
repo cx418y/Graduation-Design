@@ -1,0 +1,41 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"593","85","314","313","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","373","386","-2147428777","-2147428676","0","0","void matchingOnRequestBodyWithAContainsAndANegativeRegex()","void matchingOnRequestBodyWithAContainsAndANegativeRegex(){
+    stubFor(
+        put(urlEqualTo(""/match/this/body/too""))
+            .withRequestBody(containing(""Blah""))
+            .withRequestBody(notMatching("".*[0-9]+.*""))
+            .willReturn(aResponse().withStatus(HTTP_OK).withBodyFile(""plain-example.txt"")));
+
+    WireMockResponse response =
+        testClient.putWithBody(""/match/this/body/too"", ""Blah12345"", ""text/plain"");
+    assertThat(response.statusCode(), is(HTTP_NOT_FOUND));
+
+    response = testClient.putWithBody(""/match/this/body/too"", ""BlahBlahBlah"", ""text/plain"");
+    assertThat(response.statusCode(), is(HTTP_OK));
+  }"
+"594","85","319","318","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","389","401","-2147428676","-2147428583","0","0","void matchingOnRequestBodyWithNotContaining()","void matchingOnRequestBodyWithNotContaining(){
+    stubFor(
+        put(urlEqualTo(""/match/this/body/too""))
+            .withRequestBody(notContaining(""OtherBody""))
+            .willReturn(aResponse().withStatus(HTTP_OK).withBodyFile(""plain-example.txt"")));
+
+    WireMockResponse response =
+        testClient.putWithBody(""/match/this/body/too"", ""BlahOtherBody12345"", ""text/plain"");
+    assertThat(response.statusCode(), is(HTTP_NOT_FOUND));
+
+    response = testClient.putWithBody(""/match/this/body/too"", ""BlahBlahBlah"", ""text/plain"");
+    assertThat(response.statusCode(), is(HTTP_OK));
+  }"
+"595","85","319","320","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/StubbingAcceptanceTest.java","404","416","-2147428583","-2147428490","0","0","void matchingOnRequestBodyWithEqualTo()","void matchingOnRequestBodyWithEqualTo(){
+    stubFor(
+        put(urlEqualTo(""/match/this/body/too""))
+            .withRequestBody(equalTo(""BlahBlahBlah""))
+            .willReturn(aResponse().withStatus(HTTP_OK).withBodyFile(""plain-example.txt"")));
+
+    WireMockResponse response =
+        testClient.putWithBody(""/match/this/body/too"", ""Blah12345"", ""text/plain"");
+    assertThat(response.statusCode(), is(HTTP_NOT_FOUND));
+
+    response = testClient.putWithBody(""/match/this/body/too"", ""BlahBlahBlah"", ""text/plain"");
+    assertThat(response.statusCode(), is(HTTP_OK));
+  }"

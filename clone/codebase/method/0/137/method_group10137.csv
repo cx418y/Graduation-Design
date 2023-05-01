@@ -1,0 +1,20 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"999","137","493","492","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/DateHeaderAcceptanceTest.java","30","40","-2147393941","-2147393880","0","0","void returnsOnlyStubbedDateHeader()","void returnsOnlyStubbedDateHeader(){
+
+    stubFor(
+        get(urlEqualTo(""/stubbed/dateheader""))
+            .willReturn(
+                aResponse().withStatus(200).withHeader(""Date"", ""Sun, 06 Nov 1994 08:49:37 GMT"")));
+
+    WireMockResponse response = testClient.get(""/stubbed/dateheader"");
+
+    assertThat(response.headers().get(""Date""), contains(""Sun, 06 Nov 1994 08:49:37 GMT""));
+  }"
+"1000","137","495","494","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/DateHeaderAcceptanceTest.java","43","50","-2147393880","-2147393819","0","0","void returnsNoDateHeaderIfNotStubbed()","void returnsNoDateHeaderIfNotStubbed(){
+
+    stubFor(get(urlEqualTo(""/nodateheader"")).willReturn(aResponse().withStatus(200)));
+
+    WireMockResponse response = testClient.get(""/nodateheader"");
+
+    assertThat(response.headers().get(""Date""), is(Matchers.<String>empty()));
+  }"

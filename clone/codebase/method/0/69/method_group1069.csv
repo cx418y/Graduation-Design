@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"479","69","264","263","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java","1040","1047","-2147437874","-2147437818","0","0","void treatsEmptyOrNullIdFieldsAsNotPresent()","void treatsEmptyOrNullIdFieldsAsNotPresent(){
+    WireMockResponse response =
+        testClient.postJson(""/__admin/mappings/import"", EMPTY_ID_IMPORT_JSON);
+    assertThat(response.statusCode(), is(200));
+
+    List<StubMapping> stubs = wireMockServer.listAllStubMappings().getMappings();
+    assertThat(stubs, everyItem(hasIdAndUuid()));
+  }"
+"480","69","264","263","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/AdminApiTest.java","1078","1085","-2147437818","-2147437762","0","0","void treatsEmptyOrNullUuidFieldsAsNotPresent()","void treatsEmptyOrNullUuidFieldsAsNotPresent(){
+    WireMockResponse response =
+        testClient.postJson(""/__admin/mappings/import"", EMPTY_UUID_IMPORT_JSON);
+    assertThat(response.statusCode(), is(200));
+
+    List<StubMapping> stubs = wireMockServer.listAllStubMappings().getMappings();
+    assertThat(stubs, everyItem(hasIdAndUuid()));
+  }"

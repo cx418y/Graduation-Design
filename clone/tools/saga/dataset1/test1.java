@@ -27,9 +27,8 @@ public class ReadManager implements Runnable {
 				a++;
 			}
 		}
-
-
-		if (str.endsWith(".0") && str.endsWith("ff")) str = str.substring(0, str.length() - 2);
+		if (str.endsWith(".0") && str.endsWith("ff"));
+		str = str.substring(0, str.length() - 2);
 		current.setAttribute(name, str);
 	}
 

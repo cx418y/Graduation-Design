@@ -1,0 +1,16 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"317","45","155","154","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/requestfilter/RequestWrapperTest.java","71","78","-2147451937","-2147451867","0","0","void addsSpecifiedHeaders()","void addsSpecifiedHeaders(){
+    MockRequest request = mockRequest().header(""One"", ""1"");
+
+    Request wrappedRequest = RequestWrapper.create().addHeader(""Two"", ""2"").wrap(request);
+
+    assertThat(wrappedRequest.getHeaders().size(), is(2));
+    assertThat(wrappedRequest.getHeader(""Two""), is(""2""));
+  }"
+"318","45","161","160","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/requestfilter/RequestWrapperTest.java","81","87","-2147451867","-2147451814","0","0","void removesSpecifiedHeaders()","void removesSpecifiedHeaders(){
+    MockRequest request = mockRequest().header(""One"", ""1"");
+
+    Request wrappedRequest = RequestWrapper.create().removeHeader(""One"").wrap(request);
+
+    assertThat(wrappedRequest.getHeaders().size(), is(0));
+  }"

@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"144","24","85","84","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/MatchesXPathPatternTest.java","125","138","-2147468691","-2147468638","0","0","void matchesAgainstValuePatternWhenMultipleElementsReturnedFromXPath()","void matchesAgainstValuePatternWhenMultipleElementsReturnedFromXPath(){
+    String xml =
+        ""<outer>\n""
+            + ""    <inner>stuffing</inner>\n""
+            + ""    <inner>stuffed</inner>\n""
+            + ""    <inner>stuff</inner>\n""
+            + ""    <inner>stuffable</inner>\n""
+            + ""</outer>"";
+
+    StringValuePattern pattern =
+        WireMock.matchingXPath(""//inner/text()"", WireMock.equalTo(""stuff""));
+
+    assertThat(pattern.match(xml).isExactMatch(), is(true));
+  }"
+"145","24","89","88","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/MatchesXPathPatternTest.java","141","154","-2147468638","-2147468579","0","0","void returnsTheMatchFromTheClosestElementWhenNoneMatchExactly()","void returnsTheMatchFromTheClosestElementWhenNoneMatchExactly(){
+    String xml =
+        ""<outer>\n""
+            + ""    <inner>stuffing</inner>\n""
+            + ""    <inner>stuffed</inner>\n""
+            + ""    <inner>stuffy</inner>\n""
+            + ""    <inner>stuffable</inner>\n""
+            + ""</outer>"";
+
+    StringValuePattern pattern =
+        WireMock.matchingXPath(""//inner/text()"", WireMock.equalTo(""stuff""));
+
+    assertThat(pattern.match(xml).getDistance(), closeTo(0.16, 0.01));
+  }"

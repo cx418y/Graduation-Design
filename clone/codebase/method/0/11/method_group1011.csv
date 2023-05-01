@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"72","11","26","25","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/MultipartValuePatternBuilderTest.java","65","83","-2147475192","-2147475034","0","0","void testBuilderWithNameHeadersAndBody()","void testBuilderWithNameHeadersAndBody(){
+    MultipartValuePattern pattern =
+        aMultipart(""name"")
+            .withHeader(""X-Header"", containing(""something""))
+            .withHeader(""X-Other"", absent())
+            .withBody(equalToXml(""<xml />""))
+            .build();
+
+    Map<String, List<MultiValuePattern>> headerPatterns = newLinkedHashMap();
+    headerPatterns.put(
+        ""Content-Disposition"", asList(MultiValuePattern.of(containing(""name=\""name\""""))));
+    headerPatterns.put(""X-Header"", asList(MultiValuePattern.of(containing(""something""))));
+    headerPatterns.put(""X-Other"", asList(MultiValuePattern.of(absent())));
+    //        assertThat(headerPatterns.entrySet(),
+    // everyItem(isIn(pattern.getMultipartHeaders().entrySet())));
+
+    List<ContentPattern<?>> bodyPatterns = Arrays.<ContentPattern<?>>asList(equalToXml(""<xml />""));
+    assertThat(bodyPatterns, everyItem(is(in(pattern.getBodyPatterns()))));
+  }"
+"73","11","32","31","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/MultipartValuePatternBuilderTest.java","92","108","-2147475034","-2147474897","0","0","void testBuilderWithoutNameWithHeadersAndBody()","void testBuilderWithoutNameWithHeadersAndBody(){
+    MultipartValuePattern pattern =
+        aMultipart()
+            .withHeader(""X-Header"", containing(""something""))
+            .withHeader(""X-Other"", absent())
+            .withBody(equalToXml(""<xml />""))
+            .build();
+
+    Map<String, List<MultiValuePattern>> headerPatterns = newLinkedHashMap();
+    headerPatterns.put(""X-Header"", asList(MultiValuePattern.of(containing(""something""))));
+    headerPatterns.put(""X-Other"", asList(MultiValuePattern.of(absent())));
+    //        assertThat(headerPatterns.entrySet(),
+    // everyItem(isIn(pattern.getHeaders().entrySet())));
+
+    List<ContentPattern<?>> bodyPatterns = Arrays.<ContentPattern<?>>asList(equalToXml(""<xml />""));
+    assertThat(bodyPatterns, everyItem(is(in(pattern.getBodyPatterns()))));
+  }"

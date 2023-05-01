@@ -1,0 +1,26 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"411","58","195","194","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsXPathHelperTest.java","116","122","-2147445101","-2147445047","0","0","void returnsCorrectResultWhenSameExpressionUsedTwiceOnIdenticalDocuments()","void returnsCorrectResultWhenSameExpressionUsedTwiceOnIdenticalDocuments(){
+    String one = renderHelperValue(helper, ""<test>one</test>"", ""/test/text()"").toString();
+    String two = renderHelperValue(helper, ""<test>one</test>"", ""/test/text()"").toString();
+
+    assertThat(one, is(""one""));
+    assertThat(two, is(""one""));
+  }"
+"412","58","195","205","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsXPathHelperTest.java","126","132","-2147445047","-2147444993","0","0","void returnsCorrectResultWhenSameExpressionUsedTwiceOnDifferentDocuments()","void returnsCorrectResultWhenSameExpressionUsedTwiceOnDifferentDocuments(){
+    String one = renderHelperValue(helper, ""<test>one</test>"", ""/test/text()"").toString();
+    String two = renderHelperValue(helper, ""<test>two</test>"", ""/test/text()"").toString();
+
+    assertThat(one, is(""one""));
+    assertThat(two, is(""two""));
+  }"
+"413","58","195","214","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsXPathHelperTest.java","135","145","-2147444993","-2147444939","0","0","void returnsCorrectResultWhenDifferentExpressionsUsedOnSameDocument()","void returnsCorrectResultWhenDifferentExpressionsUsedOnSameDocument(){
+    String one =
+        renderHelperValue(helper, ""<test><one>1</one><two>2</two></test>"", ""/test/one/text()"")
+            .toString();
+    String two =
+        renderHelperValue(helper, ""<test><one>1</one><two>2</two></test>"", ""/test/two/text()"")
+            .toString();
+
+    assertThat(one, is(""1""));
+    assertThat(two, is(""2""));
+  }"

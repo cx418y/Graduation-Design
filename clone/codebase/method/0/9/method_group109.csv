@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"65","9","28","27","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/MatchesJsonPathPatternTest.java","259","276","-2147475842","-2147475748","0","0","void correctlyDeserialisesWithValuePattern()","void correctlyDeserialisesWithValuePattern(){
+    StringValuePattern stringValuePattern =
+        Json.read(
+            ""{                                      \n""
+                + ""    \""matchesJsonPath\"": {              \n""
+                + ""        \""expression\"": \""$..thing\"",   \n""
+                + ""        \""equalTo\"": \""the value\""      \n""
+                + ""    }                                   \n""
+                + ""}"",
+            StringValuePattern.class);
+
+    assertThat(stringValuePattern, instanceOf(MatchesJsonPathPattern.class));
+    assertThat(stringValuePattern.getExpected(), is(""$..thing""));
+
+    ContentPattern<?> subMatcher = ((MatchesJsonPathPattern) stringValuePattern).getValuePattern();
+    assertThat(subMatcher, instanceOf(EqualToPattern.class));
+    assertThat(subMatcher.getExpected(), is(""the value""));
+  }"
+"66","9","36","35","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/MatchesJsonPathPatternTest.java","279","296","-2147475748","-2147475649","0","0","void correctlyDeserialisesWithAbsentValuePattern()","void correctlyDeserialisesWithAbsentValuePattern(){
+    StringValuePattern stringValuePattern =
+        Json.read(
+            ""{                                      \n""
+                + ""    \""matchesJsonPath\"": {              \n""
+                + ""        \""expression\"": \""$..thing\"",   \n""
+                + ""        \""absent\"": \""(absent)\""        \n""
+                + ""    }                                   \n""
+                + ""}"",
+            StringValuePattern.class);
+
+    assertThat(stringValuePattern, instanceOf(MatchesJsonPathPattern.class));
+    assertThat(stringValuePattern.getExpected(), is(""$..thing""));
+
+    ContentPattern<?> subMatcher = ((MatchesJsonPathPattern) stringValuePattern).getValuePattern();
+    assertThat(subMatcher, instanceOf(AbsentPattern.class));
+    assertThat(((StringValuePattern) subMatcher).nullSafeIsAbsent(), is(true));
+  }"

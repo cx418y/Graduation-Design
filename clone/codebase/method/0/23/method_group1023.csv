@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"140","23","73","72","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/MatchesXPathPatternTest.java","35","46","-2147468923","-2147468865","0","0","void returnsExactMatchWhenXPathMatches()","void returnsExactMatchWhenXPathMatches(){
+    String mySolarSystemXML =
+        ""<solar-system>""
+            + ""<planet name='Earth' position='3' supportsLife='yes'/>""
+            + ""<planet name='Venus' position='4'/></solar-system>"";
+
+    StringValuePattern pattern = WireMock.matchingXPath(""//planet[@name='Earth']"");
+
+    MatchResult match = pattern.match(mySolarSystemXML);
+    assertTrue(match.isExactMatch(), ""Expected XPath match"");
+    assertThat(match.getDistance(), is(0.0));
+  }"
+"141","23","73","74","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/MatchesXPathPatternTest.java","49","60","-2147468865","-2147468807","0","0","void returnsNoExactMatchWhenXPathDoesNotMatch()","void returnsNoExactMatchWhenXPathDoesNotMatch(){
+    String mySolarSystemXML =
+        ""<solar-system>""
+            + ""<planet name='Earth' position='3' supportsLife='yes'/>""
+            + ""<planet name='Venus' position='4'/></solar-system>"";
+
+    StringValuePattern pattern = WireMock.matchingXPath(""//star[@name='alpha centauri']"");
+
+    MatchResult match = pattern.match(mySolarSystemXML);
+    assertFalse(match.isExactMatch(), ""Expected XPath non-match"");
+    assertThat(match.getDistance(), is(1.0));
+  }"
+"143","23","73","74","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/MatchesXPathPatternTest.java","77","88","-2147468749","-2147468691","0","0","void returnsNoExactMatchWhenXmlIsBadlyFormed()","void returnsNoExactMatchWhenXmlIsBadlyFormed(){
+    String mySolarSystemXML =
+        ""solar-system>""
+            + ""<planet name='Earth' position='3' supportsLife='yes'/>""
+            + ""<planet name='Venus' position='4'/></solar-system>"";
+
+    StringValuePattern pattern = WireMock.matchingXPath(""//star[@name='alpha centauri']"");
+
+    MatchResult match = pattern.match(mySolarSystemXML);
+    assertFalse(match.isExactMatch(), ""Expected XPath non-match"");
+    assertThat(match.getDistance(), is(1.0));
+  }"

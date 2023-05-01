@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1304","173","638","637","0","/Users/macbook/Desktop/design/open/wiremock/src/main/java/com/github/tomakehurst/wiremock/matching/RequestPattern.java","338","355","-2147363701","-2147363605","0","0","MatchResult allQueryParamsMatch(final Request request)","MatchResult allQueryParamsMatch(final Request request){
+    if (queryParams != null && !queryParams.isEmpty()) {
+      return MatchResult.aggregate(
+          from(queryParams.entrySet())
+              .transform(
+                  new Function<Map.Entry<String, MultiValuePattern>, MatchResult>() {
+                    public MatchResult apply(
+                        Map.Entry<String, MultiValuePattern> queryParamPattern) {
+                      return queryParamPattern
+                          .getValue()
+                          .match(request.queryParameter(queryParamPattern.getKey()));
+                    }
+                  })
+              .toList());
+    }
+
+    return MatchResult.exactMatch();
+  }"
+"1305","173","638","637","0","/Users/macbook/Desktop/design/open/wiremock/src/main/java/com/github/tomakehurst/wiremock/matching/RequestPattern.java","357","374","-2147363605","-2147363509","0","0","MatchResult allFormParamsMatch(final Request request)","MatchResult allFormParamsMatch(final Request request){
+    if (formParams != null && !formParams.isEmpty()) {
+      return MatchResult.aggregate(
+          from(formParams.entrySet())
+              .transform(
+                  new Function<Map.Entry<String, MultiValuePattern>, MatchResult>() {
+                    public MatchResult apply(
+                        Map.Entry<String, MultiValuePattern> formParamPattern) {
+                      return formParamPattern
+                          .getValue()
+                          .match(request.formParameter(formParamPattern.getKey()));
+                    }
+                  })
+              .toList());
+    }
+
+    return MatchResult.exactMatch();
+  }"

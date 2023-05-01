@@ -1,0 +1,48 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1254","169","615","614","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/HttpsBrowserProxyAcceptanceTest.java","212","235","-2147368725","-2147368605","0","0","void trustsTargetIfTrustStoreContainsItsCertificate()","void trustsTargetIfTrustStoreContainsItsCertificate(){
+
+    WireMockServer scepticalProxy =
+        new WireMockServer(
+            wireMockConfig()
+                .dynamicPort()
+                .enableBrowserProxying(true)
+                .trustStorePath(TRUST_STORE_PATH)
+                .trustStorePassword(TRUST_STORE_PASSWORD));
+
+    try {
+      scepticalProxy.start();
+
+      target.stubFor(get(urlEqualTo(""/whatever"")).willReturn(aResponse().withBody(""Got it"")));
+
+      WireMockResponse response =
+          testClient.getViaProxy(target.url(""/whatever""), scepticalProxy.port());
+
+      assertThat(response.statusCode(), is(200));
+      assertThat(response.content(), is(""Got it""));
+    } finally {
+      scepticalProxy.stop();
+    }
+  }"
+"1255","169","621","620","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/HttpsBrowserProxyAcceptanceTest.java","238","260","-2147368605","-2147368490","0","0","void canTrustSpecificTargetHosts()","void canTrustSpecificTargetHosts(){
+
+    WireMockServer scepticalProxy =
+        new WireMockServer(
+            wireMockConfig()
+                .dynamicPort()
+                .enableBrowserProxying(true)
+                .trustedProxyTargets(""localhost""));
+
+    try {
+      scepticalProxy.start();
+
+      target.stubFor(get(urlEqualTo(""/whatever"")).willReturn(aResponse().withBody(""Got it"")));
+
+      WireMockResponse response =
+          testClient.getViaProxy(target.url(""/whatever""), scepticalProxy.port());
+
+      assertThat(response.statusCode(), is(200));
+      assertThat(response.content(), is(""Got it""));
+    } finally {
+      scepticalProxy.stop();
+    }
+  }"

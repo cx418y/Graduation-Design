@@ -1,0 +1,14 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"879","120","439","438","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/FilenameMakerTest.java","49","54","-2147403027","-2147402977","0","0","void generatesNameFromStubUrlWhenNameNotPresent()","void generatesNameFromStubUrlWhenNameNotPresent(){
+    FilenameMaker makerWithOwnFormat = new FilenameMaker(""{{{method}}}-{{{url}}}.json"");
+    StubMapping mapping = WireMock.get(urlEqualTo(""/named/123/things"")).willReturn(ok()).build();
+
+    assertThat(makerWithOwnFormat.filenameFor(mapping), is(""get-named123things.json""));
+  }"
+"880","120","439","438","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/common/FilenameMakerTest.java","57","63","-2147402977","-2147402927","0","0","void generatesNameFromStubUrlPathWhenNameNotPresent()","void generatesNameFromStubUrlPathWhenNameNotPresent(){
+    FilenameMaker makerWithOwnFormat = new FilenameMaker(""{{{method}}}-{{{url}}}.json"");
+    StubMapping mapping =
+        WireMock.get(urlPathEqualTo(""/named/123/things"")).willReturn(ok()).build();
+
+    assertThat(makerWithOwnFormat.filenameFor(mapping), is(""get-named123things.json""));
+  }"

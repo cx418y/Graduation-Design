@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"752","106","386","385","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/junit5/JUnitJupiterExtensionNonStaticMultiInstanceTest.java","88","97","-2147413936","-2147413871","0","0","void wiremock_is_reset_between_tests()","void wiremock_is_reset_between_tests(){
+    WireMockRuntimeInfo wm1RuntimeInfo = wm1.getRuntimeInfo();
+
+    assertTrue(getAllServeEvents().isEmpty(), ""The request log should be empty"");
+
+    HttpGet request = new HttpGet(wm1RuntimeInfo.getHttpsBaseUrl() + ""/wm1"");
+    try (CloseableHttpResponse response = client.execute(request)) {
+      assertThat(response.getCode(), is(404));
+    }
+  }"
+"754","106","386","385","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/junit5/JUnitJupiterExtensionStaticMultiInstanceTest.java","88","97","-2147413710","-2147413645","0","0","void wiremock_is_reset_between_tests()","void wiremock_is_reset_between_tests(){
+    WireMockRuntimeInfo wm1RuntimeInfo = wm1.getRuntimeInfo();
+
+    assertTrue(getAllServeEvents().isEmpty(), ""The request log should be empty"");
+
+    HttpGet request = new HttpGet(wm1RuntimeInfo.getHttpsBaseUrl() + ""/wm1"");
+    try (CloseableHttpResponse response = client.execute(request)) {
+      assertThat(response.getCode(), is(404));
+    }
+  }"

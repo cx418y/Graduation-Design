@@ -1,25 +1,65 @@
 "methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
-"2","1","5","4","0","/Volumes/ExtremePro/tools/saga/dataset1/test2.java","18","26","-2147483536","-2147483486","0","0","void addAttribute(String name, float value)","void addAttribute(String name, float value){
-				String b = Float.toString(value);
-		float b;
+"1","1","13","12","0","/Users/macbook/Desktop/design/open/wiremock/wiremock-webhooks-extension/src/test/java/testsupport/WireMockTestClient.java","108","135","-2147483594","-2147483417","0","0","WireMockResponse getViaProxy(String url, int proxyPort)","WireMockResponse getViaProxy(String url, int proxyPort){
+    URI targetUri = URI.create(url);
+    HttpHost proxy = new HttpHost(targetUri.getScheme(), address, proxyPort);
+    CloseableHttpClient httpClientUsingProxy =
+        HttpClientBuilder.create()
+            .disableAuthCaching()
+            .disableAutomaticRetries()
+            .disableCookieManagement()
+            .disableRedirectHandling()
+            .setProxy(proxy)
+            .build();
 
+    try {
+      HttpHost target =
+          new HttpHost(targetUri.getScheme(), targetUri.getHost(), targetUri.getPort());
+      HttpGet req =
+          new HttpGet(
+              targetUri.getPath()
+                  + (isNullOrEmpty(targetUri.getQuery()) ? """" : ""?"" + targetUri.getQuery()));
+      req.removeHeaders(""Host"");
 
-		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
-		current.setAttribute(name, str);
-	}"
-"3","1","7","6","0","/Volumes/ExtremePro/tools/saga/dataset1/test2.java","28","36","-2147483486","-2147483435","0","0","void addAttribute2(String name, float value, int count2)","void addAttribute2(String name, float value, int count2){
-				String b = Double.toString(value);
-		count2++;
+      System.out.println(""executing request to "" + targetUri + ""("" + target + "") via "" + proxy);
+      ClassicHttpResponse httpResponse = httpClientUsingProxy.execute(target, req);
+      return new WireMockResponse(httpResponse);
+    } catch (IOException ioe) {
+      throw new RuntimeException(ioe);
+    }
+  }"
+"253","1","19","18","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/testsupport/WireMockTestClient.java","112","147","-2147458465","-2147458251","0","0","WireMockResponse getViaProxy(String url, int proxyPort, String scheme)","WireMockResponse getViaProxy(String url, int proxyPort, String scheme){
+    URI targetUri = URI.create(url);
+    HttpHost proxy = new HttpHost(scheme, address, proxyPort);
+    HttpClient httpClientUsingProxy =
+        HttpClientBuilder.create()
+            .disableAuthCaching()
+            .disableAutomaticRetries()
+            .disableCookieManagement()
+            .disableRedirectHandling()
+            .setConnectionManager(
+                PoolingHttpClientConnectionManagerBuilder.create()
+                    .setSSLSocketFactory(
+                        SSLConnectionSocketFactoryBuilder.create()
+                            .setSslContext(buildTrustWireMockDefaultCertificateSSLContext())
+                            .setHostnameVerifier(new NoopHostnameVerifier())
+                            .build())
+                    .build())
+            .setProxy(proxy)
+            .build();
 
+    try {
+      HttpHost target =
+          new HttpHost(targetUri.getScheme(), targetUri.getHost(), targetUri.getPort());
+      HttpGet req =
+          new HttpGet(
+              targetUri.getPath()
+                  + (isNullOrEmpty(targetUri.getQuery()) ? """" : ""?"" + targetUri.getQuery()));
+      req.removeHeaders(""Host"");
 
-		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
-		current.setAttribute(name, str);
-	}"
-"5","1","7","8","0","/Volumes/ExtremePro/tools/saga/dataset1/test1.java","36","44","-2147483318","-2147483267","0","0","void addAttribute2(String name, float value, int count1)","void addAttribute2(String name, float value, int count1){
-				String a = Double.toString(value);
-		count1++;
-
-
-		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
-		current.setAttribute(name, str);
-	}"
+      System.out.println(""executing request to "" + targetUri + ""("" + target + "") via "" + proxy);
+      ClassicHttpResponse httpResponse = httpClientUsingProxy.execute(target, req);
+      return new WireMockResponse(httpResponse);
+    } catch (IOException ioe) {
+      throw new RuntimeException(ioe);
+    }
+  }"

@@ -1,0 +1,26 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"431","62","227","226","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/direct/DirectCallHttpServerTest.java","153","164","-2147443147","-2147443085","0","0","void setup()","void setup(){
+        doAnswer(
+                (i) -> {
+                  HttpResponder responder = i.getArgument(1, HttpResponder.class);
+                  responder.respond(request, response);
+                  return null;
+                })
+            .when(handler())
+            .handle(any(), any());
+
+        actual = handle(request);
+      }"
+"432","62","232","231","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/direct/DirectCallHttpServerTest.java","184","196","-2147443085","-2147443008","0","0","void setup()","void setup(){
+          when(response.getInitialDelay()).thenReturn(1000L);
+          doAnswer(
+                  (i) -> {
+                    HttpResponder responder = i.getArgument(1, HttpResponder.class);
+                    responder.respond(request, response);
+                    return null;
+                  })
+              .when(handler())
+              .handle(any(), any());
+
+          actual = handle(request);
+        }"

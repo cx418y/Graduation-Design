@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"970","130","470","469","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/CookieTest.java","47","54","-2147396344","-2147396291","0","0","void deserialisesCorrectlyWithSingleValue()","void deserialisesCorrectlyWithSingleValue(){
+    String json = ""\""one\"""";
+
+    Cookie cookie = Json.read(json, Cookie.class);
+
+    assertThat(cookie.getValues().size(), is(1));
+    assertThat(cookie.getValue(), is(""one""));
+  }"
+"971","130","472","471","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/CookieTest.java","57","64","-2147396291","-2147396234","0","0","void deserialisesCorrectlyWithManyValues()","void deserialisesCorrectlyWithManyValues(){
+    String json = ""[\""one\"", \""two\"", \""three\""]"";
+
+    Cookie cookie = Json.read(json, Cookie.class);
+
+    assertThat(cookie.getValues().size(), is(3));
+    assertThat(cookie.getValues(), hasItems(""one"", ""two"", ""three""));
+  }"
+"972","130","470","475","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/http/CookieTest.java","67","74","-2147396234","-2147396181","0","0","void deserialisesCorrectlyWithNoValues()","void deserialisesCorrectlyWithNoValues(){
+    String json = ""[]"";
+
+    Cookie cookie = Json.read(json, Cookie.class);
+
+    assertThat(cookie.getValues().size(), is(0));
+    assertThat(cookie.isAbsent(), is(true));
+  }"

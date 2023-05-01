@@ -1,0 +1,68 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"708","103","374","373","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ProxyAcceptanceTest.java","106","126","-2147418502","-2147418390","0","0","void successfullyGetsResponseFromOtherServiceViaProxy()","void successfullyGetsResponseFromOtherServiceViaProxy(){
+    initWithDefaultConfig();
+
+    target.register(
+        get(urlEqualTo(""/proxied/resource?param=value""))
+            .willReturn(
+                aResponse()
+                    .withStatus(200)
+                    .withHeader(""Content-Type"", ""text/plain"")
+                    .withBody(""Proxied content"")));
+
+    proxy.register(
+        any(urlEqualTo(""/proxied/resource?param=value""))
+            .atPriority(10)
+            .willReturn(aResponse().proxiedFrom(targetServiceBaseUrl)));
+
+    WireMockResponse response = testClient.get(""/proxied/resource?param=value"");
+
+    assertThat(response.content(), is(""Proxied content""));
+    assertThat(response.firstHeader(""Content-Type""), is(""text/plain""));
+  }"
+"740","103","384","383","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ProxyAcceptanceTest.java","690","711","-2147415126","-2147415001","0","0","void proxyRequestWillNotTimeoutIfProxyResponseIsFastEnough()","void proxyRequestWillNotTimeoutIfProxyResponseIsFastEnough(){
+    init(wireMockConfig().proxyTimeout(1000));
+
+    target.register(
+        get(urlEqualTo(""/proxied/resource?param=value""))
+            .willReturn(
+                aResponse()
+                    .withFixedDelay(500)
+                    .withStatus(200)
+                    .withHeader(""Content-Type"", ""text/plain"")
+                    .withBody(""Proxied content"")));
+
+    proxy.register(
+        any(urlEqualTo(""/proxied/resource?param=value""))
+            .atPriority(10)
+            .willReturn(aResponse().proxiedFrom(targetServiceBaseUrl)));
+
+    WireMockResponse response = testClient.get(""/proxied/resource?param=value"");
+
+    assertThat(response.content(), is(""Proxied content""));
+    assertThat(response.firstHeader(""Content-Type""), is(""text/plain""));
+  }"
+"741","103","394","393","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/ProxyAcceptanceTest.java","714","737","-2147415001","-2147414877","0","0","void proxyRequestWillTimeoutIfProxyResponseIsTooSlow()","void proxyRequestWillTimeoutIfProxyResponseIsTooSlow(){
+    init(wireMockConfig().proxyTimeout(1000));
+
+    target.register(
+        get(urlEqualTo(""/proxied/resource?param=value""))
+            .willReturn(
+                aResponse()
+                    .withFixedDelay(1500)
+                    .withStatus(200)
+                    .withHeader(""Content-Type"", ""text/plain"")
+                    .withBody(""Proxied content"")));
+
+    proxy.register(
+        any(urlEqualTo(""/proxied/resource?param=value""))
+            .atPriority(10)
+            .willReturn(aResponse().proxiedFrom(targetServiceBaseUrl)));
+
+    WireMockResponse response = testClient.get(""/proxied/resource?param=value"");
+
+    assertThat(
+        response.content(),
+        startsWith(""Network failure trying to make a proxied request from WireMock""));
+    assertThat(response.statusCode(), is(500));
+  }"

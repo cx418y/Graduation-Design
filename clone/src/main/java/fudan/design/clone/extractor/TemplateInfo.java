@@ -24,7 +24,7 @@ public class TemplateInfo {
         List<List<TemplateLine>> candidates = new ArrayList<>();
         for (MethodInfo methodInfo : methods) {
             String code = methodInfo.getBody();
-            code = CppCodeUtil.removeComment(code);
+            //code = CppCodeUtil.removeComment(code);
             //code = CppCodeUtil.formatCode(code);
             candidates.add(JavaTemplateExtractor.extract(code));
         }

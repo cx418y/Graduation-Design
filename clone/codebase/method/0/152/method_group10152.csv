@@ -1,0 +1,43 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1111","152","559","558","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/stubbing/ScenariosTest.java","141","164","-2147382207","-2147382093","0","0","void removesScenarioCompletelyWhenNoMoreMappingsReferToItDueToNameChange()","void removesScenarioCompletelyWhenNoMoreMappingsReferToItDueToNameChange(){
+    StubMapping oldMapping =
+        get(""/scenarios/1"")
+            .inScenario(""one"")
+            .whenScenarioStateIs(STARTED)
+            .willSetStateTo(""step_2"")
+            .willReturn(ok())
+            .build();
+    scenarios.onStubMappingAdded(oldMapping);
+
+    assertThat(scenarios.getByName(""one""), notNullValue());
+
+    StubMapping newMapping =
+        get(""/scenarios/1"")
+            .inScenario(""two"")
+            .whenScenarioStateIs(STARTED)
+            .willSetStateTo(""step_2"")
+            .willReturn(ok())
+            .build();
+
+    scenarios.onStubMappingUpdated(oldMapping, newMapping);
+
+    assertThat(scenarios.getByName(""one""), nullValue());
+  }"
+"1112","152","567","566","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/stubbing/ScenariosTest.java","167","184","-2147382093","-2147381994","0","0","void stubMappingCanStopBeingInScenario()","void stubMappingCanStopBeingInScenario(){
+    StubMapping oldMapping =
+        get(""/scenarios/1"")
+            .inScenario(""one"")
+            .whenScenarioStateIs(STARTED)
+            .willSetStateTo(""step_2"")
+            .willReturn(ok())
+            .build();
+    scenarios.onStubMappingAdded(oldMapping);
+
+    assertThat(scenarios.getByName(""one""), notNullValue());
+
+    StubMapping newMapping = get(""/scenarios/1"").willReturn(ok()).build();
+
+    scenarios.onStubMappingUpdated(oldMapping, newMapping);
+
+    assertThat(scenarios.getByName(""one""), nullValue());
+  }"

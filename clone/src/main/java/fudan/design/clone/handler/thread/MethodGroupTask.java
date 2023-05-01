@@ -102,7 +102,8 @@ public class MethodGroupTask implements Runnable {
             saveTemplate(finalTemplate);
             writeTemplate(finalTemplate);
 
-        } catch (IOException e) {
+        } catch (Exception e) {
+            e.printStackTrace();
             log.error("output group " + groupId + " csv file error!", e);
         } finally {
             counter.progress();
@@ -272,7 +273,7 @@ public class MethodGroupTask implements Runnable {
                 templateCommon.add(null);
             }
            // List<MultiSet> detailsLine = new ArrayList<>();
-            if(set.getAlternateLines().size() != 0){
+            if(set.getAlternateLines().size() != 0 || set.getMainLine().getRate()<1){
                 TemplateLineDIffList diffList = new TemplateLineDIffList();
                 diffList.setDiffId(templateDetails.size()+1);
                 List<TemplateLineItem> list = new ArrayList<>();
@@ -294,7 +295,7 @@ public class MethodGroupTask implements Runnable {
     }
 
     private String getMethodNameByFirstLine(String firstLine){
-        System.out.println("first: "+firstLine);
+        //System.out.println("first: "+firstLine);
         String front = firstLine.substring(0,firstLine.indexOf('('));
         String[] array = front.split(" ");
         return array[array.length-1];

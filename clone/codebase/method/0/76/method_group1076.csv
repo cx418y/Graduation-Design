@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"544","76","272","271","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/VerificationAcceptanceTest.java","990","998","-2147432604","-2147432529","0","0","void maxLengthIs2()","void maxLengthIs2(){
+      WireMockTestClient testClient = new WireMockTestClient(wireMockRule.getPort());
+      testClient.get(""/request1"");
+      testClient.get(""/request2"");
+      testClient.get(""/request3"");
+      verify(0, getRequestedFor(urlEqualTo(""/request1"")));
+      verify(1, getRequestedFor(urlEqualTo(""/request2"")));
+      verify(1, getRequestedFor(urlEqualTo(""/request3"")));
+    }"
+"1192","76","284","283","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/WarDeploymentParameterAcceptanceTest.java","58","70","-2147374494","-2147374421","0","0","void testLimitedRequestJournal()","void testLimitedRequestJournal(){
+    // Test war deployment usint a request journal restricted to two entries
+    init(sampleWarRootDir() + ""/src/main/webappLimitedRequestJournal"", """");
+    // We don't have to create a stub since failed requests are also recorded
+    testClient.get(""/wiremock/request1"");
+    testClient.get(""/wiremock/request2"");
+    testClient.get(""/wiremock/request3"");
+
+    // Only two requests are present since the oldest one is discarded
+    verify(0, getRequestedFor(urlEqualTo(""/request1"")));
+    verify(1, getRequestedFor(urlEqualTo(""/request2"")));
+    verify(1, getRequestedFor(urlEqualTo(""/request3"")));
+  }"

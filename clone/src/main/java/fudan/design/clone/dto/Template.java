@@ -18,7 +18,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 @Data
-@Document(indexName = "java-faker")
+@Document(indexName = "wiremock")
 public class Template {
 
 	@Id

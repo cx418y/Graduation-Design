@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"2","2","3","2","0","/Users/macbook/Desktop/design/open/wiremock/wiremock-webhooks-extension/src/test/java/testsupport/WireMockTestClient.java","231","244","-2147483417","-2147483339","0","0","int postJsonAndReturnStatus(String url, String json)","int postJsonAndReturnStatus(String url, String json){
+    HttpPost post = new HttpPost(url);
+    try {
+      if (json != null) {
+        post.setEntity(new StringEntity(json, ContentType.create(JSON.toString(), ""utf-8"")));
+      }
+      ClassicHttpResponse httpResponse = httpClient().execute(post);
+      return httpResponse.getCode();
+    } catch (RuntimeException re) {
+      throw re;
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+  }"
+"255","2","3","20","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/testsupport/WireMockTestClient.java","270","283","-2147458200","-2147458122","0","0","int postJsonAndReturnStatus(String url, String json, String charset)","int postJsonAndReturnStatus(String url, String json, String charset){
+    HttpPost post = new HttpPost(url);
+    try {
+      if (json != null) {
+        post.setEntity(new StringEntity(json, ContentType.create(JSON.toString(), charset)));
+      }
+      ClassicHttpResponse httpResponse = httpClient().execute(post);
+      return httpResponse.getCode();
+    } catch (RuntimeException re) {
+      throw re;
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+  }"

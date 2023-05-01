@@ -1,0 +1,51 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"81","12","45","44","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/RequestPatternBuilderTest.java","52","75","-2147474405","-2147474244","0","0","void likeRequestPatternWithoutCustomMatcher()","void likeRequestPatternWithoutCustomMatcher(){
+    // Use a RequestPattern with everything defined except a custom matcher to ensure all fields are
+    // set properly
+    RequestPattern requestPattern =
+        new RequestPattern(
+            ""https"",
+            WireMock.equalTo(""my.wiremock.org""),
+            1234,
+            WireMock.urlEqualTo(""/foo""),
+            RequestMethod.POST,
+            ImmutableMap.of(""X-Header"", MultiValuePattern.of(WireMock.equalTo(""bar""))),
+            emptyMap(),
+            ImmutableMap.of(""query_param"", MultiValuePattern.of(WireMock.equalTo(""bar""))),
+            ImmutableMap.of(""form_param"", MultiValuePattern.of(WireMock.equalTo(""bar""))),
+            ImmutableMap.of(""cookie"", WireMock.equalTo(""yum"")),
+            new BasicCredentials(""user"", ""pass""),
+            ImmutableList.<ContentPattern<?>>of(WireMock.equalTo(""BODY"")),
+            null,
+            null,
+            null);
+
+    RequestPattern newRequestPattern = RequestPatternBuilder.like(requestPattern).build();
+    assertThat(newRequestPattern, is(requestPattern));
+  }"
+"84","12","52","51","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/RequestPatternBuilderTest.java","110","135","-2147474095","-2147473912","0","0","void likeRequestPatternWithoutMultipartMatcher()","void likeRequestPatternWithoutMultipartMatcher(){
+    MultipartValuePattern multipartPattern = aMultipart().withBody(equalToJson(""[]"")).build();
+
+    // Use a RequestPattern with everything defined except a custom matcher to ensure all fields are
+    // set properly
+    RequestPattern requestPattern =
+        new RequestPattern(
+            ""https"",
+            WireMock.equalTo(""my.wiremock.org""),
+            1234,
+            WireMock.urlEqualTo(""/foo""),
+            RequestMethod.POST,
+            ImmutableMap.of(""X-Header"", MultiValuePattern.of(WireMock.equalTo(""bar""))),
+            emptyMap(),
+            ImmutableMap.of(""query_param"", MultiValuePattern.of(WireMock.equalTo(""bar""))),
+            ImmutableMap.of(""form_param"", MultiValuePattern.of(WireMock.equalTo(""bar""))),
+            ImmutableMap.of(""cookie"", WireMock.equalTo(""yum"")),
+            new BasicCredentials(""user"", ""pass""),
+            ImmutableList.<ContentPattern<?>>of(WireMock.equalTo(""BODY"")),
+            null,
+            null,
+            asList(multipartPattern));
+
+    RequestPattern newRequestPattern = RequestPatternBuilder.like(requestPattern).build();
+    assertThat(newRequestPattern, is(requestPattern));
+  }"

@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"660","93","372","371","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/recording/SnapshotStubMappingGeneratorTest.java","37","51","-2147422994","-2147422906","0","0","void apply()","void apply(){
+    final RequestPatternBuilder requestPatternBuilder = newRequestPattern().withUrl(""/foo"");
+    final ResponseDefinition responseDefinition = ResponseDefinition.ok();
+
+    SnapshotStubMappingGenerator stubMappingTransformer =
+        new SnapshotStubMappingGenerator(
+            requestPatternTransformer(requestPatternBuilder),
+            responseDefinitionTransformer(responseDefinition));
+
+    StubMapping actual = stubMappingTransformer.apply(serveEvent());
+    StubMapping expected = new StubMapping(requestPatternBuilder.build(), responseDefinition);
+    expected.setId(actual.getId());
+
+    assertThat(actual, is(expected));
+  }"
+"661","93","388","387","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/recording/SnapshotStubMappingGeneratorTest.java","54","70","-2147422906","-2147422817","0","0","void apply()","void apply(){
+    final RequestPatternBuilder requestPatternBuilder =
+        newRequestPattern().withUrl(""hello_1_2_3___ace--ace___and"");
+    final ResponseDefinition responseDefinition = ResponseDefinition.ok();
+
+    SnapshotStubMappingGenerator stubMappingTransformer =
+        new SnapshotStubMappingGenerator(
+            requestPatternTransformer(requestPatternBuilder),
+            responseDefinitionTransformer(responseDefinition));
+
+    StubMapping actual =
+        stubMappingTransformer.apply(serveEventWithPath(""/hello/1/2/3__!/ẮČĖ--ace/¥$$/$/and/¿?""));
+    StubMapping expected = new StubMapping(requestPatternBuilder.build(), responseDefinition);
+    expected.setId(actual.getId());
+
+    assertThat(actual, is(expected));
+  }"

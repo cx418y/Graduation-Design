@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"311","44","149","148","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/core/WireMockConfigurationTest.java","29","37","-2147452323","-2147452257","0","0","void testJettyStopTimeout()","void testJettyStopTimeout(){
+    Long expectedStopTimeout = 500L;
+    WireMockConfiguration wireMockConfiguration =
+        WireMockConfiguration.wireMockConfig().jettyStopTimeout(expectedStopTimeout);
+    Optional<Long> jettyStopTimeout = wireMockConfiguration.jettySettings().getStopTimeout();
+
+    assertThat(jettyStopTimeout.isPresent(), is(true));
+    assertThat(jettyStopTimeout.get(), is(expectedStopTimeout));
+  }"
+"312","44","149","148","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/core/WireMockConfigurationTest.java","47","55","-2147452257","-2147452191","0","0","void testJettyIdleTimeout()","void testJettyIdleTimeout(){
+    Long expectedIdleTimeout = 500L;
+    WireMockConfiguration wireMockConfiguration =
+        WireMockConfiguration.wireMockConfig().jettyIdleTimeout(expectedIdleTimeout);
+    Optional<Long> jettyIdleTimeout = wireMockConfiguration.jettySettings().getIdleTimeout();
+
+    assertThat(jettyIdleTimeout.isPresent(), is(true));
+    assertThat(jettyIdleTimeout.get(), is(expectedIdleTimeout));
+  }"

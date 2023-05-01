@@ -1,0 +1,36 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"390","55","189","188","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsCurrentDateHelperTest.java","144","154","-2147446732","-2147446663","0","0","void helperIsIncludedInTemplateTransformerWithNowTagName()","void helperIsIncludedInTemplateTransformerWithNowTagName(){
+    final ResponseDefinition responseDefinition =
+        this.transformer.transform(
+            mockRequest().url(""/random-value""),
+            aResponse().withBody(""{{now offset='6 days'}}"").build(),
+            noFileSource(),
+            Parameters.empty());
+
+    String body = responseDefinition.getBody().trim();
+    assertThat(body, WireMatchers.matches(""^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9:]+Z$""));
+  }"
+"391","55","189","188","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsCurrentDateHelperTest.java","157","167","-2147446663","-2147446594","0","0","void helperIsIncludedInTemplateTransformerWithDateTagName()","void helperIsIncludedInTemplateTransformerWithDateTagName(){
+    final ResponseDefinition responseDefinition =
+        this.transformer.transform(
+            mockRequest().url(""/random-value""),
+            aResponse().withBody(""{{date offset='6 days'}}"").build(),
+            noFileSource(),
+            Parameters.empty());
+
+    String body = responseDefinition.getBody().trim();
+    assertThat(body, WireMatchers.matches(""^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9:]+Z$""));
+  }"
+"392","55","208","207","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/extension/responsetemplating/helpers/HandlebarsCurrentDateHelperTest.java","170","182","-2147446594","-2147446527","0","0","void acceptsDateParameterwithDateTagName()","void acceptsDateParameterwithDateTagName(){
+    final ResponseDefinition responseDefinition =
+        this.transformer.transform(
+            mockRequest().url(""/parsed-date""),
+            aResponse()
+                .withBody(""{{date (parseDate '2018-05-05T10:11:12Z') offset='-1 days'}}"")
+                .build(),
+            noFileSource(),
+            Parameters.empty());
+
+    String body = responseDefinition.getBody().trim();
+    assertThat(body, is(""2018-05-04T10:11:12Z""));
+  }"

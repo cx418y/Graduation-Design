@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1525","176","641","640","0","/Users/macbook/Desktop/design/open/wiremock/src/main/java/com/github/tomakehurst/wiremock/admin/tasks/GetServedStubTask.java","29","37","-2147339529","-2147339474","0","0","ResponseDefinition execute(Admin admin, Request request, PathParams pathParams)","ResponseDefinition execute(Admin admin, Request request, PathParams pathParams){
+    String idString = pathParams.get(""id"");
+    UUID id = UUID.fromString(idString);
+
+    SingleServedStubResult result = admin.getServedStub(id);
+    return result.isPresent()
+        ? ResponseDefinition.okForJson(result.getItem())
+        : ResponseDefinition.notFound();
+  }"
+"1528","176","641","642","0","/Users/macbook/Desktop/design/open/wiremock/src/main/java/com/github/tomakehurst/wiremock/admin/tasks/GetStubMappingTask.java","29","37","-2147339310","-2147339255","0","0","ResponseDefinition execute(Admin admin, Request request, PathParams pathParams)","ResponseDefinition execute(Admin admin, Request request, PathParams pathParams){
+    String idString = pathParams.get(""id"");
+    UUID id = UUID.fromString(idString);
+
+    SingleStubMappingResult stubMappingResult = admin.getStubMapping(id);
+    return stubMappingResult.isPresent()
+        ? ResponseDefinition.okForJson(stubMappingResult.getItem())
+        : ResponseDefinition.notFound();
+  }"

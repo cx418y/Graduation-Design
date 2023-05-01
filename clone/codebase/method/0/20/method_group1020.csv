@@ -1,0 +1,34 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"121","20","69","68","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/RequestPatternTest.java","278","293","-2147470772","-2147470626","0","0","void matchesExactlyWith0DistanceWhenAllRequiredFormParametersMatch()","void matchesExactlyWith0DistanceWhenAllRequiredFormParametersMatch(){
+    RequestPattern requestPattern =
+        newRequestPattern(PUT, urlPathEqualTo(""/my/url""))
+            .withFormParam(""key1"", equalTo(""value1""))
+            .withFormParam(""key2"", equalTo(""value2""))
+            .build();
+
+    Map<String, FormParameter> formParameters = new HashMap<>();
+    formParameters.put(""key1"", new FormParameter(""key1"", List.of(""value1"")));
+    formParameters.put(""key2"", new FormParameter(""key1"", List.of(""value2"")));
+    MatchResult matchResult =
+        requestPattern.match(
+            mockRequest().method(PUT).url(""/my/url"").formParameters(formParameters));
+    assertThat(matchResult.getDistance(), is(0.0));
+    assertTrue(matchResult.isExactMatch());
+  }"
+"122","20","69","79","0","/Users/macbook/Desktop/design/open/wiremock/src/test/java/com/github/tomakehurst/wiremock/matching/RequestPatternTest.java","296","312","-2147470626","-2147470480","0","0","void returnsNon0DistanceWhenRequiredFormParameterMatchDoesNotMatch()","void returnsNon0DistanceWhenRequiredFormParameterMatchDoesNotMatch(){
+    RequestPattern requestPattern =
+        newRequestPattern(PUT, urlPathEqualTo(""/my/url""))
+            .withFormParam(""key1"", equalTo(""value1""))
+            .withFormParam(""key2"", equalTo(""value2""))
+            .build();
+
+    Map<String, FormParameter> formParameters = new HashMap<>();
+    formParameters.put(""key1"", new FormParameter(""key1"", List.of(""value555"")));
+    formParameters.put(""key2"", new FormParameter(""key1"", List.of(""value78"")));
+
+    MatchResult matchResult =
+        requestPattern.match(
+            mockRequest().method(PUT).url(""/my/url"").formParameters(formParameters));
+    assertThat(matchResult.getDistance(), greaterThan(0.0));
+    assertFalse(matchResult.isExactMatch());
+  }"
