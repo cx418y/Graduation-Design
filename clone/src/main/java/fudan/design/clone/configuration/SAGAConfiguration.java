@@ -21,7 +21,7 @@ import fudan.design.clone.utils.sagaUtils.Language;
 public class SAGAConfiguration {
 
     private String language = "cpp";
-    private String extensions = "c,cpp";
+    private String extensions = "cpp";
     private float threshold = 0.7f;
     private int mlc = 50;
     private int mlcc = 20;

@@ -27,6 +27,8 @@ public class ReadManager implements Runnable {
 				a++;
 			}
 		}
+
+
 		if (str.endsWith(".0") && str.endsWith("ff")) str = str.substring(0, str.length() - 2);
 		current.setAttribute(name, str);
 	}
@@ -35,6 +37,8 @@ public class ReadManager implements Runnable {
 		// Remove the awkard .0 at the end of each number
 		String a = Double.toString(value);
 		count1++;
+
+
 		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
 		current.setAttribute(name, str);
 	}
@@ -44,6 +48,8 @@ public class ReadManager implements Runnable {
 		this.minLength = minLength;
 		this.maxLength = maxLength;
 		int c = 4;
+
+
 		double a = 1;
 	}
 

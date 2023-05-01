@@ -26,9 +26,9 @@ public class JavaTemplateExtractor {
 		int lineOffset = 0;
 
 		for (Token tk : tokens) {
-			System.out.println("type:" + JavaLexer.VOCABULARY.getSymbolicName(tk.getType()) +
-					"@pos" + tk.getLine() + "(" + tk.getStartIndex() + "," +
-					tk.getStopIndex() + ")" + ":" + tk.getText());
+//			System.out.println("type:" + JavaLexer.VOCABULARY.getSymbolicName(tk.getType()) +
+//					"@pos" + tk.getLine() + "(" + tk.getStartIndex() + "," +
+//					tk.getStopIndex() + ")" + ":" + tk.getText());
 			int tkLineNum = tk.getLine();
 			if(tkLineNum == lineNum) {
 				if (isLiteral(tk) || isIdentifier(tk)) {
@@ -63,7 +63,6 @@ public class JavaTemplateExtractor {
 			}
 		}
 
-
 		System.out.println(formattedCode);
 		for(TemplateLine line : templateLineList){
 			System.out.println(line.getFormattedLine());
@@ -84,7 +83,7 @@ public class JavaTemplateExtractor {
 	}
 
 	// 提取通用模板
-	public static  List<TemplateLineSet> extractTemplate(List<MultiSet<TemplateLine>> rawTemplate){
+	public static  List<TemplateLineSet> extractTemplate(List<MultiSet> rawTemplate){
 		int methodNum = rawTemplate.get(0).getOccurrence().length;
 		List<TemplateLineSet> res = new ArrayList<>();
 
@@ -92,7 +91,7 @@ public class JavaTemplateExtractor {
 		if(beginIndex==-1){
 			return res;
 		}
-		MultiSet<TemplateLine> curLine = rawTemplate.get(beginIndex);
+		MultiSet curLine = rawTemplate.get(beginIndex);
 		boolean[] curOccurrence = new boolean[methodNum];
 		int occurrenceCount = curLine.getOccurrenceCount();
 		for(int i = 0; i < curOccurrence.length;i++){
@@ -102,7 +101,7 @@ public class JavaTemplateExtractor {
 		for(int k = beginIndex+1; k < rawTemplate.size();k++){
 			outerLoop:
 			for (int i = k; i < rawTemplate.size(); i++) {
-				MultiSet<TemplateLine> line = rawTemplate.get(i);
+				MultiSet line = rawTemplate.get(i);
 				if (line.isVisited() || (!curLine.getToken().canCompare(line.getToken()))) {
 					continue;
 				}
@@ -123,7 +122,7 @@ public class JavaTemplateExtractor {
 				if (line.getRate() >= TemplateConstants.MIN_MAIN_LINE_RATE && res.get(res.size() - 1).getMainLine() == null) {
 					res.get(res.size() - 1).setMainLine(line);
 				} else {
-					res.get(res.size() - 1).getAlternateLines().add(line);
+					res.get(res.size() - 1).addAlternative(line);
 				}
 				if (occurrenceCount == methodNum) {
 					break;
@@ -137,12 +136,19 @@ public class JavaTemplateExtractor {
 			k = beginIndex - 1;
 		}
 
+		// 设置第一行方法声明一定有mainLine
+		TemplateLineSet firstSet = res.get(0);
+		if(firstSet.getMainLine() == null){
+			firstSet.setMainLine(firstSet.getAlternateLines().get(0));
+			firstSet.getAlternateLines().remove(0);
+		}
+
 		return res;
 	}
 
-	public static int findNextNotCommonLine(List<MultiSet<TemplateLine>> rawTemplate,int index,List<TemplateLineSet> res){
+	public static int findNextNotCommonLine(List<MultiSet> rawTemplate,int index,List<TemplateLineSet> res){
 		for(;index<rawTemplate.size();index++){
-			MultiSet<TemplateLine> line = rawTemplate.get(index);
+			MultiSet line = rawTemplate.get(index);
 			if(line.isVisited()){
 				continue;
 			}
@@ -155,7 +161,7 @@ public class JavaTemplateExtractor {
 				res.add(new TemplateLineSet(line,new ArrayList<>(),res.size()));
 				return index;
 			}else{
-				List<MultiSet<TemplateLine>> alternateLines = new ArrayList<>();
+				List<MultiSet> alternateLines = new ArrayList<>();
 				alternateLines.add(line);
 				res.add(new TemplateLineSet(null,alternateLines,res.size()));
 				return index;

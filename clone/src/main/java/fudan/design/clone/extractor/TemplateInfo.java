@@ -11,7 +11,7 @@ import java.util.List;
 public class TemplateInfo {
 
     List<MethodInfo> methods;
-    List<MultiSet<TemplateLine>> rawTemplate;
+    List<MultiSet> rawTemplate;
 
     List<TemplateLineSet> finalTemplate;
 
@@ -30,37 +30,37 @@ public class TemplateInfo {
         }
         this.rawTemplate = MultiSet.generateMultiset(candidates);
         this.finalTemplate = JavaTemplateExtractor.extractTemplate(rawTemplate);
-        for(TemplateLineSet set:finalTemplate){
-            System.out.print(set.getIndex()+": ");
-            if(set.getMainLine() != null){
-                System.out.println(set.getMainLine().toString());
-            }else{
-                System.out.println("null");
-            }
-            System.out.println("alter: "+set.getAlternateLines());
-        }
-        for(TemplateLineSet set:finalTemplate){
-            // System.out.print(set.getIndex()+": ");
-            if(set.getMainLine() != null){
-                String origin = set.getMainLine().getToken().getOriginLineString();
-                if(set.getAlternateLines().size()==0){
-                   System.out.println(origin);
-                }else{
-                    System.out.print("[*"+set.getIndex()+"*] ");
-                    System.out.println("[*"+origin+"*]");
-                }
-               // System.out.println(set.getMainLine().getToken().getOriginLineString());
-            }else{
-                System.out.println("[*"+set.getIndex()+"*] ");
-            }
-        }
-        for(TemplateLineSet set:finalTemplate){
-            // System.out.print(set.getIndex()+": ");
-            System.out.println("[*"+set.getIndex()+"*] :");
-            for(MultiSet<TemplateLine> line:set.getAlternateLines()){
-                System.out.println(line.getToken().getOriginLineString());
-            }
-        }
+//        for(TemplateLineSet set:finalTemplate){
+//            System.out.print(set.getIndex()+": ");
+//            if(set.getMainLine() != null){
+//                System.out.println(set.getMainLine().toString());
+//            }else{
+//                System.out.println("null");
+//            }
+//            System.out.println("alter: "+set.getAlternateLines());
+//        }
+//        for(TemplateLineSet set:finalTemplate){
+//            // System.out.print(set.getIndex()+": ");
+//            if(set.getMainLine() != null){
+//                String origin = set.getMainLine().getToken().getOriginLineString();
+//                if(set.getAlternateLines().size()==0){
+//                   System.out.println(origin);
+//                }else{
+//                    System.out.print("[*"+set.getIndex()+"*] ");
+//                    System.out.println("[*"+origin+"*]");
+//                }
+//               // System.out.println(set.getMainLine().getToken().getOriginLineString());
+//            }else{
+//                System.out.println("[*"+set.getIndex()+"*] ");
+//            }
+//        }
+//        for(TemplateLineSet set:finalTemplate){
+//            // System.out.print(set.getIndex()+": ");
+//            System.out.println("[*"+set.getIndex()+"*] :");
+//            for(MultiSet line:set.getAlternateLines()){
+//                System.out.println(line.getToken().getOriginLineString());
+//            }
+//        }
 
 
 

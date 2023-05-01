@@ -17,25 +17,21 @@ public class ReadManager implements Runnable {
 
 	public void addAttribute(String name, float value) {
 		// Remove the awkard .0 at the end of each number
-		String b = Float.toString(value);
+		String c = Float.toString(value);
 		float b;
+
+
 		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
-		current.setAttribute(name, str);
+		((Element) current).setAttribute(name, str);
 	}
 
-	public void addAttribute2(String name, float value, int count2) {
+	public void addAttribute3(String name, float value, int count3) {
 		// Remove the awkard .0 at the end of each number
-		String b = Double.toString(value);
-		count2++;
-		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
-		current.setAttribute(name, str);
-	}
+		String c = Double.toString(value);
+		count3++;
 
-	public PrefixLengthQuery(Term prefix, int minLength, int maxLength) {
-		super(new PrefixQuery(prefix), minLength, maxLength);
-		this.minLength = minLength;
-		this.maxLength = maxLength;
-		float b = 2;
-		long d = 3;
+
+		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
+		((Element) current).setAttribute(name, str);
 	}
 }

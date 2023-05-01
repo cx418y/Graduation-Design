@@ -11,6 +11,7 @@ public class ScriptUtil {
 
     public static void executeJarFile(File processDirectory, File jarFile, String parameters) {
         ProcessBuilder builder = new ProcessBuilder("java", "-jar", jarFile.getName(), parameters);
+        System.out.println("param: " + parameters);
         builder.redirectErrorStream(true);
         builder.directory(processDirectory);
         try {

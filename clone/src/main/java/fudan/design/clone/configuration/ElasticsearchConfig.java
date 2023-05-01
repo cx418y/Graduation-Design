@@ -13,11 +13,18 @@ import org.springframework.data.elasticsearch.client.elc.ElasticsearchConfigurat
 public class ElasticsearchConfig extends ElasticsearchConfiguration {
 	@Value("${spring.elasticsearch.uris}")
 	private String url;
+	@Value("${spring.elasticsearch.username}")
+	private String username;
+	@Value("${spring.elasticsearch.password}")
+	private String password;
+
+
 
 	@Override
 	public @NotNull ClientConfiguration clientConfiguration() {
 		return ClientConfiguration.builder()
-				.connectedTo(url)
+				.connectedTo("localhost:9200")
+				.withBasicAuth(username, password)
 				.build();
 	}
 }

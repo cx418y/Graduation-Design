@@ -5,8 +5,10 @@ spring:
   config:
     additional-location: construct.yml
   elasticsearch:
-    uris: http://localhost:9200
+    uris: localhost:9200
     # rest:
+    username: elastic
+    password: =5hTOl4Gegro*LA1MsrE
 
 
 server:

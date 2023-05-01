@@ -36,6 +36,7 @@ public class CppCodeUtil {
             signature = parseMethodSignature(path, startLine, "GB2312");
         if (signature == null || signature.length() == 0)
             signature = parseMethodSignature(path, startLine, "latin1");
+       // System.out.println("sign: "+signature);
         return signature;
     }
 
@@ -64,6 +65,7 @@ public class CppCodeUtil {
 
             //以左大括号为锚点，向前扫描
             String code = String.join("\n", lines);
+           // System.out.println("sign code: "+code);
             int index = code.lastIndexOf("{");
             if (code.lastIndexOf("}") > index)
                 return null;
@@ -204,12 +206,14 @@ public class CppCodeUtil {
             if (leftBracketIndex < 0 || rightBracketIndex < 0 || leftBracketIndex >= rightBracketIndex) {
                 return null;
             }
-           // code = code.substring(leftBracketIndex + 1, rightBracketIndex);
+            code = code.substring(leftBracketIndex, rightBracketIndex+1);
+           // System.out.println("body: "+code);
             code = removeComment(code);
             if (formatString) {
                 code = code.replaceAll(CPP_STRING_PATTERN, "");
                 code = formatCode(code);
             }
+
             return code;
 
         } catch (IOException e) {

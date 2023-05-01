@@ -15,6 +15,7 @@ import fudan.design.clone.bean.MethodInfo;
 import fudan.design.clone.bean.State;
 import fudan.design.clone.handler.BaseResultHandler;
 import fudan.design.clone.handler.MethodResultHandler;
+import fudan.design.clone.utils.ElasticPipeline;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import fudan.design.clone.configuration.CodeBaseConfiguration;
@@ -34,6 +35,7 @@ import static fudan.design.clone.common.SAGAConstants.SAGA_CONFIG_FILE;
 @Slf4j
 @Component
 public class CodeBasePipeline {
+
 
     @Resource
     private CodeBaseConfiguration codeBaseConfiguration;
@@ -64,6 +66,7 @@ public class CodeBasePipeline {
             //进行方法级克隆检测
             log.info("tokenize & build & parse method result");
             ScriptUtil.executeJarFile(cloneDetectToolDir, cloneDetectTool, repoPath);
+            System.out.println("repopath: "+repoPath);
 
             //重置配置文件
 //            log.info("reset saga configuration");

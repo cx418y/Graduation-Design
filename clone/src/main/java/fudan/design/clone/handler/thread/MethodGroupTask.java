@@ -3,10 +3,17 @@ package fudan.design.clone.handler.thread;
 //import cn.edu.fdu.clone.recommend.construct.common.CodeBaseConstants;
 import fudan.design.clone.bean.MethodInfo;
 import fudan.design.clone.bean.State;
+import fudan.design.clone.bean.TemplateList;
 import fudan.design.clone.common.SAGAConstants;
+import fudan.design.clone.dto.Template;
+import fudan.design.clone.dto.TemplateLineDIffList;
+import fudan.design.clone.dto.TemplateLineItem;
+import fudan.design.clone.extractor.MultiSet;
 import fudan.design.clone.extractor.TemplateInfo;
+import fudan.design.clone.extractor.TemplateLine;
 import fudan.design.clone.extractor.TemplateLineSet;
 import fudan.design.clone.handler.MethodResultHandler;
+import fudan.design.clone.service.ElasticsearchService;
 import fudan.design.clone.utils.code.CppCodeUtil;
 
 import fudan.design.clone.common.CodeBaseConstants;
@@ -17,8 +24,10 @@ import fudan.design.clone.utils.sagaUtils.CodeBasePipeline;
 import fudan.design.clone.utils.sagaUtils.FileUtil;
 import fudan.design.clone.utils.sagaUtils.ProcessCounter;
 import fudan.design.clone.utils.sagaUtils.TokenUtil;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
+import org.springframework.data.elasticsearch.annotations.Field;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -36,6 +45,9 @@ public class MethodGroupTask implements Runnable {
     private final String sagaFolderPath;
     private final String granularity;
     private final ProcessCounter counter;
+
+    @Resource
+    private ElasticsearchService service;
 
     public MethodGroupTask(String[] group, CountDownLatch countDownLatch, int groupId,
                            String sagaFolderPath, String granularity, ProcessCounter counter) {
@@ -82,6 +94,14 @@ public class MethodGroupTask implements Runnable {
             writer.writeAll(csvLines);
             writer.flush();
             writer.close();
+
+            TemplateInfo templateInfo = new TemplateInfo(methodInfoList,groupId);
+//            System.out.println(templateInfo.getRawTemplate().size());
+//            System.out.println(templateInfo.getFinalTemplate().size());
+            List<TemplateLineSet> finalTemplate = templateInfo.getFinalTemplate();
+            saveTemplate(finalTemplate);
+            writeTemplate(finalTemplate);
+
         } catch (IOException e) {
             log.error("output group " + groupId + " csv file error!", e);
         } finally {
@@ -89,11 +109,7 @@ public class MethodGroupTask implements Runnable {
             countDownLatch.countDown();
         }
 
-        TemplateInfo templateInfo = new TemplateInfo(methodInfoList,groupId);
-        System.out.println(templateInfo.getRawTemplate().size());
-        System.out.println(templateInfo.getFinalTemplate().size());
-        List<TemplateLineSet> finalTemplate = templateInfo.getFinalTemplate();
-        writeTemplate(finalTemplate);
+
 
     }
 
@@ -113,7 +129,9 @@ public class MethodGroupTask implements Runnable {
             right.setCG_T3(groupId);
             if (right.getBody() == null || right.getBody().length() == 0){
                 right.setSignature(CppCodeUtil.parseMethodSignature(path, startLine));
-                right.setBody(CppCodeUtil.parseMethodBody(path, startLine, endLine));
+                String body = right.getSignature()+CppCodeUtil.parseMethodBody(path, startLine, endLine);
+                right.setBody(body);
+               // System.out.println(path+startLine+","+endLine);
             }
 
             if (right.getBody() == null || right.getBody().length() == 0){
@@ -182,6 +200,105 @@ public class MethodGroupTask implements Runnable {
 
     }
 
+//    private void saveTemplateToElasticsearch( List<TemplateLineSet> finalTemplate){
+//         StringBuilder methodNameSB = new StringBuilder();
+//
+//         StringBuilder templateCommonSB = new StringBuilder();
+//
+//        StringBuilder templateDetailsSB = new StringBuilder();
+//        TemplateLineSet methodNameSet = finalTemplate.get(0);
+//        methodNameSB.append(getMethodNameByFirstLine(methodNameSet.getMainLine().getToken().getOriginLineString()));
+//        System.out.println("methodNameSB: "+methodNameSB);
+//        for (TemplateLineSet set : finalTemplate) {
+//            // System.out.print(set.getIndex()+": ");
+//            if (set.getMainLine() != null) {
+//                String origin = set.getMainLine().getToken().getOriginLineString();
+//                if (set.getAlternateLines().size() == 0) {
+//                    templateCommonSB.append(origin).append("\n");
+//                } else {
+//                    templateCommonSB.append("[*").append(set.getIndex()).append("*] ");
+//                    templateCommonSB.append("[*").append(origin).append("*]").append("\n");
+//                    // System.out.print("[*"+set.getIndex()+"*] ");
+//                    //System.out.println("[*"+origin+"*]");
+//                }
+//                // System.out.println(set.getMainLine().getToken().getOriginLineString());
+//            } else {
+//                templateCommonSB.append("[*").append(set.getIndex()).append("*] ").append("\n");
+//                // System.out.println("[*"+set.getIndex()+"*] ");
+//            }
+//
+//            // System.out.println("[*"+set.getIndex()+"*] :");
+//            if (set.getAlternateLines().size() > 0) {
+//                templateDetailsSB.append("[*").append(set.getIndex()).append("*] :").append("\n");
+//                for (MultiSet<TemplateLine> line : set.getAlternateLines()) {
+//                    templateDetailsSB.append(line.getToken().getOriginLineString()).append("\n");
+//                   // System.out.println(line.getToken().getOriginLineString());
+//                }
+//            }
+//        }
+//        System.out.println(methodNameSB);
+//        System.out.println(templateCommonSB);
+//        System.out.println(templateDetailsSB);
+//
+//        Template template = new Template();
+//        template.setTemplateCommon(templateCommonSB.toString());
+//        template.setTemplateDetails(templateDetailsSB.toString());
+//        template.setMethodName(methodNameSB.toString());
+//        TemplateList.addTemplate(template);
+//    }
+//
+    private void saveTemplate(List<TemplateLineSet> finalTemplate){
+        StringBuilder methodNameSB = new StringBuilder();
+        List<TemplateLineItem> templateCommon = new ArrayList<>();
+        List<TemplateLineDIffList> templateDetails = new ArrayList<>();
+        TemplateLineSet methodNameSet = finalTemplate.get(0);
+        if(methodNameSet.getMainLine() != null){
+            methodNameSB.append(getMethodNameByFirstLine(methodNameSet.getMainLine().getToken().getOriginLineString()));
+        }else{
+            for(MultiSet set : methodNameSet.getAlternateLines()){
+                methodNameSB.append(getMethodNameByFirstLine(set.getToken().getOriginLineString()));
+            }
+        }
+       // methodNameSB.append(getMethodNameByFirstLine(methodNameSet.getMainLine().getToken().getOriginLineString()));
+        System.out.println("methodNameSB: "+methodNameSB);
+        for (TemplateLineSet set : finalTemplate) {
+            if (set.getMainLine() != null) {
+                MultiSet main = set.getMainLine();
+                main.setFinalPosition(set.getIndex()+1);
+                //TemplateLine line = set.getMainLine().getToken();
+                TemplateLineItem item = new TemplateLineItem(main.getToken().getOriginLineString(),main.getOccurrenceCount(),main.getRate());
+                templateCommon.add(item);
+            }else{
+                templateCommon.add(null);
+            }
+           // List<MultiSet> detailsLine = new ArrayList<>();
+            if(set.getAlternateLines().size() != 0){
+                TemplateLineDIffList diffList = new TemplateLineDIffList();
+                diffList.setDiffId(templateDetails.size()+1);
+                List<TemplateLineItem> list = new ArrayList<>();
+                for(MultiSet line:set.getAlternateLines()){
+                    TemplateLineItem item = new TemplateLineItem(line.getToken().getOriginLineString(),line.getOccurrenceCount(),line.getRate());
+                    list.add(item);
+                }
+                diffList.setItems(list);
+                templateDetails.add(diffList);
+            }
+           // templateDetails.add(detailsLine);
+        }
+        Template template = new Template();
+        template.setMethodName(methodNameSB.toString());
+        template.setTemplateCommon(templateCommon);
+        template.setTemplateDetails(templateDetails);
+        TemplateList.addTemplate(template);
+
+    }
+
+    private String getMethodNameByFirstLine(String firstLine){
+        System.out.println("first: "+firstLine);
+        String front = firstLine.substring(0,firstLine.indexOf('('));
+        String[] array = front.split(" ");
+        return array[array.length-1];
+    }
     private int compareTokens(byte[] left, byte[] right) {
         return TokenUtil.judgeCloneType(left, right, CodeBasePipeline.lang);
     }
