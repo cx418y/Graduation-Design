@@ -1,0 +1,45 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"464","89","295","294","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/updatemethods/UpdateMethodsTest.java","48","71","-2147434873","-2147434679","0","0","void testPreferUpdateMethod()","void testPreferUpdateMethod(){
+        generatedSource.addComparisonToFixtureFor( OrganizationMapper.class );
+
+        OrganizationEntity organizationEntity = new OrganizationEntity();
+        CompanyEntity companyEntity = new CompanyEntity();
+        organizationEntity.setCompany( companyEntity );
+        companyEntity.setName( ""CocaCola"" );
+
+        OrganizationDto organizationDto = new OrganizationDto();
+        CompanyDto companyDto = new CompanyDto();
+        organizationDto.setCompany( companyDto );
+        companyDto.setName( ""PepsiCo"" );
+        DepartmentDto departmentDto = new DepartmentDto();
+        departmentDto.setName( ""finance"" );
+        companyDto.setDepartment( departmentDto );
+
+        OrganizationMapper.INSTANCE.toOrganizationEntity( organizationDto, organizationEntity );
+
+        assertThat( organizationEntity.getCompany() ).isEqualTo( companyEntity );
+        assertThat( organizationEntity.getCompany().getName() ).isEqualTo( ""PepsiCo"" );
+        assertThat( organizationEntity.getType().getType() ).isEqualTo( ""commercial"" );
+        assertThat( organizationEntity.getTypeNr().getNumber() ).isEqualTo( 5 );
+        assertThat( organizationEntity.getCompany().getDepartment().getName() ).isEqualTo( ""finance"" );
+    }"
+"466","89","297","296","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/updatemethods/UpdateMethodsTest.java","102","121","-2147434540","-2147434382","0","0","void testPreferUpdateMethodSourceObjectNotDefined()","void testPreferUpdateMethodSourceObjectNotDefined(){
+        generatedSource.addComparisonToFixtureFor( OrganizationMapper.class );
+
+        OrganizationEntity organizationEntity = new OrganizationEntity();
+
+        OrganizationDto organizationDto = new OrganizationDto();
+        CompanyDto companyDto = new CompanyDto();
+        organizationDto.setCompany( companyDto );
+        companyDto.setName( ""PepsiCo"" );
+        DepartmentDto departmentDto = new DepartmentDto();
+        departmentDto.setName( ""finance"" );
+        companyDto.setDepartment( departmentDto );
+
+        OrganizationMapper.INSTANCE.toOrganizationEntity( organizationDto, organizationEntity );
+
+        assertThat( organizationEntity.getCompany().getName() ).isEqualTo( ""PepsiCo"" );
+        assertThat( organizationEntity.getType().getType() ).isEqualTo( ""commercial"" );
+        assertThat( organizationEntity.getTypeNr().getNumber() ).isEqualTo( 5 );
+        assertThat( organizationEntity.getCompany().getDepartment().getName() ).isEqualTo( ""finance"" );
+    }"

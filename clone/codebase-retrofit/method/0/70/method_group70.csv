@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"387","70","249","248","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/main/java/retrofit2/adapter/rxjava3/CallEnqueueObservable.java","36","44","-2147435223","-2147435170","0","0","void subscribeActual(Observer<? super Response<T>> observer)","void subscribeActual(Observer<? super Response<T>> observer){
+    Call<T> call = originalCall.clone();
+    CallCallback<T> callback = new CallCallback<>(call, observer);
+    observer.onSubscribe(callback);
+    if (!callback.isDisposed()) {
+      call.enqueue(callback);
+    }
+  }"
+"514","70","249","248","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/main/java/retrofit2/adapter/rxjava2/CallEnqueueObservable.java","36","44","-2147422222","-2147422169","0","0","void subscribeActual(Observer<? super Response<T>> observer)","void subscribeActual(Observer<? super Response<T>> observer){
+    Call<T> call = originalCall.clone();
+    CallCallback<T> callback = new CallCallback<>(call, observer);
+    observer.onSubscribe(callback);
+    if (!callback.isDisposed()) {
+      call.enqueue(callback);
+    }
+  }"

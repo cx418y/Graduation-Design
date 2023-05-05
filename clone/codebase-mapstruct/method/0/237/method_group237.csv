@@ -1,0 +1,34 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1683","237","774","773","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/builtin/XmlGregorianCalendarToJodaLocalTime.java","27","34","-2147287883","-2147287825","0","0","public XmlGregorianCalendarToJodaLocalTime(TypeFactory typeFactory)","public XmlGregorianCalendarToJodaLocalTime(TypeFactory typeFactory){
+        this.parameter = new Parameter( ""xcal"", typeFactory.getType( XmlConstants.JAVAX_XML_XML_GREGORIAN_CALENDAR ) );
+        this.returnType = typeFactory.getType( JodaTimeConstants.LOCAL_TIME_FQN );
+        this.importTypes = asSet(
+            typeFactory.getType( XmlConstants.JAVAX_XML_DATATYPE_CONSTANTS ),
+            returnType,
+            parameter.getType() );
+    }"
+"1689","237","778","777","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/builtin/XmlGregorianCalendarToJodaDateTime.java","27","35","-2147287235","-2147287168","0","0","public XmlGregorianCalendarToJodaDateTime(TypeFactory typeFactory)","public XmlGregorianCalendarToJodaDateTime(TypeFactory typeFactory){
+        this.parameter = new Parameter( ""xcal"", typeFactory.getType( XmlConstants.JAVAX_XML_XML_GREGORIAN_CALENDAR ) );
+        this.returnType = typeFactory.getType( JodaTimeConstants.DATE_TIME_FQN );
+        this.importTypes = asSet(
+            typeFactory.getType( XmlConstants.JAVAX_XML_DATATYPE_CONSTANTS ),
+            typeFactory.getType( JodaTimeConstants.DATE_TIME_ZONE_FQN ),
+            returnType,
+            parameter.getType() );
+    }"
+"1691","237","774","773","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/builtin/XmlGregorianCalendarToJodaLocalDateTime.java","27","34","-2147287103","-2147287045","0","0","public XmlGregorianCalendarToJodaLocalDateTime(TypeFactory typeFactory)","public XmlGregorianCalendarToJodaLocalDateTime(TypeFactory typeFactory){
+        this.parameter = new Parameter( ""xcal"", typeFactory.getType( XmlConstants.JAVAX_XML_XML_GREGORIAN_CALENDAR ) );
+        this.returnType = typeFactory.getType( JodaTimeConstants.LOCAL_DATE_TIME_FQN );
+        this.importTypes = asSet(
+            typeFactory.getType( XmlConstants.JAVAX_XML_DATATYPE_CONSTANTS ),
+            returnType,
+            parameter.getType() );
+    }"
+"1693","237","774","773","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/builtin/XmlGregorianCalendarToJodaLocalDate.java","27","34","-2147286978","-2147286920","0","0","public XmlGregorianCalendarToJodaLocalDate(TypeFactory typeFactory)","public XmlGregorianCalendarToJodaLocalDate(TypeFactory typeFactory){
+        this.parameter = new Parameter( ""xcal"", typeFactory.getType( XmlConstants.JAVAX_XML_XML_GREGORIAN_CALENDAR ) );
+        this.returnType = typeFactory.getType( JodaTimeConstants.LOCAL_DATE_FQN );
+        this.importTypes = asSet(
+            typeFactory.getType( XmlConstants.JAVAX_XML_DATATYPE_CONSTANTS ),
+            returnType,
+            parameter.getType() );
+    }"

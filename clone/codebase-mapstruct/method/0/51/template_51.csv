@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldUseAndReturnTargetParameterForNullMapping","void shouldUseAndReturnTargetParameterForNullMapping(){
+        List<TargetFoo> target = new ArrayList<>();
+        target.add( new TargetFoo( ""Bob"" ) );
+        target.add( new TargetFoo( ""Alice"" ) );
+        Iterable<TargetFoo> result =
+            SourceTargetMapper.INSTANCE
+                .sourceFoosToTargetFoosUsingTargetParameterAndReturn( null, target );
+
+        assertThat( result ).isSameAs( target );
+        assertResultList( target );
+    }
+",""

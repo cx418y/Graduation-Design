@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1928","247","806","805","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/PrimitiveToStringConversion.java","65","78","-2147258572","-2147258493","0","0","String getFromExpression(ConversionContext conversionContext)","String getFromExpression(ConversionContext conversionContext){
+        if ( requiresDecimalFormat( conversionContext ) ) {
+            StringBuilder sb = new StringBuilder();
+            appendDecimalFormatter( sb, conversionContext );
+            sb.append( "".parse( <SOURCE> )."" );
+            sb.append( sourceType.getSimpleName() );
+            sb.append( ""Value()"" );
+            return sb.toString();
+        }
+        else {
+            return wrapperType.getSimpleName() + "".parse""
+                + Strings.capitalize( sourceType.getSimpleName() ) + ""( <SOURCE> )"";
+        }
+    }"
+"1930","247","806","805","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/WrapperToStringConversion.java","64","77","-2147258425","-2147258346","0","0","String getFromExpression(ConversionContext conversionContext)","String getFromExpression(ConversionContext conversionContext){
+        if ( requiresDecimalFormat( conversionContext ) ) {
+            StringBuilder sb = new StringBuilder();
+            appendDecimalFormatter( sb, conversionContext );
+            sb.append( "".parse( <SOURCE> )."" );
+            sb.append( primitiveType.getSimpleName() );
+            sb.append( ""Value()"" );
+            return sb.toString();
+        }
+        else {
+            return sourceType.getSimpleName() + "".parse""
+                + Strings.capitalize( primitiveType.getSimpleName() ) + ""( <SOURCE> )"";
+        }
+    }"

@@ -1,0 +1,41 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"667","111","359","358","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/scalars/src/test/java/retrofit2/converter/scalars/ScalarsConverterFactoryTest.java","138","157","-2147406859","-2147406803","0","0","void unsupportedRequestTypesNotMatched()","void unsupportedRequestTypesNotMatched(){
+    try {
+      service.object(null);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Unable to create @Body converter for class java.lang.Object (parameter #1)\n""
+                  + ""    for method Service.object"");
+      assertThat(e.getCause())
+          .hasMessage(
+              """"
+                  + ""Could not locate RequestBody converter for class java.lang.Object.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.converter.scalars.ScalarsConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+  }"
+"669","111","361","360","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/scalars/src/test/java/retrofit2/converter/scalars/ScalarsConverterFactoryTest.java","284","303","-2147405463","-2147405408","0","0","void unsupportedResponseTypesNotMatched()","void unsupportedResponseTypesNotMatched(){
+    try {
+      service.object();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Unable to create converter for class java.lang.Object\n""
+                  + ""    for method Service.object"");
+      assertThat(e.getCause())
+          .hasMessage(
+              """"
+                  + ""Could not locate ResponseBody converter for class java.lang.Object.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.converter.scalars.ScalarsConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+  }"

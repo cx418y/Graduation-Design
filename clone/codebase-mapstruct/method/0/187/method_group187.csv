@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1086","187","608","607","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullcheck/strategy/NullValueCheckTest.java","36","44","-2147365042","-2147364990","0","0","void testDefinedOnBean()","void testDefinedOnBean(){
+
+        HouseEntity entity = HouseMapper.INSTANCE.mapWithNvcsOnBean( new HouseDto() );
+
+        assertThat( entity ).isNotNull();
+        assertThat( entity.ownerSet() ).isTrue();
+        assertThat( entity.numberSet() ).isTrue();
+
+    }"
+"1087","187","608","609","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullcheck/strategy/NullValueCheckTest.java","47","55","-2147364990","-2147364938","0","0","void testDefinedOnMapping()","void testDefinedOnMapping(){
+
+        HouseEntity entity = HouseMapper.INSTANCE.mapWithNvcsOnMapping( new HouseDto() );
+
+        assertThat( entity ).isNotNull();
+        assertThat( entity.ownerSet() ).isTrue();
+        assertThat( entity.numberSet() ).isFalse();
+
+    }"
+"1089","187","608","612","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullcheck/strategy/NullValueCheckTest.java","69","77","-2147364886","-2147364834","0","0","void testDefinedOnConfigAndBean()","void testDefinedOnConfigAndBean(){
+
+        HouseEntity entity = HouseMapperWithConfig.INSTANCE.mapWithNvcsOnBean( new HouseDto() );
+
+        assertThat( entity ).isNotNull();
+        assertThat( entity.ownerSet() ).isTrue();
+        assertThat( entity.numberSet() ).isTrue();
+
+    }"
+"1090","187","608","613","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullcheck/strategy/NullValueCheckTest.java","80","88","-2147364834","-2147364782","0","0","void testDefinedOnConfigAndMapping()","void testDefinedOnConfigAndMapping(){
+
+        HouseEntity entity = HouseMapperWithConfig.INSTANCE.mapWithNvcsOnMapping( new HouseDto() );
+
+        assertThat( entity ).isNotNull();
+        assertThat( entity.ownerSet() ).isTrue();
+        assertThat( entity.numberSet() ).isFalse();
+
+    }"

@@ -1,0 +1,116 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"209","34","120","119","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedtargetproperties/NestedProductPropertiesTest.java","46","72","-2147459632","-2147459337","0","0","void shouldMapNestedTarget()","void shouldMapNestedTarget(){
+
+        ChartEntry chartEntry = new ChartEntry();
+        chartEntry.setArtistName( ""Prince"" );
+        chartEntry.setChartName( ""US Billboard Hot Rock Songs"" );
+        chartEntry.setCity( ""Minneapolis"" );
+        chartEntry.setPosition( 1 );
+        chartEntry.setRecordedAt( ""Live, First Avenue, Minneapolis"" );
+        chartEntry.setSongTitle( ""Purple Rain"" );
+
+        Chart result = ChartEntryToArtist.MAPPER.map( chartEntry );
+
+        assertThat( result.getName() ).isEqualTo( ""US Billboard Hot Rock Songs"" );
+        assertThat( result.getSong() ).isNotNull();
+        assertThat( result.getSong().getArtist() ).isNotNull();
+        assertThat( result.getSong().getTitle() ).isEqualTo( ""Purple Rain"" );
+        assertThat( result.getSong().getArtist().getName() ).isEqualTo( ""Prince"" );
+        assertThat( result.getSong().getArtist().getLabel() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getName() )
+            .isEqualTo( ""Live, First Avenue, Minneapolis"" );
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getCity() )
+            .isEqualTo( ""Minneapolis"" );
+        assertThat( result.getSong().getPositions() ).hasSize( 1 );
+        assertThat( result.getSong().getPositions().get( 0 ) ).isEqualTo( 1 );
+
+    }"
+"210","34","122","121","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedtargetproperties/NestedProductPropertiesTest.java","75","103","-2147459337","-2147459032","0","0","void shouldMapNestedComposedTarget()","void shouldMapNestedComposedTarget(){
+
+        ChartEntry chartEntry1 = new ChartEntry();
+        chartEntry1.setArtistName( ""Prince"" );
+        chartEntry1.setCity( ""Minneapolis"" );
+        chartEntry1.setRecordedAt( ""Live, First Avenue, Minneapolis"" );
+        chartEntry1.setSongTitle( ""Purple Rain"" );
+
+        ChartEntry chartEntry2 = new ChartEntry();
+        chartEntry2.setChartName( ""Italian Singles Chart"" );
+        chartEntry2.setPosition( 32 );
+
+        Chart result = ChartEntryToArtist.MAPPER.map( chartEntry1, chartEntry2 );
+
+        assertThat( result.getName() ).isEqualTo( ""Italian Singles Chart"" );
+        assertThat( result.getSong() ).isNotNull();
+        assertThat( result.getSong().getArtist() ).isNotNull();
+        assertThat( result.getSong().getTitle() ).isEqualTo( ""Purple Rain"" );
+        assertThat( result.getSong().getArtist().getName() ).isEqualTo( ""Prince"" );
+        assertThat( result.getSong().getArtist().getLabel() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getName() )
+            .isEqualTo( ""Live, First Avenue, Minneapolis"" );
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getCity() )
+            .isEqualTo( ""Minneapolis"" );
+        assertThat( result.getSong().getPositions() ).hasSize( 1 );
+        assertThat( result.getSong().getPositions().get( 0 ) ).isEqualTo( 32 );
+
+    }"
+"212","34","127","126","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedtargetproperties/NestedProductPropertiesTest.java","129","159","-2147458863","-2147458540","0","0","void shouldMapNestedTargetWitUpdate()","void shouldMapNestedTargetWitUpdate(){
+
+        ChartEntry chartEntry = new ChartEntry();
+        chartEntry.setArtistName( ""Prince"" );
+        chartEntry.setChartName( ""US Billboard Hot Rock Songs"" );
+        chartEntry.setCity( ""Minneapolis"" );
+        chartEntry.setPosition( 1 );
+        chartEntry.setRecordedAt( ""Live, First Avenue, Minneapolis"" );
+        chartEntry.setSongTitle( null );
+
+        Chart result = new Chart();
+        result.setSong( new Song() );
+        result.getSong().setTitle( ""Raspberry Beret"" );
+
+        ChartEntryToArtistUpdate.MAPPER.map( chartEntry, result );
+
+        assertThat( result.getName() ).isEqualTo( ""US Billboard Hot Rock Songs"" );
+        assertThat( result.getSong() ).isNotNull();
+        assertThat( result.getSong().getArtist() ).isNotNull();
+        assertThat( result.getSong().getTitle() ).isEqualTo( ""Raspberry Beret"" );
+        assertThat( result.getSong().getArtist().getName() ).isEqualTo( ""Prince"" );
+        assertThat( result.getSong().getArtist().getLabel() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getName() )
+            .isEqualTo( ""Live, First Avenue, Minneapolis"" );
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getCity() )
+            .isEqualTo( ""Minneapolis"" );
+        assertThat( result.getSong().getPositions() ).hasSize( 1 );
+        assertThat( result.getSong().getPositions().get( 0 ) ).isEqualTo( 1 );
+
+    }"
+"1288","34","129","128","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedtarget/NestedProductPropertiesConstructorTest.java","43","70","-2147341166","-2147340902","0","0","void shouldMapNestedTarget()","void shouldMapNestedTarget(){
+
+        ChartEntry chartEntry = new ChartEntry(
+            ""US Billboard Hot Rock Songs"",
+            ""Purple Rain"",
+            ""Prince"",
+            ""Live, First Avenue, Minneapolis"",
+            ""Minneapolis"",
+            1
+        );
+
+        Chart result = ChartEntryToArtist.MAPPER.map( chartEntry );
+
+        assertThat( result.getName() ).isEqualTo( ""US Billboard Hot Rock Songs"" );
+        assertThat( result.getSong() ).isNotNull();
+        assertThat( result.getSong().getArtist() ).isNotNull();
+        assertThat( result.getSong().getTitle() ).isEqualTo( ""Purple Rain"" );
+        assertThat( result.getSong().getArtist().getName() ).isEqualTo( ""Prince"" );
+        assertThat( result.getSong().getArtist().getLabel() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getName() )
+            .isEqualTo( ""Live, First Avenue, Minneapolis"" );
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getCity() )
+            .isEqualTo( ""Minneapolis"" );
+        assertThat( result.getSong().getPositions() ).hasSize( 1 );
+        assertThat( result.getSong().getPositions().get( 0 ) ).isEqualTo( 1 );
+
+    }"

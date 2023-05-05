@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"631","100","325","324","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/main/java/retrofit2/adapter/rxjava/CallArbiter.java","159","175","-2147410205","-2147410126","0","0","void emitError(Throwable t)","void emitError(Throwable t){
+    set(STATE_TERMINATED);
+
+    if (!isUnsubscribed()) {
+      try {
+        subscriber.onError(t);
+      } catch (OnCompletedFailedException
+          | OnErrorFailedException
+          | OnErrorNotImplementedException e) {
+        RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
+      } catch (Throwable inner) {
+        Exceptions.throwIfFatal(inner);
+        CompositeException composite = new CompositeException(t, inner);
+        RxJavaPlugins.getInstance().getErrorHandler().handleError(composite);
+      }
+    }
+  }"
+"635","100","329","328","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/main/java/retrofit2/adapter/rxjava/ResultOnSubscribe.java","54","72","-2147409650","-2147409557","0","0","void onError(Throwable throwable)","void onError(Throwable throwable){
+      try {
+        subscriber.onNext(Result.error(throwable));
+      } catch (Throwable t) {
+        try {
+          subscriber.onError(t);
+        } catch (OnCompletedFailedException
+            | OnErrorFailedException
+            | OnErrorNotImplementedException e) {
+          RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
+        } catch (Throwable inner) {
+          Exceptions.throwIfFatal(inner);
+          CompositeException composite = new CompositeException(t, inner);
+          RxJavaPlugins.getInstance().getErrorHandler().handleError(composite);
+        }
+        return;
+      }
+      subscriber.onCompleted();
+    }"

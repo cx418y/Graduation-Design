@@ -1,0 +1,23 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getImportTypes","Set<Type> getImportTypes(){
+        Set<Type> types = super.getImportTypes();
+[*1*] 
+        if ( keyAssignment != null ) {[*2*] 
+            types.addAll( keyAssignment.getImportTypes() );[*3*] 
+        }[*4*] 
+        if ( elementAssignment != null ) {
+            types.addAll( elementAssignment.getImportTypes() );
+        }
+
+        if ( iterableCreation != null ) {
+            types.addAll( iterableCreation.getImportTypes() );
+        }
+[*5*] 
+        return types;
+    }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+"

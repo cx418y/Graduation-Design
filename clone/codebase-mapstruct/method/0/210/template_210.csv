@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyBuiltInOnJAXBElementExtra","void shouldApplyBuiltInOnJAXBElementExtra(){
+        JaxbElementProperty source = new JaxbElementProperty();
+        source.setProp( createJaxb( ""5"" ) );
+        source.publicProp = createJaxb( ""5"" );
+
+        BigDecimalProperty target = JaxbMapper.INSTANCE.mapBD( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isEqualTo( new BigDecimal( ""5"" ) );
+        assertThat( target.publicProp ).isEqualTo( new BigDecimal( ""5"" ) );
+
+        JaxbElementProperty source2 = new JaxbElementProperty();
+        source2.setProp( createJaxb( ""5"" ) );
+        source2.publicProp = createJaxb( ""5"" );
+
+        SomeTypeProperty target2 = JaxbMapper.INSTANCE.mapSomeType( source2 );
+        assertThat( target2 ).isNotNull();
+        assertThat( target2.publicProp ).isNotNull();
+        assertThat( target2.getProp() ).isNotNull();
+    }
+",""

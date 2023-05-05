@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"876","151","497","496","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryComposedReverse.java","27","33","-2147391393","-2147391337","0","0","= Mappers.getMapper( ArtistToChartEntryComposedReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryComposedReverse.class );
+
+    @Mappings({
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""label"", source = ""artist.label""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true )
+    }"
+"1276","151","497","496","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntryComposedReverse.java","27","33","-2147343105","-2147343049","0","0","= Mappers.getMapper( ArtistToChartEntryComposedReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryComposedReverse.class );
+
+    @Mappings({
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""label"", source = ""artist.label""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true )
+    }"

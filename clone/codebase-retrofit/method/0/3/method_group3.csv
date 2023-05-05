@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"55","3","9","8","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","187","199","-2147477786","-2147477717","0","0","void interfaceWithTypeParameterThrows()","void interfaceWithTypeParameterThrows(){
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(server.url(""/"")).build();
+
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    try {
+      retrofit.create(TypeParam.class);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(""Type parameters are unsupported on retrofit2.RetrofitTest$TypeParam"");
+    }
+  }"
+"57","3","13","12","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","213","227","-2147477636","-2147477565","0","0","void interfaceWithExtendWithTypeParameterThrows()","void interfaceWithExtendWithTypeParameterThrows(){
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(server.url(""/"")).build();
+
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    try {
+      retrofit.create(ExtendingTypeParam.class);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Type parameters are unsupported on retrofit2.RetrofitTest$TypeParam ""
+                  + ""which is an interface of retrofit2.RetrofitTest$ExtendingTypeParam"");
+    }
+  }"

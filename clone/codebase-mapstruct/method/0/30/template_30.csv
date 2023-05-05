@@ -1,0 +1,62 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","sourceToTarget","Target sourceToTarget(Source source){
+        if ( source == null ) {
+            return null;
+        }
+
+        Target target = new Target();
+
+        if ( source.getZonedDateTime() != null ) {
+            target.setZonedDateTime( dateTimeFormatter_dd_MM_yyyy_HH_mm_z_01894582668.format( source.getZonedDateTime() ) );
+        }
+        if ( source.getLocalDateTime() != null ) {
+            target.setLocalDateTime( DateTimeFormatter.ISO_LOCAL_DATE_TIME.format( source.getLocalDateTime() ) );[*1*] 
+        }
+        if ( source.getLocalDate() != null ) {
+[*2*] 
+            target.setLocalDate( DateTimeFormatter.ISO_LOCAL_DATE.format( source.getLocalDate() ) );[*3*] 
+        }
+        if ( source.getLocalTime() != null ) {
+[*4*] 
+            target.setLocalTime( DateTimeFormatter.ISO_LOCAL_TIME.format( source.getLocalTime() ) );[*5*] 
+        }
+        target.setForCalendarConversion( zonedDateTimeToCalendar( source.getForCalendarConversion() ) );
+        if ( source.getForDateConversionWithZonedDateTime() != null ) {
+            target.setForDateConversionWithZonedDateTime( Date.from( source.getForDateConversionWithZonedDateTime().toInstant() ) );
+        }
+        if ( source.getForDateConversionWithLocalDateTime() != null ) {
+            target.setForDateConversionWithLocalDateTime( Date.from( source.getForDateConversionWithLocalDateTime().toInstant( ZoneOffset.UTC ) ) );
+        }
+        if ( source.getForDateConversionWithLocalDate() != null ) {
+            target.setForDateConversionWithLocalDate( Date.from( source.getForDateConversionWithLocalDate().atStartOfDay( ZoneOffset.UTC ).toInstant() ) );
+        }
+        if ( source.getForSqlDateConversionWithLocalDate() != null ) {
+            target.setForSqlDateConversionWithLocalDate( new java.sql.Date( source.getForSqlDateConversionWithLocalDate().atStartOfDay( ZoneOffset.UTC ).toInstant().toEpochMilli() ) );
+        }
+        if ( source.getForDateConversionWithInstant() != null ) {
+            target.setForDateConversionWithInstant( Date.from( source.getForDateConversionWithInstant() ) );
+        }
+        if ( source.getForLocalDateTimeConversionWithLocalDate() != null ) {
+            target.setForLocalDateTimeConversionWithLocalDate( source.getForLocalDateTimeConversionWithLocalDate().atStartOfDay() );
+        }
+        if ( source.getForInstantConversionWithString() != null ) {
+            target.setForInstantConversionWithString( source.getForInstantConversionWithString().toString() );
+        }
+        if ( source.getForPeriodConversionWithString() != null ) {
+            target.setForPeriodConversionWithString( source.getForPeriodConversionWithString().toString() );
+        }
+        if ( source.getForDurationConversionWithString() != null ) {
+            target.setForDurationConversionWithString( source.getForDurationConversionWithString().toString() );
+        }
+
+        return target;
+    }
+","[*1*]:
+2, 0.3333333333333333,             target.setLocalDateTime( dateTimeFormatter_dd_MM_yyyy_HH_mm_12071769242.format( source.getLocalDateTime() ) );
+[*2*]:
+2, 0.3333333333333333,             target.setLocalDate( dateTimeFormatter_dd_MM_yyyy_11900521056.format( source.getLocalDate() ) );
+[*3*]:
+[*4*]:
+2, 0.3333333333333333,             target.setLocalTime( dateTimeFormatter_HH_mm_168697690.format( source.getLocalTime() ) );
+[*5*]:
+"

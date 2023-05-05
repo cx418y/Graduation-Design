@@ -1,0 +1,26 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"659","108","351","350","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/wire/src/test/java/retrofit2/converter/wire/WireConverterFactoryTest.java","144","154","-2147407780","-2147407719","0","0","void deserializeWrongValue()throws IOException","void deserializeWrongValue()throws IOException{
+    ByteString encoded = ByteString.decodeBase64(""////"");
+    server.enqueue(new MockResponse().setBody(new Buffer().write(encoded)));
+
+    Call<?> call = service.get();
+    try {
+      call.execute();
+      fail();
+    } catch (EOFException ignored) {
+    }
+  }"
+"734","108","355","354","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/protobuf/src/test/java/retrofit2/converter/protobuf/ProtoConverterFactoryTest.java","173","186","-2147399372","-2147399291","0","0","void deserializeWrongValue()throws IOException","void deserializeWrongValue()throws IOException{
+    ByteString encoded = ByteString.decodeBase64(""////"");
+    server.enqueue(new MockResponse().setBody(new Buffer().write(encoded)));
+
+    Call<?> call = service.get();
+    try {
+      call.execute();
+      fail();
+    } catch (RuntimeException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(InvalidProtocolBufferException.class)
+          .hasMessageContaining(""input ended unexpectedly"");
+    }
+  }"

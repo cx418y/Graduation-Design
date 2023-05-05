@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1972","254","827","826","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/jakartaJaxbTest/src/test/java/org/mapstruct/itest/jakarta/jaxb/JakartaJaxbBasedMapperTest.java","84","102","-2147252905","-2147252768","0","0","void underscores()throws ParseException, JAXBException","void underscores()throws ParseException, JAXBException{
+
+        SourceTargetMapper mapper = SourceTargetMapper.INSTANCE;
+
+        SubTypeDto source1 = new SubTypeDto();
+        source1.setInheritedCamelCase(""InheritedCamelCase"");
+        source1.setInheritedUnderscore(""InheritedUnderscore"");
+        source1.setDeclaredCamelCase(""DeclaredCamelCase"");
+        source1.setDeclaredUnderscore(""DeclaredUnderscore"");
+
+        SubType target = mapper.dtoToSubType( source1 );
+
+        SubTypeDto source2 = mapper.subTypeToDto( target );
+
+        assertThat( source2.getInheritedCamelCase() ).isEqualTo( source1.getInheritedCamelCase() );
+        assertThat( source2.getInheritedUnderscore() ).isEqualTo( source1.getInheritedUnderscore() );
+        assertThat( source2.getDeclaredCamelCase() ).isEqualTo( source1.getDeclaredCamelCase() );
+        assertThat( source2.getDeclaredUnderscore() ).isEqualTo( source1.getDeclaredUnderscore() );
+    }"
+"2021","254","827","826","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/jaxbTest/src/test/java/org/mapstruct/itest/jaxb/JaxbBasedMapperTest.java","83","101","-2147248004","-2147247867","0","0","void underscores()throws ParseException, JAXBException","void underscores()throws ParseException, JAXBException{
+
+        SourceTargetMapper mapper = SourceTargetMapper.INSTANCE;
+
+        SubTypeDto source1 = new SubTypeDto();
+        source1.setInheritedCamelCase(""InheritedCamelCase"");
+        source1.setInheritedUnderscore(""InheritedUnderscore"");
+        source1.setDeclaredCamelCase(""DeclaredCamelCase"");
+        source1.setDeclaredUnderscore(""DeclaredUnderscore"");
+
+        SubType target = mapper.dtoToSubType( source1 );
+
+        SubTypeDto source2 = mapper.subTypeToDto( target );
+
+        assertThat( source2.getInheritedCamelCase() ).isEqualTo( source1.getInheritedCamelCase() );
+        assertThat( source2.getInheritedUnderscore() ).isEqualTo( source1.getInheritedUnderscore() );
+        assertThat( source2.getDeclaredCamelCase() ).isEqualTo( source1.getDeclaredCamelCase() );
+        assertThat( source2.getDeclaredUnderscore() ).isEqualTo( source1.getDeclaredUnderscore() );
+    }"

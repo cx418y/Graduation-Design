@@ -1,0 +1,20 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","map","FishTankDto map(FishTank source){
+        if ( source == null ) {
+            return null;
+        }
+
+        FishTankDto fishTankDto = new FishTankDto();
+
+        fishTankDto.setFish( fishToFishDto( source.getFish() ) );
+        fishTankDto.setMaterial( fishTankToMaterialDto( source ) );
+        fishTankDto.setQuality( waterQualityToWaterQualityDto( source.getQuality() ) );[*1*] 
+        fishTankDto.setOrnament( ornamentToOrnamentDto( sourceInteriorOrnament( source ) ) );[*2*] 
+        fishTankDto.setPlant( waterPlantToWaterPlantDto( source.getPlant() ) );
+        fishTankDto.setName( source.getName() );
+
+        return fishTankDto;
+    }
+","[*1*]:
+[*2*]:
+"

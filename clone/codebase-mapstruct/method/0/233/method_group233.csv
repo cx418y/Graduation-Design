@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1637","233","766","765","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MapperOptions.java","174","182","-2147293344","-2147293277","0","0","NullValueMappingStrategyGem getNullValueIterableMappingStrategy()","NullValueMappingStrategyGem getNullValueIterableMappingStrategy(){
+        if ( mapper.nullValueIterableMappingStrategy().hasValue() ) {
+            return NullValueMappingStrategyGem.valueOf( mapper.nullValueIterableMappingStrategy().get() );
+        }
+        if ( mapper.nullValueMappingStrategy().hasValue() ) {
+            return NullValueMappingStrategyGem.valueOf( mapper.nullValueMappingStrategy().get() );
+        }
+        return next().getNullValueIterableMappingStrategy();
+    }"
+"1638","233","766","765","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MapperOptions.java","185","193","-2147293277","-2147293210","0","0","NullValueMappingStrategyGem getNullValueMapMappingStrategy()","NullValueMappingStrategyGem getNullValueMapMappingStrategy(){
+        if ( mapper.nullValueMapMappingStrategy().hasValue() ) {
+            return NullValueMappingStrategyGem.valueOf( mapper.nullValueMapMappingStrategy().get() );
+        }
+        if ( mapper.nullValueMappingStrategy().hasValue() ) {
+            return NullValueMappingStrategyGem.valueOf( mapper.nullValueMappingStrategy().get() );
+        }
+        return next().getNullValueMapMappingStrategy();
+    }"

@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"357","60","218","217","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeTest.java","89","96","-2147437884","-2147437816","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingMaybeObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    Response<String> response = observer.takeValue();
+    assertThat(response.isSuccessful()).isTrue();
+  }"
+"366","60","218","217","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleTest.java","89","96","-2147437252","-2147437184","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSingleObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    Response<String> response = observer.takeValue();
+    assertThat(response.isSuccessful()).isTrue();
+  }"
+"484","60","218","217","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeTest.java","89","96","-2147424891","-2147424823","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingMaybeObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    Response<String> response = observer.takeValue();
+    assertThat(response.isSuccessful()).isTrue();
+  }"
+"493","60","218","217","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleTest.java","89","96","-2147424259","-2147424191","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSingleObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    Response<String> response = observer.takeValue();
+    assertThat(response.isSuccessful()).isTrue();
+  }"

@@ -1,0 +1,27 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"798","135","460","459","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/SubclassMappingTest.java","232","243","-2147400679","-2147400620","0","0","@ProcessorTest @WithClasses({ ErroneousSubclassUpdateMapper.class })@ExpectedCompilationOutcome(value = CompilationResult.FAILED, diagnostics =","@ProcessorTest @WithClasses({ ErroneousSubclassUpdateMapper.class })@ExpectedCompilationOutcome(value = CompilationResult.FAILED, diagnostics ={
+        @Diagnostic(type = ErroneousSubclassUpdateMapper.class,
+            kind = javax.tools.Diagnostic.Kind.ERROR,
+            line = 21,
+            message = ""SubclassMapping annotation can not be used for update methods.""
+        ),
+        @Diagnostic(type = ErroneousSubclassUpdateMapper.class,
+            kind = javax.tools.Diagnostic.Kind.ERROR,
+            line = 25,
+            message = ""SubclassMapping annotation can not be used for update methods.""
+        )
+    }"
+"932","135","460","459","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/targetthis/TargetThisMappingTest.java","93","102","-2147386457","-2147386398","0","0","@ProcessorTest @WithClasses( ErroneousNestedMapper.class )@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@ProcessorTest @WithClasses( ErroneousNestedMapper.class )@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousNestedMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 22,
+                message = ""Several possible source properties for target property \""id\"".""),
+            @Diagnostic(type = ErroneousNestedMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 22,
+                message = ""Several possible source properties for target property \""status\""."")
+        }"

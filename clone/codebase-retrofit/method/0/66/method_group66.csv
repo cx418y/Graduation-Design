@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"383","66","239","238","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/CompletableWithSchedulerTest.java","54","63","-2147435596","-2147435546","0","0","void completableUsesScheduler()","void completableUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingCompletableObserver observer = observerRule.create();
+    service.completable().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertComplete();
+  }"
+"510","66","239","238","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/CompletableWithSchedulerTest.java","54","63","-2147422597","-2147422547","0","0","void completableUsesScheduler()","void completableUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingCompletableObserver observer = observerRule.create();
+    service.completable().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertComplete();
+  }"

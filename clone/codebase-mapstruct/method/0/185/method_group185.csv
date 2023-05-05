@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1081","185","600","599","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullcheck/NullCheckTest.java","47","58","-2147365345","-2147365285","0","0","void shouldSurroundTypeConversionWithNullCheck()","void shouldSurroundTypeConversionWithNullCheck(){
+
+        Source source = new Source();
+        source.setSomeObject( new NullObject() );
+        source.setSomeInteger( 7 );
+        source.setSomeLong( 2L );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target.getNumber() ).isNull();
+
+    }"
+"1082","185","600","601","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullcheck/NullCheckTest.java","62","72","-2147365285","-2147365225","0","0","void shouldSurroundArrayListConstructionWithNullCheck()","void shouldSurroundArrayListConstructionWithNullCheck(){
+
+        Source source = new Source();
+        source.setSomeObject( new NullObject() );
+        source.setSomeInteger( 7 );
+        source.setSomeLong( 2L );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target.getSomeList() ).isNull();
+    }"
+"1083","185","603","602","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullcheck/NullCheckTest.java","76","86","-2147365225","-2147365159","0","0","void shouldSurroundConversionPassedToMappingMethodWithNullCheck()","void shouldSurroundConversionPassedToMappingMethodWithNullCheck(){
+
+        Source source = new Source();
+        source.setSomeObject( new NullObject() );
+        source.setSomeLong( 2L );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target.getSomeList() ).isNull();
+        assertThat( target.getSomeInteger() ).isNull();
+    }"

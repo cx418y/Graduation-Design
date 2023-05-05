@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldUseFactoryWithoutQualifier","void shouldUseFactoryWithoutQualifier(){
+        Foo10 foo10 = new Foo10();
+        foo10.setProp( ""foo10"" );
+
+        Bar10 bar10 = QualifiedFactoryTestMapper.INSTANCE.foo10ToBar10Lower( foo10 );
+
+        assertThat( bar10 ).isNotNull();
+        assertThat( bar10.getProp() ).isEqualTo( ""foo10"" );
+        assertThat( bar10.getSomeTypeProp() ).isEqualTo( ""foo10"" );
+    }
+",""

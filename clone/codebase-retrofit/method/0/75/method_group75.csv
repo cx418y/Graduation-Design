@@ -1,0 +1,65 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"392","75","259","258","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/main/java/retrofit2/adapter/rxjava3/CallExecuteObservable.java","35","67","-2147434825","-2147434667","0","0","void subscribeActual(Observer<? super Response<T>> observer)","void subscribeActual(Observer<? super Response<T>> observer){
+    Call<T> call = originalCall.clone();
+    CallDisposable disposable = new CallDisposable(call);
+    observer.onSubscribe(disposable);
+    if (disposable.isDisposed()) {
+      return;
+    }
+
+    boolean terminated = false;
+    try {
+      Response<T> response = call.execute();
+      if (!disposable.isDisposed()) {
+        observer.onNext(response);
+      }
+      if (!disposable.isDisposed()) {
+        terminated = true;
+        observer.onComplete();
+      }
+    } catch (Throwable t) {
+      Exceptions.throwIfFatal(t);
+      if (terminated) {
+        RxJavaPlugins.onError(t);
+      } else if (!disposable.isDisposed()) {
+        try {
+          observer.onError(t);
+        } catch (Throwable inner) {
+          Exceptions.throwIfFatal(inner);
+          RxJavaPlugins.onError(new CompositeException(t, inner));
+        }
+      }
+    }
+  }"
+"520","75","259","258","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/main/java/retrofit2/adapter/rxjava2/CallExecuteObservable.java","35","67","-2147421541","-2147421383","0","0","void subscribeActual(Observer<? super Response<T>> observer)","void subscribeActual(Observer<? super Response<T>> observer){
+    Call<T> call = originalCall.clone();
+    CallDisposable disposable = new CallDisposable(call);
+    observer.onSubscribe(disposable);
+    if (disposable.isDisposed()) {
+      return;
+    }
+
+    boolean terminated = false;
+    try {
+      Response<T> response = call.execute();
+      if (!disposable.isDisposed()) {
+        observer.onNext(response);
+      }
+      if (!disposable.isDisposed()) {
+        terminated = true;
+        observer.onComplete();
+      }
+    } catch (Throwable t) {
+      Exceptions.throwIfFatal(t);
+      if (terminated) {
+        RxJavaPlugins.onError(t);
+      } else if (!disposable.isDisposed()) {
+        try {
+          observer.onError(t);
+        } catch (Throwable inner) {
+          Exceptions.throwIfFatal(inner);
+          RxJavaPlugins.onError(new CompositeException(t, inner));
+        }
+      }
+    }
+  }"

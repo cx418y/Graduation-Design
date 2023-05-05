@@ -1,0 +1,19 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","equals","boolean equals(Object o){
+
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        WheelDto wheel = (WheelDto) o;
+
+        if ( front != wheel.front ) {
+            return false;
+        }
+        return right == wheel.right;
+
+    }
+",""

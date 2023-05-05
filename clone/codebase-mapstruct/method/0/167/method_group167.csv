@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"968","167","554","553","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/jodatime/JodaConversionTest.java","170","180","-2147382085","-2147382017","0","0","void testStringToLocalTime()","void testStringToLocalTime(){
+        String dateTimeAsString = ""00:00"";
+        Target target = new Target();
+        target.setLocalTime( dateTimeAsString );
+        LocalTime sourceTime =
+            new LocalTime( 0, 0 );
+
+        Source src = SourceTargetMapper.INSTANCE.targetToSourceLocalTimeMapped( target );
+        assertThat( src ).isNotNull();
+        assertThat( src.getLocalTime() ).isEqualTo( sourceTime );
+    }"
+"979","167","558","557","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/java8time/Java8TimeConversionTest.java","115","125","-2147381010","-2147380933","0","0","void testStringToLocalDateTime()","void testStringToLocalDateTime(){
+        String dateTimeAsString = ""01.01.2014 00:00"";
+        Target target = new Target();
+        target.setLocalDateTime( dateTimeAsString );
+        LocalDateTime sourceDateTime =
+            LocalDateTime.of( 2014, 1, 1, 0, 0, 0 );
+
+        Source src = SourceTargetMapper.INSTANCE.targetToSourceLocalDateTimeMapped( target );
+        assertThat( src ).isNotNull();
+        assertThat( src.getLocalDateTime() ).isEqualTo( sourceDateTime );
+    }"

@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1194","202","653","652","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builder/ignore/BuilderIgnoringTest.java","44","55","-2147353953","-2147353869","0","0","void shouldMapOnlyExplicit()","void shouldMapOnlyExplicit(){
+        PersonDto source = new PersonDto();
+        source.setId( 100L );
+        source.setName( ""John"" );
+        source.setLastName( ""Doe"" );
+
+        Person target = BuilderIgnoringMapper.INSTANCE.mapOnlyWithExplicit( source );
+
+        assertThat( target.getId() ).isNull();
+        assertThat( target.getName() ).isEqualTo( ""John"" );
+        assertThat( target.getLastName() ).isNull();
+    }"
+"1195","202","655","654","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builder/ignore/BuilderIgnoringTest.java","58","69","-2147353869","-2147353782","0","0","void shouldMapAll()","void shouldMapAll(){
+        PersonDto source = new PersonDto();
+        source.setId( 100L );
+        source.setName( ""John"" );
+        source.setLastName( ""Doe"" );
+
+        Person target = BuilderIgnoringMapper.INSTANCE.mapAll( source );
+
+        assertThat( target.getId() ).isEqualTo( 100L );
+        assertThat( target.getName() ).isEqualTo( ""John"" );
+        assertThat( target.getLastName() ).isEqualTo( ""Doe"" );
+    }"

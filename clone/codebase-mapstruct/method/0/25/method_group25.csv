@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"137","25","91","90","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperSmartImpl.java","110","121","-2147469765","-2147469713","0","0","RoofDto roofToRoofDto(Roof roof)","RoofDto roofToRoofDto(Roof roof){
+        if ( roof == null ) {
+            return null;
+        }
+
+        RoofDto roofDto = new RoofDto();
+
+        roofDto.setColor( String.valueOf( roof.getColor() ) );
+        roofDto.setType( roofTypeToExternalRoofType( roof.getType() ) );
+
+        return roofDto;
+    }"
+"162","25","91","90","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperClassicImpl.java","66","77","-2147467855","-2147467803","0","0","RoofDto roofToRoofDto(Roof roof)","RoofDto roofToRoofDto(Roof roof){
+        if ( roof == null ) {
+            return null;
+        }
+
+        RoofDto roofDto = new RoofDto();
+
+        roofDto.setColor( String.valueOf( roof.getColor() ) );
+        roofDto.setType( mapRoofType( roof.getType() ) );
+
+        return roofDto;
+    }"

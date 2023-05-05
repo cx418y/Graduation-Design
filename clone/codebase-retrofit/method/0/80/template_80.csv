@@ -1,0 +1,35 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","get","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit){
+    if (getRawType(returnType) != CompletableFuture.class) {
+      return null;
+    }
+    if (!(returnType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""CompletableFuture return type must be parameterized""[*1*] 
+              + "" as CompletableFuture<Foo> or CompletableFuture<? extends Foo>"");[*2*] 
+    }
+    Type innerType = getParameterUpperBound(0, (ParameterizedType) returnType);
+
+    if (getRawType(innerType) != Response.class) {
+      return new BodyCallAdapter<>(innerType);
+    }
+
+    if (!(innerType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""Response must be parameterized"" + "" as Response<Foo> or Response<? extends Foo>"");[*3*] 
+[*4*] 
+    }
+[*5*] 
+    Type responseType = getParameterUpperBound(0, (ParameterizedType) innerType);
+    return new ResponseCallAdapter<>(responseType);
+  }
+","[*1*]:
+1, 0.25,           ""Future return type must be parameterized as Future<Foo> or Future<? extends Foo>"");
+[*2*]:
+[*3*]:
+[*4*]:
+1, 0.25,           ""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");
+[*5*]:
+1, 0.25, 
+"

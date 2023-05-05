@@ -1,0 +1,22 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"343","86","285","284","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ResultTest.java","27","33","-2147438821","-2147438753","0","0","void response()","void response(){
+    Response<String> response = Response.success(""Hi"");
+    Result<String> result = Result.response(response);
+    assertThat(result.isError()).isFalse();
+    assertThat(result.error()).isNull();
+    assertThat(result.response()).isSameAs(response);
+  }"
+"470","86","285","284","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ResultTest.java","27","33","-2147425828","-2147425760","0","0","void response()","void response(){
+    Response<String> response = Response.success(""Hi"");
+    Result<String> result = Result.response(response);
+    assertThat(result.isError()).isFalse();
+    assertThat(result.error()).isNull();
+    assertThat(result.response()).isSameAs(response);
+  }"
+"583","86","285","284","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ResultTest.java","27","33","-2147415650","-2147415582","0","0","void response()","void response(){
+    Response<String> response = Response.success(""Hi"");
+    Result<String> result = Result.response(response);
+    assertThat(result.isError()).isFalse();
+    assertThat(result.error()).isNull();
+    assertThat(result.response()).isSameAs(response);
+  }"

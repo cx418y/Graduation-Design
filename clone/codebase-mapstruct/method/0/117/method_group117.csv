@@ -1,0 +1,28 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"678","117","403","402","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913SetterMapperForCollectionsTest.java","56","64","-2147412003","-2147411950","0","0","void shouldReturnNullForNvmsReturnNullForCreate()","void shouldReturnNullForNvmsReturnNullForCreate(){
+
+        Dto dto = new Dto();
+        Domain domain = DomainDtoWithNvmsNullMapper.INSTANCE.create( dto );
+
+        doControlAsserts( domain );
+        assertThat( domain.getStrings() ).isNull();
+        assertThat( domain.getLongs() ).isNull();
+    }"
+"685","117","403","404","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913SetterMapperForCollectionsTest.java","212","220","-2147411260","-2147411207","0","0","void shouldReturnNullForCreateWithPresenceChecker()","void shouldReturnNullForCreateWithPresenceChecker(){
+
+        DtoWithPresenceCheck dto = new DtoWithPresenceCheck();
+        Domain domain = DomainDtoWithPresenceCheckMapper.INSTANCE.create( dto );
+
+        doControlAsserts( domain );
+        assertThat( domain.getStrings() ).isNull();
+        assertThat( domain.getLongs() ).isNull();
+    }"
+"688","117","403","404","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913SetterMapperForCollectionsTest.java","278","286","-2147410925","-2147410872","0","0","void shouldReturnNullForCreateWithNcvsAlways()","void shouldReturnNullForCreateWithNcvsAlways(){
+
+        DtoWithPresenceCheck dto = new DtoWithPresenceCheck();
+        Domain domain = DomainDtoWithNcvsAlwaysMapper.INSTANCE.create( dto );
+
+        doControlAsserts( domain );
+        assertThat( domain.getStrings() ).isNull();
+        assertThat( domain.getLongs() ).isNull();
+    }"

@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","defaultValuehasUsableValue","void defaultValuehasUsableValue(){
+        Folder rootFolder = new Folder( UUID.randomUUID(), null );
+
+        DirectoryNode node = Mappers.getMapper( DefaultValueUsageMapper.class ).convert( rootFolder );
+
+        Assertions.assertThat( node.getParent() ).isEqualTo( ""00000000-0000-4000-0000-000000000000"" );
+    }
+",""

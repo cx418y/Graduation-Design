@@ -1,0 +1,83 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapNestedTarget","void shouldMapNestedTarget(){
+[*1*] 
+        ChartEntry chartEntry = new ChartEntry();[*2*] 
+        chartEntry.setArtistName( ""Prince"" );[*3*] 
+        chartEntry.setChartName( ""US Billboard Hot Rock Songs"" );[*4*] 
+        chartEntry.setCity( ""Minneapolis"" );[*5*] 
+        chartEntry.setPosition( 1 );[*6*] 
+[*7*] 
+[*8*] 
+        chartEntry.setRecordedAt( ""Live, First Avenue, Minneapolis"" );[*9*] 
+        chartEntry.setSongTitle( ""Purple Rain"" );[*10*] 
+[*11*] 
+[*12*] 
+[*13*] 
+[*14*] 
+[*15*] 
+[*16*] 
+[*17*] 
+
+        Chart result = ChartEntryToArtist.MAPPER.map( chartEntry );[*18*] 
+[*19*] 
+[*20*] 
+[*21*] 
+[*22*] 
+[*23*] 
+[*24*] 
+
+        assertThat( result.getName() ).isEqualTo( ""US Billboard Hot Rock Songs"" );
+        assertThat( result.getSong() ).isNotNull();
+        assertThat( result.getSong().getArtist() ).isNotNull();
+        assertThat( result.getSong().getTitle() ).isEqualTo( ""Purple Rain"" );
+        assertThat( result.getSong().getArtist().getName() ).isEqualTo( ""Prince"" );
+        assertThat( result.getSong().getArtist().getLabel() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio() ).isNotNull();
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getName() )
+            .isEqualTo( ""Live, First Avenue, Minneapolis"" );
+        assertThat( result.getSong().getArtist().getLabel().getStudio().getCity() )
+            .isEqualTo( ""Minneapolis"" );
+        assertThat( result.getSong().getPositions() ).hasSize( 1 );
+        assertThat( result.getSong().getPositions().get( 0 ) ).isEqualTo( 1 );
+
+    }
+","[*1*]:
+[*2*]:
+1, 0.25,         ChartEntry chartEntry = new ChartEntry(
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+1, 0.25,         ChartEntry chartEntry2 = new ChartEntry();
+[*9*]:
+[*10*]:
+[*11*]:
+1, 0.25,             ""US Billboard Hot Rock Songs"",
+[*12*]:
+1, 0.25,             ""Purple Rain"",
+[*13*]:
+1, 0.25,             ""Prince"",
+[*14*]:
+1, 0.25,             ""Live, First Avenue, Minneapolis"",
+[*15*]:
+1, 0.25,             ""Minneapolis"",
+[*16*]:
+1, 0.25,             1
+[*17*]:
+1, 0.25,         );
+[*18*]:
+[*19*]:
+1, 0.25,         Chart result = ChartEntryToArtist.MAPPER.map( chartEntry1, chartEntry2 );
+[*20*]:
+1, 0.25,         Chart result = new Chart();
+[*21*]:
+1, 0.25,         result.setSong( new Song() );
+[*22*]:
+1, 0.25,         result.getSong().setTitle( ""Raspberry Beret"" );
+[*23*]:
+1, 0.25, 
+[*24*]:
+1, 0.25,         ChartEntryToArtistUpdate.MAPPER.map( chartEntry, result );
+"

@@ -1,0 +1,27 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"138","26","89","88","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperSmartImpl.java","123","135","-2147469713","-2147469655","0","0","HouseDto houseToHouseDto(House house)","HouseDto houseToHouseDto(House house){
+        if ( house == null ) {
+            return null;
+        }
+
+        HouseDto houseDto = new HouseDto();
+
+        houseDto.setName( house.getName() );
+        houseDto.setYear( house.getYear() );
+        houseDto.setRoof( roofToRoofDto( house.getRoof() ) );
+
+        return houseDto;
+    }"
+"161","26","89","88","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperClassicImpl.java","51","63","-2147467913","-2147467855","0","0","HouseDto houseToHouseDto(House house)","HouseDto houseToHouseDto(House house){
+        if ( house == null ) {
+            return null;
+        }
+
+        HouseDto houseDto = new HouseDto();
+
+        houseDto.setName( house.getName() );
+        houseDto.setYear( house.getYear() );
+        houseDto.setRoof( roofToRoofDto( house.getRoof() ) );
+
+        return houseDto;
+    }"

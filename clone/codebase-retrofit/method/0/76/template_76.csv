@@ -1,0 +1,57 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","get","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit){
+    Class<?> rawType = getRawType(returnType);
+
+    if (rawType == Completable.class) {
+      return new RxJava3CallAdapter(
+          Void.class, scheduler, isAsync, false, true, false, false, false, true);
+    }
+
+    boolean isFlowable = rawType == Flowable.class;
+    boolean isSingle = rawType == Single.class;
+    boolean isMaybe = rawType == Maybe.class;
+    if (rawType != Observable.class && !isFlowable && !isSingle && !isMaybe) {
+      return null;
+    }
+
+    boolean isResult = false;
+    boolean isBody = false;
+    Type responseType;
+    if (!(returnType instanceof ParameterizedType)) {
+      String name =
+          isFlowable ? ""Flowable"" : isSingle ? ""Single"" : isMaybe ? ""Maybe"" : ""Observable"";
+      throw new IllegalStateException(
+          name
+              + "" return type must be parameterized""
+              + "" as ""
+              + name
+              + ""<Foo> or ""
+              + name
+              + ""<? extends Foo>"");
+    }
+
+    Type observableType = getParameterUpperBound(0, (ParameterizedType) returnType);
+    Class<?> rawObservableType = getRawType(observableType);
+    if (rawObservableType == Response.class) {
+      if (!(observableType instanceof ParameterizedType)) {
+        throw new IllegalStateException(
+            ""Response must be parameterized"" + "" as Response<Foo> or Response<? extends Foo>"");
+      }
+      responseType = getParameterUpperBound(0, (ParameterizedType) observableType);
+    } else if (rawObservableType == Result.class) {
+      if (!(observableType instanceof ParameterizedType)) {
+        throw new IllegalStateException(
+            ""Result must be parameterized"" + "" as Result<Foo> or Result<? extends Foo>"");
+      }
+      responseType = getParameterUpperBound(0, (ParameterizedType) observableType);
+      isResult = true;
+    } else {
+      responseType = observableType;
+      isBody = true;
+    }
+
+    return new RxJava3CallAdapter(
+        responseType, scheduler, isAsync, isResult, isBody, isFlowable, isSingle, isMaybe, false);
+  }
+",""

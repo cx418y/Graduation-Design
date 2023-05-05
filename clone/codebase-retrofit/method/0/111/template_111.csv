@@ -1,0 +1,24 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","unsupportedRequestTypesNotMatched","void unsupportedRequestTypesNotMatched(){
+    try {
+      service.object(null);[*1*] 
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Unable to create @Body converter for class java.lang.Object (parameter #1)\n""
+                  + ""    for method Service.object"");
+      assertThat(e.getCause())
+          .hasMessage(
+              """"
+                  + ""Could not locate RequestBody converter for class java.lang.Object.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.converter.scalars.ScalarsConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+  }
+","[*1*]:
+1, 0.5,       service.object();
+"

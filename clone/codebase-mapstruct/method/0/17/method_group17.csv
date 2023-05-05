@@ -1,0 +1,49 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"110","17","58","57","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNcvsAlwaysMapperImpl.java","202","213","-2147474159","-2147474090","0","0","Set<Long> stringListToLongSet(List<String> list)","Set<Long> stringListToLongSet(List<String> list){
+        if ( list == null ) {
+            return null;
+        }
+
+        Set<Long> set = new LinkedHashSet<Long>( Math.max( (int) ( list.size() / .75f ) + 1, 16 ) );
+        for ( String string : list ) {
+            set.add( Long.parseLong( string ) );
+        }
+
+        return set;
+    }"
+"114","17","58","57","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithPresenceCheckMapperImpl.java","202","213","-2147473090","-2147473021","0","0","Set<Long> stringListToLongSet(List<String> list)","Set<Long> stringListToLongSet(List<String> list){
+        if ( list == null ) {
+            return null;
+        }
+
+        Set<Long> set = new LinkedHashSet<Long>( Math.max( (int) ( list.size() / .75f ) + 1, 16 ) );
+        for ( String string : list ) {
+            set.add( Long.parseLong( string ) );
+        }
+
+        return set;
+    }"
+"118","17","70","69","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNvmsDefaultMapperImpl.java","233","244","-2147471866","-2147471791","0","0","Set<Long> stringListToLongSet(List<String> list)","Set<Long> stringListToLongSet(List<String> list){
+        if ( list == null ) {
+            return new LinkedHashSet<Long>();
+        }
+
+        Set<Long> set = new LinkedHashSet<Long>( Math.max( (int) ( list.size() / .75f ) + 1, 16 ) );
+        for ( String string : list ) {
+            set.add( Long.parseLong( string ) );
+        }
+
+        return set;
+    }"
+"122","17","58","57","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNvmsNullMapperImpl.java","236","247","-2147470677","-2147470608","0","0","Set<Long> stringListToLongSet(List<String> list)","Set<Long> stringListToLongSet(List<String> list){
+        if ( list == null ) {
+            return null;
+        }
+
+        Set<Long> set = new LinkedHashSet<Long>( Math.max( (int) ( list.size() / .75f ) + 1, 16 ) );
+        for ( String string : list ) {
+            set.add( Long.parseLong( string ) );
+        }
+
+        return set;
+    }"

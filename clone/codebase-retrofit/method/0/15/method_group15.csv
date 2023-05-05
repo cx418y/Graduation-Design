@@ -1,0 +1,75 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"136","15","47","46","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","912","948","-2147467371","-2147467188","0","0","void requestThrowingNonFatalErrorBeforeExecuteFailsExecute()throws IOException","void requestThrowingNonFatalErrorBeforeExecuteFailsExecute()throws IOException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service service = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse());
+
+    final AtomicInteger writeCount = new AtomicInteger();
+    Object a =
+        new Object() {
+          @Override
+          public String toString() {
+            writeCount.incrementAndGet();
+            throw new NonFatalError(""Broken!"");
+          }
+        };
+    Call<String> call = service.postRequestBody(a);
+
+    try {
+      call.request();
+      fail();
+    } catch (NonFatalError e) {
+      assertThat(e).hasMessage(""Broken!"");
+    }
+    assertThat(writeCount.get()).isEqualTo(1);
+
+    try {
+      call.execute();
+      fail();
+    } catch (NonFatalError e) {
+      assertThat(e).hasMessage(""Broken!"");
+    }
+    assertThat(writeCount.get()).isEqualTo(1);
+  }"
+"146","15","47","52","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","1324","1360","-2147465328","-2147465145","0","0","void fatalErrorsAreNotCaughtRequest()throws Exception","void fatalErrorsAreNotCaughtRequest()throws Exception{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service service = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse());
+
+    final AtomicInteger writeCount = new AtomicInteger();
+    Object a =
+        new Object() {
+          @Override
+          public String toString() {
+            writeCount.incrementAndGet();
+            throw new OutOfMemoryError(""Broken!"");
+          }
+        };
+    Call<String> call = service.postRequestBody(a);
+
+    try {
+      call.request();
+      fail();
+    } catch (OutOfMemoryError e) {
+      assertThat(e).hasMessage(""Broken!"");
+    }
+    assertThat(writeCount.get()).isEqualTo(1);
+
+    try {
+      call.request();
+      fail();
+    } catch (OutOfMemoryError e) {
+      assertThat(e).hasMessage(""Broken!"");
+    }
+    assertThat(writeCount.get()).isEqualTo(2);
+  }"

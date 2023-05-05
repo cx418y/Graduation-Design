@@ -1,0 +1,49 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"58","7","9","8","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/updatemethods/selection/OrganizationMapper3Impl.java","23","38","-2147479207","-2147479131","0","0","void toBossEntity(BossDto dto, BossEntity entity)","void toBossEntity(BossDto dto, BossEntity entity){
+        if ( dto == null ) {
+            return;
+        }
+
+        entity.setName( dto.getName() );
+        if ( dto.getDepartment() != null ) {
+            if ( entity.getDepartment() == null ) {
+                entity.setDepartment( new ConstructableDepartmentEntity() );
+            }
+            externalMapper.toDepartmentEntity( dto.getDepartment(), entity.getDepartment() );
+        }
+        else {
+            entity.setDepartment( null );
+        }
+    }"
+"59","7","22","21","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/updatemethods/selection/OrganizationMapper2Impl.java","24","39","-2147479131","-2147479054","0","0","void toCompanyEntity(CompanyDto dto, CompanyEntity entity)","void toCompanyEntity(CompanyDto dto, CompanyEntity entity){
+        if ( dto == null ) {
+            return;
+        }
+
+        entity.setName( dto.getName() );
+        if ( dto.getDepartment() != null ) {
+            if ( entity.getDepartment() == null ) {
+                entity.setDepartment( departmentEntityFactory.createDepartmentEntity() );
+            }
+            externalHandWrittenMapper.toDepartmentEntity( dto.getDepartment(), entity.getDepartment() );
+        }
+        else {
+            entity.setDepartment( null );
+        }
+    }"
+"60","7","22","21","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/updatemethods/selection/OrganizationMapper1Impl.java","24","39","-2147479054","-2147478977","0","0","void toCompanyEntity(CompanyDto dto, CompanyEntity entity)","void toCompanyEntity(CompanyDto dto, CompanyEntity entity){
+        if ( dto == null ) {
+            return;
+        }
+
+        entity.setName( dto.getName() );
+        if ( dto.getDepartment() != null ) {
+            if ( entity.getDepartment() == null ) {
+                entity.setDepartment( departmentEntityFactory.createDepartmentEntity() );
+            }
+            externalMapper.toDepartmentEntity( dto.getDepartment(), entity.getDepartment() );
+        }
+        else {
+            entity.setDepartment( null );
+        }
+    }"

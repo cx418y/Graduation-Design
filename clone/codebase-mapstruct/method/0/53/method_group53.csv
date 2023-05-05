@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"272","53","172","171","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/adder/AdderTest.java","97","105","-2147452751","-2147452700","0","0","void testAddWithExceptionInThrowsClause()throws DogException","void testAddWithExceptionInThrowsClause()throws DogException{
+        AdderUsageObserver.setUsed( false );
+
+        Source source = new Source();
+        source.setPets( Arrays.asList( ""dog"" ) );
+
+        assertThatThrownBy(  () -> SourceTargetMapper.INSTANCE.toTarget( source ) )
+            .isInstanceOf( DogException.class );
+    }"
+"273","53","172","178","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/adder/AdderTest.java","108","116","-2147452700","-2147452649","0","0","void testAddWithExceptionNotInThrowsClause()throws DogException","void testAddWithExceptionNotInThrowsClause()throws DogException{
+        AdderUsageObserver.setUsed( false );
+
+        Source source = new Source();
+        source.setPets( Arrays.asList( ""cat"" ) );
+
+        assertThatThrownBy( () -> SourceTargetMapper.INSTANCE.toTarget( source ) )
+            .isInstanceOf( RuntimeException.class );
+    }"

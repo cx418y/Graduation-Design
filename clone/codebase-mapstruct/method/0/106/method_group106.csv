@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"584","106","356","355","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_2505/Issue2505Test.java","28","35","-2147422091","-2147422034","0","0","void shouldNotGenerateEnumMappingMethodForDeepClone()","void shouldNotGenerateEnumMappingMethodForDeepClone(){
+        Issue2505Mapper.CustomerDTO source = new Issue2505Mapper.CustomerDTO();
+        source.setStatus( Issue2505Mapper.Status.DISABLED );
+
+        Issue2505Mapper.Customer target = Issue2505Mapper.INSTANCE.map( source );
+
+        assertThat( target.getStatus() ).isEqualTo( Issue2505Mapper.Status.DISABLED );
+    }"
+"711","106","356","355","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_2501/Issue2501Test.java","22","29","-2147408847","-2147408790","0","0","void shouldUnwrapEnumOptional()","void shouldUnwrapEnumOptional(){
+        Issue2501Mapper.CustomerDTO source = new Issue2501Mapper.CustomerDTO();
+        source.setStatus( Issue2501Mapper.DtoStatus.DISABLED );
+
+        Issue2501Mapper.Customer target = Issue2501Mapper.INSTANCE.map( source );
+
+        assertThat( target.getStatus() ).isEqualTo( Issue2501Mapper.CustomerStatus.DISABLED );
+    }"

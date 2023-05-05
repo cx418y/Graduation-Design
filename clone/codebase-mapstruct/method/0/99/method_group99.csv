@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"523","99","313","312","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/value/enum2enum/EnumToEnumMappingTest.java","74","88","-2147428757","-2147428654","0","0","void shouldApplyReverseMappings()","void shouldApplyReverseMappings(){
+
+        OrderType result = OrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.SPECIAL );
+        assertThat( result ).isEqualTo( OrderType.EXTRA );
+
+        result = OrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.DEFAULT );
+        assertThat( result ).isEqualTo( OrderType.STANDARD );
+
+        result = OrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.RETAIL );
+        assertThat( result ).isEqualTo( OrderType.RETAIL );
+
+        result = OrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.B2B );
+        assertThat( result ).isEqualTo( OrderType.B2B );
+
+    }"
+"527","99","341","340","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/value/enum2enum/EnumToEnumMappingTest.java","141","155","-2147428356","-2147428256","0","0","void shouldApplyDefaultReverseMappings()","void shouldApplyDefaultReverseMappings(){
+
+        OrderType result = SpecialOrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.SPECIAL );
+        assertThat( result ).isEqualTo( OrderType.EXTRA );
+
+        result = SpecialOrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.DEFAULT );
+        assertThat( result ).isNull();
+
+        result = SpecialOrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.RETAIL );
+        assertThat( result ).isEqualTo( OrderType.RETAIL );
+
+        result = SpecialOrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.B2B );
+        assertThat( result ).isEqualTo( OrderType.B2B );
+
+    }"

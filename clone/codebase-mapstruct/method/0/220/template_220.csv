@@ -1,0 +1,20 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testEqualsQualifiersInDifferentOrder","void testEqualsQualifiersInDifferentOrder(){
+        List<String> qualifyingNames = Arrays.asList( ""language"", ""german"" );
+        TypeMirror resultType = new TestTypeMirror( ""resultType"" );
+        List<TypeMirror> qualifiers = new ArrayList<>();
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        SelectionParameters params = new SelectionParameters( qualifiers, qualifyingNames, resultType, typeUtils );
+
+        List<TypeMirror> qualifiers2 = new ArrayList<>();
+        qualifiers2.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        qualifiers2.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        SelectionParameters params2 = new SelectionParameters( qualifiers2, qualifyingNames, resultType, typeUtils );[*1*] 
+
+        assertThat( params.equals( params2 ) ).as( ""Different order for qualifiers"" ).isFalse();
+        assertThat( params2.equals( params ) ).as( ""Different order for qualifiers"" ).isFalse();
+    }
+","[*1*]:
+1, 0.5,         SelectionParameters params2 = new SelectionParameters( qualifiers2, null, resultType, typeUtils );
+"

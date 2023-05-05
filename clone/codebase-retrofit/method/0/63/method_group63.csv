@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"363","63","229","228","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeTest.java","150","163","-2147437452","-2147437356","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Maybe<String> observable = service.body();
+
+    RecordingMaybeObserver<Object> observer1 = observerRule.create();
+    observable.subscribe(observer1);
+    observer1.assertValue(""Hi"");
+
+    RecordingMaybeObserver<Object> observer2 = observerRule.create();
+    observable.subscribe(observer2);
+    observer2.assertValue(""Hey"");
+  }"
+"490","63","229","228","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeTest.java","150","163","-2147424459","-2147424363","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Maybe<String> observable = service.body();
+
+    RecordingMaybeObserver<Object> observer1 = observerRule.create();
+    observable.subscribe(observer1);
+    observer1.assertValue(""Hi"");
+
+    RecordingMaybeObserver<Object> observer2 = observerRule.create();
+    observable.subscribe(observer2);
+    observer2.assertValue(""Hey"");
+  }"

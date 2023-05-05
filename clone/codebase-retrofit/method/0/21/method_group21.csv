@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"161","21","91","90","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CompletableFutureTest.java","94","101","-2147463343","-2147463272","0","0","void responseSuccess200()throws Exception","void responseSuccess200()throws Exception{
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    CompletableFuture<Response<String>> future = service.response();
+    Response<String> response = future.get();
+    assertThat(response.isSuccessful()).isTrue();
+    assertThat(response.body()).isEqualTo(""Hi"");
+  }"
+"399","21","91","90","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/java8/src/test/java/retrofit2/adapter/java8/CompletableFutureTest.java","96","103","-2147433817","-2147433746","0","0","void responseSuccess200()throws Exception","void responseSuccess200()throws Exception{
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    CompletableFuture<Response<String>> future = service.response();
+    Response<String> response = future.get();
+    assertThat(response.isSuccessful()).isTrue();
+    assertThat(response.body()).isEqualTo(""Hi"");
+  }"
+"526","21","91","90","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/guava/src/test/java/retrofit2/adapter/guava/ListenableFutureTest.java","96","103","-2147420816","-2147420745","0","0","void responseSuccess200()throws Exception","void responseSuccess200()throws Exception{
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    ListenableFuture<Response<String>> future = service.response();
+    Response<String> response = future.get();
+    assertThat(response.isSuccessful()).isTrue();
+    assertThat(response.body()).isEqualTo(""Hi"");
+  }"
+"536","21","99","98","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/scala/src/test/java/retrofit2/adapter/scala/FutureTest.java","100","107","-2147420074","-2147419993","0","0","void responseSuccess200()throws Exception","void responseSuccess200()throws Exception{
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    Future<Response<String>> future = service.response();
+    Response<String> response = Await.result(future, Duration.create(5, SECONDS));
+    assertThat(response.isSuccessful()).isTrue();
+    assertThat(response.body()).isEqualTo(""Hi"");
+  }"

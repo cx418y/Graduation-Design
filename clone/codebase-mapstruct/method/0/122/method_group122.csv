@@ -1,0 +1,32 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"697","122","412","411","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913GetterMapperForCollectionsTest.java","54","64","-2147410145","-2147410085","0","0","void shouldReturnNullForNvmsReturnNullForUpdate()","void shouldReturnNullForNvmsReturnNullForUpdate(){
+
+        Dto dto = new Dto();
+        DomainWithoutSetter domain = new DomainWithoutSetter();
+        DomainWithoutSetterDtoWithNvmsNullMapper.INSTANCE.update( dto, domain );
+
+        doControlAsserts( domain );
+        assertThat( domain.getStrings() ).isEmpty();
+        assertThat( domain.getLongs() ).isEmpty();
+
+    }"
+"700","122","412","411","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913GetterMapperForCollectionsTest.java","112","121","-2147409941","-2147409881","0","0","void shouldReturnDefaultForNvmsReturnDefaultForUpdate()","void shouldReturnDefaultForNvmsReturnDefaultForUpdate(){
+
+        Dto dto = new Dto();
+        DomainWithoutSetter domain = new DomainWithoutSetter();
+        DomainWithoutSetterDtoWithNvmsDefaultMapper.INSTANCE.update( dto, domain );
+
+        doControlAsserts( domain );
+        assertThat( domain.getStrings() ).isEmpty();
+        assertThat( domain.getLongs() ).isEmpty();
+    }"
+"703","122","412","416","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913GetterMapperForCollectionsTest.java","168","177","-2147409719","-2147409659","0","0","void shouldReturnNullForUpdateWithPresenceChecker()","void shouldReturnNullForUpdateWithPresenceChecker(){
+
+        DtoWithPresenceCheck dto = new DtoWithPresenceCheck();
+        DomainWithoutSetter domain = new DomainWithoutSetter();
+        DomainWithoutSetterDtoWithPresenceCheckMapper.INSTANCE.update( dto, domain );
+
+        doControlAsserts( domain );
+        assertThat( domain.getStrings() ).isEmpty();
+        assertThat( domain.getLongs() ).isEmpty();
+    }"

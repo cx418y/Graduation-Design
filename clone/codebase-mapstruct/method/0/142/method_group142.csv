@@ -1,0 +1,58 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"826","142","473","472","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/other/HouseDto.java","50","68","-2147397293","-2147397214","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        HouseDto houseDto = (HouseDto) o;
+
+        if ( year != houseDto.year ) {
+            return false;
+        }
+        if ( !Objects.equals( name, houseDto.name ) ) {
+            return false;
+        }
+        return Objects.equals( roof, houseDto.roof );
+
+    }"
+"827","142","473","474","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/other/CarDto.java","51","69","-2147397214","-2147397135","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        CarDto carDto = (CarDto) o;
+
+        if ( year != carDto.year ) {
+            return false;
+        }
+        if ( !Objects.equals( name, carDto.name ) ) {
+            return false;
+        }
+        return Objects.equals( wheels, carDto.wheels );
+
+    }"
+"851","142","473","474","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/CarDto.java","51","69","-2147395234","-2147395155","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        CarDto carDto = (CarDto) o;
+
+        if ( year != carDto.year ) {
+            return false;
+        }
+        if ( !Objects.equals( name, carDto.name ) ) {
+            return false;
+        }
+        return Objects.equals( wheels, carDto.wheels );
+
+    }"

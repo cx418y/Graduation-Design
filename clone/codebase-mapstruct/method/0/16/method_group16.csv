@@ -1,0 +1,285 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"108","16","48","47","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNcvsAlwaysMapperImpl.java","57","126","-2147474979","-2147474571","0","0","void update(DtoWithPresenceCheck source, Domain target)","void update(DtoWithPresenceCheck source, Domain target){
+        if ( source == null ) {
+            return;
+        }
+
+        if ( target.getStrings() != null ) {
+            if ( source.hasStrings() ) {
+                target.getStrings().clear();
+                target.getStrings().addAll( source.getStrings() );
+            }
+        }
+        else {
+            if ( source.hasStrings() ) {
+                List<String> list = source.getStrings();
+                target.setStrings( new LinkedHashSet<String>( list ) );
+            }
+        }
+        if ( target.getLongs() != null ) {
+            if ( source.hasStrings() ) {
+                target.getLongs().clear();
+                target.getLongs().addAll( stringListToLongSet( source.getStrings() ) );
+            }
+        }
+        else {
+            if ( source.hasStrings() ) {
+                target.setLongs( stringListToLongSet( source.getStrings() ) );
+            }
+        }
+        if ( target.getStringsInitialized() != null ) {
+            if ( source.hasStringsInitialized() ) {
+                target.getStringsInitialized().clear();
+                target.getStringsInitialized().addAll( source.getStringsInitialized() );
+            }
+        }
+        else {
+            if ( source.hasStringsInitialized() ) {
+                List<String> list1 = source.getStringsInitialized();
+                target.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+            }
+        }
+        if ( target.getLongsInitialized() != null ) {
+            if ( source.hasStringsInitialized() ) {
+                target.getLongsInitialized().clear();
+                target.getLongsInitialized().addAll( stringListToLongSet( source.getStringsInitialized() ) );
+            }
+        }
+        else {
+            if ( source.hasStringsInitialized() ) {
+                target.setLongsInitialized( stringListToLongSet( source.getStringsInitialized() ) );
+            }
+        }
+        if ( target.getStringsWithDefault() != null ) {
+            if ( source.hasStringsWithDefault() ) {
+                target.getStringsWithDefault().clear();
+                target.getStringsWithDefault().addAll( source.getStringsWithDefault() );
+            }
+            else {
+                target.setStringsWithDefault( helper.toList( ""3"" ) );
+            }
+        }
+        else {
+            if ( source.hasStringsWithDefault() ) {
+                List<String> list2 = source.getStringsWithDefault();
+                target.setStringsWithDefault( new ArrayList<String>( list2 ) );
+            }
+            else {
+                target.setStringsWithDefault( helper.toList( ""3"" ) );
+            }
+        }
+    }"
+"109","16","50","49","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNcvsAlwaysMapperImpl.java","129","200","-2147474571","-2147474159","0","0","Domain updateWithReturn(DtoWithPresenceCheck source, Domain target)","Domain updateWithReturn(DtoWithPresenceCheck source, Domain target){
+        if ( source == null ) {
+            return target;
+        }
+
+        if ( target.getStrings() != null ) {
+            if ( source.hasStrings() ) {
+                target.getStrings().clear();
+                target.getStrings().addAll( source.getStrings() );
+            }
+        }
+        else {
+            if ( source.hasStrings() ) {
+                List<String> list = source.getStrings();
+                target.setStrings( new LinkedHashSet<String>( list ) );
+            }
+        }
+        if ( target.getLongs() != null ) {
+            if ( source.hasStrings() ) {
+                target.getLongs().clear();
+                target.getLongs().addAll( stringListToLongSet( source.getStrings() ) );
+            }
+        }
+        else {
+            if ( source.hasStrings() ) {
+                target.setLongs( stringListToLongSet( source.getStrings() ) );
+            }
+        }
+        if ( target.getStringsInitialized() != null ) {
+            if ( source.hasStringsInitialized() ) {
+                target.getStringsInitialized().clear();
+                target.getStringsInitialized().addAll( source.getStringsInitialized() );
+            }
+        }
+        else {
+            if ( source.hasStringsInitialized() ) {
+                List<String> list1 = source.getStringsInitialized();
+                target.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+            }
+        }
+        if ( target.getLongsInitialized() != null ) {
+            if ( source.hasStringsInitialized() ) {
+                target.getLongsInitialized().clear();
+                target.getLongsInitialized().addAll( stringListToLongSet( source.getStringsInitialized() ) );
+            }
+        }
+        else {
+            if ( source.hasStringsInitialized() ) {
+                target.setLongsInitialized( stringListToLongSet( source.getStringsInitialized() ) );
+            }
+        }
+        if ( target.getStringsWithDefault() != null ) {
+            if ( source.hasStringsWithDefault() ) {
+                target.getStringsWithDefault().clear();
+                target.getStringsWithDefault().addAll( source.getStringsWithDefault() );
+            }
+            else {
+                target.setStringsWithDefault( helper.toList( ""3"" ) );
+            }
+        }
+        else {
+            if ( source.hasStringsWithDefault() ) {
+                List<String> list2 = source.getStringsWithDefault();
+                target.setStringsWithDefault( new ArrayList<String>( list2 ) );
+            }
+            else {
+                target.setStringsWithDefault( helper.toList( ""3"" ) );
+            }
+        }
+
+        return target;
+    }"
+"112","16","48","47","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithPresenceCheckMapperImpl.java","57","126","-2147473910","-2147473502","0","0","void update(DtoWithPresenceCheck source, Domain target)","void update(DtoWithPresenceCheck source, Domain target){
+        if ( source == null ) {
+            return;
+        }
+
+        if ( target.getStrings() != null ) {
+            if ( source.hasStrings() ) {
+                target.getStrings().clear();
+                target.getStrings().addAll( source.getStrings() );
+            }
+        }
+        else {
+            if ( source.hasStrings() ) {
+                List<String> list = source.getStrings();
+                target.setStrings( new LinkedHashSet<String>( list ) );
+            }
+        }
+        if ( target.getLongs() != null ) {
+            if ( source.hasStrings() ) {
+                target.getLongs().clear();
+                target.getLongs().addAll( stringListToLongSet( source.getStrings() ) );
+            }
+        }
+        else {
+            if ( source.hasStrings() ) {
+                target.setLongs( stringListToLongSet( source.getStrings() ) );
+            }
+        }
+        if ( target.getStringsInitialized() != null ) {
+            if ( source.hasStringsInitialized() ) {
+                target.getStringsInitialized().clear();
+                target.getStringsInitialized().addAll( source.getStringsInitialized() );
+            }
+        }
+        else {
+            if ( source.hasStringsInitialized() ) {
+                List<String> list1 = source.getStringsInitialized();
+                target.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+            }
+        }
+        if ( target.getLongsInitialized() != null ) {
+            if ( source.hasStringsInitialized() ) {
+                target.getLongsInitialized().clear();
+                target.getLongsInitialized().addAll( stringListToLongSet( source.getStringsInitialized() ) );
+            }
+        }
+        else {
+            if ( source.hasStringsInitialized() ) {
+                target.setLongsInitialized( stringListToLongSet( source.getStringsInitialized() ) );
+            }
+        }
+        if ( target.getStringsWithDefault() != null ) {
+            if ( source.hasStringsWithDefault() ) {
+                target.getStringsWithDefault().clear();
+                target.getStringsWithDefault().addAll( source.getStringsWithDefault() );
+            }
+            else {
+                target.setStringsWithDefault( helper.toList( ""3"" ) );
+            }
+        }
+        else {
+            if ( source.hasStringsWithDefault() ) {
+                List<String> list2 = source.getStringsWithDefault();
+                target.setStringsWithDefault( new ArrayList<String>( list2 ) );
+            }
+            else {
+                target.setStringsWithDefault( helper.toList( ""3"" ) );
+            }
+        }
+    }"
+"113","16","50","49","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithPresenceCheckMapperImpl.java","129","200","-2147473502","-2147473090","0","0","Domain updateWithReturn(DtoWithPresenceCheck source, Domain target)","Domain updateWithReturn(DtoWithPresenceCheck source, Domain target){
+        if ( source == null ) {
+            return target;
+        }
+
+        if ( target.getStrings() != null ) {
+            if ( source.hasStrings() ) {
+                target.getStrings().clear();
+                target.getStrings().addAll( source.getStrings() );
+            }
+        }
+        else {
+            if ( source.hasStrings() ) {
+                List<String> list = source.getStrings();
+                target.setStrings( new LinkedHashSet<String>( list ) );
+            }
+        }
+        if ( target.getLongs() != null ) {
+            if ( source.hasStrings() ) {
+                target.getLongs().clear();
+                target.getLongs().addAll( stringListToLongSet( source.getStrings() ) );
+            }
+        }
+        else {
+            if ( source.hasStrings() ) {
+                target.setLongs( stringListToLongSet( source.getStrings() ) );
+            }
+        }
+        if ( target.getStringsInitialized() != null ) {
+            if ( source.hasStringsInitialized() ) {
+                target.getStringsInitialized().clear();
+                target.getStringsInitialized().addAll( source.getStringsInitialized() );
+            }
+        }
+        else {
+            if ( source.hasStringsInitialized() ) {
+                List<String> list1 = source.getStringsInitialized();
+                target.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+            }
+        }
+        if ( target.getLongsInitialized() != null ) {
+            if ( source.hasStringsInitialized() ) {
+                target.getLongsInitialized().clear();
+                target.getLongsInitialized().addAll( stringListToLongSet( source.getStringsInitialized() ) );
+            }
+        }
+        else {
+            if ( source.hasStringsInitialized() ) {
+                target.setLongsInitialized( stringListToLongSet( source.getStringsInitialized() ) );
+            }
+        }
+        if ( target.getStringsWithDefault() != null ) {
+            if ( source.hasStringsWithDefault() ) {
+                target.getStringsWithDefault().clear();
+                target.getStringsWithDefault().addAll( source.getStringsWithDefault() );
+            }
+            else {
+                target.setStringsWithDefault( helper.toList( ""3"" ) );
+            }
+        }
+        else {
+            if ( source.hasStringsWithDefault() ) {
+                List<String> list2 = source.getStringsWithDefault();
+                target.setStringsWithDefault( new ArrayList<String>( list2 ) );
+            }
+            else {
+                target.setStringsWithDefault( helper.toList( ""3"" ) );
+            }
+        }
+
+        return target;
+    }"

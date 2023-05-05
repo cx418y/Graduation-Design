@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","Mappers.getMapper","= Mappers.getMapper( Issue1148Mapper.class );[*1*] 
+Entity toEntity(Entity.Dto dto);[*2*] 
+
+    @Mappings({
+        @Mapping(target = ""sender.nestedClient.id"", source = ""senderId""),
+        @Mapping(target = ""recipient.nestedClient.id"", source = ""recipientId""),
+        @Mapping(target = ""client.nestedClient.id"", source = ""sameLevel.client.id""),
+        @Mapping(target = ""client2.nestedClient.id"", source = ""sameLevel2.client.id""),
+        @Mapping(target = ""nested.id"", source = ""level.client.id""),
+        @Mapping(target = ""nested2.id"", source = ""level2.client.id""),
+        @Mapping(target = ""id"", source = ""nestedDto.id""),
+        @Mapping(target = ""id2"", source = ""nestedDto2.id"")
+    }
+","[*1*]:
+[*2*]:
+"

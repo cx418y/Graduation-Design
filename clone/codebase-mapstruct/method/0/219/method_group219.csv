@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1325","219","723","722","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/model/source/SelectionParametersTest.java","231","240","-2147335087","-2147334992","0","0","void testEqualsSameInstance()","void testEqualsSameInstance(){
+        List<String> qualifyingNames = Arrays.asList( ""language"", ""german"" );
+        TypeMirror resultType = new TestTypeMirror( ""resultType"" );
+        List<TypeMirror> qualifiers = new ArrayList<>();
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        SelectionParameters params = new SelectionParameters( qualifiers, qualifyingNames, resultType, typeUtils );
+
+        assertThat( params.equals( params ) ).as( ""Self equals"" ).isTrue();
+    }"
+"1326","219","723","726","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/model/source/SelectionParametersTest.java","243","252","-2147334992","-2147334897","0","0","void testEqualsWitNull()","void testEqualsWitNull(){
+        List<String> qualifyingNames = Arrays.asList( ""language"", ""german"" );
+        TypeMirror resultType = new TestTypeMirror( ""resultType"" );
+        List<TypeMirror> qualifiers = new ArrayList<>();
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        SelectionParameters params = new SelectionParameters( qualifiers, qualifyingNames, resultType, typeUtils );
+
+        assertThat( params.equals( null ) ).as( ""Equals with null"" ).isFalse();
+    }"

@@ -1,0 +1,53 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getPresenceCheckMethodReference","MethodReference getPresenceCheckMethodReference([*1*] 
+        Method method,[*2*] 
+        SelectedMethod<SourceMethod> matchingMethod,[*3*] 
+        MappingBuilderContext ctx[*4*] 
+    ){[*5*] 
+[*6*] 
+        SelectedMethod<SourceMethod> matchingFactoryMethod, MappingBuilderContext ctx){[*7*] 
+        Parameter providingParameter =
+            method.getContextProvidedMethods().getParameterForProvidedMethod( matchingMethod.getMethod() );
+[*8*] 
+        if ( providingParameter != null ) {
+            return MethodReference.forParameterProvidedMethod(
+                matchingMethod.getMethod(),
+                providingParameter,
+                matchingMethod.getParameterBindings()[*9*] 
+            );[*10*] 
+                matchingFactoryMethod.getParameterBindings() );[*11*] 
+        }
+        else {
+            MapperReference ref = MapperReference.findMapperReference(
+                ctx.getMapperReferences(),
+                matchingMethod.getMethod()[*12*] 
+            );[*13*] 
+                matchingFactoryMethod.getMethod() );[*14*] 
+
+            return MethodReference.forMapperReference(
+                matchingMethod.getMethod(),
+                ref,
+                matchingMethod.getParameterBindings()[*15*] 
+            );[*16*] 
+                matchingFactoryMethod.getParameterBindings() );[*17*] 
+        }
+    }
+","[*1*]:
+1, 0.5, MethodReference getFactoryMethodReference(Method method,
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+[*11*]:
+[*12*]:
+[*13*]:
+[*14*]:
+[*15*]:
+[*16*]:
+[*17*]:
+"

@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1461","226","745","744","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/creation/MappingResolverImpl.java","158","167","-2147319360","-2147319302","0","0","MapperReference findMapperReference(Method method)","MapperReference findMapperReference(Method method){
+        for ( MapperReference ref : mapperReferences ) {
+            if ( ref.getType().equals( method.getDeclaringMapper() ) ) {
+                ref.setUsed( ref.isUsed() || !method.isStatic() );
+                ref.setTypeRequiresImport( true );
+                return ref;
+            }
+        }
+        return null;
+    }"
+"1878","226","745","744","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/MapperReference.java","27","36","-2147265225","-2147265167","0","0","MapperReference findMapperReference(List<MapperReference> mapperReferences, SourceMethod method)","MapperReference findMapperReference(List<MapperReference> mapperReferences, SourceMethod method){
+        for ( MapperReference ref : mapperReferences ) {
+            if ( ref.getType().equals( method.getDeclaringMapper() ) ) {
+                ref.setUsed( ref.isUsed() || !method.isStatic() );
+                ref.setTypeRequiresImport( true );
+                return ref;
+            }
+        }
+        return null;
+    }"

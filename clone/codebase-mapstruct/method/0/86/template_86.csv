@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldHaveJakartaInjection","void shouldHaveJakartaInjection(){
+        generatedSource.forMapper( CustomerJakartaCompileOptionConstructorMapper.class )
+            .content()
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""import jakarta.inject.Named;"" )
+            .contains( ""import jakarta.inject.Singleton;"" )
+            .contains( ""private final GenderJakartaCompileOptionConstructorMapper"" )
+            .contains( ""@Inject"" + lineSeparator() +
+                ""    public CustomerJakartaCompileOptionConstructorMapperImpl"" +[*1*] 
+                ""(GenderJakartaCompileOptionConstructorMapper"" )
+            .doesNotContain( ""javax.inject"" );
+    }
+","[*1*]:
+"

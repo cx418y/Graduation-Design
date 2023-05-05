@@ -1,0 +1,53 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1338","223","733","732","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/model/common/DefaultConversionContextTest.java","105","130","-2147333433","-2147333370","0","0","Type typeWithFQN(String fullQualifiedName)","Type typeWithFQN(String fullQualifiedName){
+        return new Type(
+                        null,
+                        null,
+                        null,
+                        null,
+                        voidTypeMirror,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        fullQualifiedName,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+            new HashMap<>(  ),
+            new HashMap<>(  ),
+                        false,
+                        false, false
+        );
+    }"
+"1342","223","733","732","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/model/common/DateFormatValidatorFactoryTest.java","157","182","-2147332951","-2147332888","0","0","Type typeWithFQN(String fullQualifiedName)","Type typeWithFQN(String fullQualifiedName){
+        return new Type(
+                        null,
+                        null,
+                        null,
+                        null,
+                        voidTypeMirror,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        fullQualifiedName,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+            new HashMap<>(  ),
+            new HashMap<>(  ),
+                        false,
+                        false, false
+        );
+    }"

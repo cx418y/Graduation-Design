@@ -1,0 +1,36 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1604","235","772","771","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/IterableMappingOptions.java","105","111","-2147297509","-2147297448","0","0","MappingControl getElementMappingControl(ElementUtils elementUtils)","MappingControl getElementMappingControl(ElementUtils elementUtils){
+        return Optional.ofNullable( iterableMapping ).map( IterableMappingGem::elementMappingControl )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( mc -> MappingControl.fromTypeMirror( mc, elementUtils ) )
+            .orElse( next().getMappingControl( elementUtils ) );
+    }"
+"1658","235","772","771","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MapMappingOptions.java","150","156","-2147290749","-2147290688","0","0","MappingControl getKeyMappingControl(ElementUtils elementUtils)","MappingControl getKeyMappingControl(ElementUtils elementUtils){
+        return Optional.ofNullable( mapMapping ).map( MapMappingGem::keyMappingControl )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( mc -> MappingControl.fromTypeMirror( mc, elementUtils ) )
+            .orElse( next().getMappingControl( elementUtils ) );
+    }"
+"1659","235","772","771","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MapMappingOptions.java","158","164","-2147290688","-2147290627","0","0","MappingControl getValueMappingControl(ElementUtils elementUtils)","MappingControl getValueMappingControl(ElementUtils elementUtils){
+        return Optional.ofNullable( mapMapping ).map( MapMappingGem::valueMappingControl )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( mc -> MappingControl.fromTypeMirror( mc, elementUtils ) )
+            .orElse( next().getMappingControl( elementUtils ) );
+    }"
+"1678","235","772","771","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MappingOptions.java","464","470","-2147288238","-2147288177","0","0","MappingControl getMappingControl(ElementUtils elementUtils)","MappingControl getMappingControl(ElementUtils elementUtils){
+        return Optional.ofNullable( mapping ).map( MappingGem::mappingControl )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( mc -> MappingControl.fromTypeMirror( mc, elementUtils ) )
+            .orElse( next().getMappingControl( elementUtils ) );
+    }"
+"1701","235","772","771","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/BeanMappingOptions.java","191","197","-2147286366","-2147286305","0","0","MappingControl getMappingControl(ElementUtils elementUtils)","MappingControl getMappingControl(ElementUtils elementUtils){
+        return Optional.ofNullable( beanMapping ).map( BeanMappingGem::mappingControl )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( mc -> MappingControl.fromTypeMirror( mc, elementUtils ) )
+            .orElse( next().getMappingControl( elementUtils ) );
+    }"

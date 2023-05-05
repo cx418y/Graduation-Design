@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldConvertToTarget","void shouldConvertToTarget(){
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+
+        CustomerDto customerDto = customerMapper.asTarget( customerEntity );
+
+        assertThat( customerDto ).isNotNull();
+        assertThat( customerDto.getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerDto.getGender() ).isEqualTo( GenderDto.M );
+    }
+",""

@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"678","113","365","364","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","71","80","-2147403994","-2147403921","0","0","void xmlRequestBody()throws Exception","void xmlRequestBody()throws Exception{
+    server.enqueue(new MockResponse());
+
+    Call<Void> call = service.postXml(SAMPLE_CONTACT);
+    call.execute();
+
+    RecordedRequest request = server.takeRequest();
+    assertThat(request.getHeader(""Content-Type"")).isEqualTo(""application/xml; charset=utf-8"");
+    assertThat(request.getBody().readUtf8()).isEqualTo(SAMPLE_CONTACT_XML);
+  }"
+"691","113","365","364","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","71","80","-2147403006","-2147402933","0","0","void xmlRequestBody()throws Exception","void xmlRequestBody()throws Exception{
+    server.enqueue(new MockResponse());
+
+    Call<Void> call = service.postXml(SAMPLE_CONTACT);
+    call.execute();
+
+    RecordedRequest request = server.takeRequest();
+    assertThat(request.getHeader(""Content-Type"")).isEqualTo(""application/xml; charset=utf-8"");
+    assertThat(request.getBody().readUtf8()).isEqualTo(SAMPLE_CONTACT_XML);
+  }"

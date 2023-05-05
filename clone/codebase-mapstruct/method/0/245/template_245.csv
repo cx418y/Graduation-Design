@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getToConversionImportTypes","Set<Type> getToConversionImportTypes(ConversionContext conversionContext){
+        if ( conversionContext.getDateFormat() != null ) {
+            return Collections.singleton(
+                conversionContext.getTypeFactory()
+                    .getType( JodaTimeConstants.DATE_TIME_FORMAT_FQN )
+            );
+        }
+        else {
+            return asSet(
+                conversionContext.getTypeFactory().getType( JodaTimeConstants.DATE_TIME_FORMAT_FQN ),
+                conversionContext.getTypeFactory().getType( Locale.class )
+            );
+        }
+    }
+",""

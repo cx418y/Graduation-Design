@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"162","22","89","88","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CompletableFutureTest.java","104","111","-2147463272","-2147463192","0","0","void responseSuccess404()throws Exception","void responseSuccess404()throws Exception{
+    server.enqueue(new MockResponse().setResponseCode(404).setBody(""Hi""));
+
+    CompletableFuture<Response<String>> future = service.response();
+    Response<String> response = future.get();
+    assertThat(response.isSuccessful()).isFalse();
+    assertThat(response.errorBody().string()).isEqualTo(""Hi"");
+  }"
+"400","22","89","88","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/java8/src/test/java/retrofit2/adapter/java8/CompletableFutureTest.java","106","113","-2147433746","-2147433666","0","0","void responseSuccess404()throws Exception","void responseSuccess404()throws Exception{
+    server.enqueue(new MockResponse().setResponseCode(404).setBody(""Hi""));
+
+    CompletableFuture<Response<String>> future = service.response();
+    Response<String> response = future.get();
+    assertThat(response.isSuccessful()).isFalse();
+    assertThat(response.errorBody().string()).isEqualTo(""Hi"");
+  }"
+"527","22","89","88","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/guava/src/test/java/retrofit2/adapter/guava/ListenableFutureTest.java","106","113","-2147420745","-2147420665","0","0","void responseSuccess404()throws Exception","void responseSuccess404()throws Exception{
+    server.enqueue(new MockResponse().setResponseCode(404).setBody(""Hi""));
+
+    ListenableFuture<Response<String>> future = service.response();
+    Response<String> response = future.get();
+    assertThat(response.isSuccessful()).isFalse();
+    assertThat(response.errorBody().string()).isEqualTo(""Hi"");
+  }"
+"537","22","103","102","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/scala/src/test/java/retrofit2/adapter/scala/FutureTest.java","110","117","-2147419993","-2147419903","0","0","void responseSuccess404()throws Exception","void responseSuccess404()throws Exception{
+    server.enqueue(new MockResponse().setResponseCode(404).setBody(""Hi""));
+
+    Future<Response<String>> future = service.response();
+    Response<String> response = Await.result(future, Duration.create(5, SECONDS));
+    assertThat(response.isSuccessful()).isFalse();
+    assertThat(response.errorBody().string()).isEqualTo(""Hi"");
+  }"

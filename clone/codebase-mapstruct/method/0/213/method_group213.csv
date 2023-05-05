@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1261","213","704","703","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/constructorproperties/SimpleConstructorPropertiesTest.java","29","46","-2147345104","-2147344947","0","0","void mapDefault()","void mapDefault(){
+        PersonDto source = new PersonDto();
+        source.setName( ""Bob"" );
+        source.setAge( 30 );
+        source.setJob( ""Software Engineer"" );
+        source.setCity( ""Zurich"" );
+        source.setAddress( ""Plaza 1"" );
+        source.setChildren( Arrays.asList( ""Alice"", ""Tom"" ) );
+
+        PersonWithConstructorProperties target = SimpleConstructorPropertiesMapper.INSTANCE.map( source );
+
+        assertThat( target.getName() ).isEqualTo( ""Bob"" );
+        assertThat( target.getAge() ).isEqualTo( 30 );
+        assertThat( target.getJob() ).isEqualTo( ""Software Engineer"" );
+        assertThat( target.getCity() ).isEqualTo( ""Zurich"" );
+        assertThat( target.getAddress() ).isEqualTo( ""Plaza 1"" );
+        assertThat( target.getChildren() ).containsExactly( ""Alice"", ""Tom"" );
+    }"
+"1262","213","704","705","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/constructorproperties/SimpleConstructorPropertiesTest.java","49","66","-2147344947","-2147344790","0","0","void mapWithConstants()","void mapWithConstants(){
+        PersonDto source = new PersonDto();
+        source.setName( ""Bob"" );
+        source.setAge( 30 );
+        source.setJob( ""Software Engineer"" );
+        source.setCity( ""Zurich"" );
+        source.setAddress( ""Plaza 1"" );
+        source.setChildren( Arrays.asList( ""Alice"", ""Tom"" ) );
+
+        PersonWithConstructorProperties target = SimpleConstructorPropertiesMapper.INSTANCE.mapWithConstants( source );
+
+        assertThat( target.getName() ).isEqualTo( ""Bob"" );
+        assertThat( target.getAge() ).isEqualTo( 25 );
+        assertThat( target.getJob() ).isEqualTo( ""Software Developer"" );
+        assertThat( target.getCity() ).isEqualTo( ""Zurich"" );
+        assertThat( target.getAddress() ).isEqualTo( ""Plaza 1"" );
+        assertThat( target.getChildren() ).containsExactly( ""Alice"", ""Tom"" );
+    }"

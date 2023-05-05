@@ -1,0 +1,25 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","mapExtend","Map<AuctionDto, AuctionDto> mapExtend(Map<? extends Auction, ? extends Auction> auctions){[*1*] 
+        if ( auctions == null ) {
+            return null;
+        }
+
+        Map<AuctionDto, AuctionDto> map = new LinkedHashMap<AuctionDto, AuctionDto>( Math.max( (int) ( auctions.size() / .75f ) + 1, 16 ) );[*2*] 
+        Map<? super AuctionDto, ? super AuctionDto> map = new LinkedHashMap<AuctionDto, AuctionDto>( Math.max( (int) ( auctions.size() / .75f ) + 1, 16 ) );[*3*] 
+
+        for ( java.util.Map.Entry<? extends Auction, ? extends Auction> entry : auctions.entrySet() ) {[*4*] 
+        for ( java.util.Map.Entry<Auction, Auction> entry : auctions.entrySet() ) {[*5*] 
+            AuctionDto key = map( entry.getKey() );
+            AuctionDto value = map( entry.getValue() );
+            map.put( key, value );
+        }
+
+        return map;
+    }
+","[*1*]:
+1, 0.5, AuctionDto> mapSuper(Map<Auction, Auction> auctions){
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+"

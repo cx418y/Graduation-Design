@@ -1,0 +1,34 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","reportAmbiguousError","void reportAmbiguousError(Map<ConversionAssignment, List<SelectedMethod<T>>> xRefCandidates, Type target){[*1*] 
+            StringBuilder result = new StringBuilder();
+            xCandidates.entrySet()
+                       .stream()
+                       .limit( attempt.reportingLimitAmbiguous )
+                       .forEach( e -> result.append( ""method(s)Y: "" )
+                                            .append( attempt.join( e.getValue() ) )[*2*] 
+                                            .append( "", methodX: "" )[*3*] 
+[*4*] 
+                                               .append( e.getKey().shortName() )[*5*] 
+[*6*] 
+[*7*] 
+                                            .append( ""; "" ) );
+            attempt.messager.printMessage(
+                attempt.mappingMethod.getExecutable(),
+                attempt.positionHint,
+                Message.GENERAL_AMBIGUOUS_MAPPING_METHODY_METHODX,
+                attempt.sourceRHS.getSourceType().getName() + "" "" + attempt.sourceRHS.getSourceParameterName(),
+                target.getName(),
+                result.toString() );
+        }
+","[*1*]:
+1, 0.3333333333333333, void reportAmbiguousError(Map<SelectedMethod<T1>, List<SelectedMethod<T2>>> xCandidates, Type target){
+[*2*]:
+[*3*]:
+[*4*]:
+1, 0.3333333333333333,                                             .append( e.getKey().getMethod().describe() )
+[*5*]:
+[*6*]:
+1, 0.3333333333333333,                                                .append( "", method(s)X: "" )
+[*7*]:
+1, 0.3333333333333333,                                                .append( attempt.join( e.getValue() ) )
+"

@@ -1,0 +1,20 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","equals","boolean equals(Object obj){
+        if ( this == obj ) {
+            return true;
+        }
+        if ( obj == null ) {
+            return false;
+        }
+        if ( getClass() != obj.getClass() ) {
+            return false;
+        }
+        StringHolder other = (StringHolder) obj;
+        if ( string == null ) {
+            return other.string == null;
+        }
+        else {
+            return string.equals( other.string );
+        }
+    }
+",""

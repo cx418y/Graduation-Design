@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"460","87","289","288","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/spring/compileoptionconstructor/SpringCompileOptionConstructorMapperTest.java","81","100","-2147435327","-2147435175","0","0","void shouldConvertToTarget()throws Exception","void shouldConvertToTarget()throws Exception{
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+        CustomerRecordEntity customerRecordEntity = new CustomerRecordEntity();
+        customerRecordEntity.setCustomer( customerEntity );
+        customerRecordEntity.setRegistrationDate( createDate( ""31-08-1982 10:20:56"" ) );
+
+        CustomerRecordDto customerRecordDto = customerRecordMapper.asTarget( customerRecordEntity );
+
+        assertThat( customerRecordDto ).isNotNull();
+        assertThat( customerRecordDto.getCustomer() ).isNotNull();
+        assertThat( customerRecordDto.getCustomer().getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerRecordDto.getCustomer().getGender() ).isEqualTo( GenderDto.M );
+        assertThat( customerRecordDto.getRegistrationDate() ).isNotNull();
+        assertThat( customerRecordDto.getRegistrationDate().toString() ).isEqualTo( ""1982-08-31T10:20:56.000+02:00"" );
+    }"
+"463","87","289","288","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/spring/constructor/SpringConstructorMapperTest.java","84","103","-2147435025","-2147434873","0","0","void shouldConvertToTarget()throws Exception","void shouldConvertToTarget()throws Exception{
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+        CustomerRecordEntity customerRecordEntity = new CustomerRecordEntity();
+        customerRecordEntity.setCustomer( customerEntity );
+        customerRecordEntity.setRegistrationDate( createDate( ""31-08-1982 10:20:56"" ) );
+
+        CustomerRecordDto customerRecordDto = customerRecordMapper.asTarget( customerRecordEntity );
+
+        assertThat( customerRecordDto ).isNotNull();
+        assertThat( customerRecordDto.getCustomer() ).isNotNull();
+        assertThat( customerRecordDto.getCustomer().getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerRecordDto.getCustomer().getGender() ).isEqualTo( GenderDto.M );
+        assertThat( customerRecordDto.getRegistrationDate() ).isNotNull();
+        assertThat( customerRecordDto.getRegistrationDate().toString() ).isEqualTo( ""1982-08-31T10:20:56.000+02:00"" );
+    }"

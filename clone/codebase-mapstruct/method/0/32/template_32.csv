@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","map","List<Target> map(List<Source> list){
+        if ( list == null ) {
+            return null;
+        }
+
+        List<Target> list1 = new ArrayList<Target>( list.size() );
+        for ( Source source : list ) {
+            list1.add( instanceMapper.map( source ) );
+        }
+
+        return list1;
+    }
+",""

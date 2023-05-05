@@ -1,0 +1,44 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1965","251","818","817","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/immutablesBuilderTest/mapper/src/test/java/org/mapstruct/itest/immutables/ImmutablesMapperTest.java","35","41","-2147253909","-2147253824","0","0","void testLombokToImmutable()","void testLombokToImmutable(){
+        Person person = PersonMapper.INSTANCE.fromDto( new PersonDto( ""Bob"", 33, new AddressDto( ""Wild Drive"" ) ) );
+        assertThat( person.getAge() ).isEqualTo( 33 );
+        assertThat( person.getName() ).isEqualTo( ""Bob"" );
+        assertThat( person.getAddress() ).isNotNull();
+        assertThat( person.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"
+"1987","251","820","819","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/protobufBuilderTest/src/test/java/org/mapstruct/itest/protobuf/ProtobufMapperTest.java","36","43","-2147251714","-2147251627","0","0","void testLombokToImmutable()","void testLombokToImmutable(){
+        PersonProtos.Person person = PersonMapper.INSTANCE.fromDto( new PersonDto( ""Bob"", 33, new AddressDto( ""Wild Drive"" ) ) );
+
+        assertThat( person.getAge() ).isEqualTo( 33 );
+        assertThat( person.getName() ).isEqualTo( ""Bob"" );
+        assertThat( person.getAddress() ).isNotNull();
+        assertThat( person.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"
+"1990","251","818","817","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/lombokModuleTest/src/test/java/org/mapstruct/itest/lombok/LombokMapperTest.java","30","36","-2147251486","-2147251401","0","0","void testLombokToImmutable()","void testLombokToImmutable(){
+        Person person = PersonMapper.INSTANCE.fromDto( new PersonDto( ""Bob"", 33, new AddressDto( ""Wild Drive"" ) ) );
+        assertThat( person.getAge() ).isEqualTo( 33 );
+        assertThat( person.getName() ).isEqualTo( ""Bob"" );
+        assertThat( person.getAddress() ).isNotNull();
+        assertThat( person.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"
+"1997","251","818","817","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/freeBuilderBuilderTest/src/test/java/org/mapstruct/itest/freebuilder/FreeBuilderMapperTest.java","35","41","-2147250805","-2147250720","0","0","void testLombokToImmutable()","void testLombokToImmutable(){
+        Person person = PersonMapper.INSTANCE.fromDto( new PersonDto( ""Bob"", 33, new AddressDto( ""Wild Drive"" ) ) );
+        assertThat( person.getAge() ).isEqualTo( 33 );
+        assertThat( person.getName() ).isEqualTo( ""Bob"" );
+        assertThat( person.getAddress() ).isNotNull();
+        assertThat( person.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"
+"2009","251","818","817","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/autoValueBuilderTest/src/test/java/org/mapstruct/itest/auto/value/AutoValueMapperTest.java","35","41","-2147249427","-2147249342","0","0","void testLombokToImmutable()","void testLombokToImmutable(){
+        Person person = PersonMapper.INSTANCE.fromDto( new PersonDto( ""Bob"", 33, new AddressDto( ""Wild Drive"" ) ) );
+        assertThat( person.getAge() ).isEqualTo( 33 );
+        assertThat( person.getName() ).isEqualTo( ""Bob"" );
+        assertThat( person.getAddress() ).isNotNull();
+        assertThat( person.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"
+"2011","251","818","817","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/lombokBuilderTest/src/test/java/org/mapstruct/itest/lombok/LombokMapperTest.java","36","42","-2147249233","-2147249148","0","0","void testLombokToImmutable()","void testLombokToImmutable(){
+        Person person = PersonMapper.INSTANCE.fromDto( new PersonDto( ""Bob"", 33, new AddressDto( ""Wild Drive"" ) ) );
+        assertThat( person.getAge() ).isEqualTo( 33 );
+        assertThat( person.getName() ).isEqualTo( ""Bob"" );
+        assertThat( person.getAddress() ).isNotNull();
+        assertThat( person.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"

@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1760","242","790","789","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/common/Type.java","1197","1206","-2147279914","-2147279857","0","0","int hashCode()","int hashCode(){
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((packageName == null) ? 0 : packageName.hashCode());
+        return result;
+    }"
+"1880","242","790","789","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/SupportingConstructorFragment.java","53","59","-2147265112","-2147265055","0","0","int hashCode()","int hashCode(){
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ( ( variableName == null ) ? 0 : variableName.hashCode() );
+        result = prime * result + ( ( templateName == null ) ? 0 : templateName.hashCode() );
+        return result;
+    }"

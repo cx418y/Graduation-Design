@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","@ProcessorOption","""IGNORE"") @ProcessorOption(name = ""mapstruct.unmappedSourcePolicy"", value = ""ERROR"")@ExpectedCompilationOutcome(
+            value = CompilationResult.FAILED,
+            diagnostics ={
+                    @Diagnostic(type = org.mapstruct.ap.test.unmappedsource.SourceTargetMapperWithoutMapperConfig.class,
+                            kind = Kind.ERROR,
+                            line = 22,
+                            message = ""Unmapped source property: \""qux\"".""),
+                    @Diagnostic(type = org.mapstruct.ap.test.unmappedsource.SourceTargetMapperWithoutMapperConfig.class,
+                            kind = Kind.ERROR,
+                            line = 24,
+                            message = ""Unmapped source property: \""bar\""."")
+            }
+",""

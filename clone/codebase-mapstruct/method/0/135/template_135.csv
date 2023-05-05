@@ -1,0 +1,28 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","@WithClasses","@ProcessorTest @WithClasses({ ErroneousSubclassUpdateMapper.class })@ExpectedCompilationOutcome(value = CompilationResult.FAILED, diagnostics ={[*1*] 
+@ProcessorTest @WithClasses( ErroneousNestedMapper.class )@ExpectedCompilationOutcome([*2*] 
+        value = CompilationResult.FAILED,[*3*] 
+        diagnostics ={[*4*] 
+        @Diagnostic(type = ErroneousSubclassUpdateMapper.class,
+            kind = javax.tools.Diagnostic.Kind.ERROR,
+            line = 21,
+            message = ""SubclassMapping annotation can not be used for update methods.""[*5*] 
+        ),[*6*] 
+        @Diagnostic(type = ErroneousSubclassUpdateMapper.class,
+            kind = javax.tools.Diagnostic.Kind.ERROR,
+            line = 25,
+            message = ""SubclassMapping annotation can not be used for update methods.""[*7*] 
+        )[*8*] 
+                message = ""Several possible source properties for target property \""status\""."")[*9*] 
+    }
+","[*1*]:
+[*2*]:
+[*3*]:
+1, 0.5,                 message = ""Several possible source properties for target property \""id\"".""),
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+"

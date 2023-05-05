@@ -1,0 +1,44 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"211","35","118","117","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedtargetproperties/NestedProductPropertiesTest.java","106","126","-2147459032","-2147458863","0","0","void shouldReverseNestedTarget()","void shouldReverseNestedTarget(){
+
+        ChartEntry chartEntry = new ChartEntry();
+        chartEntry.setArtistName( ""Prince"" );
+        chartEntry.setChartName( ""US Billboard Hot Rock Songs"" );
+        chartEntry.setCity( ""Minneapolis"" );
+        chartEntry.setPosition( 1 );
+        chartEntry.setRecordedAt( ""Live, First Avenue, Minneapolis"" );
+        chartEntry.setSongTitle( ""Purple Rain"" );
+
+        Chart chart = ChartEntryToArtist.MAPPER.map( chartEntry );
+        ChartEntry result = ChartEntryToArtist.MAPPER.map( chart );
+
+        assertThat( result ).isNotNull();
+        assertThat( result.getArtistName() ).isEqualTo( ""Prince"" );
+        assertThat( result.getChartName() ).isEqualTo( ""US Billboard Hot Rock Songs"" );
+        assertThat( result.getCity() ).isEqualTo( ""Minneapolis"" );
+        assertThat( result.getPosition() ).isEqualTo( 1 );
+        assertThat( result.getRecordedAt() ).isEqualTo( ""Live, First Avenue, Minneapolis"" );
+        assertThat( result.getSongTitle() ).isEqualTo( ""Purple Rain"" );
+    }"
+"1289","35","124","123","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedtarget/NestedProductPropertiesConstructorTest.java","73","94","-2147340902","-2147340764","0","0","void shouldReverseNestedTarget()","void shouldReverseNestedTarget(){
+
+        ChartEntry chartEntry = new ChartEntry(
+            ""US Billboard Hot Rock Songs"",
+            ""Purple Rain"",
+            ""Prince"",
+            ""Live, First Avenue, Minneapolis"",
+            ""Minneapolis"",
+            1
+        );
+
+        Chart chart = ChartEntryToArtist.MAPPER.map( chartEntry );
+        ChartEntry result = ChartEntryToArtist.MAPPER.map( chart );
+
+        assertThat( result ).isNotNull();
+        assertThat( result.getArtistName() ).isEqualTo( ""Prince"" );
+        assertThat( result.getChartName() ).isEqualTo( ""US Billboard Hot Rock Songs"" );
+        assertThat( result.getCity() ).isEqualTo( ""Minneapolis"" );
+        assertThat( result.getPosition() ).isEqualTo( 1 );
+        assertThat( result.getRecordedAt() ).isEqualTo( ""Live, First Avenue, Minneapolis"" );
+        assertThat( result.getSongTitle() ).isEqualTo( ""Purple Rain"" );
+    }"

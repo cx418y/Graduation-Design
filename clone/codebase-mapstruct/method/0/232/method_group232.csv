@@ -1,0 +1,57 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1603","232","764","763","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/IterableMappingOptions.java","97","103","-2147297562","-2147297509","0","0","NullValueMappingStrategyGem getNullValueMappingStrategy()","NullValueMappingStrategyGem getNullValueMappingStrategy(){
+        return Optional.ofNullable( iterableMapping ).map( IterableMappingGem::nullValueMappingStrategy )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( NullValueMappingStrategyGem::valueOf )
+            .orElse( next().getNullValueIterableMappingStrategy() );
+    }"
+"1657","232","764","763","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MapMappingOptions.java","142","148","-2147290802","-2147290749","0","0","NullValueMappingStrategyGem getNullValueMappingStrategy()","NullValueMappingStrategyGem getNullValueMappingStrategy(){
+        return Optional.ofNullable( mapMapping ).map( MapMappingGem::nullValueMappingStrategy )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( NullValueMappingStrategyGem::valueOf )
+            .orElse( next().getNullValueMapMappingStrategy() );
+    }"
+"1676","232","764","763","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MappingOptions.java","446","452","-2147288344","-2147288291","0","0","NullValueCheckStrategyGem getNullValueCheckStrategy()","NullValueCheckStrategyGem getNullValueCheckStrategy(){
+        return Optional.ofNullable( mapping ).map( MappingGem::nullValueCheckStrategy )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( NullValueCheckStrategyGem::valueOf )
+            .orElse( next().getNullValueCheckStrategy() );
+    }"
+"1677","232","764","763","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MappingOptions.java","455","461","-2147288291","-2147288238","0","0","NullValuePropertyMappingStrategyGem getNullValuePropertyMappingStrategy()","NullValuePropertyMappingStrategyGem getNullValuePropertyMappingStrategy(){
+        return Optional.ofNullable( mapping ).map( MappingGem::nullValuePropertyMappingStrategy )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( NullValuePropertyMappingStrategyGem::valueOf )
+            .orElse( next().getNullValuePropertyMappingStrategy() );
+    }"
+"1696","232","764","763","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/BeanMappingOptions.java","138","144","-2147286631","-2147286578","0","0","NullValueCheckStrategyGem getNullValueCheckStrategy()","NullValueCheckStrategyGem getNullValueCheckStrategy(){
+        return Optional.ofNullable( beanMapping ).map( BeanMappingGem::nullValueCheckStrategy )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( NullValueCheckStrategyGem::valueOf )
+            .orElse( next().getNullValueCheckStrategy() );
+    }"
+"1697","232","764","763","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/BeanMappingOptions.java","147","153","-2147286578","-2147286525","0","0","NullValuePropertyMappingStrategyGem getNullValuePropertyMappingStrategy()","NullValuePropertyMappingStrategyGem getNullValuePropertyMappingStrategy(){
+        return Optional.ofNullable( beanMapping ).map( BeanMappingGem::nullValuePropertyMappingStrategy )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( NullValuePropertyMappingStrategyGem::valueOf )
+            .orElse( next().getNullValuePropertyMappingStrategy() );
+    }"
+"1698","232","764","763","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/BeanMappingOptions.java","156","162","-2147286525","-2147286472","0","0","NullValueMappingStrategyGem getNullValueMappingStrategy()","NullValueMappingStrategyGem getNullValueMappingStrategy(){
+        return Optional.ofNullable( beanMapping ).map( BeanMappingGem::nullValueMappingStrategy )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( NullValueMappingStrategyGem::valueOf )
+            .orElse( next().getNullValueMappingStrategy() );
+    }"
+"1699","232","764","763","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/BeanMappingOptions.java","165","171","-2147286472","-2147286419","0","0","SubclassExhaustiveStrategyGem getSubclassExhaustiveStrategy()","SubclassExhaustiveStrategyGem getSubclassExhaustiveStrategy(){
+        return Optional.ofNullable( beanMapping ).map( BeanMappingGem::subclassExhaustiveStrategy )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( SubclassExhaustiveStrategyGem::valueOf )
+            .orElse( next().getSubclassExhaustiveStrategy() );
+    }"

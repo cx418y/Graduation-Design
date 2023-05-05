@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","isSupported","boolean isSupported(){
+      try {
+        Object version = Runtime.class.getMethod(""version"").invoke(null);
+        Integer feature = (Integer) version.getClass().getMethod(""feature"").invoke(version);
+        return feature >= 14;
+      } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException ignored) {
+        return false;
+      }
+    }
+",""

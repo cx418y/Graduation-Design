@@ -1,0 +1,23 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","subclassQualifiedByInverse","void subclassQualifiedByInverse(){
+        RossiniDto rossiniDto = buildRossiniDto();
+
+        VivaldiDto vivaldiDto = buildVivaldiDto();
+
+        Rossini rossini = (Rossini) SubclassQualifiedByMapper.INSTANCE.fromDto( rossiniDto );
+        Rossini rossiniLight = (Rossini) SubclassQualifiedByMapper.INSTANCE.fromDtoLight( rossiniDto );
+
+        Vivaldi vivaldi = (Vivaldi) SubclassQualifiedByMapper.INSTANCE.fromDto( vivaldiDto );
+        Vivaldi vivaldiLight = (Vivaldi) SubclassQualifiedByMapper.INSTANCE.fromDtoLight( vivaldiDto );
+
+        assertThat( rossini.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossini.getCrescendo() ).containsExactly( ""andante"", ""allegro"", ""vivace"" );
+        assertThat( rossiniLight.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossiniLight.getCrescendo() ).isNull();
+
+        assertThat( vivaldi.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldi.getSeasons() ).containsExactly( ""spring"", ""winter"" );
+        assertThat( vivaldiLight.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldiLight.getSeasons() ).isNull();
+    }
+",""

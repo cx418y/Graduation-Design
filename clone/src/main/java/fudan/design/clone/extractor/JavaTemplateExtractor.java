@@ -12,11 +12,10 @@ import java.util.List;
 
 public class JavaTemplateExtractor {
 
-	public static List<TemplateLine> extract(String code) {
-
-		String formattedCode = CppCodeUtil.removeComment(code);
+	public static List<TemplateLine> extract(String formattedCode) {
+		//String formattedCode = CppCodeUtil.removeComment(code);
 		//formattedCode = CppCodeUtil.formatCode(formattedCode);
-		System.out.println("formatted: "+formattedCode);
+		//System.out.println("formatted: "+formattedCode);
 		JavaLexer lexer = new JavaLexer(CharStreams.fromString(formattedCode));
 		List<? extends Token> tokens = lexer.getAllTokens();
 		List<Token> tmp = new ArrayList<>();
@@ -25,18 +24,24 @@ public class JavaTemplateExtractor {
 		List<TemplateLine> templateLineList = new ArrayList<>();
 		int lineOffset = 0;
 
+		System.out.println("last:"+tokens.get(tokens.size()-1).getLine()+tokens.get(tokens.size()-1).getText());
+		//boolean isLastToken = false;
 		for (Token tk : tokens) {
-			System.out.println("type:" + JavaLexer.VOCABULARY.getSymbolicName(tk.getType()) +
-					"@pos" + tk.getLine() + "(" + tk.getStartIndex() + "," +
-					tk.getStopIndex() + ")" + ":" + tk.getText());
+//			System.out.println("type:" + JavaLexer.VOCABULARY.getSymbolicName(tk.getType()) +
+//					"@pos" + tk.getLine() + "(" + tk.getStartIndex() + "," +
+//					tk.getStopIndex() + ")" + ":" + tk.getText());
 			int tkLineNum = tk.getLine();
 			if(tkLineNum == lineNum) {
 				if (isLiteral(tk) || isIdentifier(tk)) {
 					tmp.add(tk);
 				}
-				if(tk!=tokens.get(tokens.size()-1)){
+				if(!tk.equals(tokens.get(tokens.size()-1))){
 					continue;
 				}
+				//isLastToken = true;
+//				if(tk.equals(tokens.get(tokens.size()-1)) ){
+//					isLastToken = true;
+//				}
 			}
 			do {
 				String[] ids = new String[tmp.size()];
@@ -57,13 +62,17 @@ public class JavaTemplateExtractor {
 				lineOffset += lines[lineNum - 1].length() + 1;
 				lineNum++;
 				tmp.clear();
-			} while (tkLineNum > lineNum);
+				//isLastToken = false;
+			} while (tkLineNum > lineNum || lineNum == lines.length );
 			if (isLiteral(tk) || isIdentifier(tk)) {
 				tmp.add(tk);
 			}
+			if(tk==tokens.get(tokens.size()-1)){
+
+			}
 		}
 
-		System.out.println(formattedCode);
+		System.out.println("formatted: "+formattedCode);
 		for(TemplateLine line : templateLineList){
 			System.out.println(line.getFormattedLine());
 		}
@@ -94,17 +103,19 @@ public class JavaTemplateExtractor {
 		MultiSet curLine = rawTemplate.get(beginIndex);
 		boolean[] curOccurrence = new boolean[methodNum];
 		int occurrenceCount = curLine.getOccurrenceCount();
-		for(int i = 0; i < curOccurrence.length;i++){
-			curOccurrence[i] = curLine.getOccurrence()[i];
-		}
+//		for(int i = 0; i < curOccurrence.length;i++){
+//			curOccurrence[i] = curLine.getOccurrence()[i];
+//		}
 
 		for(int k = beginIndex+1; k < rawTemplate.size();k++){
+			System.arraycopy(curLine.getOccurrence(), 0, curOccurrence, 0, curOccurrence.length);
 			outerLoop:
 			for (int i = k; i < rawTemplate.size(); i++) {
 				MultiSet line = rawTemplate.get(i);
 				if (line.isVisited() || (!curLine.getToken().canCompare(line.getToken()))) {
 					continue;
 				}
+
 
 				for (int j = 0; j < curOccurrence.length; j++) {
 					if (curOccurrence[j] && line.getOccurrence()[j]) {
@@ -137,11 +148,13 @@ public class JavaTemplateExtractor {
 		}
 
 		// 设置第一行方法声明一定有mainLine
-		TemplateLineSet firstSet = res.get(0);
-		if(firstSet.getMainLine() == null){
-			firstSet.setMainLine(firstSet.getAlternateLines().get(0));
-			firstSet.getAlternateLines().remove(0);
-		}
+//		TemplateLineSet firstSet = res.get(0);
+//		System.out.println("mainLIne: "+res.get(0)+"");
+//		if(firstSet.getMainLine() == null){
+//			System.out.println("null main");
+//			firstSet.setMainLine(firstSet.getAlternateLines().get(0));
+//			firstSet.getAlternateLines().remove(0);
+//		}
 
 		return res;
 	}

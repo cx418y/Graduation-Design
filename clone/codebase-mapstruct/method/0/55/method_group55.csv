@@ -1,0 +1,26 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"277","55","181","180","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/adder/AdderTest.java","166","178","-2147452312","-2147452216","0","0","void testShouldPreferHumanSingular()","void testShouldPreferHumanSingular(){
+
+        AdderUsageObserver.setUsed( false );
+
+        SourceTeeth source = new SourceTeeth();
+        source.setTeeth( Arrays.asList( ""moler"" ) );
+
+        TargetHuman target = SourceTargetMapper.INSTANCE.toTargetHuman( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getTeeth().size() ).isEqualTo( 1 );
+        assertThat( target.getTeeth().get( 0 ) ).isEqualTo( 3 );
+        assertTrue( AdderUsageObserver.isUsed() );
+    }"
+"278","55","181","182","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/adder/AdderTest.java","181","192","-2147452216","-2147452120","0","0","void testShouldFallBackToDaliSingularInAbsenceOfHumanSingular()","void testShouldFallBackToDaliSingularInAbsenceOfHumanSingular(){
+        AdderUsageObserver.setUsed( false );
+
+        SourceTeeth source = new SourceTeeth();
+        source.setTeeth( Arrays.asList( ""moler"" ) );
+
+        TargetDali target = SourceTargetMapper.INSTANCE.toTargetDali( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getTeeth().size() ).isEqualTo( 1 );
+        assertThat( target.getTeeth().get( 0 ) ).isEqualTo( 3 );
+        assertTrue( AdderUsageObserver.isUsed() );
+    }"

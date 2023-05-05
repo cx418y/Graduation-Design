@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","autoInheritedMappingIsOverriddenAtMethodLevel","void autoInheritedMappingIsOverriddenAtMethodLevel(){
+        CarDto carDto = newTestDto();
+
+        CarEntity carEntity = CarMapperWithAutoInheritance.INSTANCE.toCarEntityWithFixedAuditTrail( carDto );
+
+        assertThat( carEntity.getColor() ).isEqualTo( ""red"" );
+        assertThat( carEntity.getPrimaryKey() ).isEqualTo( 42L );
+        assertThat( carEntity.getAuditTrail() ).isEqualTo( ""fixed"" );
+    }
+",""

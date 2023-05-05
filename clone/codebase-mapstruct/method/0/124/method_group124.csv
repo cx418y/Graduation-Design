@@ -1,0 +1,26 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"714","124","425","424","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_2101/Issue2101Test.java","36","47","-2147408613","-2147408516","0","0","void shouldMapSomeAdditionalTests1()","void shouldMapSomeAdditionalTests1(){
+        Issue2101AdditionalMapper.Source source = new Issue2101AdditionalMapper.Source();
+        source.value = new Issue2101AdditionalMapper.NestedSource();
+        source.value.nestedValue1 = ""value1"";
+        source.value.nestedValue2 = ""value2"";
+        source.valueThrowOffPath = ""value3"";
+
+        Issue2101AdditionalMapper.Target target = Issue2101AdditionalMapper.INSTANCE.map1( source );
+        assertThat( target.value1 ).isEqualTo( ""value1"" );
+        assertThat( target.value2 ).isEqualTo( ""value2"" );
+        assertThat( target.value3 ).isEqualTo( ""value3"" );
+    }"
+"715","124","425","429","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_2101/Issue2101Test.java","51","63","-2147408516","-2147408419","0","0","void shouldMapSomeAdditionalTests2()","void shouldMapSomeAdditionalTests2(){
+        Issue2101AdditionalMapper.Source source = new Issue2101AdditionalMapper.Source();
+        source.value = new Issue2101AdditionalMapper.NestedSource();
+        source.value.nestedValue1 = ""value1"";
+        source.value.nestedValue2 = ""value2"";
+        source.valueThrowOffPath = ""value3"";
+
+        Issue2101AdditionalMapper.Target target = Issue2101AdditionalMapper.INSTANCE.map2( source );
+        assertThat( target.value1 ).isEqualTo( ""value1"" );
+        assertThat( target.value2 ).isEqualTo( ""value1"" );
+        assertThat( target.value3 ).isEqualTo( ""test"" );
+
+    }"

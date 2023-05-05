@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","failure","void failure()throws InterruptedException{
+    TestObserver<Void> observer = new TestObserver<>();
+    service.completable().subscribe(observer);
+    assertFalse(observer.await(1, SECONDS));
+
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+    observer.await(1, SECONDS);
+    observer.assertError(IOException.class);
+  }
+",""

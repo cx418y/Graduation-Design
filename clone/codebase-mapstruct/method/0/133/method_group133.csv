@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"792","133","454","453","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/SubclassMappingTest.java","115","126","-2147401176","-2147401106","0","0","void subclassMappingInheritsInverseMapping()","void subclassMappingInheritsInverseMapping(){
+        VehicleCollectionDto vehiclesDto = new VehicleCollectionDto();
+        CarDto carDto = new CarDto();
+        carDto.setMaker( ""BenZ"" );
+        vehiclesDto.getVehicles().add( carDto );
+
+        VehicleCollection result = SimpleSubclassMapper.INSTANCE.mapInverse( vehiclesDto );
+
+        assertThat( result.getVehicles() )
+            .extracting( Vehicle::getVehicleManufacturingCompany )
+            .containsExactly( ""BenZ"" );
+    }"
+"797","133","454","453","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/SubclassMappingTest.java","196","207","-2147400749","-2147400679","0","0","void subclassMappingInheritsInverseMappingWithCompositeMapping()","void subclassMappingInheritsInverseMappingWithCompositeMapping(){
+        VehicleCollectionDto vehiclesDto = new VehicleCollectionDto();
+        CarDto carDto = new CarDto();
+        carDto.setMaker( ""BenZ"" );
+        vehiclesDto.getVehicles().add( carDto );
+
+        VehicleCollection result = SubclassCompositeMapper.INSTANCE.mapInverse( vehiclesDto );
+
+        assertThat( result.getVehicles() )
+            .extracting( Vehicle::getVehicleManufacturingCompany )
+            .containsExactly( ""BenZ"" );
+    }"
+"2000","133","454","453","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/sealedSubclassTest/src/test/java/org/mapstruct/itest/sealedsubclass/SealedSubclassTest.java","47","58","-2147250452","-2147250382","0","0","void subclassMappingInheritsInverseMapping()","void subclassMappingInheritsInverseMapping(){
+        VehicleCollectionDto vehiclesDto = new VehicleCollectionDto();
+        CarDto carDto = new CarDto();
+        carDto.setMaker( ""BenZ"" );
+        vehiclesDto.getVehicles().add( carDto );
+
+        VehicleCollection result = SealedSubclassMapper.INSTANCE.mapInverse( vehiclesDto );
+
+        assertThat( result.getVehicles() )
+            .extracting( Vehicle::getVehicleManufacturingCompany )
+            .containsExactly( ""BenZ"" );
+    }"

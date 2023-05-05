@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1973","255","829","828","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/jakartaJaxbTest/src/test/java/org/mapstruct/itest/jakarta/jaxb/JakartaJaxbBasedMapperTest.java","109","117","-2147252768","-2147252702","0","0","String toXml(JAXBElement<?> element)throws JAXBException","String toXml(JAXBElement<?> element)throws JAXBException{
+        JAXBContext jc = JAXBContext.newInstance( element.getValue().getClass() );
+        Marshaller marshaller = jc.createMarshaller();
+        marshaller.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE );
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        marshaller.marshal( element, baos );
+        return baos.toString();
+    }"
+"2022","255","829","828","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/jaxbTest/src/test/java/org/mapstruct/itest/jaxb/JaxbBasedMapperTest.java","108","116","-2147247867","-2147247801","0","0","String toXml(JAXBElement<?> element)throws JAXBException","String toXml(JAXBElement<?> element)throws JAXBException{
+        JAXBContext jc = JAXBContext.newInstance( element.getValue().getClass() );
+        Marshaller marshaller = jc.createMarshaller();
+        marshaller.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE );
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        marshaller.marshal( element, baos );
+        return baos.toString();
+    }"

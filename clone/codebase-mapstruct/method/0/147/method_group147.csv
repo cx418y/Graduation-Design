@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"862","147","486","485","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/NestedSourcePropertiesTest.java","127","141","-2147393839","-2147393741","0","0","void shouldUseAddAsTargetAccessor()","void shouldUseAddAsTargetAccessor(){
+
+        AdderUsageObserver.setUsed( false );
+        Song song = new Song();
+        song.setPositions( Arrays.asList( 3, 5 ) );
+
+        Chart chart = new Chart();
+        chart.setSong( song );
+
+        ChartPositions positions = ArtistToChartEntryAdder.MAPPER.map( chart );
+        assertThat( positions ).isNotNull();
+        assertThat( positions.getPositions() ).containsExactly( 3L, 5L );
+
+        assertThat( AdderUsageObserver.isUsed() ).isTrue();
+    }"
+"863","147","486","489","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/NestedSourcePropertiesTest.java","145","159","-2147393741","-2147393643","0","0","void shouldUseGetAsTargetAccessor()","void shouldUseGetAsTargetAccessor(){
+
+        AdderUsageObserver.setUsed( false );
+        Song song = new Song();
+        song.setPositions( Arrays.asList( 3, 5 ) );
+
+        Chart chart = new Chart();
+        chart.setSong( song );
+
+        ChartPositions positions = ArtistToChartEntryGetter.MAPPER.map( chart );
+        assertThat( positions ).isNotNull();
+        assertThat( positions.getPositions() ).containsExactly( 3L, 5L );
+
+        assertThat( AdderUsageObserver.isUsed() ).isFalse();
+    }"

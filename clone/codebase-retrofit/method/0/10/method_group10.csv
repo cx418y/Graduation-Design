@@ -1,0 +1,69 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"99","10","31","30","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","1531","1565","-2147473031","-2147472814","0","0","void callbackExecutorUsedForSuccess()throws InterruptedException","void callbackExecutorUsedForSuccess()throws InterruptedException{
+    final CountDownLatch runnableLatch = new CountDownLatch(1);
+    final AtomicReference<Runnable> runnableRef = new AtomicReference<>();
+    Executor executor =
+        command -> {
+          runnableRef.set(command);
+          runnableLatch.countDown();
+        };
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(server.url(""/"")).callbackExecutor(executor).build();
+    CallMethod service = retrofit.create(CallMethod.class);
+    Call<ResponseBody> call = service.getResponseBody();
+
+    server.enqueue(new MockResponse());
+
+    final CountDownLatch callbackLatch = new CountDownLatch(1);
+    call.enqueue(
+        new Callback<ResponseBody>() {
+          @Override
+          public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            callbackLatch.countDown();
+          }
+
+          @Override
+          public void onFailure(Call<ResponseBody> call, Throwable t) {
+            t.printStackTrace();
+          }
+        });
+
+    assertTrue(runnableLatch.await(2, TimeUnit.SECONDS));
+    assertEquals(1, callbackLatch.getCount());
+    runnableRef.get().run();
+    assertTrue(callbackLatch.await(2, TimeUnit.SECONDS));
+  }"
+"100","10","37","36","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","1568","1602","-2147472814","-2147472592","0","0","void callbackExecutorUsedForFailure()throws InterruptedException","void callbackExecutorUsedForFailure()throws InterruptedException{
+    final CountDownLatch runnableLatch = new CountDownLatch(1);
+    final AtomicReference<Runnable> runnableRef = new AtomicReference<>();
+    Executor executor =
+        command -> {
+          runnableRef.set(command);
+          runnableLatch.countDown();
+        };
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(server.url(""/"")).callbackExecutor(executor).build();
+    CallMethod service = retrofit.create(CallMethod.class);
+    Call<ResponseBody> call = service.getResponseBody();
+
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AT_START));
+
+    final CountDownLatch callbackLatch = new CountDownLatch(1);
+    call.enqueue(
+        new Callback<ResponseBody>() {
+          @Override
+          public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            throw new AssertionError();
+          }
+
+          @Override
+          public void onFailure(Call<ResponseBody> call, Throwable t) {
+            callbackLatch.countDown();
+          }
+        });
+
+    assertTrue(runnableLatch.await(2, TimeUnit.SECONDS));
+    assertEquals(1, callbackLatch.getCount());
+    runnableRef.get().run();
+    assertTrue(callbackLatch.await(2, TimeUnit.SECONDS));
+  }"

@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapLocalDateTimeToXmlGregorianCalendarCorrectlyWithNanoseconds","void shouldMapLocalDateTimeToXmlGregorianCalendarCorrectlyWithNanoseconds()throws DatatypeConfigurationException{
+[*1*] 
+        Target target = new Target();
+        target.setLocalDateTime( localDateTime );
+
+        Source source = SourceTargetMapper.INSTANCE.toSource( target );
+
+        XMLGregorianCalendar expectedCalendar = DatatypeFactory.newInstance()
+            .newXMLGregorianCalendar( 1994, Calendar.MARCH, 5, 11, 30, 50, 9,
+                DatatypeConstants.FIELD_UNDEFINED
+            );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getXmlGregorianCalendar() ).isEqualTo( expectedCalendar );
+    }
+","[*1*]:
+1, 0.3333333333333333,         LocalDateTime localDateTime = LocalDateTime.of( 1994, Calendar.MARCH, 5, 11, 30, 50, 9000000 );
+1, 0.3333333333333333,         LocalDateTime localDateTime = LocalDateTime.of( 1994, Calendar.MARCH, 5, 11, 30, 50 );
+1, 0.3333333333333333,         LocalDateTime localDateTime = LocalDateTime.of( 1994, Calendar.MARCH, 5, 11, 30 );
+"

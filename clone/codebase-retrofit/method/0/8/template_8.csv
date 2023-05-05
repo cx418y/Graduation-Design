@@ -1,0 +1,37 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","requestConverterFactorySkippedNoMatchThrows","void requestConverterFactorySkippedNoMatchThrows(){
+    Type type = String.class;
+    Annotation[] annotations = new Annotation[0];
+
+    NonMatchingConverterFactory nonMatchingFactory1 = new NonMatchingConverterFactory();
+    NonMatchingConverterFactory nonMatchingFactory2 = new NonMatchingConverterFactory();
+
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(""http://example.com/"")
+            .addConverterFactory(nonMatchingFactory1)
+            .addConverterFactory(nonMatchingFactory2)
+            .build();
+
+    try {
+      retrofit.nextRequestBodyConverter(nonMatchingFactory1, type, annotations, annotations);[*1*] 
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Could not locate RequestBody converter for class java.lang.String.\n""
+                  + ""  Skipped:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.helpers.NonMatchingConverterFactory\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.helpers.NonMatchingConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+
+    assertThat(nonMatchingFactory1.called).isFalse();
+    assertThat(nonMatchingFactory2.called).isTrue();
+  }
+","[*1*]:
+1, 0.5,       retrofit.nextResponseBodyConverter(nonMatchingFactory1, type, annotations);
+"

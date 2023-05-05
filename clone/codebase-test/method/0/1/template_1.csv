@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","addAttribute","void addAttribute(String name, float value)throws Exception{[*1*] 
+[*2*] 
+[*3*] 
+[*4*] 
+		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
+		current.setAttribute(name, str);
+	}
+","[*1*]:
+1, 0.3333333333333333, void addAttribute2(String name, float value, int count2)throws Exception{
+1, 0.3333333333333333, void addAttribute2(String name, float value, int count1)throws Exception{
+[*2*]:
+1, 0.3333333333333333, 		String b = Float.toString(value);
+1, 0.3333333333333333, 		String b = Double.toString(value);
+1, 0.3333333333333333, 		String a = Double.toString(value);
+[*3*]:
+1, 0.3333333333333333, 		float b;
+[*4*]:
+1, 0.3333333333333333, 		count2++;
+1, 0.3333333333333333, 		count1++;
+"

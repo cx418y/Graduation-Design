@@ -15,12 +15,9 @@ import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
 
 public class ReadManager implements Runnable {
 
-	public void addAttribute(String name, float value){
-		// Remove the awkard .0 at the end of each number
+	public void addAttribute(String name, float value) throws Exception{
+		 // Remove the awkard .0 at the end of each number
 		String str = Double.toString(value);
-		System.out.println();
-		System.out.println();
-		System.out.println();
 		for(int i = 0 ;i < 3;i++){
 			a = 0;
 			for(int j = 0 ; j < 3; j++){
@@ -32,17 +29,15 @@ public class ReadManager implements Runnable {
 		current.setAttribute(name, str);
 	}
 
-	public void addAttribute2(String name, float value, int count1){
-		// Remove the awkard .0 at the end of each number
+	public void addAttribute2(String name, float value, int count1) throws Exception{
+		 // Remove the awkard .0 at the end of each number
 		String a = Double.toString(value);
 		count1++;
-
-
 		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
 		current.setAttribute(name, str);
 	}
 
-	public PrefixLengthFilter(Term prefix, int minLength, int maxLength) {
+	public PrefixLengthFilter(Term prefix, int minLength, int maxLength) throws Exception{
 		super(new MultiTermQueryTermEnumLengthFilter(new PrefixQuery(prefix), minLength, maxLength));
 		this.minLength = minLength;
 		this.maxLength = maxLength;

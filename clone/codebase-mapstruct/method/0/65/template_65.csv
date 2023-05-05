@@ -1,0 +1,26 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","conditionalMethodInMapperWithTargetPropertyName","void conditionalMethodInMapperWithTargetPropertyName(){
+        ConditionalMethodInMapperWithTargetPropertyName mapper
+            = ConditionalMethodInMapperWithTargetPropertyName.INSTANCE;
+
+        EmployeeDto employeeDto = new EmployeeDto();
+        employeeDto.setFirstName( ""  "" );
+        employeeDto.setLastName( ""Testirovich"" );
+        employeeDto.setCountry( ""US"" );
+        employeeDto.setAddresses(
+            Collections.singletonList( new AddressDto( ""Testing St. 6"" ) )
+        );
+
+        Employee employee = mapper.map( employeeDto );
+        assertThat( employee.getLastName() ).isNull();
+        assertThat( employee.getFirstName() ).isNull();
+        assertThat( employee.getCountry() ).isEqualTo( ""US"" );
+        assertThat( employee.getAddresses() )[*1*] 
+            .extracting( Address::getStreet )[*2*] 
+            .containsExactly( ""Testing St. 6"" );[*3*] 
+    }
+","[*1*]:
+1, 0.3333333333333333,         assertThat( employee.getAddresses() ).isNull();
+[*2*]:
+[*3*]:
+"

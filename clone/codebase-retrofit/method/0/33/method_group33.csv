@@ -1,0 +1,43 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"283","33","113","112","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableTest.java","62","68","-2147445967","-2147445916","0","0","void bodySuccess200()","void bodySuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertValue(""Hi"").assertComplete();
+  }"
+"346","33","113","112","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableTest.java","61","67","-2147438637","-2147438586","0","0","void bodySuccess200()","void bodySuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    service.body().subscribe(subscriber);
+    subscriber.assertValue(""Hi"").assertComplete();
+  }"
+"410","33","113","112","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableTest.java","62","68","-2147432994","-2147432943","0","0","void bodySuccess200()","void bodySuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertValue(""Hi"").assertComplete();
+  }"
+"473","33","113","112","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableTest.java","61","67","-2147425644","-2147425593","0","0","void bodySuccess200()","void bodySuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    service.body().subscribe(subscriber);
+    subscriber.assertValue(""Hi"").assertComplete();
+  }"
+"549","33","113","128","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableTest.java","63","69","-2147418875","-2147418824","0","0","void bodySuccess200()","void bodySuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    service.body().unsafeSubscribe(subscriber);
+    subscriber.assertValue(""Hi"").assertCompleted();
+  }"
+"596","33","113","128","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleTest.java","63","69","-2147414230","-2147414179","0","0","void bodySuccess200()","void bodySuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    service.body().unsafeSubscribe(subscriber);
+    subscriber.assertValue(""Hi"").assertCompleted();
+  }"

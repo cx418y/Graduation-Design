@@ -1,0 +1,29 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","conditionalMethodWithSourceParameter","void conditionalMethodWithSourceParameter(){
+        ConditionalMethodWithSourceParameterMapper mapper = ConditionalMethodWithSourceParameterMapper.INSTANCE;
+
+        EmployeeDto dto = new EmployeeDto();
+        dto.setName( ""Tester"" );
+        dto.setUniqueIdNumber( ""SSID-001"" );
+        dto.setCountry( null );
+
+        Employee employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isNull();
+
+        dto.setCountry( ""UK"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isEqualTo( ""SSID-001"" );
+        assertThat( employee.getSsid() ).isNull();
+
+        dto.setCountry( ""US"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isEqualTo( ""SSID-001"" );
+
+        dto.setCountry( ""CH"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isNull();
+    }
+",""

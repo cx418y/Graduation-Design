@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"593","107","366","365","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1148/Issue1148Mapper.java","21","30","-2147421054","-2147420965","0","0","= Mappers.getMapper( Issue1148Mapper.class );
+
+    @Mappings(","= Mappers.getMapper( Issue1148Mapper.class );
+
+    @Mappings({
+        @Mapping(target = ""sender.nestedClient.id"", source = ""senderId""),
+        @Mapping(target = ""recipient.nestedClient.id"", source = ""recipientId""),
+        @Mapping(target = ""client.nestedClient.id"", source = ""sameLevel.client.id""),
+        @Mapping(target = ""client2.nestedClient.id"", source = ""sameLevel2.client.id""),
+        @Mapping(target = ""nested.id"", source = ""level.client.id""),
+        @Mapping(target = ""nested2.id"", source = ""level2.client.id""),
+        @Mapping(target = ""id"", source = ""nestedDto.id""),
+        @Mapping(target = ""id2"", source = ""nestedDto2.id"")
+    }"
+"594","107","366","365","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1148/Issue1148Mapper.java","33","42","-2147420965","-2147420876","0","0","Entity toEntity(Entity.Dto dto);
+
+    @Mappings(","Entity toEntity(Entity.Dto dto);
+
+    @Mappings({
+        @Mapping(target = ""sender.nestedClient.id"", source = ""dto2.senderId""),
+        @Mapping(target = ""recipient.nestedClient.id"", source = ""dto1.recipientId""),
+        @Mapping(target = ""client.nestedClient.id"", source = ""dto1.sameLevel.client.id""),
+        @Mapping(target = ""client2.nestedClient.id"", source = ""dto2.sameLevel2.client.id""),
+        @Mapping(target = ""nested.id"", source = ""dto1.level.client.id""),
+        @Mapping(target = ""nested2.id"", source = ""dto2.level2.client.id""),
+        @Mapping(target = ""id"", source = ""dto1.nestedDto.id""),
+        @Mapping(target = ""id2"", source = ""dto2.nestedDto2.id"")
+    }"

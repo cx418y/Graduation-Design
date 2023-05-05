@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"535","100","344","343","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/value/nametransformation/EnumNameTransformationStrategyTest.java","64","71","-2147427582","-2147427505","0","0","void shouldApplySuffixAndStripSuffixOnEnumToStringMapping()","void shouldApplySuffixAndStripSuffixOnEnumToStringMapping(){
+        CheeseEnumToStringSuffixMapper mapper = CheeseEnumToStringSuffixMapper.INSTANCE;
+
+        assertThat( mapper.map( CheeseType.BRIE ) ).isEqualTo( ""BRIE_CHEESE_TYPE"" );
+        assertThat( mapper.map( ""BRIE_CHEESE_TYPE"" ) ).isEqualTo( CheeseType.BRIE );
+        assertThat( mapper.mapStripSuffix( ""BRIE"" ) ).isEqualTo( CheeseTypeSuffixed.BRIE_CHEESE_TYPE );
+        assertThat( mapper.mapStripSuffix( ""DEFAULT"" ) ).isEqualTo( CheeseTypeSuffixed.DEFAULT );
+    }"
+"536","100","344","346","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/value/nametransformation/EnumNameTransformationStrategyTest.java","77","84","-2147427505","-2147427428","0","0","void shouldApplyPrefixAndStripPrefixOnEnumToStringMapping()","void shouldApplyPrefixAndStripPrefixOnEnumToStringMapping(){
+        CheeseEnumToStringPrefixMapper mapper = CheeseEnumToStringPrefixMapper.INSTANCE;
+
+        assertThat( mapper.map( CheeseType.BRIE ) ).isEqualTo( ""SWISS_BRIE"" );
+        assertThat( mapper.map( ""FRENCH_BRIE"" ) ).isEqualTo( CheeseType.BRIE );
+        assertThat( mapper.mapStripPrefix( ""BRIE"" ) ).isEqualTo( CheeseTypePrefixed.SWISS_BRIE );
+        assertThat( mapper.mapStripPrefix( ""DEFAULT"" ) ).isEqualTo( CheeseTypePrefixed.DEFAULT );
+    }"

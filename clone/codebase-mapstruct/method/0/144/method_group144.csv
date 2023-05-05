@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"857","144","478","477","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryErroneous.java","23","30","-2147394522","-2147394455","0","0","= Mappers.getMapper( ArtistToChartEntryErroneous.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryErroneous.class );
+
+    @Mappings({
+        @Mapping(target = ""chartName"", ignore = true),
+        @Mapping(target = ""songTitle"", ignore = true),
+        @Mapping(target = ""artistName"", ignore = true),
+        @Mapping(target = ""recordedAt"", ignore = true),
+        @Mapping(target = ""city"", ignore = true),
+        @Mapping(target = ""position"", source = ""position"")
+    }"
+"879","144","478","481","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntry.java","44","51","-2147391203","-2147391136","0","0","ChartEntry map(Song song);
+
+    @Mappings(","ChartEntry map(Song song);
+
+    @Mappings({
+        @Mapping(target = ""chartName"", source = ""name""),
+        @Mapping(target = ""songTitle"", ignore = true),
+        @Mapping(target = ""artistName"", ignore = true),
+        @Mapping(target = ""recordedAt"", ignore = true),
+        @Mapping(target = ""city"", ignore = true),
+        @Mapping(target = ""position"", ignore = true)
+    }"
+"1286","144","478","481","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntry.java","44","51","-2147341311","-2147341244","0","0","ChartEntry map(Song song);
+
+    @Mappings(","ChartEntry map(Song song);
+
+    @Mappings({
+        @Mapping(target = ""chartName"", source = ""name""),
+        @Mapping(target = ""songTitle"", ignore = true),
+        @Mapping(target = ""artistName"", ignore = true),
+        @Mapping(target = ""recordedAt"", ignore = true),
+        @Mapping(target = ""city"", ignore = true),
+        @Mapping(target = ""position"", ignore = true)
+    }"

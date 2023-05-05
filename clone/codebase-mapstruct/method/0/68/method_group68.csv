@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"339","68","219","218","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/decorator/jsr330/Jsr330DecoratorTest.java","73","84","-2147445196","-2147445085","0","0","void shouldInvokeDecoratorMethods()","void shouldInvokeDecoratorMethods(){
+        Calendar birthday = Calendar.getInstance();
+        birthday.set( 1928, Calendar.MAY, 23 );
+        Person person = new Person( ""Gary"", ""Crant"", birthday.getTime(), new Address( ""42 Ocean View Drive"" ) );
+
+        PersonDto personDto = personMapper.personToPersonDto( person );
+
+        assertThat( personDto ).isNotNull();
+        assertThat( personDto.getName() ).isEqualTo( ""Gary Crant"" );
+        assertThat( personDto.getAddress() ).isNotNull();
+        assertThat( personDto.getAddress().getAddressLine() ).isEqualTo( ""42 Ocean View Drive"" );
+    }"
+"342","68","219","218","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/decorator/spring/field/SpringDecoratorTest.java","65","79","-2147444950","-2147444839","0","0","void shouldInvokeDecoratorMethods()","void shouldInvokeDecoratorMethods(){
+        Calendar birthday = Calendar.getInstance();
+        birthday.set( 1928, Calendar.MAY, 23 );
+        Person person = new Person( ""Gary"", ""Crant"", birthday.getTime(), new Address( ""42 Ocean View Drive"" ) );
+
+        PersonDto personDto = personMapper.personToPersonDto( person );
+
+        assertThat( personDto ).isNotNull();
+        assertThat( personDto.getName() ).isEqualTo( ""Gary Crant"" );
+        assertThat( personDto.getAddress() ).isNotNull();
+        assertThat( personDto.getAddress().getAddressLine() ).isEqualTo( ""42 Ocean View Drive"" );
+    }"
+"343","68","219","218","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/decorator/spring/constructor/SpringDecoratorTest.java","65","79","-2147444839","-2147444728","0","0","void shouldInvokeDecoratorMethods()","void shouldInvokeDecoratorMethods(){
+        Calendar birthday = Calendar.getInstance();
+        birthday.set( 1928, Calendar.MAY, 23 );
+        Person person = new Person( ""Gary"", ""Crant"", birthday.getTime(), new Address( ""42 Ocean View Drive"" ) );
+
+        PersonDto personDto = personMapper.personToPersonDto( person );
+
+        assertThat( personDto ).isNotNull();
+        assertThat( personDto.getName() ).isEqualTo( ""Gary Crant"" );
+        assertThat( personDto.getAddress() ).isNotNull();
+        assertThat( personDto.getAddress().getAddressLine() ).isEqualTo( ""42 Ocean View Drive"" );
+    }"

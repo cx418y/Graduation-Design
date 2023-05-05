@@ -1,0 +1,45 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"963","165","548","547","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/jodatime/JodaConversionTest.java","77","100","-2147382781","-2147382546","0","0","void testSourceToTargetMappingForStrings()","void testSourceToTargetMappingForStrings(){
+        Source src = new Source();
+        src.setLocalTime( new LocalTime( 0, 0 ) );
+        src.setLocalDate( new LocalDate( 2014, 1, 1 ) );
+        src.setLocalDateTime( new LocalDateTime( 2014, 1, 1, 0, 0 ) );
+        src.setDateTime( new DateTime( 2014, 1, 1, 0, 0, 0, DateTimeZone.UTC ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( src );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getDateTime() ).isEqualTo( ""01.01.2014 00:00 UTC"" );
+        assertThat( target.getLocalDateTime() ).isEqualTo( ""01.01.2014 00:00"" );
+        assertThat( target.getLocalDate() ).isEqualTo( ""01.01.2014"" );
+        assertThat( target.getLocalTime() ).isEqualTo( ""00:00"" );
+
+        target = SourceTargetMapper.INSTANCE.sourceToTargetDefaultMapping( src );
+        assertThat( target ).isNotNull();
+        assertThat( target.getDateTime() ).isEqualTo( ""1. Januar 2014 00:00:00 UTC"" );
+        assertThat( target.getLocalDateTime() ).isEqualTo( ""1. Januar 2014 00:00:00"" );
+        assertThat( target.getLocalDate() ).isEqualTo( ""1. Januar 2014"" );
+        assertThat( target.getLocalTime() ).isEqualTo( ""00:00:00"" );
+    }"
+"964","165","548","547","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/jodatime/JodaConversionTest.java","105","128","-2147382546","-2147382311","0","0","void testSourceToTargetMappingForStringsJdk11()","void testSourceToTargetMappingForStringsJdk11(){
+        Source src = new Source();
+        src.setLocalTime( new LocalTime( 0, 0 ) );
+        src.setLocalDate( new LocalDate( 2014, 1, 1 ) );
+        src.setLocalDateTime( new LocalDateTime( 2014, 1, 1, 0, 0 ) );
+        src.setDateTime( new DateTime( 2014, 1, 1, 0, 0, 0, DateTimeZone.UTC ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( src );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getDateTime() ).isEqualTo( ""01.01.2014 00:00 UTC"" );
+        assertThat( target.getLocalDateTime() ).isEqualTo( ""01.01.2014 00:00"" );
+        assertThat( target.getLocalDate() ).isEqualTo( ""01.01.2014"" );
+        assertThat( target.getLocalTime() ).isEqualTo( ""00:00"" );
+
+        target = SourceTargetMapper.INSTANCE.sourceToTargetDefaultMapping( src );
+        assertThat( target ).isNotNull();
+        assertThat( target.getDateTime() ).isEqualTo( ""1. Januar 2014 um 00:00:00 UTC"" );
+        assertThat( target.getLocalDateTime() ).isEqualTo( ""1. Januar 2014 um 00:00:00"" );
+        assertThat( target.getLocalDate() ).isEqualTo( ""1. Januar 2014"" );
+        assertThat( target.getLocalTime() ).isEqualTo( ""00:00:00"" );
+    }"

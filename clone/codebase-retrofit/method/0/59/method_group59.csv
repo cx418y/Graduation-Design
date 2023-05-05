@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"354","59","206","205","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableTest.java","154","167","-2147438092","-2147437988","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Flowable<String> observable = service.body();
+
+    RecordingSubscriber<Object> subscriber1 = subscriberRule.create();
+    observable.subscribe(subscriber1);
+    subscriber1.assertValue(""Hi"").assertComplete();
+
+    RecordingSubscriber<Object> subscriber2 = subscriberRule.create();
+    observable.subscribe(subscriber2);
+    subscriber2.assertValue(""Hey"").assertComplete();
+  }"
+"481","59","206","205","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableTest.java","154","167","-2147425099","-2147424995","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Flowable<String> observable = service.body();
+
+    RecordingSubscriber<Object> subscriber1 = subscriberRule.create();
+    observable.subscribe(subscriber1);
+    subscriber1.assertValue(""Hi"").assertComplete();
+
+    RecordingSubscriber<Object> subscriber2 = subscriberRule.create();
+    observable.subscribe(subscriber2);
+    subscriber2.assertValue(""Hey"").assertComplete();
+  }"

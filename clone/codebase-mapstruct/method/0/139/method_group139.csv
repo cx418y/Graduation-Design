@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"823","139","467","466","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/other/WheelDto.java","37","53","-2147397492","-2147397435","0","0","boolean equals(Object o)","boolean equals(Object o){
+
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        WheelDto wheel = (WheelDto) o;
+
+        if ( front != wheel.front ) {
+            return false;
+        }
+        return right == wheel.right;
+
+    }"
+"845","139","467","466","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/WheelDto.java","37","53","-2147395684","-2147395627","0","0","boolean equals(Object o)","boolean equals(Object o){
+
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        WheelDto wheel = (WheelDto) o;
+
+        if ( front != wheel.front ) {
+            return false;
+        }
+        return right == wheel.right;
+
+    }"

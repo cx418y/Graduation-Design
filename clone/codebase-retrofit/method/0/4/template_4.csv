@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseTypeCannotBeRetrofitResponse","void responseTypeCannotBeRetrofitResponse(){
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(server.url(""/"")).build();
+    CallMethod service = retrofit.create(CallMethod.class);
+    try {
+      service.badType1();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Response must include generic type (e.g., Response<String>)\n""
+                  + ""    for method CallMethod.badType1"");
+    }
+  }
+",""

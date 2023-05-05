@@ -1,0 +1,71 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"284","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableTest.java","71","78","-2147445916","-2147445866","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"
+"347","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableTest.java","70","77","-2147438586","-2147438536","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    service.body().subscribe(subscriber);
+    subscriber.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"
+"356","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeTest.java","70","77","-2147437934","-2147437884","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingMaybeObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"
+"365","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleTest.java","70","77","-2147437302","-2147437252","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSingleObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"
+"411","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableTest.java","71","78","-2147432943","-2147432893","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"
+"474","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableTest.java","70","77","-2147425593","-2147425543","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    service.body().subscribe(subscriber);
+    subscriber.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"
+"483","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeTest.java","70","77","-2147424941","-2147424891","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingMaybeObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"
+"492","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleTest.java","70","77","-2147424309","-2147424259","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSingleObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"
+"550","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableTest.java","72","79","-2147418824","-2147418774","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    service.body().unsafeSubscribe(subscriber);
+    subscriber.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"
+"597","64","235","234","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleTest.java","72","79","-2147414179","-2147414129","0","0","void bodySuccess404()","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    service.body().unsafeSubscribe(subscriber);
+    subscriber.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }"

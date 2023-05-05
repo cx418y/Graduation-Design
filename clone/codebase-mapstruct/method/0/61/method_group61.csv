@@ -1,0 +1,61 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"299","61","199","198","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluemapping/NullValueMappingTest.java","150","161","-2147450209","-2147450132","0","0","void shouldMapExpressionAndConstantRegardlessNullArgOnMapper()","void shouldMapExpressionAndConstantRegardlessNullArgOnMapper(){
+
+        CarDto carDto = CarMapperSettingOnMapper.INSTANCE.carToCarDto( null );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getMake() ).isNull();
+        assertThat( carDto.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto.getCatalogId() ).isNotEmpty();
+    }"
+"300","61","199","198","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluemapping/NullValueMappingTest.java","184","195","-2147450132","-2147450055","0","0","void shouldMapExpressionAndConstantRegardlessOfIterableNullArgOnMapper()","void shouldMapExpressionAndConstantRegardlessOfIterableNullArgOnMapper(){
+
+        CarDto carDto = CarMapperIterableSettingOnMapper.INSTANCE.carToCarDto( null );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getMake() ).isNull();
+        assertThat( carDto.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto.getCatalogId() ).isNotEmpty();
+    }"
+"301","61","199","198","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluemapping/NullValueMappingTest.java","218","229","-2147450055","-2147449978","0","0","void shouldMapExpressionAndConstantRegardlessMapNullArgOnMapper()","void shouldMapExpressionAndConstantRegardlessMapNullArgOnMapper(){
+
+        CarDto carDto = CarMapperMapSettingOnMapper.INSTANCE.carToCarDto( null );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getMake() ).isNull();
+        assertThat( carDto.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto.getCatalogId() ).isNotEmpty();
+    }"
+"302","61","199","208","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluemapping/NullValueMappingTest.java","252","263","-2147449978","-2147449901","0","0","void shouldMapExpressionAndConstantRegardlessNullArgOnConfig()","void shouldMapExpressionAndConstantRegardlessNullArgOnConfig(){
+
+        CarDto carDto = CarMapperSettingOnConfig.INSTANCE.carToCarDto( null );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getMake() ).isNull();
+        assertThat( carDto.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto.getCatalogId() ).isNotEmpty();
+    }"
+"303","61","199","208","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluemapping/NullValueMappingTest.java","286","297","-2147449901","-2147449824","0","0","void shouldMapExpressionAndConstantRegardlessOfIterableNullArgOnConfig()","void shouldMapExpressionAndConstantRegardlessOfIterableNullArgOnConfig(){
+
+        CarDto carDto = CarMapperIterableSettingOnConfig.INSTANCE.carToCarDto( null );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getMake() ).isNull();
+        assertThat( carDto.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto.getCatalogId() ).isNotEmpty();
+    }"
+"304","61","199","208","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluemapping/NullValueMappingTest.java","320","331","-2147449824","-2147449747","0","0","void shouldMapExpressionAndConstantRegardlessOfMapNullArgOnConfig()","void shouldMapExpressionAndConstantRegardlessOfMapNullArgOnConfig(){
+
+        CarDto carDto = CarMapperMapSettingOnConfig.INSTANCE.carToCarDto( null );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getMake() ).isNull();
+        assertThat( carDto.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto.getCatalogId() ).isNotEmpty();
+    }"

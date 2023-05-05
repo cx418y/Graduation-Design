@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"687","119","408","407","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913SetterMapperForCollectionsTest.java","253","270","-2147411097","-2147410925","0","0","void shouldReturnNullForUpdateWithReturnWithPresenceChecker()","void shouldReturnNullForUpdateWithReturnWithPresenceChecker(){
+
+        DtoWithPresenceCheck dto = new DtoWithPresenceCheck();
+        Domain domain1 = new Domain();
+        domain1.setLongs( new HashSet<>() );
+        domain1.getLongs().add( 10L );
+        domain1.setStrings( new HashSet<>() );
+        domain1.getStrings().add( ""30"" );
+        Domain domain2 = DomainDtoWithPresenceCheckMapper.INSTANCE.updateWithReturn( dto, domain1 );
+
+        assertThat( domain2 ).isSameAs( domain1 );
+        doControlAsserts( domain1, domain2 );
+        assertThat( domain1.getLongs() ).isEqualTo( domain2.getLongs() );
+        assertThat( domain1.getStrings() ).containsExactly( ""30"" );
+        assertThat( domain1.getLongs() ).containsExactly( 10L );
+        assertThat( domain2.getStrings() ).containsExactly( ""30"" );
+        assertThat( domain2.getLongs() ).containsExactly( 10L );
+    }"
+"690","119","408","407","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913SetterMapperForCollectionsTest.java","319","336","-2147410762","-2147410590","0","0","void shouldReturnNullForUpdateWithReturnWithNcvsAlways()","void shouldReturnNullForUpdateWithReturnWithNcvsAlways(){
+
+        DtoWithPresenceCheck dto = new DtoWithPresenceCheck();
+        Domain domain1 = new Domain();
+        domain1.setLongs( new HashSet<>() );
+        domain1.getLongs().add( 10L );
+        domain1.setStrings( new HashSet<>() );
+        domain1.getStrings().add( ""30"" );
+        Domain domain2 = DomainDtoWithNcvsAlwaysMapper.INSTANCE.updateWithReturn( dto, domain1 );
+
+        assertThat( domain2 ).isSameAs( domain1 );
+        doControlAsserts( domain1, domain2 );
+        assertThat( domain1.getLongs() ).isEqualTo( domain2.getLongs() );
+        assertThat( domain1.getStrings() ).containsExactly( ""30"" );
+        assertThat( domain1.getLongs() ).containsExactly( 10L );
+        assertThat( domain2.getStrings() ).containsExactly( ""30"" );
+        assertThat( domain2.getLongs() ).containsExactly( 10L );
+    }"

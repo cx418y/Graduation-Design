@@ -1,0 +1,19 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","withAnyRemaining","ExternalOrderType withAnyRemaining(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: externalOrderType = ExternalOrderType.DEFAULT;
+        }
+
+        return externalOrderType;
+    }
+",""

@@ -1,0 +1,45 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"686","121","379","378","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/main/java/retrofit2/converter/jaxb/JaxbConverterFactory.java","61","66","-2147403301","-2147403249","0","0","Converter<?, RequestBody> requestBodyConverter(
+      Type type,
+      Annotation[] parameterAnnotations,
+      Annotation[] methodAnnotations,
+      Retrofit retrofit)","Converter<?, RequestBody> requestBodyConverter(
+      Type type,
+      Annotation[] parameterAnnotations,
+      Annotation[] methodAnnotations,
+      Retrofit retrofit){
+    if (type instanceof Class && ((Class<?>) type).isAnnotationPresent(XmlRootElement.class)) {
+      return new JaxbRequestConverter<>(contextForType((Class<?>) type), (Class<?>) type);
+    }
+    return null;
+  }"
+"687","121","379","378","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/main/java/retrofit2/converter/jaxb/JaxbConverterFactory.java","70","75","-2147403249","-2147403197","0","0","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit)","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit){
+    if (type instanceof Class && ((Class<?>) type).isAnnotationPresent(XmlRootElement.class)) {
+      return new JaxbResponseConverter<>(contextForType((Class<?>) type), (Class<?>) type);
+    }
+    return null;
+  }"
+"699","121","379","378","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/main/java/retrofit2/converter/jaxb/JaxbConverterFactory.java","61","66","-2147402313","-2147402261","0","0","Converter<?, RequestBody> requestBodyConverter(
+      Type type,
+      Annotation[] parameterAnnotations,
+      Annotation[] methodAnnotations,
+      Retrofit retrofit)","Converter<?, RequestBody> requestBodyConverter(
+      Type type,
+      Annotation[] parameterAnnotations,
+      Annotation[] methodAnnotations,
+      Retrofit retrofit){
+    if (type instanceof Class && ((Class<?>) type).isAnnotationPresent(XmlRootElement.class)) {
+      return new JaxbRequestConverter<>(contextForType((Class<?>) type), (Class<?>) type);
+    }
+    return null;
+  }"
+"700","121","379","378","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/main/java/retrofit2/converter/jaxb/JaxbConverterFactory.java","70","75","-2147402261","-2147402209","0","0","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit)","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit){
+    if (type instanceof Class && ((Class<?>) type).isAnnotationPresent(XmlRootElement.class)) {
+      return new JaxbResponseConverter<>(contextForType((Class<?>) type), (Class<?>) type);
+    }
+    return null;
+  }"

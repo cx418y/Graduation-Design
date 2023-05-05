@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testLombokToImmutable","void testLombokToImmutable(){
+        Person person = PersonMapper.INSTANCE.fromDto( new PersonDto( ""Bob"", 33, new AddressDto( ""Wild Drive"" ) ) );[*1*] 
+[*2*] 
+        assertThat( person.getAge() ).isEqualTo( 33 );
+        assertThat( person.getName() ).isEqualTo( ""Bob"" );
+        assertThat( person.getAddress() ).isNotNull();
+        assertThat( person.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }
+","[*1*]:
+1, 0.16666666666666666,         PersonProtos.Person person = PersonMapper.INSTANCE.fromDto( new PersonDto( ""Bob"", 33, new AddressDto( ""Wild Drive"" ) ) );
+[*2*]:
+1, 0.16666666666666666, 
+"

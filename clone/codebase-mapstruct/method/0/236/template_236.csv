@@ -1,0 +1,22 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getExpression","String getExpression(MappingGem mapping, ExecutableElement element,
+                                        FormattingMessager messager){
+        if ( !mapping.expression().hasValue() ) {
+            return null;
+        }
+
+        Matcher javaExpressionMatcher = JAVA_EXPRESSION.matcher( mapping.expression().get() );
+
+        if ( !javaExpressionMatcher.matches() ) {
+            messager.printMessage(
+                element,
+                mapping.mirror(),
+                mapping.expression().getAnnotationValue(),
+                Message.PROPERTYMAPPING_INVALID_EXPRESSION
+            );
+            return null;
+        }
+
+        return javaExpressionMatcher.group( 1 ).trim();
+    }
+",""

@@ -1,0 +1,120 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","update","void update(Dto source, Domain target){[*1*] 
+        if ( source == null ) {[*2*] 
+[*3*] 
+[*4*] 
+        }[*5*] 
+
+        if ( source != null ) {[*6*] 
+            if ( target.getStrings() != null ) {
+                List<String> list = source.getStrings();
+                if ( list != null ) {
+                    target.getStrings().clear();
+                    target.getStrings().addAll( list );
+                }
+                else {
+                    target.setStrings( new LinkedHashSet<String>() );[*7*] 
+                target.setStrings( null );[*8*] 
+                }
+            }
+            else {
+                List<String> list = source.getStrings();
+                if ( list != null ) {
+                    target.setStrings( new LinkedHashSet<String>( list ) );
+                }
+            }
+            if ( target.getLongs() != null ) {
+                Set<Long> set = stringListToLongSet( source.getStrings() );
+                if ( set != null ) {
+                    target.getLongs().clear();
+                    target.getLongs().addAll( set );
+                }
+                else {
+                    target.setLongs( new LinkedHashSet<Long>() );[*9*] 
+                target.setLongs( null );[*10*] 
+                }
+            }
+            else {
+                Set<Long> set = stringListToLongSet( source.getStrings() );
+                if ( set != null ) {
+                    target.setLongs( set );
+                }
+            }
+            if ( target.getStringsInitialized() != null ) {
+                List<String> list1 = source.getStringsInitialized();
+                if ( list1 != null ) {
+                    target.getStringsInitialized().clear();
+                    target.getStringsInitialized().addAll( list1 );
+                }
+                else {
+                    target.setStringsInitialized( new LinkedHashSet<String>() );[*11*] 
+                target.setStringsInitialized( null );[*12*] 
+                }
+            }
+            else {
+                List<String> list1 = source.getStringsInitialized();
+                if ( list1 != null ) {
+                    target.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+                }
+            }
+            if ( target.getLongsInitialized() != null ) {
+                Set<Long> set1 = stringListToLongSet( source.getStringsInitialized() );
+                if ( set1 != null ) {
+                    target.getLongsInitialized().clear();
+                    target.getLongsInitialized().addAll( set1 );
+                }
+                else {
+                    target.setLongsInitialized( new LinkedHashSet<Long>() );[*13*] 
+                target.setLongsInitialized( null );[*14*] 
+                }
+            }
+            else {
+                Set<Long> set1 = stringListToLongSet( source.getStringsInitialized() );
+                if ( set1 != null ) {
+                    target.setLongsInitialized( set1 );
+                }
+            }
+            if ( target.getStringsWithDefault() != null ) {
+                List<String> list2 = source.getStringsWithDefault();
+                if ( list2 != null ) {
+                    target.getStringsWithDefault().clear();
+                    target.getStringsWithDefault().addAll( list2 );
+                }
+                else {
+                    target.setStringsWithDefault( helper.toList( ""3"" ) );
+                }
+            }
+            else {
+                List<String> list2 = source.getStringsWithDefault();
+                if ( list2 != null ) {
+                    target.setStringsWithDefault( new ArrayList<String>( list2 ) );
+                }
+                else {
+                    target.setStringsWithDefault( helper.toList( ""3"" ) );
+                }[*15*] 
+            }
+        }
+[*16*] 
+        return target;[*17*] 
+    }
+","[*1*]:
+2, 0.5, Domain updateWithReturn(Dto source, Domain target){
+[*2*]:
+[*3*]:
+1, 0.25,             return;
+[*4*]:
+1, 0.25,             return target;
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+[*11*]:
+[*12*]:
+[*13*]:
+[*14*]:
+[*15*]:
+[*16*]:
+[*17*]:
+"

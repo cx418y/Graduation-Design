@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"103","14","38","37","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_1453/Issue1453MapperImpl.java","66","80","-2147475540","-2147475429","0","0","Map<AuctionDto, AuctionDto> mapExtend(Map<? extends Auction, ? extends Auction> auctions)","Map<AuctionDto, AuctionDto> mapExtend(Map<? extends Auction, ? extends Auction> auctions){
+        if ( auctions == null ) {
+            return null;
+        }
+
+        Map<AuctionDto, AuctionDto> map = new LinkedHashMap<AuctionDto, AuctionDto>( Math.max( (int) ( auctions.size() / .75f ) + 1, 16 ) );
+
+        for ( java.util.Map.Entry<? extends Auction, ? extends Auction> entry : auctions.entrySet() ) {
+            AuctionDto key = map( entry.getKey() );
+            AuctionDto value = map( entry.getValue() );
+            map.put( key, value );
+        }
+
+        return map;
+    }"
+"104","14","44","43","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_1453/Issue1453MapperImpl.java","83","97","-2147475429","-2147475318","0","0","AuctionDto> mapSuper(Map<Auction, Auction> auctions)","AuctionDto> mapSuper(Map<Auction, Auction> auctions){
+        if ( auctions == null ) {
+            return null;
+        }
+
+        Map<? super AuctionDto, ? super AuctionDto> map = new LinkedHashMap<AuctionDto, AuctionDto>( Math.max( (int) ( auctions.size() / .75f ) + 1, 16 ) );
+
+        for ( java.util.Map.Entry<Auction, Auction> entry : auctions.entrySet() ) {
+            AuctionDto key = map( entry.getKey() );
+            AuctionDto value = map( entry.getValue() );
+            map.put( key, value );
+        }
+
+        return map;
+    }"

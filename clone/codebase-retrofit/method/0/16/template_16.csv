@@ -1,0 +1,71 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","requestAfterExecuteThrowingAlsoThrowsForNonFatalErrors","void requestAfterExecuteThrowingAlsoThrowsForNonFatalErrors()throws IOException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service service = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse());
+
+    final AtomicInteger writeCount = new AtomicInteger();
+    Object a =
+        new Object() {
+          @Override
+          public String toString() {
+            writeCount.incrementAndGet();
+            throw new NonFatalError(""Broken!"");
+          }
+        };
+    Call<String> call = service.postRequestBody(a);
+
+    try {
+      call.execute();[*1*] 
+[*2*] 
+[*3*] 
+[*4*] 
+[*5*] 
+[*6*] 
+[*7*] 
+[*8*] 
+[*9*] 
+[*10*] 
+[*11*] 
+      fail();
+    } catch (NonFatalError e) {
+      assertThat(e).hasMessage(""Broken!"");
+    }
+    assertThat(writeCount.get()).isEqualTo(1);
+
+    try {
+      call.request();
+      fail();
+    } catch (NonFatalError e) {
+      assertThat(e).hasMessage(""Broken!"");
+    }
+    assertThat(writeCount.get()).isEqualTo(1);
+  }
+","[*1*]:
+1, 0.3333333333333333,       call.enqueue(
+[*2*]:
+1, 0.3333333333333333,       final AtomicBoolean callsFailureSynchronously = new AtomicBoolean();
+[*3*]:
+1, 0.3333333333333333,           new Callback<String>() {
+[*4*]:
+1, 0.3333333333333333,             @Override
+[*5*]:
+1, 0.3333333333333333,             public void onResponse(Call<String> call, Response<String> response) {}
+[*6*]:
+1, 0.3333333333333333, 
+[*7*]:
+1, 0.3333333333333333,             @Override
+[*8*]:
+1, 0.3333333333333333,             public void onFailure(Call<String> call, Throwable t) {
+[*9*]:
+1, 0.3333333333333333,               callsFailureSynchronously.set(true);            }
+[*10*]:
+1, 0.3333333333333333,           });
+[*11*]:
+1, 0.3333333333333333,       assertThat(callsFailureSynchronously.get()).isFalse();
+"

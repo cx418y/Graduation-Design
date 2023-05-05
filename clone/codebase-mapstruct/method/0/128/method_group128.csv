@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"774","128","440","439","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/qualifier/SubclassQualifierMapperTest.java","68","82","-2147402979","-2147402874","0","0","void subclassQualifiedByOnlyOne()","void subclassQualifiedByOnlyOne(){
+        Rossini rossini = buildRossini();
+
+        Vivaldi vivaldi = buildVivaldi();
+
+        RossiniDto rossiniDto = (RossiniDto) SubclassQualifiedByMapper.INSTANCE.toDtoLightJustVivaldi( rossini );
+
+        VivaldiDto vivaldiDto = (VivaldiDto) SubclassQualifiedByMapper.INSTANCE.toDtoLightJustVivaldi( vivaldi );
+
+        assertThat( rossiniDto.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossiniDto.getCrescendo() ).containsExactly( ""andante"", ""allegro"", ""vivace"" );
+
+        assertThat( vivaldiDto.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldiDto.getSeasons() ).isNull();
+    }"
+"776","128","440","439","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/qualifier/SubclassQualifierMapperTest.java","110","124","-2147402682","-2147402577","0","0","void subclassQualifiedByNameOnlyOne()","void subclassQualifiedByNameOnlyOne(){
+        Rossini rossini = buildRossini();
+
+        Vivaldi vivaldi = buildVivaldi();
+
+        RossiniDto rossiniDto = (RossiniDto) SubclassQualifiedByNameMapper.INSTANCE.toDtoLightJustVivaldi( rossini );
+
+        VivaldiDto vivaldiDto = (VivaldiDto) SubclassQualifiedByNameMapper.INSTANCE.toDtoLightJustVivaldi( vivaldi );
+
+        assertThat( rossiniDto.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossiniDto.getCrescendo() ).containsExactly( ""andante"", ""allegro"", ""vivace"" );
+
+        assertThat( vivaldiDto.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldiDto.getSeasons() ).isNull();
+    }"

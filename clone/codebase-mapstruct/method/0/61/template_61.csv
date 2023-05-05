@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapExpressionAndConstantRegardlessNullArgOnMapper","void shouldMapExpressionAndConstantRegardlessNullArgOnMapper(){
+
+        CarDto carDto = CarMapperSettingOnMapper.INSTANCE.carToCarDto( null );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getMake() ).isNull();
+        assertThat( carDto.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto.getCatalogId() ).isNotEmpty();
+    }
+",""

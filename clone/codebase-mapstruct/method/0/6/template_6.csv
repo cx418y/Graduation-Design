@@ -1,0 +1,26 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","nvmMapping","short[] nvmMapping(int[] source, short[] target){[*1*] 
+        if ( source == null ) {
+            for (int j = 0; j < target.length; j++ ) {
+                target[j] = 0;
+            }
+            return target;
+        }
+
+        int i = 0;
+        for ( int int1 : source ) {
+            if ( ( i >= target.length ) || ( i >= source.length ) ) {
+                break;
+            }
+            target[i] = (short) int1;[*2*] 
+            target[i] = int1;[*3*] 
+            i++;
+        }
+
+        return target;
+    }
+","[*1*]:
+1, 0.5, int[] nvmMapping(int[] source, int[] target){
+[*2*]:
+[*3*]:
+"

@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldHandleNulls","void shouldHandleNulls(){
+        Source source = new Source();
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 0 ) );
+        assertThat( target.getBar() ).isEqualTo( 0 );
+        assertThat( target.getZip() ).isEqualTo( ""0"" );
+    }
+",""

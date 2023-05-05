@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getNullValueMappingStrategy","NullValueMappingStrategyGem getNullValueMappingStrategy(){
+        return Optional.ofNullable( iterableMapping ).map( IterableMappingGem::nullValueMappingStrategy )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( NullValueMappingStrategyGem::valueOf )
+            .orElse( next().getNullValueIterableMappingStrategy() );
+    }
+",""

@@ -1,0 +1,27 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1027","178","584","583","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/date/DateConversionTest.java","75","87","-2147373920","-2147373815","0","0","void shouldApplyDateFormatForConversionInReverseMapping()","void shouldApplyDateFormatForConversionInReverseMapping(){
+        Target target = new Target();
+        target.setDate( ""06.07.2013"" );
+        target.setAnotherDate( ""14.02.13 8:30"" );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getDate() ).isEqualTo( new GregorianCalendar( 2013, Calendar.JULY, 6 ).getTime() );
+        assertThat( source.getAnotherDate() ).isEqualTo(
+            new GregorianCalendar( 2013, Calendar.FEBRUARY, 14, 8, 30 ).getTime()
+        );
+    }"
+"1028","178","584","583","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/date/DateConversionTest.java","92","104","-2147373815","-2147373710","0","0","void shouldApplyDateFormatForConversionInReverseMappingJdk11()","void shouldApplyDateFormatForConversionInReverseMappingJdk11(){
+        Target target = new Target();
+        target.setDate( ""06.07.2013"" );
+        target.setAnotherDate( ""14.02.13, 8:30"" );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getDate() ).isEqualTo( new GregorianCalendar( 2013, Calendar.JULY, 6 ).getTime() );
+        assertThat( source.getAnotherDate() ).isEqualTo(
+            new GregorianCalendar( 2013, Calendar.FEBRUARY, 14, 8, 30 ).getTime()
+        );
+    }"

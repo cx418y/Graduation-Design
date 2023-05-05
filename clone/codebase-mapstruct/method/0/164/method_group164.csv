@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"962","164","544","543","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/jodatime/JodaConversionTest.java","66","72","-2147382839","-2147382781","0","0","void testLocalTimeToString()","void testLocalTimeToString(){
+        Source src = new Source();
+        src.setLocalTime( new LocalTime( 0, 0 ) );
+        Target target = SourceTargetMapper.INSTANCE.sourceToTargetLocalTimeMapped( src );
+        assertThat( target ).isNotNull();
+        assertThat( target.getLocalTime() ).isEqualTo( ""00:00"" );
+    }"
+"976","164","546","545","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/java8time/Java8TimeConversionTest.java","67","73","-2147381409","-2147381350","0","0","void testLocalTimeToString()","void testLocalTimeToString(){
+        Source src = new Source();
+        src.setLocalTime( LocalTime.of( 0, 0 ) );
+        Target target = SourceTargetMapper.INSTANCE.sourceToTargetLocalTimeMapped( src );
+        assertThat( target ).isNotNull();
+        assertThat( target.getLocalTime() ).isEqualTo( ""00:00"" );
+    }"

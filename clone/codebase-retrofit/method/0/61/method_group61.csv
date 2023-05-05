@@ -1,0 +1,153 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"288","61","221","220","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableTest.java","119","128","-2147445688","-2147445597","0","0","void resultSuccess200()","void resultSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isTrue();
+    observer.assertComplete();
+  }"
+"289","61","221","222","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableTest.java","131","140","-2147445597","-2147445506","0","0","void resultSuccess404()","void resultSuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isFalse();
+    observer.assertComplete();
+  }"
+"351","61","224","223","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableTest.java","118","127","-2147438358","-2147438272","0","0","void resultSuccess200()","void resultSuccess200(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    service.result().subscribe(subscriber);
+    Result<String> result = subscriber.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isTrue();
+    subscriber.assertComplete();
+  }"
+"352","61","221","222","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableTest.java","130","139","-2147438272","-2147438181","0","0","void resultSuccess404()","void resultSuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    service.result().subscribe(subscriber);
+    Result<String> result = subscriber.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isFalse();
+    subscriber.assertComplete();
+  }"
+"360","61","226","225","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeTest.java","117","125","-2147437705","-2147437620","0","0","void resultSuccess200()","void resultSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingMaybeObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isTrue();
+  }"
+"361","61","226","227","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeTest.java","128","136","-2147437620","-2147437535","0","0","void resultSuccess404()","void resultSuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingMaybeObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isFalse();
+  }"
+"369","61","226","225","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleTest.java","117","125","-2147437073","-2147436988","0","0","void resultSuccess200()","void resultSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSingleObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isTrue();
+  }"
+"370","61","226","227","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleTest.java","128","136","-2147436988","-2147436903","0","0","void resultSuccess404()","void resultSuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSingleObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isFalse();
+  }"
+"415","61","221","220","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableTest.java","119","128","-2147432715","-2147432624","0","0","void resultSuccess200()","void resultSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isTrue();
+    observer.assertComplete();
+  }"
+"416","61","221","222","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableTest.java","131","140","-2147432624","-2147432533","0","0","void resultSuccess404()","void resultSuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isFalse();
+    observer.assertComplete();
+  }"
+"478","61","224","223","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableTest.java","118","127","-2147425365","-2147425279","0","0","void resultSuccess200()","void resultSuccess200(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    service.result().subscribe(subscriber);
+    Result<String> result = subscriber.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isTrue();
+    subscriber.assertComplete();
+  }"
+"479","61","221","222","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableTest.java","130","139","-2147425279","-2147425188","0","0","void resultSuccess404()","void resultSuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    service.result().subscribe(subscriber);
+    Result<String> result = subscriber.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isFalse();
+    subscriber.assertComplete();
+  }"
+"487","61","226","225","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeTest.java","117","125","-2147424712","-2147424627","0","0","void resultSuccess200()","void resultSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingMaybeObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isTrue();
+  }"
+"488","61","226","227","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeTest.java","128","136","-2147424627","-2147424542","0","0","void resultSuccess404()","void resultSuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingMaybeObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isFalse();
+  }"
+"496","61","226","225","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleTest.java","117","125","-2147424080","-2147423995","0","0","void resultSuccess200()","void resultSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSingleObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isTrue();
+  }"
+"497","61","226","227","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleTest.java","128","136","-2147423995","-2147423910","0","0","void resultSuccess404()","void resultSuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSingleObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isFalse();
+  }"

@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testDefinedOnMapper","void testDefinedOnMapper(){
+
+        HouseEntity entity = HouseMapper.INSTANCE.mapWithNvcsOnMapper( new HouseDto() );
+
+        assertThat( entity ).isNotNull();
+        assertThat( entity.ownerSet() ).isFalse();
+        assertThat( entity.numberSet() ).isFalse();
+
+    }
+",""

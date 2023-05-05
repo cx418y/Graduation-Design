@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"688","122","381","380","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/main/java/retrofit2/converter/jaxb/JaxbRequestConverter.java","40","53","-2147403197","-2147403115","0","0","RequestBody convert(final T value)throws IOException","RequestBody convert(final T value)throws IOException{
+    Buffer buffer = new Buffer();
+    try {
+      Marshaller marshaller = context.createMarshaller();
+
+      XMLStreamWriter xmlWriter =
+          xmlOutputFactory.createXMLStreamWriter(
+              buffer.outputStream(), JaxbConverterFactory.XML.charset().name());
+      marshaller.marshal(value, xmlWriter);
+    } catch (JAXBException | XMLStreamException e) {
+      throw new RuntimeException(e);
+    }
+    return RequestBody.create(JaxbConverterFactory.XML, buffer.readByteString());
+  }"
+"701","122","381","380","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/main/java/retrofit2/converter/jaxb/JaxbRequestConverter.java","40","53","-2147402209","-2147402127","0","0","RequestBody convert(final T value)throws IOException","RequestBody convert(final T value)throws IOException{
+    Buffer buffer = new Buffer();
+    try {
+      Marshaller marshaller = context.createMarshaller();
+
+      XMLStreamWriter xmlWriter =
+          xmlOutputFactory.createXMLStreamWriter(
+              buffer.outputStream(), JaxbConverterFactory.XML.charset().name());
+      marshaller.marshal(value, xmlWriter);
+    } catch (JAXBException | XMLStreamException e) {
+      throw new RuntimeException(e);
+    }
+    return RequestBody.create(JaxbConverterFactory.XML, buffer.readByteString());
+  }"

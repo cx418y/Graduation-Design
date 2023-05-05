@@ -1,0 +1,47 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"621","111","378","377","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1541/Issue1541Test.java","67","78","-2147418500","-2147418367","0","0","void testMappingWithArrayAndVarArgs()","void testMappingWithArrayAndVarArgs(){
+        Target target = Issue1541Mapper.INSTANCE.mapWithArrayAndVarArgs( ""code"", new String[] { ""1"", ""2"" }, ""3"", ""4"" );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).contains( ""1"", ""2"" );
+        assertThat( target.getParameters2() ).contains( ""3"", ""4"" );
+        assertThat( target.isAfterMappingWithArrayCalled() ).isFalse();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isFalse();
+    }"
+"624","111","378","381","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1541/Issue1541Test.java","109","125","-2147418123","-2147417990","0","0","void testVarArgsInContextWithVarArgsAfterMapping()","void testVarArgsInContextWithVarArgsAfterMapping(){
+        Target target = Issue1541Mapper.INSTANCE.mapContextWithVarArgsInAfterMappingWithVarArgs(
+            ""code"",
+            new String[] { ""1"", ""2"" },
+            ""3"",
+            ""4""
+        );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).contains( ""1"", ""2"" );
+        assertThat( target.getParameters2() ).contains( ""3"", ""4"" );
+        assertThat( target.isAfterMappingWithArrayCalled() ).isFalse();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isTrue();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isFalse();
+    }"
+"625","111","378","383","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1541/Issue1541Test.java","128","144","-2147417990","-2147417857","0","0","void testVarArgsInContextWithArrayAfterMapping()","void testVarArgsInContextWithArrayAfterMapping(){
+        Target target = Issue1541Mapper.INSTANCE.mapContextWithVarArgsInAfterMappingWithArray(
+            ""code"",
+            new String[] { ""1"", ""2"" },
+            ""3"",
+            ""4""
+        );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).contains( ""1"", ""2"" );
+        assertThat( target.getParameters2() ).contains( ""3"", ""4"" );
+        assertThat( target.isAfterMappingWithArrayCalled() ).isFalse();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isTrue();
+    }"

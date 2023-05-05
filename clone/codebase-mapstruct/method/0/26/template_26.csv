@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","houseToHouseDto","HouseDto houseToHouseDto(House house){
+        if ( house == null ) {
+            return null;
+        }
+
+        HouseDto houseDto = new HouseDto();
+
+        houseDto.setName( house.getName() );
+        houseDto.setYear( house.getYear() );
+        houseDto.setRoof( roofToRoofDto( house.getRoof() ) );
+
+        return houseDto;
+    }
+",""

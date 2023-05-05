@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","roofToRoofDto","RoofDto roofToRoofDto(Roof roof){
+        if ( roof == null ) {
+            return null;
+        }
+
+        RoofDto roofDto = new RoofDto();
+
+        roofDto.setColor( String.valueOf( roof.getColor() ) );
+        roofDto.setType( roofTypeToExternalRoofType( roof.getType() ) );
+
+        return roofDto;
+    }
+",""

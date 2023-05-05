@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"769","126","423","422","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/dependency/OrderingTest.java","28","38","-2147403543","-2147403477","0","0","void shouldApplyChainOfDependencies()","void shouldApplyChainOfDependencies(){
+        Address source = new Address();
+        source.setFirstName( ""Bob"" );
+        source.setMiddleName( ""J."" );
+        source.setLastName( ""McRobb"" );
+
+        AddressDto target = AddressMapper.INSTANCE.addressToDto( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFullName() ).isEqualTo( ""Bob J. McRobb"" );
+    }"
+"770","126","423","428","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/dependency/OrderingTest.java","42","52","-2147403477","-2147403411","0","0","void shouldApplySeveralDependenciesConfiguredForOneProperty()","void shouldApplySeveralDependenciesConfiguredForOneProperty(){
+        Person source = new Person();
+        source.setFirstName( ""Bob"" );
+        source.setMiddleName( ""J."" );
+        source.setLastName( ""McRobb"" );
+
+        PersonDto target = AddressMapper.INSTANCE.personToDto( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFullName() ).isEqualTo( ""Bob J. McRobb"" );
+    }"

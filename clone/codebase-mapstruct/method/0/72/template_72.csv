@@ -1,0 +1,43 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","@WithClasses","@ProcessorTest @WithClasses(MapToBeanTypeCheckMapper.class)@ExpectedCompilationOutcome([*1*] 
+        value = CompilationResult.SUCCEEDED,[*2*] 
+        diagnostics ={
+            @Diagnostic([*3*] 
+                type = MapToBeanTypeCheckMapper.class,[*4*] 
+[*5*] 
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 21,
+                message = ""Unmapped target property: \""value\"".""[*6*] 
+            ),[*7*] 
+            @Diagnostic([*8*] 
+                type = MapToBeanTypeCheckMapper.class,[*9*] 
+[*10*] 
+[*11*] 
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 21,
+                message = ""The Map parameter \""source\"" cannot be used for property mapping. "" +[*12*] 
+                    ""It must be typed with Map<String, ???> but it was typed with Map<Integer,String>.""[*13*] 
+            ),[*14*] 
+[*15*] 
+        }
+","[*1*]:
+1, 0.3333333333333333, @ProcessorTest @WithClasses(MapMapper.class)@ExpectedCompilationOutcome(value = CompilationResult.SUCCEEDED,
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+1, 0.3333333333333333,             @Diagnostic(type = MapMapper.class,
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+1, 0.3333333333333333,                 message = ""map key has a possibly lossy conversion from Long to Integer.""),
+[*11*]:
+1, 0.3333333333333333,             @Diagnostic(type = MapMapper.class,
+[*12*]:
+[*13*]:
+[*14*]:
+[*15*]:
+1, 0.3333333333333333,                 message = ""map value has a possibly lossy conversion from Double to Float."")
+"

@@ -1,0 +1,60 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"618","110","372","371","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1541/Issue1541Test.java","26","36","-2147418857","-2147418748","0","0","void testMappingWithVarArgs()","void testMappingWithVarArgs(){
+        Target target = Issue1541Mapper.INSTANCE.mapWithVarArgs( ""code"", ""1"", ""2"" );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).contains( ""1"", ""2"" );
+        assertThat( target.isAfterMappingWithArrayCalled() ).isFalse();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isFalse();
+    }"
+"619","110","374","373","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1541/Issue1541Test.java","39","50","-2147418748","-2147418622","0","0","void testMappingWithArray()","void testMappingWithArray(){
+        Target target = Issue1541Mapper.INSTANCE.mapWithArray( ""code"", new String[] { ""1"", ""2"" } );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).contains( ""1"", ""2"" );
+        assertThat( target.getParameters2() ).isNull();
+        assertThat( target.isAfterMappingWithArrayCalled() ).isFalse();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isFalse();
+    }"
+"620","110","376","375","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1541/Issue1541Test.java","53","64","-2147418622","-2147418500","0","0","void testMappingWithVarArgsReassignment()","void testMappingWithVarArgsReassignment(){
+        Target target = Issue1541Mapper.INSTANCE.mapWithReassigningVarArgs( ""code"", ""1"", ""2"" );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).isNull();
+        assertThat( target.getParameters2() ).contains( ""1"", ""2"" );
+        assertThat( target.isAfterMappingWithArrayCalled() ).isFalse();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isFalse();
+    }"
+"622","110","380","379","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1541/Issue1541Test.java","81","92","-2147418367","-2147418245","0","0","void testVarArgsInAfterMappingAsArray()","void testVarArgsInAfterMappingAsArray(){
+        Target target = Issue1541Mapper.INSTANCE.mapParametersAsArrayInAfterMapping( ""code"", ""1"", ""2"" );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).contains( ""1"", ""2"" );
+        assertThat( target.getParameters2() ).isNull();
+        assertThat( target.isAfterMappingWithArrayCalled() ).isTrue();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isFalse();
+    }"
+"623","110","380","382","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1541/Issue1541Test.java","95","106","-2147418245","-2147418123","0","0","void testVarArgsInAfterMappingAsVarArgs()","void testVarArgsInAfterMappingAsVarArgs(){
+        Target target = Issue1541Mapper.INSTANCE.mapParametersAsVarArgsInAfterMapping( ""code"", ""1"", ""2"" );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).contains( ""1"", ""2"" );
+        assertThat( target.getParameters2() ).isNull();
+        assertThat( target.isAfterMappingWithArrayCalled() ).isFalse();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isTrue();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isFalse();
+    }"

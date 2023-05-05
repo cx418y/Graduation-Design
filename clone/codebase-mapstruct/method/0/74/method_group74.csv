@@ -1,0 +1,46 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"371","74","237","236","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/array/ArrayMappingTest.java","86","96","-2147442585","-2147442504","0","0","void shouldMapArrayToArrayExistingSmallerSizedTarget()","void shouldMapArrayToArrayExistingSmallerSizedTarget(){
+
+        ScientistDto[] existingTarget =  new ScientistDto[]{ new ScientistDto( ""Jim"" ) };
+
+        ScientistDto[] target = ScienceMapper.INSTANCE
+            .scientistsToDtos( new Scientist[]{ new Scientist( ""Bob"" ), new Scientist( ""Larry"" ) }, existingTarget );
+
+        assertThat( target ).isNotNull();
+        assertThat( target ).isEqualTo( existingTarget );
+        assertThat( target ).extracting( ""name"" ).containsOnly( ""Bob"" );
+    }"
+"372","74","241","240","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/array/ArrayMappingTest.java","99","109","-2147442504","-2147442415","0","0","void shouldMapArrayToArrayExistingEqualSizedTarget()","void shouldMapArrayToArrayExistingEqualSizedTarget(){
+
+        ScientistDto[] existingTarget =  new ScientistDto[]{ new ScientistDto( ""Jim"" ), new ScientistDto( ""Bart"" ) };
+
+        ScientistDto[] target = ScienceMapper.INSTANCE
+            .scientistsToDtos( new Scientist[]{ new Scientist( ""Bob"" ), new Scientist( ""Larry"" ) }, existingTarget );
+
+        assertThat( target ).isNotNull();
+        assertThat( target ).isEqualTo( existingTarget );
+        assertThat( target ).extracting( ""name"" ).containsOnly( ""Bob"", ""Larry""  );
+    }"
+"373","74","249","248","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/array/ArrayMappingTest.java","112","123","-2147442415","-2147442318","0","0","void shouldMapArrayToArrayExistingLargerSizedTarget()","void shouldMapArrayToArrayExistingLargerSizedTarget(){
+
+        ScientistDto[] existingTarget =
+                new ScientistDto[]{ new ScientistDto( ""Jim"" ), new ScientistDto( ""Bart"" ), new ScientistDto( ""John"" ) };
+
+        ScientistDto[] target = ScienceMapper.INSTANCE
+            .scientistsToDtos( new Scientist[]{ new Scientist( ""Bob"" ), new Scientist( ""Larry"" ) }, existingTarget );
+
+        assertThat( target ).isNotNull();
+        assertThat( target ).isEqualTo( existingTarget );
+        assertThat( target ).extracting( ""name"" ).containsOnly( ""Bob"", ""Larry"", ""John""  );
+    }"
+"374","74","252","251","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/array/ArrayMappingTest.java","126","136","-2147442318","-2147442251","0","0","void shouldReturnMapTargetWhenNullSource()","void shouldReturnMapTargetWhenNullSource(){
+
+        ScientistDto[] existingTarget =
+                new ScientistDto[]{ new ScientistDto( ""Jim"" ) };
+
+        ScientistDto[] target = ScienceMapper.INSTANCE.scientistsToDtos( null, existingTarget );
+
+        assertThat( target ).isNotNull();
+        assertThat( target ).isEqualTo( existingTarget );
+        assertThat( existingTarget ).extracting( ""name"" ).containsOnly( ""Jim"" );
+    }"

@@ -1,0 +1,38 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","process","boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv){
+        if ( !hasRun ) {
+            try {
+                    JavaFileObject dto = processingEnv.getFiler().createSourceFile( ""org.mapstruct.itest.usestypegeneration.usage.StringUtils"" );
+                    Writer writer = dto.openWriter();
+
+                    writer.append( ""package org.mapstruct.itest.targettypegeneration.usage;"" );[*1*] 
+                    writer.append( ""\n"" );[*2*] 
+                    writer.append( ""public class OrderDto {"" );[*3*] 
+                    writer.append( ""package org.mapstruct.itest.usestypegeneration.usage;"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""public class StringUtils {"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""    public static String upperCase(String string) {"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""              return string == null ? null : string.toUpperCase();"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""    }"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""}"" );
+
+                    writer.flush();
+                    writer.close();
+            }
+            catch (IOException e) {
+                    throw new RuntimeException( e );
+            }
+
+            hasRun = true;
+        }
+
+        return false;
+    }
+","[*1*]:
+[*2*]:
+[*3*]:
+"

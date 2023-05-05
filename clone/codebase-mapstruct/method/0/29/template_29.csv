@@ -1,0 +1,32 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","chartSongArtistLabelStudioName","String chartSongArtistLabelStudioName(Chart chart){
+        if ( chart == null ) {[*1*] 
+            return null;[*2*] 
+        }[*3*] 
+        Song song = chart.getSong();[*4*] 
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        Label label = artist.getLabel();
+        if ( label == null ) {
+            return null;
+        }
+        Studio studio = label.getStudio();
+        if ( studio == null ) {
+            return null;
+        }
+        String name = studio.getName();
+        if ( name == null ) {
+            return null;
+        }
+        return name;
+    }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+"

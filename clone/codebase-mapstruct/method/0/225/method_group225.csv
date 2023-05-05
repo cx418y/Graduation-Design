@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1435","225","743","742","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/util/AbstractElementUtilsDecorator.java","297","304","-2147322665","-2147322602","0","0","boolean hasNonObjectSuperclass(TypeElement element)","boolean hasNonObjectSuperclass(TypeElement element){
+        if ( element.getSuperclass().getKind() == TypeKind.ERROR ) {
+            throw new TypeHierarchyErroneousException( element );
+        }
+
+        return element.getSuperclass().getKind() == TypeKind.DECLARED
+            && !asTypeElement( element.getSuperclass() ).getQualifiedName().toString().equals( ""java.lang.Object"" );
+    }"
+"1437","225","743","742","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/util/Fields.java","43","50","-2147322545","-2147322482","0","0","boolean hasNonObjectSuperclass(TypeElement element)","boolean hasNonObjectSuperclass(TypeElement element){
+        if ( element.getSuperclass().getKind() == TypeKind.ERROR ) {
+            throw new TypeHierarchyErroneousException( element );
+        }
+
+        return element.getSuperclass().getKind() == TypeKind.DECLARED
+            && !asTypeElement( element.getSuperclass() ).getQualifiedName().toString().equals( ""java.lang.Object"" );
+    }"

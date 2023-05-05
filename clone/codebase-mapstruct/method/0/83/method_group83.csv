@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"436","83","273","272","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/ignore/inherit/IgnorePropertyTest.java","56","72","-2147436904","-2147436773","0","0","void shouldInheritIgnoreByDefaultFromBase()","void shouldInheritIgnoreByDefaultFromBase(){
+
+        WorkBenchDto workBenchDto = new WorkBenchDto();
+        workBenchDto.setArticleName( ""MyBench"" );
+        workBenchDto.setArticleDescription( ""Beautiful"" );
+        workBenchDto.setCreationDate( new Date() );
+        workBenchDto.setModificationDate( new Date() );
+
+        WorkBenchEntity benchTarget = ToolMapper.INSTANCE.mapBench( workBenchDto );
+
+        assertThat( benchTarget ).isNotNull();
+        assertThat( benchTarget.getArticleName() ).isNull();
+        assertThat( benchTarget.getDescription() ).isEqualTo( ""Beautiful"" );
+        assertThat( benchTarget.getKey() ).isNull();
+        assertThat( benchTarget.getModificationDate() ).isNull();
+        assertThat( benchTarget.getCreationDate() ).isNull();
+    }"
+"437","83","277","276","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/ignore/inherit/IgnorePropertyTest.java","76","92","-2147436773","-2147436641","0","0","void shouldOnlyIgnoreBase()","void shouldOnlyIgnoreBase(){
+
+        WorkBenchDto workBenchDto = new WorkBenchDto();
+        workBenchDto.setArticleName( ""MyBench"" );
+        workBenchDto.setArticleDescription( ""Beautiful"" );
+        workBenchDto.setCreationDate( new Date() );
+        workBenchDto.setModificationDate( new Date() );
+
+        WorkBenchEntity benchTarget = ToolMapper.INSTANCE.mapBenchWithImplicit( workBenchDto );
+
+        assertThat( benchTarget ).isNotNull();
+        assertThat( benchTarget.getArticleName() ).isEqualTo( ""MyBench"" );
+        assertThat( benchTarget.getDescription() ).isEqualTo( ""Beautiful"" );
+        assertThat( benchTarget.getKey() ).isNull();
+        assertThat( benchTarget.getModificationDate() ).isNull();
+        assertThat( benchTarget.getCreationDate() ).isNull();
+    }"

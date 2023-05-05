@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","createsForgedMethodForIterableLowerBoundInteger","void createsForgedMethodForIterableLowerBoundInteger(){
+        ListContainer source = new ListContainer();
+
+        source.setValues( Arrays.asList( ""42"", ""47"" ) );
+        IterableContainer result = MapperWithForgedIterableMapping.INSTANCE.toContainerWithIterable( source );
+
+        ( (IterableAssert<Integer>) assertThat( result.getValues() ) )
+                .contains( 42, 47 );
+    }
+",""

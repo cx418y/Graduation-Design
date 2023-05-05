@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"2025","261","837","836","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/java/org/mapstruct/itest/tests/GradleIncrementalCompilationTest.java","146","156","-2147247658","-2147247604","0","0","void testChangeTargetField(String gradleVersion)throws IOException","void testChangeTargetField(String gradleVersion)throws IOException{
+        setup( gradleVersion );
+        getRunner().build();
+        File mapperFile = new File( sourceDirectory, ""org/mapstruct/itest/gradle/lib/TestMapper.java"" );
+        replaceInFile( mapperFile, ""field"", ""otherField"" );
+        BuildResult secondBuildResult = getRunner( ""--info"" ).build();
+
+        assertRecompiled( secondBuildResult, 2 );
+    }"
+"2026","261","837","842","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/java/org/mapstruct/itest/tests/GradleIncrementalCompilationTest.java","160","169","-2147247604","-2147247550","0","0","void testChangeUnrelatedFile(String gradleVersion)throws IOException","void testChangeUnrelatedFile(String gradleVersion)throws IOException{
+        setup( gradleVersion );
+        getRunner().build();
+        File unrelatedFile = new File( sourceDirectory, ""org/mapstruct/itest/gradle/lib/UnrelatedComponent.java"" );
+        replaceInFile( unrelatedFile, ""true"", ""false"" );
+        BuildResult secondBuildResult = getRunner( ""--info"" ).build();
+
+        assertRecompiled( secondBuildResult, 1 );
+    }"

@@ -1,0 +1,20 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","requestBodyConverter","Converter<?, RequestBody> requestBodyConverter([*1*] 
+      Type type,[*2*] 
+      Annotation[] parameterAnnotations,[*3*] 
+      Annotation[] methodAnnotations,[*4*] 
+      Retrofit retrofit){[*5*] 
+      Type type, Annotation[] annotations, Retrofit retrofit){[*6*] 
+    if (type instanceof Class && ((Class<?>) type).isAnnotationPresent(XmlRootElement.class)) {
+      return new JaxbRequestConverter<>(contextForType((Class<?>) type), (Class<?>) type);
+    }
+    return null;
+  }
+","[*1*]:
+2, 0.5, Converter<ResponseBody, ?> responseBodyConverter(
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+"

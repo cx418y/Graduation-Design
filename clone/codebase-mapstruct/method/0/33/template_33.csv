@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","Mappers.getMapper","= Mappers.getMapper( ChartEntryToArtist.class );[*1*] 
+[*2*] 
+
+    @Mappings({
+        @Mapping(target = ""type"", ignore = true),
+        @Mapping(target = ""name"", source = ""chartName""),
+        @Mapping(target = ""song.title"", source = ""songTitle"" ),
+        @Mapping(target = ""song.artist.name"", source = ""artistName"" ),
+        @Mapping(target = ""song.artist.label.studio.name"", source = ""recordedAt""),
+        @Mapping(target = ""song.artist.label.studio.city"", source = ""city"" ),
+        @Mapping(target = ""song.positions"", source = ""position"" )
+    }
+","[*1*]:
+[*2*]:
+1, 0.25, Chart map(ChartEntry chartEntry);
+"

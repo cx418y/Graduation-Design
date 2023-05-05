@@ -1,0 +1,33 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyByteConversions","void shouldApplyByteConversions(){
+        ByteSource source = new ByteSource();
+        source.setB( (byte) 1 );
+        source.setBb( (byte) 2 );
+        source.setS( (byte) 3 );
+        source.setSs( (byte) 4 );
+        source.setI( (byte) 5 );
+        source.setIi( (byte) 6 );
+        source.setL( (byte) 7 );
+        source.setLl( (byte) 8 );
+        source.setF( (byte) 9 );
+        source.setFf( (byte) 10 );
+        source.setD( (byte) 11 );
+        source.setDd( (byte) 12 );
+
+        ByteTarget target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getB() ).isEqualTo( (byte) 1 );
+        assertThat( target.getBb() ).isEqualTo( Byte.valueOf( (byte) 2 ) );
+        assertThat( target.getS() ).isEqualTo( (short) 3 );
+        assertThat( target.getSs() ).isEqualTo( Short.valueOf( (short) 4 ) );
+        assertThat( target.getI() ).isEqualTo( 5 );
+        assertThat( target.getIi() ).isEqualTo( Integer.valueOf( 6 ) );
+        assertThat( target.getL() ).isEqualTo( 7 );
+        assertThat( target.getLl() ).isEqualTo( Long.valueOf( 8 ) );
+        assertThat( target.getF() ).isEqualTo( 9f );
+        assertThat( target.getFf() ).isEqualTo( Float.valueOf( 10f ) );
+        assertThat( target.getD() ).isEqualTo( 11d );
+        assertThat( target.getDd() ).isEqualTo( Double.valueOf( 12d ) );
+    }
+",""

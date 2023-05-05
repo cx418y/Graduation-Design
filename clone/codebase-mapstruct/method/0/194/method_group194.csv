@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1106","194","627","626","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/qualifier/iterable/TopologyMapper.java","51","60","-2147362401","-2147362346","0","0","TopologyFeatureEntity mapCity( TopologyFeatureDto dto )","TopologyFeatureEntity mapCity( TopologyFeatureDto dto ){
+        TopologyFeatureEntity topologyFeatureEntity = null;
+        if ( dto instanceof CityDto ) {
+            CityEntity cityEntity = new CityEntity();
+            cityEntity.setPopulation( ( (CityDto) dto ).getPopulation() );
+            topologyFeatureEntity = cityEntity;
+            topologyFeatureEntity.setName(  dto.getName() );
+        }
+        return topologyFeatureEntity;
+    }"
+"1108","194","627","626","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/qualifier/iterable/TopologyWithoutIterableMappingMapper.java","36","45","-2147362291","-2147362236","0","0","TopologyFeatureEntity mapCity( TopologyFeatureDto dto )","TopologyFeatureEntity mapCity( TopologyFeatureDto dto ){
+        TopologyFeatureEntity topologyFeatureEntity = null;
+        if ( dto instanceof CityDto ) {
+            CityEntity cityEntity = new CityEntity();
+            cityEntity.setPopulation( ( (CityDto) dto ).getPopulation() );
+            topologyFeatureEntity = cityEntity;
+            topologyFeatureEntity.setName(  dto.getName() );
+        }
+        return topologyFeatureEntity;
+    }"

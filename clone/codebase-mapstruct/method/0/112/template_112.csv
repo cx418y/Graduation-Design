@@ -1,0 +1,30 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldUseCreateWithSourceNested","void shouldUseCreateWithSourceNested(){
+
+        Source source = new Source();
+        source.setNested( new Source.Nested() );
+        source.getNested().setProperty( ""something"" );
+        source.setMoreNested( new ArrayList<>() );
+
+        Target target = new Target();
+
+        Issue1131Mapper.CALLED_METHODS.clear();[*1*] 
+        Issue1131Mapper.INSTANCE.merge( source, target );[*2*] 
+        Issue1131MapperWithContext.INSTANCE.merge( source, target, context );[*3*] 
+
+        assertThat( target.getNested() ).isNotNull();
+        assertThat( target.getNested().getProperty() ).isEqualTo( ""something"" );
+        assertThat( target.getNested().getInternal() ).isEqualTo( ""from object factory"" );
+        assertThat( Issue1131Mapper.CALLED_METHODS ).containsExactly([*4*] 
+        assertThat( context.getCalledMethods() ).containsExactly([*5*] 
+            ""create(Source.Nested)"",
+            ""create(List<Source.Nested>)""
+        );
+    }
+","[*1*]:
+1, 0.5,         Issue1131MapperWithContext.MappingContext context = new Issue1131MapperWithContext.MappingContext();
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+"

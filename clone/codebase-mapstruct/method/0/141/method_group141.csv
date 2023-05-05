@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"825","141","471","470","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/other/UserDto.java","71","76","-2147397350","-2147397293","0","0","int hashCode()","int hashCode(){
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + ( car != null ? car.hashCode() : 0 );
+        result = 31 * result + ( house != null ? house.hashCode() : 0 );
+        return result;
+    }"
+"830","141","471","470","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/User.java","80","85","-2147396921","-2147396864","0","0","int hashCode()","int hashCode(){
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + ( car != null ? car.hashCode() : 0 );
+        result = 31 * result + ( house != null ? house.hashCode() : 0 );
+        return result;
+    }"
+"848","141","471","470","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/UserDto.java","80","85","-2147395463","-2147395406","0","0","int hashCode()","int hashCode(){
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + ( car != null ? car.hashCode() : 0 );
+        result = 31 * result + ( house != null ? house.hashCode() : 0 );
+        return result;
+    }"

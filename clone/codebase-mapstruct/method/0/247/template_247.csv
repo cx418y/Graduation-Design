@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getFromExpression","String getFromExpression(ConversionContext conversionContext){
+        if ( requiresDecimalFormat( conversionContext ) ) {
+            StringBuilder sb = new StringBuilder();
+            appendDecimalFormatter( sb, conversionContext );
+            sb.append( "".parse( <SOURCE> )."" );
+            sb.append( sourceType.getSimpleName() );
+            sb.append( ""Value()"" );
+            return sb.toString();
+        }
+        else {
+            return wrapperType.getSimpleName() + "".parse""
+                + Strings.capitalize( sourceType.getSimpleName() ) + ""( <SOURCE> )"";
+        }
+    }
+",""

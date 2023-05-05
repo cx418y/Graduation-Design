@@ -1,0 +1,65 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","@WithClasses","@ProcessorTest @WithClasses({
+        ErroneousOrganizationMapper2.class,[*1*] 
+        OrganizationWithoutTypeGetterEntity.class[*2*] 
+[*3*] 
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousOrganizationMapper2.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 23,
+[*4*] 
+                message = ""Constant and default value are both defined in @Mapping, either define a defaultValue or a"" +[*5*] 
+                    "" constant.""),[*6*] 
+            @Diagnostic(type = ErroneousOrganizationMapper2.class,[*7*] 
+                kind = javax.tools.Diagnostic.Kind.ERROR,[*8*] 
+                line = 35,[*9*] 
+[*10*] 
+[*11*] 
+[*12*] 
+[*13*] 
+[*14*] 
+[*15*] 
+                message = ""Can't map property \""Region region\"" to \""String region\"". "" +[*16*] 
+                    ""Consider to declare/implement a mapping method: \""String map(Region value)\""."")[*17*] 
+[*18*] 
+[*19*] 
+[*20*] 
+[*21*] 
+        }
+","[*1*]:
+1, 0.2,                     ""Did you mean \""garage.color\""?""),
+[*2*]:
+[*3*]:
+2, 0.4,         Region.class,
+[*4*]:
+1, 0.2,                 message = ""No read accessor found for property \""type\"" in target type.""),
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+1, 0.2,                 message = ""ErroneousOrganizationMapper2.DepartmentEntity does not have an accessible constructor."")
+[*11*]:
+1, 0.2, 
+[*12*]:
+1, 0.2,                 messageRegExp = ""Unmapped target properties: \""fullName, fullAge\""\\.""),
+[*13*]:
+2, 0.4,             @Diagnostic(type = PersonGarageWrongTargetMapper.class,
+[*14*]:
+2, 0.4,                 kind = javax.tools.Diagnostic.Kind.ERROR,
+[*15*]:
+2, 0.4,                 line = 22,
+[*16*]:
+[*17*]:
+[*18*]:
+1, 0.2,             @Diagnostic(type = PersonGarageWrongTargetMapper.class,
+[*19*]:
+1, 0.2,                 kind = javax.tools.Diagnostic.Kind.WARNING,
+[*20*]:
+1, 0.2,                 line = 23,
+[*21*]:
+1, 0.2,                 messageRegExp = ""Unmapped target properties: \""fullName, fullAge\""\\.""),
+"

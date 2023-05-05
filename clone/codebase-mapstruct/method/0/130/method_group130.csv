@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"778","130","442","441","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/qualifier/SubclassQualifierMapperTest.java","152","166","-2147402385","-2147402280","0","0","void subclassQualifiedByOnlyOneInverse()","void subclassQualifiedByOnlyOneInverse(){
+        RossiniDto rossiniDto = buildRossiniDto();
+
+        VivaldiDto vivaldiDto = buildVivaldiDto();
+
+        Rossini rossini = (Rossini) SubclassQualifiedByMapper.INSTANCE.fromDtoLightJustVivaldi( rossiniDto );
+
+        Vivaldi vivaldi = (Vivaldi) SubclassQualifiedByMapper.INSTANCE.fromDtoLightJustVivaldi( vivaldiDto );
+
+        assertThat( rossini.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossini.getCrescendo() ).containsExactly( ""andante"", ""allegro"", ""vivace"" );
+
+        assertThat( vivaldi.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldi.getSeasons() ).isNull();
+    }"
+"780","130","442","441","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/qualifier/SubclassQualifierMapperTest.java","194","208","-2147402088","-2147401983","0","0","void subclassQualifiedByNameOnlyOneInverse()","void subclassQualifiedByNameOnlyOneInverse(){
+        RossiniDto rossiniDto = buildRossiniDto();
+
+        VivaldiDto vivaldiDto = buildVivaldiDto();
+
+        Rossini rossini = (Rossini) SubclassQualifiedByNameMapper.INSTANCE.fromDtoLightJustVivaldi( rossiniDto );
+
+        Vivaldi vivaldi = (Vivaldi) SubclassQualifiedByNameMapper.INSTANCE.fromDtoLightJustVivaldi( vivaldiDto );
+
+        assertThat( rossini.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossini.getCrescendo() ).containsExactly( ""andante"", ""allegro"", ""vivace"" );
+
+        assertThat( vivaldi.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldi.getSeasons() ).isNull();
+    }"

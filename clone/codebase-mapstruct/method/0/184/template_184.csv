@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","autoInheritedMappingIsAppliedInReverse","void autoInheritedMappingIsAppliedInReverse(){
+[*1*] 
+        CarEntity carEntity = new CarEntity();
+        carEntity.setColor( ""red"" );
+        carEntity.setPrimaryKey( 42L );
+
+        CarDto carDto = CarMapperWithAutoInheritance.INSTANCE.toCarDto( carEntity );
+
+        assertThat( carDto.getColour() ).isEqualTo( ""red"" );
+        assertThat( carDto.getId() ).isEqualTo( 42L );
+    }
+","[*1*]:
+"

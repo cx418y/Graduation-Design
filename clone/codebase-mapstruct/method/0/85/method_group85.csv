@@ -1,0 +1,61 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"445","85","285","284","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jsr330/jakarta/JakartaJsr330DefaultCompileOptionFieldMapperTest.java","43","52","-2147436177","-2147436126","0","0","void shouldHaveJakartaInjection()","void shouldHaveJakartaInjection(){
+        generatedSource.forMapper( CustomerJsr330DefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""import jakarta.inject.Named;"" )
+            .contains( ""import jakarta.inject.Singleton;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJsr330DefaultCompileOptionFieldMapper"" )
+            .doesNotContain( ""public CustomerJsr330DefaultCompileOptionFieldMapperImpl("" )
+            .doesNotContain( ""javax.inject"" );
+    }"
+"446","85","285","284","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jsr330/jakarta/JakartaAndJsr330DefaultCompileOptionFieldMapperTest.java","45","54","-2147436126","-2147436075","0","0","void shouldHaveJavaxInjection()","void shouldHaveJavaxInjection(){
+        generatedSource.forMapper( CustomerJsr330DefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import javax.inject.Inject;"" )
+            .contains( ""import javax.inject.Named;"" )
+            .contains( ""import javax.inject.Singleton;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJsr330DefaultCompileOptionFieldMapper"" )
+            .doesNotContain( ""public CustomerJsr330DefaultCompileOptionFieldMapperImpl("" )
+            .doesNotContain( ""jakarta.inject"" );
+    }"
+"451","85","285","284","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jakarta/field/JakartaAndJsr330FieldMapperTest.java","43","52","-2147435819","-2147435768","0","0","void shouldHaveJakartaInjection()","void shouldHaveJakartaInjection(){
+        generatedSource.forMapper( CustomerFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""import jakarta.inject.Named;"" )
+            .contains( ""import jakarta.inject.Singleton;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJakartaFieldMapper"" )
+            .doesNotContain( ""public CustomerJakartaFieldMapperImpl("" )
+            .doesNotContain( ""javax.inject"" );
+    }"
+"452","85","285","284","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jakarta/field/JakartaFieldMapperTest.java","41","50","-2147435768","-2147435717","0","0","void shouldHaveJakartaInjection()","void shouldHaveJakartaInjection(){
+        generatedSource.forMapper( CustomerFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""import jakarta.inject.Named;"" )
+            .contains( ""import jakarta.inject.Singleton;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJakartaFieldMapper"" )
+            .doesNotContain( ""public CustomerJakartaFieldMapperImpl("" )
+            .doesNotContain( ""javax.inject"" );
+    }"
+"453","85","285","284","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jakarta/_default/JakartaDefaultCompileOptionFieldMapperTest.java","43","52","-2147435717","-2147435666","0","0","void shouldHaveJakartaInjection()","void shouldHaveJakartaInjection(){
+        generatedSource.forMapper( CustomerJakartaDefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""import jakarta.inject.Named;"" )
+            .contains( ""import jakarta.inject.Singleton;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJakartaDefaultCompileOptionFieldMapper"" )
+            .doesNotContain( ""public CustomerJakartaDefaultCompileOptionFieldMapperImpl("" )
+            .doesNotContain( ""javax.inject"" );
+    }"
+"454","85","285","284","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jakarta/_default/JakartaAndJsr330DefaultCompileOptionFieldMapperTest.java","45","54","-2147435666","-2147435615","0","0","void shouldHaveJakartaInjection()","void shouldHaveJakartaInjection(){
+        generatedSource.forMapper( CustomerJakartaDefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""import jakarta.inject.Named;"" )
+            .contains( ""import jakarta.inject.Singleton;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJakartaDefaultCompileOptionFieldMapper"" )
+            .doesNotContain( ""public CustomerJakartaDefaultCompileOptionFieldMapperImpl("" )
+            .doesNotContain( ""javax.inject"" );
+    }"

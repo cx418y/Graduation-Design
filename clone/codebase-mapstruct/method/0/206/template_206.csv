@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldNotMapXmlGregorianCalendarWithoutMinutes","void shouldNotMapXmlGregorianCalendarWithoutMinutes()throws Exception{
+
+        XmlGregorianCalendarBean in = new XmlGregorianCalendarBean();
+        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+        xcal.setYear( 1999 );
+        xcal.setMonth( 5 );
+        xcal.setDay( 25 );
+        xcal.setHour( 23 );
+        in.setxMLGregorianCalendar( xcal );
+
+        DateTimeBean res = XmlGregorianCalendarToDateTime.INSTANCE.toDateTimeBean( in );
+        assertThat( res.getDateTime() ).isNull();
+[*1*] 
+    }
+","[*1*]:
+"

@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"101","13","40","39","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_1453/Issue1453MapperImpl.java","38","49","-2147475641","-2147475591","0","0","List<AuctionDto> mapExtend(List<? extends Auction> auctions)","List<AuctionDto> mapExtend(List<? extends Auction> auctions){
+        if ( auctions == null ) {
+            return null;
+        }
+
+        List<AuctionDto> list = new ArrayList<AuctionDto>( auctions.size() );
+        for ( Auction auction : auctions ) {
+            list.add( map( auction ) );
+        }
+
+        return list;
+    }"
+"102","13","42","41","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_1453/Issue1453MapperImpl.java","52","63","-2147475591","-2147475540","0","0","AuctionDto> mapSuper(List<Auction> auctions)","AuctionDto> mapSuper(List<Auction> auctions){
+        if ( auctions == null ) {
+            return null;
+        }
+
+        List<? super AuctionDto> list = new ArrayList<AuctionDto>( auctions.size() );
+        for ( Auction auction : auctions ) {
+            list.add( map( auction ) );
+        }
+
+        return list;
+    }"

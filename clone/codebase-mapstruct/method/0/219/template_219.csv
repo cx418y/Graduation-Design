@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testEqualsSameInstance","void testEqualsSameInstance(){
+        List<String> qualifyingNames = Arrays.asList( ""language"", ""german"" );
+        TypeMirror resultType = new TestTypeMirror( ""resultType"" );
+        List<TypeMirror> qualifiers = new ArrayList<>();
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        SelectionParameters params = new SelectionParameters( qualifiers, qualifyingNames, resultType, typeUtils );
+
+        assertThat( params.equals( params ) ).as( ""Self equals"" ).isTrue();[*1*] 
+    }
+","[*1*]:
+1, 0.5,         assertThat( params.equals( null ) ).as( ""Equals with null"" ).isFalse();
+"

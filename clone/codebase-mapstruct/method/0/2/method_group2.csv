@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"23","2","3","2","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/collection/defaultimplementation/SourceTargetMapperImpl.java","176","190","-2147481935","-2147481824","0","0","Map<String, TargetFoo> sourceFooMapToTargetFooMap(Map<Long, SourceFoo> foos)","Map<String, TargetFoo> sourceFooMapToTargetFooMap(Map<Long, SourceFoo> foos){
+        if ( foos == null ) {
+            return null;
+        }
+
+        Map<String, TargetFoo> map = new LinkedHashMap<String, TargetFoo>( Math.max( (int) ( foos.size() / .75f ) + 1, 16 ) );
+
+        for ( java.util.Map.Entry<Long, SourceFoo> entry : foos.entrySet() ) {
+            String key = String.valueOf( entry.getKey() );
+            TargetFoo value = sourceFooToTargetFoo( entry.getValue() );
+            map.put( key, value );
+        }
+
+        return map;
+    }"
+"26","2","3","2","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/collection/defaultimplementation/SourceTargetMapperImpl.java","227","241","-2147481646","-2147481535","0","0","ConcurrentMap<String, TargetFoo> sourceFooMapToTargetFooConcurrentMap(Map<Long, SourceFoo> foos)","ConcurrentMap<String, TargetFoo> sourceFooMapToTargetFooConcurrentMap(Map<Long, SourceFoo> foos){
+        if ( foos == null ) {
+            return null;
+        }
+
+        ConcurrentMap<String, TargetFoo> concurrentMap = new ConcurrentHashMap<String, TargetFoo>( Math.max( (int) ( foos.size() / .75f ) + 1, 16 ) );
+
+        for ( java.util.Map.Entry<Long, SourceFoo> entry : foos.entrySet() ) {
+            String key = String.valueOf( entry.getKey() );
+            TargetFoo value = sourceFooToTargetFoo( entry.getValue() );
+            concurrentMap.put( key, value );
+        }
+
+        return concurrentMap;
+    }"

@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","resultFailure","void resultFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    service.result().unsafeSubscribe(subscriber);
+    assertThat(subscriber.takeValue().error()).isInstanceOf(IOException.class);
+    subscriber.assertCompleted();
+  }
+",""

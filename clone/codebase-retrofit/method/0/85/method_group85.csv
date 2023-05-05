@@ -1,0 +1,145 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"396","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/java8/src/test/java/retrofit2/adapter/java8/CompletableFutureTest.java","48","56","-2147434002","-2147433948","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(Java8CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"409","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableTest.java","51","59","-2147433048","-2147432994","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"427","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeThrowingTest.java","59","67","-2147431858","-2147431804","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"449","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleThrowingTest.java","61","69","-2147428106","-2147428052","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"456","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableThrowingTest.java","58","66","-2147427188","-2147427134","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"472","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableTest.java","50","58","-2147425698","-2147425644","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"482","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeTest.java","50","58","-2147424995","-2147424941","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"491","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleTest.java","50","58","-2147424363","-2147424309","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"500","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableThrowingTest.java","58","66","-2147423731","-2147423677","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"523","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/guava/src/test/java/retrofit2/adapter/guava/ListenableFutureTest.java","48","56","-2147421001","-2147420947","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(GuavaCallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"532","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/scala/src/test/java/retrofit2/adapter/scala/FutureTest.java","51","59","-2147420329","-2147420275","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(ScalaCallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"548","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableTest.java","52","60","-2147418929","-2147418875","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"576","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleThrowingTest.java","59","67","-2147416616","-2147416562","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"585","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableThrowingSafeSubscriberTest.java","58","66","-2147415520","-2147415466","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"595","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleTest.java","52","60","-2147414284","-2147414230","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"612","85","283","282","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableThrowingTest.java","56","64","-2147412455","-2147412401","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"

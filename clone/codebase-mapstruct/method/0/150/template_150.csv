@@ -1,0 +1,28 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldGenerateNestedComposedReverse","void shouldGenerateNestedComposedReverse(){
+
+        Song song1 = prepareSong();
+
+        ChartEntryComposed chartEntry = ArtistToChartEntryComposedReverse.MAPPER.mapForward( song1 );
+
+        assertThat( chartEntry ).isNotNull();
+        assertThat( chartEntry.getArtistName() ).isEqualTo( ""The Beatles"" );
+        assertThat( chartEntry.getChartName() ).isNull();
+        assertThat( chartEntry.getLabel().getName() ).isEqualTo( ""EMY"" );
+        assertThat( chartEntry.getLabel().getCity() ).isEqualTo( ""London"" );
+        assertThat( chartEntry.getLabel().getRecordedAt() ).isEqualTo( ""Abbey Road"" );
+        assertThat( chartEntry.getPosition() ).isEqualTo( 0 );
+        assertThat( chartEntry.getSongTitle() ).isEqualTo( ""A Hard Day's Night"" );
+
+        Song song2 = ArtistToChartEntryComposedReverse.MAPPER.mapReverse( chartEntry );
+
+        assertThat( song2 ).isNotNull();
+        assertThat( song2.getArtist() ).isNotNull();
+        assertThat( song2.getArtist().getName() ).isEqualTo( ""The Beatles"" );
+        assertThat( song2.getArtist().getLabel() ).isNotNull();
+        assertThat( song2.getArtist().getLabel().getName() ).isEqualTo( ""EMY"" );
+        assertThat( song2.getArtist().getLabel().getStudio() ).isNotNull();
+        assertThat( song2.getArtist().getLabel().getStudio().getCity() ).isEqualTo( ""London"" );
+        assertThat( song2.getArtist().getLabel().getStudio().getName() ).isEqualTo( ""Abbey Road"" );
+    }
+",""

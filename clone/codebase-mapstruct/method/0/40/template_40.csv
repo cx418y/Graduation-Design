@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldReverseMapArrayList","void shouldReverseMapArrayList(){
+        Target target = new Target();
+        target.setStringArrayList( new ArrayList<>( Arrays.asList( ""Bob"", ""Alice"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getStringArrayList() ).containsExactly( ""Bob"", ""Alice"" );
+    }
+",""

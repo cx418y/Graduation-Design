@@ -1,0 +1,58 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"136","24","79","78","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperSmartImpl.java","90","108","-2147469829","-2147469765","0","0","ExternalRoofType roofTypeToExternalRoofType(RoofType roofType)","ExternalRoofType roofTypeToExternalRoofType(RoofType roofType){
+        if ( roofType == null ) {
+            return null;
+        }
+
+        ExternalRoofType externalRoofType;
+
+        switch ( roofType ) {
+            case OPEN: externalRoofType = ExternalRoofType.OPEN;
+            break;
+            case BOX: externalRoofType = ExternalRoofType.BOX;
+            break;
+            case GAMBREL: externalRoofType = ExternalRoofType.GAMBREL;
+            break;
+            default: throw new IllegalArgumentException( ""Unexpected enum constant: "" + roofType );
+        }
+
+        return externalRoofType;
+    }"
+"147","24","79","78","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoUpdateMapperSmartImpl.java","113","131","-2147468908","-2147468844","0","0","ExternalRoofType roofTypeToExternalRoofType(RoofType roofType)","ExternalRoofType roofTypeToExternalRoofType(RoofType roofType){
+        if ( roofType == null ) {
+            return null;
+        }
+
+        ExternalRoofType externalRoofType;
+
+        switch ( roofType ) {
+            case OPEN: externalRoofType = ExternalRoofType.OPEN;
+            break;
+            case BOX: externalRoofType = ExternalRoofType.BOX;
+            break;
+            case GAMBREL: externalRoofType = ExternalRoofType.GAMBREL;
+            break;
+            default: throw new IllegalArgumentException( ""Unexpected enum constant: "" + roofType );
+        }
+
+        return externalRoofType;
+    }"
+"164","24","79","78","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperClassicImpl.java","108","126","-2147467753","-2147467689","0","0","ExternalRoofType mapRoofType(RoofType roofType)","ExternalRoofType mapRoofType(RoofType roofType){
+        if ( roofType == null ) {
+            return null;
+        }
+
+        ExternalRoofType externalRoofType;
+
+        switch ( roofType ) {
+            case OPEN: externalRoofType = ExternalRoofType.OPEN;
+            break;
+            case BOX: externalRoofType = ExternalRoofType.BOX;
+            break;
+            case GAMBREL: externalRoofType = ExternalRoofType.GAMBREL;
+            break;
+            default: throw new IllegalArgumentException( ""Unexpected enum constant: "" + roofType );
+        }
+
+        return externalRoofType;
+    }"

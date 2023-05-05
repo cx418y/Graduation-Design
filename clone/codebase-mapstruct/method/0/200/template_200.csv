@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldGenerateExtendsBoundSourceForgedStreamMethod","void shouldGenerateExtendsBoundSourceForgedStreamMethod(){
+
+        ExtendsBoundSource source = new ExtendsBoundSource();
+
+        Target target = ExtendsBoundSourceTargetMapper.STM.map( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getElements() ).isNull();
+        assertThat( target.getListElements() ).isNull();
+
+    }
+",""

@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1009","173","574","573","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/ConversionTest.java","32","40","-2147377341","-2147377263","0","0","void shouldHandleNulls()","void shouldHandleNulls(){
+        Source source = new Source();
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 0 ) );
+        assertThat( target.getBar() ).isEqualTo( 0 );
+        assertThat( target.getZip() ).isEqualTo( ""0"" );
+    }"
+"2013","173","574","573","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/simpleTest/src/test/java/org/mapstruct/itest/simple/ConversionTest.java","33","41","-2147249048","-2147248970","0","0","void shouldHandleNulls()","void shouldHandleNulls(){
+        Source source = new Source();
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 1 ) );
+        assertThat( target.getBar() ).isEqualTo( 0 );
+        assertThat( target.getZip() ).isEqualTo( ""0"" );
+    }"

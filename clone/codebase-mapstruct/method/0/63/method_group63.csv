@@ -1,0 +1,63 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"308","63","197","196","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/qualifier/ConditionalQualifierTest.java","95","125","-2147449270","-2147449009","0","0","void conditionalQualifiersForSourceToTarget()","void conditionalQualifiersForSourceToTarget(){
+        ConditionalMethodWithSourceToTargetMapper mapper = ConditionalMethodWithSourceToTargetMapper.INSTANCE;
+
+        ConditionalMethodWithSourceToTargetMapper.OrderDTO orderDto =
+            new ConditionalMethodWithSourceToTargetMapper.OrderDTO();
+
+        ConditionalMethodWithSourceToTargetMapper.Order order = mapper.convertToOrder( orderDto );
+        assertThat( order ).isNotNull();
+        assertThat( order.getCustomer() ).isNull();
+
+        orderDto = new ConditionalMethodWithSourceToTargetMapper.OrderDTO();
+        orderDto.setCustomerName( ""Tester"" );
+        order = mapper.convertToOrder( orderDto );
+
+        assertThat( order ).isNotNull();
+        assertThat( order.getCustomer() ).isNotNull();
+        assertThat( order.getCustomer().getName() ).isEqualTo( ""Tester"" );
+        assertThat( order.getCustomer().getAddress() ).isNull();
+
+        orderDto = new ConditionalMethodWithSourceToTargetMapper.OrderDTO();
+        orderDto.setLine1( ""Line 1"" );
+        order = mapper.convertToOrder( orderDto );
+
+        assertThat( order ).isNotNull();
+        assertThat( order.getCustomer() ).isNotNull();
+        assertThat( order.getCustomer().getName() ).isNull();
+        assertThat( order.getCustomer().getAddress() ).isNotNull();
+        assertThat( order.getCustomer().getAddress().getLine1() ).isEqualTo( ""Line 1"" );
+        assertThat( order.getCustomer().getAddress().getLine2() ).isNull();
+
+    }"
+"322","63","197","196","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/expression/ConditionalExpressionTest.java","82","112","-2147447765","-2147447504","0","0","void conditionalExpressionForSourceToTarget()","void conditionalExpressionForSourceToTarget(){
+        ConditionalWithSourceToTargetExpressionMapper mapper = ConditionalWithSourceToTargetExpressionMapper.INSTANCE;
+
+        ConditionalWithSourceToTargetExpressionMapper.OrderDTO orderDto =
+            new ConditionalWithSourceToTargetExpressionMapper.OrderDTO();
+
+        ConditionalWithSourceToTargetExpressionMapper.Order order = mapper.convertToOrder( orderDto );
+        assertThat( order ).isNotNull();
+        assertThat( order.getCustomer() ).isNull();
+
+        orderDto = new ConditionalWithSourceToTargetExpressionMapper.OrderDTO();
+        orderDto.setCustomerName( ""Tester"" );
+        order = mapper.convertToOrder( orderDto );
+
+        assertThat( order ).isNotNull();
+        assertThat( order.getCustomer() ).isNotNull();
+        assertThat( order.getCustomer().getName() ).isEqualTo( ""Tester"" );
+        assertThat( order.getCustomer().getAddress() ).isNull();
+
+        orderDto = new ConditionalWithSourceToTargetExpressionMapper.OrderDTO();
+        orderDto.setLine1( ""Line 1"" );
+        order = mapper.convertToOrder( orderDto );
+
+        assertThat( order ).isNotNull();
+        assertThat( order.getCustomer() ).isNotNull();
+        assertThat( order.getCustomer().getName() ).isNull();
+        assertThat( order.getCustomer().getAddress() ).isNotNull();
+        assertThat( order.getCustomer().getAddress().getLine1() ).isEqualTo( ""Line 1"" );
+        assertThat( order.getCustomer().getAddress().getLine2() ).isNull();
+
+    }"

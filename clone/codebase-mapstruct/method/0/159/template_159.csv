@@ -1,0 +1,134 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","erroneousMapperWithTooManyParameterValues","void erroneousMapperWithTooManyParameterValues(){
+    }
+
+    @ProcessorTest
+    @ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic([*1*] 
+                kind = javax.tools.Diagnostic.Kind.ERROR,[*2*] 
+                type = ErroneousMapperWithWrongParameter.class,[*3*] 
+                line = 16,[*4*] 
+                alternativeLine = 43,[*5*] 
+                message = ""Parameter \""stringParam\"" is not of type \""boolean\"" but of type \""String\"" ""[*6*] 
+                    + ""for annotation \""CustomAnnotationWithParams\"".""[*7*] 
+            ),[*8*] 
+            @Diagnostic([*9*] 
+                kind = javax.tools.Diagnostic.Kind.ERROR,[*10*] 
+                type = ErroneousMapperWithWrongParameter.class,[*11*] 
+                line = 18,[*12*] 
+                alternativeLine = 43,[*13*] 
+                message = ""Parameter \""stringParam\"" is not of type \""byte\"" but of type \""String\"" ""[*14*] 
+                    + ""for annotation \""CustomAnnotationWithParams\"".""[*15*] 
+            ),[*16*] 
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 20,
+                alternativeLine = 43,
+                message = ""Parameter \""stringParam\"" is not of type \""char\"" but of type \""String\"" ""
+                    + ""for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 22,
+                alternativeLine = 43,
+                message = ""Parameter \""stringParam\"" is not of type \""CustomAnnotationWithParams\""""
+                    + "" but of type \""String\"" for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 24,
+                alternativeLine = 43,
+                message = ""Parameter \""stringParam\"" is not of type \""double\"" but of type \""String\"" ""
+                    + ""for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 26,
+                alternativeLine = 43,
+                message = ""Parameter \""stringParam\"" is not of type \""float\"" but of type \""String\"" ""
+                    + ""for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 28,
+                alternativeLine = 43,
+                message = ""Parameter \""stringParam\"" is not of type \""int\"" but of type \""String\"" ""
+                    + ""for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 30,
+                alternativeLine = 43,
+                message = ""Parameter \""stringParam\"" is not of type \""long\"" but of type \""String\"" ""
+                    + ""for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 32,
+                alternativeLine = 43,
+                message = ""Parameter \""stringParam\"" is not of type \""short\"" but of type \""String\"" ""
+                    + ""for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 35,
+                alternativeLine = 43,
+                message = ""Parameter \""genericTypedClass\"" is not of type \""String\"" ""
+                    + ""but of type \""Class<? extends java.lang.annotation.Annotation>\"" ""[*17*] 
+                    + ""for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 36,
+                alternativeLine = 43,
+                message = ""Parameter \""enumParam\"" is not of type \""WrongAnnotateWithEnum\"" ""
+                    + ""but of type \""AnnotateWithEnum\"" for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 40,
+                alternativeLine = 43,
+                message = ""Parameter \""genericTypedClass\"" is not of type \""ErroneousMapperWithWrongParameter\"" ""
+                    + ""but of type \""Class<? extends java.lang.annotation.Annotation>\"" ""[*18*] 
+                    + ""for annotation \""CustomAnnotationWithParams\"".""
+            ),
+            @Diagnostic(
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                type = ErroneousMapperWithWrongParameter.class,
+                line = 42,
+                alternativeLine = 43,
+                message = ""Parameter \""value\"" is not of type \""boolean\"" ""
+                    + ""but of type \""String\"" for annotation \""CustomAnnotation\"".""
+            )
+        }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+[*11*]:
+[*12*]:
+[*13*]:
+[*14*]:
+[*15*]:
+[*16*]:
+[*17*]:
+[*18*]:
+"

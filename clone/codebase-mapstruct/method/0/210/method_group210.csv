@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1237","210","694","693","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/BuiltInTest.java","133","151","-2147348172","-2147348016","0","0","void shouldApplyBuiltInOnJAXBElementExtra()","void shouldApplyBuiltInOnJAXBElementExtra(){
+        JaxbElementProperty source = new JaxbElementProperty();
+        source.setProp( createJaxb( ""5"" ) );
+        source.publicProp = createJaxb( ""5"" );
+
+        BigDecimalProperty target = JaxbMapper.INSTANCE.mapBD( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isEqualTo( new BigDecimal( ""5"" ) );
+        assertThat( target.publicProp ).isEqualTo( new BigDecimal( ""5"" ) );
+
+        JaxbElementProperty source2 = new JaxbElementProperty();
+        source2.setProp( createJaxb( ""5"" ) );
+        source2.publicProp = createJaxb( ""5"" );
+
+        SomeTypeProperty target2 = JaxbMapper.INSTANCE.mapSomeType( source2 );
+        assertThat( target2 ).isNotNull();
+        assertThat( target2.publicProp ).isNotNull();
+        assertThat( target2.getProp() ).isNotNull();
+    }"
+"1238","210","694","693","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/BuiltInTest.java","160","178","-2147348016","-2147347860","0","0","void shouldApplyBuiltInOnJakartaJAXBElementExtra()","void shouldApplyBuiltInOnJakartaJAXBElementExtra(){
+        JakartaJaxbElementProperty source = new JakartaJaxbElementProperty();
+        source.setProp( createJakartaJaxb( ""5"" ) );
+        source.publicProp = createJakartaJaxb( ""5"" );
+
+        BigDecimalProperty target = JakartaJaxbMapper.INSTANCE.mapBD( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isEqualTo( new BigDecimal( ""5"" ) );
+        assertThat( target.publicProp ).isEqualTo( new BigDecimal( ""5"" ) );
+
+        JakartaJaxbElementProperty source2 = new JakartaJaxbElementProperty();
+        source2.setProp( createJakartaJaxb( ""5"" ) );
+        source2.publicProp = createJakartaJaxb( ""5"" );
+
+        SomeTypeProperty target2 = JakartaJaxbMapper.INSTANCE.mapSomeType( source2 );
+        assertThat( target2 ).isNotNull();
+        assertThat( target2.publicProp ).isNotNull();
+        assertThat( target2.getProp() ).isNotNull();
+    }"

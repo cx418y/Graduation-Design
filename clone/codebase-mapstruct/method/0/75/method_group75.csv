@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"380","75","229","228","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/array/ArrayMappingTest.java","193","200","-2147441921","-2147441853","0","0","void shouldMapFloatWhenReturnDefault()","void shouldMapFloatWhenReturnDefault(){
+        float[] existingTarget = new float[]{ 3.1f };
+        float[] target = ScienceMapper.INSTANCE.nvmMapping( null, existingTarget );
+
+        assertThat( target ).containsOnly( 0.0f );
+        assertThat( target ).isEqualTo( existingTarget );
+        assertThat( existingTarget ).containsOnly( 0.0f );
+    }"
+"381","75","235","234","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/array/ArrayMappingTest.java","203","210","-2147441853","-2147441785","0","0","void shouldMapDoubleWhenReturnDefault()","void shouldMapDoubleWhenReturnDefault(){
+        double[] existingTarget = new double[]{ 5.0d };
+        double[] target = ScienceMapper.INSTANCE.nvmMapping( null, existingTarget );
+
+        assertThat( target ).containsOnly( 0.0d );
+        assertThat( target ).isEqualTo( existingTarget );
+        assertThat( existingTarget ).containsOnly( 0.0d );
+    }"

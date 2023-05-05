@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testShouldPreferHumanSingular","void testShouldPreferHumanSingular(){
+[*1*] 
+        AdderUsageObserver.setUsed( false );
+
+        SourceTeeth source = new SourceTeeth();
+        source.setTeeth( Arrays.asList( ""moler"" ) );
+
+        TargetHuman target = SourceTargetMapper.INSTANCE.toTargetHuman( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getTeeth().size() ).isEqualTo( 1 );
+        assertThat( target.getTeeth().get( 0 ) ).isEqualTo( 3 );
+        assertTrue( AdderUsageObserver.isUsed() );
+    }
+","[*1*]:
+"

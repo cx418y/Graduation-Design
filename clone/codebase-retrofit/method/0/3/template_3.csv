@@ -1,0 +1,22 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","interfaceWithTypeParameterThrows","void interfaceWithTypeParameterThrows(){
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(server.url(""/"")).build();
+
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    try {
+      retrofit.create(TypeParam.class);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(""Type parameters are unsupported on retrofit2.RetrofitTest$TypeParam"");[*1*] 
+          .hasMessage([*2*] 
+              ""Type parameters are unsupported on retrofit2.RetrofitTest$TypeParam ""[*3*] 
+                  + ""which is an interface of retrofit2.RetrofitTest$ExtendingTypeParam"");[*4*] 
+    }
+  }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+"

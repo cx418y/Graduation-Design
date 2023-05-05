@@ -1,0 +1,49 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyDefinedMappingsInsteadOfCustomEnumMappingStrategy","void shouldApplyDefinedMappingsInsteadOfCustomEnumMappingStrategy(){
+        assertThat( mapper.mapToString( (CustomCheeseType) null ) ).isEqualTo( ""ROQUEFORT"" );[*1*] 
+        OverridesCustomCheeseMapper mapper = OverridesCustomCheeseMapper.INSTANCE;
+
+        assertThat( mapper.map( (CheeseType) null ) ).isEqualTo( CustomCheeseType.CUSTOM_ROQUEFORT );
+        assertThat( mapper.map( CheeseType.BRIE ) ).isEqualTo( CustomCheeseType.CUSTOM_ROQUEFORT );
+        assertThat( mapper.map( CheeseType.ROQUEFORT ) ).isEqualTo( CustomCheeseType.CUSTOM_ROQUEFORT );
+
+        assertThat( mapper.map( (CustomCheeseType) null ) ).isEqualTo( CheeseType.ROQUEFORT );[*2*] 
+[*3*] 
+        assertThat( mapper.map( CustomCheeseType.UNSPECIFIED ) ).isNull();
+        assertThat( mapper.map( CustomCheeseType.CUSTOM_BRIE ) ).isEqualTo( CheeseType.ROQUEFORT );
+        assertThat( mapper.map( CustomCheeseType.CUSTOM_ROQUEFORT ) ).isEqualTo( CheeseType.ROQUEFORT );
+        assertThat( mapper.map( CustomCheeseType.UNRECOGNIZED ) ).isNull();
+
+        assertThat( mapper.mapToString( (CheeseType) null ) ).isNull();
+        assertThat( mapper.mapToString( CheeseType.BRIE ) ).isEqualTo( ""BRIE"" );
+        assertThat( mapper.mapToString( CheeseType.ROQUEFORT ) ).isEqualTo( ""BRIE"" );
+
+[*4*] 
+        assertThat( mapper.mapToString( CustomCheeseType.UNSPECIFIED ) ).isNull();
+        assertThat( mapper.mapToString( CustomCheeseType.CUSTOM_BRIE ) ).isEqualTo( ""BRIE"" );
+        assertThat( mapper.mapToString( CustomCheeseType.CUSTOM_ROQUEFORT ) ).isEqualTo( ""BRIE"" );
+        assertThat( mapper.mapToString( CustomCheeseType.UNRECOGNIZED ) ).isNull();
+
+        assertThat( mapper.mapStringToCheese( null ) ).isEqualTo( CheeseType.ROQUEFORT );[*5*] 
+[*6*] 
+        assertThat( mapper.mapStringToCheese( ""BRIE"" ) ).isEqualTo( CheeseType.ROQUEFORT );
+        assertThat( mapper.mapStringToCheese( ""ROQUEFORT"" ) ).isEqualTo( CheeseType.ROQUEFORT );
+        assertThat( mapper.mapStringToCheese( ""UNKNOWN"" ) ).isEqualTo( CheeseType.BRIE );
+
+        assertThat( mapper.mapStringToCustom( null ) ).isEqualTo( CustomCheeseType.CUSTOM_ROQUEFORT );
+        assertThat( mapper.mapStringToCustom( ""UNRECOGNIZED"" ) ).isEqualTo( CustomCheeseType.CUSTOM_BRIE );
+        assertThat( mapper.mapStringToCustom( ""BRIE"" ) ).isEqualTo( CustomCheeseType.CUSTOM_ROQUEFORT );
+        assertThat( mapper.mapStringToCustom( ""ROQUEFORT"" ) ).isEqualTo( CustomCheeseType.CUSTOM_ROQUEFORT );
+        assertThat( mapper.mapStringToCustom( ""UNKNOWN"" ) ).isEqualTo( CustomCheeseType.CUSTOM_BRIE );
+    }
+","[*1*]:
+1, 0.3333333333333333,         generatedSource.addComparisonToFixtureFor( CustomCheeseMapper.class );
+[*2*]:
+[*3*]:
+1, 0.3333333333333333,         assertThat( mapper.map( (CustomCheeseType) null ) ).isNull();
+[*4*]:
+1, 0.3333333333333333,         assertThat( mapper.mapToString( (CustomCheeseType) null ) ).isNull();
+[*5*]:
+[*6*]:
+1, 0.3333333333333333,         assertThat( mapper.mapStringToCheese( null ) ).isNull();
+"

@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldIncludeBuildeType","void shouldIncludeBuildeType(){
+
+        ItemDTO item = ImmutableItemDTO.builder().id( ""test"" ).build();
+
+        Item target = ItemMapper.INSTANCE.map( item );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getId() ).isEqualTo( ""test"" );
+    }
+",""

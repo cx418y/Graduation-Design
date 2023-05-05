@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"134","22","68","67","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperSmartImpl.java","63","74","-2147469937","-2147469887","0","0","List<WheelDto> wheelListToWheelDtoList(List<Wheel> list)","List<WheelDto> wheelListToWheelDtoList(List<Wheel> list){
+        if ( list == null ) {
+            return null;
+        }
+
+        List<WheelDto> list1 = new ArrayList<WheelDto>( list.size() );
+        for ( Wheel wheel : list ) {
+            list1.add( wheelToWheelDto( wheel ) );
+        }
+
+        return list1;
+    }"
+"145","22","68","67","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoUpdateMapperSmartImpl.java","73","84","-2147469089","-2147469039","0","0","List<WheelDto> wheelListToWheelDtoList(List<Wheel> list)","List<WheelDto> wheelListToWheelDtoList(List<Wheel> list){
+        if ( list == null ) {
+            return null;
+        }
+
+        List<WheelDto> list1 = new ArrayList<WheelDto>( list.size() );
+        for ( Wheel wheel : list ) {
+            list1.add( wheelToWheelDto( wheel ) );
+        }
+
+        return list1;
+    }"

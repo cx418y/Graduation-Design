@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","optional","void optional()throws IOException{
+    server.enqueue(new MockResponse());
+
+    Optional<Object> optional = service.optional().execute().body();
+    assertThat(optional).isNotNull();
+    assertThat(optional.isPresent()).isFalse();[*1*] 
+  }
+","[*1*]:
+1, 0.3333333333333333,     assertThat(optional.get()).isSameAs(ObjectInstanceConverterFactory.VALUE);
+"

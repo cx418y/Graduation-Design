@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldReverseMapSetOfEnumToStringSet","void shouldReverseMapSetOfEnumToStringSet(){
+        Target target = new Target();
+        target.setColours( new HashSet<>( Arrays.asList( ""BLUE"", ""GREEN"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getColours() ).containsOnly( Colour.GREEN, Colour.BLUE );
+    }
+",""

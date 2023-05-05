@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"579","105","354","353","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1801/Issue1801Test.java","41","49","-2147422469","-2147422414","0","0","void shouldIncludeBuildeType()","void shouldIncludeBuildeType(){
+
+        ItemDTO item = ImmutableItemDTO.builder().id( ""test"" ).build();
+
+        Item target = ItemMapper.INSTANCE.map( item );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getId() ).isEqualTo( ""test"" );
+    }"
+"642","105","354","353","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1596/Issue1596Test.java","41","49","-2147416246","-2147416191","0","0","void shouldIncludeBuildType()","void shouldIncludeBuildType(){
+
+        ItemDTO item = ImmutableItemDTO.builder().id( ""test"" ).build();
+
+        Item target = ItemMapper.INSTANCE.map( item );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getId() ).isEqualTo( ""test"" );
+    }"

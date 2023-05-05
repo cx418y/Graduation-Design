@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","completableUsesScheduler","void completableUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingCompletableObserver observer = observerRule.create();
+    service.completable().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertComplete();
+  }
+",""

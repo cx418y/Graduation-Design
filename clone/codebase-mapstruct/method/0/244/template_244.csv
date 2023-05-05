@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getName","String getName(Type type){
+            StringBuilder builder = new StringBuilder();
+            for ( Type typeParam : type.getTypeParameters() ) {
+                builder.append( typeParam.getIdentification() );
+            }
+            builder.append( type.getIdentification() );
+            return builder.toString();
+        }
+",""

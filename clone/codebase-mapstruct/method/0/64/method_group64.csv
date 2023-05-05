@@ -1,0 +1,38 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"309","64","201","200","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/basic/ConditionalMappingTest.java","39","51","-2147449009","-2147448911","0","0","void conditionalMethodInMapper()","void conditionalMethodInMapper(){
+        generatedSource.addComparisonToFixtureFor( ConditionalMethodInMapper.class );
+        ConditionalMethodInMapper mapper = ConditionalMethodInMapper.INSTANCE;
+
+        BasicEmployee employee = mapper.map( new BasicEmployeeDto( ""Tester"" ) );
+        assertThat( employee.getName() ).isEqualTo( ""Tester"" );
+
+        employee = mapper.map( new BasicEmployeeDto( """" ) );
+        assertThat( employee.getName() ).isNull();
+
+        employee = mapper.map( new BasicEmployeeDto( ""    "" ) );
+        assertThat( employee.getName() ).isNull();
+    }"
+"311","64","207","206","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/basic/ConditionalMappingTest.java","80","91","-2147448816","-2147448727","0","0","void conditionalMethodInUsesMapper()","void conditionalMethodInUsesMapper(){
+        ConditionalMethodInUsesMapper mapper = ConditionalMethodInUsesMapper.INSTANCE;
+
+        BasicEmployee employee = mapper.map( new BasicEmployeeDto( ""Tester"" ) );
+        assertThat( employee.getName() ).isEqualTo( ""Tester"" );
+
+        employee = mapper.map( new BasicEmployeeDto( """" ) );
+        assertThat( employee.getName() ).isNull();
+
+        employee = mapper.map( new BasicEmployeeDto( ""    "" ) );
+        assertThat( employee.getName() ).isNull();
+    }"
+"312","64","207","206","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/basic/ConditionalMappingTest.java","97","108","-2147448727","-2147448638","0","0","void conditionalMethodInUsesStaticMapper()","void conditionalMethodInUsesStaticMapper(){
+        ConditionalMethodInUsesStaticMapper mapper = ConditionalMethodInUsesStaticMapper.INSTANCE;
+
+        BasicEmployee employee = mapper.map( new BasicEmployeeDto( ""Tester"" ) );
+        assertThat( employee.getName() ).isEqualTo( ""Tester"" );
+
+        employee = mapper.map( new BasicEmployeeDto( """" ) );
+        assertThat( employee.getName() ).isNull();
+
+        employee = mapper.map( new BasicEmployeeDto( ""    "" ) );
+        assertThat( employee.getName() ).isNull();
+    }"

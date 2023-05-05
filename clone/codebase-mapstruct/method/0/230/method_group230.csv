@@ -1,0 +1,56 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1497","230","754","753","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/MapperCreationProcessor.java","733","758","-2147312530","-2147312413","0","0","void reportErrorWhenAmbigousReverseMapping(List<SourceMethod> candidates, SourceMethod method,
+                   InheritInverseConfigurationGem inverseGem)","void reportErrorWhenAmbigousReverseMapping(List<SourceMethod> candidates, SourceMethod method,
+                   InheritInverseConfigurationGem inverseGem){
+
+        List<String> candidateNames = new ArrayList<>();
+        for ( SourceMethod candidate : candidates ) {
+            candidateNames.add( candidate.getName() );
+        }
+
+        String name = inverseGem.name().get();
+        if ( name.isEmpty() ) {
+            messager.printMessage( method.getExecutable(),
+                inverseGem.mirror(),
+                Message.INHERITINVERSECONFIGURATION_DUPLICATES,
+                Strings.join( candidateNames, ""(), "" )
+
+            );
+        }
+        else {
+            messager.printMessage( method.getExecutable(),
+                inverseGem.mirror(),
+                Message.INHERITINVERSECONFIGURATION_INVALID_NAME,
+                Strings.join( candidateNames, ""(), "" ),
+                name
+
+            );
+        }
+    }"
+"1498","230","754","753","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/MapperCreationProcessor.java","784","808","-2147312413","-2147312296","0","0","void reportErrorWhenAmbigousMapping(List<SourceMethod> candidates, SourceMethod method,
+                                                InheritConfigurationGem gem)","void reportErrorWhenAmbigousMapping(List<SourceMethod> candidates, SourceMethod method,
+                                                InheritConfigurationGem gem){
+
+        List<String> candidateNames = new ArrayList<>();
+        for ( SourceMethod candidate : candidates ) {
+            candidateNames.add( candidate.getName() );
+        }
+
+        String name = gem.name().get();
+        if ( name.isEmpty() ) {
+            messager.printMessage( method.getExecutable(),
+                gem.mirror(),
+                Message.INHERITCONFIGURATION_DUPLICATES,
+                Strings.join( candidateNames, ""(), "" )
+            );
+        }
+        else {
+            messager.printMessage(
+                method.getExecutable(),
+                gem.mirror(),
+                Message.INHERITCONFIGURATION_INVALIDNAME,
+                Strings.join( candidateNames, ""(), "" ),
+                name
+            );
+        }
+    }"

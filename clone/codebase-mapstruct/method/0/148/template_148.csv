@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldIgnoreEverytingBelowArtist","void shouldIgnoreEverytingBelowArtist(){
+
+        Song song1 = prepareSong();
+
+        ChartEntry chartEntry = ArtistToChartEntryWithIgnoresReverse.MAPPER.mapForward( song1 );
+
+        assertThat( chartEntry ).isNotNull();
+        assertThat( chartEntry.getArtistName() ).isEqualTo( ""The Beatles"" );
+        assertThat( chartEntry.getChartName() ).isNull();
+        assertThat( chartEntry.getCity() ).isEqualTo( ""London"" );
+        assertThat( chartEntry.getPosition() ).isEqualTo( 0 );
+        assertThat( chartEntry.getRecordedAt() ).isEqualTo( ""Abbey Road"" );
+        assertThat( chartEntry.getSongTitle() ).isEqualTo( ""A Hard Day's Night"" );
+
+        Song song2 = ArtistToChartEntryWithIgnoresReverse.MAPPER.mapReverse( chartEntry );
+
+        assertThat( song2 ).isNotNull();
+        assertThat( song2.getArtist() ).isNull();
+    }
+",""

@@ -3,6 +3,7 @@ package fudan.design.clone.controller;
 
 import fudan.design.clone.dto.RelatedTemplatesDTO;
 import fudan.design.clone.dto.Template;
+import fudan.design.clone.dto.TemplateDetailsDTO;
 import fudan.design.clone.dto.TemplateLineDIffList;
 import fudan.design.clone.service.ElasticsearchService;
 import jakarta.annotation.Resource;
@@ -16,7 +17,7 @@ public class CloneController {
 	private ElasticsearchService elasticsearchService;
 
 	@GetMapping("/getDtails")
-	public List<TemplateLineDIffList> getDetails(@RequestParam String id) {
+	public TemplateDetailsDTO getDetails(@RequestParam String id) {
 		return elasticsearchService.findById(id);
 	}
 	@GetMapping("/getCloneTemplate")

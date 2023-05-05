@@ -1,0 +1,35 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","reportErrorWhenAmbigousReverseMapping","void reportErrorWhenAmbigousReverseMapping(List<SourceMethod> candidates, SourceMethod method,
+                   InheritInverseConfigurationGem inverseGem){
+
+        List<String> candidateNames = new ArrayList<>();
+        for ( SourceMethod candidate : candidates ) {
+            candidateNames.add( candidate.getName() );
+        }
+
+        String name = inverseGem.name().get();
+        if ( name.isEmpty() ) {
+            messager.printMessage( method.getExecutable(),
+                inverseGem.mirror(),
+                Message.INHERITINVERSECONFIGURATION_DUPLICATES,
+                Strings.join( candidateNames, ""(), "" )
+[*1*] 
+            );
+        }
+        else {
+            messager.printMessage( method.getExecutable(),[*2*] 
+                method.getExecutable(),[*3*] 
+                inverseGem.mirror(),
+                Message.INHERITINVERSECONFIGURATION_INVALID_NAME,
+                Strings.join( candidateNames, ""(), "" ),
+                name
+[*4*] 
+            );
+        }
+    }
+","[*1*]:
+[*2*]:
+1, 0.5,             messager.printMessage(
+[*3*]:
+[*4*]:
+"

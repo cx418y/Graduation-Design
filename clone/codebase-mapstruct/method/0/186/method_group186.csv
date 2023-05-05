@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1085","186","605","604","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullcheck/strategy/NullValueCheckTest.java","25","33","-2147365094","-2147365042","0","0","void testDefinedOnMapper()","void testDefinedOnMapper(){
+
+        HouseEntity entity = HouseMapper.INSTANCE.mapWithNvcsOnMapper( new HouseDto() );
+
+        assertThat( entity ).isNotNull();
+        assertThat( entity.ownerSet() ).isFalse();
+        assertThat( entity.numberSet() ).isFalse();
+
+    }"
+"1088","186","605","606","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullcheck/strategy/NullValueCheckTest.java","58","66","-2147364938","-2147364886","0","0","void testDefinedOnConfig()","void testDefinedOnConfig(){
+
+        HouseEntity entity = HouseMapperWithConfig.INSTANCE.mapWithNvcsOnMapper( new HouseDto() );
+
+        assertThat( entity ).isNotNull();
+        assertThat( entity.ownerSet() ).isFalse();
+        assertThat( entity.numberSet() ).isFalse();
+
+    }"

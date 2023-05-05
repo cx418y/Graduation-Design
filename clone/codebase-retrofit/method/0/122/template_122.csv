@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","convert","RequestBody convert(final T value)throws IOException{
+    Buffer buffer = new Buffer();
+    try {
+      Marshaller marshaller = context.createMarshaller();
+
+      XMLStreamWriter xmlWriter =
+          xmlOutputFactory.createXMLStreamWriter(
+              buffer.outputStream(), JaxbConverterFactory.XML.charset().name());
+      marshaller.marshal(value, xmlWriter);
+    } catch (JAXBException | XMLStreamException e) {
+      throw new RuntimeException(e);
+    }
+    return RequestBody.create(JaxbConverterFactory.XML, buffer.readByteString());
+  }
+",""

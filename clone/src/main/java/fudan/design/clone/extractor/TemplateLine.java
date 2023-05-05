@@ -41,6 +41,7 @@ public class TemplateLine {
         String thisLine = formattedLine.replaceAll("\\s+", "");
         String thatLine  = line.formattedLine.replaceAll("\\s+", "");
         Double similarity = DiffUtil.compareStringSimilarity(thisLine,thatLine);
+        System.out.println(thisLine +"  " +thatLine+ "  "+similarity);
         return similarity >= TemplateConstants.MIN_CAN_COMPARE_SIM;
     }
 

@@ -1,0 +1,66 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"758","125","421","420","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1828/Issue1828Test.java","29","53","-2147404714","-2147404539","0","0","void testMapSpecialAndGeneralAddressSet()","void testMapSpecialAndGeneralAddressSet(){
+
+        Employee employee = new Employee();
+        employee.setName( ""Mad King"" );
+
+        SpecialAddress specialAddress = new SpecialAddress();
+        specialAddress.setLine1( ""Building One"" );
+        specialAddress.setLine2( ""Street Two"" );
+        employee.setSpecialAddress( specialAddress );
+
+        GeneralAddress generalAddress = new GeneralAddress();
+        generalAddress.setCity( ""King's Landing"" );
+        generalAddress.setCountry( ""Seven Kingdom"" );
+        employee.setGeneralAddress( generalAddress );
+
+        Person person = FirstMapper.INSTANCE.mapPerson( employee );
+        assertThat( person.getName() ).isEqualTo( ""Mad King"" );
+
+        CompleteAddress completeAddress = person.getCompleteAddress();
+        assertThat( completeAddress ).isNotNull();
+        assertThat( completeAddress.getLineOne() ).isEqualTo( ""Building One"" );
+        assertThat( completeAddress.getLineTwo() ).isEqualTo( ""Street Two"" );
+        assertThat( completeAddress.getCity() ).isEqualTo( ""King's Landing"" );
+        assertThat( completeAddress.getCountry() ).isEqualTo( ""Seven Kingdom"" );
+    }"
+"759","125","427","426","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1828/Issue1828Test.java","56","75","-2147404539","-2147404395","0","0","void testMapGeneralAddressNull()","void testMapGeneralAddressNull(){
+
+        Employee employee = new Employee();
+        employee.setName( ""Mad King"" );
+
+        SpecialAddress specialAddress = new SpecialAddress();
+        specialAddress.setLine1( ""Building One"" );
+        specialAddress.setLine2( ""Street Two"" );
+        employee.setSpecialAddress( specialAddress );
+
+        Person person = FirstMapper.INSTANCE.mapPerson( employee );
+        assertThat( person.getName() ).isEqualTo( ""Mad King"" );
+
+        CompleteAddress completeAddress = person.getCompleteAddress();
+        assertThat( completeAddress ).isNotNull();
+        assertThat( completeAddress.getLineOne() ).isEqualTo( ""Building One"" );
+        assertThat( completeAddress.getLineTwo() ).isEqualTo( ""Street Two"" );
+        assertThat( completeAddress.getCity() ).isNull();
+        assertThat( completeAddress.getCountry() ).isNull();
+    }"
+"760","125","433","432","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1828/Issue1828Test.java","78","97","-2147404395","-2147404251","0","0","void testMapSpecialAddressNull()","void testMapSpecialAddressNull(){
+
+        Employee employee = new Employee();
+        employee.setName( ""Mad King"" );
+
+        GeneralAddress generalAddress = new GeneralAddress();
+        generalAddress.setCity( ""King's Landing"" );
+        generalAddress.setCountry( ""Seven Kingdom"" );
+        employee.setGeneralAddress( generalAddress );
+
+        Person person = FirstMapper.INSTANCE.mapPerson( employee );
+        assertThat( person.getName() ).isEqualTo( ""Mad King"" );
+
+        CompleteAddress completeAddress = person.getCompleteAddress();
+        assertThat( completeAddress ).isNotNull();
+        assertThat( completeAddress.getLineOne() ).isNull();
+        assertThat( completeAddress.getLineTwo() ).isNull();
+        assertThat( completeAddress.getCity() ).isEqualTo( ""King's Landing"" );
+        assertThat( completeAddress.getCountry() ).isEqualTo( ""Seven Kingdom"" );
+    }"

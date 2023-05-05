@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"317","47","170","169","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/AsyncTest.java","88","96","-2147441637","-2147441574","0","0","void success()throws InterruptedException","void success()throws InterruptedException{
+    TestObserver<Void> observer = new TestObserver<>();
+    service.completable().subscribe(observer);
+    assertFalse(observer.await(1, SECONDS));
+
+    server.enqueue(new MockResponse());
+    observer.await(1, SECONDS);
+    observer.assertComplete();
+  }"
+"440","47","170","179","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/AsyncTest.java","89","97","-2147430550","-2147430487","0","0","void success()throws InterruptedException","void success()throws InterruptedException{
+    TestObserver<Void> observer = new TestObserver<>();
+    service.completable().subscribe(observer);
+    assertFalse(observer.await(1, SECONDS));
+
+    server.enqueue(new MockResponse());
+    observer.awaitTerminalEvent(1, SECONDS);
+    observer.assertComplete();
+  }"

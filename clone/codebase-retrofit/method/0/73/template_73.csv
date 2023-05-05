@@ -1,0 +1,33 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","adapt","Object adapt(Call<R> call){
+    Observable<Response<R>> responseObservable =
+        isAsync ? new CallEnqueueObservable<>(call) : new CallExecuteObservable<>(call);
+
+    Observable<?> observable;
+    if (isResult) {
+      observable = new ResultObservable<>(responseObservable);
+    } else if (isBody) {
+      observable = new BodyObservable<>(responseObservable);
+    } else {
+      observable = responseObservable;
+    }
+
+    if (scheduler != null) {
+      observable = observable.subscribeOn(scheduler);
+    }
+
+    if (isFlowable) {
+      return observable.toFlowable(BackpressureStrategy.MISSING);
+    }
+    if (isSingle) {
+      return observable.singleOrError();
+    }
+    if (isMaybe) {
+      return observable.singleElement();
+    }
+    if (isCompletable) {
+      return observable.ignoreElements();
+    }
+    return RxJavaPlugins.onAssembly(observable);
+  }
+",""

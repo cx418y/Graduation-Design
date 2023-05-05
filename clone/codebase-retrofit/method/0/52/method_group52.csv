@@ -1,0 +1,327 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"306","52","191","190","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeThrowingTest.java","217","250","-2147444068","-2147443919","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingMaybeObserver<Result<String>> observer = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .subscribe(
+            new ForwardingObserver<Result<String>>(observer) {
+              @Override
+              public void onSuccess(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) throwableRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"
+"328","52","191","190","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleThrowingTest.java","219","252","-2147440324","-2147440175","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingSingleObserver<Result<String>> observer = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .subscribe(
+            new ForwardingObserver<Result<String>>(observer) {
+              @Override
+              public void onSuccess(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) throwableRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"
+"338","52","191","198","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableThrowingTest.java","275","308","-2147439196","-2147439047","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .safeSubscribe(
+            new ForwardingSubscriber<Result<String>>(subscriber) {
+              @Override
+              public void onNext(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) throwableRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"
+"382","52","191","198","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableThrowingTest.java","275","308","-2147435745","-2147435596","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingObserver<Result<String>> observer = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .subscribe(
+            new ForwardingObserver<Result<String>>(observer) {
+              @Override
+              public void onNext(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) throwableRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"
+"433","52","191","190","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeThrowingTest.java","218","251","-2147431089","-2147430940","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingMaybeObserver<Result<String>> observer = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .subscribe(
+            new ForwardingObserver<Result<String>>(observer) {
+              @Override
+              public void onSuccess(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) throwableRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"
+"455","52","191","190","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleThrowingTest.java","220","253","-2147427337","-2147427188","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingSingleObserver<Result<String>> observer = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .subscribe(
+            new ForwardingObserver<Result<String>>(observer) {
+              @Override
+              public void onSuccess(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) throwableRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"
+"465","52","191","198","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableThrowingTest.java","276","309","-2147426203","-2147426054","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .safeSubscribe(
+            new ForwardingSubscriber<Result<String>>(subscriber) {
+              @Override
+              public void onNext(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) throwableRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"
+"509","52","191","198","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableThrowingTest.java","276","309","-2147422746","-2147422597","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingObserver<Result<String>> observer = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .subscribe(
+            new ForwardingObserver<Result<String>>(observer) {
+              @Override
+              public void onNext(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) throwableRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"
+"582","52","216","215","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleThrowingTest.java","236","272","-2147415810","-2147415650","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.getInstance()
+        .registerErrorHandler(
+            new RxJavaErrorHandler() {
+              @Override
+              public void handleError(Throwable throwable) {
+                if (!pluginRef.compareAndSet(null, throwable)) {
+                  throw Exceptions.propagate(throwable);                }
+              }
+            });
+
+    RecordingSubscriber<Result<String>> observer = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .subscribe(
+            new ForwardingObserver<Result<String>>(observer) {
+              @Override
+              public void onSuccess(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) pluginRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"
+"621","52","216","219","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableThrowingTest.java","292","328","-2147411433","-2147411273","0","0","void resultThrowingInOnErrorDeliveredToPlugin()","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.getInstance()
+        .registerErrorHandler(
+            new RxJavaErrorHandler() {
+              @Override
+              public void handleError(Throwable throwable) {
+                if (!pluginRef.compareAndSet(null, throwable)) {
+                  throw Exceptions.propagate(throwable);                }
+              }
+            });
+
+    RecordingSubscriber<Result<String>> observer = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .unsafeSubscribe(
+            new ForwardingSubscriber<Result<String>>(observer) {
+              @Override
+              public void onNext(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) pluginRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }"

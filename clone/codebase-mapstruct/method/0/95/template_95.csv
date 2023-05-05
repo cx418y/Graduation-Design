@@ -1,0 +1,25 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapSeveralSourceAttributesToCombinedTarget","void shouldMapSeveralSourceAttributesToCombinedTarget(){
+        Person person = new Person( ""Bob"", ""Garner"", 181, ""An actor"" );
+        Address address = new Address( ""Main street"", 12345, 42, ""His address"" );
+
+        DeliveryAddress deliveryAddress = SourceTargetMapper.INSTANCE[*1*] 
+            .personAndAddressToDeliveryAddress( person, address );[*2*] 
+[*3*] 
+
+        assertThat( deliveryAddress ).isNotNull();[*4*] 
+        assertThat( deliveryAddress.getLastName() ).isEqualTo( ""Garner"" );
+        assertThat( deliveryAddress.getZipCode() ).isEqualTo( 12345 );
+        assertThat( deliveryAddress.getHouseNumber() ).isEqualTo( 42 );
+        assertThat( deliveryAddress.getDescription() ).isEqualTo( ""An actor"" );
+
+        assertThat( ReferencedMapper.isBeforeMappingCalled() ).isTrue();[*5*] 
+    }
+","[*1*]:
+[*2*]:
+1, 0.3333333333333333,         SourceTargetMapper.INSTANCE.personAndAddressToDeliveryAddress( person, address, deliveryAddress );
+[*3*]:
+1, 0.3333333333333333,         DeliveryAddress deliveryAddress = new DeliveryAddress();
+[*4*]:
+[*5*]:
+"

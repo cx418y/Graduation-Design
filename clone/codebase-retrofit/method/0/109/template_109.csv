@@ -1,0 +1,25 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseBodyConverter","Converter<ResponseBody, ?> responseBodyConverter([*1*] 
+      Type type, Annotation[] annotations, Retrofit retrofit){[*2*] 
+      Type type,[*3*] 
+      Annotation[] parameterAnnotations,[*4*] 
+      Annotation[] methodAnnotations,[*5*] 
+      Retrofit retrofit){[*6*] 
+    if (!(type instanceof Class<?>)) {
+      return null;
+    }
+    Class<?> c = (Class<?>) type;
+    if (!Message.class.isAssignableFrom(c)) {
+      return null;
+    }
+    ProtoAdapter<? extends Message> adapter = ProtoAdapter.get((Class<? extends Message>) c);
+    return new WireResponseBodyConverter<>(adapter);
+  }
+","[*1*]:
+1, 0.5, Converter<?, RequestBody> requestBodyConverter(
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+"

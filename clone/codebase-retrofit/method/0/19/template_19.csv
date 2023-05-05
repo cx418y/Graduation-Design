@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","bodySuccess404","void bodySuccess404()throws Exception{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    CompletableFuture<String> future = service.body();
+    try {
+      future.get();
+      fail();
+    } catch (ExecutionException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(HttpException.class)          .isInstanceOf(retrofit2.HttpException.class)[*1*] 
+          .hasMessage(""HTTP 404 Client Error"");
+    }
+  }
+","[*1*]:
+1, 0.3333333333333333,           .isInstanceOf(HttpException.class)          .isInstanceOf(HttpException.class)
+"

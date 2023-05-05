@@ -1,0 +1,46 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testSetToNullWhenNVPMSSetToNull","void testSetToNullWhenNVPMSSetToNull(){
+
+        User target = new User();
+        target.setAddress( ""address"" );
+        target.setEmail( ""email"" );
+        target.setName( ""name"" );
+        target.setPhone( 12345 );
+        target.addPreference( ""preference"" );
+        target.setSettings( new String[]{ ""test"" } );
+
+        UserDTO source = new UserDTO();
+        source.setContactDataDTO( new ContactDataDTO() );
+        source.getContactDataDTO().setAddress( ""newAddress"" );
+        source.getContactDataDTO().setEmail( null );
+        source.getContactDataDTO().setPhone( null );
+        source.setName( null );
+
+        UserMapper.INSTANCE.updateUserFromUserDTO( source, target );
+
+        assertThat( target.getAddress() ).isEqualTo( ""newAddress"" );[*1*] 
+[*2*] 
+[*3*] 
+[*4*] 
+        assertThat( target.getPreferences() ).containsOnly( ""preference"" );
+[*5*] 
+        assertThat( target.getPhone() ).isEqualTo( 12345 );[*6*] 
+        assertThat( target.getName() ).isEqualTo( ""name"" );[*7*] 
+        assertThat( target.getPreferences() ).containsOnly( ""preference"" );[*8*] 
+        assertThat( target.getSettings() ).containsExactly( ""test"" );[*9*] 
+    }
+","[*1*]:
+1, 0.3333333333333333,         assertThat( target.getSettings() ).isEmpty();
+[*2*]:
+1, 0.3333333333333333,         assertThat( target.getEmail() ).isNull();
+[*3*]:
+1, 0.3333333333333333,         assertThat( target.getPhone() ).isNull();
+[*4*]:
+1, 0.3333333333333333,         assertThat( target.getName() ).isNull();
+[*5*]:
+1, 0.3333333333333333,         assertThat( target.getSettings() ).isNull();
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+"

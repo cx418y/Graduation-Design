@@ -16,7 +16,7 @@ public class TemplateInfoCSV {
 
 	private String diffDetails;
 
-	private List<TemplateInfoCSV> templateList;
+	//private List<TemplateInfoCSV> templateList;
 
 	public static String[] getCsvHeader() {
 		String[] result = new String[4];
@@ -27,8 +27,14 @@ public class TemplateInfoCSV {
 		return result;
 	}
 
-
-
+	public String[] getCsvLine(){
+		String[] result = new String[4];
+		result[0] = templateId;
+		result[1] = methodName;
+		result[2] = templateCommon;
+		result[3] = diffDetails;
+		return result;
+	}
 
 
 

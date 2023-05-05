@@ -1,0 +1,34 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","subscribeActual","void subscribeActual(Observer<? super Response<T>> observer){
+    Call<T> call = originalCall.clone();
+    CallDisposable disposable = new CallDisposable(call);
+    observer.onSubscribe(disposable);
+    if (disposable.isDisposed()) {
+      return;
+    }
+
+    boolean terminated = false;
+    try {
+      Response<T> response = call.execute();
+      if (!disposable.isDisposed()) {
+        observer.onNext(response);
+      }
+      if (!disposable.isDisposed()) {
+        terminated = true;
+        observer.onComplete();
+      }
+    } catch (Throwable t) {
+      Exceptions.throwIfFatal(t);
+      if (terminated) {
+        RxJavaPlugins.onError(t);
+      } else if (!disposable.isDisposed()) {
+        try {
+          observer.onError(t);
+        } catch (Throwable inner) {
+          Exceptions.throwIfFatal(inner);
+          RxJavaPlugins.onError(new CompositeException(t, inner));
+        }
+      }
+    }
+  }
+",""

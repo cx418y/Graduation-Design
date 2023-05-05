@@ -1,0 +1,50 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"558","103","360","359","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/InheritConfigurationTest.java","32","55","-2147424560","-2147424336","0","0","void shouldInheritConfigurationSingleCandidates()","void shouldInheritConfigurationSingleCandidates(){
+
+        Source source = new Source();
+        source.setStringPropX( ""1"" );
+        source.setIntegerPropX( 2 );
+        source.setNestedSourceProp( new NestedSource(""nested"") );
+
+        Target createdTarget = SourceTargetMapperSingle.INSTANCE.forwardCreate( source );
+        assertThat( createdTarget ).isNotNull();
+        assertThat( createdTarget.getStringPropY() ).isEqualTo( ""1"" );
+        assertThat( createdTarget.getIntegerPropY() ).isEqualTo( 2 );
+        assertThat( createdTarget.getNestedResultProp() ).isEqualTo( ""nested"" );
+        assertThat( createdTarget.getExpressionProp() ).isEqualTo( ""expression"" );
+        assertThat( createdTarget.getConstantProp() ).isEqualTo( ""constant"" );
+
+        Target updatedTarget = new Target();
+        SourceTargetMapperSingle.INSTANCE.forwardUpdate( source, updatedTarget );
+        assertThat( updatedTarget ).isNotNull();
+        assertThat( updatedTarget.getStringPropY() ).isEqualTo( ""1"" );
+        assertThat( updatedTarget.getIntegerPropY() ).isEqualTo( 2 );
+        assertThat( updatedTarget.getNestedResultProp() ).isEqualTo( ""nested"" );
+        assertThat( updatedTarget.getExpressionProp() ).isEqualTo( ""expression"" );
+        assertThat( updatedTarget.getConstantProp() ).isEqualTo( ""constant"" );
+    }"
+"559","103","360","359","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/InheritConfigurationTest.java","59","83","-2147424336","-2147424112","0","0","void shouldInheritConfigurationMultipleCandidates()","void shouldInheritConfigurationMultipleCandidates(){
+
+        Source source = new Source();
+        source.setStringPropX( ""1"" );
+        source.setIntegerPropX( 2 );
+        source.setNestedSourceProp( new NestedSource(""nested"") );
+
+        Target createdTarget = SourceTargetMapperMultiple.INSTANCE.forwardCreate( source );
+        assertThat( createdTarget ).isNotNull();
+        assertThat( createdTarget.getStringPropY() ).isEqualTo( ""1"" );
+        assertThat( createdTarget.getIntegerPropY() ).isEqualTo( 2 );
+        assertThat( createdTarget.getNestedResultProp() ).isEqualTo( ""nested"" );
+        assertThat( createdTarget.getExpressionProp() ).isEqualTo( ""expression"" );
+        assertThat( createdTarget.getConstantProp() ).isEqualTo( ""constant"" );
+
+        Target updatedTarget = new Target();
+        SourceTargetMapperMultiple.INSTANCE.forwardUpdate( source, updatedTarget );
+        assertThat( updatedTarget ).isNotNull();
+        assertThat( updatedTarget.getStringPropY() ).isEqualTo( ""1"" );
+        assertThat( updatedTarget.getIntegerPropY() ).isEqualTo( 2 );
+        assertThat( updatedTarget.getNestedResultProp() ).isEqualTo( ""nested"" );
+        assertThat( updatedTarget.getExpressionProp() ).isEqualTo( ""expression"" );
+        assertThat( updatedTarget.getConstantProp() ).isEqualTo( ""constant"" );
+
+    }"

@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1328","220","725","724","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/model/source/SelectionParametersTest.java","269","284","-2147334768","-2147334604","0","0","void testEqualsQualifiersInDifferentOrder()","void testEqualsQualifiersInDifferentOrder(){
+        List<String> qualifyingNames = Arrays.asList( ""language"", ""german"" );
+        TypeMirror resultType = new TestTypeMirror( ""resultType"" );
+        List<TypeMirror> qualifiers = new ArrayList<>();
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        SelectionParameters params = new SelectionParameters( qualifiers, qualifyingNames, resultType, typeUtils );
+
+        List<TypeMirror> qualifiers2 = new ArrayList<>();
+        qualifiers2.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        qualifiers2.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        SelectionParameters params2 = new SelectionParameters( qualifiers2, qualifyingNames, resultType, typeUtils );
+
+        assertThat( params.equals( params2 ) ).as( ""Different order for qualifiers"" ).isFalse();
+        assertThat( params2.equals( params ) ).as( ""Different order for qualifiers"" ).isFalse();
+    }"
+"1329","220","725","729","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/model/source/SelectionParametersTest.java","287","302","-2147334604","-2147334440","0","0","void testEqualsQualifyingNamesOneNull()","void testEqualsQualifyingNamesOneNull(){
+        List<String> qualifyingNames = Arrays.asList( ""language"", ""german"" );
+        TypeMirror resultType = new TestTypeMirror( ""resultType"" );
+        List<TypeMirror> qualifiers = new ArrayList<>();
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        SelectionParameters params = new SelectionParameters( qualifiers, qualifyingNames, resultType, typeUtils );
+
+        List<TypeMirror> qualifiers2 = new ArrayList<>();
+        qualifiers2.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        qualifiers2.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        SelectionParameters params2 = new SelectionParameters( qualifiers2, null, resultType, typeUtils );
+
+        assertThat( params.equals( params2 ) ).as( ""Second null qualifyingNames"" ).isFalse();
+        assertThat( params2.equals( params ) ).as( ""First null qualifyingNames"" ).isFalse();
+    }"

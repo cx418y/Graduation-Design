@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"67","9","26","25","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/enum2enum/SpecialOrderMapperImpl.java","33","51","-2147478338","-2147478276","0","0","ExternalOrderType orderTypeToExternalOrderType(OrderType orderType)","ExternalOrderType orderTypeToExternalOrderType(OrderType orderType){
+        if ( orderType == null ) {
+            return ExternalOrderType.DEFAULT;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case STANDARD: externalOrderType = null;
+            break;
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: externalOrderType = ExternalOrderType.SPECIAL;
+        }
+
+        return externalOrderType;
+    }"
+"69","9","32","31","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/enum2enum/SpecialOrderMapperImpl.java","77","95","-2147478201","-2147478141","0","0","ExternalOrderType anyRemainingToNull(OrderType orderType)","ExternalOrderType anyRemainingToNull(OrderType orderType){
+        if ( orderType == null ) {
+            return ExternalOrderType.DEFAULT;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case STANDARD: externalOrderType = null;
+            break;
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: externalOrderType = null;
+        }
+
+        return externalOrderType;
+    }"

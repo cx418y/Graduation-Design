@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1070","183","596","595","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/inheritfromconfig/InheritFromConfigTest.java","78","86","-2147366077","-2147366013","0","0","void autoInheritedMappingIsOverriddenAtMethodLevel()","void autoInheritedMappingIsOverriddenAtMethodLevel(){
+        CarDto carDto = newTestDto();
+
+        CarEntity carEntity = CarMapperWithAutoInheritance.INSTANCE.toCarEntityWithFixedAuditTrail( carDto );
+
+        assertThat( carEntity.getColor() ).isEqualTo( ""red"" );
+        assertThat( carEntity.getPrimaryKey() ).isEqualTo( 42L );
+        assertThat( carEntity.getAuditTrail() ).isEqualTo( ""fixed"" );
+    }"
+"1076","183","596","595","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/inheritfromconfig/InheritFromConfigTest.java","157","165","-2147365680","-2147365616","0","0","void explicitInheritedMappingWithTwoLevelsIsOverriddenAtMethodLevel()","void explicitInheritedMappingWithTwoLevelsIsOverriddenAtMethodLevel(){
+        CarDto carDto = newTestDto();
+
+        CarEntity carEntity = CarMapperWithExplicitInheritance.INSTANCE.toCarEntityWithFixedAuditTrail( carDto );
+
+        assertThat( carEntity.getColor() ).isEqualTo( ""red"" );
+        assertThat( carEntity.getPrimaryKey() ).isEqualTo( 42L );
+        assertThat( carEntity.getAuditTrail() ).isEqualTo( ""fixed"" );
+    }"

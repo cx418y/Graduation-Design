@@ -1,0 +1,57 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","rawResponseTypeThrows","void rawResponseTypeThrows(){
+    Type observableType = new TypeToken<Observable<Response>>() {}.getType();[*1*] 
+    try {[*2*] 
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);[*3*] 
+      fail();[*4*] 
+    } catch (IllegalStateException e) {[*5*] 
+      assertThat(e)[*6*] 
+          .hasMessage(""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");[*7*] 
+    }[*8*] 
+[*9*] 
+    Type singleType = new TypeToken<Single<Response>>() {}.getType();[*10*] 
+    try {[*11*] 
+      factory.get(singleType, NO_ANNOTATIONS, retrofit);[*12*] 
+      fail();[*13*] 
+    } catch (IllegalStateException e) {[*14*] 
+      assertThat(e)[*15*] 
+          .hasMessage(""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");[*16*] 
+    }[*17*] 
+[*18*] 
+    Type maybeType = new TypeToken<Maybe<Response>>() {}.getType();
+    try {
+      factory.get(maybeType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");
+    }
+
+    Type flowableType = new TypeToken<Flowable<Response>>() {}.getType();
+    try {
+      factory.get(flowableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");
+    }
+  }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+[*11*]:
+[*12*]:
+[*13*]:
+[*14*]:
+[*15*]:
+[*16*]:
+[*17*]:
+[*18*]:
+"

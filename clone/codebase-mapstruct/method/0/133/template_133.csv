@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","subclassMappingInheritsInverseMapping","void subclassMappingInheritsInverseMapping(){
+        VehicleCollectionDto vehiclesDto = new VehicleCollectionDto();
+        CarDto carDto = new CarDto();
+        carDto.setMaker( ""BenZ"" );
+        vehiclesDto.getVehicles().add( carDto );
+
+        VehicleCollection result = SimpleSubclassMapper.INSTANCE.mapInverse( vehiclesDto );
+
+        assertThat( result.getVehicles() )
+            .extracting( Vehicle::getVehicleManufacturingCompany )
+            .containsExactly( ""BenZ"" );
+    }
+",""

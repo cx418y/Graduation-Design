@@ -1,0 +1,43 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testGenerationBasedOnQualifier","void testGenerationBasedOnQualifier(){
+[*1*] 
+        TopologyWithoutIterableMappingMapper mapper = Mappers.getMapper( TopologyWithoutIterableMappingMapper.class );[*2*] 
+
+        TopologyDto topologyDto1 = new TopologyDto();
+        List<TopologyFeatureDto> topologyFeatures1 = new ArrayList<>();
+        RiverDto riverDto = new RiverDto();
+        riverDto.setName( ""Rhine"" );
+        riverDto.setLength( 5 );
+        topologyFeatures1.add( riverDto );
+        topologyDto1.setTopologyFeatures( topologyFeatures1 );
+
+        TopologyEntity result1 = TopologyMapper.INSTANCE.mapTopologyAsRiver( topologyDto1 );[*3*] 
+        TopologyEntity riverTopology = mapper.mapTopologyAsRiver( riverTopologyDto );[*4*] 
+        assertThat( result1.getTopologyFeatures() ).hasSize( 1 );
+        assertThat( result1.getTopologyFeatures().get( 0 ).getName() ).isEqualTo( ""Rhine"" );
+        assertThat( result1.getTopologyFeatures().get( 0 ) ).isInstanceOf( RiverEntity.class );
+        assertThat( ( (RiverEntity) result1.getTopologyFeatures().get( 0 ) ).getLength() ).isEqualTo( 5 );
+
+        TopologyDto topologyDto2 = new TopologyDto();
+        List<TopologyFeatureDto> topologyFeatures2 = new ArrayList<>();
+        CityDto cityDto = new CityDto();
+        cityDto.setName( ""Amsterdam"" );
+        cityDto.setPopulation( 800000 );
+        topologyFeatures2.add( cityDto );
+        topologyDto2.setTopologyFeatures( topologyFeatures2 );
+
+        TopologyEntity result2 = TopologyMapper.INSTANCE.mapTopologyAsCity( topologyDto2 );[*5*] 
+        TopologyEntity cityTopology = mapper.mapTopologyAsCity( cityTopologyDto );[*6*] 
+        assertThat( result2.getTopologyFeatures() ).hasSize( 1 );
+        assertThat( result2.getTopologyFeatures().get( 0 ).getName() ).isEqualTo( ""Amsterdam"" );
+        assertThat( result2.getTopologyFeatures().get( 0 ) ).isInstanceOf( CityEntity.class );
+        assertThat( ( (CityEntity) result2.getTopologyFeatures().get( 0 ) ).getPopulation() ).isEqualTo( 800000 );
+    }
+","[*1*]:
+1, 0.5, 
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+"

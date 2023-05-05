@@ -1,0 +1,114 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"468","90","301","300","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/updatemethods/UpdateMethodsTest.java","167","177","-2147434304","-2147434245","0","0","@ProcessorTest @WithClasses({
+        ErroneousOrganizationMapper2.class,
+        OrganizationWithoutTypeGetterEntity.class
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@ProcessorTest @WithClasses({
+        ErroneousOrganizationMapper2.class,
+        OrganizationWithoutTypeGetterEntity.class
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousOrganizationMapper2.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 23,
+                message = ""No read accessor found for property \""type\"" in target type.""),
+            @Diagnostic(type = ErroneousOrganizationMapper2.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 35,
+                message = ""ErroneousOrganizationMapper2.DepartmentEntity does not have an accessible constructor."")
+
+        }"
+"884","90","307","306","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/defaultvalue/DefaultValueTest.java","120","131","-2147390764","-2147390701","0","0","@ProcessorTest @WithClasses({
+        ErroneousMapper.class,
+        Region.class,
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@ProcessorTest @WithClasses({
+        ErroneousMapper.class,
+        Region.class,
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 18,
+                message = ""Constant and default value are both defined in @Mapping, either define a defaultValue or a"" +
+                    "" constant.""),
+            @Diagnostic(type = ErroneousMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 20,
+                message = ""Can't map property \""Region region\"" to \""String region\"". "" +
+                    ""Consider to declare/implement a mapping method: \""String map(Region value)\""."")
+        }"
+"885","90","307","308","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/defaultvalue/DefaultValueTest.java","143","154","-2147390701","-2147390638","0","0","@ProcessorTest @WithClasses({
+        ErroneousMapper2.class,
+        Region.class,
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@ProcessorTest @WithClasses({
+        ErroneousMapper2.class,
+        Region.class,
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousMapper2.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 18,
+                message = ""Expression and default value are both defined in @Mapping, either define a defaultValue or"" +
+                    "" an expression.""),
+            @Diagnostic(type = ErroneousMapper2.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 20,
+                message = ""Can't map property \""Region region\"" to \""String region\"". "" +
+                    ""Consider to declare/implement a mapping method: \""String map(Region value)\""."")
+        }"
+"922","90","319","318","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/namesuggestion/SuggestMostSimilarNameTest.java","61","80","-2147387368","-2147387246","0","0","@ProcessorTest @WithClasses({
+        PersonGarageWrongTargetMapper.class
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@ProcessorTest @WithClasses({
+        PersonGarageWrongTargetMapper.class
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = PersonGarageWrongTargetMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 19,
+                message = ""Unknown property \""colour\"" in type Garage for target name \""garage.colour.rgb\"". "" +
+                    ""Did you mean \""garage.color\""?""),
+            @Diagnostic(type = PersonGarageWrongTargetMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 20,
+                messageRegExp = ""Unmapped target properties: \""fullName, fullAge\""\\.""),
+            @Diagnostic(type = PersonGarageWrongTargetMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 22,
+                message = ""Unknown property \""colour\"" in type Garage for target name \""garage.colour\"". "" +
+                    ""Did you mean \""garage.color\""?""),
+            @Diagnostic(type = PersonGarageWrongTargetMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 23,
+                messageRegExp = ""Unmapped target properties: \""fullName, fullAge\""\\.""),
+        }"
+"923","90","307","333","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/namesuggestion/SuggestMostSimilarNameTest.java","91","102","-2147387246","-2147387183","0","0","@ProcessorTest @WithClasses({
+        PersonGarageWrongSourceMapper.class
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@ProcessorTest @WithClasses({
+        PersonGarageWrongSourceMapper.class
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = PersonGarageWrongSourceMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 21,
+                message = ""No property named \""garage.colour.rgb\"" exists in source parameter(s). Did you mean "" +
+                    ""\""garage.color\""?""),
+            @Diagnostic(type = PersonGarageWrongSourceMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 28,
+                message = ""No property named \""garage.colour\"" exists in source parameter(s). Did you mean \""garage"" +
+                    "".color\""?"")
+        }"

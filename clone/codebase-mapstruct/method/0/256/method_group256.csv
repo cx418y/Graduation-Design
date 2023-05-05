@@ -1,0 +1,28 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1966","256","833","832","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/springTest/src/test/java/org/mapstruct/itest/spring/SpringBasedMapperTest.java","43","51","-2147253824","-2147253762","0","0","void shouldInjectSpringBasedMapper()","void shouldInjectSpringBasedMapper(){
+        Source source = new Source();
+
+        Target target = mapper.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 42 ) );
+        assertThat( target.getDate() ).isEqualTo( ""1980"" );
+    }"
+"1974","256","833","832","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/jsr330Test/src/test/java/org/mapstruct/itest/jsr330/Jsr330BasedMapperTest.java","46","54","-2147252702","-2147252640","0","0","void shouldInjectJsr330BasedMapper()","void shouldInjectJsr330BasedMapper(){
+        Source source = new Source();
+
+        Target target = mapper.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 42 ) );
+        assertThat( target.getDate() ).isEqualTo( ""1980"" );
+    }"
+"1991","256","833","832","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/cdiTest/src/test/java/org/mapstruct/itest/cdi/CdiBasedMapperTest.java","48","56","-2147251401","-2147251339","0","0","void shouldCreateCdiBasedMapper()","void shouldCreateCdiBasedMapper(){
+        Source source = new Source();
+
+        Target target = mapper.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 42 ) );
+        assertThat( target.getDate() ).isEqualTo( ""1980"" );
+    }"

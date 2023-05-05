@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1158","199","643","642","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/defaultimplementation/DefaultStreamImplementationTest.java","123","131","-2147357686","-2147357614","0","0","void shouldUseAndReturnTargetParameterForArrayMapping()","void shouldUseAndReturnTargetParameterForArrayMapping(){
+        TargetFoo[] target = new TargetFoo[3];
+        TargetFoo[] result =
+            SourceTargetMapper.INSTANCE.streamToArrayUsingTargetParameterAndReturn( createSourceFooStream(), target );
+
+        assertThat( result ).isSameAs( target );
+        assertThat( target ).isNotNull();
+        assertThat( target ).containsOnly( new TargetFoo( ""Bob"" ), new TargetFoo( ""Alice"" ), null );
+    }"
+"1159","199","649","648","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/defaultimplementation/DefaultStreamImplementationTest.java","134","142","-2147357614","-2147357550","0","0","void shouldUseAndReturnTargetParameterForArrayMappingAndSmallerArray()","void shouldUseAndReturnTargetParameterForArrayMappingAndSmallerArray(){
+        TargetFoo[] target = new TargetFoo[1];
+        TargetFoo[] result =
+            SourceTargetMapper.INSTANCE.streamToArrayUsingTargetParameterAndReturn( createSourceFooStream(), target );
+
+        assertThat( result ).isSameAs( target );
+        assertThat( target ).isNotNull();
+        assertThat( target ).containsOnly( new TargetFoo( ""Bob"" ) );
+    }"

@@ -1,0 +1,97 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"179","80","269","268","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java","31","54","-2147461275","-2147461170","0","0","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit)","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit){
+    if (getRawType(returnType) != CompletableFuture.class) {
+      return null;
+    }
+    if (!(returnType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""CompletableFuture return type must be parameterized""
+              + "" as CompletableFuture<Foo> or CompletableFuture<? extends Foo>"");
+    }
+    Type innerType = getParameterUpperBound(0, (ParameterizedType) returnType);
+
+    if (getRawType(innerType) != Response.class) {
+      return new BodyCallAdapter<>(innerType);
+    }
+
+    if (!(innerType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""Response must be parameterized"" + "" as Response<Foo> or Response<? extends Foo>"");
+    }
+    Type responseType = getParameterUpperBound(0, (ParameterizedType) innerType);
+    return new ResponseCallAdapter<>(responseType);
+  }"
+"402","80","269","268","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/java8/src/main/java/retrofit2/adapter/java8/Java8CallAdapterFactory.java","62","85","-2147433604","-2147433499","0","0","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit)","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit){
+    if (getRawType(returnType) != CompletableFuture.class) {
+      return null;
+    }
+    if (!(returnType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""CompletableFuture return type must be parameterized""
+              + "" as CompletableFuture<Foo> or CompletableFuture<? extends Foo>"");
+    }
+    Type innerType = getParameterUpperBound(0, (ParameterizedType) returnType);
+
+    if (getRawType(innerType) != Response.class) {
+      return new BodyCallAdapter<>(innerType);
+    }
+
+    if (!(innerType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""Response must be parameterized"" + "" as Response<Foo> or Response<? extends Foo>"");
+    }
+    Type responseType = getParameterUpperBound(0, (ParameterizedType) innerType);
+    return new ResponseCallAdapter<>(responseType);
+  }"
+"529","80","269","268","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/guava/src/main/java/retrofit2/adapter/guava/GuavaCallAdapterFactory.java","63","86","-2147420603","-2147420498","0","0","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit)","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit){
+    if (getRawType(returnType) != ListenableFuture.class) {
+      return null;
+    }
+    if (!(returnType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""ListenableFuture return type must be parameterized""
+              + "" as ListenableFuture<Foo> or ListenableFuture<? extends Foo>"");
+    }
+    Type innerType = getParameterUpperBound(0, (ParameterizedType) returnType);
+
+    if (getRawType(innerType) != Response.class) {
+      return new BodyCallAdapter<>(innerType);
+    }
+
+    if (!(innerType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""Response must be parameterized"" + "" as Response<Foo> or Response<? extends Foo>"");
+    }
+    Type responseType = getParameterUpperBound(0, (ParameterizedType) innerType);
+    return new ResponseCallAdapter<>(responseType);
+  }"
+"541","80","273","272","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/scala/src/main/java/retrofit2/adapter/scala/ScalaCallAdapterFactory.java","60","82","-2147419453","-2147419352","0","0","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit)","CallAdapter<?, ?> get(
+      Type returnType, Annotation[] annotations, Retrofit retrofit){
+    if (getRawType(returnType) != Future.class) {
+      return null;
+    }
+    if (!(returnType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""Future return type must be parameterized as Future<Foo> or Future<? extends Foo>"");
+    }
+    Type innerType = getParameterUpperBound(0, (ParameterizedType) returnType);
+
+    if (getRawType(innerType) != Response.class) {
+      return new BodyCallAdapter<>(innerType);
+    }
+
+    if (!(innerType instanceof ParameterizedType)) {
+      throw new IllegalStateException(
+          ""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");
+    }
+
+    Type responseType = getParameterUpperBound(0, (ParameterizedType) innerType);
+    return new ResponseCallAdapter<>(responseType);
+  }"

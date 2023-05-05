@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"547","89","291","290","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableWithSchedulerTest.java","83","92","-2147418994","-2147418929","0","0","void resultUsesScheduler()","void resultUsesScheduler(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    service.result().unsafeSubscribe(subscriber);
+    subscriber.assertNoEvents();
+
+    scheduler.triggerActions();
+    subscriber.assertAnyValue().assertCompleted();
+  }"
+"568","89","291","290","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleWithSchedulerTest.java","83","92","-2147417528","-2147417463","0","0","void resultUsesScheduler()","void resultUsesScheduler(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    service.result().unsafeSubscribe(subscriber);
+    subscriber.assertNoEvents();
+
+    scheduler.triggerActions();
+    subscriber.assertAnyValue().assertCompleted();
+  }"

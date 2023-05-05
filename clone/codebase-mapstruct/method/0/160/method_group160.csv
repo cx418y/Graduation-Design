@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"946","160","528","527","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/naming/spi/CustomNamingStrategyTest.java","24","34","-2147384420","-2147384345","0","0","void shouldApplyCustomNamingStrategy()","void shouldApplyCustomNamingStrategy(){
+        GolfPlayer player = new GolfPlayer()
+            .withName( ""Jared"" )
+            .withHandicap( 9.2D );
+
+        GolfPlayerDto dto = GolfPlayerMapper.INSTANCE.golfPlayerToDto( player );
+
+        assertThat( dto ).isNotNull();
+        assertThat( dto.name() ).isEqualTo( ""Jared"" );
+        assertThat( dto.handicap() ).isEqualTo( 9.2D );
+    }"
+"1977","160","528","527","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/namingStrategyTest/usage/src/test/java/org/mapstruct/itest/naming/NamingTest.java","23","33","-2147252414","-2147252339","0","0","void shouldApplyCustomNamingStrategy()","void shouldApplyCustomNamingStrategy(){
+        GolfPlayer player = new GolfPlayer()
+            .withName( ""Jared"" )
+            .withHandicap( 9.2D );
+
+        GolfPlayerDto dto = GolfPlayerMapper.INSTANCE.golfPlayerToDto( player );
+
+        assertThat( dto ).isNotNull();
+        assertThat( dto.name() ).isEqualTo( ""Jared"" );
+        assertThat( dto.handicap() ).isEqualTo( 9.2D );
+    }"

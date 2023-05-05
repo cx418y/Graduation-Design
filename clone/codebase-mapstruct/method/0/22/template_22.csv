@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","wheelListToWheelDtoList","List<WheelDto> wheelListToWheelDtoList(List<Wheel> list){
+        if ( list == null ) {
+            return null;
+        }
+
+        List<WheelDto> list1 = new ArrayList<WheelDto>( list.size() );
+        for ( Wheel wheel : list ) {
+            list1.add( wheelToWheelDto( wheel ) );
+        }
+
+        return list1;
+    }
+",""

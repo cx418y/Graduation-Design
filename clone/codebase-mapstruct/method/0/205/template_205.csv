@@ -1,0 +1,43 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapXmlGregorianCalendarToDateTime","void shouldMapXmlGregorianCalendarToDateTime()throws Exception{
+
+        XmlGregorianCalendarBean in = new XmlGregorianCalendarBean();
+[*1*] 
+[*2*] 
+        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();[*3*] 
+        xcal.setMonth( 5 );[*4*] 
+        xcal.setDay( 25 );[*5*] 
+        xcal.setHour( 23 );[*6*] 
+        xcal.setMinute( 34 );[*7*] 
+        xcal.setSecond( 45 );[*8*] 
+        xcal.setMillisecond( 500 );[*9*] 
+        in.setxMLGregorianCalendar( xcal );
+
+        DateTimeBean res = XmlGregorianCalendarToDateTime.INSTANCE.toDateTimeBean( in );
+        assertThat( res.getDateTime().getYear() ).isEqualTo( 2010 );
+        assertThat( res.getDateTime().getMonthOfYear() ).isEqualTo( 1 );
+        assertThat( res.getDateTime().getDayOfMonth() ).isEqualTo( 15 );
+        assertThat( res.getDateTime().getHourOfDay() ).isEqualTo( 1 );
+        assertThat( res.getDateTime().getMinuteOfHour() ).isEqualTo( 1 );
+        assertThat( res.getDateTime().getSecondOfMinute() ).isEqualTo( 1 );
+        assertThat( res.getDateTime().getMillisOfSecond() ).isEqualTo( 100 );
+[*10*] 
+[*11*] 
+    }
+","[*1*]:
+2, 0.2222222222222222,         XMLGregorianCalendar xcal =
+[*2*]:
+2, 0.2222222222222222,             DatatypeFactory.newInstance().newXMLGregorianCalendar( 2010, 1, 15, 1, 1, 1, 100, 60 );
+2, 0.2222222222222222,         xcal.setYear( 1999 );
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+3, 0.3333333333333333,         assertThat( res.getDateTime().getZone().getOffset( null ) ).isEqualTo( 3600000 );
+[*11*]:
+3, 0.3333333333333333,         assertThat( res.getDateTime().getZone().getOffset( 0 ) ).isEqualTo( DateTimeZone.getDefault().getOffset( 0 ) );
+"

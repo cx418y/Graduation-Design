@@ -1,0 +1,34 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"163","79","265","264","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CompletableFutureTest.java","114","124","-2147463192","-2147463130","0","0","void responseFailure()throws Exception","void responseFailure()throws Exception{
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    CompletableFuture<Response<String>> future = service.response();
+    try {
+      future.get();
+      fail();
+    } catch (ExecutionException e) {
+      assertThat(e.getCause()).isInstanceOf(IOException.class);
+    }
+  }"
+"401","79","265","264","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/java8/src/test/java/retrofit2/adapter/java8/CompletableFutureTest.java","116","126","-2147433666","-2147433604","0","0","void responseFailure()throws Exception","void responseFailure()throws Exception{
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    CompletableFuture<Response<String>> future = service.response();
+    try {
+      future.get();
+      fail();
+    } catch (ExecutionException e) {
+      assertThat(e.getCause()).isInstanceOf(IOException.class);
+    }
+  }"
+"528","79","265","264","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/guava/src/test/java/retrofit2/adapter/guava/ListenableFutureTest.java","116","126","-2147420665","-2147420603","0","0","void responseFailure()throws Exception","void responseFailure()throws Exception{
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    ListenableFuture<Response<String>> future = service.response();
+    try {
+      future.get();
+      fail();
+    } catch (ExecutionException e) {
+      assertThat(e.getCause()).isInstanceOf(IOException.class);
+    }
+  }"

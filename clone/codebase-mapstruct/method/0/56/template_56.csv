@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldGenerateExtendsBoundSourceForgedIterableMethod","void shouldGenerateExtendsBoundSourceForgedIterableMethod(){
+
+        ExtendsBoundSource source = new ExtendsBoundSource();
+
+        Target target = ExtendsBoundSourceTargetMapper.STM.map( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getElements() ).isNull();
+        generatedSource.forMapper( ExtendsBoundSourceTargetMapper.class )
+            .content()
+            .as( ""Should not contain FQN after extends"" )
+            .doesNotContain( ""? extends org.mapstruct.ap.test.collection.wildcard.Idea"" );
+    }
+",""

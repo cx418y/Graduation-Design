@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","builderMappingDefined","void builderMappingDefined(){
+        Process map = BuilderDefinedMapper.INSTANCE.map( new Source( ""map"" ) );
+        Process wrongMap = BuilderDefinedMapper.INSTANCE.wrongMap( new Source( ""wrongMap"" ) );
+
+        assertThat( map.getBuildMethod() ).isEqualTo( ""create"" );
+        assertThat( wrongMap.getBuildMethod() ).isEqualTo( ""wrongCreate"" );
+    }
+",""

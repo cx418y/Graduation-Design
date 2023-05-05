@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldHaveJakartaInjection","void shouldHaveJakartaInjection(){
+        generatedSource.forMapper( CustomerJakartaCdiDefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.enterprise.context.ApplicationScoped;"" )
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJakartaCdiDefaultCompileOptionFieldMapper"" )
+            .contains( ""@ApplicationScoped"" + lineSeparator() + ""public class"" )
+            .doesNotContain( ""public CustomerJakartaCdiDefaultCompileOptionFieldMapperImpl("" )[*1*] 
+            .doesNotContain( ""javax.inject"" )
+            .doesNotContain( ""javax.enterprise"" );
+    }
+","[*1*]:
+"

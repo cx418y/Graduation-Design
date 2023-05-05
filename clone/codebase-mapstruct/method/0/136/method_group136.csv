@@ -1,0 +1,27 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"805","136","462","461","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/maps/WordDto.java","29","41","-2147400159","-2147400108","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        WordDto wordDto = (WordDto) o;
+
+        return Objects.equals( textValue, wordDto.textValue );
+
+    }"
+"822","136","462","463","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/other/RoofDto.java","29","41","-2147397543","-2147397492","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        RoofDto roofDto = (RoofDto) o;
+
+        return Objects.equals( color, roofDto.color );
+
+    }"

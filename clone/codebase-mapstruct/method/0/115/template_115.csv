@@ -1,0 +1,19 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testReferenceMergeBehaviour","void testReferenceMergeBehaviour(){
+
+        Issue2278ReferenceMapper.CarDTO dto = new Issue2278ReferenceMapper.CarDTO();
+        dto.detailsDTO = new Issue2278ReferenceMapper.DetailsDTO();
+        dto.detailsDTO.brand = ""Ford"";
+        dto.detailsDTO.fuelType = ""petrol"";
+
+        Issue2278ReferenceMapper.Car target = Issue2278ReferenceMapper.INSTANCE.map( dto );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.details ).isNotNull();
+        assertThat( target.details.brand ).isEqualTo( ""Ford"" );
+        assertThat( target.details.model ).isNull();
+        assertThat( target.details.type ).isEqualTo( ""gto"" );
+        assertThat( target.details.fuel ).isEqualTo( ""petrol"" );
+
+    }
+",""

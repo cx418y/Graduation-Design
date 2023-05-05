@@ -1,0 +1,61 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"320","50","185","184","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/AsyncTest.java","140","171","-2147441367","-2147441191","0","0","void bodyThrowingInOnErrorDeliveredToPlugin()throws InterruptedException","void bodyThrowingInOnErrorDeliveredToPlugin()throws InterruptedException{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!pluginRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+          latch.countDown();
+        });
+
+    TestObserver<Void> observer = new TestObserver<>();
+    final RuntimeException e = new RuntimeException();
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onError(Throwable throwable) {
+                errorRef.set(throwable);
+                throw e;
+              }
+            });
+
+    latch.await(1, SECONDS);
+    CompositeException composite = (CompositeException) pluginRef.get();
+    assertThat(composite.getExceptions()).containsExactly(errorRef.get(), e);
+  }"
+"443","50","185","184","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/AsyncTest.java","141","172","-2147430278","-2147430102","0","0","void bodyThrowingInOnErrorDeliveredToPlugin()throws InterruptedException","void bodyThrowingInOnErrorDeliveredToPlugin()throws InterruptedException{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!pluginRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+          latch.countDown();
+        });
+
+    TestObserver<Void> observer = new TestObserver<>();
+    final RuntimeException e = new RuntimeException();
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onError(Throwable throwable) {
+                errorRef.set(throwable);
+                throw e;
+              }
+            });
+
+    latch.await(1, SECONDS);
+    CompositeException composite = (CompositeException) pluginRef.get();
+    assertThat(composite.getExceptions()).containsExactly(errorRef.get(), e);
+  }"

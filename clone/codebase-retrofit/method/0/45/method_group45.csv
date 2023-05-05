@@ -1,0 +1,94 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"310","45","166","165","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/RxJava3CallAdapterFactoryTest.java","245","281","-2147442221","-2147442027","0","0","void rawResultTypeThrows()","void rawResultTypeThrows(){
+    Type observableType = new TypeToken<Observable<Result>>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+
+    Type singleType = new TypeToken<Single<Result>>() {}.getType();
+    try {
+      factory.get(singleType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+
+    Type maybeType = new TypeToken<Maybe<Result>>() {}.getType();
+    try {
+      factory.get(maybeType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+
+    Type flowableType = new TypeToken<Flowable<Result>>() {}.getType();
+    try {
+      factory.get(flowableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+  }"
+"448","45","166","165","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/RxJava2CallAdapterFactoryTest.java","245","281","-2147428300","-2147428106","0","0","void rawResultTypeThrows()","void rawResultTypeThrows(){
+    Type observableType = new TypeToken<Observable<Result>>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+
+    Type singleType = new TypeToken<Single<Result>>() {}.getType();
+    try {
+      factory.get(singleType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+
+    Type maybeType = new TypeToken<Maybe<Result>>() {}.getType();
+    try {
+      factory.get(maybeType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+
+    Type flowableType = new TypeToken<Flowable<Result>>() {}.getType();
+    try {
+      factory.get(flowableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+  }"
+"611","45","176","175","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/RxJavaCallAdapterFactoryTest.java","162","180","-2147412553","-2147412455","0","0","void rawResultTypeThrows()","void rawResultTypeThrows(){
+    Type observableType = new TypeToken<Observable<Result>>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+
+    Type singleType = new TypeToken<Single<Result>>() {}.getType();
+    try {
+      factory.get(singleType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Result must be parameterized as Result<Foo> or Result<? extends Foo>"");
+    }
+  }"

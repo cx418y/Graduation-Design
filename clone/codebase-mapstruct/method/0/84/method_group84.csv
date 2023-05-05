@@ -1,0 +1,55 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"441","84","281","280","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jakarta_cdi/_default/JakartaCdiAndCdiDefaultCompileOptionFieldMapperTest.java","45","54","-2147436446","-2147436389","0","0","void shouldHaveJakartaInjection()","void shouldHaveJakartaInjection(){
+        generatedSource.forMapper( CustomerJakartaCdiDefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.enterprise.context.ApplicationScoped;"" )
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJakartaCdiDefaultCompileOptionFieldMapper"" )
+            .contains( ""@ApplicationScoped"" + lineSeparator() + ""public class"" )
+            .doesNotContain( ""javax.inject"" )
+            .doesNotContain( ""javax.enterprise"" );
+    }"
+"442","84","287","286","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jakarta_cdi/_default/JakartaCdiDefaultCompileOptionFieldMapperTest.java","43","53","-2147436389","-2147436327","0","0","void shouldHaveFieldInjection()","void shouldHaveFieldInjection(){
+        generatedSource.forMapper( CustomerJakartaCdiDefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.enterprise.context.ApplicationScoped;"" )
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJakartaCdiDefaultCompileOptionFieldMapper"" )
+            .contains( ""@ApplicationScoped"" + lineSeparator() + ""public class"" )
+            .doesNotContain( ""public CustomerJakartaCdiDefaultCompileOptionFieldMapperImpl("" )
+            .doesNotContain( ""javax.inject"" )
+            .doesNotContain( ""javax.enterprise"" );
+    }"
+"457","84","287","286","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/cdi/jakarta/JakartaCdiAndCdiDefaultCompileOptionFieldMapperTest.java","45","55","-2147435513","-2147435451","0","0","void shouldHaveCdiInjection()","void shouldHaveCdiInjection(){
+        generatedSource.forMapper( CustomerCdiDefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import javax.enterprise.context.ApplicationScoped;"" )
+            .contains( ""import javax.inject.Inject;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderCdiDefaultCompileOptionFieldMapper"" )
+            .contains( ""@ApplicationScoped"" + lineSeparator() + ""public class"" )
+            .doesNotContain( ""public CustomerCdiDefaultCompileOptionFieldMapperImpl("" )
+            .doesNotContain( ""jakarta.inject"" )
+            .doesNotContain( ""jakarta.enterprise"" );
+    }"
+"458","84","287","286","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/cdi/jakarta/JakartaCdiCdiDefaultCompileOptionFieldMapperTest.java","43","53","-2147435451","-2147435389","0","0","void shouldHaveJakartaCdiInjection()","void shouldHaveJakartaCdiInjection(){
+        generatedSource.forMapper( CustomerCdiDefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.enterprise.context.ApplicationScoped;"" )
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderCdiDefaultCompileOptionFieldMapper"" )
+            .contains( ""@ApplicationScoped"" + lineSeparator() + ""public class"" )
+            .doesNotContain( ""public CustomerCdiDefaultCompileOptionFieldMapperImpl("" )
+            .doesNotContain( ""javax.inject"" )
+            .doesNotContain( ""javax.enterprise"" );
+    }"
+"459","84","287","286","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/cdi/_default/CdiDefaultCompileOptionFieldMapperTest.java","43","53","-2147435389","-2147435327","0","0","void shouldHaveFieldInjection()","void shouldHaveFieldInjection(){
+        generatedSource.forMapper( CustomerCdiDefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import javax.enterprise.context.ApplicationScoped;"" )
+            .contains( ""import javax.inject.Inject;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderCdiDefaultCompileOptionFieldMapper"" )
+            .contains( ""@ApplicationScoped"" + lineSeparator() + ""public class"" )
+            .doesNotContain( ""public CustomerCdiDefaultCompileOptionFieldMapperImpl("" )
+            .doesNotContain( ""jakarta.inject"" )
+            .doesNotContain( ""jakarta.enterprise"" );
+    }"

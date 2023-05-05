@@ -1,0 +1,26 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","onResponse","void onResponse(Call<T> call, Response<T> response){
+      if (disposed) return;
+
+      try {
+        observer.onNext(response);
+
+        if (!disposed) {
+          terminated = true;
+          observer.onComplete();
+        }
+      } catch (Throwable t) {
+        Exceptions.throwIfFatal(t);
+        if (terminated) {
+          RxJavaPlugins.onError(t);
+        } else if (!disposed) {
+          try {
+            observer.onError(t);
+          } catch (Throwable inner) {
+            Exceptions.throwIfFatal(inner);
+            RxJavaPlugins.onError(new CompositeException(t, inner));
+          }
+        }
+      }
+    }
+",""

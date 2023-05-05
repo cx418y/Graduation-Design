@@ -1,0 +1,20 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","mapDefault","void mapDefault(){
+        PersonDto source = new PersonDto();
+        source.setName( ""Bob"" );
+        source.setAge( 30 );
+        source.setJob( ""Software Engineer"" );
+        source.setCity( ""Zurich"" );
+        source.setAddress( ""Plaza 1"" );
+        source.setChildren( Arrays.asList( ""Alice"", ""Tom"" ) );
+
+        PersonWithConstructorProperties target = SimpleConstructorPropertiesMapper.INSTANCE.map( source );
+
+        assertThat( target.getName() ).isEqualTo( ""Bob"" );
+        assertThat( target.getAge() ).isEqualTo( 30 );
+        assertThat( target.getJob() ).isEqualTo( ""Software Engineer"" );
+        assertThat( target.getCity() ).isEqualTo( ""Zurich"" );
+        assertThat( target.getAddress() ).isEqualTo( ""Plaza 1"" );
+        assertThat( target.getChildren() ).containsExactly( ""Alice"", ""Tom"" );
+    }
+",""

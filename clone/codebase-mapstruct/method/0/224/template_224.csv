@@ -1,0 +1,46 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getQualifiedName","String getQualifiedName(TypeMirror type){[*1*] 
+[*2*] 
+[*3*] 
+[*4*] 
+        DeclaredType declaredType = type.accept(
+            new SimpleTypeVisitor6<DeclaredType, Void>() {
+                @Override
+                public DeclaredType visitDeclared(DeclaredType t, Void p) {
+                    return t;
+                }
+            },
+            null
+        );
+
+        if ( declaredType == null ) {
+            return null;
+        }
+
+        TypeElement typeElement = declaredType.asElement().accept([*5*] 
+[*6*] 
+            new SimpleElementVisitor6<TypeElement, Void>() {
+                @Override
+                public TypeElement visitType(TypeElement e, Void p) {
+                    return e;
+                }
+            },
+            null
+        );
+[*7*] 
+        return typeElement != null ? typeElement.getQualifiedName().toString() : null;[*8*] 
+    }
+","[*1*]:
+1, 0.3333333333333333, TypeElement getTypeElement(TypeMirror type){
+[*2*]:
+1, 0.3333333333333333,         if ( type.getKind() == TypeKind.ERROR ) {
+[*3*]:
+1, 0.3333333333333333,             throw new TypeHierarchyErroneousException( type );
+[*4*]:
+1, 0.3333333333333333,         }
+[*5*]:
+[*6*]:
+1, 0.3333333333333333,         return declaredType.asElement().accept(
+[*7*]:
+[*8*]:
+"

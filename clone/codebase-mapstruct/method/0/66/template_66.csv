@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","personToPersonDto","PersonDto personToPersonDto(Person person){
+        AddressDto addressDto = new AddressDto();
+        addressDto.setAddressLine( person.getAddress().getAddressLine() );
+
+        PersonDto dto = new PersonDto();
+        dto.setDateOfBirth( person.getDateOfBirth() );
+        dto.setName( person.getFirstName() + "" "" + person.getLastName() );
+        dto.setAddress( addressDto );
+
+        return dto;
+    }
+",""

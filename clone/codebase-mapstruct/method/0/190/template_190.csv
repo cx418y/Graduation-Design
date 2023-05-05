@@ -1,0 +1,28 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMatchClassAndMethod","void shouldMatchClassAndMethod(){
+            @Diagnostic([*1*] 
+                type = ErroneousMapper.class,[*2*] 
+                kind = Kind.ERROR,
+                line = 28,
+                message =[*3*] 
+                    ""Qualifier error. No method found annotated with: [ @NonQualifierAnnotated ]. "" +[*4*] 
+                message = ""'nullValueMappingStrategy', 'nullValuePropertyMappingStrategy', 'resultType' and "" +[*5*] 
+                        ""See https://mapstruct.org/faq/#qualifier for more info.""),
+            @Diagnostic([*6*] 
+                type = ErroneousMapper.class,[*7*] 
+            @Diagnostic(type = ErroneousMovieFactoryMapper.class,[*8*] 
+                kind = Kind.ERROR,
+                line = 28,
+                message = ""Can't map property \""String title\"" to \""String title\"". "" +
+                    ""Consider to declare/implement a mapping method: \""String map(String value)\""."")
+        }
+","[*1*]:
+[*2*]:
+1, 0.5,             @Diagnostic(type = ErroneousMovieFactoryMapper.class,
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+"

@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"80","6","16","15","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","954","969","-2147475340","-2147475243","0","0","void callFactoryReturningNullThrows()throws IOException","void callFactoryReturningNullThrows()throws IOException{
+    okhttp3.Call.Factory callFactory = request -> null;
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(""http://example.com/"").callFactory(callFactory).build();
+
+    server.enqueue(new MockResponse());
+
+    CallMethod service = retrofit.create(CallMethod.class);
+    Call<ResponseBody> call = service.getResponseBody();
+    try {
+      call.execute();
+      fail();
+    } catch (NullPointerException e) {
+      assertThat(e).hasMessage(""Call.Factory returned null."");
+    }
+  }"
+"81","6","23","22","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","972","991","-2147475243","-2147475137","0","0","void callFactoryThrowingPropagates()","void callFactoryThrowingPropagates(){
+    final RuntimeException cause = new RuntimeException(""Broken!"");
+    okhttp3.Call.Factory callFactory =
+        request -> {
+          throw cause;
+        };
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(""http://example.com/"").callFactory(callFactory).build();
+
+    server.enqueue(new MockResponse());
+
+    CallMethod service = retrofit.create(CallMethod.class);
+    Call<ResponseBody> call = service.getResponseBody();
+    try {
+      call.execute();
+      fail();
+    } catch (Exception e) {
+      assertThat(e).isSameAs(cause);
+    }
+  }"

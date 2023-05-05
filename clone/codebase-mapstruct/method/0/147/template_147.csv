@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldUseAddAsTargetAccessor","void shouldUseAddAsTargetAccessor(){
+
+        AdderUsageObserver.setUsed( false );
+        Song song = new Song();
+        song.setPositions( Arrays.asList( 3, 5 ) );
+
+        Chart chart = new Chart();
+        chart.setSong( song );
+
+        ChartPositions positions = ArtistToChartEntryAdder.MAPPER.map( chart );
+        assertThat( positions ).isNotNull();
+        assertThat( positions.getPositions() ).containsExactly( 3L, 5L );
+
+        assertThat( AdderUsageObserver.isUsed() ).isTrue();
+    }
+",""

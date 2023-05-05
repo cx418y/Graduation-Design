@@ -1,0 +1,24 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testSimpleImmutableBuilderHappyPath","void testSimpleImmutableBuilderHappyPath(){
+        PersonDto personDto = PersonMapper.INSTANCE.toDto( ImmutablePerson.builder()[*1*] 
+            .age( 33 )
+            .name( ""Bob"" )
+            .address( ImmutableAddress.builder()[*2*] 
+[*3*] 
+                .addressLine( ""Wild Drive"" )
+                .build() )
+            .build() );
+[*4*] 
+        assertThat( personDto.getAge() ).isEqualTo( 33 );
+        assertThat( personDto.getName() ).isEqualTo( ""Bob"" );
+        assertThat( personDto.getAddress() ).isNotNull();
+        assertThat( personDto.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }
+","[*1*]:
+1, 0.25,         PersonDto personDto = PersonMapper.INSTANCE.toDto( PersonProtos.Person.newBuilder()
+[*2*]:
+[*3*]:
+1, 0.25,             .setAddress( PersonProtos.Person.Address.newBuilder()
+[*4*]:
+1, 0.25, 
+"

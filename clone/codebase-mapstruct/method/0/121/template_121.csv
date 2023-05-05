@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldReturnDefaultForNvmsReturnDefaultForCreate","void shouldReturnDefaultForNvmsReturnDefaultForCreate(){
+
+        Dto dto = new Dto();
+        Domain domain = DomainDtoWithNvmsDefaultMapper.INSTANCE.create( dto );
+
+        doControlAsserts( domain );
+        assertThat( domain.getStrings() ).isEmpty();
+        assertThat( domain.getLongs() ).isEmpty();
+    }
+",""

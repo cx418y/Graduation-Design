@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"955","161","532","531","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/factories/qualified/QualifiedFactoryTest.java","20","29","-2147383305","-2147383239","0","0","void shouldUseFactoryWithoutQualifier()","void shouldUseFactoryWithoutQualifier(){
+        Foo10 foo10 = new Foo10();
+        foo10.setProp( ""foo10"" );
+
+        Bar10 bar10 = QualifiedFactoryTestMapper.INSTANCE.foo10ToBar10Lower( foo10 );
+
+        assertThat( bar10 ).isNotNull();
+        assertThat( bar10.getProp() ).isEqualTo( ""foo10"" );
+        assertThat( bar10.getSomeTypeProp() ).isEqualTo( ""foo10"" );
+    }"
+"956","161","532","531","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/factories/qualified/QualifiedFactoryTest.java","32","41","-2147383239","-2147383173","0","0","void shouldUseFactoryWithQualifier()","void shouldUseFactoryWithQualifier(){
+        Foo10 foo10 = new Foo10();
+        foo10.setProp( ""foo10"" );
+
+        Bar10 bar10 = QualifiedFactoryTestMapper.INSTANCE.foo10ToBar10Lower( foo10 );
+
+        assertThat( bar10 ).isNotNull();
+        assertThat( bar10.getProp() ).isEqualTo( ""foo10"" );
+        assertThat( bar10.getSomeTypeProp() ).isEqualTo( ""foo10"" );
+    }"

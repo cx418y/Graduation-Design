@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldInjectSpringBasedMapper","void shouldInjectSpringBasedMapper(){
+        Source source = new Source();
+
+        Target target = mapper.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 42 ) );
+        assertThat( target.getDate() ).isEqualTo( ""1980"" );
+    }
+",""

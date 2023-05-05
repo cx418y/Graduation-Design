@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldThrowRuntimeInMapKeyMapping","void shouldThrowRuntimeInMapKeyMapping()throws TestException2{
+        Map<Integer, String> source = new HashMap<>();
+        source.put( 1, ""test"" );
+        SourceTargetMapper sourceTargetMapper = SourceTargetMapper.INSTANCE;
+        assertThatThrownBy( () -> sourceTargetMapper.integerKeyMapToLongKeyMap( source ) )
+            .isInstanceOf( RuntimeException.class );
+    }
+",""

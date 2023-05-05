@@ -1,0 +1,35 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testZonedDateTimeToDateMapping","void testZonedDateTimeToDateMapping(){
+[*1*] 
+        Source source = new Source();
+        ZonedDateTime dateTime = ZonedDateTime.of( LocalDateTime.of( 2014, 1, 1, 0, 0 ), ZoneId.of( ""UTC"" ) );[*2*] 
+        source.setForDateConversionWithZonedDateTime([*3*] 
+            dateTime );[*4*] 
+        LocalDateTime dateTime = LocalDateTime.of( 2014, 1, 1, 0, 0 );[*5*] 
+        source.setForDateConversionWithLocalDateTime( dateTime );[*6*] 
+[*7*] 
+        Target target = SourceTargetMapper.INSTANCE.sourceToTargetDefaultMapping( source );
+
+        assertThat( target.getForDateConversionWithZonedDateTime() ).isNotNull();
+
+        Calendar instance = Calendar.getInstance( TimeZone.getTimeZone( ""UTC"" ) );
+        instance.setTimeInMillis( target.getForDateConversionWithZonedDateTime().getTime() );
+
+        assertThat( instance.get( Calendar.YEAR ) ).isEqualTo( dateTime.getYear() );
+        assertThat( instance.get( Calendar.MONTH ) ).isEqualTo( dateTime.getMonthValue() - 1 );
+        assertThat( instance.get( Calendar.DATE ) ).isEqualTo( dateTime.getDayOfMonth() );
+        assertThat( instance.get( Calendar.MINUTE ) ).isEqualTo( dateTime.getMinute() );
+        assertThat( instance.get( Calendar.HOUR ) ).isEqualTo( dateTime.getHour() );
+
+        source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source.getForDateConversionWithZonedDateTime() ).isEqualTo( dateTime );
+    }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+"

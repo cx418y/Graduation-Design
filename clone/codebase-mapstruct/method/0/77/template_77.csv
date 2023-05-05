@@ -1,0 +1,22 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapAttributeByName","void shouldMapAttributeByName(){
+        Car car = new Car(
+            ""Morris"",
+            2,
+            new GregorianCalendar( 1980, Calendar.JANUARY, 1 ).getTime(),
+            new Person( ""Bob"" ),
+            new ArrayList<>()
+        );
+
+        CarDto carDto = CarMapper.INSTANCE.carToCarDto( car );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getMake() ).isEqualTo( car.getMake() );[*1*] 
+[*2*] 
+    }
+","[*1*]:
+1, 0.25,         assertThat( carDto.getDriver() ).isNotNull();
+1, 0.25,         assertThat( carDto.getManufacturingYear() ).isEqualTo( ""1980"" );
+[*2*]:
+1, 0.25,         assertThat( carDto.getDriver().getName() ).isEqualTo( ""Bob"" );
+"

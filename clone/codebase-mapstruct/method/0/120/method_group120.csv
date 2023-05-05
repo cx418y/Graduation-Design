@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"691","120","410","409","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913SetterMapperForCollectionsTest.java","350","361","-2147410590","-2147410438","0","0","void doControlAsserts( Domain domain1, Domain domain2)","void doControlAsserts( Domain domain1, Domain domain2){
+        assertThat( domain1 ).isEqualTo( domain2 );
+        assertThat( domain1.getStringsInitialized() ).containsOnly( ""5"" );
+        assertThat( domain1.getLongsInitialized() ).containsOnly( 5L );
+        assertThat( domain1.getStringsWithDefault() ).containsOnly( ""3"" );
+        assertThat( domain2.getStringsInitialized() ).containsOnly( ""5"" );
+        assertThat( domain2.getLongsInitialized() ).containsOnly( 5L );
+        assertThat( domain2.getStringsWithDefault() ).containsOnly( ""3"" );
+        assertThat( domain1.getStringsInitialized() ).isEqualTo( domain2.getStringsInitialized() );
+        assertThat( domain1.getLongsInitialized() ).isEqualTo( domain2.getLongsInitialized() );
+        assertThat( domain1.getStringsWithDefault() ).isEqualTo( domain2.getStringsWithDefault() );
+    }"
+"705","120","410","409","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913GetterMapperForCollectionsTest.java","215","226","-2147409550","-2147409398","0","0","void doControlAsserts( DomainWithoutSetter domain1, DomainWithoutSetter domain2)","void doControlAsserts( DomainWithoutSetter domain1, DomainWithoutSetter domain2){
+        assertThat( domain1 ).isEqualTo( domain2 );
+        assertThat( domain1.getStringsInitialized() ).containsOnly( ""5"" );
+        assertThat( domain1.getLongsInitialized() ).containsOnly( 5L );
+        assertThat( domain1.getStringsWithDefault() ).containsOnly( ""3"" );
+        assertThat( domain2.getStringsInitialized() ).containsOnly( ""5"" );
+        assertThat( domain2.getLongsInitialized() ).containsOnly( 5L );
+        assertThat( domain2.getStringsWithDefault() ).containsOnly( ""3"" );
+        assertThat( domain1.getStringsInitialized() ).isEqualTo( domain2.getStringsInitialized() );
+        assertThat( domain1.getLongsInitialized() ).isEqualTo( domain2.getLongsInitialized() );
+        assertThat( domain1.getStringsWithDefault() ).isEqualTo( domain2.getStringsWithDefault() );
+    }"

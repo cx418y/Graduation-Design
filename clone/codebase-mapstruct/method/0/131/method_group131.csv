@@ -1,0 +1,47 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"785","131","444","443","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/abstractsuperclass/AbstractSuperClassTest.java","33","44","-2147401753","-2147401655","0","0","void downcastMappingInCollection()","void downcastMappingInCollection(){
+        VehicleCollection vehicles = new VehicleCollection();
+        vehicles.getVehicles().add( new Car() );
+        vehicles.getVehicles().add( new Bike() );
+
+        VehicleCollectionDto result = SubclassWithAbstractSuperClassMapper.INSTANCE.map( vehicles );
+
+        assertThat( result.getVehicles() ).doesNotContainNull();
+        assertThat( result.getVehicles() )            .extracting( vehicle -> (Class) vehicle.getClass() )
+            .containsExactly( CarDto.class, BikeDto.class );
+    }"
+"787","131","444","443","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/SubclassMappingTest.java","42","53","-2147401588","-2147401490","0","0","void mappingIsDoneUsingSubclassMapping()","void mappingIsDoneUsingSubclassMapping(){
+        VehicleCollection vehicles = new VehicleCollection();
+        vehicles.getVehicles().add( new Car() );
+        vehicles.getVehicles().add( new Bike() );
+
+        VehicleCollectionDto result = SimpleSubclassMapper.INSTANCE.map( vehicles );
+
+        assertThat( result.getVehicles() ).doesNotContainNull();
+        assertThat( result.getVehicles() )            .extracting( vehicle -> (Class) vehicle.getClass() )
+            .containsExactly( CarDto.class, BikeDto.class );
+    }"
+"795","131","444","443","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/SubclassMappingTest.java","166","177","-2147400945","-2147400847","0","0","void mappingIsDoneUsingSubclassMappingWithCompositeMapping()","void mappingIsDoneUsingSubclassMappingWithCompositeMapping(){
+        VehicleCollection vehicles = new VehicleCollection();
+        vehicles.getVehicles().add( new Car() );
+        vehicles.getVehicles().add( new Bike() );
+
+        VehicleCollectionDto result = SubclassCompositeMapper.INSTANCE.map( vehicles );
+
+        assertThat( result.getVehicles() ).doesNotContainNull();
+        assertThat( result.getVehicles() )            .extracting( vehicle -> (Class) vehicle.getClass() )
+            .containsExactly( CarDto.class, BikeDto.class );
+    }"
+"1998","131","448","447","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/sealedSubclassTest/src/test/java/org/mapstruct/itest/sealedsubclass/SealedSubclassTest.java","15","28","-2147250720","-2147250586","0","0","void mappingIsDoneUsingSubclassMapping()","void mappingIsDoneUsingSubclassMapping(){
+        VehicleCollection vehicles = new VehicleCollection();
+        vehicles.getVehicles().add( new Car() );
+        vehicles.getVehicles().add( new Bike() );
+        vehicles.getVehicles().add( new Harley() );
+        vehicles.getVehicles().add( new Davidson() );
+
+        VehicleCollectionDto result = SealedSubclassMapper.INSTANCE.map( vehicles );
+
+        assertThat( result.getVehicles() ).doesNotContainNull();
+        assertThat( result.getVehicles() )            .extracting( vehicle -> (Class) vehicle.getClass() )
+            .containsExactly( CarDto.class, BikeDto.class, HarleyDto.class, DavidsonDto.class );
+    }"

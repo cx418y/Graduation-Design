@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"368","73","227","226","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/array/ArrayMappingTest.java","59","65","-2147442755","-2147442699","0","0","void shouldMapArrayToArray()","void shouldMapArrayToArray(){
+        ScientistDto[] dtos = ScienceMapper.INSTANCE
+            .scientistsToDtos( new Scientist[]{ new Scientist( ""Bob"" ), new Scientist( ""Larry"" ) } );
+
+        assertThat( dtos ).isNotNull();
+        assertThat( dtos ).extracting( ""name"" ).containsOnly( ""Bob"", ""Larry"" );
+    }"
+"370","73","245","244","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/array/ArrayMappingTest.java","77","83","-2147442642","-2147442585","0","0","void shouldMapArrayToList()","void shouldMapArrayToList(){
+        List<ScientistDto> dtos = ScienceMapper.INSTANCE
+            .scientistsToDtosAsList( new Scientist[]{ new Scientist( ""Bob"" ), new Scientist( ""Larry"" ) } );
+
+        assertThat( dtos ).isNotNull();
+        assertThat( dtos ).extracting( ""name"" ).containsOnly( ""Bob"", ""Larry"" );
+    }"

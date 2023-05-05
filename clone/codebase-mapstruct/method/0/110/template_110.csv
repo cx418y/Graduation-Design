@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testMappingWithVarArgs","void testMappingWithVarArgs(){
+        Target target = Issue1541Mapper.INSTANCE.mapWithVarArgs( ""code"", ""1"", ""2"" );[*1*] 
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).contains( ""1"", ""2"" );[*2*] 
+        assertThat( target.getParameters2() ).isNull();[*3*] 
+[*4*] 
+        assertThat( target.isAfterMappingWithArrayCalled() ).isFalse();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isFalse();
+    }
+","[*1*]:
+1, 0.2,         Target target = Issue1541Mapper.INSTANCE.mapWithArray( ""code"", new String[] { ""1"", ""2"" } );
+[*2*]:
+[*3*]:
+[*4*]:
+1, 0.2,         assertThat( target.getParameters2() ).contains( ""1"", ""2"" );
+"

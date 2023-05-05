@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"969","168","556","555","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/jodatime/JodaConversionTest.java","183","192","-2147382017","-2147381934","0","0","void testTargetToSourceNullMapping()","void testTargetToSourceNullMapping(){
+        Target target = new Target();
+        Source src = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( src ).isNotNull();
+        assertThat( src.getDateTime() ).isNull();
+        assertThat( src.getLocalDate() ).isNull();
+        assertThat( src.getLocalDateTime() ).isNull();
+        assertThat( src.getLocalTime() ).isNull();
+    }"
+"982","168","556","555","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/java8time/Java8TimeConversionTest.java","154","163","-2147380793","-2147380710","0","0","void testTargetToSourceNullMapping()","void testTargetToSourceNullMapping(){
+        Target target = new Target();
+        Source src = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( src ).isNotNull();
+        assertThat( src.getZonedDateTime() ).isNull();
+        assertThat( src.getLocalDate() ).isNull();
+        assertThat( src.getLocalDateTime() ).isNull();
+        assertThat( src.getLocalTime() ).isNull();
+    }"

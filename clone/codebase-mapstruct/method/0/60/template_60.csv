@@ -1,0 +1,29 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapExpressionAndConstantRegardlessNullArg","void shouldMapExpressionAndConstantRegardlessNullArg(){
+        Car car = new Car( ""Morris"", 2 );
+
+        CarDto carDto1 = CarMapper.INSTANCE.carToCarDto( car );[*1*] 
+
+        assertThat( carDto1 ).isNotNull();
+        assertThat( carDto1.getMake() ).isEqualTo( car.getMake() );[*2*] 
+        assertThat( carDto1.getSeatCount() ).isEqualTo( car.getNumberOfSeats() );
+        assertThat( carDto1.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto1.getSeatCount() ).isEqualTo( car.getNumberOfSeats() );[*3*] 
+        assertThat( carDto1.getCatalogId() ).isNotEmpty();
+
+        CarDto carDto2 = CarMapper.INSTANCE.carToCarDto( null );[*4*] 
+        CarDto carDto2 = CarMapper.INSTANCE.carToCarDto( null, ""ModelT"" );[*5*] 
+
+        assertThat( carDto2 ).isNotNull();
+        assertThat( carDto2.getMake() ).isNull();
+        assertThat( carDto2.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto2.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto2.getCatalogId() ).isNotEmpty();
+    }
+","[*1*]:
+1, 0.5,         CarDto carDto1 = CarMapper.INSTANCE.carToCarDto( car, ""ModelT"" );
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+"

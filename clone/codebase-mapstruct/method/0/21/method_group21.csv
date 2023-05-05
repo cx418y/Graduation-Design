@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"132","21","66","65","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperSmartImpl.java","20","33","-2147470097","-2147470022","0","0","UserDto userToUserDto(User user)","UserDto userToUserDto(User user){
+        if ( user == null ) {
+            return null;
+        }
+
+        UserDto userDto = new UserDto();
+
+        userDto.setName( user.getName() );
+        userDto.setCar( carToCarDto( user.getCar() ) );
+        userDto.setSecondCar( carToCarDto( user.getSecondCar() ) );
+        userDto.setHouse( houseToHouseDto( user.getHouse() ) );
+
+        return userDto;
+    }"
+"159","21","66","65","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperClassicImpl.java","20","33","-2147468046","-2147467971","0","0","UserDto userToUserDto(User user)","UserDto userToUserDto(User user){
+        if ( user == null ) {
+            return null;
+        }
+
+        UserDto userDto = new UserDto();
+
+        userDto.setName( user.getName() );
+        userDto.setCar( carToCarDto( user.getCar() ) );
+        userDto.setSecondCar( carToCarDto( user.getSecondCar() ) );
+        userDto.setHouse( houseToHouseDto( user.getHouse() ) );
+
+        return userDto;
+    }"

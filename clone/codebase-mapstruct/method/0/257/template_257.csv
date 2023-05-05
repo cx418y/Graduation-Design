@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapRecord","void shouldMapRecord(){
+        CustomerEntity customer = CustomerMapper.INSTANCE.fromRecord( new CustomerDto( ""Kermit"", ""kermit@test.com"" ) );
+
+        assertThat( customer ).isNotNull();
+        assertThat( customer.getName() ).isEqualTo( ""Kermit"" );
+        assertThat( customer.getMail() ).isEqualTo( ""kermit@test.com"" );
+    }
+",""

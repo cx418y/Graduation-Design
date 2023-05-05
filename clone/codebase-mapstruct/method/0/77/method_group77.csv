@@ -1,0 +1,58 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"405","77","225","224","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/complex/CarMapperTest.java","42","58","-2147439973","-2147439892","0","0","void shouldMapAttributeByName()","void shouldMapAttributeByName(){
+        Car car = new Car(
+            ""Morris"",
+            2,
+            new GregorianCalendar( 1980, Calendar.JANUARY, 1 ).getTime(),
+            new Person( ""Bob"" ),
+            new ArrayList<>()
+        );
+
+        CarDto carDto = CarMapper.INSTANCE.carToCarDto( car );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getMake() ).isEqualTo( car.getMake() );
+    }"
+"406","77","243","242","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/complex/CarMapperTest.java","61","78","-2147439892","-2147439798","0","0","void shouldMapReferenceAttribute()","void shouldMapReferenceAttribute(){
+        Car car = new Car(
+            ""Morris"",
+            2,
+            new GregorianCalendar( 1980, Calendar.JANUARY, 1 ).getTime(),
+            new Person( ""Bob"" ),
+            new ArrayList<>()
+        );
+
+        CarDto carDto = CarMapper.INSTANCE.carToCarDto( car );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getDriver() ).isNotNull();
+        assertThat( carDto.getDriver().getName() ).isEqualTo( ""Bob"" );
+    }"
+"408","77","225","250","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/complex/CarMapperTest.java","95","111","-2147439718","-2147439637","0","0","void shouldMapAttributeWithCustomMapping()","void shouldMapAttributeWithCustomMapping(){
+        Car car = new Car(
+            ""Morris"",
+            2,
+            new GregorianCalendar( 1980, Calendar.JANUARY, 1 ).getTime(),
+            new Person( ""Bob"" ),
+            new ArrayList<>()
+        );
+
+        CarDto carDto = CarMapper.INSTANCE.carToCarDto( car );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getSeatCount() ).isEqualTo( car.getNumberOfSeats() );
+    }"
+"410","77","256","255","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/complex/CarMapperTest.java","127","143","-2147439570","-2147439493","0","0","void shouldApplyConverter()","void shouldApplyConverter(){
+        Car car = new Car(
+            ""Morris"",
+            2,
+            new GregorianCalendar( 1980, Calendar.JANUARY, 1 ).getTime(),
+            new Person( ""Bob"" ),
+            new ArrayList<>()
+        );
+
+        CarDto carDto = CarMapper.INSTANCE.carToCarDto( car );
+
+        assertThat( carDto ).isNotNull();
+        assertThat( carDto.getManufacturingYear() ).isEqualTo( ""1980"" );
+    }"

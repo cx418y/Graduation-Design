@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"247","48","159","158","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/CollectionMappingTest.java","300","308","-2147455522","-2147455451","0","0","void shouldReverseMapSetOfEnumToStringSet()","void shouldReverseMapSetOfEnumToStringSet(){
+        Target target = new Target();
+        target.setColours( new HashSet<>( Arrays.asList( ""BLUE"", ""GREEN"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getColours() ).containsOnly( Colour.GREEN, Colour.BLUE );
+    }"
+"1178","48","159","158","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/StreamMappingTest.java","185","193","-2147356320","-2147356249","0","0","void shouldReverseMapSetOfEnumToStringSet()","void shouldReverseMapSetOfEnumToStringSet(){
+        Target target = new Target();
+        target.setColours( new HashSet<>( Arrays.asList( ""BLUE"", ""GREEN"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getColours() ).containsOnly( Colour.GREEN, Colour.BLUE );
+    }"

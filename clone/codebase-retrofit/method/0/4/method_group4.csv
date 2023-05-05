@@ -1,0 +1,27 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"59","4","7","6","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","289","301","-2147477253","-2147477188","0","0","void responseTypeCannotBeRetrofitResponse()","void responseTypeCannotBeRetrofitResponse(){
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(server.url(""/"")).build();
+    CallMethod service = retrofit.create(CallMethod.class);
+    try {
+      service.badType1();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Response must include generic type (e.g., Response<String>)\n""
+                  + ""    for method CallMethod.badType1"");
+    }
+  }"
+"60","4","7","17","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","304","316","-2147477188","-2147477123","0","0","void responseTypeCannotBeOkHttpResponse()","void responseTypeCannotBeOkHttpResponse(){
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(server.url(""/"")).build();
+    CallMethod service = retrofit.create(CallMethod.class);
+    try {
+      service.badType2();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              ""'okhttp3.Response' is not a valid response body type. Did you mean ResponseBody?\n""
+                  + ""    for method CallMethod.badType2"");
+    }
+  }"

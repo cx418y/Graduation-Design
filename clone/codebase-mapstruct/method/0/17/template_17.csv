@@ -1,0 +1,18 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","stringListToLongSet","Set<Long> stringListToLongSet(List<String> list){
+        if ( list == null ) {
+            return null;[*1*] 
+[*2*] 
+        }
+
+        Set<Long> set = new LinkedHashSet<Long>( Math.max( (int) ( list.size() / .75f ) + 1, 16 ) );
+        for ( String string : list ) {
+            set.add( Long.parseLong( string ) );
+        }
+
+        return set;
+    }
+","[*1*]:
+[*2*]:
+1, 0.25,             return new LinkedHashSet<Long>();
+"

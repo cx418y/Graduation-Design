@@ -1,0 +1,43 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"989","170","564","563","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/java8time/Java8TimeConversionTest.java","298","318","-2147379636","-2147379460","0","0","void testLocalDateToDateMapping()","void testLocalDateToDateMapping(){
+
+        Source source = new Source();
+        LocalDate localDate = LocalDate.of( 2016, 3, 1 );
+        source.setForDateConversionWithLocalDate( localDate );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTargetDefaultMapping( source );
+
+        assertThat( target.getForDateConversionWithLocalDate() ).isNotNull();
+
+        Calendar instance = Calendar.getInstance( TimeZone.getTimeZone( ""UTC"" ) );
+        instance.setTimeInMillis( target.getForDateConversionWithLocalDate().getTime() );
+
+        assertThat( instance.get( Calendar.YEAR ) ).isEqualTo( localDate.getYear() );
+        assertThat( instance.get( Calendar.MONTH ) ).isEqualTo( localDate.getMonthValue() - 1 );
+        assertThat( instance.get( Calendar.DATE ) ).isEqualTo( localDate.getDayOfMonth() );
+
+        source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source.getForDateConversionWithLocalDate() ).isEqualTo( localDate );
+    }"
+"990","170","564","563","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/java8time/Java8TimeConversionTest.java","322","342","-2147379460","-2147379284","0","0","void testLocalDateToSqlDateMapping()","void testLocalDateToSqlDateMapping(){
+
+        Source source = new Source();
+        LocalDate localDate = LocalDate.of( 2016, 3, 1 );
+        source.setForSqlDateConversionWithLocalDate( localDate );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTargetDefaultMapping( source );
+
+        assertThat( target.getForSqlDateConversionWithLocalDate() ).isNotNull();
+
+        Calendar instance = Calendar.getInstance( TimeZone.getTimeZone( ""UTC"" ) );
+        instance.setTimeInMillis( target.getForSqlDateConversionWithLocalDate().getTime() );
+
+        assertThat( instance.get( Calendar.YEAR ) ).isEqualTo( localDate.getYear() );
+        assertThat( instance.get( Calendar.MONTH ) ).isEqualTo( localDate.getMonthValue() - 1 );
+        assertThat( instance.get( Calendar.DATE ) ).isEqualTo( localDate.getDayOfMonth() );
+
+        source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source.getForSqlDateConversionWithLocalDate() ).isEqualTo( localDate );
+    }"

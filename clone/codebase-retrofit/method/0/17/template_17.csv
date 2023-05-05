@@ -1,0 +1,48 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","requestBeforeEnqueueCreates","void requestBeforeEnqueueCreates()throws IOException, InterruptedException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service service = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse());
+
+    final AtomicInteger writeCount = new AtomicInteger();
+    Object a =
+        new Object() {
+          @Override
+          public String toString() {
+            writeCount.incrementAndGet();
+            return ""Hello"";
+          }
+        };
+    Call<String> call = service.postRequestBody(a);
+[*1*] 
+    call.request();[*2*] 
+    assertThat(writeCount.get()).isEqualTo(1);[*3*] 
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    call.enqueue(
+        new Callback<String>() {
+          @Override
+          public void onResponse(Call<String> call, Response<String> response) {
+            assertThat(writeCount.get()).isEqualTo(1);
+            latch.countDown();
+          }
+
+          @Override
+          public void onFailure(Call<String> call, Throwable t) {}
+        });
+    assertTrue(latch.await(10, SECONDS));
+    call.request();[*4*] 
+    assertThat(writeCount.get()).isEqualTo(1);[*5*] 
+  }
+","[*1*]:
+1, 0.5, 
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+"

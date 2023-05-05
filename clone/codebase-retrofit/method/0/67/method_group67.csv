@@ -1,0 +1,49 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"384","67","241","240","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/CompletableThrowingTest.java","62","86","-2147435546","-2147435437","0","0","void throwingInOnCompleteDeliveredToPlugin()","void throwingInOnCompleteDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!errorRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+        });
+
+    RecordingCompletableObserver observer = observerRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    assertThat(errorRef.get().getCause()).isSameAs(e);
+  }"
+"511","67","245","244","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/CompletableThrowingTest.java","63","87","-2147422547","-2147422436","0","0","void throwingInOnCompleteDeliveredToPlugin()","void throwingInOnCompleteDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!errorRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+        });
+
+    RecordingCompletableObserver observer = observerRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    assertThat(errorRef.get()).isInstanceOf(UndeliverableException.class).hasCause(e);
+  }"

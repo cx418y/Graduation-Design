@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"660","109","353","352","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/wire/src/main/java/retrofit2/converter/wire/WireConverterFactory.java","42","53","-2147407719","-2147407646","0","0","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit)","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit){
+    if (!(type instanceof Class<?>)) {
+      return null;
+    }
+    Class<?> c = (Class<?>) type;
+    if (!Message.class.isAssignableFrom(c)) {
+      return null;
+    }
+    ProtoAdapter<? extends Message> adapter = ProtoAdapter.get((Class<? extends Message>) c);
+    return new WireResponseBodyConverter<>(adapter);
+  }"
+"661","109","353","352","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/wire/src/main/java/retrofit2/converter/wire/WireConverterFactory.java","60","71","-2147407646","-2147407573","0","0","Converter<?, RequestBody> requestBodyConverter(
+      Type type,
+      Annotation[] parameterAnnotations,
+      Annotation[] methodAnnotations,
+      Retrofit retrofit)","Converter<?, RequestBody> requestBodyConverter(
+      Type type,
+      Annotation[] parameterAnnotations,
+      Annotation[] methodAnnotations,
+      Retrofit retrofit){
+    if (!(type instanceof Class<?>)) {
+      return null;
+    }
+    Class<?> c = (Class<?>) type;
+    if (!Message.class.isAssignableFrom(c)) {
+      return null;
+    }
+    ProtoAdapter<? extends Message> adapter = ProtoAdapter.get((Class<? extends Message>) c);
+    return new WireRequestBodyConverter<>(adapter);
+  }"

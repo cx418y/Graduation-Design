@@ -1,0 +1,27 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseBodyBuffers","void responseBodyBuffers()throws IOException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(
+        new MockResponse().setBody(""1234"").setSocketPolicy(DISCONNECT_DURING_RESPONSE_BODY));
+
+    Call<ResponseBody> buffered = example.getBody();[*1*] 
+[*2*] 
+    ResponseBody streamedBody = response.body();[*3*] 
+    try {
+      buffered.execute();
+      fail();
+    } catch (IOException e) {
+      assertThat(e).hasMessage(""unexpected end of stream"");
+    }
+  }
+","[*1*]:
+1, 0.5,     Response<ResponseBody> response = example.getStreamingBody().execute();
+[*2*]:
+[*3*]:
+"

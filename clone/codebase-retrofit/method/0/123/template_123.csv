@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","convert","T convert(ResponseBody value)throws IOException{
+    try {
+      Unmarshaller unmarshaller = context.createUnmarshaller();
+      XMLStreamReader streamReader = xmlInputFactory.createXMLStreamReader(value.charStream());
+      return unmarshaller.unmarshal(streamReader, type).getValue();
+    } catch (JAXBException | XMLStreamException e) {
+      throw new RuntimeException(e);
+    } finally {
+      value.close();
+    }
+  }
+",""

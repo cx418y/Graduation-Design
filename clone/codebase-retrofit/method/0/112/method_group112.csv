@@ -1,0 +1,13 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"677","112","363","362","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","63","68","-2147404045","-2147403994","0","0","void setUp()","void setUp(){
+    JaxbConverterFactory factory = JaxbConverterFactory.create();
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(server.url(""/"")).addConverterFactory(factory).build();
+    service = retrofit.create(Service.class);
+  }"
+"690","112","363","362","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","63","68","-2147403057","-2147403006","0","0","void setUp()","void setUp(){
+    JaxbConverterFactory factory = JaxbConverterFactory.create();
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(server.url(""/"")).addConverterFactory(factory).build();
+    service = retrofit.create(Service.class);
+  }"

@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldThrowMappingValueException","void shouldThrowMappingValueException()throws Exception{
+
+        Source source = new Source();
+        SourceKey sourceKey = new SourceKey();
+        SourceValue sourceValue = new SourceValue();
+        sourceValue.setValue( MappingValueException.class.getSimpleName() );
+        HashMap<SourceKey, SourceValue> map = new HashMap<>();
+        map.put( sourceKey, sourceValue );
+        source.setMap( map );
+
+        assertThatThrownBy( () -> Issue513Mapper.INSTANCE.map( source ) )
+            .isInstanceOf( MappingValueException.class );
+
+    }
+",""

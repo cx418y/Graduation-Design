@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","Mappers.getMapper","= Mappers.getMapper( ErroneousOrderMapperDuplicateANY.class );[*1*] 
+        ErroneousOrderMapperThrowExceptionAsSourceType.class );[*2*] 
+
+    @ValueMappings({
+        @ValueMapping(source = ""EXTRA"", target = ""SPECIAL""),
+        @ValueMapping(source = ""STANDARD"", target = ""DEFAULT""),
+        @ValueMapping(source = ""NORMAL"", target = ""DEFAULT""),
+        @ValueMapping( source = ""<ANY_REMAINING>"", target = ""DEFAULT"" ),
+        @ValueMapping( source = ""<ANY_UNMAPPED>"", target = ""DEFAULT"" )
+    }
+","[*1*]:
+1, 0.5, = Mappers.getMapper(
+[*2*]:
+"

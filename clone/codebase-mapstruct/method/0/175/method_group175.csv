@@ -1,0 +1,27 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1011","175","578","577","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/ConversionTest.java","56","68","-2147377184","-2147377089","0","0","void shouldApplyConversionsForReverseMapping()","void shouldApplyConversionsForReverseMapping(){
+        Target target = new Target();
+        target.setFoo( 42L );
+        target.setBar( 23 );
+        target.setZip( ""73"" );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getFoo() ).isEqualTo( 42 );
+        assertThat( source.getBar() ).isEqualTo( 23 );
+        assertThat( source.getZip() ).isEqualTo( 73 );
+    }"
+"2015","175","578","577","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/simpleTest/src/test/java/org/mapstruct/itest/simple/ConversionTest.java","57","69","-2147248891","-2147248796","0","0","void shouldApplyConversionsForReverseMapping()","void shouldApplyConversionsForReverseMapping(){
+        Target target = new Target();
+        target.setFoo( 42L );
+        target.setBar( 23 );
+        target.setZip( ""73"" );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getFoo() ).isEqualTo( 42 );
+        assertThat( source.getBar() ).isEqualTo( 24 );
+        assertThat( source.getZip() ).isEqualTo( 73 );
+    }"

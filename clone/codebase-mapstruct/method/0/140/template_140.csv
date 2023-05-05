@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","equals","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        UserDto userDto = (UserDto) o;
+
+        if ( !Objects.equals( name, userDto.name ) ) {
+            return false;
+        }
+        if ( !Objects.equals( car, userDto.car ) ) {
+            return false;
+        }
+        return Objects.equals( house, userDto.house );
+
+    }
+",""

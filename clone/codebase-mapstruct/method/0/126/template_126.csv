@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyChainOfDependencies","void shouldApplyChainOfDependencies(){
+        Address source = new Address();
+        source.setFirstName( ""Bob"" );
+        source.setMiddleName( ""J."" );
+        source.setLastName( ""McRobb"" );
+
+        AddressDto target = AddressMapper.INSTANCE.addressToDto( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFullName() ).isEqualTo( ""Bob J. McRobb"" );
+    }
+",""

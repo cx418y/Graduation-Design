@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","onError","void onError(Throwable throwable){
+      try {
+        observer.onNext(Result.error(throwable));
+      } catch (Throwable t) {
+        try {
+          observer.onError(t);
+        } catch (Throwable inner) {
+          Exceptions.throwIfFatal(inner);
+          RxJavaPlugins.onError(new CompositeException(t, inner));
+        }
+        return;
+      }
+      observer.onComplete();
+    }
+",""

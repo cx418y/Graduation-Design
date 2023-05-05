@@ -1,0 +1,42 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1702","243","794","793","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/MethodReferencePresenceCheck.java","36","45","-2147286305","-2147286254","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+        MethodReferencePresenceCheck that = (MethodReferencePresenceCheck) o;
+        return Objects.equals( methodReference, that.methodReference );
+    }"
+"1803","243","794","798","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/presence/AllPresenceChecksPresenceCheck.java","43","52","-2147274926","-2147274875","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+        AllPresenceChecksPresenceCheck that = (AllPresenceChecksPresenceCheck) o;
+        return Objects.equals( presenceChecks, that.presenceChecks );
+    }"
+"1804","243","800","799","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/presence/SuffixPresenceCheck.java","43","53","-2147274875","-2147274812","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+        SuffixPresenceCheck that = (SuffixPresenceCheck) o;
+        return Objects.equals( sourceReference, that.sourceReference )
+            && Objects.equals( suffix, that.suffix );
+    }"
+"1805","243","794","793","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/presence/NullPresenceCheck.java","37","46","-2147274812","-2147274761","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+        NullPresenceCheck that = (NullPresenceCheck) o;
+        return Objects.equals( sourceReference, that.sourceReference );
+    }"

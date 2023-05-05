@@ -1,0 +1,19 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","fromFullMap","void fromFullMap(){
+            Map<String, String> map = new HashMap<>();
+            map.put( ""name"", ""Jacket"" );
+            map.put( ""price"", ""25.5"" );
+            map.put( ""shipmentDate"", ""2021-06-15"" );
+            StringMapToBeanMapper.Order order = StringMapToBeanMapper.INSTANCE.fromMap( map );[*1*] 
+                StringMapToBeanWithCustomPresenceCheckMapper.INSTANCE.fromMap( map );[*2*] 
+
+            assertThat( order ).isNotNull();
+            assertThat( order.getName() ).isEqualTo( ""Jacket"" );
+            assertThat( order.getPrice() ).isEqualTo( 25.5 );
+            assertThat( order.getOrderDate() ).isNull();
+            assertThat( order.getShipmentDate() ).isEqualTo( LocalDate.of( 2021, Month.JUNE, 15 ) );
+        }
+","[*1*]:
+1, 0.5,             StringMapToBeanWithCustomPresenceCheckMapper.Order order =
+[*2*]:
+"

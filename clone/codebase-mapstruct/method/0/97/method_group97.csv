@@ -1,0 +1,27 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"498","97","315","314","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/constants/ErroneousMapper4.java","21","29","-2147431315","-2147431229","0","0","= Mappers.getMapper( ErroneousMapper4.class );
+
+    @Mappings(","= Mappers.getMapper( ErroneousMapper4.class );
+
+    @Mappings({
+        @Mapping(target = ""stringConstant"", constant = ""stringConstant""),
+        @Mapping(target = ""emptyStringConstant"", constant = """"),
+        @Mapping(target = ""integerConstant"", source = ""test"", expression = ""java('test')""),
+        @Mapping(target = ""longWrapperConstant"", constant = ""3001L""),
+        @Mapping(target = ""dateConstant"", dateFormat = ""dd-MM-yyyy"", constant = ""09-01-2014""),
+        @Mapping(target = ""nameConstants"", constant = ""jack-jill-tom""),
+        @Mapping(target = ""country"", constant = ""THE_NETHERLANDS"")
+    }"
+"505","97","315","337","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/constants/ErroneousMapper3.java","21","29","-2147430332","-2147430246","0","0","= Mappers.getMapper( ErroneousMapper3.class );
+
+    @Mappings(","= Mappers.getMapper( ErroneousMapper3.class );
+
+    @Mappings({
+        @Mapping(target = ""stringConstant"", constant = ""stringConstant""),
+        @Mapping(target = ""emptyStringConstant"", constant = """"),
+        @Mapping(target = ""integerConstant"", expression = ""java('test')"", constant = ""14""),
+        @Mapping(target = ""longWrapperConstant"", constant = ""3001L""),
+        @Mapping(target = ""dateConstant"", dateFormat = ""dd-MM-yyyy"", constant = ""09-01-2014""),
+        @Mapping(target = ""nameConstants"", constant = ""jack-jill-tom""),
+        @Mapping(target = ""country"", constant = ""THE_NETHERLANDS"")
+    }"

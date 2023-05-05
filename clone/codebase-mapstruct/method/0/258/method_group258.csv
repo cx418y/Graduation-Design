@@ -1,0 +1,34 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1979","258","835","834","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/recordsTest/src/test/java/org/mapstruct/itest/records/RecordsTest.java","29","39","-2147252282","-2147252209","0","0","void shouldMapIntoRecord()","void shouldMapIntoRecord(){
+        CustomerEntity entity = new CustomerEntity();
+        entity.setName( ""Kermit"" );
+        entity.setMail( ""kermit@test.com"" );
+
+        CustomerDto customer = CustomerMapper.INSTANCE.toRecord( entity );
+
+        assertThat( customer ).isNotNull();
+        assertThat( customer.name() ).isEqualTo( ""Kermit"" );
+        assertThat( customer.email() ).isEqualTo( ""kermit@test.com"" );
+    }"
+"1993","258","835","834","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/recordsCrossModuleTest/mapper/test/java/org/mapstruct/itest/records/mapper/RecordsTest.java","27","37","-2147251282","-2147251209","0","0","void shouldMapIntoRecord()","void shouldMapIntoRecord(){
+        CustomerEntity entity = new CustomerEntity();
+        entity.setName( ""Kermit"" );
+        entity.setMail( ""kermit@test.com"" );
+
+        CustomerDto customer = CustomerMapper.INSTANCE.toRecord( entity );
+
+        assertThat( customer ).isNotNull();
+        assertThat( customer.name() ).isEqualTo( ""Kermit"" );
+        assertThat( customer.email() ).isEqualTo( ""kermit@test.com"" );
+    }"
+"2007","258","835","834","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/kotlinDataTest/src/test/java/org/mapstruct/itest/kotlin/data/KotlinDataTest.java","27","37","-2147249609","-2147249536","0","0","void shouldMapIntoData()","void shouldMapIntoData(){
+        CustomerEntity entity = new CustomerEntity();
+        entity.setName( ""Kermit"" );
+        entity.setMail( ""kermit@test.com"" );
+
+        CustomerDto customer = CustomerMapper.INSTANCE.toRecord( entity );
+
+        assertThat( customer ).isNotNull();
+        assertThat( customer.getName() ).isEqualTo( ""Kermit"" );
+        assertThat( customer.getEmail() ).isEqualTo( ""kermit@test.com"" );
+    }"

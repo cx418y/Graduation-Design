@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"293","37","123","122","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/CancelDisposeTest.java","58","64","-2147445254","-2147445192","0","0","void disposeCancelsCall()","void disposeCancelsCall(){
+    Disposable disposable = service.go().subscribe();
+    List<Call> calls = client.dispatcher().runningCalls();
+    assertEquals(1, calls.size());
+    disposable.dispose();
+    assertTrue(calls.get(0).isCanceled());
+  }"
+"420","37","123","122","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/CancelDisposeTest.java","58","64","-2147432281","-2147432219","0","0","void disposeCancelsCall()","void disposeCancelsCall(){
+    Disposable disposable = service.go().subscribe();
+    List<Call> calls = client.dispatcher().runningCalls();
+    assertEquals(1, calls.size());
+    disposable.dispose();
+    assertTrue(calls.get(0).isCanceled());
+  }"

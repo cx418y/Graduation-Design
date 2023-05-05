@@ -1,0 +1,205 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"301","39","134","133","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeThrowingTest.java","69","93","-2147444777","-2147444660","0","0","void bodyThrowingInOnSuccessDeliveredToPlugin()","void bodyThrowingInOnSuccessDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingMaybeObserver<String> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingObserver<String>(observer) {
+              @Override
+              public void onSuccess(String value) {
+                throw e;
+              }
+            });
+
+    assertThat(throwableRef.get().getCause()).isSameAs(e);
+  }"
+"323","39","134","133","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleThrowingTest.java","71","95","-2147441033","-2147440916","0","0","void bodyThrowingInOnSuccessDeliveredToPlugin()","void bodyThrowingInOnSuccessDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingSingleObserver<String> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingObserver<String>(observer) {
+              @Override
+              public void onSuccess(String value) {
+                throw e;
+              }
+            });
+
+    assertThat(throwableRef.get().getCause()).isSameAs(e);
+  }"
+"331","39","140","139","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableThrowingTest.java","87","112","-2147440057","-2147439936","0","0","void bodyThrowingInOnCompleteDeliveredToPlugin()","void bodyThrowingInOnCompleteDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingSubscriber<String>(subscriber) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    subscriber.assertAnyValue();
+    assertThat(throwableRef.get().getCause()).isSameAs(e);
+  }"
+"375","39","140","139","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableThrowingTest.java","87","112","-2147436606","-2147436485","0","0","void bodyThrowingInOnCompleteDeliveredToPlugin()","void bodyThrowingInOnCompleteDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingObserver<String> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingObserver<String>(observer) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    observer.assertAnyValue();
+    assertThat(throwableRef.get().getCause()).isSameAs(e);
+  }"
+"428","39","148","147","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeThrowingTest.java","70","94","-2147431804","-2147431685","0","0","void bodyThrowingInOnSuccessDeliveredToPlugin()","void bodyThrowingInOnSuccessDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingMaybeObserver<String> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingObserver<String>(observer) {
+              @Override
+              public void onSuccess(String value) {
+                throw e;
+              }
+            });
+
+    assertThat(throwableRef.get()).isInstanceOf(UndeliverableException.class).hasCause(e);
+  }"
+"450","39","148","147","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleThrowingTest.java","72","96","-2147428052","-2147427933","0","0","void bodyThrowingInOnSuccessDeliveredToPlugin()","void bodyThrowingInOnSuccessDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingSingleObserver<String> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingObserver<String>(observer) {
+              @Override
+              public void onSuccess(String value) {
+                throw e;
+              }
+            });
+
+    assertThat(throwableRef.get()).isInstanceOf(UndeliverableException.class).hasCause(e);
+  }"
+"458","39","154","153","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableThrowingTest.java","88","113","-2147427070","-2147426947","0","0","void bodyThrowingInOnCompleteDeliveredToPlugin()","void bodyThrowingInOnCompleteDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingSubscriber<String> subscriber = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingSubscriber<String>(subscriber) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    subscriber.assertAnyValue();
+    assertThat(throwableRef.get()).isInstanceOf(UndeliverableException.class).hasCause(e);
+  }"
+"502","39","154","153","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableThrowingTest.java","88","113","-2147423613","-2147423490","0","0","void bodyThrowingInOnCompleteDeliveredToPlugin()","void bodyThrowingInOnCompleteDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingObserver<String> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingObserver<String>(observer) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    observer.assertAnyValue();
+    assertThat(throwableRef.get()).isInstanceOf(UndeliverableException.class).hasCause(e);
+  }"

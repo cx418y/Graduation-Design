@@ -1,0 +1,81 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"279","31","105","104","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableWithSchedulerTest.java","59","68","-2147446192","-2147446135","0","0","void bodyUsesScheduler()","void bodyUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingObserver<Object> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue().assertComplete();
+  }"
+"296","31","111","110","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleWithSchedulerTest.java","59","68","-2147445075","-2147445022","0","0","void bodyUsesScheduler()","void bodyUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingSingleObserver<Object> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue();
+  }"
+"313","31","111","110","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeWithSchedulerTest.java","59","68","-2147441913","-2147441860","0","0","void bodyUsesScheduler()","void bodyUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingMaybeObserver<Object> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue();
+  }"
+"340","31","105","104","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableWithSchedulerTest.java","59","68","-2147438992","-2147438935","0","0","void bodyUsesScheduler()","void bodyUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Object> subscriber = subscriberRule.create();
+    service.body().subscribe(subscriber);
+    subscriber.assertNoEvents();
+
+    scheduler.triggerActions();
+    subscriber.assertAnyValue().assertComplete();
+  }"
+"406","31","105","104","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableWithSchedulerTest.java","59","68","-2147433219","-2147433162","0","0","void bodyUsesScheduler()","void bodyUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingObserver<Object> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue().assertComplete();
+  }"
+"423","31","111","110","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleWithSchedulerTest.java","59","68","-2147432102","-2147432049","0","0","void bodyUsesScheduler()","void bodyUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingSingleObserver<Object> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue();
+  }"
+"436","31","111","110","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeWithSchedulerTest.java","59","68","-2147430826","-2147430773","0","0","void bodyUsesScheduler()","void bodyUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingMaybeObserver<Object> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue();
+  }"
+"467","31","105","104","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableWithSchedulerTest.java","59","68","-2147425999","-2147425942","0","0","void bodyUsesScheduler()","void bodyUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Object> subscriber = subscriberRule.create();
+    service.body().subscribe(subscriber);
+    subscriber.assertNoEvents();
+
+    scheduler.triggerActions();
+    subscriber.assertAnyValue().assertComplete();
+  }"

@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldReverseMapSet","void shouldReverseMapSet(){
+        Target target = new Target();
+        target.setStringSet( new HashSet<>( Arrays.asList( ""Bob"", ""Alice"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getStringSet() ).contains( ""Bob"", ""Alice"" );
+    }
+",""

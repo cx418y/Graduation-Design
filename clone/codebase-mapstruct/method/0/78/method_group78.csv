@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"419","78","258","257","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/references/SomeOtherType.java","36","53","-2147438427","-2147438360","0","0","boolean equals(Object obj)","boolean equals(Object obj){
+        if ( this == obj ) {
+            return true;
+        }
+        if ( obj == null ) {
+            return false;
+        }
+        if ( getClass() != obj.getClass() ) {
+            return false;
+        }
+        SomeOtherType other = (SomeOtherType) obj;
+        if ( value == null ) {
+            return other.value == null;
+        }
+        else {
+            return value.equals( other.value );
+        }
+    }"
+"427","78","258","257","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/references/SomeType.java","36","53","-2147437741","-2147437674","0","0","boolean equals(Object obj)","boolean equals(Object obj){
+        if ( this == obj ) {
+            return true;
+        }
+        if ( obj == null ) {
+            return false;
+        }
+        if ( getClass() != obj.getClass() ) {
+            return false;
+        }
+        SomeType other = (SomeType) obj;
+        if ( value == null ) {
+            return other.value == null;
+        }
+        else {
+            return value.equals( other.value );
+        }
+    }"

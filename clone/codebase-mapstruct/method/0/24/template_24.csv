@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","roofTypeToExternalRoofType","ExternalRoofType roofTypeToExternalRoofType(RoofType roofType){
+        if ( roofType == null ) {
+            return null;
+        }
+
+        ExternalRoofType externalRoofType;
+
+        switch ( roofType ) {
+            case OPEN: externalRoofType = ExternalRoofType.OPEN;
+            break;
+            case BOX: externalRoofType = ExternalRoofType.BOX;
+            break;
+            case GAMBREL: externalRoofType = ExternalRoofType.GAMBREL;
+            break;
+            default: throw new IllegalArgumentException( ""Unexpected enum constant: "" + roofType );
+        }
+
+        return externalRoofType;
+    }
+",""

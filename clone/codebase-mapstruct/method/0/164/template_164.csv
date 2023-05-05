@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testLocalTimeToString","void testLocalTimeToString(){
+        Source src = new Source();
+        src.setLocalTime( new LocalTime( 0, 0 ) );[*1*] 
+        Target target = SourceTargetMapper.INSTANCE.sourceToTargetLocalTimeMapped( src );
+        assertThat( target ).isNotNull();
+        assertThat( target.getLocalTime() ).isEqualTo( ""00:00"" );
+    }
+","[*1*]:
+1, 0.5,         src.setLocalTime( LocalTime.of( 0, 0 ) );
+"

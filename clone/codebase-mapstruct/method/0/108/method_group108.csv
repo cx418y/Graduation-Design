@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"611","108","368","367","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_513/Issue513Test.java","69","82","-2147419416","-2147419325","0","0","void shouldThrowMappingValueException()throws Exception","void shouldThrowMappingValueException()throws Exception{
+
+        Source source = new Source();
+        SourceKey sourceKey = new SourceKey();
+        SourceValue sourceValue = new SourceValue();
+        sourceValue.setValue( MappingValueException.class.getSimpleName() );
+        HashMap<SourceKey, SourceValue> map = new HashMap<>();
+        map.put( sourceKey, sourceValue );
+        source.setMap( map );
+
+        assertThatThrownBy( () -> Issue513Mapper.INSTANCE.map( source ) )
+            .isInstanceOf( MappingValueException.class );
+
+    }"
+"612","108","368","367","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_513/Issue513Test.java","85","98","-2147419325","-2147419234","0","0","void shouldThrowMappingCommonException()throws Exception","void shouldThrowMappingCommonException()throws Exception{
+
+        Source source = new Source();
+        SourceKey sourceKey = new SourceKey();
+        SourceValue sourceValue = new SourceValue();
+        sourceValue.setValue( MappingException.class.getSimpleName() );
+        HashMap<SourceKey, SourceValue> map = new HashMap<>();
+        map.put( sourceKey, sourceValue );
+        source.setMap( map );
+
+        assertThatThrownBy( () -> Issue513Mapper.INSTANCE.map( source ) )
+            .isInstanceOf( MappingException.class );
+
+    }"

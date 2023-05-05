@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapAttributesWithSuperTypeInStandaloneMapper","void shouldMapAttributesWithSuperTypeInStandaloneMapper(){
+        SourceComposite source = createComposite();
+
+        TargetComposite target = StandaloneSourceCompositeTargetCompositeMapper.INSTANCE.sourceToTarget( source );
+
+        assertResult( target );
+
+        assertThat( target.getProp4() ).isEqualTo( 999 );
+        assertThat( target.getProp5() ).containsOnly( 42, 999 );
+    }
+",""

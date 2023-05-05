@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1208","203","657","656","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builder/off/SimpleNotRealyImmutableBuilderTest.java","30","39","-2147352556","-2147352503","0","0","void testSimpleImmutableBuilderHappyPath()","void testSimpleImmutableBuilderHappyPath(){
+        SimpleMapper mapper = Mappers.getMapper( SimpleMapper.class );
+        SimpleMutablePerson source = new SimpleMutablePerson();
+        source.setFullName( ""Bob"" );
+
+        SimpleNotRealyImmutablePerson targetObject = mapper.toNotRealyImmutable( source );
+
+        assertThat( targetObject.getName() ).isEqualTo( ""Bob"" );
+
+    }"
+"1209","203","657","656","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builder/off/SimpleNotRealyImmutableBuilderTest.java","44","53","-2147352503","-2147352450","0","0","void builderGloballyDisabled()","void builderGloballyDisabled(){
+        SimpleWithBuilderMapper mapper = Mappers.getMapper( SimpleWithBuilderMapper.class );
+        SimpleMutablePerson source = new SimpleMutablePerson();
+        source.setFullName( ""Bob"" );
+
+        SimpleNotRealyImmutablePerson targetObject = mapper.toNotRealyImmutable( source );
+
+        assertThat( targetObject.getName() ).isEqualTo( ""Bob"" );
+
+    }"

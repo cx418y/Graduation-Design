@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1937","249","816","815","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/Conversions.java","317","323","-2147256483","-2147256428","0","0","void register(Class<?> sourceClass, Class<?> targetClass, ConversionProvider conversion)","void register(Class<?> sourceClass, Class<?> targetClass, ConversionProvider conversion){
+        Type sourceType = typeFactory.getType( sourceClass );
+        Type targetType = typeFactory.getType( targetClass );
+
+        conversions.put( new Key( sourceType, targetType ), conversion );
+        conversions.put( new Key( targetType, sourceType ), inverse( conversion ) );
+    }"
+"1938","249","816","821","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/Conversions.java","325","331","-2147256428","-2147256373","0","0","void register(String sourceTypeName, Class<?> targetClass, ConversionProvider conversion)","void register(String sourceTypeName, Class<?> targetClass, ConversionProvider conversion){
+        Type sourceType = typeFactory.getType( sourceTypeName );
+        Type targetType = typeFactory.getType( targetClass );
+
+        conversions.put( new Key( sourceType, targetType ), conversion );
+        conversions.put( new Key( targetType, sourceType ), inverse( conversion ) );
+    }"

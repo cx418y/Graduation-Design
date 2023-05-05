@@ -1,0 +1,20 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","serializeAndDeserialize","void serializeAndDeserialize()throws IOException, InterruptedException{
+    ByteString encoded = ByteString.decodeBase64(""Cg4oNTE5KSA4NjctNTMwOQ=="");
+    server.enqueue(new MockResponse().setBody(new Buffer().write(encoded)));
+
+    Call<Phone> call = service.post(new Phone(""(519) 867-5309""));[*1*] 
+    Response<Phone> response = call.execute();
+    Phone body = response.body();
+    assertThat(body.number).isEqualTo(""(519) 867-5309"");[*2*] 
+    assertThat(body.getNumber()).isEqualTo(""(519) 867-5309"");[*3*] 
+
+    RecordedRequest request = server.takeRequest();
+    assertThat(request.getBody().readByteString()).isEqualTo(encoded);
+    assertThat(request.getHeader(""Content-Type"")).isEqualTo(""application/x-protobuf"");
+  }
+","[*1*]:
+1, 0.5,     Call<Phone> call = service.post(Phone.newBuilder().setNumber(""(519) 867-5309"").build());
+[*2*]:
+[*3*]:
+"

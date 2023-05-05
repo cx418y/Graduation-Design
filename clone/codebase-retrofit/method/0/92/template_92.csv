@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","resultSuccess404","void resultSuccess404()throws IOException{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    service.result().unsafeSubscribe(subscriber);
+    assertThat(subscriber.takeValue().response().code()).isEqualTo(404);
+    subscriber.assertCompleted();
+  }
+",""

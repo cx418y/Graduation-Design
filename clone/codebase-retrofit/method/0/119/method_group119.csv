@@ -1,0 +1,55 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"684","119","373","372","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","160","186","-2147403539","-2147403421","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<?xml version=\""1.0\"" ?>""
+                    + ""<!DOCTYPE contact[""
+                    + ""  <!ENTITY secret SYSTEM \""""
+                    + server.url(""/secret.txt"")
+                    + ""\"">""
+                    + ""]>""
+                    + ""<contact>""
+                    + ""<name>&secret;</name>""
+                    + ""</contact>""));
+    server.enqueue(new MockResponse().setBody(""hello""));
+
+    Call<Contact> call = service.getXml();
+    try {
+      Response<Contact> response = call.execute();
+      response.body();
+      fail();
+    } catch (RuntimeException expected) {
+      assertThat(expected).hasMessageContaining(""ParseError"");
+    }
+
+    assertThat(server.getRequestCount()).isEqualTo(1);
+  }"
+"697","119","373","372","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","160","186","-2147402551","-2147402433","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<?xml version=\""1.0\"" ?>""
+                    + ""<!DOCTYPE contact[""
+                    + ""  <!ENTITY secret SYSTEM \""""
+                    + server.url(""/secret.txt"")
+                    + ""\"">""
+                    + ""]>""
+                    + ""<contact>""
+                    + ""<name>&secret;</name>""
+                    + ""</contact>""));
+    server.enqueue(new MockResponse().setBody(""hello""));
+
+    Call<Contact> call = service.getXml();
+    try {
+      Response<Contact> response = call.execute();
+      response.body();
+      fail();
+    } catch (RuntimeException expected) {
+      assertThat(expected).hasMessageContaining(""ParseError"");
+    }
+
+    assertThat(server.getRequestCount()).isEqualTo(1);
+  }"

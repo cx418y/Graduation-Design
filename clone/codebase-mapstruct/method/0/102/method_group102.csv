@@ -1,0 +1,111 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"549","102","350","349","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/erroneous/SourceTargetMapperAmbiguous1.java","25","31","-2147425068","-2147425012","0","0","= Mappers.getMapper( SourceTargetMapperAmbiguous1.class );
+
+    @Mappings(","= Mappers.getMapper( SourceTargetMapperAmbiguous1.class );
+
+    @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")"")
+    }"
+"550","102","350","349","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/erroneous/SourceTargetMapperAmbiguous1.java","34","40","-2147425012","-2147424956","0","0","Target forwardCreate(Source source);
+
+    @Mappings(","Target forwardCreate(Source source);
+
+    @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")"")
+    }"
+"551","102","350","349","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/erroneous/SourceTargetMapperNonMatchingName.java","25","31","-2147424956","-2147424900","0","0","= Mappers.getMapper( SourceTargetMapperNonMatchingName.class );
+
+   @Mappings(","= Mappers.getMapper( SourceTargetMapperNonMatchingName.class );
+
+   @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")"")
+    }"
+"552","102","350","349","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/erroneous/SourceTargetMapperAmbiguous2.java","25","31","-2147424900","-2147424844","0","0","= Mappers.getMapper( SourceTargetMapperAmbiguous2.class );
+
+   @Mappings(","= Mappers.getMapper( SourceTargetMapperAmbiguous2.class );
+
+   @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")"")
+    }"
+"553","102","350","349","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/erroneous/SourceTargetMapperAmbiguous2.java","34","40","-2147424844","-2147424788","0","0","Target forwardCreate(Source source);
+
+    @Mappings(","Target forwardCreate(Source source);
+
+    @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")"")
+    }"
+"554","102","364","363","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/erroneous/SourceTargetMapperAmbiguous3.java","25","31","-2147424788","-2147424731","0","0","= Mappers.getMapper( SourceTargetMapperAmbiguous3.class );
+
+    @Mappings(","= Mappers.getMapper( SourceTargetMapperAmbiguous3.class );
+
+    @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")""),
+    }"
+"555","102","364","363","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/erroneous/SourceTargetMapperAmbiguous3.java","34","40","-2147424731","-2147424674","0","0","Target forwardCreate(Source source);
+
+    @Mappings(","Target forwardCreate(Source source);
+
+    @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")""),
+    }"
+"556","102","364","363","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/SourceTargetMapperMultiple.java","23","29","-2147424674","-2147424617","0","0","= Mappers.getMapper( SourceTargetMapperMultiple.class );
+
+    @Mappings(","= Mappers.getMapper( SourceTargetMapperMultiple.class );
+
+    @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")""),
+    }"
+"557","102","364","363","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/SourceTargetMapperMultiple.java","32","38","-2147424617","-2147424560","0","0","Target forwardCreate(Source source);
+
+    @Mappings(","Target forwardCreate(Source source);
+
+    @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")""),
+    }"
+"564","102","364","363","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/SourceTargetMapperSingle.java","23","29","-2147423723","-2147423666","0","0","= Mappers.getMapper( SourceTargetMapperSingle.class );
+
+    @Mappings(","= Mappers.getMapper( SourceTargetMapperSingle.class );
+
+    @Mappings({
+        @Mapping(target = ""stringPropY"", source = ""stringPropX"" ),
+        @Mapping(target = ""integerPropY"", source = ""integerPropX"" ),
+        @Mapping(target = ""nestedResultProp"", source = ""nestedSourceProp.nested""),
+        @Mapping(target = ""constantProp"", constant = ""constant""),
+        @Mapping(target = ""expressionProp"", expression = ""java(\""expression\"")""),
+    }"

@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"288","57","189","188","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/StringHolder.java","32","49","-2147451342","-2147451275","0","0","boolean equals(Object obj)","boolean equals(Object obj){
+        if ( this == obj ) {
+            return true;
+        }
+        if ( obj == null ) {
+            return false;
+        }
+        if ( getClass() != obj.getClass() ) {
+            return false;
+        }
+        StringHolder other = (StringHolder) obj;
+        if ( string == null ) {
+            return other.string == null;
+        }
+        else {
+            return string.equals( other.string );
+        }
+    }"
+"1180","57","189","188","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/StringHolder.java","32","49","-2147356088","-2147356021","0","0","boolean equals(Object obj)","boolean equals(Object obj){
+        if ( this == obj ) {
+            return true;
+        }
+        if ( obj == null ) {
+            return false;
+        }
+        if ( getClass() != obj.getClass() ) {
+            return false;
+        }
+        StringHolder other = (StringHolder) obj;
+        if ( string == null ) {
+            return other.string == null;
+        }
+        else {
+            return string.equals( other.string );
+        }
+    }"

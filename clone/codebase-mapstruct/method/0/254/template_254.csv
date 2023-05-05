@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","underscores","void underscores()throws ParseException, JAXBException{
+
+        SourceTargetMapper mapper = SourceTargetMapper.INSTANCE;
+
+        SubTypeDto source1 = new SubTypeDto();
+        source1.setInheritedCamelCase(""InheritedCamelCase"");
+        source1.setInheritedUnderscore(""InheritedUnderscore"");
+        source1.setDeclaredCamelCase(""DeclaredCamelCase"");
+        source1.setDeclaredUnderscore(""DeclaredUnderscore"");
+
+        SubType target = mapper.dtoToSubType( source1 );
+
+        SubTypeDto source2 = mapper.subTypeToDto( target );
+
+        assertThat( source2.getInheritedCamelCase() ).isEqualTo( source1.getInheritedCamelCase() );
+        assertThat( source2.getInheritedUnderscore() ).isEqualTo( source1.getInheritedUnderscore() );
+        assertThat( source2.getDeclaredCamelCase() ).isEqualTo( source1.getDeclaredCamelCase() );
+        assertThat( source2.getDeclaredUnderscore() ).isEqualTo( source1.getDeclaredUnderscore() );
+    }
+",""

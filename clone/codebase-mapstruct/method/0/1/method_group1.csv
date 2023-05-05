@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"14","1","15","14","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedtargetproperties/ChartEntryToArtistImpl.java","288","301","-2147482538","-2147482485","0","0","List<Integer> chartSongPositions(Chart chart)","List<Integer> chartSongPositions(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        List<Integer> positions = song.getPositions();
+        if ( positions == null ) {
+            return null;
+        }
+        return positions;
+    }"
+"206","1","15","14","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/constructor/nestedtarget/ChartEntryToArtistImpl.java","222","235","-2147459841","-2147459788","0","0","List<Integer> chartSongPositions(Chart chart)","List<Integer> chartSongPositions(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        List<Integer> positions = song.getPositions();
+        if ( positions == null ) {
+            return null;
+        }
+        return positions;
+    }"

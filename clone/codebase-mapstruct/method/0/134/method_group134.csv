@@ -1,0 +1,36 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"790","134","452","451","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/SubclassMappingTest.java","87","98","-2147401332","-2147401234","0","0","void inverseMappingIsDoneUsingSubclassMapping()","void inverseMappingIsDoneUsingSubclassMapping(){
+        VehicleCollectionDto vehicles = new VehicleCollectionDto();
+        vehicles.getVehicles().add( new CarDto() );
+        vehicles.getVehicles().add( new BikeDto() );
+
+        VehicleCollection result = SimpleSubclassMapper.INSTANCE.mapInverse( vehicles );
+
+        assertThat( result.getVehicles() ).doesNotContainNull();
+        assertThat( result.getVehicles() )            .extracting( vehicle -> (Class) vehicle.getClass() )
+            .containsExactly( Car.class, Bike.class );
+    }"
+"796","134","452","451","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/SubclassMappingTest.java","181","192","-2147400847","-2147400749","0","0","void inverseMappingIsDoneUsingSubclassMappingWithCompositeMapping()","void inverseMappingIsDoneUsingSubclassMappingWithCompositeMapping(){
+        VehicleCollectionDto vehicles = new VehicleCollectionDto();
+        vehicles.getVehicles().add( new CarDto() );
+        vehicles.getVehicles().add( new BikeDto() );
+
+        VehicleCollection result = SubclassCompositeMapper.INSTANCE.mapInverse( vehicles );
+
+        assertThat( result.getVehicles() ).doesNotContainNull();
+        assertThat( result.getVehicles() )            .extracting( vehicle -> (Class) vehicle.getClass() )
+            .containsExactly( Car.class, Bike.class );
+    }"
+"1999","134","465","464","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/sealedSubclassTest/src/test/java/org/mapstruct/itest/sealedsubclass/SealedSubclassTest.java","31","44","-2147250586","-2147250452","0","0","void inverseMappingIsDoneUsingSubclassMapping()","void inverseMappingIsDoneUsingSubclassMapping(){
+        VehicleCollectionDto vehicles = new VehicleCollectionDto();
+        vehicles.getVehicles().add( new CarDto() );
+        vehicles.getVehicles().add( new BikeDto() );
+        vehicles.getVehicles().add( new HarleyDto() );
+        vehicles.getVehicles().add( new DavidsonDto() );
+
+        VehicleCollection result = SealedSubclassMapper.INSTANCE.mapInverse( vehicles );
+
+        assertThat( result.getVehicles() ).doesNotContainNull();
+        assertThat( result.getVehicles() )            .extracting( vehicle -> (Class) vehicle.getClass() )
+            .containsExactly( Car.class, Bike.class, Harley.class, Davidson.class );
+    }"

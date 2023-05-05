@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyBuiltInOnJAXBElementList","void shouldApplyBuiltInOnJAXBElementList(){
+[*1*] 
+        JaxbElementListProperty source = new JaxbElementListProperty();
+        source.setProp( createJaxbList( ""TEST2"" ) );
+        source.publicProp = createJaxbList( ""PUBLIC TEST2"" );
+
+        StringListProperty target = JaxbListMapper.INSTANCE.map( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp().get( 0 ) ).isEqualTo( ""TEST2"" );
+        assertThat( target.publicProp.get( 0 ) ).isEqualTo( ""PUBLIC TEST2"" );
+    }
+","[*1*]:
+"

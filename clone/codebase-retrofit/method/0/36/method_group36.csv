@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"292","36","119","118","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/CancelDisposeTest.java","46","55","-2147445313","-2147445254","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            .callFactory(client)
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"434","36","119","118","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/CancelDisposeTestSync.java","41","50","-2147430940","-2147430881","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .callFactory(client)
+            .build();
+    service = retrofit.create(Service.class);
+  }"

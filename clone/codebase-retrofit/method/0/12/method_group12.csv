@@ -1,0 +1,41 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"123","12","35","34","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","566","585","-2147469317","-2147469214","0","0","void responseBodyBuffers()throws IOException","void responseBodyBuffers()throws IOException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(
+        new MockResponse().setBody(""1234"").setSocketPolicy(DISCONNECT_DURING_RESPONSE_BODY));
+
+    Call<ResponseBody> buffered = example.getBody();
+    try {
+      buffered.execute();
+      fail();
+    } catch (IOException e) {
+      assertThat(e).hasMessage(""unexpected end of stream"");
+    }
+  }"
+"124","12","41","40","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","588","609","-2147469214","-2147469098","0","0","void responseBodyStreams()throws IOException","void responseBodyStreams()throws IOException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(
+        new MockResponse().setBody(""1234"").setSocketPolicy(DISCONNECT_DURING_RESPONSE_BODY));
+
+    Response<ResponseBody> response = example.getStreamingBody().execute();
+
+    ResponseBody streamedBody = response.body();
+    try {
+      streamedBody.string();
+      fail();
+    } catch (IOException e) {
+      assertThat(e).hasMessage(""unexpected end of stream"");
+    }
+  }"

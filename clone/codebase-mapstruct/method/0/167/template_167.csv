@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testStringToLocalTime","void testStringToLocalTime(){
+        String dateTimeAsString = ""00:00"";
+        Target target = new Target();
+        target.setLocalTime( dateTimeAsString );
+        LocalTime sourceTime =
+            new LocalTime( 0, 0 );[*1*] 
+            LocalDateTime.of( 2014, 1, 1, 0, 0, 0 );[*2*] 
+
+        Source src = SourceTargetMapper.INSTANCE.targetToSourceLocalTimeMapped( target );
+        assertThat( src ).isNotNull();
+        assertThat( src.getLocalTime() ).isEqualTo( sourceTime );
+    }
+","[*1*]:
+[*2*]:
+"

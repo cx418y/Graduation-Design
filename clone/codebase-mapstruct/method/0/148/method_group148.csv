@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"867","148","493","492","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ReversingNestedSourcePropertiesTest.java","64","83","-2147393233","-2147393086","0","0","void shouldIgnoreEverytingBelowArtist()","void shouldIgnoreEverytingBelowArtist(){
+
+        Song song1 = prepareSong();
+
+        ChartEntry chartEntry = ArtistToChartEntryWithIgnoresReverse.MAPPER.mapForward( song1 );
+
+        assertThat( chartEntry ).isNotNull();
+        assertThat( chartEntry.getArtistName() ).isEqualTo( ""The Beatles"" );
+        assertThat( chartEntry.getChartName() ).isNull();
+        assertThat( chartEntry.getCity() ).isEqualTo( ""London"" );
+        assertThat( chartEntry.getPosition() ).isEqualTo( 0 );
+        assertThat( chartEntry.getRecordedAt() ).isEqualTo( ""Abbey Road"" );
+        assertThat( chartEntry.getSongTitle() ).isEqualTo( ""A Hard Day's Night"" );
+
+        Song song2 = ArtistToChartEntryWithIgnoresReverse.MAPPER.mapReverse( chartEntry );
+
+        assertThat( song2 ).isNotNull();
+        assertThat( song2.getArtist() ).isNull();
+    }"
+"1278","148","493","492","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/ReversingNestedSourcePropertiesConstructorTest.java","65","84","-2147342773","-2147342626","0","0","void shouldIgnoreEverytingBelowArtist()","void shouldIgnoreEverytingBelowArtist(){
+
+        Song song1 = prepareSong();
+
+        ChartEntry chartEntry = ArtistToChartEntryWithIgnoresReverse.MAPPER.mapForward( song1 );
+
+        assertThat( chartEntry ).isNotNull();
+        assertThat( chartEntry.getArtistName() ).isEqualTo( ""The Beatles"" );
+        assertThat( chartEntry.getChartName() ).isNull();
+        assertThat( chartEntry.getCity() ).isEqualTo( ""London"" );
+        assertThat( chartEntry.getPosition() ).isEqualTo( 0 );
+        assertThat( chartEntry.getRecordedAt() ).isEqualTo( ""Abbey Road"" );
+        assertThat( chartEntry.getSongTitle() ).isEqualTo( ""A Hard Day's Night"" );
+
+        Song song2 = ArtistToChartEntryWithIgnoresReverse.MAPPER.mapReverse( chartEntry );
+
+        assertThat( song2 ).isNotNull();
+        assertThat( song2.getArtist() ).isNull();
+    }"

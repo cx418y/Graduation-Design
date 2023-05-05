@@ -1,0 +1,45 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldGenerateNestedReverse","void shouldGenerateNestedReverse(){
+
+        Song song1 = prepareSong();
+
+        ChartEntry chartEntry = ArtistToChartEntryReverse.MAPPER.mapForward( song1 );
+
+        assertThat( chartEntry ).isNotNull();
+        assertThat( chartEntry.getArtistName() ).isEqualTo( ""The Beatles"" );
+        assertThat( chartEntry.getChartName() ).isNull();
+        assertThat( chartEntry.getCity() ).isEqualTo( ""London"" );
+        assertThat( chartEntry.getPosition() ).isEqualTo( 0 );
+        assertThat( chartEntry.getRecordedAt() ).isEqualTo( ""Abbey Road"" );
+        assertThat( chartEntry.getSongTitle() ).isEqualTo( ""A Hard Day's Night"" );
+
+        Song song2 = ArtistToChartEntryReverse.MAPPER.mapReverse( chartEntry );
+
+        assertThat( song2 ).isNotNull();
+        assertThat( song2.getArtist() ).isNotNull();
+        assertThat( song2.getArtist().getName() ).isEqualTo( ""The Beatles"" );
+        assertThat( song2.getArtist().getLabel() ).isNotNull();
+        assertThat( song2.getArtist().getLabel().getName() ).isNull();
+        assertThat( song2.getArtist().getLabel().getStudio() ).isNotNull();
+        assertThat( song2.getArtist().getLabel().getStudio().getCity() ).isEqualTo( ""London"" );
+        assertThat( song2.getArtist().getLabel().getStudio().getName() ).isEqualTo( ""Abbey Road"" );
+[*1*] 
+[*2*] 
+[*3*] 
+[*4*] 
+[*5*] 
+[*6*] 
+    }
+","[*1*]:
+1, 0.125, 
+[*2*]:
+1, 0.125,         assertThat( SourceDtoFactory.isCreateSongCalled() ).isTrue();
+[*3*]:
+1, 0.125,         assertThat( SourceDtoFactory.isCreateStudioCalled() ).isTrue();
+[*4*]:
+1, 0.125,         assertThat( SourceDtoFactory.isCreateLabelCalled() ).isTrue();
+[*5*]:
+1, 0.125,         assertThat( SourceDtoFactory.isCreateArtistCalled() ).isTrue();
+[*6*]:
+2, 0.25, 
+"

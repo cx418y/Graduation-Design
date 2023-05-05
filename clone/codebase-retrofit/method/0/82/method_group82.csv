@@ -1,0 +1,57 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"291","82","275","274","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableTest.java","166","179","-2147445417","-2147445313","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Observable<String> observable = service.body();
+
+    RecordingObserver<String> observer1 = observerRule.create();
+    observable.subscribe(observer1);
+    observer1.assertValue(""Hi"").assertComplete();
+
+    RecordingObserver<String> observer2 = observerRule.create();
+    observable.subscribe(observer2);
+    observer2.assertValue(""Hey"").assertComplete();
+  }"
+"418","82","275","274","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableTest.java","166","179","-2147432444","-2147432340","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Observable<String> observable = service.body();
+
+    RecordingObserver<String> observer1 = observerRule.create();
+    observable.subscribe(observer1);
+    observer1.assertValue(""Hi"").assertComplete();
+
+    RecordingObserver<String> observer2 = observerRule.create();
+    observable.subscribe(observer2);
+    observer2.assertValue(""Hey"").assertComplete();
+  }"
+"561","82","275","280","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableTest.java","208","221","-2147417997","-2147417893","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Observable<String> observable = service.body();
+
+    RecordingSubscriber<String> subscriber1 = subscriberRule.create();
+    observable.subscribe(subscriber1);
+    subscriber1.assertValue(""Hi"").assertCompleted();
+
+    RecordingSubscriber<String> subscriber2 = subscriberRule.create();
+    observable.subscribe(subscriber2);
+    subscriber2.assertValue(""Hey"").assertCompleted();
+  }"
+"607","82","275","280","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleTest.java","207","220","-2147413509","-2147413405","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Single<String> observable = service.body();
+
+    RecordingSubscriber<String> subscriber1 = subscriberRule.create();
+    observable.subscribe(subscriber1);
+    subscriber1.assertValue(""Hi"").assertCompleted();
+
+    RecordingSubscriber<String> subscriber2 = subscriberRule.create();
+    observable.subscribe(subscriber2);
+    subscriber2.assertValue(""Hey"").assertCompleted();
+  }"

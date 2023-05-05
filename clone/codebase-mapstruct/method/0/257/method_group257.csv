@@ -1,0 +1,22 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1978","257","831","830","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/recordsTest/src/test/java/org/mapstruct/itest/records/RecordsTest.java","20","26","-2147252339","-2147252282","0","0","void shouldMapRecord()","void shouldMapRecord(){
+        CustomerEntity customer = CustomerMapper.INSTANCE.fromRecord( new CustomerDto( ""Kermit"", ""kermit@test.com"" ) );
+
+        assertThat( customer ).isNotNull();
+        assertThat( customer.getName() ).isEqualTo( ""Kermit"" );
+        assertThat( customer.getMail() ).isEqualTo( ""kermit@test.com"" );
+    }"
+"1992","257","831","830","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/recordsCrossModuleTest/mapper/test/java/org/mapstruct/itest/records/mapper/RecordsTest.java","18","24","-2147251339","-2147251282","0","0","void shouldMapRecord()","void shouldMapRecord(){
+        CustomerEntity customer = CustomerMapper.INSTANCE.fromRecord( new CustomerDto( ""Kermit"", ""kermit@test.com"" ) );
+
+        assertThat( customer ).isNotNull();
+        assertThat( customer.getName() ).isEqualTo( ""Kermit"" );
+        assertThat( customer.getMail() ).isEqualTo( ""kermit@test.com"" );
+    }"
+"2006","257","831","830","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/kotlinDataTest/src/test/java/org/mapstruct/itest/kotlin/data/KotlinDataTest.java","18","24","-2147249666","-2147249609","0","0","void shouldMapData()","void shouldMapData(){
+        CustomerEntity customer = CustomerMapper.INSTANCE.fromRecord( new CustomerDto( ""Kermit"", ""kermit@test.com"" ) );
+
+        assertThat( customer ).isNotNull();
+        assertThat( customer.getName() ).isEqualTo( ""Kermit"" );
+        assertThat( customer.getMail() ).isEqualTo( ""kermit@test.com"" );
+    }"

@@ -1,0 +1,27 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseBodyConverter","Converter<ResponseBody, ?> responseBodyConverter([*1*] 
+      Type type, Annotation[] annotations, Retrofit retrofit){[*2*] 
+      Type type,[*3*] 
+      Annotation[] parameterAnnotations,[*4*] 
+      Annotation[] methodAnnotations,[*5*] 
+      Retrofit retrofit){[*6*] 
+    JsonAdapter<?> adapter = moshi.adapter(type, jsonAnnotations(annotations));
+    if (lenient) {
+      adapter = adapter.lenient();
+    }
+    if (failOnUnknown) {
+      adapter = adapter.failOnUnknown();
+    }
+    if (serializeNulls) {
+      adapter = adapter.serializeNulls();
+    }
+    return new MoshiResponseBodyConverter<>(adapter);
+  }
+","[*1*]:
+1, 0.5, Converter<?, RequestBody> requestBodyConverter(
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+"

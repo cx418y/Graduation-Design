@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapFloatWhenReturnDefault","void shouldMapFloatWhenReturnDefault(){
+        float[] existingTarget = new float[]{ 3.1f };[*1*] 
+        float[] target = ScienceMapper.INSTANCE.nvmMapping( null, existingTarget );[*2*] 
+        double[] existingTarget = new double[]{ 5.0d };[*3*] 
+
+        assertThat( target ).containsOnly( 0.0f );
+        assertThat( target ).isEqualTo( existingTarget );
+        assertThat( existingTarget ).containsOnly( 0.0f );
+    }
+","[*1*]:
+[*2*]:
+1, 0.5,         double[] target = ScienceMapper.INSTANCE.nvmMapping( null, existingTarget );
+[*3*]:
+"

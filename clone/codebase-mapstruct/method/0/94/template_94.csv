@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testCallingMappingMethodWithNullSource","void testCallingMappingMethodWithNullSource(){
+
+        RockFestivalSource source =  new RockFestivalSource();
+        RockFestivalTarget target = RockFestivalMapper.INSTANCE.map( source );
+        assertThat( target.getStage() ).isNull();
+
+        source.setArtistName( ""New Order"" );
+        target = RockFestivalMapper.INSTANCE.map( source );
+        assertThat( target.getStage() ).isEqualTo( Stage.THE_BARN );
+
+   }
+",""

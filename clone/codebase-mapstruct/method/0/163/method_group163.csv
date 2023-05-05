@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"961","163","540","539","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/jodatime/JodaConversionTest.java","57","63","-2147382899","-2147382839","0","0","void testLocalDateToString()","void testLocalDateToString(){
+        Source src = new Source();
+        src.setLocalDate( new LocalDate( 2014, 1, 1 ) );
+        Target target = SourceTargetMapper.INSTANCE.sourceToTargetLocalDateMapped( src );
+        assertThat( target ).isNotNull();
+        assertThat( target.getLocalDate() ).isEqualTo( ""01.01.2014"" );
+    }"
+"975","163","542","541","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/java8time/Java8TimeConversionTest.java","58","64","-2147381470","-2147381409","0","0","void testLocalDateToString()","void testLocalDateToString(){
+        Source src = new Source();
+        src.setLocalDate( LocalDate.of( 2014, 1, 1 ) );
+        Target target = SourceTargetMapper.INSTANCE.sourceToTargetLocalDateMapped( src );
+        assertThat( target ).isNotNull();
+        assertThat( target.getLocalDate() ).isEqualTo( ""01.01.2014"" );
+    }"

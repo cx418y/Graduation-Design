@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldNotGenerateEnumMappingMethodForDeepClone","void shouldNotGenerateEnumMappingMethodForDeepClone(){
+        Issue2505Mapper.CustomerDTO source = new Issue2505Mapper.CustomerDTO();
+        source.setStatus( Issue2505Mapper.Status.DISABLED );
+
+        Issue2505Mapper.Customer target = Issue2505Mapper.INSTANCE.map( source );
+
+        assertThat( target.getStatus() ).isEqualTo( Issue2505Mapper.Status.DISABLED );
+    }
+",""

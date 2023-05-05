@@ -1,0 +1,36 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"563","104","358","357","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/template/InheritConfigurationTest.java","157","170","-2147423778","-2147423723","0","0","@ProcessorTest @WithClasses({ SourceTargetMapperAmbiguous3.class })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@ProcessorTest @WithClasses({ SourceTargetMapperAmbiguous3.class })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = SourceTargetMapperAmbiguous3.class,
+                kind = Kind.ERROR,
+                line = 43,
+                message = ""Given name \""forwardCreate\"" matches several candidate methods: org.mapstruct.ap.test"" +
+                    "".template.Target forwardCreate(org.mapstruct.ap.test.template.Source source), void forwardCreate"" +
+                    ""(org.mapstruct.ap.test.template.Source source, @MappingTarget org.mapstruct.ap.test.template"" +
+                    "".Target target).""),
+            @Diagnostic(type = SourceTargetMapperAmbiguous3.class,
+                kind = Kind.WARNING,
+                line = 44,
+                message = ""Unmapped target properties: \""stringPropY, integerPropY, constantProp, expressionProp, "" +
+                    ""nestedResultProp\""."")
+        }"
+"904","104","362","361","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/reverse/InheritInverseConfigurationTest.java","95","107","-2147389187","-2147389134","0","0","@ProcessorTest @WithClasses({ SourceTargetMapperAmbiguous3.class })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@ProcessorTest @WithClasses({ SourceTargetMapperAmbiguous3.class })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = SourceTargetMapperAmbiguous3.class,
+                kind = Kind.ERROR,
+                line = 39,
+                message = ""Given name \""forward\"" matches several candidate methods: org.mapstruct.ap.test.reverse"" +
+                    "".Target forward(org.mapstruct.ap.test.reverse.Source source), org.mapstruct.ap.test.reverse"" +
+                    "".Target forward(org.mapstruct.ap.test.reverse.Source source, @MappingTarget org.mapstruct.ap"" +
+                    "".test.reverse.Target target).""),
+            @Diagnostic(type = SourceTargetMapperAmbiguous3.class,
+                kind = Kind.WARNING,
+                line = 44,
+                message = ""Unmapped target properties: \""stringPropX, integerPropX\""."")
+        }"

@@ -1,0 +1,22 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","mapStringToCustom","CustomCheeseType mapStringToCustom(String cheese){
+        if ( cheese == null ) {
+            return CustomCheeseType.UNSPECIFIED;[*1*] 
+            return null;[*2*] 
+        }
+
+        CustomCheeseType customCheeseType;
+
+        switch ( cheese ) {
+            case ""BRIE"": customCheeseType = CustomCheeseType.CUSTOM_BRIE;
+            break;
+            case ""ROQUEFORT"": customCheeseType = CustomCheeseType.CUSTOM_ROQUEFORT;
+            break;
+            default: customCheeseType = CustomCheeseType.CUSTOM_BRIE;
+        }
+
+        return customCheeseType;
+    }
+","[*1*]:
+[*2*]:
+"

@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","characterEncoding","void characterEncoding()throws Exception{
+    server.enqueue(new MockResponse().setBody(""This is not XML""));
+
+    Call<Contact> call = service.getXml();
+    try {
+      call.execute();
+      fail();
+    } catch (RuntimeException expected) {
+      assertThat(expected).hasMessageContaining(""ParseError"");
+    }
+  }
+",""

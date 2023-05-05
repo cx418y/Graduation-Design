@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1598","231","758","757","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/SourceMethod.java","442","453","-2147298046","-2147297968","0","0","String toString()","String toString(){
+        StringBuilder sb = new StringBuilder( returnType.toString() );
+        sb.append( "" "" );
+
+        if ( declaringMapper != null ) {
+            sb.append( declaringMapper ).append( ""."" );
+        }
+
+        sb.append( getName() ).append( ""("" ).append( Strings.join( parameters, "", "" ) ).append( "")"" );
+
+        return sb.toString();
+    }"
+"1853","231","760","759","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/ForgedMethod.java","342","349","-2147269252","-2147269192","0","0","String toString()","String toString(){
+        StringBuilder sb = new StringBuilder( returnType.toString() );
+        sb.append( "" "" );
+
+        sb.append( getName() ).append( ""("" ).append( Strings.join( parameters, "", "" ) ).append( "")"" );
+
+        return sb.toString();
+    }"

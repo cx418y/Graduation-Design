@@ -1,0 +1,26 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testStrategyAppliedOnForgedMethod","void testStrategyAppliedOnForgedMethod(){
+
+        Customer customer = new Customer();
+        customer.setAddress( null );
+
+        UserDTO userDTO = new UserDTO();
+        userDTO.setHomeDTO( new HomeDTO() );
+        userDTO.getHomeDTO().setAddressDTO( new AddressDTO() );
+        userDTO.getHomeDTO().getAddressDTO().setHouseNo( 5 );
+        userDTO.setDetails( Arrays.asList( ""green hair"" ) );
+
+        CustomerMapper.INSTANCE.mapCustomer( customer, userDTO );
+
+        assertThat( userDTO.getHomeDTO() ).isNotNull();
+        assertThat( userDTO.getHomeDTO().getAddressDTO() ).isNotNull();
+        assertThat( userDTO.getHomeDTO().getAddressDTO().getHouseNo() ).isEqualTo( 5 );[*1*] 
+        assertThat( userDTO.getDetails() ).isNotNull();
+        assertThat( userDTO.getDetails() ).containsExactly( ""green hair"" );[*2*] 
+        assertThat( userDTO.getDetails() ).isEmpty();[*3*] 
+    }
+","[*1*]:
+1, 0.5,         assertThat( userDTO.getHomeDTO().getAddressDTO().getHouseNo() ).isNull();
+[*2*]:
+[*3*]:
+"

@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"42","2","5","4","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/kotlin-test/src/test/java/retrofit2/KotlinUnitTest.java","41","50","-2147478937","-2147478839","0","0","void unitGet()throws IOException","void unitGet()throws IOException{
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(server.url(""/"")).build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    Response<Unit> response = example.empty().execute();
+    assertThat(response.isSuccessful()).isTrue();
+    assertThat(response.body()).isSameAs(Unit.INSTANCE);
+  }"
+"43","2","5","14","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/kotlin-test/src/test/java/retrofit2/KotlinUnitTest.java","53","62","-2147478839","-2147478741","0","0","void unitHead()throws IOException","void unitHead()throws IOException{
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(server.url(""/"")).build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    Response<Unit> response = example.head().execute();
+    assertThat(response.isSuccessful()).isTrue();
+    assertThat(response.body()).isSameAs(Unit.INSTANCE);
+  }"

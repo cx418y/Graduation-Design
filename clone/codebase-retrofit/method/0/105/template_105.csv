@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","deserializeEmpty","void deserializeEmpty()throws IOException{
+    server.enqueue(new MockResponse());
+
+    Call<Phone> call = service.get();
+    Response<Phone> response = call.execute();
+    Phone body = response.body();
+    assertThat(body.number).isNull();[*1*] 
+  }
+","[*1*]:
+1, 0.5,     assertThat(body.hasNumber()).isFalse();
+"

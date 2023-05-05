@@ -1,0 +1,54 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"115","18","52","51","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNvmsDefaultMapperImpl.java","24","49","-2147473021","-2147472865","0","0","Domain create(Dto source)","Domain create(Dto source){
+
+        Domain domain = new Domain();
+
+        if ( source != null ) {
+            List<String> list = source.getStrings();
+            if ( list != null ) {
+                domain.setStrings( new LinkedHashSet<String>( list ) );
+            }
+            domain.setLongs( stringListToLongSet( source.getStrings() ) );
+            List<String> list1 = source.getStringsInitialized();
+            if ( list1 != null ) {
+                domain.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+            }
+            domain.setLongsInitialized( stringListToLongSet( source.getStringsInitialized() ) );
+            List<String> list2 = source.getStringsWithDefault();
+            if ( list2 != null ) {
+                domain.setStringsWithDefault( new ArrayList<String>( list2 ) );
+            }
+            else {
+                domain.setStringsWithDefault( helper.toList( ""3"" ) );
+            }
+        }
+
+        return domain;
+    }"
+"119","18","56","55","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNvmsNullMapperImpl.java","24","50","-2147471791","-2147471633","0","0","Domain create(Dto source)","Domain create(Dto source){
+        if ( source == null ) {
+            return null;
+        }
+
+        Domain domain = createNullDomain();
+
+        List<String> list = source.getStrings();
+        if ( list != null ) {
+            domain.setStrings( new LinkedHashSet<String>( list ) );
+        }
+        domain.setLongs( stringListToLongSet( source.getStrings() ) );
+        List<String> list1 = source.getStringsInitialized();
+        if ( list1 != null ) {
+            domain.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+        }
+        domain.setLongsInitialized( stringListToLongSet( source.getStringsInitialized() ) );
+        List<String> list2 = source.getStringsWithDefault();
+        if ( list2 != null ) {
+            domain.setStringsWithDefault( new ArrayList<String>( list2 ) );
+        }
+        else {
+            domain.setStringsWithDefault( helper.toList( ""3"" ) );
+        }
+
+        return domain;
+    }"

@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapArrayToArray","void shouldMapArrayToArray(){
+        ScientistDto[] dtos = ScienceMapper.INSTANCE[*1*] 
+            .scientistsToDtos( new Scientist[]{ new Scientist( ""Bob"" ), new Scientist( ""Larry"" ) } );
+
+        assertThat( dtos ).isNotNull();
+        assertThat( dtos ).extracting( ""name"" ).containsOnly( ""Bob"", ""Larry"" );
+    }
+","[*1*]:
+1, 0.5,         List<ScientistDto> dtos = ScienceMapper.INSTANCE
+"

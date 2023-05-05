@@ -7,6 +7,7 @@ import java.util.List;
 @Data
 public class TemplateDetailsDTO {
 	private String id;
-	private List<TemplateLineDIffList> details;
+	private String commonContent;
+	private List<TemplateLineDIffList> diffs;
 
 }

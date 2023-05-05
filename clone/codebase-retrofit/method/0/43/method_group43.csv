@@ -1,0 +1,104 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"308","43","132","131","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/RxJava3CallAdapterFactoryTest.java","163","203","-2147442597","-2147442415","0","0","void rawBodyTypeThrows()","void rawBodyTypeThrows(){
+    Type observableType = new TypeToken<Observable>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Observable return type must be parameterized as Observable<Foo> or Observable<? extends Foo>"");
+    }
+
+    Type singleType = new TypeToken<Single>() {}.getType();
+    try {
+      factory.get(singleType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Single return type must be parameterized as Single<Foo> or Single<? extends Foo>"");
+    }
+
+    Type maybeType = new TypeToken<Maybe>() {}.getType();
+    try {
+      factory.get(maybeType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Maybe return type must be parameterized as Maybe<Foo> or Maybe<? extends Foo>"");
+    }
+
+    Type flowableType = new TypeToken<Flowable>() {}.getType();
+    try {
+      factory.get(flowableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Flowable return type must be parameterized as Flowable<Foo> or Flowable<? extends Foo>"");
+    }
+  }"
+"446","43","132","131","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/RxJava2CallAdapterFactoryTest.java","163","203","-2147428676","-2147428494","0","0","void rawBodyTypeThrows()","void rawBodyTypeThrows(){
+    Type observableType = new TypeToken<Observable>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Observable return type must be parameterized as Observable<Foo> or Observable<? extends Foo>"");
+    }
+
+    Type singleType = new TypeToken<Single>() {}.getType();
+    try {
+      factory.get(singleType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Single return type must be parameterized as Single<Foo> or Single<? extends Foo>"");
+    }
+
+    Type maybeType = new TypeToken<Maybe>() {}.getType();
+    try {
+      factory.get(maybeType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Maybe return type must be parameterized as Maybe<Foo> or Maybe<? extends Foo>"");
+    }
+
+    Type flowableType = new TypeToken<Flowable>() {}.getType();
+    try {
+      factory.get(flowableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Flowable return type must be parameterized as Flowable<Foo> or Flowable<? extends Foo>"");
+    }
+  }"
+"609","43","152","151","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/RxJavaCallAdapterFactoryTest.java","118","138","-2147412743","-2147412651","0","0","void rawBodyTypeThrows()","void rawBodyTypeThrows(){
+    Type observableType = new TypeToken<Observable>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Observable return type must be parameterized as Observable<Foo> or Observable<? extends Foo>"");
+    }
+
+    Type singleType = new TypeToken<Single>() {}.getType();
+    try {
+      factory.get(singleType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Single return type must be parameterized as Single<Foo> or Single<? extends Foo>"");
+    }
+  }"

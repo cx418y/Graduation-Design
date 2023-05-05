@@ -1,0 +1,63 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1046","181","592","591","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/nativetypes/NumberConversionTest.java","110","140","-2147371511","-2147371146","0","0","void shouldApplyShortConversions()","void shouldApplyShortConversions(){
+        ShortSource source = new ShortSource();
+        source.setB( (short) 1 );
+        source.setBb( (short) 2 );
+        source.setS( (short) 3 );
+        source.setSs( (short) 4 );
+        source.setI( (short) 5 );
+        source.setIi( (short) 6 );
+        source.setL( (short) 7 );
+        source.setLl( (short) 8 );
+        source.setF( (short) 9 );
+        source.setFf( (short) 10 );
+        source.setD( (short) 11 );
+        source.setDd( (short) 12 );
+
+        ShortTarget target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getB() ).isEqualTo( (byte) 1 );
+        assertThat( target.getBb() ).isEqualTo( Byte.valueOf( (byte) 2 ) );
+        assertThat( target.getS() ).isEqualTo( (short) 3 );
+        assertThat( target.getSs() ).isEqualTo( Short.valueOf( (short) 4 ) );
+        assertThat( target.getI() ).isEqualTo( 5 );
+        assertThat( target.getIi() ).isEqualTo( Integer.valueOf( 6 ) );
+        assertThat( target.getL() ).isEqualTo( 7 );
+        assertThat( target.getLl() ).isEqualTo( Long.valueOf( 8 ) );
+        assertThat( target.getF() ).isEqualTo( 9f );
+        assertThat( target.getFf() ).isEqualTo( Float.valueOf( 10f ) );
+        assertThat( target.getD() ).isEqualTo( 11d );
+        assertThat( target.getDd() ).isEqualTo( Double.valueOf( 12d ) );
+    }"
+"1047","181","592","591","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/nativetypes/NumberConversionTest.java","143","173","-2147371146","-2147370781","0","0","void shouldApplyShortWrapperConversions()","void shouldApplyShortWrapperConversions(){
+        ShortWrapperSource source = new ShortWrapperSource();
+        source.setB( (short) 1 );
+        source.setBb( (short) 2 );
+        source.setS( (short) 3 );
+        source.setSs( (short) 4 );
+        source.setI( (short) 5 );
+        source.setIi( (short) 6 );
+        source.setL( (short) 7 );
+        source.setLl( (short) 8 );
+        source.setF( (short) 9 );
+        source.setFf( (short) 10 );
+        source.setD( (short) 11 );
+        source.setDd( (short) 12 );
+
+        ShortWrapperTarget target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getB() ).isEqualTo( (byte) 1 );
+        assertThat( target.getBb() ).isEqualTo( Byte.valueOf( (byte) 2 ) );
+        assertThat( target.getS() ).isEqualTo( (short) 3 );
+        assertThat( target.getSs() ).isEqualTo( Short.valueOf( (short) 4 ) );
+        assertThat( target.getI() ).isEqualTo( 5 );
+        assertThat( target.getIi() ).isEqualTo( Integer.valueOf( 6 ) );
+        assertThat( target.getL() ).isEqualTo( 7 );
+        assertThat( target.getLl() ).isEqualTo( Long.valueOf( 8 ) );
+        assertThat( target.getF() ).isEqualTo( 9f );
+        assertThat( target.getFf() ).isEqualTo( Float.valueOf( 10f ) );
+        assertThat( target.getD() ).isEqualTo( 11d );
+        assertThat( target.getDd() ).isEqualTo( Double.valueOf( 12d ) );
+    }"

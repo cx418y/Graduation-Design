@@ -1,0 +1,46 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"24","3","7","6","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/collection/defaultimplementation/SourceTargetMapperImpl.java","193","207","-2147481824","-2147481735","0","0","SortedMap<String, TargetFoo> sourceFooMapToTargetFooSortedMap(Map<Long, SourceFoo> foos)","SortedMap<String, TargetFoo> sourceFooMapToTargetFooSortedMap(Map<Long, SourceFoo> foos){
+        if ( foos == null ) {
+            return null;
+        }
+
+        SortedMap<String, TargetFoo> sortedMap = new TreeMap<String, TargetFoo>();
+
+        for ( java.util.Map.Entry<Long, SourceFoo> entry : foos.entrySet() ) {
+            String key = String.valueOf( entry.getKey() );
+            TargetFoo value = sourceFooToTargetFoo( entry.getValue() );
+            sortedMap.put( key, value );
+        }
+
+        return sortedMap;
+    }"
+"25","3","7","6","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/collection/defaultimplementation/SourceTargetMapperImpl.java","210","224","-2147481735","-2147481646","0","0","NavigableMap<String, TargetFoo> sourceFooMapToTargetFooNavigableMap(Map<Long, SourceFoo> foos)","NavigableMap<String, TargetFoo> sourceFooMapToTargetFooNavigableMap(Map<Long, SourceFoo> foos){
+        if ( foos == null ) {
+            return null;
+        }
+
+        NavigableMap<String, TargetFoo> navigableMap = new TreeMap<String, TargetFoo>();
+
+        for ( java.util.Map.Entry<Long, SourceFoo> entry : foos.entrySet() ) {
+            String key = String.valueOf( entry.getKey() );
+            TargetFoo value = sourceFooToTargetFoo( entry.getValue() );
+            navigableMap.put( key, value );
+        }
+
+        return navigableMap;
+    }"
+"27","3","7","6","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/collection/defaultimplementation/SourceTargetMapperImpl.java","244","258","-2147481535","-2147481446","0","0","ConcurrentNavigableMap<String, TargetFoo> sourceFooMapToTargetFooConcurrentNavigableMap(Map<Long, SourceFoo> foos)","ConcurrentNavigableMap<String, TargetFoo> sourceFooMapToTargetFooConcurrentNavigableMap(Map<Long, SourceFoo> foos){
+        if ( foos == null ) {
+            return null;
+        }
+
+        ConcurrentNavigableMap<String, TargetFoo> concurrentNavigableMap = new ConcurrentSkipListMap<String, TargetFoo>();
+
+        for ( java.util.Map.Entry<Long, SourceFoo> entry : foos.entrySet() ) {
+            String key = String.valueOf( entry.getKey() );
+            TargetFoo value = sourceFooToTargetFoo( entry.getValue() );
+            concurrentNavigableMap.put( key, value );
+        }
+
+        return concurrentNavigableMap;
+    }"

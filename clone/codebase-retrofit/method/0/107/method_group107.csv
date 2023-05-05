@@ -1,0 +1,47 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"658","107","343","342","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/wire/src/test/java/retrofit2/converter/wire/WireConverterFactoryTest.java","119","141","-2147407868","-2147407780","0","0","void deserializeWrongType()throws IOException","void deserializeWrongType()throws IOException{
+    ByteString encoded = ByteString.decodeBase64(""Cg4oNTE5KSA4NjctNTMwOQ=="");
+    server.enqueue(new MockResponse().setBody(new Buffer().write(encoded)));
+
+    try {
+      service.wrongType();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Unable to create converter for java.util.List<java.lang.String>\n""
+                  + ""    for method Service.wrongType"");
+      assertThat(e.getCause())
+          .hasMessage(
+              """"
+                  + ""Could not locate ResponseBody converter for java.util.List<java.lang.String>.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.converter.wire.WireConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+  }"
+"733","107","343","342","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/protobuf/src/test/java/retrofit2/converter/protobuf/ProtoConverterFactoryTest.java","148","170","-2147399460","-2147399372","0","0","void deserializeWrongType()throws IOException","void deserializeWrongType()throws IOException{
+    ByteString encoded = ByteString.decodeBase64(""Cg4oNTE5KSA4NjctNTMwOQ=="");
+    server.enqueue(new MockResponse().setBody(new Buffer().write(encoded)));
+
+    try {
+      service.wrongType();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Unable to create converter for java.util.List<java.lang.String>\n""
+                  + ""    for method Service.wrongType"");
+      assertThat(e.getCause())
+          .hasMessage(
+              """"
+                  + ""Could not locate ResponseBody converter for java.util.List<java.lang.String>.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.converter.protobuf.ProtoConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+  }"

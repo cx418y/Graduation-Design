@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseUsesScheduler","void responseUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingObserver<Object> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue().assertComplete();[*1*] 
+  }
+","[*1*]:
+4, 0.5,     observer.assertAnyValue();
+"

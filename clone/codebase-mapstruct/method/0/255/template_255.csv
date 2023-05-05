@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","toXml","String toXml(JAXBElement<?> element)throws JAXBException{
+        JAXBContext jc = JAXBContext.newInstance( element.getValue().getClass() );
+        Marshaller marshaller = jc.createMarshaller();
+        marshaller.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE );
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        marshaller.marshal( element, baos );
+        return baos.toString();
+    }
+",""

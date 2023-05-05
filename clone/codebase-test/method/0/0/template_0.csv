@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","addAttribute","void addAttribute(String name, float value)throws Exception{[*1*] 
+		String c = Float.toString(value);[*2*] 
+		float b;[*3*] 
+		count3++;[*4*] 
+		if (str.endsWith("".0"")) str = str.substring(0, str.length() - 2);
+		((Element) current).setAttribute(name, str);
+	}
+","[*1*]:
+1, 0.5, void addAttribute3(String name, float value, int count3)throws Exception{
+[*2*]:
+1, 0.5, 		String c = Double.toString(value);
+[*3*]:
+[*4*]:
+"

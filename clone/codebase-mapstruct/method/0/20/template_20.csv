@@ -1,0 +1,27 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","map","AbstractParentTarget map(AbstractParentSource item){
+        if ( item == null ) {
+            return null;
+        }
+
+        if (item instanceof SubSource) {
+            return subSourceToSubTarget( (SubSource) item );
+        }
+        else if (item instanceof SubSourceOther) {
+            return subSourceOtherToSubTargetOther( (SubSourceOther) item );
+        }
+        else {
+            throw new IllegalArgumentException(""Not all subclasses are supported for this mapping. Missing for "" + item.getClass());[*1*] 
+[*2*] 
+[*3*] 
+[*4*] 
+        }
+    }
+","[*1*]:
+[*2*]:
+1, 0.3333333333333333,             ImplementedParentTarget implementedParentTarget = new ImplementedParentTarget();
+[*3*]:
+1, 0.3333333333333333, 
+[*4*]:
+1, 0.3333333333333333,             return implementedParentTarget;
+"

@@ -1,0 +1,140 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","@IssueKey@IssueKey","[*1*] 
+[*2*] 
+[*3*] 
+[*4*] 
+[*5*] 
+[*6*] 
+[*7*] 
+[*8*] 
+[*9*] 
+[*10*] 
+    @ExpectedCompilationOutcome([*11*] 
+[*12*] 
+[*13*] 
+[*14*] 
+[*15*] 
+[*16*] 
+[*17*] 
+        value = CompilationResult.FAILED,[*18*] 
+[*19*] 
+[*20*] 
+[*21*] 
+        diagnostics ={
+[*22*] 
+[*23*] 
+[*24*] 
+[*25*] 
+[*26*] 
+[*27*] 
+            @Diagnostic(type = ErroneousConditionExpressionMapper.class,[*28*] 
+[*29*] 
+[*30*] 
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 22,
+                message = ""Constant and condition expression are both defined in @Mapping,""[*31*] 
+                    + "" either define a constant or a condition expression.""[*32*] 
+[*33*] 
+[*34*] 
+            ),[*35*] 
+[*36*] 
+[*37*] 
+            @Diagnostic(type = ErroneousConditionExpressionMapper.class,[*38*] 
+[*39*] 
+[*40*] 
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 25,
+                message = ""Expression and condition expression are both defined in @Mapping,""[*41*] 
+[*42*] 
+[*43*] 
+[*44*] 
+            )[*45*] 
+[*46*] 
+        }
+","[*1*]:
+1, 0.14285714285714285, } @IssueKey(""2794"")@ProcessorTest
+1, 0.14285714285714285, @IssueKey(""2347"") @WithClasses({
+[*2*]:
+1, 0.14285714285714285, ) .isEqualTo( Date.from(
+1, 0.14285714285714285,                     .toInstant( ZoneOffset.UTC )
+[*3*]:
+1, 0.14285714285714285,                 LocalDate.of( 2022, Month.JUNE, 5 )
+[*4*]:
+1, 0.14285714285714285,                     .atTime( 17, 10 )
+[*5*]:
+1, 0.14285714285714285,             ) );
+[*6*]:
+2, 0.2857142857142857, void testJavaDefaultExpressionExpression(){
+[*7*]:
+3, 0.42857142857142855,     }
+[*8*]:
+1, 0.14285714285714285, @WithClasses(ErroneousIssue1153Mapper.class) @IssueKey(""1153"")public class Issue1153Test {
+[*9*]:
+[*10*]:
+3, 0.42857142857142855,     @ProcessorTest
+[*11*]:
+1, 0.14285714285714285,     })@ExpectedCompilationOutcome(
+[*12*]:
+1, 0.14285714285714285, @ProcessorTest @WithClasses({
+[*13*]:
+1, 0.14285714285714285,         Source.class,
+1, 0.14285714285714285,                 message =
+[*14*]:
+1, 0.14285714285714285,         Target.class,
+[*15*]:
+1, 0.14285714285714285,         QualifierProvider.class,
+[*16*]:
+1, 0.14285714285714285,         TimeAndFormat.class,
+[*17*]:
+2, 0.2857142857142857,         ErroneousSourceTargetMapperExpressionAndQualifiers.class
+[*18*]:
+[*19*]:
+1, 0.14285714285714285, })public class Issue2347Test {
+[*20*]:
+1, 0.14285714285714285, 
+[*21*]:
+2, 0.2857142857142857,     @ExpectedCompilationOutcome(value = CompilationResult.FAILED,
+[*22*]:
+2, 0.2857142857142857,             @Diagnostic(type = ErroneousConditionExpressionMapper.class,
+[*23*]:
+2, 0.2857142857142857,                 kind = javax.tools.Diagnostic.Kind.ERROR,
+[*24*]:
+2, 0.2857142857142857,                 line = 19,
+[*25*]:
+1, 0.14285714285714285,                 message = ""Value for condition expression must be given in the form \""java(<EXPRESSION>)\"".""
+[*26*]:
+1, 0.14285714285714285,             ),
+[*27*]:
+1, 0.14285714285714285,                 message = ""Property \""readOnly\"" has no write accessor in ErroneousIssue1153Mapper.Target.""),
+[*28*]:
+[*29*]:
+1, 0.14285714285714285,             @Diagnostic(
+[*30*]:
+1, 0.14285714285714285,                 type = ErroneousClassWithPrivateMapper.class,
+[*31*]:
+[*32*]:
+[*33*]:
+2, 0.2857142857142857,                 message = ""Expression and a qualifier both defined in @Mapping,"" +
+[*34*]:
+2, 0.2857142857142857,                     "" either define an expression or a qualifier.""
+[*35*]:
+[*36*]:
+1, 0.14285714285714285,                     ""Property \""readOnly\"" has no write accessor in ErroneousIssue1153Mapper.Target.NestedTarget "" +
+[*37*]:
+1, 0.14285714285714285,                     ""for target name \""nestedTarget.readOnly\"".""),
+[*38*]:
+[*39*]:
+1, 0.14285714285714285,             @Diagnostic(
+[*40*]:
+1, 0.14285714285714285,                 type = ErroneousClassWithPrivateMapper.class,
+[*41*]:
+[*42*]:
+1, 0.14285714285714285,                     + "" either define an expression or a condition expression.""
+[*43*]:
+3, 0.42857142857142855,                 message = ""Expression and a qualifier both defined in @Mapping,"" +
+[*44*]:
+2, 0.2857142857142857,                     "" either define an expression or a qualifier.""
+[*45*]:
+[*46*]:
+1, 0.14285714285714285,                     ""for target name \""nestedTarget2.writable2\"". Did you mean \""nestedTarget2.writable\""?"")
+"

@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"45","6","5","4","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/array/ScienceMapperImpl.java","148","166","-2147480340","-2147480255","0","0","short[] nvmMapping(int[] source, short[] target)","short[] nvmMapping(int[] source, short[] target){
+        if ( source == null ) {
+            for (int j = 0; j < target.length; j++ ) {
+                target[j] = 0;
+            }
+            return target;
+        }
+
+        int i = 0;
+        for ( int int1 : source ) {
+            if ( ( i >= target.length ) || ( i >= source.length ) ) {
+                break;
+            }
+            target[i] = (short) int1;
+            i++;
+        }
+
+        return target;
+    }"
+"47","6","20","19","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/array/ScienceMapperImpl.java","190","208","-2147480168","-2147480086","0","0","int[] nvmMapping(int[] source, int[] target)","int[] nvmMapping(int[] source, int[] target){
+        if ( source == null ) {
+            for (int j = 0; j < target.length; j++ ) {
+                target[j] = 0;
+            }
+            return target;
+        }
+
+        int i = 0;
+        for ( int int1 : source ) {
+            if ( ( i >= target.length ) || ( i >= source.length ) ) {
+                break;
+            }
+            target[i] = int1;
+            i++;
+        }
+
+        return target;
+    }"

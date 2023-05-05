@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getNullValueIterableMappingStrategy","NullValueMappingStrategyGem getNullValueIterableMappingStrategy(){
+        if ( mapper.nullValueIterableMappingStrategy().hasValue() ) {
+            return NullValueMappingStrategyGem.valueOf( mapper.nullValueIterableMappingStrategy().get() );
+        }
+        if ( mapper.nullValueMappingStrategy().hasValue() ) {
+            return NullValueMappingStrategyGem.valueOf( mapper.nullValueMappingStrategy().get() );
+        }
+        return next().getNullValueIterableMappingStrategy();
+    }
+",""

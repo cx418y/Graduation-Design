@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"613","109","370","369","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_775/IterableWithBoundedElementTypeTest.java","37","45","-2147419234","-2147419174","0","0","void createsForgedMethodForIterableLowerBoundInteger()","void createsForgedMethodForIterableLowerBoundInteger(){
+        ListContainer source = new ListContainer();
+
+        source.setValues( Arrays.asList( ""42"", ""47"" ) );
+        IterableContainer result = MapperWithForgedIterableMapping.INSTANCE.toContainerWithIterable( source );
+
+        ( (IterableAssert<Integer>) assertThat( result.getValues() ) )
+                .contains( 42, 47 );
+    }"
+"614","109","370","369","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_775/IterableWithBoundedElementTypeTest.java","48","56","-2147419174","-2147419114","0","0","void usesListIntegerMethodForIterableLowerBoundInteger()","void usesListIntegerMethodForIterableLowerBoundInteger(){
+        ListContainer source = new ListContainer();
+
+        source.setValues( Arrays.asList( ""42"", ""47"" ) );
+        IterableContainer result = MapperWithCustomListMapping.INSTANCE.toContainerWithIterable( source );
+
+        ( (IterableAssert<Integer>) assertThat( result.getValues() ) )
+                .contains( 66, 71 );
+    }"

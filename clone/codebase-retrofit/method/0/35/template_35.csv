@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseSuccess404","void responseSuccess404(){[*1*] 
+[*2*] 
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    assertThat(observer.takeValue().isSuccessful()).isFalse();[*3*] 
+    observer.assertComplete();[*4*] 
+  }
+","[*1*]:
+[*2*]:
+2, 0.2, void responseSuccess404()throws IOException{
+[*3*]:
+2, 0.2,     assertThat(subscriber.takeValue().code()).isEqualTo(404);
+[*4*]:
+"

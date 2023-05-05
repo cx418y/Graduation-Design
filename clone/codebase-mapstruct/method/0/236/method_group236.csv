@@ -1,0 +1,64 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1673","236","776","775","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MappingOptions.java","306","324","-2147288605","-2147288518","0","0","String getExpression(MappingGem mapping, ExecutableElement element,
+                                        FormattingMessager messager)","String getExpression(MappingGem mapping, ExecutableElement element,
+                                        FormattingMessager messager){
+        if ( !mapping.expression().hasValue() ) {
+            return null;
+        }
+
+        Matcher javaExpressionMatcher = JAVA_EXPRESSION.matcher( mapping.expression().get() );
+
+        if ( !javaExpressionMatcher.matches() ) {
+            messager.printMessage(
+                element,
+                mapping.mirror(),
+                mapping.expression().getAnnotationValue(),
+                Message.PROPERTYMAPPING_INVALID_EXPRESSION
+            );
+            return null;
+        }
+
+        return javaExpressionMatcher.group( 1 ).trim();
+    }"
+"1674","236","776","775","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MappingOptions.java","327","345","-2147288518","-2147288431","0","0","String getDefaultExpression(MappingGem mapping, ExecutableElement element,
+                                        FormattingMessager messager)","String getDefaultExpression(MappingGem mapping, ExecutableElement element,
+                                        FormattingMessager messager){
+        if ( !mapping.defaultExpression().hasValue() ) {
+            return null;
+        }
+
+        Matcher javaExpressionMatcher = JAVA_EXPRESSION.matcher( mapping.defaultExpression().get() );
+
+        if ( !javaExpressionMatcher.matches() ) {
+            messager.printMessage(
+                element,
+                mapping.mirror(),
+                mapping.defaultExpression().getAnnotationValue(),
+                Message.PROPERTYMAPPING_INVALID_DEFAULT_EXPRESSION
+            );
+            return null;
+        }
+
+        return javaExpressionMatcher.group( 1 ).trim();
+    }"
+"1675","236","776","775","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/source/MappingOptions.java","348","366","-2147288431","-2147288344","0","0","String getConditionExpression(MappingGem mapping, ExecutableElement element,
+                                        FormattingMessager messager)","String getConditionExpression(MappingGem mapping, ExecutableElement element,
+                                        FormattingMessager messager){
+        if ( !mapping.conditionExpression().hasValue() ) {
+            return null;
+        }
+
+        Matcher javaExpressionMatcher = JAVA_EXPRESSION.matcher( mapping.conditionExpression().get() );
+
+        if ( !javaExpressionMatcher.matches() ) {
+            messager.printMessage(
+                element,
+                mapping.mirror(),
+                mapping.conditionExpression().getAnnotationValue(),
+                Message.PROPERTYMAPPING_INVALID_CONDITION_EXPRESSION
+            );
+            return null;
+        }
+
+        return javaExpressionMatcher.group( 1 ).trim();
+    }"

@@ -1,0 +1,28 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","typeWithFQN","Type typeWithFQN(String fullQualifiedName){
+        return new Type(
+                        null,
+                        null,
+                        null,
+                        null,
+                        voidTypeMirror,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        fullQualifiedName,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+            new HashMap<>(  ),
+            new HashMap<>(  ),
+                        false,
+                        false, false
+        );
+    }
+",""

@@ -1,0 +1,19 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","mapExtend","List<AuctionDto> mapExtend(List<? extends Auction> auctions){[*1*] 
+        if ( auctions == null ) {
+            return null;
+        }
+
+        List<AuctionDto> list = new ArrayList<AuctionDto>( auctions.size() );[*2*] 
+        List<? super AuctionDto> list = new ArrayList<AuctionDto>( auctions.size() );[*3*] 
+        for ( Auction auction : auctions ) {
+            list.add( map( auction ) );
+        }
+
+        return list;
+    }
+","[*1*]:
+1, 0.5, AuctionDto> mapSuper(List<Auction> auctions){
+[*2*]:
+[*3*]:
+"

@@ -1,0 +1,64 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1994","259","839","838","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/usesTypeGenerationTest/generator/src/main/java/org/mapstruct/itest/usestypegeneration/UsesTypeGenerationProcessor.java","30","59","-2147251209","-2147251072","0","0","boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv)","boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv){
+        if ( !hasRun ) {
+            try {
+                    JavaFileObject dto = processingEnv.getFiler().createSourceFile( ""org.mapstruct.itest.usestypegeneration.usage.StringUtils"" );
+                    Writer writer = dto.openWriter();
+
+                    writer.append( ""package org.mapstruct.itest.usestypegeneration.usage;"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""public class StringUtils {"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""    public static String upperCase(String string) {"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""              return string == null ? null : string.toUpperCase();"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""    }"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""}"" );
+
+                    writer.flush();
+                    writer.close();
+            }
+            catch (IOException e) {
+                    throw new RuntimeException( e );
+            }
+
+            hasRun = true;
+        }
+
+        return false;
+    }"
+"1995","259","844","843","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/targetTypeGenerationTest/generator/src/main/java/org/mapstruct/itest/targettypegeneration/DtoGenerationProcessor.java","34","66","-2147251072","-2147250914","0","0","boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv)","boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv){
+        if ( !hasRun ) {
+            try {
+                    JavaFileObject dto = processingEnv.getFiler().createSourceFile( ""org.mapstruct.itest.targettypegeneration.usage.OrderDto"" );
+                    Writer writer = dto.openWriter();
+
+                    writer.append( ""package org.mapstruct.itest.targettypegeneration.usage;"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""public class OrderDto {"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""    private String item;"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""    public String getItem() {"" );
+                    writer.append( ""              return item;"" );
+                    writer.append( ""    }"" );
+                    writer.append( ""\n"" );
+                    writer.append( ""      public void setItem(String item) {"" );
+                    writer.append( ""        this.item = item;"" );
+                    writer.append( ""    }"" );
+                    writer.append( ""}"" );
+
+                    writer.flush();
+                    writer.close();
+            }
+            catch (IOException e) {
+                    throw new RuntimeException( e );
+            }
+
+            hasRun = true;
+        }
+
+        return false;
+    }"

@@ -1,0 +1,32 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapArrayToArrayExistingSmallerSizedTarget","void shouldMapArrayToArrayExistingSmallerSizedTarget(){
+
+[*1*] 
+        ScientistDto[] existingTarget =[*2*] 
+[*3*] 
+
+        ScientistDto[] target = ScienceMapper.INSTANCE[*4*] 
+            .scientistsToDtos( new Scientist[]{ new Scientist( ""Bob"" ), new Scientist( ""Larry"" ) }, existingTarget );[*5*] 
+[*6*] 
+
+        assertThat( target ).isNotNull();
+        assertThat( target ).isEqualTo( existingTarget );
+        assertThat( target ).extracting( ""name"" ).containsOnly( ""Bob"" );[*7*] 
+[*8*] 
+    }
+","[*1*]:
+1, 0.25,         ScientistDto[] existingTarget =  new ScientistDto[]{ new ScientistDto( ""Jim"" ) };
+1, 0.25,         ScientistDto[] existingTarget =  new ScientistDto[]{ new ScientistDto( ""Jim"" ), new ScientistDto( ""Bart"" ) };
+1, 0.25,                 new ScientistDto[]{ new ScientistDto( ""Jim"" ) };
+[*2*]:
+[*3*]:
+1, 0.25,                 new ScientistDto[]{ new ScientistDto( ""Jim"" ), new ScientistDto( ""Bart"" ), new ScientistDto( ""John"" ) };
+[*4*]:
+[*5*]:
+[*6*]:
+1, 0.25,         ScientistDto[] target = ScienceMapper.INSTANCE.scientistsToDtos( null, existingTarget );
+[*7*]:
+1, 0.25,         assertThat( target ).extracting( ""name"" ).containsOnly( ""Bob"", ""Larry"", ""John""  );
+[*8*]:
+1, 0.25,         assertThat( target ).extracting( ""name"" ).containsOnly( ""Bob"", ""Larry""  );
+"

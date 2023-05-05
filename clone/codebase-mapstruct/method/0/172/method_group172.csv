@@ -1,0 +1,40 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1008","172","568","567","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/ConversionTest.java","17","29","-2147377441","-2147377341","0","0","void shouldApplyConversions()","void shouldApplyConversions(){
+        Source source = new Source();
+        source.setFoo( 42 );
+        source.setBar( 23L );
+        source.setZip( 73 );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 42 ) );
+        assertThat( target.getBar() ).isEqualTo( 23 );
+        assertThat( target.getZip() ).isEqualTo( ""73"" );
+    }"
+"2012","172","568","567","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/simpleTest/src/test/java/org/mapstruct/itest/simple/ConversionTest.java","18","30","-2147249148","-2147249048","0","0","void shouldApplyConversions()","void shouldApplyConversions(){
+        Source source = new Source();
+        source.setFoo( 42 );
+        source.setBar( 23L );
+        source.setZip( 73 );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 43 ) );
+        assertThat( target.getBar() ).isEqualTo( 23 );
+        assertThat( target.getZip() ).isEqualTo( ""73"" );
+    }"
+"2017","172","568","567","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/simpleTest/src/test/java/org/mapstruct/itest/simple/ConversionTest.java","85","97","-2147248722","-2147248622","0","0","void shouldWorkWithAbstractClass()","void shouldWorkWithAbstractClass(){
+        Source source = new Source();
+        source.setFoo( 42 );
+        source.setBar( 23L );
+        source.setZip( 73 );
+
+        Target target = SourceTargetAbstractMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 43 ) );
+        assertThat( target.getBar() ).isEqualTo( 23 );
+        assertThat( target.getZip() ).isEqualTo( ""73"" );
+    }"

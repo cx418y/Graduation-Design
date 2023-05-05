@@ -1,0 +1,22 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","RxJava3CallAdapter","isCompletable; RxJava3CallAdapter(
+      Type responseType,
+      @Nullable Scheduler scheduler,
+      boolean isAsync,
+      boolean isResult,
+      boolean isBody,
+      boolean isFlowable,
+      boolean isSingle,
+      boolean isMaybe,
+      boolean isCompletable){
+    this.responseType = responseType;
+    this.scheduler = scheduler;
+    this.isAsync = isAsync;
+    this.isResult = isResult;
+    this.isBody = isBody;
+    this.isFlowable = isFlowable;
+    this.isSingle = isSingle;
+    this.isMaybe = isMaybe;
+    this.isCompletable = isCompletable;
+  }
+",""

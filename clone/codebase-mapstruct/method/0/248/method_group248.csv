@@ -1,0 +1,47 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1925","248","808","807","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/BigDecimalToStringConversion.java","72","81","-2147258782","-2147258731","0","0","void appendDecimalFormatter(StringBuilder sb, ConversionContext conversionContext)","void appendDecimalFormatter(StringBuilder sb, ConversionContext conversionContext){
+        sb.append( ""createDecimalFormat( "" );
+        if ( conversionContext.getNumberFormat() != null ) {
+            sb.append( ""\"""" );
+            sb.append( conversionContext.getNumberFormat() );
+            sb.append( ""\"""" );
+        }
+
+        sb.append( "" )"" );
+    }"
+"1929","248","810","809","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/PrimitiveToStringConversion.java","91","103","-2147258493","-2147258425","0","0","void appendDecimalFormatter(StringBuilder sb, ConversionContext conversionContext)","void appendDecimalFormatter(StringBuilder sb, ConversionContext conversionContext){
+        sb.append( ""new "" );
+        sb.append( decimalFormat( conversionContext ) );
+        sb.append( ""( "" );
+
+        if ( conversionContext.getNumberFormat() != null ) {
+            sb.append( ""\"""" );
+            sb.append( conversionContext.getNumberFormat() );
+            sb.append( ""\"""" );
+        }
+
+        sb.append( "" )"" );
+    }"
+"1931","248","810","809","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/WrapperToStringConversion.java","90","102","-2147258346","-2147258278","0","0","void appendDecimalFormatter(StringBuilder sb, ConversionContext conversionContext)","void appendDecimalFormatter(StringBuilder sb, ConversionContext conversionContext){
+        sb.append( ""new "" );
+        sb.append( decimalFormat( conversionContext ) );
+        sb.append( ""( "" );
+
+        if ( conversionContext.getNumberFormat() != null ) {
+            sb.append( ""\"""" );
+            sb.append( conversionContext.getNumberFormat() );
+            sb.append( ""\"""" );
+        }
+
+        sb.append( "" )"" );
+    }"
+"1943","248","808","807","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/BigIntegerToStringConversion.java","80","89","-2147256081","-2147256030","0","0","void appendDecimalFormatter(StringBuilder sb, ConversionContext conversionContext)","void appendDecimalFormatter(StringBuilder sb, ConversionContext conversionContext){
+        sb.append( ""createDecimalFormat( "" );
+        if ( conversionContext.getNumberFormat() != null ) {
+            sb.append( ""\"""" );
+            sb.append( conversionContext.getNumberFormat() );
+            sb.append( ""\"""" );
+        }
+
+        sb.append( "" )"" );
+    }"

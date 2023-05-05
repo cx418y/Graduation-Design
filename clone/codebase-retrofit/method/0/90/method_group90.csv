@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"552","90","293","292","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableTest.java","107","114","-2147418673","-2147418606","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    service.response().unsafeSubscribe(subscriber);
+    assertThat(subscriber.takeValue().body()).isEqualTo(""Hi"");
+    subscriber.assertCompleted();
+  }"
+"599","90","293","292","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleTest.java","110","117","-2147414060","-2147413993","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    service.response().unsafeSubscribe(subscriber);
+    assertThat(subscriber.takeValue().body()).isEqualTo(""Hi"");
+    subscriber.assertCompleted();
+  }"

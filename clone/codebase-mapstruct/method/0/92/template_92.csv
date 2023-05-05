@@ -1,0 +1,22 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testWithSourcesAbsent","void testWithSourcesAbsent(){
+
+        Source source = new Source();
+
+        source.setHasSomePrimitiveDouble( false );
+        source.setHasSomeInteger( false );
+        source.setHasSomeList( false );
+        source.setHasSomeArray( false );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );[*1*] 
+        Target target = new Target();[*2*] 
+
+        assertThat( target.getSomePrimitiveDouble() ).isEqualTo( 0d );
+        assertThat( target.getSomeInteger() ).isNull();
+        assertThat( target.getSomeList() ).isNull();
+        assertThat( target.getSomeArray() ).isNull();
+   }
+","[*1*]:
+1, 0.5,         SourceTargetMapper.INSTANCE.sourceToTarget( source, target );
+[*2*]:
+"

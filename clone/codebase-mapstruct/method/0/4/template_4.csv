@@ -1,0 +1,22 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","toTarget","Target toTarget(Source source)throws DogException{
+        if ( source == null ) {
+            return null;
+        }
+
+        Target target = new Target();
+
+        try {
+            if ( source.getPets() != null ) {
+                for ( String pet : source.getPets() ) {
+                    target.addPet( petMapper.toPet( pet ) );
+                }
+            }
+        }
+        catch ( CatException e ) {
+            throw new RuntimeException( e );
+        }
+
+        return target;
+    }
+",""

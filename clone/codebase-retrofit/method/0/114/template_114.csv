@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","xmlResponseBody","void xmlResponseBody()throws Exception{
+    server.enqueue(new MockResponse().setBody(SAMPLE_CONTACT_XML));
+
+    Call<Contact> call = service.getXml();
+    Response<Contact> response = call.execute();
+    assertThat(response.body()).isEqualTo(SAMPLE_CONTACT);
+  }
+",""

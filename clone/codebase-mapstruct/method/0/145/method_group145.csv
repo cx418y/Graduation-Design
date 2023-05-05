@@ -1,0 +1,162 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"858","145","480","479","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryReverse.java","24","32","-2147394455","-2147394388","0","0","= Mappers.getMapper( ArtistToChartEntryReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryReverse.class );
+
+    @Mappings({
+
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true )
+    }"
+"864","145","480","479","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryWithFactoryReverse.java","26","34","-2147393643","-2147393576","0","0","= Mappers.getMapper( ArtistToChartEntryWithFactoryReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryWithFactoryReverse.class );
+
+    @Mappings({
+
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true )
+    }"
+"865","145","480","482","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryWithMappingReverse.java","25","32","-2147393576","-2147393509","0","0","= Mappers.getMapper( ArtistToChartEntryWithMappingReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryWithMappingReverse.class );
+
+    @Mappings({
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistId"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true )
+    }"
+"874","145","480","479","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryWithIgnoresReverse.java","25","32","-2147391527","-2147391460","0","0","= Mappers.getMapper( ArtistToChartEntryWithIgnoresReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryWithIgnoresReverse.class );
+
+    @Mappings({
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true )
+    }"
+"875","145","480","479","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryUpdateReverse.java","26","34","-2147391460","-2147391393","0","0","= Mappers.getMapper( ArtistToChartEntryUpdateReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryUpdateReverse.class );
+
+    @Mappings({
+
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true )
+    }"
+"877","145","480","490","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntry.java","24","31","-2147391337","-2147391270","0","0","= Mappers.getMapper( ArtistToChartEntry.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntry.class );
+
+    @Mappings({
+        @Mapping(target = ""chartName"", source = ""chart.name""),
+        @Mapping(target = ""songTitle"", source = ""song.title""),
+        @Mapping(target = ""artistName"", source = ""song.artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""song.artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""song.artist.label.studio.city""),
+        @Mapping(target = ""position"", source = ""position"")
+    }"
+"878","145","480","491","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntry.java","34","41","-2147391270","-2147391203","0","0","ChartEntry map(Chart chart, Song song, Integer position);
+
+    @Mappings(","ChartEntry map(Chart chart, Song song, Integer position);
+
+    @Mappings({
+        @Mapping(target = ""chartName"", ignore = true),
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true)
+    }"
+"1269","145","480","479","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntryReverse.java","24","32","-2147344147","-2147344080","0","0","= Mappers.getMapper( ArtistToChartEntryReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryReverse.class );
+
+    @Mappings({
+
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true )
+    }"
+"1270","145","480","479","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntryWithFactoryReverse.java","25","33","-2147344080","-2147344013","0","0","= Mappers.getMapper( ArtistToChartEntryWithFactoryReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryWithFactoryReverse.class );
+
+    @Mappings({
+
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true)
+    }"
+"1271","145","480","482","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntryWithMappingReverse.java","25","32","-2147344013","-2147343946","0","0","= Mappers.getMapper( ArtistToChartEntryWithMappingReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryWithMappingReverse.class );
+
+    @Mappings({
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistId"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true)
+    }"
+"1272","145","480","479","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntryWithIgnoresReverse.java","25","32","-2147343946","-2147343879","0","0","= Mappers.getMapper( ArtistToChartEntryWithIgnoresReverse.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntryWithIgnoresReverse.class );
+
+    @Mappings({
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true),
+        @Mapping(target = ""chartName"", ignore = true)
+    }"
+"1284","145","480","490","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntry.java","24","31","-2147341445","-2147341378","0","0","= Mappers.getMapper( ArtistToChartEntry.class );
+
+    @Mappings(","= Mappers.getMapper( ArtistToChartEntry.class );
+
+    @Mappings({
+        @Mapping(target = ""chartName"", source = ""chart.name""),
+        @Mapping(target = ""songTitle"", source = ""song.title""),
+        @Mapping(target = ""artistName"", source = ""song.artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""song.artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""song.artist.label.studio.city""),
+        @Mapping(target = ""position"", source = ""position"")
+    }"
+"1285","145","480","491","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntry.java","34","41","-2147341378","-2147341311","0","0","ChartEntry map(Chart chart, Song song, Integer position);
+
+    @Mappings(","ChartEntry map(Chart chart, Song song, Integer position);
+
+    @Mappings({
+        @Mapping(target = ""chartName"", ignore = true),
+        @Mapping(target = ""songTitle"", source = ""title""),
+        @Mapping(target = ""artistName"", source = ""artist.name""),
+        @Mapping(target = ""recordedAt"", source = ""artist.label.studio.name""),
+        @Mapping(target = ""city"", source = ""artist.label.studio.city""),
+        @Mapping(target = ""position"", ignore = true)
+    }"

@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"681","116","371","370","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","109","124","-2147403801","-2147403666","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    JAXBContext context = JAXBContext.newInstance(Contact.class);
+    JaxbConverterFactory factory = JaxbConverterFactory.create(context);
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(server.url(""/"")).addConverterFactory(factory).build();
+    service = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse());
+
+    Call<Void> call = service.postXml(SAMPLE_CONTACT);
+    call.execute();
+
+    RecordedRequest request = server.takeRequest();
+    assertThat(request.getHeader(""Content-Type"")).isEqualTo(""application/xml; charset=utf-8"");
+    assertThat(request.getBody().readUtf8()).isEqualTo(SAMPLE_CONTACT_XML);
+  }"
+"694","116","371","370","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","109","124","-2147402813","-2147402678","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    JAXBContext context = JAXBContext.newInstance(Contact.class);
+    JaxbConverterFactory factory = JaxbConverterFactory.create(context);
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(server.url(""/"")).addConverterFactory(factory).build();
+    service = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse());
+
+    Call<Void> call = service.postXml(SAMPLE_CONTACT);
+    call.execute();
+
+    RecordedRequest request = server.takeRequest();
+    assertThat(request.getHeader(""Content-Type"")).isEqualTo(""application/xml; charset=utf-8"");
+    assertThat(request.getBody().readUtf8()).isEqualTo(SAMPLE_CONTACT_XML);
+  }"

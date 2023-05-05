@@ -1,0 +1,28 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1099","190","617","616","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/qualifier/QualifierTest.java","97","111","-2147363525","-2147363474","0","0","void shouldMatchClassAndMethod()","void shouldMatchClassAndMethod(){
+            @Diagnostic(
+                type = ErroneousMapper.class,
+                kind = Kind.ERROR,
+                line = 28,
+                message =
+                    ""Qualifier error. No method found annotated with: [ @NonQualifierAnnotated ]. "" +
+                        ""See https://mapstruct.org/faq/#qualifier for more info.""),
+            @Diagnostic(
+                type = ErroneousMapper.class,
+                kind = Kind.ERROR,
+                line = 28,
+                message = ""Can't map property \""String title\"" to \""String title\"". "" +
+                    ""Consider to declare/implement a mapping method: \""String map(String value)\""."")
+        }"
+"1102","190","617","616","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/qualifier/QualifierTest.java","178","189","-2147363139","-2147363088","0","0","void shouldMatchClassAndMethod()","void shouldMatchClassAndMethod(){
+            @Diagnostic(type = ErroneousMovieFactoryMapper.class,
+                kind = Kind.ERROR,
+                line = 24,
+                message = ""'nullValueMappingStrategy', 'nullValuePropertyMappingStrategy', 'resultType' and "" +
+                    ""'qualifiedBy' are undefined in @BeanMapping, define at least one of them.""),
+            @Diagnostic(type = ErroneousMovieFactoryMapper.class,
+                kind = Kind.ERROR,
+                line = 24,
+                message = ""The return type AbstractEntry is an abstract class or interface. "" +
+                    ""Provide a non abstract / non interface result type or a factory method."")
+        }"

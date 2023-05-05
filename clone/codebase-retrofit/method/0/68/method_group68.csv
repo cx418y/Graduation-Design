@@ -1,0 +1,55 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"385","68","243","242","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/CompletableThrowingTest.java","89","117","-2147435437","-2147435289","0","0","void bodyThrowingInOnErrorDeliveredToPlugin()","void bodyThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!pluginRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+        });
+
+    RecordingCompletableObserver observer = observerRule.create();
+    final RuntimeException e = new RuntimeException();
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onError(Throwable throwable) {
+                errorRef.set(throwable);
+                throw e;
+              }
+            });
+
+    CompositeException composite = (CompositeException) pluginRef.get();
+    assertThat(composite.getExceptions()).containsExactly(errorRef.get(), e);
+  }"
+"512","68","243","242","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/CompletableThrowingTest.java","90","118","-2147422436","-2147422288","0","0","void bodyThrowingInOnErrorDeliveredToPlugin()","void bodyThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!pluginRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+        });
+
+    RecordingCompletableObserver observer = observerRule.create();
+    final RuntimeException e = new RuntimeException();
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onError(Throwable throwable) {
+                errorRef.set(throwable);
+                throw e;
+              }
+            });
+
+    CompositeException composite = (CompositeException) pluginRef.get();
+    assertThat(composite.getExceptions()).containsExactly(errorRef.get(), e);
+  }"

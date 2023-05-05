@@ -1,0 +1,43 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1071","184","598","597","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/inheritfromconfig/InheritFromConfigTest.java","89","98","-2147366013","-2147365947","0","0","void autoInheritedMappingIsAppliedInReverse()","void autoInheritedMappingIsAppliedInReverse(){
+        CarEntity carEntity = new CarEntity();
+        carEntity.setColor( ""red"" );
+        carEntity.setPrimaryKey( 42L );
+
+        CarDto carDto = CarMapperWithAutoInheritance.INSTANCE.toCarDto( carEntity );
+
+        assertThat( carDto.getColour() ).isEqualTo( ""red"" );
+        assertThat( carDto.getId() ).isEqualTo( 42L );
+    }"
+"1072","184","598","597","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/inheritfromconfig/InheritFromConfigTest.java","101","110","-2147365947","-2147365881","0","0","void explicitInheritedMappingIsAppliedInReverse()","void explicitInheritedMappingIsAppliedInReverse(){
+        CarEntity carEntity = new CarEntity();
+        carEntity.setColor( ""red"" );
+        carEntity.setPrimaryKey( 42L );
+
+        CarDto carDto = CarMapperWithExplicitInheritance.INSTANCE.toCarDto( carEntity );
+
+        assertThat( carDto.getColour() ).isEqualTo( ""red"" );
+        assertThat( carDto.getId() ).isEqualTo( 42L );
+    }"
+"1073","184","598","597","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/inheritfromconfig/InheritFromConfigTest.java","115","125","-2147365881","-2147365815","0","0","void explicitInheritedMappingIsAppliedInReverseDirectlyFromConfig()","void explicitInheritedMappingIsAppliedInReverseDirectlyFromConfig(){
+
+        CarEntity carEntity = new CarEntity();
+        carEntity.setColor( ""red"" );
+        carEntity.setPrimaryKey( 42L );
+
+        CarDto carDto = CarMapperReverseWithExplicitInheritance.INSTANCE.toCarDto( carEntity );
+
+        assertThat( carDto.getColour() ).isEqualTo( ""red"" );
+        assertThat( carDto.getId() ).isEqualTo( 42L );
+    }"
+"1074","184","598","597","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/inheritfromconfig/InheritFromConfigTest.java","130","140","-2147365815","-2147365749","0","0","void autoInheritedMappingIsAppliedInReverseDirectlyFromConfig()","void autoInheritedMappingIsAppliedInReverseDirectlyFromConfig(){
+
+        CarEntity carEntity = new CarEntity();
+        carEntity.setColor( ""red"" );
+        carEntity.setPrimaryKey( 42L );
+
+        CarDto carDto = CarMapperReverseWithAutoInheritance.INSTANCE.toCarDto( carEntity );
+
+        assertThat( carDto.getColour() ).isEqualTo( ""red"" );
+        assertThat( carDto.getId() ).isEqualTo( 42L );
+    }"

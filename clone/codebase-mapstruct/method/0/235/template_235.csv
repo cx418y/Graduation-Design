@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getElementMappingControl","MappingControl getElementMappingControl(ElementUtils elementUtils){
+        return Optional.ofNullable( iterableMapping ).map( IterableMappingGem::elementMappingControl )
+            .filter( GemValue::hasValue )
+            .map( GemValue::getValue )
+            .map( mc -> MappingControl.fromTypeMirror( mc, elementUtils ) )
+            .orElse( next().getMappingControl( elementUtils ) );
+    }
+",""

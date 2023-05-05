@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1301","218","721","720","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/util/StringsTest.java","22","28","-2147339556","-2147339480","0","0","void testCapitalize()","void testCapitalize(){
+        assertThat( Strings.capitalize( null ) ).isNull();
+        assertThat( Strings.capitalize( ""c"" ) ).isEqualTo( ""C"" );
+        assertThat( Strings.capitalize( ""capitalize"" ) ).isEqualTo( ""Capitalize"" );
+        assertThat( Strings.capitalize( ""AlreadyCapitalized"" ) ).isEqualTo( ""AlreadyCapitalized"" );
+        assertThat( Strings.capitalize( ""notCapitalized"" ) ).isEqualTo( ""NotCapitalized"" );
+    }"
+"1302","218","721","720","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/util/StringsTest.java","31","37","-2147339480","-2147339404","0","0","void testDecapitalize()","void testDecapitalize(){
+        assertThat( Strings.decapitalize( null ) ).isNull();
+        assertThat( Strings.decapitalize( ""c"" ) ).isEqualTo( ""c"" );
+        assertThat( Strings.decapitalize( ""capitalize"" ) ).isEqualTo( ""capitalize"" );
+        assertThat( Strings.decapitalize( ""AlreadyCapitalized"" ) ).isEqualTo( ""alreadyCapitalized"" );
+        assertThat( Strings.decapitalize( ""notCapitalized"" ) ).isEqualTo( ""notCapitalized"" );
+    }"

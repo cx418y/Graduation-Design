@@ -1,0 +1,18 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","toString","String toString(){
+        StringBuilder sb = new StringBuilder( returnType.toString() );
+        sb.append( "" "" );
+[*1*] 
+        if ( declaringMapper != null ) {[*2*] 
+            sb.append( declaringMapper ).append( ""."" );[*3*] 
+        }[*4*] 
+
+        sb.append( getName() ).append( ""("" ).append( Strings.join( parameters, "", "" ) ).append( "")"" );
+
+        return sb.toString();
+    }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+"

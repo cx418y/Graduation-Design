@@ -1,0 +1,22 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"172","24","76","75","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/OptionalConverterFactoryTest.java","54","60","-2147462146","-2147462089","0","0","void optional()throws IOException","void optional()throws IOException{
+    server.enqueue(new MockResponse());
+
+    Optional<Object> optional = service.optional().execute().body();
+    assertThat(optional).isNotNull();
+    assertThat(optional.get()).isSameAs(ObjectInstanceConverterFactory.VALUE);
+  }"
+"638","24","80","79","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/java8/src/test/java/retrofit/converter/java8/Java8OptionalConverterFactoryTest.java","61","67","-2147409404","-2147409350","0","0","void optional()throws IOException","void optional()throws IOException{
+    server.enqueue(new MockResponse());
+
+    Optional<Object> optional = service.optional().execute().body();
+    assertThat(optional).isNotNull();
+    assertThat(optional.isPresent()).isFalse();
+  }"
+"663","24","80","79","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/guava/src/test/java/retrofit/converter/guava/GuavaOptionalConverterFactoryTest.java","61","67","-2147407519","-2147407465","0","0","void optional()throws IOException","void optional()throws IOException{
+    server.enqueue(new MockResponse());
+
+    Optional<Object> optional = service.optional().execute().body();
+    assertThat(optional).isNotNull();
+    assertThat(optional.isPresent()).isFalse();
+  }"

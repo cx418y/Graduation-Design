@@ -1,0 +1,82 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"306","62","191","190","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/qualifier/ConditionalQualifierTest.java","30","56","-2147449674","-2147449472","0","0","void conditionalMethodWithSourceParameter()","void conditionalMethodWithSourceParameter(){
+        ConditionalMethodWithSourceParameterMapper mapper = ConditionalMethodWithSourceParameterMapper.INSTANCE;
+
+        EmployeeDto dto = new EmployeeDto();
+        dto.setName( ""Tester"" );
+        dto.setUniqueIdNumber( ""SSID-001"" );
+        dto.setCountry( null );
+
+        Employee employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isNull();
+
+        dto.setCountry( ""UK"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isEqualTo( ""SSID-001"" );
+        assertThat( employee.getSsid() ).isNull();
+
+        dto.setCountry( ""US"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isEqualTo( ""SSID-001"" );
+
+        dto.setCountry( ""CH"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isNull();
+    }"
+"307","62","191","190","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/qualifier/ConditionalQualifierTest.java","62","88","-2147449472","-2147449270","0","0","void conditionalClassQualifiers()","void conditionalClassQualifiers(){
+        ConditionalMethodWithClassQualifiersMapper mapper = ConditionalMethodWithClassQualifiersMapper.INSTANCE;
+
+        EmployeeDto dto = new EmployeeDto();
+        dto.setName( ""Tester"" );
+        dto.setUniqueIdNumber( ""SSID-001"" );
+        dto.setCountry( null );
+
+        Employee employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isNull();
+
+        dto.setCountry( ""UK"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isEqualTo( ""SSID-001"" );
+        assertThat( employee.getSsid() ).isNull();
+
+        dto.setCountry( ""US"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isEqualTo( ""SSID-001"" );
+
+        dto.setCountry( ""CH"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isNull();
+    }"
+"320","62","191","190","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/expression/ConditionalExpressionTest.java","34","60","-2147448037","-2147447835","0","0","void conditionalExpressionInStaticClassMethod()","void conditionalExpressionInStaticClassMethod(){
+        ConditionalMethodsInUtilClassMapper mapper = ConditionalMethodsInUtilClassMapper.INSTANCE;
+
+        EmployeeDto dto = new EmployeeDto();
+        dto.setName( ""Tester"" );
+        dto.setUniqueIdNumber( ""SSID-001"" );
+        dto.setCountry( null );
+
+        Employee employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isNull();
+
+        dto.setCountry( ""UK"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isEqualTo( ""SSID-001"" );
+        assertThat( employee.getSsid() ).isNull();
+
+        dto.setCountry( ""US"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isEqualTo( ""SSID-001"" );
+
+        dto.setCountry( ""CH"" );
+        employee = mapper.map( dto );
+        assertThat( employee.getNin() ).isNull();
+        assertThat( employee.getSsid() ).isNull();
+    }"

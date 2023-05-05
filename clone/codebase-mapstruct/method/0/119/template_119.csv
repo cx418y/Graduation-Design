@@ -1,0 +1,20 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldReturnNullForUpdateWithReturnWithPresenceChecker","void shouldReturnNullForUpdateWithReturnWithPresenceChecker(){
+
+        DtoWithPresenceCheck dto = new DtoWithPresenceCheck();
+        Domain domain1 = new Domain();
+        domain1.setLongs( new HashSet<>() );
+        domain1.getLongs().add( 10L );
+        domain1.setStrings( new HashSet<>() );
+        domain1.getStrings().add( ""30"" );
+        Domain domain2 = DomainDtoWithPresenceCheckMapper.INSTANCE.updateWithReturn( dto, domain1 );
+
+        assertThat( domain2 ).isSameAs( domain1 );
+        doControlAsserts( domain1, domain2 );
+        assertThat( domain1.getLongs() ).isEqualTo( domain2.getLongs() );
+        assertThat( domain1.getStrings() ).containsExactly( ""30"" );
+        assertThat( domain1.getLongs() ).containsExactly( 10L );
+        assertThat( domain2.getStrings() ).containsExactly( ""30"" );
+        assertThat( domain2.getLongs() ).containsExactly( 10L );
+    }
+",""

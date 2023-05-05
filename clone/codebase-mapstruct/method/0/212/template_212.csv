@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyBuiltInOnDateToXmlGregCal","void shouldApplyBuiltInOnDateToXmlGregCal()throws ParseException{
+
+        DateProperty source = new DateProperty();
+        source.setProp( createDate( ""31-08-1982 10:20:56"" ) );
+        source.publicProp = createDate( ""31-08-2016 10:20:56"" );
+
+        XmlGregorianCalendarProperty target = DateToXmlGregCalMapper.INSTANCE.map( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isNotNull();
+        assertThat( target.getProp().toString() ).isEqualTo( ""1982-08-31T10:20:56.000+02:00"" );
+        assertThat( target.publicProp ).isNotNull();
+        assertThat( target.publicProp.toString() ).isEqualTo( ""2016-08-31T10:20:56.000+02:00"" );
+    }
+",""

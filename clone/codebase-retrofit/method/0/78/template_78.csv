@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","rawResponseTypeThrows","void rawResponseTypeThrows(){
+    Type observableType = new TypeToken<CompletableFuture<Response>>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");
+    }
+  }
+",""

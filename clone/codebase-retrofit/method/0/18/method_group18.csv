@@ -1,0 +1,52 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"149","18","61","60","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","1452","1469","-2147464717","-2147464610","0","0","void timeoutExceeded()throws IOException","void timeoutExceeded()throws IOException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse().setHeadersDelay(500, TimeUnit.MILLISECONDS));
+
+    Call<String> call = example.getString();
+    call.timeout().timeout(100, TimeUnit.MILLISECONDS);
+    try {
+      call.execute();
+      fail();
+    } catch (InterruptedIOException expected) {
+    }
+  }"
+"150","18","61","70","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","1472","1489","-2147464610","-2147464503","0","0","void deadlineExceeded()throws IOException","void deadlineExceeded()throws IOException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse().setHeadersDelay(500, TimeUnit.MILLISECONDS));
+
+    Call<String> call = example.getString();
+    call.timeout().deadline(100, TimeUnit.MILLISECONDS);
+    try {
+      call.execute();
+      fail();
+    } catch (InterruptedIOException expected) {
+    }
+  }"
+"151","18","82","81","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","1492","1506","-2147464503","-2147464386","0","0","void timeoutEnabledButNotExceeded()throws IOException","void timeoutEnabledButNotExceeded()throws IOException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse().setHeadersDelay(100, TimeUnit.MILLISECONDS));
+
+    Call<String> call = example.getString();
+    call.timeout().deadline(500, TimeUnit.MILLISECONDS);
+    Response<String> response = call.execute();
+    assertThat(response.isSuccessful()).isTrue();
+  }"

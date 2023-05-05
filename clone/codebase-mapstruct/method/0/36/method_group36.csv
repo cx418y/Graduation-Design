@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"217","36","116","115","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/erroneous/ErroneousCollectionMappingTest.java","31","44","-2147458123","-2147458053","0","0","@IssueKey(""6"") @WithClasses({ ErroneousCollectionToNonCollectionMapper.class, Source.class })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@IssueKey(""6"") @WithClasses({ ErroneousCollectionToNonCollectionMapper.class, Source.class })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousCollectionToNonCollectionMapper.class,
+                kind = Kind.ERROR,
+                line = 15,
+                message = ""Can't generate mapping method from iterable type from java stdlib to non-iterable type.""),
+            @Diagnostic(type = ErroneousCollectionToNonCollectionMapper.class,
+                kind = Kind.ERROR,
+                line = 17,
+                message = ""Can't generate mapping method from non-iterable type to iterable type from java stdlib.""),
+            @Diagnostic(type = ErroneousCollectionToNonCollectionMapper.class,
+                kind = Kind.ERROR,
+                line = 19,
+                message = ""Can't generate mapping method from non-iterable type to iterable type from java stdlib."")
+        }"
+"495","36","116","115","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/manysourcearguments/ManySourceArgumentsTest.java","162","175","-2147431655","-2147431585","0","0","}) @ProcessorOption(name = ""mapstruct.unmappedTargetPolicy"", value = ""IGNORE"")@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","}) @ProcessorOption(name = ""mapstruct.unmappedTargetPolicy"", value = ""IGNORE"")@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousSourceTargetMapper.class,
+                kind = Kind.ERROR,
+                line = 16,
+                message = ""Several possible source properties for target property \""street\"".""),
+            @Diagnostic(type = ErroneousSourceTargetMapper.class,
+                kind = Kind.ERROR,
+                line = 16,
+                message = ""Several possible source properties for target property \""zipCode\"".""),
+            @Diagnostic(type = ErroneousSourceTargetMapper.class,
+                kind = Kind.ERROR,
+                line = 16,
+                message = ""Several possible source properties for target property \""description\""."")
+    }"

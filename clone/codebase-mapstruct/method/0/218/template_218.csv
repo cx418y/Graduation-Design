@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testCapitalize","void testCapitalize(){
+        assertThat( Strings.capitalize( null ) ).isNull();
+        assertThat( Strings.capitalize( ""c"" ) ).isEqualTo( ""C"" );
+        assertThat( Strings.capitalize( ""capitalize"" ) ).isEqualTo( ""Capitalize"" );
+        assertThat( Strings.capitalize( ""AlreadyCapitalized"" ) ).isEqualTo( ""AlreadyCapitalized"" );
+        assertThat( Strings.capitalize( ""notCapitalized"" ) ).isEqualTo( ""NotCapitalized"" );
+    }
+",""

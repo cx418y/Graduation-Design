@@ -1,0 +1,25 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testGenericSourceTypeVar","void testGenericSourceTypeVar(){
+
+        SourceTypeIsTypeVarArrayMapper.Source source =[*1*] 
+[*2*] 
+            new ReturnTypeIsTypeVarMapper.Source( new ReturnTypeIsTypeVarMapper.GenericWrapper<>( ""test"" ) );[*3*] 
+        SourceTypeIsTypeVarArrayMapper.Target target = SourceTypeIsTypeVarArrayMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isNotNull();[*4*] 
+        assertThat( target.getProp().getWrapped() ).isEqualTo( ""test"" );[*5*] 
+[*6*] 
+[*7*] 
+    }
+","[*1*]:
+1, 0.25,         SourceTypeIsTypeVarMapper.Source source = new SourceTypeIsTypeVarMapper.Source( ""test"" );
+[*2*]:
+1, 0.25,             new SourceTypeIsTypeVarArrayMapper.Source( new String[] { ""test"" } );
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+1, 0.25,         assertThat( target.getProp() ).isEqualTo( ""test"" );
+"

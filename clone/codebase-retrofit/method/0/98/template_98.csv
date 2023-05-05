@@ -1,0 +1,35 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","resultThrowingInOnSuccessDeliveredToPlugin","void resultThrowingInOnSuccessDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.getInstance()
+        .registerErrorHandler(
+            new RxJavaErrorHandler() {
+              @Override
+              public void handleError(Throwable throwable) {
+                if (!pluginRef.compareAndSet(null, throwable)) {
+                  throw Exceptions.propagate(throwable);                }
+              }
+            });
+
+    RecordingSubscriber<Result<String>> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .result()
+        .subscribe(
+            new ForwardingObserver<Result<String>>(observer) {
+              @Override
+              public void onSuccess(Result<String> value) {[*1*] 
+              public void onCompleted() {[*2*] 
+                throw e;
+              }
+            });
+
+    observer.assertAnyValue();[*3*] 
+    assertThat(pluginRef.get()).isSameAs(e);
+  }
+","[*1*]:
+[*2*]:
+[*3*]:
+"

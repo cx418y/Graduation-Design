@@ -1,0 +1,22 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"294","84","279","278","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/CancelDisposeTest.java","75","81","-2147445192","-2147445130","0","0","void cancelDoesNotDispose()","void cancelDoesNotDispose(){
+    Disposable disposable = service.go().subscribe();
+    List<Call> calls = client.dispatcher().runningCalls();
+    assertEquals(1, calls.size());
+    calls.get(0).cancel();
+    assertFalse(disposable.isDisposed());
+  }"
+"421","84","279","278","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/CancelDisposeTest.java","75","81","-2147432219","-2147432157","0","0","void cancelDoesNotDispose()","void cancelDoesNotDispose(){
+    Disposable disposable = service.go().subscribe();
+    List<Call> calls = client.dispatcher().runningCalls();
+    assertEquals(1, calls.size());
+    calls.get(0).cancel();
+    assertFalse(disposable.isDisposed());
+  }"
+"564","84","279","281","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/CancelDisposeTest.java","67","73","-2147417772","-2147417710","0","0","void cancelDoesNotDispose()","void cancelDoesNotDispose(){
+    Subscription subscription = service.go().subscribe();
+    List<Call> calls = client.dispatcher().runningCalls();
+    assertEquals(1, calls.size());
+    calls.get(0).cancel();
+    assertFalse(subscription.isUnsubscribed());
+  }"

@@ -1,0 +1,45 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"321","51","189","188","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/AsyncTest.java","174","195","-2147441191","-2147441087","0","0","void bodyThrowingFatalInOnErrorPropagates()throws InterruptedException","void bodyThrowingFatalInOnErrorPropagates()throws InterruptedException{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    final CountDownLatch latch = new CountDownLatch(1);
+
+    TestObserver<Void> observer = new TestObserver<>();
+    final Error e = new OutOfMemoryError(""Not real"");
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onError(Throwable throwable) {
+                throw e;
+              }
+            });
+
+    latch.await(1, SECONDS);
+
+    assertEquals(1, uncaughtExceptions.size());
+    assertSame(e, uncaughtExceptions.remove(0));
+  }"
+"444","51","189","188","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/AsyncTest.java","175","196","-2147430102","-2147429998","0","0","void bodyThrowingFatalInOnErrorPropagates()throws InterruptedException","void bodyThrowingFatalInOnErrorPropagates()throws InterruptedException{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    final CountDownLatch latch = new CountDownLatch(1);
+
+    TestObserver<Void> observer = new TestObserver<>();
+    final Error e = new OutOfMemoryError(""Not real"");
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onError(Throwable throwable) {
+                throw e;
+              }
+            });
+
+    latch.await(1, SECONDS);
+
+    assertEquals(1, uncaughtExceptions.size());
+    assertSame(e, uncaughtExceptions.remove(0));
+  }"

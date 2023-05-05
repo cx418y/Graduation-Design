@@ -1,0 +1,54 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1964","250","812","811","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/immutablesBuilderTest/mapper/src/test/java/org/mapstruct/itest/immutables/ImmutablesMapperTest.java","20","32","-2147254018","-2147253909","0","0","void testSimpleImmutableBuilderHappyPath()","void testSimpleImmutableBuilderHappyPath(){
+        PersonDto personDto = PersonMapper.INSTANCE.toDto( ImmutablePerson.builder()
+            .age( 33 )
+            .name( ""Bob"" )
+            .address( ImmutableAddress.builder()
+                .addressLine( ""Wild Drive"" )
+                .build() )
+            .build() );
+        assertThat( personDto.getAge() ).isEqualTo( 33 );
+        assertThat( personDto.getName() ).isEqualTo( ""Bob"" );
+        assertThat( personDto.getAddress() ).isNotNull();
+        assertThat( personDto.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"
+"1986","250","814","813","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/protobufBuilderTest/src/test/java/org/mapstruct/itest/protobuf/ProtobufMapperTest.java","20","33","-2147251829","-2147251714","0","0","void testSimpleImmutableBuilderHappyPath()","void testSimpleImmutableBuilderHappyPath(){
+        PersonDto personDto = PersonMapper.INSTANCE.toDto( PersonProtos.Person.newBuilder()
+            .setAge( 33 )
+            .setName( ""Bob"" )
+            .setAddress( PersonProtos.Person.Address.newBuilder()
+                .setAddressLine( ""Wild Drive"" )
+                .build() )
+            .build() );
+
+        assertThat( personDto.getAge() ).isEqualTo( 33 );
+        assertThat( personDto.getName() ).isEqualTo( ""Bob"" );
+        assertThat( personDto.getAddress() ).isNotNull();
+        assertThat( personDto.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"
+"1996","250","812","811","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/freeBuilderBuilderTest/src/test/java/org/mapstruct/itest/freebuilder/FreeBuilderMapperTest.java","20","32","-2147250914","-2147250805","0","0","void testSimpleImmutableBuilderHappyPath()","void testSimpleImmutableBuilderHappyPath(){
+        PersonDto personDto = PersonMapper.INSTANCE.toDto( Person.builder()
+            .setAge( 33 )
+            .setName( ""Bob"" )
+            .setAddress( Address.builder()
+                .setAddressLine( ""Wild Drive"" )
+                .build() )
+            .build() );
+        assertThat( personDto.getAge() ).isEqualTo( 33 );
+        assertThat( personDto.getName() ).isEqualTo( ""Bob"" );
+        assertThat( personDto.getAddress() ).isNotNull();
+        assertThat( personDto.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"
+"2008","250","812","811","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/autoValueBuilderTest/src/test/java/org/mapstruct/itest/auto/value/AutoValueMapperTest.java","20","32","-2147249536","-2147249427","0","0","void testSimpleImmutableBuilderHappyPath()","void testSimpleImmutableBuilderHappyPath(){
+        PersonDto personDto = PersonMapper.INSTANCE.toDto( Person.builder()
+            .age( 33 )
+            .name( ""Bob"" )
+            .address( Address.builder()
+                .addressLine( ""Wild Drive"" )
+                .build() )
+            .build() );
+        assertThat( personDto.getAge() ).isEqualTo( 33 );
+        assertThat( personDto.getName() ).isEqualTo( ""Bob"" );
+        assertThat( personDto.getAddress() ).isNotNull();
+        assertThat( personDto.getAddress().getAddressLine() ).isEqualTo( ""Wild Drive"" );
+    }"

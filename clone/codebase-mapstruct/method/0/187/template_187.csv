@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testDefinedOnBean","void testDefinedOnBean(){
+
+        HouseEntity entity = HouseMapper.INSTANCE.mapWithNvcsOnBean( new HouseDto() );
+
+        assertThat( entity ).isNotNull();
+        assertThat( entity.ownerSet() ).isTrue();
+        assertThat( entity.numberSet() ).isTrue();
+
+    }
+",""

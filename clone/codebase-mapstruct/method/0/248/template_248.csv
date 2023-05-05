@@ -1,0 +1,18 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","appendDecimalFormatter","void appendDecimalFormatter(StringBuilder sb, ConversionContext conversionContext){
+        sb.append( ""new "" );[*1*] 
+        sb.append( decimalFormat( conversionContext ) );[*2*] 
+        sb.append( ""createDecimalFormat( "" );
+[*3*] 
+        if ( conversionContext.getNumberFormat() != null ) {
+            sb.append( ""\"""" );
+            sb.append( conversionContext.getNumberFormat() );
+            sb.append( ""\"""" );
+        }
+
+        sb.append( "" )"" );
+    }
+","[*1*]:
+[*2*]:
+[*3*]:
+"

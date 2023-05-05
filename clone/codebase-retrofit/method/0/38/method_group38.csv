@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"299","38","125","124","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/CompletableTest.java","83","96","-2147444916","-2147444831","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Completable observable = service.completable();
+
+    RecordingCompletableObserver observer1 = observerRule.create();
+    observable.subscribe(observer1);
+    observer1.assertComplete();
+
+    RecordingCompletableObserver observer2 = observerRule.create();
+    observable.subscribe(observer2);
+    observer2.assertComplete();
+  }"
+"426","38","125","124","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/CompletableTest.java","83","96","-2147431943","-2147431858","0","0","void subscribeTwice()","void subscribeTwice(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+    server.enqueue(new MockResponse().setBody(""Hey""));
+
+    Completable observable = service.completable();
+
+    RecordingCompletableObserver observer1 = observerRule.create();
+    observable.subscribe(observer1);
+    observer1.assertComplete();
+
+    RecordingCompletableObserver observer2 = observerRule.create();
+    observable.subscribe(observer2);
+    observer2.assertComplete();
+  }"

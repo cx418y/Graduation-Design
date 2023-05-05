@@ -1,0 +1,91 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"278","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableWithSchedulerTest.java","48","56","-2147446247","-2147446192","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"295","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleWithSchedulerTest.java","48","56","-2147445130","-2147445075","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"312","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeWithSchedulerTest.java","48","56","-2147441968","-2147441913","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"339","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableWithSchedulerTest.java","48","56","-2147439047","-2147438992","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"405","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableWithSchedulerTest.java","48","56","-2147433274","-2147433219","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"422","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleWithSchedulerTest.java","48","56","-2147432157","-2147432102","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"435","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeWithSchedulerTest.java","48","56","-2147430881","-2147430826","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"466","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableWithSchedulerTest.java","48","56","-2147426054","-2147425999","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"544","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableWithSchedulerTest.java","48","56","-2147419176","-2147419121","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"565","30","107","106","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleWithSchedulerTest.java","48","56","-2147417710","-2147417655","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(scheduler))
+            .build();
+    service = retrofit.create(Service.class);
+  }"

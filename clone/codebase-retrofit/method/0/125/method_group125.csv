@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"645","125","387","386","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/gson/src/test/java/retrofit2/converter/gson/GsonConverterFactoryTest.java","156","167","-2147408829","-2147408720","0","0","void anImplementation()throws IOException, InterruptedException","void anImplementation()throws IOException, InterruptedException{
+    server.enqueue(new MockResponse().setBody(""{\""theName\"":\""value\""}""));
+
+    Call<AnImplementation> call = service.anImplementation(new AnImplementation(""value""));
+    Response<AnImplementation> response = call.execute();
+    AnImplementation body = response.body();
+    assertThat(body.theName).isEqualTo(""value"");
+
+    RecordedRequest request = server.takeRequest();
+    assertThat(request.getBody().readUtf8()).isEqualTo(""{\""theName\"":\""value\""}"");
+    assertThat(request.getHeader(""Content-Type"")).isEqualTo(""application/json; charset=UTF-8"");
+  }"
+"707","125","387","386","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/moshi/src/test/java/retrofit2/converter/moshi/MoshiConverterFactoryTest.java","205","216","-2147401571","-2147401462","0","0","void anImplementation()throws IOException, InterruptedException","void anImplementation()throws IOException, InterruptedException{
+    server.enqueue(new MockResponse().setBody(""{\""theName\"":\""value\""}""));
+
+    Call<AnImplementation> call = service.anImplementation(new AnImplementation(""value""));
+    Response<AnImplementation> response = call.execute();
+    AnImplementation body = response.body();
+    assertThat(body.theName).isEqualTo(""value"");
+
+    RecordedRequest request = server.takeRequest();
+    assertThat(request.getBody().readUtf8()).isEqualTo(""{\""theName\"":\""value\""}"");
+    assertThat(request.getHeader(""Content-Type"")).isEqualTo(""application/json; charset=UTF-8"");
+  }"
+"740","125","387","386","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jackson/src/test/java/retrofit2/converter/jackson/JacksonConverterFactoryTest.java","156","168","-2147398744","-2147398635","0","0","void anImplementation()throws IOException, InterruptedException","void anImplementation()throws IOException, InterruptedException{
+    server.enqueue(new MockResponse().setBody(""{\""theName\"":\""value\""}""));
+
+    Call<AnImplementation> call = service.anImplementation(new AnImplementation(""value""));
+    Response<AnImplementation> response = call.execute();
+    AnImplementation body = response.body();
+    assertThat(body.theName).isEqualTo(""value"");
+
+    RecordedRequest request = server.takeRequest();
+    assertThat(request.getBody().readUtf8()).isEqualTo(""{\""name\"":\""value\""}"");
+    assertThat(request.getHeader(""Content-Type"")).isEqualTo(""application/json; charset=UTF-8"");
+  }"

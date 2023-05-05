@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseUsesScheduler","void responseUsesScheduler(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    service.response().unsafeSubscribe(subscriber);
+    subscriber.assertNoEvents();
+
+    scheduler.triggerActions();
+    subscriber.assertAnyValue().assertCompleted();
+  }
+",""

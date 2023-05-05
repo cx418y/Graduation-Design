@@ -1,0 +1,120 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"333","55","195","194","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableThrowingTest.java","148","164","-2147439769","-2147439696","0","0","void responseThrowingInOnNextDeliveredToError()","void responseThrowingInOnNextDeliveredToError(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .response()
+        .safeSubscribe(
+            new ForwardingSubscriber<Response<String>>(subscriber) {
+              @Override
+              public void onNext(Response<String> value) {
+                throw e;
+              }
+            });
+
+    subscriber.assertError(e);
+  }"
+"377","55","195","194","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableThrowingTest.java","148","164","-2147436318","-2147436245","0","0","void responseThrowingInOnNextDeliveredToError()","void responseThrowingInOnNextDeliveredToError(){
+    server.enqueue(new MockResponse());
+
+    RecordingObserver<Response<String>> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .response()
+        .subscribe(
+            new ForwardingObserver<Response<String>>(observer) {
+              @Override
+              public void onNext(Response<String> value) {
+                throw e;
+              }
+            });
+
+    observer.assertError(e);
+  }"
+"460","55","195","194","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableThrowingTest.java","149","165","-2147426780","-2147426707","0","0","void responseThrowingInOnNextDeliveredToError()","void responseThrowingInOnNextDeliveredToError(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .response()
+        .safeSubscribe(
+            new ForwardingSubscriber<Response<String>>(subscriber) {
+              @Override
+              public void onNext(Response<String> value) {
+                throw e;
+              }
+            });
+
+    subscriber.assertError(e);
+  }"
+"504","55","195","194","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableThrowingTest.java","149","165","-2147423323","-2147423250","0","0","void responseThrowingInOnNextDeliveredToError()","void responseThrowingInOnNextDeliveredToError(){
+    server.enqueue(new MockResponse());
+
+    RecordingObserver<Response<String>> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .response()
+        .subscribe(
+            new ForwardingObserver<Response<String>>(observer) {
+              @Override
+              public void onNext(Response<String> value) {
+                throw e;
+              }
+            });
+
+    observer.assertError(e);
+  }"
+"589","55","195","194","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableThrowingSafeSubscriberTest.java","160","176","-2147415078","-2147415005","0","0","void responseThrowingInOnNextDeliveredToError()","void responseThrowingInOnNextDeliveredToError(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Response<String>> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .response()
+        .subscribe(
+            new ForwardingSubscriber<Response<String>>(observer) {
+              @Override
+              public void onNext(Response<String> value) {
+                throw e;
+              }
+            });
+
+    observer.assertError(e);
+  }"
+"602","55","214","213","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleTest.java","139","155","-2147413875","-2147413797","0","0","void responseThrowingInOnNextDeliveredToError()","void responseThrowingInOnNextDeliveredToError(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .response()
+        .unsafeSubscribe(
+            new ForwardingSubscriber<Response<String>>(subscriber) {
+              @Override
+              public void onNext(Response<String> value) {
+                throw e;
+              }
+            });
+
+    subscriber.assertError(e);
+  }"
+"616","55","195","194","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableThrowingTest.java","154","170","-2147412031","-2147411958","0","0","void responseThrowingInOnNextDeliveredToError()","void responseThrowingInOnNextDeliveredToError(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Response<String>> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .response()
+        .unsafeSubscribe(
+            new ForwardingSubscriber<Response<String>>(observer) {
+              @Override
+              public void onNext(Response<String> value) {
+                throw e;
+              }
+            });
+
+    observer.assertError(e);
+  }"

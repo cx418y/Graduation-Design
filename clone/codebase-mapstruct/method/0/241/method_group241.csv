@@ -1,0 +1,43 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1732","241","780","779","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/PresenceCheckMethodResolver.java","127","148","-2147284050","-2147283955","0","0","List<SourceMethod> getAllAvailableMethods(Method method, List<SourceMethod> sourceModelMethods)","List<SourceMethod> getAllAvailableMethods(Method method, List<SourceMethod> sourceModelMethods){
+        ParameterProvidedMethods contextProvidedMethods = method.getContextProvidedMethods();
+        if ( contextProvidedMethods.isEmpty() ) {
+            return sourceModelMethods;
+        }
+
+        List<SourceMethod> methodsProvidedByParams = contextProvidedMethods
+            .getAllProvidedMethodsInParameterOrder( method.getContextParameters() );
+
+        List<SourceMethod> availableMethods =
+            new ArrayList<>( methodsProvidedByParams.size() + sourceModelMethods.size() );
+
+        for ( SourceMethod methodProvidedByParams : methodsProvidedByParams ) {
+            if ( methodProvidedByParams.isPresenceCheck() ) {
+                availableMethods.add( methodProvidedByParams );
+            }
+        }
+        availableMethods.addAll( sourceModelMethods );
+
+        return availableMethods;
+    }"
+"1845","241","780","797","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/ObjectFactoryMethodResolver.java","167","188","-2147270139","-2147270044","0","0","List<SourceMethod> getAllAvailableMethods(Method method, List<SourceMethod> sourceModelMethods)","List<SourceMethod> getAllAvailableMethods(Method method, List<SourceMethod> sourceModelMethods){
+        ParameterProvidedMethods contextProvidedMethods = method.getContextProvidedMethods();
+        if ( contextProvidedMethods.isEmpty() ) {
+            return sourceModelMethods;
+        }
+
+        List<SourceMethod> methodsProvidedByParams = contextProvidedMethods
+            .getAllProvidedMethodsInParameterOrder( method.getContextParameters() );
+
+        List<SourceMethod> availableMethods =
+            new ArrayList<>( methodsProvidedByParams.size() + sourceModelMethods.size() );
+
+        for ( SourceMethod methodProvidedByParams : methodsProvidedByParams ) {
+            if ( methodProvidedByParams.hasObjectFactoryAnnotation() ) {
+                availableMethods.add( methodProvidedByParams );
+            }
+        }
+        availableMethods.addAll( sourceModelMethods );
+
+        return availableMethods;
+    }"

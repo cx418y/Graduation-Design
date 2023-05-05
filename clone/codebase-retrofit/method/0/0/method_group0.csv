@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"5","0","3","2","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-mock/src/test/java/retrofit2/mock/CallsTest.java","166","177","-2147483077","-2147483015","0","0","void failureExecute()","void failureExecute(){
+    IOException failure = new IOException(""Hey"");
+    Call<Object> taco = Calls.failure(failure);
+    assertFalse(taco.isExecuted());
+    try {
+      taco.execute();
+      fail();
+    } catch (IOException e) {
+      assertSame(failure, e);
+    }
+    assertTrue(taco.isExecuted());
+  }"
+"6","0","3","2","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-mock/src/test/java/retrofit2/mock/CallsTest.java","180","191","-2147483015","-2147482953","0","0","void failureExecuteCheckedException()","void failureExecuteCheckedException(){
+    CertificateException failure = new CertificateException(""Hey"");
+    Call<Object> taco = Calls.failure(failure);
+    assertFalse(taco.isExecuted());
+    try {
+      taco.execute();
+      fail();
+    } catch (Exception e) {
+      assertSame(failure, e);
+    }
+    assertTrue(taco.isExecuted());
+  }"

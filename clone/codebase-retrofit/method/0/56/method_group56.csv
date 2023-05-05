@@ -1,0 +1,81 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"280","56","200","199","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableWithSchedulerTest.java","71","80","-2147446135","-2147446078","0","0","void responseUsesScheduler()","void responseUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingObserver<Object> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue().assertComplete();
+  }"
+"297","56","210","209","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleWithSchedulerTest.java","71","80","-2147445022","-2147444969","0","0","void responseUsesScheduler()","void responseUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingSingleObserver<Object> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue();
+  }"
+"314","56","210","209","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeWithSchedulerTest.java","71","80","-2147441860","-2147441807","0","0","void responseUsesScheduler()","void responseUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingMaybeObserver<Object> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue();
+  }"
+"341","56","200","199","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableWithSchedulerTest.java","71","80","-2147438935","-2147438878","0","0","void responseUsesScheduler()","void responseUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Object> subscriber = subscriberRule.create();
+    service.response().subscribe(subscriber);
+    subscriber.assertNoEvents();
+
+    scheduler.triggerActions();
+    subscriber.assertAnyValue().assertComplete();
+  }"
+"407","56","200","199","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableWithSchedulerTest.java","71","80","-2147433162","-2147433105","0","0","void responseUsesScheduler()","void responseUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingObserver<Object> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue().assertComplete();
+  }"
+"424","56","210","209","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleWithSchedulerTest.java","71","80","-2147432049","-2147431996","0","0","void responseUsesScheduler()","void responseUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingSingleObserver<Object> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue();
+  }"
+"437","56","210","209","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeWithSchedulerTest.java","71","80","-2147430773","-2147430720","0","0","void responseUsesScheduler()","void responseUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingMaybeObserver<Object> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertNoEvents();
+
+    scheduler.triggerActions();
+    observer.assertAnyValue();
+  }"
+"468","56","200","199","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableWithSchedulerTest.java","71","80","-2147425942","-2147425885","0","0","void responseUsesScheduler()","void responseUsesScheduler(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Object> subscriber = subscriberRule.create();
+    service.response().subscribe(subscriber);
+    subscriber.assertNoEvents();
+
+    scheduler.triggerActions();
+    subscriber.assertAnyValue().assertComplete();
+  }"

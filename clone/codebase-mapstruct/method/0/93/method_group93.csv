@@ -1,0 +1,188 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"323","93","321","320","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/expression/ConditionalExpressionTest.java","118","136","-2147447504","-2147447412","0","0","} @IssueKey(""2794"")@ProcessorTest
+    @ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","} @IssueKey(""2794"")@ProcessorTest
+    @ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousConditionExpressionMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 19,
+                message = ""Value for condition expression must be given in the form \""java(<EXPRESSION>)\"".""
+            ),
+            @Diagnostic(type = ErroneousConditionExpressionMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 22,
+                message = ""Constant and condition expression are both defined in @Mapping,""
+                    + "" either define a constant or a condition expression.""
+            ),
+            @Diagnostic(type = ErroneousConditionExpressionMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 25,
+                message = ""Expression and condition expression are both defined in @Mapping,""
+                    + "" either define an expression or a condition expression.""
+            )
+        }"
+"485","93","331","330","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/defaultExpressions/java/JavaDefaultExpressionTest.java","72","84","-2147432533","-2147432472","0","0",") .isEqualTo( Date.from(
+                LocalDate.of( 2022, Month.JUNE, 5 )
+                    .atTime( 17, 10 )
+                    .toInstant( ZoneOffset.UTC )
+            ) );
+    }
+
+    @ProcessorTest
+    @ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =",") .isEqualTo( Date.from(
+                LocalDate.of( 2022, Month.JUNE, 5 )
+                    .atTime( 17, 10 )
+                    .toInstant( ZoneOffset.UTC )
+            ) );
+    }
+
+    @ProcessorTest
+    @ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousDefaultExpressionExpressionMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 22,
+                message = ""Expression and default expression are both defined in @Mapping,""
+                    + "" either define an expression or a default expression.""
+            ),
+            @Diagnostic(type = ErroneousDefaultExpressionExpressionMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 26,
+                message = ""Unmapped target property: \""sourceId\"".""
+            )
+        }"
+"486","93","331","330","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/defaultExpressions/java/JavaDefaultExpressionTest.java","93","105","-2147432472","-2147432411","0","0","void testJavaDefaultExpressionExpression(){
+    }
+
+    @ProcessorTest
+    @ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","void testJavaDefaultExpressionExpression(){
+    }
+
+    @ProcessorTest
+    @ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousDefaultExpressionConstantMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 22,
+                message = ""Constant and default expression are both defined in @Mapping,""
+                    + "" either define a constant or a default expression.""
+            ),
+            @Diagnostic(type = ErroneousDefaultExpressionConstantMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 25,
+                message = ""Unmapped target property: \""sourceId\"".""
+            )
+        }"
+"487","93","331","330","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/defaultExpressions/java/JavaDefaultExpressionTest.java","114","126","-2147432411","-2147432350","0","0","void testJavaDefaultExpressionConstant(){
+    }
+
+    @ProcessorTest
+    @ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","void testJavaDefaultExpressionConstant(){
+    }
+
+    @ProcessorTest
+    @ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousDefaultExpressionDefaultValueMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 22,
+                message = ""Default value and default expression are both defined in @Mapping,""
+                    + "" either define a default value or a default expression.""
+            ),
+            @Diagnostic(type = ErroneousDefaultExpressionDefaultValueMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 25,
+                message = ""Unmapped target property: \""sourceId\"".""
+            )
+        }"
+"516","93","339","338","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/expressions/java/JavaExpressionTest.java","171","184","-2147429241","-2147429178","0","0","@ProcessorTest @WithClasses({
+        Source.class,
+        Target.class,
+        QualifierProvider.class,
+        TimeAndFormat.class,
+        ErroneousSourceTargetMapperExpressionAndQualifiers.class
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics =","@ProcessorTest @WithClasses({
+        Source.class,
+        Target.class,
+        QualifierProvider.class,
+        TimeAndFormat.class,
+        ErroneousSourceTargetMapperExpressionAndQualifiers.class
+    })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousSourceTargetMapperExpressionAndQualifiers.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 18,
+                message = ""Expression and a qualifier both defined in @Mapping,"" +
+                    "" either define an expression or a qualifier.""
+            ),
+            @Diagnostic(type = ErroneousSourceTargetMapperExpressionAndQualifiers.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 24,
+                message = ""Expression and a qualifier both defined in @Mapping,"" +
+                    "" either define an expression or a qualifier.""
+            )
+        }"
+"635","93","321","342","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1153/Issue1153Test.java","23","39","-2147416918","-2147416826","0","0","@WithClasses(ErroneousIssue1153Mapper.class) @IssueKey(""1153"")public class Issue1153Test {
+
+    @ExpectedCompilationOutcome(value = CompilationResult.FAILED,
+        diagnostics =","@WithClasses(ErroneousIssue1153Mapper.class) @IssueKey(""1153"")public class Issue1153Test {
+
+    @ExpectedCompilationOutcome(value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = ErroneousIssue1153Mapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 19,
+                message = ""Property \""readOnly\"" has no write accessor in ErroneousIssue1153Mapper.Target.""),
+            @Diagnostic(type = ErroneousIssue1153Mapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 20,
+                message =
+                    ""Property \""readOnly\"" has no write accessor in ErroneousIssue1153Mapper.Target.NestedTarget "" +
+                    ""for target name \""nestedTarget.readOnly\"".""),
+            @Diagnostic(type = ErroneousIssue1153Mapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 23,
+                message = ""Unknown property \""writable2\"" in type ErroneousIssue1153Mapper.Target.NestedTarget "" +
+                    ""for target name \""nestedTarget2.writable2\"". Did you mean \""nestedTarget2.writable\""?"")
+        }"
+"644","93","339","345","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_2347/Issue2347Test.java","25","40","-2147416122","-2147416059","0","0","@IssueKey(""2347"") @WithClasses({
+    ErroneousClassWithPrivateMapper.class
+})public class Issue2347Test {
+
+    @ExpectedCompilationOutcome(value = CompilationResult.FAILED,
+        diagnostics =","@IssueKey(""2347"") @WithClasses({
+    ErroneousClassWithPrivateMapper.class
+})public class Issue2347Test {
+
+    @ExpectedCompilationOutcome(value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(
+                type = ErroneousClassWithPrivateMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 41,
+                message = ""Cannot create an implementation for mapper PrivateInterfaceMapper,"" +
+                    "" because it is a private interface.""
+            ),
+            @Diagnostic(
+                type = ErroneousClassWithPrivateMapper.class,
+                kind = javax.tools.Diagnostic.Kind.ERROR,
+                line = 47,
+                message = ""Cannot create an implementation for mapper PrivateClassMapper,"" +
+                    "" because it is a private class.""
+            )
+        }"

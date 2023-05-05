@@ -1,0 +1,301 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"180","31","105","104","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/conversion/java8time/SourceTargetMapperImpl.java","348","397","-2147464482","-2147464070","0","0","Source targetToSource(Target target)","Source targetToSource(Target target){
+        if ( target == null ) {
+            return null;
+        }
+
+        Source source = new Source();
+
+        if ( target.getZonedDateTime() != null ) {
+            source.setZonedDateTime( ZonedDateTime.parse( target.getZonedDateTime(), dateTimeFormatter_dd_MM_yyyy_HH_mm_z_01894582668 ) );
+        }
+        if ( target.getLocalDateTime() != null ) {
+            source.setLocalDateTime( LocalDateTime.parse( target.getLocalDateTime(), dateTimeFormatter_dd_MM_yyyy_HH_mm_12071769242 ) );
+        }
+        if ( target.getLocalDate() != null ) {
+            source.setLocalDate( LocalDate.parse( target.getLocalDate(), dateTimeFormatter_dd_MM_yyyy_11900521056 ) );
+        }
+        if ( target.getLocalTime() != null ) {
+            source.setLocalTime( LocalTime.parse( target.getLocalTime(), dateTimeFormatter_HH_mm_168697690 ) );
+        }
+        source.setForCalendarConversion( calendarToZonedDateTime( target.getForCalendarConversion() ) );
+        if ( target.getForDateConversionWithZonedDateTime() != null ) {
+            source.setForDateConversionWithZonedDateTime( ZonedDateTime.ofInstant( target.getForDateConversionWithZonedDateTime().toInstant(), ZoneId.systemDefault() ) );
+        }
+        if ( target.getForDateConversionWithLocalDateTime() != null ) {
+            source.setForDateConversionWithLocalDateTime( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDateTime().toInstant(), ZoneId.of( ""UTC"" ) ) );
+        }
+        if ( target.getForDateConversionWithLocalDate() != null ) {
+            source.setForDateConversionWithLocalDate( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDate().toInstant(), ZoneOffset.UTC ).toLocalDate() );
+        }
+        if ( target.getForSqlDateConversionWithLocalDate() != null ) {
+            source.setForSqlDateConversionWithLocalDate( target.getForSqlDateConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForDateConversionWithInstant() != null ) {
+            source.setForDateConversionWithInstant( target.getForDateConversionWithInstant().toInstant() );
+        }
+        if ( target.getForLocalDateTimeConversionWithLocalDate() != null ) {
+            source.setForLocalDateTimeConversionWithLocalDate( target.getForLocalDateTimeConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForInstantConversionWithString() != null ) {
+            source.setForInstantConversionWithString( Instant.parse( target.getForInstantConversionWithString() ) );
+        }
+        if ( target.getForPeriodConversionWithString() != null ) {
+            source.setForPeriodConversionWithString( Period.parse( target.getForPeriodConversionWithString() ) );
+        }
+        if ( target.getForDurationConversionWithString() != null ) {
+            source.setForDurationConversionWithString( Duration.parse( target.getForDurationConversionWithString() ) );
+        }
+
+        return source;
+    }"
+"181","31","108","107","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/conversion/java8time/SourceTargetMapperImpl.java","400","449","-2147464070","-2147463664","0","0","Source targetToSourceDateTimeMapped(Target target)","Source targetToSourceDateTimeMapped(Target target){
+        if ( target == null ) {
+            return null;
+        }
+
+        Source source = new Source();
+
+        if ( target.getZonedDateTime() != null ) {
+            source.setZonedDateTime( ZonedDateTime.parse( target.getZonedDateTime(), dateTimeFormatter_dd_MM_yyyy_HH_mm_z_01894582668 ) );
+        }
+        if ( target.getLocalDateTime() != null ) {
+            source.setLocalDateTime( LocalDateTime.parse( target.getLocalDateTime() ) );
+        }
+        if ( target.getLocalDate() != null ) {
+            source.setLocalDate( LocalDate.parse( target.getLocalDate() ) );
+        }
+        if ( target.getLocalTime() != null ) {
+            source.setLocalTime( LocalTime.parse( target.getLocalTime() ) );
+        }
+        source.setForCalendarConversion( calendarToZonedDateTime( target.getForCalendarConversion() ) );
+        if ( target.getForDateConversionWithZonedDateTime() != null ) {
+            source.setForDateConversionWithZonedDateTime( ZonedDateTime.ofInstant( target.getForDateConversionWithZonedDateTime().toInstant(), ZoneId.systemDefault() ) );
+        }
+        if ( target.getForDateConversionWithLocalDateTime() != null ) {
+            source.setForDateConversionWithLocalDateTime( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDateTime().toInstant(), ZoneId.of( ""UTC"" ) ) );
+        }
+        if ( target.getForDateConversionWithLocalDate() != null ) {
+            source.setForDateConversionWithLocalDate( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDate().toInstant(), ZoneOffset.UTC ).toLocalDate() );
+        }
+        if ( target.getForSqlDateConversionWithLocalDate() != null ) {
+            source.setForSqlDateConversionWithLocalDate( target.getForSqlDateConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForDateConversionWithInstant() != null ) {
+            source.setForDateConversionWithInstant( target.getForDateConversionWithInstant().toInstant() );
+        }
+        if ( target.getForLocalDateTimeConversionWithLocalDate() != null ) {
+            source.setForLocalDateTimeConversionWithLocalDate( target.getForLocalDateTimeConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForInstantConversionWithString() != null ) {
+            source.setForInstantConversionWithString( Instant.parse( target.getForInstantConversionWithString() ) );
+        }
+        if ( target.getForPeriodConversionWithString() != null ) {
+            source.setForPeriodConversionWithString( Period.parse( target.getForPeriodConversionWithString() ) );
+        }
+        if ( target.getForDurationConversionWithString() != null ) {
+            source.setForDurationConversionWithString( Duration.parse( target.getForDurationConversionWithString() ) );
+        }
+
+        return source;
+    }"
+"182","31","108","113","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/conversion/java8time/SourceTargetMapperImpl.java","452","501","-2147463664","-2147463258","0","0","Source targetToSourceLocalDateTimeMapped(Target target)","Source targetToSourceLocalDateTimeMapped(Target target){
+        if ( target == null ) {
+            return null;
+        }
+
+        Source source = new Source();
+
+        if ( target.getLocalDateTime() != null ) {
+            source.setLocalDateTime( LocalDateTime.parse( target.getLocalDateTime(), dateTimeFormatter_dd_MM_yyyy_HH_mm_12071769242 ) );
+        }
+        if ( target.getZonedDateTime() != null ) {
+            source.setZonedDateTime( ZonedDateTime.parse( target.getZonedDateTime() ) );
+        }
+        if ( target.getLocalDate() != null ) {
+            source.setLocalDate( LocalDate.parse( target.getLocalDate() ) );
+        }
+        if ( target.getLocalTime() != null ) {
+            source.setLocalTime( LocalTime.parse( target.getLocalTime() ) );
+        }
+        source.setForCalendarConversion( calendarToZonedDateTime( target.getForCalendarConversion() ) );
+        if ( target.getForDateConversionWithZonedDateTime() != null ) {
+            source.setForDateConversionWithZonedDateTime( ZonedDateTime.ofInstant( target.getForDateConversionWithZonedDateTime().toInstant(), ZoneId.systemDefault() ) );
+        }
+        if ( target.getForDateConversionWithLocalDateTime() != null ) {
+            source.setForDateConversionWithLocalDateTime( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDateTime().toInstant(), ZoneId.of( ""UTC"" ) ) );
+        }
+        if ( target.getForDateConversionWithLocalDate() != null ) {
+            source.setForDateConversionWithLocalDate( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDate().toInstant(), ZoneOffset.UTC ).toLocalDate() );
+        }
+        if ( target.getForSqlDateConversionWithLocalDate() != null ) {
+            source.setForSqlDateConversionWithLocalDate( target.getForSqlDateConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForDateConversionWithInstant() != null ) {
+            source.setForDateConversionWithInstant( target.getForDateConversionWithInstant().toInstant() );
+        }
+        if ( target.getForLocalDateTimeConversionWithLocalDate() != null ) {
+            source.setForLocalDateTimeConversionWithLocalDate( target.getForLocalDateTimeConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForInstantConversionWithString() != null ) {
+            source.setForInstantConversionWithString( Instant.parse( target.getForInstantConversionWithString() ) );
+        }
+        if ( target.getForPeriodConversionWithString() != null ) {
+            source.setForPeriodConversionWithString( Period.parse( target.getForPeriodConversionWithString() ) );
+        }
+        if ( target.getForDurationConversionWithString() != null ) {
+            source.setForDurationConversionWithString( Duration.parse( target.getForDurationConversionWithString() ) );
+        }
+
+        return source;
+    }"
+"183","31","108","114","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/conversion/java8time/SourceTargetMapperImpl.java","504","553","-2147463258","-2147462852","0","0","Source targetToSourceLocalDateMapped(Target target)","Source targetToSourceLocalDateMapped(Target target){
+        if ( target == null ) {
+            return null;
+        }
+
+        Source source = new Source();
+
+        if ( target.getLocalDate() != null ) {
+            source.setLocalDate( LocalDate.parse( target.getLocalDate(), dateTimeFormatter_dd_MM_yyyy_11900521056 ) );
+        }
+        if ( target.getZonedDateTime() != null ) {
+            source.setZonedDateTime( ZonedDateTime.parse( target.getZonedDateTime() ) );
+        }
+        if ( target.getLocalDateTime() != null ) {
+            source.setLocalDateTime( LocalDateTime.parse( target.getLocalDateTime() ) );
+        }
+        if ( target.getLocalTime() != null ) {
+            source.setLocalTime( LocalTime.parse( target.getLocalTime() ) );
+        }
+        source.setForCalendarConversion( calendarToZonedDateTime( target.getForCalendarConversion() ) );
+        if ( target.getForDateConversionWithZonedDateTime() != null ) {
+            source.setForDateConversionWithZonedDateTime( ZonedDateTime.ofInstant( target.getForDateConversionWithZonedDateTime().toInstant(), ZoneId.systemDefault() ) );
+        }
+        if ( target.getForDateConversionWithLocalDateTime() != null ) {
+            source.setForDateConversionWithLocalDateTime( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDateTime().toInstant(), ZoneId.of( ""UTC"" ) ) );
+        }
+        if ( target.getForDateConversionWithLocalDate() != null ) {
+            source.setForDateConversionWithLocalDate( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDate().toInstant(), ZoneOffset.UTC ).toLocalDate() );
+        }
+        if ( target.getForSqlDateConversionWithLocalDate() != null ) {
+            source.setForSqlDateConversionWithLocalDate( target.getForSqlDateConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForDateConversionWithInstant() != null ) {
+            source.setForDateConversionWithInstant( target.getForDateConversionWithInstant().toInstant() );
+        }
+        if ( target.getForLocalDateTimeConversionWithLocalDate() != null ) {
+            source.setForLocalDateTimeConversionWithLocalDate( target.getForLocalDateTimeConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForInstantConversionWithString() != null ) {
+            source.setForInstantConversionWithString( Instant.parse( target.getForInstantConversionWithString() ) );
+        }
+        if ( target.getForPeriodConversionWithString() != null ) {
+            source.setForPeriodConversionWithString( Period.parse( target.getForPeriodConversionWithString() ) );
+        }
+        if ( target.getForDurationConversionWithString() != null ) {
+            source.setForDurationConversionWithString( Duration.parse( target.getForDurationConversionWithString() ) );
+        }
+
+        return source;
+    }"
+"184","31","108","125","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/conversion/java8time/SourceTargetMapperImpl.java","556","605","-2147462852","-2147462446","0","0","Source targetToSourceLocalTimeMapped(Target target)","Source targetToSourceLocalTimeMapped(Target target){
+        if ( target == null ) {
+            return null;
+        }
+
+        Source source = new Source();
+
+        if ( target.getLocalTime() != null ) {
+            source.setLocalTime( LocalTime.parse( target.getLocalTime(), dateTimeFormatter_HH_mm_168697690 ) );
+        }
+        if ( target.getZonedDateTime() != null ) {
+            source.setZonedDateTime( ZonedDateTime.parse( target.getZonedDateTime() ) );
+        }
+        if ( target.getLocalDateTime() != null ) {
+            source.setLocalDateTime( LocalDateTime.parse( target.getLocalDateTime() ) );
+        }
+        if ( target.getLocalDate() != null ) {
+            source.setLocalDate( LocalDate.parse( target.getLocalDate() ) );
+        }
+        source.setForCalendarConversion( calendarToZonedDateTime( target.getForCalendarConversion() ) );
+        if ( target.getForDateConversionWithZonedDateTime() != null ) {
+            source.setForDateConversionWithZonedDateTime( ZonedDateTime.ofInstant( target.getForDateConversionWithZonedDateTime().toInstant(), ZoneId.systemDefault() ) );
+        }
+        if ( target.getForDateConversionWithLocalDateTime() != null ) {
+            source.setForDateConversionWithLocalDateTime( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDateTime().toInstant(), ZoneId.of( ""UTC"" ) ) );
+        }
+        if ( target.getForDateConversionWithLocalDate() != null ) {
+            source.setForDateConversionWithLocalDate( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDate().toInstant(), ZoneOffset.UTC ).toLocalDate() );
+        }
+        if ( target.getForSqlDateConversionWithLocalDate() != null ) {
+            source.setForSqlDateConversionWithLocalDate( target.getForSqlDateConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForDateConversionWithInstant() != null ) {
+            source.setForDateConversionWithInstant( target.getForDateConversionWithInstant().toInstant() );
+        }
+        if ( target.getForLocalDateTimeConversionWithLocalDate() != null ) {
+            source.setForLocalDateTimeConversionWithLocalDate( target.getForLocalDateTimeConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForInstantConversionWithString() != null ) {
+            source.setForInstantConversionWithString( Instant.parse( target.getForInstantConversionWithString() ) );
+        }
+        if ( target.getForPeriodConversionWithString() != null ) {
+            source.setForPeriodConversionWithString( Period.parse( target.getForPeriodConversionWithString() ) );
+        }
+        if ( target.getForDurationConversionWithString() != null ) {
+            source.setForDurationConversionWithString( Duration.parse( target.getForDurationConversionWithString() ) );
+        }
+
+        return source;
+    }"
+"185","31","105","104","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/conversion/java8time/SourceTargetMapperImpl.java","608","657","-2147462446","-2147462034","0","0","Source targetToSourceDefaultMapping(Target target)","Source targetToSourceDefaultMapping(Target target){
+        if ( target == null ) {
+            return null;
+        }
+
+        Source source = new Source();
+
+        if ( target.getZonedDateTime() != null ) {
+            source.setZonedDateTime( ZonedDateTime.parse( target.getZonedDateTime(), dateTimeFormatter_dd_MM_yyyy_HH_mm_z_01894582668 ) );
+        }
+        if ( target.getLocalDateTime() != null ) {
+            source.setLocalDateTime( LocalDateTime.parse( target.getLocalDateTime(), dateTimeFormatter_dd_MM_yyyy_HH_mm_12071769242 ) );
+        }
+        if ( target.getLocalDate() != null ) {
+            source.setLocalDate( LocalDate.parse( target.getLocalDate(), dateTimeFormatter_dd_MM_yyyy_11900521056 ) );
+        }
+        if ( target.getLocalTime() != null ) {
+            source.setLocalTime( LocalTime.parse( target.getLocalTime(), dateTimeFormatter_HH_mm_168697690 ) );
+        }
+        source.setForCalendarConversion( calendarToZonedDateTime( target.getForCalendarConversion() ) );
+        if ( target.getForDateConversionWithZonedDateTime() != null ) {
+            source.setForDateConversionWithZonedDateTime( ZonedDateTime.ofInstant( target.getForDateConversionWithZonedDateTime().toInstant(), ZoneId.systemDefault() ) );
+        }
+        if ( target.getForDateConversionWithLocalDateTime() != null ) {
+            source.setForDateConversionWithLocalDateTime( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDateTime().toInstant(), ZoneId.of( ""UTC"" ) ) );
+        }
+        if ( target.getForDateConversionWithLocalDate() != null ) {
+            source.setForDateConversionWithLocalDate( LocalDateTime.ofInstant( target.getForDateConversionWithLocalDate().toInstant(), ZoneOffset.UTC ).toLocalDate() );
+        }
+        if ( target.getForSqlDateConversionWithLocalDate() != null ) {
+            source.setForSqlDateConversionWithLocalDate( target.getForSqlDateConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForDateConversionWithInstant() != null ) {
+            source.setForDateConversionWithInstant( target.getForDateConversionWithInstant().toInstant() );
+        }
+        if ( target.getForLocalDateTimeConversionWithLocalDate() != null ) {
+            source.setForLocalDateTimeConversionWithLocalDate( target.getForLocalDateTimeConversionWithLocalDate().toLocalDate() );
+        }
+        if ( target.getForInstantConversionWithString() != null ) {
+            source.setForInstantConversionWithString( Instant.parse( target.getForInstantConversionWithString() ) );
+        }
+        if ( target.getForPeriodConversionWithString() != null ) {
+            source.setForPeriodConversionWithString( Period.parse( target.getForPeriodConversionWithString() ) );
+        }
+        if ( target.getForDurationConversionWithString() != null ) {
+            source.setForDurationConversionWithString( Duration.parse( target.getForDurationConversionWithString() ) );
+        }
+
+        return source;
+    }"

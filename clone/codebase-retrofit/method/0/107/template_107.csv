@@ -1,0 +1,25 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","deserializeWrongType","void deserializeWrongType()throws IOException{
+    ByteString encoded = ByteString.decodeBase64(""Cg4oNTE5KSA4NjctNTMwOQ=="");
+    server.enqueue(new MockResponse().setBody(new Buffer().write(encoded)));
+
+    try {
+      service.wrongType();
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Unable to create converter for java.util.List<java.lang.String>\n""
+                  + ""    for method Service.wrongType"");
+      assertThat(e.getCause())
+          .hasMessage(
+              """"
+                  + ""Could not locate ResponseBody converter for java.util.List<java.lang.String>.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.converter.wire.WireConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+  }
+",""

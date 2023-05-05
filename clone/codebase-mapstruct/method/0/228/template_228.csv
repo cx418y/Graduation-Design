@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getBestMatch","Assignment getBestMatch(ResolvingAttempt att, Type sourceType, Type targetType){
+            ConversionMethod<Method> mAttempt = new ConversionMethod<>( att, att.methods, att::toMethodRef )
+                    .getBestMatch( sourceType, targetType );
+            if ( mAttempt.hasResult ) {
+                return mAttempt.result;
+            }
+            ConversionMethod<BuiltInMethod> bAttempt =[*1*] 
+                new ConversionMethod<>( att, att.builtIns, att::toBuildInRef )[*2*] 
+                    .getBestMatch( sourceType, targetType );
+            return bAttempt.result;
+        }
+","[*1*]:
+[*2*]:
+1, 0.5,             MethodConversion<BuiltInMethod> bAttempt = new MethodConversion<>( att, att.builtIns, att::toBuildInRef )
+"

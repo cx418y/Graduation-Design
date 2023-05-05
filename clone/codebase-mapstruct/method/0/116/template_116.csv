@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","Mappers.getMapper","= Mappers.getMapper( DomainDtoWithNvmsDefaultMapper.class );[*1*] 
+[*2*] 
+    @Mappings({[*3*] 
+[*4*] 
+        @Mapping(target = ""strings"", source = ""strings""),
+        @Mapping(target = ""longs"", source = ""strings""),
+        @Mapping(target = ""stringsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""longsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""stringsWithDefault"", source = ""stringsWithDefault"", defaultValue = ""3"")
+   }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+3, 0.42857142857142855, ); @BeanMapping( qualifiedByName = ""DomainObjectFactory"" )@Mappings({
+"

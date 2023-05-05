@@ -1,0 +1,35 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","apply","void apply(RequestBuilder builder, @Nullable Map<String, T> value)throws IOException{
+      if (value == null) {
+        throw Utils.parameterError(method, p, ""Query map was null"");
+      }
+
+      for (Map.Entry<String, T> entry : value.entrySet()) {
+        String entryKey = entry.getKey();
+        if (entryKey == null) {
+          throw Utils.parameterError(method, p, ""Query map contained null key."");
+        }
+        T entryValue = entry.getValue();
+        if (entryValue == null) {
+          throw Utils.parameterError(
+              method, p, ""Query map contained null value for key '"" + entryKey + ""'."");
+        }
+
+        String convertedEntryValue = valueConverter.convert(entryValue);
+        if (convertedEntryValue == null) {
+          throw Utils.parameterError(
+              method,
+              p,
+              ""Query map value '""
+                  + entryValue
+                  + ""' converted to null by ""
+                  + valueConverter.getClass().getName()
+                  + "" for key '""
+                  + entryKey
+                  + ""'."");
+        }
+
+        builder.addQueryParam(entryKey, convertedEntryValue, encoded);
+      }
+    }
+",""

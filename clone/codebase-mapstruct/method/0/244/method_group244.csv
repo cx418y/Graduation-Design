@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1833","244","782","781","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/PropertyMapping.java","852","859","-2147271466","-2147271416","0","0","String getName(Type type)","String getName(Type type){
+            StringBuilder builder = new StringBuilder();
+            for ( Type typeParam : type.getTypeParameters() ) {
+                builder.append( typeParam.getIdentification() );
+            }
+            builder.append( type.getIdentification() );
+            return builder.toString();
+        }"
+"1848","244","782","781","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/AbstractMappingMethodBuilder.java","111","118","-2147269805","-2147269755","0","0","String getName(Type type)","String getName(Type type){
+        StringBuilder builder = new StringBuilder();
+        for ( Type typeParam : type.getTypeParameters() ) {
+            builder.append( typeParam.getIdentification() );
+        }
+        builder.append( type.getIdentification() );
+        return builder.toString();
+    }"

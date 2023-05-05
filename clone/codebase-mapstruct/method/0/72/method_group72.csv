@@ -1,0 +1,51 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"360","72","231","230","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/frommap/FromMapMappingTest.java","296","310","-2147443314","-2147443252","0","0","@ProcessorTest @WithClasses(MapToBeanTypeCheckMapper.class)@ExpectedCompilationOutcome(
+        value = CompilationResult.SUCCEEDED,
+        diagnostics =","@ProcessorTest @WithClasses(MapToBeanTypeCheckMapper.class)@ExpectedCompilationOutcome(
+        value = CompilationResult.SUCCEEDED,
+        diagnostics ={
+            @Diagnostic(
+                type = MapToBeanTypeCheckMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 21,
+                message = ""Unmapped target property: \""value\"".""
+            ),
+            @Diagnostic(
+                type = MapToBeanTypeCheckMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 21,
+                message = ""The Map parameter \""source\"" cannot be used for property mapping. "" +
+                    ""It must be typed with Map<String, ???> but it was typed with Map<Integer,String>.""
+            ),
+        }"
+"362","72","231","230","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/frommap/FromMapMappingTest.java","328","342","-2147443190","-2147443128","0","0","@ProcessorTest @WithClasses(MapToBeanRawMapMapper.class)@ExpectedCompilationOutcome(
+        value = CompilationResult.SUCCEEDED,
+        diagnostics =","@ProcessorTest @WithClasses(MapToBeanRawMapMapper.class)@ExpectedCompilationOutcome(
+        value = CompilationResult.SUCCEEDED,
+        diagnostics ={
+            @Diagnostic(
+                type = MapToBeanRawMapMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 21,
+                message = ""Unmapped target property: \""value\"".""
+            ),
+            @Diagnostic(
+                type = MapToBeanRawMapMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 21,
+                message = ""The Map parameter \""source\"" cannot be used for property mapping. "" +
+                    ""It must be typed with Map<String, ???> but it was raw.""
+            ),
+        }"
+"1007","72","247","246","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/lossy/LossyConversionTest.java","143","152","-2147377500","-2147377441","0","0","@ProcessorTest @WithClasses(MapMapper.class)@ExpectedCompilationOutcome(value = CompilationResult.SUCCEEDED,
+        diagnostics =","@ProcessorTest @WithClasses(MapMapper.class)@ExpectedCompilationOutcome(value = CompilationResult.SUCCEEDED,
+        diagnostics ={
+            @Diagnostic(type = MapMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 19,
+                message = ""map key has a possibly lossy conversion from Long to Integer.""),
+            @Diagnostic(type = MapMapper.class,
+                kind = javax.tools.Diagnostic.Kind.WARNING,
+                line = 19,
+                message = ""map value has a possibly lossy conversion from Double to Float."")
+    }"

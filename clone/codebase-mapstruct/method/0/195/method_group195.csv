@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1110","195","629","628","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/qualifier/defaults/QualifierWithDefaultsTest.java","34","40","-2147362185","-2147362135","0","0","void defaultValuehasUsableValue()","void defaultValuehasUsableValue(){
+        Folder rootFolder = new Folder( UUID.randomUUID(), null );
+
+        DirectoryNode node = Mappers.getMapper( DefaultValueUsageMapper.class ).convert( rootFolder );
+
+        Assertions.assertThat( node.getParent() ).isEqualTo( ""00000000-0000-4000-0000-000000000000"" );
+    }"
+"1111","195","629","630","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/qualifier/defaults/QualifierWithDefaultsTest.java","44","50","-2147362135","-2147362085","0","0","void defaultExpressionDoesNotGetConverted()","void defaultExpressionDoesNotGetConverted(){
+        Folder rootFolder = new Folder( UUID.randomUUID(), null );
+
+        DirectoryNode node = Mappers.getMapper( DefaultExpressionUsageMapper.class ).convert( rootFolder );
+
+        Assertions.assertThat( node.getParent() ).isEqualTo( ""#"" );
+    }"

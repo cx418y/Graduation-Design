@@ -1,0 +1,110 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1495","229","749","748","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/MapperCreationProcessor.java","590","642","-2147313053","-2147312790","0","0","SourceMethod getInverseTemplateMethod(List<SourceMethod> rawMethods, SourceMethod method,
+                                                  List<SourceMethod> initializingMethods,
+                                                  MapperOptions mapperConfig)","SourceMethod getInverseTemplateMethod(List<SourceMethod> rawMethods, SourceMethod method,
+                                                  List<SourceMethod> initializingMethods,
+                                                  MapperOptions mapperConfig){
+        SourceMethod resultMethod = null;
+        InheritInverseConfigurationGem inverseConfiguration =
+            InheritInverseConfigurationGem.instanceOn( method.getExecutable() );
+
+        if ( inverseConfiguration != null ) {
+
+            List<SourceMethod> candidates = new ArrayList<>();
+            for ( SourceMethod oneMethod : rawMethods ) {
+                if ( method.inverses( oneMethod ) ) {
+                    candidates.add( oneMethod );
+                }
+            }
+
+            String name = inverseConfiguration.name().get();
+            if ( candidates.size() == 1 ) {
+                if ( name.isEmpty() ) {
+                    resultMethod = candidates.get( 0 );
+                }
+                else if ( candidates.get( 0 ).getName().equals( name ) ) {
+                    resultMethod = candidates.get( 0 );
+                }
+                else {
+                    reportErrorWhenNonMatchingName( candidates.get( 0 ), method, inverseConfiguration );
+                }
+            }
+            else if ( candidates.size() > 1 ) {
+
+                List<SourceMethod> nameFilteredcandidates = new ArrayList<>();
+                for ( SourceMethod candidate : candidates ) {
+                    if ( candidate.getName().equals( name ) ) {
+                        nameFilteredcandidates.add( candidate );
+                    }
+                }
+
+                if ( nameFilteredcandidates.size() == 1 ) {
+                    resultMethod = nameFilteredcandidates.get( 0 );
+                }
+                else if ( nameFilteredcandidates.size() > 1 ) {
+                    reportErrorWhenSeveralNamesMatch( nameFilteredcandidates, method, inverseConfiguration );
+                }
+                else {
+                    reportErrorWhenAmbigousReverseMapping( candidates, method, inverseConfiguration );
+                }
+            }
+        }
+
+        return extractInitializedOptions( resultMethod, rawMethods, mapperConfig, initializingMethods,
+            getAnnotationMirror( inverseConfiguration ) );
+    }"
+"1496","229","756","755","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/MapperCreationProcessor.java","673","726","-2147312790","-2147312530","0","0","SourceMethod getForwardTemplateMethod(List<SourceMethod> rawMethods, SourceMethod method,
+                                                  List<SourceMethod> initializingMethods,
+                                                  MapperOptions mapperConfig)","SourceMethod getForwardTemplateMethod(List<SourceMethod> rawMethods, SourceMethod method,
+                                                  List<SourceMethod> initializingMethods,
+                                                  MapperOptions mapperConfig){
+        SourceMethod resultMethod = null;
+        InheritConfigurationGem inheritConfiguration =
+            InheritConfigurationGem.instanceOn( method.getExecutable() );
+
+        if ( inheritConfiguration != null ) {
+
+            List<SourceMethod> candidates = new ArrayList<>();
+            for ( SourceMethod oneMethod : rawMethods ) {
+                if ( method.canInheritFrom( oneMethod ) && !( oneMethod.equals( method ) ) ) {
+                    candidates.add( oneMethod );
+                }
+            }
+
+            String name = inheritConfiguration.name().get();
+            if ( candidates.size() == 1 ) {
+                SourceMethod sourceMethod = first( candidates );
+                if ( name.isEmpty() ) {
+                    resultMethod = sourceMethod;
+                }
+                else if ( sourceMethod.getName().equals( name ) ) {
+                    resultMethod = sourceMethod;
+                }
+                else {
+                    reportErrorWhenNonMatchingName( sourceMethod, method, inheritConfiguration );
+                }
+            }
+            else if ( candidates.size() > 1 ) {
+
+                List<SourceMethod> nameFilteredcandidates = new ArrayList<>();
+                for ( SourceMethod candidate : candidates ) {
+                    if ( candidate.getName().equals( name ) ) {
+                        nameFilteredcandidates.add( candidate );
+                    }
+                }
+
+                if ( nameFilteredcandidates.size() == 1 ) {
+                    resultMethod = first( nameFilteredcandidates );
+                }
+                else if ( nameFilteredcandidates.size() > 1 ) {
+                    reportErrorWhenSeveralNamesMatch( nameFilteredcandidates, method, inheritConfiguration );
+                }
+                else {
+                    reportErrorWhenAmbigousMapping( candidates, method, inheritConfiguration );
+                }
+            }
+        }
+
+        return extractInitializedOptions( resultMethod, rawMethods, mapperConfig, initializingMethods,
+                                          getAnnotationMirror( inheritConfiguration ) );
+    }"

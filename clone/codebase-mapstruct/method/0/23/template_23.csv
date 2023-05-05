@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","carToCarDto","CarDto carToCarDto(Car car){
+        if ( car == null ) {
+            return null;
+        }
+
+        CarDto carDto = new CarDto();
+
+        carDto.setName( car.getName() );
+        carDto.setYear( car.getYear() );
+        carDto.setWheels( wheelListToWheelDtoList( car.getWheels() ) );
+
+        return carDto;
+    }
+",""

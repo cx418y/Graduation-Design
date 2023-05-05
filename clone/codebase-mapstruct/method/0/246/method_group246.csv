@@ -1,0 +1,26 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1924","246","802","801","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/BigDecimalToStringConversion.java","45","56","-2147258845","-2147258782","0","0","String getFromExpression(ConversionContext conversionContext)","String getFromExpression(ConversionContext conversionContext){
+        if ( requiresDecimalFormat( conversionContext ) ) {
+            StringBuilder sb = new StringBuilder();
+            sb.append( ""("" + bigDecimal( conversionContext ) + "") "" );
+            appendDecimalFormatter( sb, conversionContext );
+            sb.append( "".parse( <SOURCE> )"" );
+            return sb.toString();
+        }
+        else {
+            return ""new "" + bigDecimal( conversionContext ) + ""( <SOURCE> )"";
+        }
+    }"
+"1942","246","804","803","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/BigIntegerToStringConversion.java","47","59","-2147256151","-2147256081","0","0","String getFromExpression(ConversionContext conversionContext)","String getFromExpression(ConversionContext conversionContext){
+        if ( requiresDecimalFormat( conversionContext ) ) {
+            StringBuilder sb = new StringBuilder();
+            sb.append( ""( ("" + bigDecimal( conversionContext ) + "") "" );
+            appendDecimalFormatter( sb, conversionContext );
+            sb.append( "".parse( <SOURCE> )"" );
+            sb.append( "" ).toBigInteger()"" );
+            return sb.toString();
+        }
+        else {
+            return ""new "" + bigInteger( conversionContext ) + ""( <SOURCE> )"";
+        }
+    }"

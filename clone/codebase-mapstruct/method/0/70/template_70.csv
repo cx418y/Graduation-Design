@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapWithDefinedMapping","void shouldMapWithDefinedMapping(){
+        Map<String, Integer> sourceMap = new HashMap<>();
+        sourceMap.put( ""number"", 44 );
+
+        MapToBeanDefinedMapper.Target target = MapToBeanDefinedMapper.INSTANCE.toTarget( sourceMap );[*1*] 
+            .toTarget( sourceMap );[*2*] 
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getNormalInt() ).isEqualTo( ""44"" );
+    }
+","[*1*]:
+1, 0.5,         MapToBeanUsingMappingMethodMapper.Target target = MapToBeanUsingMappingMethodMapper.INSTANCE
+[*2*]:
+"

@@ -79,7 +79,7 @@ public class MultiSet {
         // Fill in the table using dynamic programming
         for (int i = 1; i < m + 1; i++) {
             for (int j = 1; j < n + 1; j++) {
-                if (ts.get(i - 1).equals(candidate.get(j - 1)))
+                if (ts.get(i - 1).strictEquals(candidate.get(j - 1)))
                     table[i][j] = table[i - 1][j - 1] + 1;
                 else
                     table[i][j] = Math.max(table[i - 1][j], table[i][j - 1]);
@@ -88,7 +88,7 @@ public class MultiSet {
 
         int i = m, j = n;
         while (i > 0 && j > 0) {
-            if (ts.get(i - 1).equals(candidate.get(j - 1))) {
+            if (ts.get(i - 1).strictEquals(candidate.get(j - 1))) {
                 rawTemplate.get(i - 1).append(index, true);
                 i--;
                 j--;

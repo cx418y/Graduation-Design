@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"656","114","391","390","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1247/Issue1247Test.java","49","66","-2147414826","-2147414636","0","0","void shouldCorrectlyUseMappingsWithConstantsExpressionsAndDefaults()","void shouldCorrectlyUseMappingsWithConstantsExpressionsAndDefaults(){
+
+        DtoIn in = new DtoIn( ""data"", ""data2"" );
+        List<String> list = Arrays.asList( ""first"", ""second"" );
+        OtherDtoOut out = Issue1247Mapper.INSTANCE.mapWithConstantExpressionAndDefault( in, list );
+
+        assertThat( out ).isNotNull();
+        assertThat( out.getData() ).isEqualTo( ""data"" );
+        assertThat( out.getConstant() ).isEqualTo( ""someConstant"" );
+        assertThat( out.getInternal() ).isNotNull();
+        assertThat( out.getInternal().getData2() ).isNull();
+        assertThat( out.getInternal().getExpression() ).isEqualTo( ""testingExpression"" );
+        assertThat( out.getInternal().getInternalData() ).isNotNull();
+        assertThat( out.getInternal().getInternalData().getList() ).containsExactly( ""first"", ""second"" );
+        assertThat( out.getInternal().getInternalData().getDefaultValue() ).isEqualTo( ""data2"" );
+    }"
+"657","114","391","394","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1247/Issue1247Test.java","69","84","-2147414636","-2147414446","0","0","void shouldCorrectlyUseMappingsWithConstantsExpressionsAndUseDefault()","void shouldCorrectlyUseMappingsWithConstantsExpressionsAndUseDefault(){
+
+        DtoIn in = new DtoIn( ""data"", null );
+        List<String> list = Arrays.asList( ""first"", ""second"" );
+        OtherDtoOut out = Issue1247Mapper.INSTANCE.mapWithConstantExpressionAndDefault( in, list );
+
+        assertThat( out ).isNotNull();
+        assertThat( out.getData() ).isEqualTo( ""data"" );
+        assertThat( out.getConstant() ).isEqualTo( ""someConstant"" );
+        assertThat( out.getInternal() ).isNotNull();
+        assertThat( out.getInternal().getData2() ).isNull();
+        assertThat( out.getInternal().getExpression() ).isEqualTo( ""testingExpression"" );
+        assertThat( out.getInternal().getInternalData() ).isNotNull();
+        assertThat( out.getInternal().getInternalData().getList() ).containsExactly( ""first"", ""second"" );
+        assertThat( out.getInternal().getInternalData().getDefaultValue() ).isEqualTo( ""missing"" );
+    }"

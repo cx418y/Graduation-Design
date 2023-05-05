@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"285","34","117","116","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableTest.java","90","97","-2147445866","-2147445805","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse());
+
+    RecordingObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    assertThat(observer.takeValue().isSuccessful()).isTrue();
+    observer.assertComplete();
+  }"
+"348","34","117","116","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableTest.java","89","96","-2147438536","-2147438475","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    service.response().subscribe(subscriber);
+    assertThat(subscriber.takeValue().isSuccessful()).isTrue();
+    subscriber.assertComplete();
+  }"
+"412","34","117","116","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableTest.java","90","97","-2147432893","-2147432832","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse());
+
+    RecordingObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    assertThat(observer.takeValue().isSuccessful()).isTrue();
+    observer.assertComplete();
+  }"
+"475","34","117","116","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableTest.java","89","96","-2147425543","-2147425482","0","0","void responseSuccess200()","void responseSuccess200(){
+    server.enqueue(new MockResponse());
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    service.response().subscribe(subscriber);
+    assertThat(subscriber.takeValue().isSuccessful()).isTrue();
+    subscriber.assertComplete();
+  }"

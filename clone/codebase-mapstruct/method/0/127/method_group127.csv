@@ -1,0 +1,43 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"773","127","436","435","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/qualifier/SubclassQualifierMapperTest.java","44","64","-2147403171","-2147402979","0","0","void subclassQualifiedBy()","void subclassQualifiedBy(){
+        Rossini rossini = buildRossini();
+
+        Vivaldi vivaldi = buildVivaldi();
+
+        RossiniDto rossiniDto = (RossiniDto) SubclassQualifiedByMapper.INSTANCE.toDto( rossini );
+        RossiniDto rossiniDtoLight = (RossiniDto) SubclassQualifiedByMapper.INSTANCE.toDtoLight( rossini );
+
+        VivaldiDto vivaldiDto = (VivaldiDto) SubclassQualifiedByMapper.INSTANCE.toDto( vivaldi );
+        VivaldiDto vivaldiDtoLight = (VivaldiDto) SubclassQualifiedByMapper.INSTANCE.toDtoLight( vivaldi );
+
+        assertThat( rossiniDto.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossiniDto.getCrescendo() ).containsExactly( ""andante"", ""allegro"", ""vivace"" );
+        assertThat( rossiniDtoLight.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossiniDtoLight.getCrescendo() ).isNull();
+
+        assertThat( vivaldiDto.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldiDto.getSeasons() ).containsExactly( ""spring"", ""winter"" );
+        assertThat( vivaldiDtoLight.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldiDtoLight.getSeasons() ).isNull();
+    }"
+"775","127","436","435","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/subclassmapping/qualifier/SubclassQualifierMapperTest.java","86","106","-2147402874","-2147402682","0","0","void subclassQualifiedByName()","void subclassQualifiedByName(){
+        Rossini rossini = buildRossini();
+
+        Vivaldi vivaldi = buildVivaldi();
+
+        RossiniDto rossiniDto = (RossiniDto) SubclassQualifiedByNameMapper.INSTANCE.toDto( rossini );
+        RossiniDto rossiniDtoLight = (RossiniDto) SubclassQualifiedByNameMapper.INSTANCE.toDtoLight( rossini );
+
+        VivaldiDto vivaldiDto = (VivaldiDto) SubclassQualifiedByNameMapper.INSTANCE.toDto( vivaldi );
+        VivaldiDto vivaldiDtoLight = (VivaldiDto) SubclassQualifiedByNameMapper.INSTANCE.toDtoLight( vivaldi );
+
+        assertThat( rossiniDto.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossiniDto.getCrescendo() ).containsExactly( ""andante"", ""allegro"", ""vivace"" );
+        assertThat( rossiniDtoLight.getName() ).isEqualTo( ""gioacchino"" );
+        assertThat( rossiniDtoLight.getCrescendo() ).isNull();
+
+        assertThat( vivaldiDto.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldiDto.getSeasons() ).containsExactly( ""spring"", ""winter"" );
+        assertThat( vivaldiDtoLight.getName() ).isEqualTo( ""antonio"" );
+        assertThat( vivaldiDtoLight.getSeasons() ).isNull();
+    }"

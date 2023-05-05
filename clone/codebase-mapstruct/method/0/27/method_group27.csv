@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"150","27","81","80","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/mixed/FishTankMapperConstantImpl.java","27","40","-2147468683","-2147468612","0","0","FishTankDto map(FishTank source)","FishTankDto map(FishTank source){
+        if ( source == null ) {
+            return null;
+        }
+
+        FishTankDto fishTankDto = new FishTankDto();
+
+        fishTankDto.setFish( fishToFishDto( source.getFish() ) );
+        fishTankDto.setMaterial( fishTankToMaterialDto( source ) );
+        fishTankDto.setPlant( waterPlantToWaterPlantDto( source.getPlant() ) );
+        fishTankDto.setName( source.getName() );
+
+        return fishTankDto;
+    }"
+"153","27","83","82","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/mixed/FishTankMapperImpl.java","35","50","-2147468490","-2147468392","0","0","FishTankDto map(FishTank source)","FishTankDto map(FishTank source){
+        if ( source == null ) {
+            return null;
+        }
+
+        FishTankDto fishTankDto = new FishTankDto();
+
+        fishTankDto.setFish( fishToFishDto( source.getFish() ) );
+        fishTankDto.setMaterial( fishTankToMaterialDto( source ) );
+        fishTankDto.setQuality( waterQualityToWaterQualityDto( source.getQuality() ) );
+        fishTankDto.setOrnament( ornamentToOrnamentDto( sourceInteriorOrnament( source ) ) );
+        fishTankDto.setPlant( waterPlantToWaterPlantDto( source.getPlant() ) );
+        fishTankDto.setName( source.getName() );
+
+        return fishTankDto;
+    }"

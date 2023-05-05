@@ -1,0 +1,100 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"195","25","72","71","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java","253","279","-2147459633","-2147459403","0","0","CallAdapter<?, ?> nextCallAdapter(
+      @Nullable CallAdapter.Factory skipPast, Type returnType, Annotation[] annotations)","CallAdapter<?, ?> nextCallAdapter(
+      @Nullable CallAdapter.Factory skipPast, Type returnType, Annotation[] annotations){
+    Objects.requireNonNull(returnType, ""returnType == null"");
+    Objects.requireNonNull(annotations, ""annotations == null"");
+
+    int start = callAdapterFactories.indexOf(skipPast) + 1;
+    for (int i = start, count = callAdapterFactories.size(); i < count; i++) {
+      CallAdapter<?, ?> adapter = callAdapterFactories.get(i).get(returnType, annotations, this);
+      if (adapter != null) {
+        return adapter;
+      }
+    }
+
+    StringBuilder builder =
+        new StringBuilder(""Could not locate call adapter for "").append(returnType).append("".\n"");
+    if (skipPast != null) {
+      builder.append(""  Skipped:"");
+      for (int i = 0; i < start; i++) {
+        builder.append(""\n   * "").append(callAdapterFactories.get(i).getClass().getName());
+      }
+      builder.append('\n');
+    }
+    builder.append(""  Tried:"");
+    for (int i = start, count = callAdapterFactories.size(); i < count; i++) {
+      builder.append(""\n   * "").append(callAdapterFactories.get(i).getClass().getName());
+    }
+    throw new IllegalArgumentException(builder.toString());
+  }"
+"196","25","87","86","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java","312","342","-2147459403","-2147459146","0","0","Converter<T, RequestBody> nextRequestBodyConverter(
+      @Nullable Converter.Factory skipPast,
+      Type type,
+      Annotation[] parameterAnnotations,
+      Annotation[] methodAnnotations)","Converter<T, RequestBody> nextRequestBodyConverter(
+      @Nullable Converter.Factory skipPast,
+      Type type,
+      Annotation[] parameterAnnotations,
+      Annotation[] methodAnnotations){
+    Objects.requireNonNull(type, ""type == null"");
+    Objects.requireNonNull(parameterAnnotations, ""parameterAnnotations == null"");
+    Objects.requireNonNull(methodAnnotations, ""methodAnnotations == null"");
+
+    int start = converterFactories.indexOf(skipPast) + 1;
+    for (int i = start, count = converterFactories.size(); i < count; i++) {
+      Converter.Factory factory = converterFactories.get(i);
+      Converter<?, RequestBody> converter =
+          factory.requestBodyConverter(type, parameterAnnotations, methodAnnotations, this);
+      if (converter != null) {
+        return (Converter<T, RequestBody>) converter;
+      }
+    }
+
+    StringBuilder builder =
+        new StringBuilder(""Could not locate RequestBody converter for "").append(type).append("".\n"");
+    if (skipPast != null) {
+      builder.append(""  Skipped:"");
+      for (int i = 0; i < start; i++) {
+        builder.append(""\n   * "").append(converterFactories.get(i).getClass().getName());
+      }
+      builder.append('\n');
+    }
+    builder.append(""  Tried:"");
+    for (int i = start, count = converterFactories.size(); i < count; i++) {
+      builder.append(""\n   * "").append(converterFactories.get(i).getClass().getName());
+    }
+    throw new IllegalArgumentException(builder.toString());
+  }"
+"197","25","93","92","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java","361","391","-2147459146","-2147458907","0","0","Converter<ResponseBody, T> nextResponseBodyConverter(
+      @Nullable Converter.Factory skipPast, Type type, Annotation[] annotations)","Converter<ResponseBody, T> nextResponseBodyConverter(
+      @Nullable Converter.Factory skipPast, Type type, Annotation[] annotations){
+    Objects.requireNonNull(type, ""type == null"");
+    Objects.requireNonNull(annotations, ""annotations == null"");
+
+    int start = converterFactories.indexOf(skipPast) + 1;
+    for (int i = start, count = converterFactories.size(); i < count; i++) {
+      Converter<ResponseBody, ?> converter =
+          converterFactories.get(i).responseBodyConverter(type, annotations, this);
+      if (converter != null) {
+        return (Converter<ResponseBody, T>) converter;
+      }
+    }
+
+    StringBuilder builder =
+        new StringBuilder(""Could not locate ResponseBody converter for "")
+            .append(type)
+            .append("".\n"");
+    if (skipPast != null) {
+      builder.append(""  Skipped:"");
+      for (int i = 0; i < start; i++) {
+        builder.append(""\n   * "").append(converterFactories.get(i).getClass().getName());
+      }
+      builder.append('\n');
+    }
+    builder.append(""  Tried:"");
+    for (int i = start, count = converterFactories.size(); i < count; i++) {
+      builder.append(""\n   * "").append(converterFactories.get(i).getClass().getName());
+    }
+    throw new IllegalArgumentException(builder.toString());
+  }"

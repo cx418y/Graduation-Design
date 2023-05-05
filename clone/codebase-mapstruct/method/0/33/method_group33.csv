@@ -1,0 +1,53 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"207","33","111","110","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedtargetproperties/ChartEntryToArtist.java","28","36","-2147459788","-2147459710","0","0","= Mappers.getMapper( ChartEntryToArtist.class );
+
+    @Mappings(","= Mappers.getMapper( ChartEntryToArtist.class );
+
+    @Mappings({
+        @Mapping(target = ""type"", ignore = true),
+        @Mapping(target = ""name"", source = ""chartName""),
+        @Mapping(target = ""song.title"", source = ""songTitle"" ),
+        @Mapping(target = ""song.artist.name"", source = ""artistName"" ),
+        @Mapping(target = ""song.artist.label.studio.name"", source = ""recordedAt""),
+        @Mapping(target = ""song.artist.label.studio.city"", source = ""city"" ),
+        @Mapping(target = ""song.positions"", source = ""position"" )
+    }"
+"208","33","111","110","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedtargetproperties/ChartEntryToArtist.java","39","47","-2147459710","-2147459632","0","0","Chart map(ChartEntry chartEntry);
+
+    @Mappings(","Chart map(ChartEntry chartEntry);
+
+    @Mappings({
+        @Mapping(target = ""type"", ignore = true),
+        @Mapping(target = ""name"", source = ""chartEntry2.chartName""),
+        @Mapping(target = ""song.title"", source = ""chartEntry1.songTitle"" ),
+        @Mapping(target = ""song.artist.name"", source = ""chartEntry1.artistName"" ),
+        @Mapping(target = ""song.artist.label.studio.name"", source = ""chartEntry1.recordedAt""),
+        @Mapping(target = ""song.artist.label.studio.city"", source = ""chartEntry1.city"" ),
+        @Mapping(target = ""song.positions"", source = ""chartEntry2.position"" )
+    }"
+"213","33","111","110","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedtargetproperties/ChartEntryToArtistUpdate.java","33","41","-2147458540","-2147458462","0","0","= Mappers.getMapper( ChartEntryToArtistUpdate.class );
+
+    @Mappings(","= Mappers.getMapper( ChartEntryToArtistUpdate.class );
+
+    @Mappings({
+        @Mapping(target = ""type"", ignore = true),
+        @Mapping(target = ""name"", source = ""chartName""),
+        @Mapping(target = ""song.title"", source = ""songTitle"" ),
+        @Mapping(target = ""song.artist.name"", source = ""artistName"" ),
+        @Mapping(target = ""song.artist.label.studio.name"", source = ""recordedAt""),
+        @Mapping(target = ""song.artist.label.studio.city"", source = ""city"" ),
+        @Mapping(target = ""song.positions"", source = ""position"" )
+    }"
+"1287","33","111","110","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedtarget/ChartEntryToArtist.java","28","36","-2147341244","-2147341166","0","0","= Mappers.getMapper( ChartEntryToArtist.class );
+
+    @Mappings(","= Mappers.getMapper( ChartEntryToArtist.class );
+
+    @Mappings({
+        @Mapping(target = ""type"", ignore = true),
+        @Mapping(target = ""name"", source = ""chartName""),
+        @Mapping(target = ""song.title"", source = ""songTitle""),
+        @Mapping(target = ""song.artist.name"", source = ""artistName""),
+        @Mapping(target = ""song.artist.label.studio.name"", source = ""recordedAt""),
+        @Mapping(target = ""song.artist.label.studio.city"", source = ""city""),
+        @Mapping(target = ""song.positions"", source = ""position"")
+    }"

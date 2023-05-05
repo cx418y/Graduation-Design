@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","hasNonObjectSuperclass","boolean hasNonObjectSuperclass(TypeElement element){
+        if ( element.getSuperclass().getKind() == TypeKind.ERROR ) {
+            throw new TypeHierarchyErroneousException( element );
+        }
+
+        return element.getSuperclass().getKind() == TypeKind.DECLARED
+            && !asTypeElement( element.getSuperclass() ).getQualifiedName().toString().equals( ""java.lang.Object"" );
+    }
+",""

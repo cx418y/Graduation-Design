@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"679","114","367","366","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","83","89","-2147403921","-2147403866","0","0","void xmlResponseBody()throws Exception","void xmlResponseBody()throws Exception{
+    server.enqueue(new MockResponse().setBody(SAMPLE_CONTACT_XML));
+
+    Call<Contact> call = service.getXml();
+    Response<Contact> response = call.execute();
+    assertThat(response.body()).isEqualTo(SAMPLE_CONTACT);
+  }"
+"692","114","367","366","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","83","89","-2147402933","-2147402878","0","0","void xmlResponseBody()throws Exception","void xmlResponseBody()throws Exception{
+    server.enqueue(new MockResponse().setBody(SAMPLE_CONTACT_XML));
+
+    Call<Contact> call = service.getXml();
+    Response<Contact> response = call.execute();
+    assertThat(response.body()).isEqualTo(SAMPLE_CONTACT);
+  }"

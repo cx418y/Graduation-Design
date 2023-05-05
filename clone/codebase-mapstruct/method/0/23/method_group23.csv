@@ -1,0 +1,27 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"135","23","76","75","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperSmartImpl.java","76","88","-2147469887","-2147469829","0","0","CarDto carToCarDto(Car car)","CarDto carToCarDto(Car car){
+        if ( car == null ) {
+            return null;
+        }
+
+        CarDto carDto = new CarDto();
+
+        carDto.setName( car.getName() );
+        carDto.setYear( car.getYear() );
+        carDto.setWheels( wheelListToWheelDtoList( car.getWheels() ) );
+
+        return carDto;
+    }"
+"160","23","76","77","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedbeans/UserDtoMapperClassicImpl.java","36","48","-2147467971","-2147467913","0","0","CarDto carToCarDto(Car car)","CarDto carToCarDto(Car car){
+        if ( car == null ) {
+            return null;
+        }
+
+        CarDto carDto = new CarDto();
+
+        carDto.setName( car.getName() );
+        carDto.setYear( car.getYear() );
+        carDto.setWheels( mapWheels( car.getWheels() ) );
+
+        return carDto;
+    }"

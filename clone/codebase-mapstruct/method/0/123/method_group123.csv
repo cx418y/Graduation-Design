@@ -1,0 +1,42 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"698","123","419","418","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913GetterMapperForCollectionsTest.java","72","84","-2147410085","-2147409994","0","0","void shouldReturnNullForNvmsReturnNullForUpdateWithReturn()","void shouldReturnNullForNvmsReturnNullForUpdateWithReturn(){
+
+        Dto dto = new Dto();
+        DomainWithoutSetter domain1 = new DomainWithoutSetter();
+        DomainWithoutSetter domain2 =
+            DomainWithoutSetterDtoWithNvmsNullMapper.INSTANCE.updateWithReturn( dto, domain1 );
+
+        doControlAsserts( domain1, domain2 );
+        assertThat( domain1.getStrings() ).isEmpty();
+        assertThat( domain1.getLongs() ).isEmpty();
+        assertThat( domain2.getStrings() ).isEmpty();
+        assertThat( domain2.getLongs() ).isEmpty();
+    }"
+"701","123","431","430","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913GetterMapperForCollectionsTest.java","133","146","-2147409881","-2147409772","0","0","void shouldReturnDefaultForNvmsReturnDefaultForUpdateWithReturn()","void shouldReturnDefaultForNvmsReturnDefaultForUpdateWithReturn(){
+
+        Dto dto = new Dto();
+        DomainWithoutSetter domain1 = new DomainWithoutSetter();
+        DomainWithoutSetter domain2 =
+            DomainWithoutSetterDtoWithNvmsDefaultMapper.INSTANCE.updateWithReturn( dto, domain1 );
+
+        doControlAsserts( domain1, domain2 );
+        assertThat( domain1.getLongs() ).isEqualTo( domain2.getLongs() );
+        assertThat( domain1.getStrings() ).isEmpty();
+        assertThat( domain1.getLongs() ).isEmpty();
+        assertThat( domain2.getStrings() ).isEmpty();
+        assertThat( domain2.getLongs() ).isEmpty();
+    }"
+"704","123","431","434","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913GetterMapperForCollectionsTest.java","184","197","-2147409659","-2147409550","0","0","void shouldReturnNullForUpdateWithReturnWithPresenceChecker()","void shouldReturnNullForUpdateWithReturnWithPresenceChecker(){
+
+        DtoWithPresenceCheck dto = new DtoWithPresenceCheck();
+        DomainWithoutSetter domain1 = new DomainWithoutSetter();
+        DomainWithoutSetter domain2 =
+            DomainWithoutSetterDtoWithPresenceCheckMapper.INSTANCE.updateWithReturn( dto, domain1 );
+
+        doControlAsserts( domain1, domain2 );
+        assertThat( domain1.getLongs() ).isEqualTo( domain2.getLongs() );
+        assertThat( domain1.getStrings() ).isEmpty();
+        assertThat( domain1.getLongs() ).isEmpty();
+        assertThat( domain2.getStrings() ).isEmpty();
+        assertThat( domain2.getLongs() ).isEmpty();
+    }"

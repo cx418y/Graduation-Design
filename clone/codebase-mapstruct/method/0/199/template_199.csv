@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldUseAndReturnTargetParameterForArrayMapping","void shouldUseAndReturnTargetParameterForArrayMapping(){
+        TargetFoo[] target = new TargetFoo[3];
+        TargetFoo[] result =
+            SourceTargetMapper.INSTANCE.streamToArrayUsingTargetParameterAndReturn( createSourceFooStream(), target );
+
+        assertThat( result ).isSameAs( target );
+        assertThat( target ).isNotNull();
+        assertThat( target ).containsOnly( new TargetFoo( ""Bob"" ), new TargetFoo( ""Alice"" ), null );[*1*] 
+    }
+","[*1*]:
+1, 0.5,         assertThat( target ).containsOnly( new TargetFoo( ""Bob"" ) );
+"

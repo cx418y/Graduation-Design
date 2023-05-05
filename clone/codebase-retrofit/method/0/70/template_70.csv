@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","subscribeActual","void subscribeActual(Observer<? super Response<T>> observer){
+    Call<T> call = originalCall.clone();
+    CallCallback<T> callback = new CallCallback<>(call, observer);
+    observer.onSubscribe(callback);
+    if (!callback.isDisposed()) {
+      call.enqueue(callback);
+    }
+  }
+",""

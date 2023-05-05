@@ -1,0 +1,18 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldCorrectlyUseMappingsWithConstantsExpressionsAndDefaults","void shouldCorrectlyUseMappingsWithConstantsExpressionsAndDefaults(){
+
+        DtoIn in = new DtoIn( ""data"", ""data2"" );
+        List<String> list = Arrays.asList( ""first"", ""second"" );
+        OtherDtoOut out = Issue1247Mapper.INSTANCE.mapWithConstantExpressionAndDefault( in, list );
+
+        assertThat( out ).isNotNull();
+        assertThat( out.getData() ).isEqualTo( ""data"" );
+        assertThat( out.getConstant() ).isEqualTo( ""someConstant"" );
+        assertThat( out.getInternal() ).isNotNull();
+        assertThat( out.getInternal().getData2() ).isNull();
+        assertThat( out.getInternal().getExpression() ).isEqualTo( ""testingExpression"" );
+        assertThat( out.getInternal().getInternalData() ).isNotNull();
+        assertThat( out.getInternal().getInternalData().getList() ).containsExactly( ""first"", ""second"" );
+        assertThat( out.getInternal().getInternalData().getDefaultValue() ).isEqualTo( ""data2"" );
+    }
+",""

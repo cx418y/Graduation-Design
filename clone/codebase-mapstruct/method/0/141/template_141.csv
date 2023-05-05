@@ -1,0 +1,8 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","hashCode","int hashCode(){
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + ( car != null ? car.hashCode() : 0 );
+        result = 31 * result + ( house != null ? house.hashCode() : 0 );
+        return result;
+    }
+",""

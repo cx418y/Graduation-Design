@@ -1,0 +1,48 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"128","20","62","61","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/subclassmapping/fixture/SubclassAbstractMapperImpl.java","18","32","-2147470332","-2147470277","0","0","AbstractParentTarget map(AbstractParentSource item)","AbstractParentTarget map(AbstractParentSource item){
+        if ( item == null ) {
+            return null;
+        }
+
+        if (item instanceof SubSource) {
+            return subSourceToSubTarget( (SubSource) item );
+        }
+        else if (item instanceof SubSourceOther) {
+            return subSourceOtherToSubTargetOther( (SubSourceOther) item );
+        }
+        else {
+            throw new IllegalArgumentException(""Not all subclasses are supported for this mapping. Missing for "" + item.getClass());
+        }
+    }"
+"130","20","62","61","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/subclassmapping/fixture/SubclassInterfaceMapperImpl.java","18","32","-2147470206","-2147470151","0","0","InterfaceParentTarget map(InterfaceParentSource item)","InterfaceParentTarget map(InterfaceParentSource item){
+        if ( item == null ) {
+            return null;
+        }
+
+        if (item instanceof SubSource) {
+            return subSourceToSubTarget( (SubSource) item );
+        }
+        else if (item instanceof SubSourceOther) {
+            return subSourceOtherToSubTargetOther( (SubSourceOther) item );
+        }
+        else {
+            throw new IllegalArgumentException(""Not all subclasses are supported for this mapping. Missing for "" + item.getClass());
+        }
+    }"
+"131","20","72","71","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/subclassmapping/fixture/SubclassImplementedMapperImpl.java","18","34","-2147470151","-2147470097","0","0","ImplementedParentTarget map(ImplementedParentSource item)","ImplementedParentTarget map(ImplementedParentSource item){
+        if ( item == null ) {
+            return null;
+        }
+
+        if (item instanceof SubSource) {
+            return subSourceToSubTarget( (SubSource) item );
+        }
+        else if (item instanceof SubSourceOther) {
+            return subSourceOtherToSubTargetOther( (SubSourceOther) item );
+        }
+        else {
+            ImplementedParentTarget implementedParentTarget = new ImplementedParentTarget();
+
+            return implementedParentTarget;
+        }
+    }"

@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","requireFullResponseDocumentConsumption","void requireFullResponseDocumentConsumption()throws Exception{
+    server.enqueue(new MockResponse().setBody(""{\""theName\"":\""value\""}""));
+
+    Call<Value> call = service.value();
+    try {
+      call.execute();
+      fail();
+    } catch (JsonIOException e) {
+      assertThat(e).hasMessage(""JSON document was not fully consumed."");
+    }
+  }
+",""

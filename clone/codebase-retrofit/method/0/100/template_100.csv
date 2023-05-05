@@ -1,0 +1,32 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","emitError","void emitError(Throwable t){
+    set(STATE_TERMINATED);[*1*] 
+[*2*] 
+    if (!isUnsubscribed()) {[*3*] 
+      try {[*4*] 
+        subscriber.onNext(Result.error(throwable));[*5*] 
+      } catch (Throwable t) {[*6*] 
+      try {
+        subscriber.onError(t);
+      } catch (OnCompletedFailedException
+          | OnErrorFailedException
+          | OnErrorNotImplementedException e) {
+        RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
+      } catch (Throwable inner) {
+        Exceptions.throwIfFatal(inner);
+        CompositeException composite = new CompositeException(t, inner);
+        RxJavaPlugins.getInstance().getErrorHandler().handleError(composite);
+      }
+        return;[*7*] 
+    }
+      subscriber.onCompleted();[*8*] 
+  }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+"

@@ -1,0 +1,23 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testEqualsQualifyingNamesInDifferentOrder","void testEqualsQualifyingNamesInDifferentOrder(){
+        List<String> qualifyingNames = Arrays.asList( ""language"", ""german"" );
+        TypeMirror resultType = new TestTypeMirror( ""resultType"" );
+        List<TypeMirror> qualifiers = new ArrayList<>();
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        qualifiers.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        SelectionParameters params = new SelectionParameters( qualifiers, qualifyingNames, resultType, typeUtils );
+
+        List<String> qualifyingNames2 = Arrays.asList( ""german"", ""language"" );
+        TypeMirror resultType2 = new TestTypeMirror( ""resultType"" );[*1*] 
+        List<TypeMirror> qualifiers2 = new ArrayList<>();
+        qualifiers2.add( new TestTypeMirror( ""org.mapstruct.test.SomeOtherType"" ) );
+        qualifiers2.add( new TestTypeMirror( ""org.mapstruct.test.SomeType"" ) );
+        SelectionParameters params2 = new SelectionParameters( qualifiers2, qualifyingNames2, resultType, typeUtils );[*2*] 
+
+        assertThat( params.equals( params2 ) ).as( ""Different order for qualifyingNames"" ).isFalse();
+        assertThat( params2.equals( params ) ).as( ""Different order for qualifyingNames"" ).isFalse();
+    }
+","[*1*]:
+1, 0.25,         SelectionParameters params2 = new SelectionParameters( qualifiers2, qualifyingNames2, null, typeUtils );
+[*2*]:
+"

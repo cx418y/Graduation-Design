@@ -1,0 +1,41 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","callbackExecutorUsedForSuccess","void callbackExecutorUsedForSuccess()throws InterruptedException{
+    final CountDownLatch runnableLatch = new CountDownLatch(1);
+    final AtomicReference<Runnable> runnableRef = new AtomicReference<>();
+    Executor executor =
+        command -> {
+          runnableRef.set(command);
+          runnableLatch.countDown();
+        };
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(server.url(""/"")).callbackExecutor(executor).build();
+    CallMethod service = retrofit.create(CallMethod.class);
+    Call<ResponseBody> call = service.getResponseBody();
+
+    server.enqueue(new MockResponse());[*1*] 
+
+    final CountDownLatch callbackLatch = new CountDownLatch(1);
+    call.enqueue(
+        new Callback<ResponseBody>() {
+          @Override
+          public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            callbackLatch.countDown();[*2*] 
+            throw new AssertionError();[*3*] 
+          }
+
+          @Override
+          public void onFailure(Call<ResponseBody> call, Throwable t) {
+            t.printStackTrace();
+          }
+        });
+
+    assertTrue(runnableLatch.await(2, TimeUnit.SECONDS));
+    assertEquals(1, callbackLatch.getCount());
+    runnableRef.get().run();
+    assertTrue(callbackLatch.await(2, TimeUnit.SECONDS));
+  }
+","[*1*]:
+1, 0.5,     server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AT_START));
+[*2*]:
+[*3*]:
+"

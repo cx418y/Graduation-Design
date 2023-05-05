@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"824","140","469","468","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/other/UserDto.java","50","68","-2147397435","-2147397350","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        UserDto userDto = (UserDto) o;
+
+        if ( !Objects.equals( name, userDto.name ) ) {
+            return false;
+        }
+        if ( !Objects.equals( car, userDto.car ) ) {
+            return false;
+        }
+        return Objects.equals( house, userDto.house );
+
+    }"
+"847","140","469","468","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/UserDto.java","59","77","-2147395548","-2147395463","0","0","boolean equals(Object o)","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        UserDto userDto = (UserDto) o;
+
+        if ( !Objects.equals( name, userDto.name ) ) {
+            return false;
+        }
+        if ( !Objects.equals( car, userDto.car ) ) {
+            return false;
+        }
+        return Objects.equals( house, userDto.house );
+
+    }"

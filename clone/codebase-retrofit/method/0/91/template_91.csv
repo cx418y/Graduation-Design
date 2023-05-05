@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","resultSuccess200","void resultSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingSubscriber<Result<String>> subscriber = subscriberRule.create();
+    service.result().unsafeSubscribe(subscriber);
+    assertThat(subscriber.takeValue().response().body()).isEqualTo(""Hi"");
+    subscriber.assertCompleted();
+  }
+",""

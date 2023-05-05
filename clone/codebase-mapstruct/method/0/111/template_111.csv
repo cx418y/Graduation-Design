@@ -1,0 +1,26 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testMappingWithArrayAndVarArgs","void testMappingWithArrayAndVarArgs(){
+        Target target = Issue1541Mapper.INSTANCE.mapContextWithVarArgsInAfterMappingWithVarArgs([*1*] 
+            ""code"",[*2*] 
+            new String[] { ""1"", ""2"" },[*3*] 
+            ""3"",[*4*] 
+            ""4""[*5*] 
+        );[*6*] 
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getCode() ).isEqualTo( ""code"" );
+        assertThat( target.getParameters() ).contains( ""1"", ""2"" );
+        assertThat( target.getParameters2() ).contains( ""3"", ""4"" );
+        assertThat( target.isAfterMappingWithArrayCalled() ).isFalse();
+        assertThat( target.isAfterMappingWithVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsVarArgsCalled() ).isFalse();
+        assertThat( target.isAfterMappingContextWithVarArgsAsArrayCalled() ).isFalse();
+    }
+","[*1*]:
+1, 0.3333333333333333,         Target target = Issue1541Mapper.INSTANCE.mapWithArrayAndVarArgs( ""code"", new String[] { ""1"", ""2"" }, ""3"", ""4"" );
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+"

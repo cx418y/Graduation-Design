@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"672","115","398","397","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_2278/Issue2278Test.java","19","35","-2147412710","-2147412580","0","0","void testReferenceMergeBehaviour()","void testReferenceMergeBehaviour(){
+
+        Issue2278ReferenceMapper.CarDTO dto = new Issue2278ReferenceMapper.CarDTO();
+        dto.detailsDTO = new Issue2278ReferenceMapper.DetailsDTO();
+        dto.detailsDTO.brand = ""Ford"";
+        dto.detailsDTO.fuelType = ""petrol"";
+
+        Issue2278ReferenceMapper.Car target = Issue2278ReferenceMapper.INSTANCE.map( dto );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.details ).isNotNull();
+        assertThat( target.details.brand ).isEqualTo( ""Ford"" );
+        assertThat( target.details.model ).isNull();
+        assertThat( target.details.type ).isEqualTo( ""gto"" );
+        assertThat( target.details.fuel ).isEqualTo( ""petrol"" );
+
+    }"
+"673","115","398","399","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_2278/Issue2278Test.java","39","55","-2147412580","-2147412450","0","0","void shouldBehaveJustAsTestReferenceMergeBehaviour()","void shouldBehaveJustAsTestReferenceMergeBehaviour(){
+
+        Issue2278MapperA.CarDTO dto = new Issue2278MapperA.CarDTO();
+        dto.detailsDTO = new Issue2278MapperA.DetailsDTO();
+        dto.detailsDTO.brand = ""Ford"";
+        dto.detailsDTO.fuelType = ""petrol"";
+
+        Issue2278MapperA.Car target = Issue2278MapperA.INSTANCE.map( dto );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.details ).isNotNull();
+        assertThat( target.details.brand ).isEqualTo( ""Ford"" );
+        assertThat( target.details.model ).isNull();
+        assertThat( target.details.type ).isEqualTo( ""gto"" );
+        assertThat( target.details.fuel ).isEqualTo( ""petrol"" );
+
+    }"

@@ -1,0 +1,193 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"12","29","93","92","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedtargetproperties/ChartEntryToArtistImpl.java","234","259","-2147482746","-2147482642","0","0","String chartSongArtistLabelStudioName(Chart chart)","String chartSongArtistLabelStudioName(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        Label label = artist.getLabel();
+        if ( label == null ) {
+            return null;
+        }
+        Studio studio = label.getStudio();
+        if ( studio == null ) {
+            return null;
+        }
+        String name = studio.getName();
+        if ( name == null ) {
+            return null;
+        }
+        return name;
+    }"
+"13","29","93","96","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedtargetproperties/ChartEntryToArtistImpl.java","261","286","-2147482642","-2147482538","0","0","String chartSongArtistLabelStudioCity(Chart chart)","String chartSongArtistLabelStudioCity(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        Label label = artist.getLabel();
+        if ( label == null ) {
+            return null;
+        }
+        Studio studio = label.getStudio();
+        if ( studio == null ) {
+            return null;
+        }
+        String city = studio.getCity();
+        if ( city == null ) {
+            return null;
+        }
+        return city;
+    }"
+"168","29","98","97","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryImpl.java","91","112","-2147467467","-2147467381","0","0","String songArtistLabelStudioName(Song song)","String songArtistLabelStudioName(Song song){
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        Label label = artist.getLabel();
+        if ( label == null ) {
+            return null;
+        }
+        Studio studio = label.getStudio();
+        if ( studio == null ) {
+            return null;
+        }
+        String name = studio.getName();
+        if ( name == null ) {
+            return null;
+        }
+        return name;
+    }"
+"169","29","98","99","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryImpl.java","114","135","-2147467381","-2147467295","0","0","String songArtistLabelStudioCity(Song song)","String songArtistLabelStudioCity(Song song){
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        Label label = artist.getLabel();
+        if ( label == null ) {
+            return null;
+        }
+        Studio studio = label.getStudio();
+        if ( studio == null ) {
+            return null;
+        }
+        String city = studio.getCity();
+        if ( city == null ) {
+            return null;
+        }
+        return city;
+    }"
+"195","29","98","97","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntryImpl.java","113","134","-2147460677","-2147460591","0","0","String songArtistLabelStudioName(Song song)","String songArtistLabelStudioName(Song song){
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        Label label = artist.getLabel();
+        if ( label == null ) {
+            return null;
+        }
+        Studio studio = label.getStudio();
+        if ( studio == null ) {
+            return null;
+        }
+        String name = studio.getName();
+        if ( name == null ) {
+            return null;
+        }
+        return name;
+    }"
+"196","29","98","99","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntryImpl.java","136","157","-2147460591","-2147460505","0","0","String songArtistLabelStudioCity(Song song)","String songArtistLabelStudioCity(Song song){
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        Label label = artist.getLabel();
+        if ( label == null ) {
+            return null;
+        }
+        Studio studio = label.getStudio();
+        if ( studio == null ) {
+            return null;
+        }
+        String city = studio.getCity();
+        if ( city == null ) {
+            return null;
+        }
+        return city;
+    }"
+"204","29","93","92","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/constructor/nestedtarget/ChartEntryToArtistImpl.java","168","193","-2147460049","-2147459945","0","0","String chartSongArtistLabelStudioName(Chart chart)","String chartSongArtistLabelStudioName(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        Label label = artist.getLabel();
+        if ( label == null ) {
+            return null;
+        }
+        Studio studio = label.getStudio();
+        if ( studio == null ) {
+            return null;
+        }
+        String name = studio.getName();
+        if ( name == null ) {
+            return null;
+        }
+        return name;
+    }"
+"205","29","93","96","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/constructor/nestedtarget/ChartEntryToArtistImpl.java","195","220","-2147459945","-2147459841","0","0","String chartSongArtistLabelStudioCity(Chart chart)","String chartSongArtistLabelStudioCity(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        Label label = artist.getLabel();
+        if ( label == null ) {
+            return null;
+        }
+        Studio studio = label.getStudio();
+        if ( studio == null ) {
+            return null;
+        }
+        String city = studio.getCity();
+        if ( city == null ) {
+            return null;
+        }
+        return city;
+    }"

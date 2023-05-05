@@ -1,0 +1,22 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldPickPropertyNameOverParameterName","void shouldPickPropertyNameOverParameterName(){
+
+        Chart chart = new Chart();[*1*] 
+        chart.setName( ""Billboard"" );[*2*] 
+        chart.setType( ""record-sales"" );[*3*] 
+
+        ChartEntry chartEntry = ArtistToChartEntry.MAPPER.map( chart );
+
+        assertThat( chartEntry ).isNotNull();
+        assertThat( chartEntry.getArtistName() ).isNull();
+        assertThat( chartEntry.getChartName() ).isEqualTo( ""Billboard"" );
+        assertThat( chartEntry.getCity() ).isNull();
+        assertThat( chartEntry.getPosition() ).isEqualTo( 0 );
+        assertThat( chartEntry.getRecordedAt() ).isNull();
+        assertThat( chartEntry.getSongTitle() ).isNull();
+    }
+","[*1*]:
+1, 0.5,         Chart chart = new Chart( ""record-sales"", ""Billboard"", null );
+[*2*]:
+[*3*]:
+"

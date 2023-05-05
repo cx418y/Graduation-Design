@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldInjectDecorator","void shouldInjectDecorator(){
+        Source source = new Source();
+
+        Target target = decoratedMapper.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 43 ) );
+        assertThat( target.getDate() ).isEqualTo( ""1980"" );
+
+        target = decoratedMapper.undecoratedSourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getFoo() ).isEqualTo( Long.valueOf( 42 ) );
+        assertThat( target.getDate() ).isEqualTo( ""1980"" );
+    }
+",""

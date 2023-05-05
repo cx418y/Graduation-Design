@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","propertyIsIgnoredInReverseMappingWhenSourceIsAlsoSpecifiedICWIgnore","void propertyIsIgnoredInReverseMappingWhenSourceIsAlsoSpecifiedICWIgnore(){
+        AnimalDto animalDto = new AnimalDto( ""Bruno"", 100, 23, ""black"" );
+
+        Animal animal = AnimalMapper.INSTANCE.animalDtoToAnimal( animalDto );
+
+        assertThat( animal ).isNotNull();
+        assertThat( animalDto.getName() ).isEqualTo( ""Bruno"" );
+        assertThat( animalDto.getSize() ).isEqualTo( 100 );
+        assertThat( animal.getColour() ).isNull();
+        assertThat( animal.publicColour ).isNull();[*1*] 
+    }
+","[*1*]:
+"

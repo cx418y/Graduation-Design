@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1012","176","580","579","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/ConversionTest.java","71","81","-2147377089","-2147377015","0","0","void shouldApplyConversionsToMappedPropertiesForReverseMapping()","void shouldApplyConversionsToMappedPropertiesForReverseMapping(){
+        Target target = new Target();
+        target.setQax( 42 );
+        target.setBaz( 23L );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getBaz() ).isEqualTo( 42 );
+        assertThat( source.getQax() ).isEqualTo( 23 );
+    }"
+"2016","176","580","579","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/simpleTest/src/test/java/org/mapstruct/itest/simple/ConversionTest.java","72","82","-2147248796","-2147248722","0","0","void shouldApplyConversionsToMappedPropertiesForReverseMapping()","void shouldApplyConversionsToMappedPropertiesForReverseMapping(){
+        Target target = new Target();
+        target.setQax( 42 );
+        target.setBaz( 23L );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getBaz() ).isEqualTo( 43 );
+        assertThat( source.getQax() ).isEqualTo( 23 );
+    }"

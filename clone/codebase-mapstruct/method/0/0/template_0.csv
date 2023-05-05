@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","chartSongTitle","String chartSongTitle(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        String title = song.getTitle();
+        if ( title == null ) {
+            return null;
+        }
+        return title;
+    }
+",""

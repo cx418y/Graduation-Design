@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","disposeCancelsCall","void disposeCancelsCall(){
+    Disposable disposable = service.go().subscribe();
+    List<Call> calls = client.dispatcher().runningCalls();
+    assertEquals(1, calls.size());
+    disposable.dispose();
+    assertTrue(calls.get(0).isCanceled());
+  }
+",""

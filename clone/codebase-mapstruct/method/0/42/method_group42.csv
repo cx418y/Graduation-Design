@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"238","42","145","144","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/CollectionMappingTest.java","192","200","-2147456117","-2147456048","0","0","void shouldMapSetAsCopy()","void shouldMapSetAsCopy(){
+        Source source = new Source();
+        source.setStringSet( new HashSet<>( Arrays.asList( ""Bob"", ""Alice"" ) ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+        target.getStringSet().add( ""Bill"" );
+
+        assertThat( source.getStringSet() ).containsOnly( ""Bob"", ""Alice"" );
+    }"
+"239","42","145","144","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/CollectionMappingTest.java","204","212","-2147456048","-2147455979","0","0","void shouldMapHashSetAsCopy()","void shouldMapHashSetAsCopy(){
+        Source source = new Source();
+        source.setStringHashSet( new HashSet<>( Arrays.asList( ""Bob"", ""Alice"" ) ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+        target.getStringHashSet().add( ""Bill"" );
+
+        assertThat( source.getStringHashSet() ).containsOnly( ""Bob"", ""Alice"" );
+    }"

@@ -1,0 +1,18 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","buildNodes","Node buildNodes(){
+        Node root = new Node( ""root"" );
+        root.addAttribute( new Attribute( ""name"", ""root"", 1 ) );[*1*] 
+
+        Node node1 = new Node( ""node1"" );
+        node1.addAttribute( new Attribute( ""name"", ""node1"", 2 ) );[*2*] 
+        node1.addAttribute( new Attribute( ""name"", ""node1"" ) );[*3*] 
+
+        root.addChild( node1 );
+
+        return root;
+    }
+","[*1*]:
+1, 0.5,         root.addAttribute( new Attribute( ""name"", ""root"" ) );
+[*2*]:
+[*3*]:
+"

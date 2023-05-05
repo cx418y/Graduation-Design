@@ -1,0 +1,67 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"443","88","293","292","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jsr330/compileoptionconstructor/Jsr330CompileOptionConstructorMapperTest.java","70","83","-2147436327","-2147436252","0","0","void shouldConvertToTarget()","void shouldConvertToTarget(){
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+
+        CustomerDto customerDto = customerMapper.asTarget( customerEntity );
+
+        assertThat( customerDto ).isNotNull();
+        assertThat( customerDto.getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerDto.getGender() ).isEqualTo( GenderDto.M );
+    }"
+"444","88","293","292","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jsr330/field/Jsr330FieldMapperTest.java","73","86","-2147436252","-2147436177","0","0","void shouldConvertToTarget()","void shouldConvertToTarget(){
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+
+        CustomerDto customerDto = customerMapper.asTarget( customerEntity );
+
+        assertThat( customerDto ).isNotNull();
+        assertThat( customerDto.getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerDto.getGender() ).isEqualTo( GenderDto.M );
+    }"
+"447","88","293","292","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jsr330/_default/Jsr330DefaultCompileOptionFieldMapperTest.java","71","84","-2147436075","-2147436000","0","0","void shouldConvertToTarget()","void shouldConvertToTarget(){
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+
+        CustomerDto customerDto = customerMapper.asTarget( customerEntity );
+
+        assertThat( customerDto ).isNotNull();
+        assertThat( customerDto.getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerDto.getGender() ).isEqualTo( GenderDto.M );
+    }"
+"448","88","293","292","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/jsr330/constructor/Jsr330ConstructorMapperTest.java","70","83","-2147436000","-2147435925","0","0","void shouldConvertToTarget()","void shouldConvertToTarget(){
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+
+        CustomerDto customerDto = customerMapper.asTarget( customerEntity );
+
+        assertThat( customerDto ).isNotNull();
+        assertThat( customerDto.getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerDto.getGender() ).isEqualTo( GenderDto.M );
+    }"
+"461","88","293","292","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/spring/field/SpringFieldMapperTest.java","70","83","-2147435175","-2147435100","0","0","void shouldConvertToTarget()","void shouldConvertToTarget(){
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+
+        CustomerDto customerDto = customerMapper.asTarget( customerEntity );
+
+        assertThat( customerDto ).isNotNull();
+        assertThat( customerDto.getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerDto.getGender() ).isEqualTo( GenderDto.M );
+    }"
+"462","88","293","292","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/injectionstrategy/spring/_default/SpringDefaultMapperTest.java","69","82","-2147435100","-2147435025","0","0","void shouldConvertToTarget()","void shouldConvertToTarget(){
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+
+        CustomerDto customerDto = customerMapper.asTarget( customerEntity );
+
+        assertThat( customerDto ).isNotNull();
+        assertThat( customerDto.getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerDto.getGender() ).isEqualTo( GenderDto.M );
+    }"

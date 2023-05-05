@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"268","51","170","169","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/defaultimplementation/DefaultCollectionImplementationTest.java","168","178","-2147453032","-2147452963","0","0","void shouldUseAndReturnTargetParameterForNullMapping()","void shouldUseAndReturnTargetParameterForNullMapping(){
+        List<TargetFoo> target = new ArrayList<>();
+        target.add( new TargetFoo( ""Bob"" ) );
+        target.add( new TargetFoo( ""Alice"" ) );
+        Iterable<TargetFoo> result =
+            SourceTargetMapper.INSTANCE
+                .sourceFoosToTargetFoosUsingTargetParameterAndReturn( null, target );
+
+        assertThat( result ).isSameAs( target );
+        assertResultList( target );
+    }"
+"1161","51","170","169","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/defaultimplementation/DefaultStreamImplementationTest.java","170","180","-2147357477","-2147357408","0","0","void shouldUseAndReturnTargetParameterForNullMapping()","void shouldUseAndReturnTargetParameterForNullMapping(){
+        List<TargetFoo> target = new ArrayList<>();
+        target.add( new TargetFoo( ""Bob"" ) );
+        target.add( new TargetFoo( ""Alice"" ) );
+        Iterable<TargetFoo> result =
+            SourceTargetMapper.INSTANCE
+                .sourceFoosToTargetFoosUsingTargetParameterAndReturn( null, target );
+
+        assertThat( result ).isSameAs( target );
+        assertResultList( target );
+    }"

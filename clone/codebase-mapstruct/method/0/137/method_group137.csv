@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"811","137","450","449","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/mixed/FishTankMapper.java","25","31","-2147399374","-2147399318","0","0","= Mappers.getMapper( FishTankMapper.class );
+
+    @Mappings(","= Mappers.getMapper( FishTankMapper.class );
+
+    @Mappings({
+        @Mapping(target = ""fish.kind"", source = ""fish.type""),
+        @Mapping(target = ""fish.name"", ignore = true),
+        @Mapping(target = ""ornament"", source = ""interior.ornament""),
+        @Mapping(target = ""material.materialType"", source = ""material""),
+        @Mapping(target = ""quality.report.organisation.name"", source = ""quality.report.organisationName"")
+    }"
+"812","137","450","449","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedbeans/mixed/FishTankMapper.java","34","40","-2147399318","-2147399262","0","0","FishTankDto map( FishTank source  );
+
+    @Mappings(","FishTankDto map( FishTank source  );
+
+    @Mappings({
+        @Mapping(target = ""fish.kind"", source = ""source.fish.type""),
+        @Mapping(target = ""fish.name"", ignore = true),
+        @Mapping(target = ""ornament"", source = ""source.interior.ornament""),
+        @Mapping(target = ""material.materialType"", source = ""source.material""),
+        @Mapping(target = ""quality.report.organisation.name"", source = ""source.quality.report.organisationName"")
+   }"

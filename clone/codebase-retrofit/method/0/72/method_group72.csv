@@ -1,0 +1,59 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"389","72","253","252","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/main/java/retrofit2/adapter/rxjava3/RxJava3CallAdapter.java","48","58","-2147435078","-2147435022","0","0","isCompletable; RxJava3CallAdapter(
+      Type responseType,
+      @Nullable Scheduler scheduler,
+      boolean isAsync,
+      boolean isResult,
+      boolean isBody,
+      boolean isFlowable,
+      boolean isSingle,
+      boolean isMaybe,
+      boolean isCompletable)","isCompletable; RxJava3CallAdapter(
+      Type responseType,
+      @Nullable Scheduler scheduler,
+      boolean isAsync,
+      boolean isResult,
+      boolean isBody,
+      boolean isFlowable,
+      boolean isSingle,
+      boolean isMaybe,
+      boolean isCompletable){
+    this.responseType = responseType;
+    this.scheduler = scheduler;
+    this.isAsync = isAsync;
+    this.isResult = isResult;
+    this.isBody = isBody;
+    this.isFlowable = isFlowable;
+    this.isSingle = isSingle;
+    this.isMaybe = isMaybe;
+    this.isCompletable = isCompletable;
+  }"
+"517","72","253","252","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/main/java/retrofit2/adapter/rxjava2/RxJava2CallAdapter.java","48","58","-2147421794","-2147421738","0","0","isCompletable; RxJava2CallAdapter(
+      Type responseType,
+      @Nullable Scheduler scheduler,
+      boolean isAsync,
+      boolean isResult,
+      boolean isBody,
+      boolean isFlowable,
+      boolean isSingle,
+      boolean isMaybe,
+      boolean isCompletable)","isCompletable; RxJava2CallAdapter(
+      Type responseType,
+      @Nullable Scheduler scheduler,
+      boolean isAsync,
+      boolean isResult,
+      boolean isBody,
+      boolean isFlowable,
+      boolean isSingle,
+      boolean isMaybe,
+      boolean isCompletable){
+    this.responseType = responseType;
+    this.scheduler = scheduler;
+    this.isAsync = isAsync;
+    this.isResult = isResult;
+    this.isBody = isBody;
+    this.isFlowable = isFlowable;
+    this.isSingle = isSingle;
+    this.isMaybe = isMaybe;
+    this.isCompletable = isCompletable;
+  }"

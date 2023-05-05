@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldReverseMapListToCollection","void shouldReverseMapListToCollection(){
+        Target target = new Target();
+        target.setIntegerCollection( Arrays.asList( 1, 2 ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getIntegerList() ).containsOnly( 1, 2 );
+    }
+",""

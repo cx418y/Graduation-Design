@@ -1,0 +1,18 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"420","79","261","260","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/references/statics/StaticsTest.java","30","38","-2147438360","-2147438306","0","0","void shouldUseStaticMethod()","void shouldUseStaticMethod(){
+
+        Beer beer = new Beer();        beer.setPercentage( 7 );
+
+        BeerDto result = BeerMapper.INSTANCE.mapBeer( beer );
+        assertThat( result ).isNotNull();
+        assertThat( result.getCategory() ).isEqualTo( Category.STRONG );    }"
+"421","79","279","278","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/references/statics/StaticsTest.java","42","53","-2147438306","-2147438236","0","0","void shouldNotImportNonUsed()","void shouldNotImportNonUsed(){
+
+        Beer beer = new Beer();        beer.setPercentage( 7 );
+
+        BeerDto result = BeerMapperWithNonUsedMapper.INSTANCE.mapBeer( beer );
+        assertThat( result ).isNotNull();
+        assertThat( result.getCategory() ).isEqualTo( Category.STRONG );        generatedSource.forMapper( BeerMapperWithNonUsedMapper.class ).containsNoImportFor( NonUsedMapper.class );
+
+
+    }"

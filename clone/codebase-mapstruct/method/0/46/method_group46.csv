@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"245","46","152","151","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/CollectionMappingTest.java","276","284","-2147455654","-2147455587","0","0","void shouldReverseMapIntegerSetToStringSet()","void shouldReverseMapIntegerSetToStringSet(){
+        Target target = new Target();
+        target.setAnotherStringSet( new HashSet<>( Arrays.asList( ""1"", ""2"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getAnotherIntegerSet() ).containsOnly( 1, 2 );
+    }"
+"1176","46","152","162","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/StreamMappingTest.java","163","171","-2147356452","-2147356385","0","0","void shouldReverseMapIntegerSetToStringSet()","void shouldReverseMapIntegerSetToStringSet(){
+        Target target = new Target();
+        target.setAnotherStringSet( new HashSet<>( Arrays.asList( ""1"", ""2"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getAnotherIntegerStream() ).containsOnly( 1, 2 );
+    }"

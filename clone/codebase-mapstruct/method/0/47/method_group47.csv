@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"246","47","157","156","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/CollectionMappingTest.java","288","296","-2147455587","-2147455522","0","0","void shouldMapSetOfEnumToStringSet()","void shouldMapSetOfEnumToStringSet(){
+        Source source = new Source();
+        source.setColours( EnumSet.of( Colour.BLUE, Colour.GREEN ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getColours() ).containsOnly( ""BLUE"", ""GREEN"" );
+    }"
+"1177","47","157","163","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/StreamMappingTest.java","174","182","-2147356385","-2147356320","0","0","void shouldMapSetOfEnumToStringSet()","void shouldMapSetOfEnumToStringSet(){
+        Source source = new Source();
+        source.setColours( Stream.of( Colour.BLUE, Colour.GREEN ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getColours() ).containsOnly( ""BLUE"", ""GREEN"" );
+    }"

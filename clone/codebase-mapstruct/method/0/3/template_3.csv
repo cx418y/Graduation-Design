@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","sourceFooMapToTargetFooSortedMap","SortedMap<String, TargetFoo> sourceFooMapToTargetFooSortedMap(Map<Long, SourceFoo> foos){
+        if ( foos == null ) {
+            return null;
+        }
+
+        SortedMap<String, TargetFoo> sortedMap = new TreeMap<String, TargetFoo>();
+
+        for ( java.util.Map.Entry<Long, SourceFoo> entry : foos.entrySet() ) {
+            String key = String.valueOf( entry.getKey() );
+            TargetFoo value = sourceFooToTargetFoo( entry.getValue() );
+            sortedMap.put( key, value );
+        }
+
+        return sortedMap;
+    }
+",""

@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseSuccess404","void responseSuccess404()throws Exception{
+    server.enqueue(new MockResponse().setResponseCode(404).setBody(""Hi""));
+
+    CompletableFuture<Response<String>> future = service.response();
+    Response<String> response = future.get();[*1*] 
+    assertThat(response.isSuccessful()).isFalse();
+    assertThat(response.errorBody().string()).isEqualTo(""Hi"");
+  }
+","[*1*]:
+1, 0.25,     Response<String> response = Await.result(future, Duration.create(5, SECONDS));
+"

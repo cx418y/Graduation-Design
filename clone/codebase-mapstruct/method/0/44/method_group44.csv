@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"242","44","150","149","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/CollectionMappingTest.java","240","248","-2147455849","-2147455788","0","0","void shouldReverseMapListToCollection()","void shouldReverseMapListToCollection(){
+        Target target = new Target();
+        target.setIntegerCollection( Arrays.asList( 1, 2 ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getIntegerList() ).containsOnly( 1, 2 );
+    }"
+"1174","44","150","155","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/StreamMappingTest.java","141","149","-2147356584","-2147356523","0","0","void shouldReverseMapListToCollection()","void shouldReverseMapListToCollection(){
+        Target target = new Target();
+        target.setIntegerCollection( Arrays.asList( 1, 2 ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getIntegerStream() ).containsOnly( 1, 2 );
+    }"

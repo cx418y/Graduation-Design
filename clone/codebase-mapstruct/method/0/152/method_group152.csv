@@ -1,0 +1,34 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"886","152","501","500","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/defaultvalue/CountryMapper.java","18","24","-2147390638","-2147390582","0","0","= Mappers.getMapper( CountryMapper.class );
+
+    @Mappings(","= Mappers.getMapper( CountryMapper.class );
+
+    @Mappings({
+            @Mapping( target = ""code"", defaultValue = ""DE"" ),
+            @Mapping( target = ""id"", defaultValue = ""42"" ),
+            @Mapping( target = ""zipcode"", defaultValue = ""1337"" ),
+            @Mapping( target = ""region"", defaultValue = ""someRegion"" ),
+            @Mapping( target = ""continent"", defaultValue = ""EUROPE"" )
+    }"
+"887","152","501","504","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/defaultvalue/CountryMapper.java","27","33","-2147390582","-2147390526","0","0","CountryDts mapToCountryDts(CountryEntity country);
+
+    @Mappings(","CountryDts mapToCountryDts(CountryEntity country);
+
+    @Mappings({
+            @Mapping( target = ""code"", defaultValue = ""DE"" ),
+            @Mapping( target = ""id"", defaultValue = ""42"" ),
+            @Mapping( target = ""zipcode"", defaultValue = ""1337"" ),
+            @Mapping( target = ""region"", ignore = true ),
+            @Mapping( target = ""continent"", defaultValue = ""EUROPE"" )
+    }"
+"888","152","501","504","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/defaultvalue/CountryMapper.java","36","42","-2147390526","-2147390470","0","0","void mapToCountryEntity(CountryDts countryDts, @MappingTarget CountryEntity country);
+
+    @Mappings(","void mapToCountryEntity(CountryDts countryDts, @MappingTarget CountryEntity country);
+
+    @Mappings({
+            @Mapping( target = ""code"", defaultValue = ""DE"" ),
+            @Mapping( target = ""id"", defaultValue = ""42"" ),
+            @Mapping( target = ""zipcode"", defaultValue = ""1337"" ),
+            @Mapping( target = ""region"", ignore = true ),
+            @Mapping( target = ""continent"", defaultValue = ""EUROPE"" )
+    }"

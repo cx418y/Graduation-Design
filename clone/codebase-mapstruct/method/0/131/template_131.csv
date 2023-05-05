@@ -1,0 +1,23 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","downcastMappingInCollection","void downcastMappingInCollection(){
+        VehicleCollection vehicles = new VehicleCollection();
+[*1*] 
+[*2*] 
+        vehicles.getVehicles().add( new Car() );
+        vehicles.getVehicles().add( new Bike() );
+
+        VehicleCollectionDto result = SubclassWithAbstractSuperClassMapper.INSTANCE.map( vehicles );
+
+        assertThat( result.getVehicles() ).doesNotContainNull();
+        assertThat( result.getVehicles() )            .extracting( vehicle -> (Class) vehicle.getClass() )
+            .containsExactly( CarDto.class, BikeDto.class );[*3*] 
+[*4*] 
+    }
+","[*1*]:
+1, 0.25,         vehicles.getVehicles().add( new Car() );
+[*2*]:
+1, 0.25,         vehicles.getVehicles().add( new Bike() );
+[*3*]:
+[*4*]:
+1, 0.25,             .containsExactly( CarDto.class, BikeDto.class, HarleyDto.class, DavidsonDto.class );
+"

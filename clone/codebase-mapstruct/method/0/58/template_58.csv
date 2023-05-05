@@ -1,0 +1,32 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","automappingWithContextCorrectlyResolvesCycles","void automappingWithContextCorrectlyResolvesCycles(){
+        Node root = buildNodes();
+        NodeDto rootDto = AutomappingNodeMapperWithContext.INSTANCE
+            .nodeToNodeDto( root, new CycleContext(), new FactoryContext( 0, MAGIC_NUMBER_OFFSET ) );[*1*] 
+            .nodeToNodeDto([*2*] 
+                root,[*3*] 
+                new SelfContainingCycleContext(),[*4*] 
+        assertResult( rootDto );
+
+        NodeDto updated = new NodeDto( 0 );
+        AutomappingNodeMapperWithContext.INSTANCE
+            .nodeToNodeDto( root, updated, new CycleContext(), new FactoryContext( 1, 10 ) );[*5*] 
+            .nodeToNodeDto([*6*] 
+                root,[*7*] 
+                updated,[*8*] 
+                new SelfContainingCycleContext(),[*9*] 
+                new FactoryContext( 1, 10 ) );[*10*] 
+        assertResult( updated );
+    }
+","[*1*]:
+1, 0.5,                 new FactoryContext( 0, MAGIC_NUMBER_OFFSET ) );
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+"

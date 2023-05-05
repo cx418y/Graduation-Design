@@ -1,0 +1,25 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapXmlGregorianCalendarToLocalTime","void shouldMapXmlGregorianCalendarToLocalTime()throws Exception{
+
+        XmlGregorianCalendarBean in = new XmlGregorianCalendarBean();
+[*1*] 
+        xcal.setHour( 23 );[*2*] 
+        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();[*3*] 
+        xcal.setMinute( 34 );[*4*] 
+        xcal.setSecond( 45 );[*5*] 
+        in.setxMLGregorianCalendar( xcal );
+
+        LocalTimeBean res = XmlGregorianCalendarToLocalTime.INSTANCE.toLocalTimeBean( in );
+        assertThat( res.getLocalTime().getHourOfDay() ).isEqualTo( 1 );
+        assertThat( res.getLocalTime().getMinuteOfHour() ).isEqualTo( 1 );
+        assertThat( res.getLocalTime().getSecondOfMinute() ).isEqualTo( 1 );
+        assertThat( res.getLocalTime().getMillisOfSecond() ).isEqualTo( 100 );
+    }
+","[*1*]:
+1, 0.3333333333333333,         XMLGregorianCalendar xcal =
+[*2*]:
+1, 0.3333333333333333,             DatatypeFactory.newInstance().newXMLGregorianCalendarTime( 1, 1, 1, 100, 60 );
+[*3*]:
+[*4*]:
+[*5*]:
+"

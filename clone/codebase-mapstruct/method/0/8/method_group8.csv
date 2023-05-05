@@ -1,0 +1,116 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"65","8","30","29","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/enum2enum/OrderMapperImpl.java","33","55","-2147478499","-2147478413","0","0","ExternalOrderType orderTypeToExternalOrderType(OrderType orderType)","ExternalOrderType orderTypeToExternalOrderType(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case EXTRA: externalOrderType = ExternalOrderType.SPECIAL;
+            break;
+            case STANDARD: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case NORMAL: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: throw new IllegalArgumentException( ""Unexpected enum constant: "" + orderType );
+        }
+
+        return externalOrderType;
+    }"
+"76","8","30","29","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/exception/CustomUnexpectedValueMappingExceptionDefinedInMapperImpl.java","55","77","-2147477793","-2147477707","0","0","ExternalOrderType onlyWithMappings(OrderType orderType)","ExternalOrderType onlyWithMappings(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case EXTRA: externalOrderType = ExternalOrderType.SPECIAL;
+            break;
+            case STANDARD: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case NORMAL: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: throw new CustomIllegalArgumentException( ""Unexpected enum constant: "" + orderType );
+        }
+
+        return externalOrderType;
+    }"
+"79","8","30","29","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/exception/CustomUnexpectedValueMappingExceptionDefinedInMapperConfigImpl.java","55","77","-2147477581","-2147477495","0","0","ExternalOrderType onlyWithMappings(OrderType orderType)","ExternalOrderType onlyWithMappings(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case EXTRA: externalOrderType = ExternalOrderType.SPECIAL;
+            break;
+            case STANDARD: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case NORMAL: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: throw new CustomIllegalArgumentException( ""Unexpected enum constant: "" + orderType );
+        }
+
+        return externalOrderType;
+    }"
+"82","8","30","29","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/exception/CustomUnexpectedValueMappingExceptionDefinedInMapperAndEnumMappingImpl.java","55","77","-2147477369","-2147477283","0","0","ExternalOrderType onlyWithMappings(OrderType orderType)","ExternalOrderType onlyWithMappings(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case EXTRA: externalOrderType = ExternalOrderType.SPECIAL;
+            break;
+            case STANDARD: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case NORMAL: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: throw new CustomIllegalArgumentException( ""Unexpected enum constant: "" + orderType );
+        }
+
+        return externalOrderType;
+    }"
+"85","8","30","29","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/exception/CustomUnexpectedValueMappingExceptionMapperImpl.java","55","77","-2147477157","-2147477071","0","0","ExternalOrderType onlyWithMappings(OrderType orderType)","ExternalOrderType onlyWithMappings(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case EXTRA: externalOrderType = ExternalOrderType.SPECIAL;
+            break;
+            case STANDARD: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case NORMAL: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: throw new CustomIllegalArgumentException( ""Unexpected enum constant: "" + orderType );
+        }
+
+        return externalOrderType;
+    }"

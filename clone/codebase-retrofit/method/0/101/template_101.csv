@@ -1,0 +1,34 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","delegates","void delegates()throws IOException{
+    Object object = new Object();[*1*] 
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(
+                new Converter.Factory() {
+                  @Nullable
+                  @Override
+                  public Converter<ResponseBody, ?> responseBodyConverter([*2*] 
+                  public Converter<ResponseBody, Object> responseBodyConverter([*3*] 
+                      Type type, Annotation[] annotations, Retrofit retrofit) {
+                    if (getRawType(type) != Object.class) {
+                      return null;
+                    }
+                    return value -> object;
+                  }
+                })
+            .addConverterFactory(Java8OptionalConverterFactory.create())
+            .build();
+
+    server.enqueue(new MockResponse());
+
+    Service service = retrofit.create(Service.class);
+    Optional<Object> optional = service.optional().execute().body();
+    assertThat(optional).isNotNull();
+    assertThat(optional.get()).isSameAs(object);
+  }
+","[*1*]:
+1, 0.5,     final Object object = new Object();
+[*2*]:
+[*3*]:
+"

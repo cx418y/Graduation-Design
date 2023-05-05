@@ -1,0 +1,72 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","unresolvableResponseTypeThrows","void unresolvableResponseTypeThrows(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    UnresolvableResponseType example = retrofit.create(UnresolvableResponseType.class);
+
+    try {
+      example.typeVariable();[*1*] 
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Method return type must not include a type variable or wildcard: ""
+                  + ""retrofit2.Call<T>\n    for method UnresolvableResponseType.typeVariable"");
+    }
+    try {
+      example.typeVariableUpperBound();[*2*] 
+      example.typeVariableUpperBound(null);[*3*] 
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Method return type must not include a type variable or wildcard: ""
+                  + ""retrofit2.Call<T>\n    for method UnresolvableResponseType.typeVariableUpperBound"");
+    }
+    try {
+      example.crazy();[*4*] 
+      example.crazy(null);[*5*] 
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Method return type must not include a type variable or wildcard: ""
+                  + ""retrofit2.Call<java.util.List<java.util.Map<java.lang.String, java.util.Set<T[]>>>>\n""
+                  + ""    for method UnresolvableResponseType.crazy"");
+    }
+    try {
+      example.wildcard();[*6*] 
+      example.wildcard(null);[*7*] 
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Method return type must not include a type variable or wildcard: ""
+                  + ""retrofit2.Call<?>\n    for method UnresolvableResponseType.wildcard"");
+    }
+    try {
+      example.wildcardUpperBound();[*8*] 
+      example.wildcardUpperBound(null);[*9*] 
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              ""Method return type must not include a type variable or wildcard: ""
+                  + ""retrofit2.Call<? extends okhttp3.ResponseBody>\n""
+                  + ""    for method UnresolvableResponseType.wildcardUpperBound"");
+    }
+  }
+","[*1*]:
+1, 0.5,       example.typeVariable(null);
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+"

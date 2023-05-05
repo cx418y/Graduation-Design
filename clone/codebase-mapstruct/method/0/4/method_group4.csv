@@ -1,0 +1,61 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"30","4","13","12","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/collection/adder/SourceTargetMapperImpl.java","30","49","-2147481346","-2147481280","0","0","Target toTarget(Source source)throws DogException","Target toTarget(Source source)throws DogException{
+        if ( source == null ) {
+            return null;
+        }
+
+        Target target = new Target();
+
+        try {
+            if ( source.getPets() != null ) {
+                for ( String pet : source.getPets() ) {
+                    target.addPet( petMapper.toPet( pet ) );
+                }
+            }
+        }
+        catch ( CatException e ) {
+            throw new RuntimeException( e );
+        }
+
+        return target;
+    }"
+"35","4","13","16","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/collection/adder/SourceTargetMapperImpl.java","128","147","-2147481047","-2147480981","0","0","TargetOnlyGetter toTargetOnlyGetter(Source source)throws DogException","TargetOnlyGetter toTargetOnlyGetter(Source source)throws DogException{
+        if ( source == null ) {
+            return null;
+        }
+
+        TargetOnlyGetter targetOnlyGetter = new TargetOnlyGetter();
+
+        try {
+            if ( source.getPets() != null ) {
+                for ( String pet : source.getPets() ) {
+                    targetOnlyGetter.addPet( petMapper.toPet( pet ) );
+                }
+            }
+        }
+        catch ( CatException e ) {
+            throw new RuntimeException( e );
+        }
+
+        return targetOnlyGetter;
+    }"
+"38","4","13","16","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/collection/adder/SourceTargetMapperStrategySetterPreferredImpl.java","22","41","-2147480832","-2147480766","0","0","TargetWithoutSetter toTargetDontUseAdder(Source source)throws DogException","TargetWithoutSetter toTargetDontUseAdder(Source source)throws DogException{
+        if ( source == null ) {
+            return null;
+        }
+
+        TargetWithoutSetter targetWithoutSetter = new TargetWithoutSetter();
+
+        try {
+            if ( source.getPets() != null ) {
+                for ( String pet : source.getPets() ) {
+                    targetWithoutSetter.addPet( petMapper.toPet( pet ) );
+                }
+            }
+        }
+        catch ( CatException e ) {
+            throw new RuntimeException( e );
+        }
+
+        return targetWithoutSetter;
+    }"

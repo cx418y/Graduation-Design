@@ -1,0 +1,67 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"232","26","78","77","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java","174","206","-2147451212","-2147451057","0","0","void apply(RequestBuilder builder, @Nullable Map<String, T> value)throws IOException","void apply(RequestBuilder builder, @Nullable Map<String, T> value)throws IOException{
+      if (value == null) {
+        throw Utils.parameterError(method, p, ""Query map was null"");
+      }
+
+      for (Map.Entry<String, T> entry : value.entrySet()) {
+        String entryKey = entry.getKey();
+        if (entryKey == null) {
+          throw Utils.parameterError(method, p, ""Query map contained null key."");
+        }
+        T entryValue = entry.getValue();
+        if (entryValue == null) {
+          throw Utils.parameterError(
+              method, p, ""Query map contained null value for key '"" + entryKey + ""'."");
+        }
+
+        String convertedEntryValue = valueConverter.convert(entryValue);
+        if (convertedEntryValue == null) {
+          throw Utils.parameterError(
+              method,
+              p,
+              ""Query map value '""
+                  + entryValue
+                  + ""' converted to null by ""
+                  + valueConverter.getClass().getName()
+                  + "" for key '""
+                  + entryKey
+                  + ""'."");
+        }
+
+        builder.addQueryParam(entryKey, convertedEntryValue, encoded);
+      }
+    }"
+"234","26","78","85","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java","302","334","-2147450945","-2147450790","0","0","void apply(RequestBuilder builder, @Nullable Map<String, T> value)throws IOException","void apply(RequestBuilder builder, @Nullable Map<String, T> value)throws IOException{
+      if (value == null) {
+        throw Utils.parameterError(method, p, ""Field map was null."");
+      }
+
+      for (Map.Entry<String, T> entry : value.entrySet()) {
+        String entryKey = entry.getKey();
+        if (entryKey == null) {
+          throw Utils.parameterError(method, p, ""Field map contained null key."");
+        }
+        T entryValue = entry.getValue();
+        if (entryValue == null) {
+          throw Utils.parameterError(
+              method, p, ""Field map contained null value for key '"" + entryKey + ""'."");
+        }
+
+        String fieldEntry = valueConverter.convert(entryValue);
+        if (fieldEntry == null) {
+          throw Utils.parameterError(
+              method,
+              p,
+              ""Field map value '""
+                  + entryValue
+                  + ""' converted to null by ""
+                  + valueConverter.getClass().getName()
+                  + "" for key '""
+                  + entryKey
+                  + ""'."");
+        }
+
+        builder.addFormField(entryKey, fieldEntry, encoded);
+      }
+    }"

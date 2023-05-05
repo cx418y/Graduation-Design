@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"293","59","193","192","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/context/ContextParameterTest.java","114","124","-2147450875","-2147450815","0","0","Node buildNodes()","Node buildNodes(){
+        Node root = new Node( ""root"" );
+        root.addAttribute( new Attribute( ""name"", ""root"", 1 ) );
+
+        Node node1 = new Node( ""node1"" );
+        node1.addAttribute( new Attribute( ""name"", ""node1"", 2 ) );
+
+        root.addChild( node1 );
+
+        return root;
+    }"
+"395","59","203","202","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/callbacks/returning/CallbacksWithReturnValuesTest.java","72","82","-2147440806","-2147440750","0","0","Node buildNodes()","Node buildNodes(){
+        Node root = new Node( ""root"" );
+        root.addAttribute( new Attribute( ""name"", ""root"" ) );
+
+        Node node1 = new Node( ""node1"" );
+        node1.addAttribute( new Attribute( ""name"", ""node1"" ) );
+
+        root.addChild( node1 );
+
+        return root;
+    }"

@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","bodySuccess200","void bodySuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertValue(""Hi"").assertComplete();
+  }
+",""

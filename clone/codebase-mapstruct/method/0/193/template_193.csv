@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","mapRiver","TopologyFeatureEntity mapRiver( TopologyFeatureDto dto ){
+        TopologyFeatureEntity topologyFeatureEntity = null;
+        if ( dto instanceof RiverDto ) {
+            RiverEntity riverEntity = new RiverEntity();
+            riverEntity.setLength( ( (RiverDto) dto ).getLength() );
+            topologyFeatureEntity = riverEntity;
+            topologyFeatureEntity.setName(  dto.getName() );
+        }
+        return topologyFeatureEntity;
+    }
+",""

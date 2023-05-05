@@ -13,4 +13,5 @@ public class TemplateLineItem {
 	private int count;
 
 	private double frequency;
+
 }

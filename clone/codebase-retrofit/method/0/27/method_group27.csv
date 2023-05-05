@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"240","27","97","96","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/Platform.java","143","159","-2147450392","-2147450300","0","0","Object invokeDefaultMethod(
+        Method method, Class<?> declaringClass, Object proxy, Object... args)throws Throwable","Object invokeDefaultMethod(
+        Method method, Class<?> declaringClass, Object proxy, Object... args)throws Throwable{
+      if (Build.VERSION.SDK_INT < 26) {
+        throw new UnsupportedOperationException(
+            ""Calling default methods on API 24 and 25 is not supported"");
+      }
+      Constructor<Lookup> lookupConstructor = this.lookupConstructor;
+      if (lookupConstructor == null) {
+        lookupConstructor = Lookup.class.getDeclaredConstructor(Class.class, int.class);
+        lookupConstructor.setAccessible(true);
+        this.lookupConstructor = lookupConstructor;
+      }
+      return lookupConstructor
+          .newInstance(declaringClass, -1 )
+          .unreflectSpecial(method, declaringClass)
+          .bindTo(proxy)
+          .invokeWithArguments(args);
+    }"
+"241","27","101","100","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/Platform.java","224","236","-2147450300","-2147450224","0","0","Object invokeDefaultMethod(
+        Method method, Class<?> declaringClass, Object proxy, Object... args)throws Throwable","Object invokeDefaultMethod(
+        Method method, Class<?> declaringClass, Object proxy, Object... args)throws Throwable{
+      Constructor<Lookup> lookupConstructor = this.lookupConstructor;
+      if (lookupConstructor == null) {
+        lookupConstructor = Lookup.class.getDeclaredConstructor(Class.class, int.class);
+        lookupConstructor.setAccessible(true);
+        this.lookupConstructor = lookupConstructor;
+      }
+      return lookupConstructor
+          .newInstance(declaringClass, -1 )
+          .unreflectSpecial(method, declaringClass)
+          .bindTo(proxy)
+          .invokeWithArguments(args);
+    }"

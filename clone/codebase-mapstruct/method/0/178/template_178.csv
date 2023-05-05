@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyDateFormatForConversionInReverseMapping","void shouldApplyDateFormatForConversionInReverseMapping(){
+        Target target = new Target();
+        target.setDate( ""06.07.2013"" );
+        target.setAnotherDate( ""14.02.13 8:30"" );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getDate() ).isEqualTo( new GregorianCalendar( 2013, Calendar.JULY, 6 ).getTime() );
+        assertThat( source.getAnotherDate() ).isEqualTo(
+            new GregorianCalendar( 2013, Calendar.FEBRUARY, 14, 8, 30 ).getTime()
+        );
+    }
+",""

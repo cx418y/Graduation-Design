@@ -1,0 +1,19 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldConvertToTarget","void shouldConvertToTarget()throws Exception{
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName( ""Samuel"" );
+        customerEntity.setGender( Gender.MALE );
+        CustomerRecordEntity customerRecordEntity = new CustomerRecordEntity();
+        customerRecordEntity.setCustomer( customerEntity );
+        customerRecordEntity.setRegistrationDate( createDate( ""31-08-1982 10:20:56"" ) );
+
+        CustomerRecordDto customerRecordDto = customerRecordMapper.asTarget( customerRecordEntity );
+
+        assertThat( customerRecordDto ).isNotNull();
+        assertThat( customerRecordDto.getCustomer() ).isNotNull();
+        assertThat( customerRecordDto.getCustomer().getName() ).isEqualTo( ""Samuel"" );
+        assertThat( customerRecordDto.getCustomer().getGender() ).isEqualTo( GenderDto.M );
+        assertThat( customerRecordDto.getRegistrationDate() ).isNotNull();
+        assertThat( customerRecordDto.getRegistrationDate().toString() ).isEqualTo( ""1982-08-31T10:20:56.000+02:00"" );
+    }
+",""

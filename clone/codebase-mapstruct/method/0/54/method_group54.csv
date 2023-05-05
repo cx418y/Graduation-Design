@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"276","54","174","173","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/adder/AdderTest.java","152","163","-2147452409","-2147452312","0","0","void testShouldPreferSetterStrategyButThereIsNone()throws DogException","void testShouldPreferSetterStrategyButThereIsNone()throws DogException{
+        AdderUsageObserver.setUsed( false );
+
+        Source source = new Source();
+        source.setPets( Arrays.asList( ""mouse"" ) );
+
+        TargetWithoutSetter target = SourceTargetMapperStrategySetterPreferred.INSTANCE.toTargetDontUseAdder( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getPets().size() ).isEqualTo( 1 );
+        assertThat( target.getPets().get( 0 ) ).isEqualTo( 2L );
+        assertTrue( AdderUsageObserver.isUsed() );
+    }"
+"280","54","174","177","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/adder/AdderTest.java","208","219","-2147452032","-2147451935","0","0","void testAddOnlyGetter()throws DogException","void testAddOnlyGetter()throws DogException{
+        AdderUsageObserver.setUsed( false );
+
+        Source source = new Source();
+        source.setPets( Arrays.asList( ""mouse"" ) );
+
+        TargetOnlyGetter target = SourceTargetMapper.INSTANCE.toTargetOnlyGetter( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getPets().size() ).isEqualTo( 1 );
+        assertThat( target.getPets().get( 0 ) ).isEqualTo( 2L );
+        assertTrue( AdderUsageObserver.isUsed() );
+    }"

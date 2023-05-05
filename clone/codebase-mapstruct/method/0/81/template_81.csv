@@ -1,0 +1,23 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldNotPropagateIgnoredPropertyGivenViaTargetAttribute","void shouldNotPropagateIgnoredPropertyGivenViaTargetAttribute(){
+        Animal animal = new Animal( ""Bruno"", 100, 23, ""black"" );
+
+        AnimalDto animalDto = AnimalMapper.INSTANCE.animalToDto( animal );
+
+        assertThat( animalDto ).isNotNull();
+        assertThat( animalDto.getName() ).isEqualTo( ""Bruno"" );[*1*] 
+        assertThat( animalDto.getSize() ).isEqualTo( 100 );[*2*] 
+[*3*] 
+        assertThat( animalDto.getAge() ).isNull();
+        assertThat( animalDto.publicAge ).isNull();[*4*] 
+        assertThat( animalDto.getColor() ).isNull();
+        assertThat( animalDto.publicColor ).isNull();[*5*] 
+    }
+","[*1*]:
+1, 0.3333333333333333,         assertThat( animalDto.getName() ).isNull();
+[*2*]:
+[*3*]:
+1, 0.3333333333333333,         assertThat( animalDto.getSize() ).isNull();
+[*4*]:
+[*5*]:
+"

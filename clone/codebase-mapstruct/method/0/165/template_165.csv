@@ -1,0 +1,24 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testSourceToTargetMappingForStrings","void testSourceToTargetMappingForStrings(){
+        Source src = new Source();
+        src.setLocalTime( new LocalTime( 0, 0 ) );
+        src.setLocalDate( new LocalDate( 2014, 1, 1 ) );
+        src.setLocalDateTime( new LocalDateTime( 2014, 1, 1, 0, 0 ) );
+        src.setDateTime( new DateTime( 2014, 1, 1, 0, 0, 0, DateTimeZone.UTC ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( src );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getDateTime() ).isEqualTo( ""01.01.2014 00:00 UTC"" );
+        assertThat( target.getLocalDateTime() ).isEqualTo( ""01.01.2014 00:00"" );
+        assertThat( target.getLocalDate() ).isEqualTo( ""01.01.2014"" );
+        assertThat( target.getLocalTime() ).isEqualTo( ""00:00"" );
+
+        target = SourceTargetMapper.INSTANCE.sourceToTargetDefaultMapping( src );
+        assertThat( target ).isNotNull();
+        assertThat( target.getDateTime() ).isEqualTo( ""1. Januar 2014 00:00:00 UTC"" );
+        assertThat( target.getLocalDateTime() ).isEqualTo( ""1. Januar 2014 00:00:00"" );
+        assertThat( target.getLocalDate() ).isEqualTo( ""1. Januar 2014"" );
+        assertThat( target.getLocalTime() ).isEqualTo( ""00:00:00"" );
+    }
+",""

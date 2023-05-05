@@ -1,0 +1,30 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1293","216","715","714","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/defaultannotated/SimpleDefaultAnnotatedConstructorTest.java","29","42","-2147340293","-2147340194","0","0","void mapDefault()","void mapDefault(){
+        PersonDto source = new PersonDto();
+        source.setName( ""Bob"" );
+        source.setAge( 30 );
+        source.setJob( ""Software Engineer"" );
+        source.setCity( ""Zurich"" );
+        source.setAddress( ""Plaza 1"" );
+        source.setChildren( Arrays.asList( ""Alice"", ""Tom"" ) );
+
+        PersonWithDefaultAnnotatedConstructor target = SimpleDefaultAnnotatedConstructorMapper.INSTANCE.map( source );
+
+        assertThat( target.getName() ).isEqualTo( ""Bob"" );
+        assertThat( target.getAge() ).isEqualTo( 30 );
+    }"
+"1294","216","715","716","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/defaultannotated/SimpleDefaultAnnotatedConstructorTest.java","45","59","-2147340194","-2147340095","0","0","void mapWithConstants()","void mapWithConstants(){
+        PersonDto source = new PersonDto();
+        source.setName( ""Bob"" );
+        source.setAge( 30 );
+        source.setJob( ""Software Engineer"" );
+        source.setCity( ""Zurich"" );
+        source.setAddress( ""Plaza 1"" );
+        source.setChildren( Arrays.asList( ""Alice"", ""Tom"" ) );
+
+        PersonWithDefaultAnnotatedConstructor target =
+            SimpleDefaultAnnotatedConstructorMapper.INSTANCE.mapWithConstants( source );
+
+        assertThat( target.getName() ).isEqualTo( ""Bob"" );
+        assertThat( target.getAge() ).isEqualTo( 25 );
+    }"

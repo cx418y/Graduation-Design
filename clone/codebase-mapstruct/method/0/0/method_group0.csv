@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"10","0","11","10","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedtargetproperties/ChartEntryToArtistImpl.java","200","213","-2147482864","-2147482814","0","0","String chartSongTitle(Chart chart)","String chartSongTitle(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        String title = song.getTitle();
+        if ( title == null ) {
+            return null;
+        }
+        return title;
+    }"
+"202","0","11","10","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/constructor/nestedtarget/ChartEntryToArtistImpl.java","134","147","-2147460167","-2147460117","0","0","String chartSongTitle(Chart chart)","String chartSongTitle(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        String title = song.getTitle();
+        if ( title == null ) {
+            return null;
+        }
+        return title;
+    }"

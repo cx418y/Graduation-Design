@@ -1,0 +1,35 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"73","10","28","27","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/spi/CustomCheeseMapperImpl.java","103","119","-2147477948","-2147477895","0","0","CustomCheeseType mapStringToCustom(String cheese)","CustomCheeseType mapStringToCustom(String cheese){
+        if ( cheese == null ) {
+            return CustomCheeseType.UNSPECIFIED;
+        }
+
+        CustomCheeseType customCheeseType;
+
+        switch ( cheese ) {
+            case ""BRIE"": customCheeseType = CustomCheeseType.CUSTOM_BRIE;
+            break;
+            case ""ROQUEFORT"": customCheeseType = CustomCheeseType.CUSTOM_ROQUEFORT;
+            break;
+            default: customCheeseType = CustomCheeseType.CUSTOM_BRIE;
+        }
+
+        return customCheeseType;
+    }"
+"74","10","36","35","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/spi/CustomCheeseMapperImpl.java","122","138","-2147477895","-2147477844","0","0","CheeseType mapStringToCheese(String cheese)","CheeseType mapStringToCheese(String cheese){
+        if ( cheese == null ) {
+            return null;
+        }
+
+        CheeseType cheeseType;
+
+        switch ( cheese ) {
+            case ""BRIE"": cheeseType = CheeseType.BRIE;
+            break;
+            case ""ROQUEFORT"": cheeseType = CheeseType.ROQUEFORT;
+            break;
+            default: cheeseType = CheeseType.BRIE;
+        }
+
+        return cheeseType;
+    }"

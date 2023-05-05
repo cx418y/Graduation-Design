@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"40","5","1","0","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/array/ScienceMapperImpl.java","47","60","-2147480645","-2147480592","0","0","ScientistDto[] scientistsToDtos(Scientist[] scientists)","ScientistDto[] scientistsToDtos(Scientist[] scientists){
+        if ( scientists == null ) {
+            return null;
+        }
+
+        ScientistDto[] scientistDtoTmp = new ScientistDto[scientists.length];
+        int i = 0;
+        for ( Scientist scientist : scientists ) {
+            scientistDtoTmp[i] = scientistToDto( scientist );
+            i++;
+        }
+
+        return scientistDtoTmp;
+    }"
+"41","5","18","17","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/array/ScienceMapperImpl.java","63","76","-2147480592","-2147480537","0","0","ScientistDto[] scientistsToDtos(List<Scientist> scientists)","ScientistDto[] scientistsToDtos(List<Scientist> scientists){
+        if ( scientists == null ) {
+            return null;
+        }
+
+        ScientistDto[] scientistDtoTmp = new ScientistDto[scientists.size()];
+        int i = 0;
+        for ( Scientist scientist : scientists ) {
+            scientistDtoTmp[i] = scientistToDto( scientist );
+            i++;
+        }
+
+        return scientistDtoTmp;
+    }"

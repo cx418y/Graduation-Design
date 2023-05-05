@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","Mappers.getMapper","[*1*] 
+[*2*] 
+
+    @Mappings({
+            @Mapping( target = ""code"", defaultValue = ""DE"" ),
+            @Mapping( target = ""id"", defaultValue = ""42"" ),
+            @Mapping( target = ""zipcode"", defaultValue = ""1337"" ),
+            @Mapping( target = ""region"", defaultValue = ""someRegion"" ),
+            @Mapping( target = ""continent"", defaultValue = ""EUROPE"" )
+    }
+","[*1*]:
+1, 0.3333333333333333, = Mappers.getMapper( CountryMapper.class );
+[*2*]:
+1, 0.3333333333333333, CountryDts mapToCountryDts(CountryEntity country);
+1, 0.3333333333333333, void mapToCountryEntity(CountryDts countryDts, @MappingTarget CountryEntity country);
+"

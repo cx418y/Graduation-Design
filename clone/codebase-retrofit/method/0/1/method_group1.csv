@@ -1,0 +1,43 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"14","1","1","0","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-mock/src/test/java/retrofit2/mock/NetworkBehaviorTest.java","54","67","-2147482221","-2147482166","0","0","void varianceRestrictsRange()","void varianceRestrictsRange(){
+    try {
+      behavior.setVariancePercent(-13);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e).hasMessage(""Variance percentage must be between 0 and 100."");
+    }
+    try {
+      behavior.setVariancePercent(174);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e).hasMessage(""Variance percentage must be between 0 and 100."");
+    }
+  }"
+"15","1","1","0","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-mock/src/test/java/retrofit2/mock/NetworkBehaviorTest.java","70","83","-2147482166","-2147482111","0","0","void failureRestrictsRange()","void failureRestrictsRange(){
+    try {
+      behavior.setFailurePercent(-13);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e).hasMessage(""Failure percentage must be between 0 and 100."");
+    }
+    try {
+      behavior.setFailurePercent(174);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e).hasMessage(""Failure percentage must be between 0 and 100."");
+    }
+  }"
+"16","1","1","0","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-mock/src/test/java/retrofit2/mock/NetworkBehaviorTest.java","96","109","-2147482111","-2147482056","0","0","void errorRestrictsRange()","void errorRestrictsRange(){
+    try {
+      behavior.setErrorPercent(-13);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e).hasMessage(""Error percentage must be between 0 and 100."");
+    }
+    try {
+      behavior.setErrorPercent(174);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e).hasMessage(""Error percentage must be between 0 and 100."");
+    }
+  }"

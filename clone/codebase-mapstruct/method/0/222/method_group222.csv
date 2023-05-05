@@ -1,0 +1,55 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1334","222","728","727","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/model/common/DefaultConversionContextTest.java","36","62","-2147333706","-2147333621","0","0","new TypeMirror()","new TypeMirror(){
+
+        @Override
+        public List<? extends AnnotationMirror> getAnnotationMirrors() {
+            return null;
+        }
+
+        @Override
+        public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
+            return null;
+        }
+
+        @Override
+        public <A extends Annotation> A[] getAnnotationsByType(Class<A> annotationType) {
+            return null;
+        }
+
+        @Override
+        public TypeKind getKind() {
+            return TypeKind.VOID;
+        }
+
+        @Override
+        public <R, P> R accept(TypeVisitor<R, P> v, P p) {
+            return null;
+        }
+    }"
+"1339","222","728","727","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/internal/model/common/DateFormatValidatorFactoryTest.java","37","63","-2147333370","-2147333285","0","0","new TypeMirror()","new TypeMirror(){
+
+        @Override
+        public List<? extends AnnotationMirror> getAnnotationMirrors() {
+            return null;
+        }
+
+        @Override
+        public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
+            return null;
+        }
+
+        @Override
+        public <A extends Annotation> A[] getAnnotationsByType(Class<A> annotationType) {
+            return null;
+        }
+
+        @Override
+        public TypeKind getKind() {
+            return TypeKind.VOID;
+        }
+
+        @Override
+        public <R, P> R accept(TypeVisitor<R, P> v, P p) {
+            return null;
+        }
+    }"

@@ -1,0 +1,44 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"490","95","323","322","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/manysourcearguments/ManySourceArgumentsTest.java","42","56","-2147432212","-2147432088","0","0","void shouldMapSeveralSourceAttributesToCombinedTarget()","void shouldMapSeveralSourceAttributesToCombinedTarget(){
+        Person person = new Person( ""Bob"", ""Garner"", 181, ""An actor"" );
+        Address address = new Address( ""Main street"", 12345, 42, ""His address"" );
+
+        DeliveryAddress deliveryAddress = SourceTargetMapper.INSTANCE
+            .personAndAddressToDeliveryAddress( person, address );
+
+        assertThat( deliveryAddress ).isNotNull();
+        assertThat( deliveryAddress.getLastName() ).isEqualTo( ""Garner"" );
+        assertThat( deliveryAddress.getZipCode() ).isEqualTo( 12345 );
+        assertThat( deliveryAddress.getHouseNumber() ).isEqualTo( 42 );
+        assertThat( deliveryAddress.getDescription() ).isEqualTo( ""An actor"" );
+
+        assertThat( ReferencedMapper.isBeforeMappingCalled() ).isTrue();
+    }"
+"491","95","329","328","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/manysourcearguments/ManySourceArgumentsTest.java","65","78","-2147432088","-2147431966","0","0","void shouldMapSeveralSourceAttributesToCombinedTargetWithTargetParameter()","void shouldMapSeveralSourceAttributesToCombinedTargetWithTargetParameter(){
+        Person person = new Person( ""Bob"", ""Garner"", 181, ""An actor"" );
+        Address address = new Address( ""Main street"", 12345, 42, ""His address"" );
+
+        DeliveryAddress deliveryAddress = new DeliveryAddress();
+        SourceTargetMapper.INSTANCE.personAndAddressToDeliveryAddress( person, address, deliveryAddress );
+
+        assertThat( deliveryAddress.getLastName() ).isEqualTo( ""Garner"" );
+        assertThat( deliveryAddress.getZipCode() ).isEqualTo( 12345 );
+        assertThat( deliveryAddress.getHouseNumber() ).isEqualTo( 42 );
+        assertThat( deliveryAddress.getDescription() ).isEqualTo( ""An actor"" );
+
+        assertThat( ReferencedMapper.isBeforeMappingCalled() ).isTrue();
+    }"
+"494","95","335","334","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/manysourcearguments/ManySourceArgumentsTest.java","142","155","-2147431766","-2147431655","0","0","void shouldUseConfig()","void shouldUseConfig(){
+        Person person = new Person( ""Bob"", ""Garner"", 181, ""An actor"" );
+        Address address = new Address( ""Main street"", 12345, 42, ""His address"" );
+
+        DeliveryAddress deliveryAddress = SourceTargetMapperWithConfig.INSTANCE
+            .personAndAddressToDeliveryAddress( person, address );
+
+        assertThat( deliveryAddress ).isNotNull();
+        assertThat( deliveryAddress.getLastName() ).isEqualTo( ""Garner"" );
+        assertThat( deliveryAddress.getZipCode() ).isEqualTo( 12345 );
+        assertThat( deliveryAddress.getHouseNumber() ).isEqualTo( 42 );
+        assertThat( deliveryAddress.getDescription() ).isEqualTo( ""An actor"" );
+
+    }"

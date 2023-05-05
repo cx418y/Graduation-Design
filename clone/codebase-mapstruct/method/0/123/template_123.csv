@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldReturnNullForNvmsReturnNullForUpdateWithReturn","void shouldReturnNullForNvmsReturnNullForUpdateWithReturn(){
+
+        Dto dto = new Dto();
+        DomainWithoutSetter domain1 = new DomainWithoutSetter();
+        DomainWithoutSetter domain2 =
+            DomainWithoutSetterDtoWithNvmsNullMapper.INSTANCE.updateWithReturn( dto, domain1 );
+
+        doControlAsserts( domain1, domain2 );
+        assertThat( domain1.getLongs() ).isEqualTo( domain2.getLongs() );[*1*] 
+        assertThat( domain1.getStrings() ).isEmpty();
+        assertThat( domain1.getLongs() ).isEmpty();
+        assertThat( domain2.getStrings() ).isEmpty();
+        assertThat( domain2.getLongs() ).isEmpty();
+    }
+","[*1*]:
+"

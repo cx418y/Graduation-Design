@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","equals","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+        MethodReferencePresenceCheck that = (MethodReferencePresenceCheck) o;
+        return Objects.equals( methodReference, that.methodReference );[*1*] 
+[*2*] 
+    }
+","[*1*]:
+1, 0.25,         return Objects.equals( sourceReference, that.sourceReference )
+[*2*]:
+1, 0.25,             && Objects.equals( suffix, that.suffix );
+"

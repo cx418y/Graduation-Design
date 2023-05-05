@@ -15,7 +15,8 @@ import java.util.Scanner;
 
 @Slf4j
 public class CppCodeUtil {
-    private static final String CPP_SINGLE_LINE_COMMENT_PATTERN = "^[\n\s]+//[\\s\\S]*?\n";
+    //private static final String CPP_SINGLE_LINE_COMMENT_PATTERN = "[^0-9a-zA-Z:]+//[\\s\\S]*?\n";
+    private static final String CPP_SINGLE_LINE_COMMENT_PATTERN = "[ \t]+//[\\s\\S]*?\n";
     private static final String CPP_MULTI_LINE_COMMENT_PATTERN = "/\\*[\\s\\S]*?\\*/";
     private static final String CPP_STRING_PATTERN = "\"[\\s\\S]*?\"";
     //private static final String CONST_KEYWORD = "const";
@@ -86,6 +87,7 @@ public class CppCodeUtil {
                     builder.append(c);
                 }
             }
+            String sufix = builder.reverse().toString().trim();
             String str;// = builder.reverse().toString().trim();
 //            if (!str.isEmpty()) {
 //                if (!str.equals(CONST_KEYWORD)) {
@@ -129,7 +131,7 @@ public class CppCodeUtil {
             builder.delete(0, builder.length());
             index = skipWhitespace(code, index);
             c = code.charAt(index);
-            while (!Character.isWhitespace(c)) {
+            while (!Character.isWhitespace(c) || (Character.isWhitespace(c) && code.charAt(index-1)==',')) {
                 builder.append(c);
                 index--;
                 if (index < 0) {
@@ -153,7 +155,7 @@ public class CppCodeUtil {
                 str = builder.reverse().toString().trim();
             }
 
-            return str + " " + methodName + params;
+            return str + " " + methodName + params + sufix;
         } catch (Exception e) {
             log.error("parse method signature error: " + path + " " + startLine, e);
         }
@@ -207,7 +209,6 @@ public class CppCodeUtil {
                 return null;
             }
             code = code.substring(leftBracketIndex, rightBracketIndex+1);
-           // System.out.println("body: "+code);
             code = removeComment(code);
             if (formatString) {
                 code = code.replaceAll(CPP_STRING_PATTERN, "");

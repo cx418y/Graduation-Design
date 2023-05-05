@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","scientistsToDtos","ScientistDto[] scientistsToDtos(Scientist[] scientists){[*1*] 
+        if ( scientists == null ) {
+            return null;
+        }
+
+        ScientistDto[] scientistDtoTmp = new ScientistDto[scientists.length];[*2*] 
+        ScientistDto[] scientistDtoTmp = new ScientistDto[scientists.size()];[*3*] 
+        int i = 0;
+        for ( Scientist scientist : scientists ) {
+            scientistDtoTmp[i] = scientistToDto( scientist );
+            i++;
+        }
+
+        return scientistDtoTmp;
+    }
+","[*1*]:
+1, 0.5, ScientistDto[] scientistsToDtos(List<Scientist> scientists){
+[*2*]:
+[*3*]:
+"

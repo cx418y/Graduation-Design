@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1189","201","651","650","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builder/multiple/MultipleBuilderMapperTest.java","80","86","-2147354298","-2147354236","0","0","void builderMappingDefined()","void builderMappingDefined(){
+        Process map = BuilderDefinedMapper.INSTANCE.map( new Source( ""map"" ) );
+        Process wrongMap = BuilderDefinedMapper.INSTANCE.wrongMap( new Source( ""wrongMap"" ) );
+
+        assertThat( map.getBuildMethod() ).isEqualTo( ""create"" );
+        assertThat( wrongMap.getBuildMethod() ).isEqualTo( ""wrongCreate"" );
+    }"
+"1190","201","651","650","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builder/multiple/MultipleBuilderMapperTest.java","93","99","-2147354236","-2147354174","0","0","void builderMappingMapperConfigDefined()","void builderMappingMapperConfigDefined(){
+        Process map = BuilderConfigDefinedMapper.INSTANCE.map( new Source( ""map"" ) );
+        Process wrongMap = BuilderConfigDefinedMapper.INSTANCE.wrongMap( new Source( ""wrongMap"" ) );
+
+        assertThat( map.getBuildMethod() ).isEqualTo( ""create"" );
+        assertThat( wrongMap.getBuildMethod() ).isEqualTo( ""wrongCreate"" );
+    }"

@@ -1,0 +1,22 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1478","228","747","746","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/creation/MappingResolverImpl.java","929","939","-2147316593","-2147316515","0","0","Assignment getBestMatch(ResolvingAttempt att, Type sourceType, Type targetType)","Assignment getBestMatch(ResolvingAttempt att, Type sourceType, Type targetType){
+            ConversionMethod<Method> mAttempt = new ConversionMethod<>( att, att.methods, att::toMethodRef )
+                    .getBestMatch( sourceType, targetType );
+            if ( mAttempt.hasResult ) {
+                return mAttempt.result;
+            }
+            ConversionMethod<BuiltInMethod> bAttempt =
+                new ConversionMethod<>( att, att.builtIns, att::toBuildInRef )
+                    .getBestMatch( sourceType, targetType );
+            return bAttempt.result;
+        }"
+"1481","228","747","752","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/creation/MappingResolverImpl.java","1045","1054","-2147316023","-2147315945","0","0","Assignment getBestMatch(ResolvingAttempt att, Type sourceType, Type targetType)","Assignment getBestMatch(ResolvingAttempt att, Type sourceType, Type targetType){
+            MethodConversion<Method> mAttempt = new MethodConversion<>( att, att.methods, att::toMethodRef )
+                    .getBestMatch( sourceType, targetType );
+            if ( mAttempt.hasResult ) {
+                return mAttempt.result;
+            }
+            MethodConversion<BuiltInMethod> bAttempt = new MethodConversion<>( att, att.builtIns, att::toBuildInRef )
+                    .getBestMatch( sourceType, targetType );
+            return bAttempt.result;
+        }"

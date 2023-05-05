@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","mapCity","TopologyFeatureEntity mapCity( TopologyFeatureDto dto ){
+        TopologyFeatureEntity topologyFeatureEntity = null;
+        if ( dto instanceof CityDto ) {
+            CityEntity cityEntity = new CityEntity();
+            cityEntity.setPopulation( ( (CityDto) dto ).getPopulation() );
+            topologyFeatureEntity = cityEntity;
+            topologyFeatureEntity.setName(  dto.getName() );
+        }
+        return topologyFeatureEntity;
+    }
+",""

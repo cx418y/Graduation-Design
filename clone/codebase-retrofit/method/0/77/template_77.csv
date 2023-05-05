@@ -1,0 +1,35 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseType","void responseType(){
+    Type bodyClass = new TypeToken<CompletableFuture<String>>() {}.getType();
+    assertThat(factory.get(bodyClass, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type bodyWildcard = new TypeToken<CompletableFuture<? extends String>>() {}.getType();
+    assertThat(factory.get(bodyWildcard, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type bodyGeneric = new TypeToken<CompletableFuture<List<String>>>() {}.getType();
+    assertThat(factory.get(bodyGeneric, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(new TypeToken<List<String>>() {}.getType());
+    Type responseClass = new TypeToken<CompletableFuture<Response<String>>>() {}.getType();
+    assertThat(factory.get(responseClass, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type responseWildcard =[*1*] 
+        new TypeToken<CompletableFuture<Response<? extends String>>>() {}.getType();[*2*] 
+    assertThat(factory.get(responseWildcard, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type resultClass = new TypeToken<CompletableFuture<Response<String>>>() {}.getType();
+    assertThat(factory.get(resultClass, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type resultWildcard =[*3*] 
+        new TypeToken<CompletableFuture<Response<? extends String>>>() {}.getType();[*4*] 
+[*5*] 
+    assertThat(factory.get(resultWildcard, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+  }
+","[*1*]:
+[*2*]:
+1, 0.25,     Type responseWildcard = new TypeToken<Future<Response<? extends String>>>() {}.getType();
+[*3*]:
+[*4*]:
+[*5*]:
+1, 0.25,     Type resultWildcard = new TypeToken<Future<Response<? extends String>>>() {}.getType();
+"

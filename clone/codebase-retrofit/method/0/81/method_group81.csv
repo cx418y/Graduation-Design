@@ -1,0 +1,71 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"287","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/ObservableTest.java","110","116","-2147445739","-2147445688","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertError(IOException.class);
+  }"
+"350","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/FlowableTest.java","109","115","-2147438409","-2147438358","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    service.response().subscribe(subscriber);
+    subscriber.assertError(IOException.class);
+  }"
+"359","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/MaybeTest.java","108","114","-2147437756","-2147437705","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingMaybeObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertError(IOException.class);
+  }"
+"368","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/SingleTest.java","108","114","-2147437124","-2147437073","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingSingleObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertError(IOException.class);
+  }"
+"414","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/ObservableTest.java","110","116","-2147432766","-2147432715","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertError(IOException.class);
+  }"
+"477","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/FlowableTest.java","109","115","-2147425416","-2147425365","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    service.response().subscribe(subscriber);
+    subscriber.assertError(IOException.class);
+  }"
+"486","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/MaybeTest.java","108","114","-2147424763","-2147424712","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingMaybeObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertError(IOException.class);
+  }"
+"495","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/SingleTest.java","108","114","-2147424131","-2147424080","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingSingleObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    observer.assertError(IOException.class);
+  }"
+"554","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableTest.java","127","133","-2147418539","-2147418488","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    service.response().unsafeSubscribe(subscriber);
+    subscriber.assertError(IOException.class);
+  }"
+"601","81","271","270","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleTest.java","130","136","-2147413926","-2147413875","0","0","void responseFailure()","void responseFailure(){
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    service.response().unsafeSubscribe(subscriber);
+    subscriber.assertError(IOException.class);
+  }"

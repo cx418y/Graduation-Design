@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"911","156","516","515","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluepropertymapping/NullValuePropertyMappingTest.java","36","54","-2147388383","-2147388217","0","0","void testStrategyAppliedOnForgedMethod()","void testStrategyAppliedOnForgedMethod(){
+
+        Customer customer = new Customer();
+        customer.setAddress( null );
+
+        UserDTO userDTO = new UserDTO();
+        userDTO.setHomeDTO( new HomeDTO() );
+        userDTO.getHomeDTO().setAddressDTO( new AddressDTO() );
+        userDTO.getHomeDTO().getAddressDTO().setHouseNo( 5 );
+        userDTO.setDetails( Arrays.asList( ""green hair"" ) );
+
+        CustomerMapper.INSTANCE.mapCustomer( customer, userDTO );
+
+        assertThat( userDTO.getHomeDTO() ).isNotNull();
+        assertThat( userDTO.getHomeDTO().getAddressDTO() ).isNotNull();
+        assertThat( userDTO.getHomeDTO().getAddressDTO().getHouseNo() ).isEqualTo( 5 );
+        assertThat( userDTO.getDetails() ).isNotNull();
+        assertThat( userDTO.getDetails() ).containsExactly( ""green hair"" );
+    }"
+"912","156","518","517","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluepropertymapping/NullValuePropertyMappingTest.java","82","100","-2147388217","-2147388053","0","0","void testStrategyDefaultAppliedOnForgedMethod()","void testStrategyDefaultAppliedOnForgedMethod(){
+
+        Customer customer = new Customer();
+        customer.setAddress( null );
+
+        UserDTO userDTO = new UserDTO();
+        userDTO.setHomeDTO( new HomeDTO() );
+        userDTO.getHomeDTO().setAddressDTO( new AddressDTO() );
+        userDTO.getHomeDTO().getAddressDTO().setHouseNo( 5 );
+        userDTO.setDetails( Arrays.asList( ""green hair"" ) );
+
+        CustomerDefaultMapper.INSTANCE.mapCustomer( customer, userDTO );
+
+        assertThat( userDTO.getHomeDTO() ).isNotNull();
+        assertThat( userDTO.getHomeDTO().getAddressDTO() ).isNotNull();
+        assertThat( userDTO.getHomeDTO().getAddressDTO().getHouseNo() ).isNull();
+        assertThat( userDTO.getDetails() ).isNotNull();
+        assertThat( userDTO.getDetails() ).isEmpty();
+    }"

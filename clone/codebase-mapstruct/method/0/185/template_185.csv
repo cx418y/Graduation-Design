@@ -1,0 +1,20 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldSurroundTypeConversionWithNullCheck","void shouldSurroundTypeConversionWithNullCheck(){
+
+        Source source = new Source();
+        source.setSomeObject( new NullObject() );
+        source.setSomeInteger( 7 );[*1*] 
+        source.setSomeLong( 2L );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target.getNumber() ).isNull();
+[*2*] 
+[*3*] 
+    }
+","[*1*]:
+[*2*]:
+1, 0.3333333333333333, 
+[*3*]:
+1, 0.3333333333333333,         assertThat( target.getSomeInteger() ).isNull();
+"

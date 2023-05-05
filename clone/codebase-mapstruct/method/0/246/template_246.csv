@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getFromExpression","String getFromExpression(ConversionContext conversionContext){
+        if ( requiresDecimalFormat( conversionContext ) ) {
+            StringBuilder sb = new StringBuilder();
+            sb.append( ""("" + bigDecimal( conversionContext ) + "") "" );
+            appendDecimalFormatter( sb, conversionContext );
+            sb.append( "".parse( <SOURCE> )"" );[*1*] 
+            sb.append( "".parse( <SOURCE> )"" );
+            return sb.toString();
+        }
+        else {
+            return ""new "" + bigDecimal( conversionContext ) + ""( <SOURCE> )"";
+        }
+    }
+","[*1*]:
+"

@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldGenerateRightSuffixWithDecorator","void shouldGenerateRightSuffixWithDecorator(){
+        DestinationPackageNameMapperDecorated instance = DestinationPackageNameMapperDecorated.INSTANCE;
+        assertThat( instance.getClass().getName() )
+                .isEqualTo( ""org.mapstruct.ap.test.destination.dest.DestinationPackageNameMapperDecoratedImpl"" );
+        assertThat( instance ).isInstanceOf( DestinationPackageNameMapperDecorator.class );
+        assertThat( ( (DestinationPackageNameMapperDecorator) instance ).delegate.getClass().getName() )
+                .isEqualTo( ""org.mapstruct.ap.test.destination.dest.DestinationPackageNameMapperDecoratedImpl_"" );
+    }
+",""

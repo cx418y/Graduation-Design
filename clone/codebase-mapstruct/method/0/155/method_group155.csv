@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"906","155","512","511","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/mappingcontrol/MappingControlTest.java","60","70","-2147389073","-2147388964","0","0","void testDeepCloning()","void testDeepCloning(){
+
+        FridgeDTO in = createFridgeDTO();
+        FridgeDTO out = CloningMapper.INSTANCE.clone( in );
+
+        assertThat( out ).isNotNull();
+        assertThat( out.getShelve() ).isNotNull();
+        assertThat( out.getShelve() ).isNotSameAs( in.getShelve() );
+        assertThat( out.getShelve().getCoolBeer() ).isNotSameAs( in.getShelve().getCoolBeer() );
+        assertThat( out.getShelve().getCoolBeer().getBeerCount() ).isEqualTo( ""5"" );
+    }"
+"907","155","512","511","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/mappingcontrol/MappingControlTest.java","75","85","-2147388964","-2147388855","0","0","void testDeepCloningViaBeanMapping()","void testDeepCloningViaBeanMapping(){
+
+        FridgeDTO in = createFridgeDTO();
+        FridgeDTO out = CloningBeanMappingMapper.INSTANCE.clone( in );
+
+        assertThat( out ).isNotNull();
+        assertThat( out.getShelve() ).isNotNull();
+        assertThat( out.getShelve() ).isNotSameAs( in.getShelve() );
+        assertThat( out.getShelve().getCoolBeer() ).isNotSameAs( in.getShelve().getCoolBeer() );
+        assertThat( out.getShelve().getCoolBeer().getBeerCount() ).isEqualTo( ""5"" );
+    }"

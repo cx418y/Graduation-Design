@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1031","179","586","585","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/date/DateConversionTest.java","135","146","-2147373509","-2147373410","0","0","void shouldApplyStringConversionForReverseIterableMethod()","void shouldApplyStringConversionForReverseIterableMethod(){
+        List<String> stringDates = Arrays.asList( ""06.07.2013"", ""14.02.2013"", ""11.04.2013"" );
+
+        List<Date> dates = SourceTargetMapper.INSTANCE.dateListToStringList( stringDates );
+
+        assertThat( dates ).isNotNull();
+        assertThat( dates ).containsExactly(
+            new GregorianCalendar( 2013, Calendar.JULY, 6 ).getTime(),
+            new GregorianCalendar( 2013, Calendar.FEBRUARY, 14 ).getTime(),
+            new GregorianCalendar( 2013, Calendar.APRIL, 11 ).getTime()
+        );
+    }"
+"1032","179","588","587","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/date/DateConversionTest.java","149","160","-2147373410","-2147373313","0","0","void shouldApplyStringConversionForReverseArrayMethod()","void shouldApplyStringConversionForReverseArrayMethod(){
+        String[] stringDates = new String[]{ ""06.07.2013"", ""14.02.2013"", ""11.04.2013"" };
+
+        List<Date> dates = SourceTargetMapper.INSTANCE.stringArrayToDateList( stringDates );
+
+        assertThat( dates ).isNotNull();
+        assertThat( dates ).containsExactly(
+            new GregorianCalendar( 2013, Calendar.JULY, 6 ).getTime(),
+            new GregorianCalendar( 2013, Calendar.FEBRUARY, 14 ).getTime(),
+            new GregorianCalendar( 2013, Calendar.APRIL, 11 ).getTime()
+        );
+    }"

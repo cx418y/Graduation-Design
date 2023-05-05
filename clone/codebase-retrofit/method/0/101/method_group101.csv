@@ -1,0 +1,55 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"639","101","337","336","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/java8/src/test/java/retrofit/converter/java8/Java8OptionalConverterFactoryTest.java","78","104","-2147409350","-2147409192","0","0","void delegates()throws IOException","void delegates()throws IOException{
+    Object object = new Object();
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(
+                new Converter.Factory() {
+                  @Nullable
+                  @Override
+                  public Converter<ResponseBody, ?> responseBodyConverter(
+                      Type type, Annotation[] annotations, Retrofit retrofit) {
+                    if (getRawType(type) != Object.class) {
+                      return null;
+                    }
+                    return value -> object;
+                  }
+                })
+            .addConverterFactory(Java8OptionalConverterFactory.create())
+            .build();
+
+    server.enqueue(new MockResponse());
+
+    Service service = retrofit.create(Service.class);
+    Optional<Object> optional = service.optional().execute().body();
+    assertThat(optional).isNotNull();
+    assertThat(optional.get()).isSameAs(object);
+  }"
+"664","101","345","344","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/guava/src/test/java/retrofit/converter/guava/GuavaOptionalConverterFactoryTest.java","78","104","-2147407465","-2147407306","0","0","void delegates()throws IOException","void delegates()throws IOException{
+    final Object object = new Object();
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(
+                new Converter.Factory() {
+                  @Nullable
+                  @Override
+                  public Converter<ResponseBody, Object> responseBodyConverter(
+                      Type type, Annotation[] annotations, Retrofit retrofit) {
+                    if (getRawType(type) != Object.class) {
+                      return null;
+                    }
+                    return value -> object;
+                  }
+                })
+            .addConverterFactory(GuavaOptionalConverterFactory.create())
+            .build();
+
+    server.enqueue(new MockResponse());
+
+    Service service = retrofit.create(Service.class);
+    Optional<Object> optional = service.optional().execute().body();
+    assertThat(optional).isNotNull();
+    assertThat(optional.get()).isSameAs(object);
+  }"

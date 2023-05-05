@@ -1,0 +1,51 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testMapSpecialAndGeneralAddressSet","void testMapSpecialAndGeneralAddressSet(){
+[*1*] 
+[*2*] 
+[*3*] 
+
+        SpecialAddress specialAddress = new SpecialAddress();
+[*4*] 
+        specialAddress.setLine2( ""Street Two"" );
+[*5*] 
+
+        GeneralAddress generalAddress = new GeneralAddress();
+        generalAddress.setCity( ""King's Landing"" );
+        generalAddress.setCountry( ""Seven Kingdom"" );
+        employee.setGeneralAddress( generalAddress );
+
+        Person person = FirstMapper.INSTANCE.mapPerson( employee );
+        assertThat( person.getName() ).isEqualTo( ""Mad King"" );
+
+        CompleteAddress completeAddress = person.getCompleteAddress();
+        assertThat( completeAddress ).isNotNull();
+[*6*] 
+[*7*] 
+        assertThat( completeAddress.getCity() ).isEqualTo( ""King's Landing"" );[*8*] 
+        assertThat( completeAddress.getCountry() ).isEqualTo( ""Seven Kingdom"" );[*9*] 
+        assertThat( completeAddress.getCity() ).isNull();[*10*] 
+        assertThat( completeAddress.getCountry() ).isNull();[*11*] 
+[*12*] 
+    }
+","[*1*]:
+1, 0.3333333333333333, 
+[*2*]:
+1, 0.3333333333333333,         Employee employee = new Employee();
+[*3*]:
+1, 0.3333333333333333,         employee.setName( ""Mad King"" );
+1, 0.3333333333333333,         assertThat( completeAddress.getCity() ).isEqualTo( ""King's Landing"" );
+[*4*]:
+1, 0.3333333333333333,         specialAddress.setLine1( ""Building One"" );
+[*5*]:
+1, 0.3333333333333333,         employee.setSpecialAddress( specialAddress );
+[*6*]:
+1, 0.3333333333333333,         assertThat( completeAddress.getLineOne() ).isEqualTo( ""Building One"" );
+[*7*]:
+1, 0.3333333333333333,         assertThat( completeAddress.getLineTwo() ).isEqualTo( ""Street Two"" );
+[*8*]:
+[*9*]:
+[*10*]:
+[*11*]:
+[*12*]:
+1, 0.3333333333333333,         assertThat( completeAddress.getCountry() ).isEqualTo( ""Seven Kingdom"" );
+"

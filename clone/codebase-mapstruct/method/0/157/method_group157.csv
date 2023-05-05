@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"915","157","522","521","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/inheritance/complex/ComplexInheritanceTest.java","35","44","-2147387868","-2147387812","0","0","void shouldMapAttributesWithSuperTypeInStandaloneMapper()","void shouldMapAttributesWithSuperTypeInStandaloneMapper(){
+        SourceComposite source = createComposite();
+
+        TargetComposite target = StandaloneSourceCompositeTargetCompositeMapper.INSTANCE.sourceToTarget( source );
+
+        assertResult( target );
+
+        assertThat( target.getProp4() ).isEqualTo( 999 );
+        assertThat( target.getProp5() ).containsOnly( 42, 999 );
+    }"
+"916","157","522","521","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/inheritance/complex/ComplexInheritanceTest.java","49","58","-2147387812","-2147387756","0","0","void shouldMapAttributesWithSuperTypeUsingOtherMapper()","void shouldMapAttributesWithSuperTypeUsingOtherMapper(){
+        SourceComposite source = createComposite();
+
+        TargetComposite target = SourceCompositeTargetCompositeMapper.INSTANCE.sourceToTarget( source );
+
+        assertResult( target );
+
+        assertThat( target.getProp4() ).isEqualTo( 1000 );
+        assertThat( target.getProp5() ).containsOnly( 43, 1000 );
+    }"

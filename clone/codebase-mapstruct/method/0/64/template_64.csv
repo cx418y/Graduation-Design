@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","conditionalMethodInMapper","void conditionalMethodInMapper(){
+[*1*] 
+        ConditionalMethodInMapper mapper = ConditionalMethodInMapper.INSTANCE;
+
+        BasicEmployee employee = mapper.map( new BasicEmployeeDto( ""Tester"" ) );
+        assertThat( employee.getName() ).isEqualTo( ""Tester"" );
+
+        employee = mapper.map( new BasicEmployeeDto( """" ) );
+        assertThat( employee.getName() ).isNull();
+
+        employee = mapper.map( new BasicEmployeeDto( ""    "" ) );
+        assertThat( employee.getName() ).isNull();
+    }
+","[*1*]:
+1, 0.3333333333333333,         generatedSource.addComparisonToFixtureFor( ConditionalMethodInMapper.class );
+"

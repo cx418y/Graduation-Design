@@ -1,0 +1,28 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"345","69","221","220","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/frommap/FromMapMappingTest.java","57","69","-2147444644","-2147444509","0","0","void fromFullMap()","void fromFullMap(){
+            Map<String, String> map = new HashMap<>();
+            map.put( ""name"", ""Jacket"" );
+            map.put( ""price"", ""25.5"" );
+            map.put( ""shipmentDate"", ""2021-06-15"" );
+            StringMapToBeanMapper.Order order = StringMapToBeanMapper.INSTANCE.fromMap( map );
+
+            assertThat( order ).isNotNull();
+            assertThat( order.getName() ).isEqualTo( ""Jacket"" );
+            assertThat( order.getPrice() ).isEqualTo( 25.5 );
+            assertThat( order.getOrderDate() ).isNull();
+            assertThat( order.getShipmentDate() ).isEqualTo( LocalDate.of( 2021, Month.JUNE, 15 ) );
+        }"
+"348","69","221","220","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/frommap/FromMapMappingTest.java","114","127","-2147444362","-2147444227","0","0","void fromFullMap()","void fromFullMap(){
+            Map<String, String> map = new HashMap<>();
+            map.put( ""name"", ""Jacket"" );
+            map.put( ""price"", ""25.5"" );
+            map.put( ""shipmentDate"", ""2021-06-15"" );
+            StringMapToBeanWithCustomPresenceCheckMapper.Order order =
+                StringMapToBeanWithCustomPresenceCheckMapper.INSTANCE.fromMap( map );
+
+            assertThat( order ).isNotNull();
+            assertThat( order.getName() ).isEqualTo( ""Jacket"" );
+            assertThat( order.getPrice() ).isEqualTo( 25.5 );
+            assertThat( order.getOrderDate() ).isNull();
+            assertThat( order.getShipmentDate() ).isEqualTo( LocalDate.of( 2021, Month.JUNE, 15 ) );
+        }"

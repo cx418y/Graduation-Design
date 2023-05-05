@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","@WithClasses","@ProcessorTest @WithClasses({ SourceTargetMapperAmbiguous3.class })@ExpectedCompilationOutcome(
+        value = CompilationResult.FAILED,
+        diagnostics ={
+            @Diagnostic(type = SourceTargetMapperAmbiguous3.class,
+                kind = Kind.ERROR,
+                line = 43,
+                message = ""Given name \""forwardCreate\"" matches several candidate methods: org.mapstruct.ap.test"" +
+                    "".template.Target forwardCreate(org.mapstruct.ap.test.template.Source source), void forwardCreate"" +
+                    ""(org.mapstruct.ap.test.template.Source source, @MappingTarget org.mapstruct.ap.test.template"" +
+                    "".Target target).""),
+            @Diagnostic(type = SourceTargetMapperAmbiguous3.class,
+                kind = Kind.WARNING,
+                line = 44,
+                message = ""Unmapped target properties: \""stringPropY, integerPropY, constantProp, expressionProp, "" +[*1*] 
+                    ""nestedResultProp\""."")[*2*] 
+        }
+","[*1*]:
+1, 0.5,                 message = ""Unmapped target properties: \""stringPropX, integerPropX\""."")
+[*2*]:
+"

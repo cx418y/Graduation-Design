@@ -1,0 +1,136 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseTypes","void responseTypes(){
+    Type oBodyClass = new TypeToken<Observable<String>>() {}.getType();[*1*] 
+    assertThat(factory.get(oBodyClass, NO_ANNOTATIONS, retrofit).responseType())[*2*] 
+        .isEqualTo(String.class);[*3*] 
+    Type sBodyClass = new TypeToken<Single<String>>() {}.getType();[*4*] 
+    assertThat(factory.get(sBodyClass, NO_ANNOTATIONS, retrofit).responseType())[*5*] 
+        .isEqualTo(String.class);[*6*] 
+    Type mBodyClass = new TypeToken<Maybe<String>>() {}.getType();
+    assertThat(factory.get(mBodyClass, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type fBodyClass = new TypeToken<Flowable<String>>() {}.getType();
+    assertThat(factory.get(fBodyClass, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+
+    Type oBodyWildcard = new TypeToken<Observable<? extends String>>() {}.getType();[*7*] 
+    assertThat(factory.get(oBodyWildcard, NO_ANNOTATIONS, retrofit).responseType())[*8*] 
+        .isEqualTo(String.class);[*9*] 
+    Type sBodyWildcard = new TypeToken<Single<? extends String>>() {}.getType();[*10*] 
+    assertThat(factory.get(sBodyWildcard, NO_ANNOTATIONS, retrofit).responseType())[*11*] 
+        .isEqualTo(String.class);[*12*] 
+    Type mBodyWildcard = new TypeToken<Maybe<? extends String>>() {}.getType();
+    assertThat(factory.get(mBodyWildcard, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type fBodyWildcard = new TypeToken<Flowable<? extends String>>() {}.getType();
+    assertThat(factory.get(fBodyWildcard, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+
+    Type oBodyGeneric = new TypeToken<Observable<List<String>>>() {}.getType();[*13*] 
+    assertThat(factory.get(oBodyGeneric, NO_ANNOTATIONS, retrofit).responseType())[*14*] 
+        .isEqualTo(new TypeToken<List<String>>() {}.getType());[*15*] 
+    Type sBodyGeneric = new TypeToken<Single<List<String>>>() {}.getType();[*16*] 
+    assertThat(factory.get(sBodyGeneric, NO_ANNOTATIONS, retrofit).responseType())[*17*] 
+        .isEqualTo(new TypeToken<List<String>>() {}.getType());[*18*] 
+    Type mBodyGeneric = new TypeToken<Maybe<List<String>>>() {}.getType();
+    assertThat(factory.get(mBodyGeneric, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(new TypeToken<List<String>>() {}.getType());
+    Type fBodyGeneric = new TypeToken<Flowable<List<String>>>() {}.getType();
+    assertThat(factory.get(fBodyGeneric, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(new TypeToken<List<String>>() {}.getType());
+
+    Type oResponseClass = new TypeToken<Observable<Response<String>>>() {}.getType();[*19*] 
+    assertThat(factory.get(oResponseClass, NO_ANNOTATIONS, retrofit).responseType())[*20*] 
+        .isEqualTo(String.class);[*21*] 
+    Type sResponseClass = new TypeToken<Single<Response<String>>>() {}.getType();[*22*] 
+    assertThat(factory.get(sResponseClass, NO_ANNOTATIONS, retrofit).responseType())[*23*] 
+        .isEqualTo(String.class);[*24*] 
+    Type mResponseClass = new TypeToken<Maybe<Response<String>>>() {}.getType();
+    assertThat(factory.get(mResponseClass, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type fResponseClass = new TypeToken<Flowable<Response<String>>>() {}.getType();
+    assertThat(factory.get(fResponseClass, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+
+    Type oResponseWildcard = new TypeToken<Observable<Response<? extends String>>>() {}.getType();[*25*] 
+    assertThat(factory.get(oResponseWildcard, NO_ANNOTATIONS, retrofit).responseType())[*26*] 
+        .isEqualTo(String.class);[*27*] 
+    Type sResponseWildcard = new TypeToken<Single<Response<? extends String>>>() {}.getType();[*28*] 
+    assertThat(factory.get(sResponseWildcard, NO_ANNOTATIONS, retrofit).responseType())[*29*] 
+        .isEqualTo(String.class);[*30*] 
+    Type mResponseWildcard = new TypeToken<Maybe<Response<? extends String>>>() {}.getType();
+    assertThat(factory.get(mResponseWildcard, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type fResponseWildcard = new TypeToken<Flowable<Response<? extends String>>>() {}.getType();
+    assertThat(factory.get(fResponseWildcard, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+
+    Type oResultClass = new TypeToken<Observable<Result<String>>>() {}.getType();[*31*] 
+    assertThat(factory.get(oResultClass, NO_ANNOTATIONS, retrofit).responseType())[*32*] 
+        .isEqualTo(String.class);[*33*] 
+    Type sResultClass = new TypeToken<Single<Result<String>>>() {}.getType();[*34*] 
+    assertThat(factory.get(sResultClass, NO_ANNOTATIONS, retrofit).responseType())[*35*] 
+        .isEqualTo(String.class);[*36*] 
+    Type mResultClass = new TypeToken<Maybe<Result<String>>>() {}.getType();
+    assertThat(factory.get(mResultClass, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type fResultClass = new TypeToken<Flowable<Result<String>>>() {}.getType();
+    assertThat(factory.get(fResultClass, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+
+    Type oResultWildcard = new TypeToken<Observable<Result<? extends String>>>() {}.getType();[*37*] 
+    assertThat(factory.get(oResultWildcard, NO_ANNOTATIONS, retrofit).responseType())[*38*] 
+        .isEqualTo(String.class);[*39*] 
+    Type sResultWildcard = new TypeToken<Single<Result<? extends String>>>() {}.getType();[*40*] 
+    assertThat(factory.get(sResultWildcard, NO_ANNOTATIONS, retrofit).responseType())[*41*] 
+        .isEqualTo(String.class);[*42*] 
+    Type mResultWildcard = new TypeToken<Maybe<Result<? extends String>>>() {}.getType();
+    assertThat(factory.get(mResultWildcard, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+    Type fResultWildcard = new TypeToken<Flowable<Result<? extends String>>>() {}.getType();
+    assertThat(factory.get(fResultWildcard, NO_ANNOTATIONS, retrofit).responseType())
+        .isEqualTo(String.class);
+  }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+[*11*]:
+[*12*]:
+[*13*]:
+[*14*]:
+[*15*]:
+[*16*]:
+[*17*]:
+[*18*]:
+[*19*]:
+[*20*]:
+[*21*]:
+[*22*]:
+[*23*]:
+[*24*]:
+[*25*]:
+[*26*]:
+[*27*]:
+[*28*]:
+[*29*]:
+[*30*]:
+[*31*]:
+[*32*]:
+[*33*]:
+[*34*]:
+[*35*]:
+[*36*]:
+[*37*]:
+[*38*]:
+[*39*]:
+[*40*]:
+[*41*]:
+[*42*]:
+"

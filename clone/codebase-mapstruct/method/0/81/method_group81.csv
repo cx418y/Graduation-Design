@@ -1,0 +1,38 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"431","81","265","264","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/ignore/IgnorePropertyTest.java","29","41","-2147437384","-2147437270","0","0","void shouldNotPropagateIgnoredPropertyGivenViaTargetAttribute()","void shouldNotPropagateIgnoredPropertyGivenViaTargetAttribute(){
+        Animal animal = new Animal( ""Bruno"", 100, 23, ""black"" );
+
+        AnimalDto animalDto = AnimalMapper.INSTANCE.animalToDto( animal );
+
+        assertThat( animalDto ).isNotNull();
+        assertThat( animalDto.getName() ).isEqualTo( ""Bruno"" );
+        assertThat( animalDto.getSize() ).isEqualTo( 100 );
+        assertThat( animalDto.getAge() ).isNull();
+        assertThat( animalDto.publicAge ).isNull();
+        assertThat( animalDto.getColor() ).isNull();
+        assertThat( animalDto.publicColor ).isNull();
+    }"
+"432","81","269","268","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/ignore/IgnorePropertyTest.java","45","57","-2147437270","-2147437158","0","0","void shouldIgnoreAllTargetPropertiesWithNoUnmappedTargetWarnings()","void shouldIgnoreAllTargetPropertiesWithNoUnmappedTargetWarnings(){
+        Animal animal = new Animal( ""Bruno"", 100, 23, ""black"" );
+
+        AnimalDto animalDto = AnimalMapper.INSTANCE.animalToDtoIgnoreAll( animal );
+
+        assertThat( animalDto ).isNotNull();
+        assertThat( animalDto.getName() ).isNull();
+        assertThat( animalDto.getSize() ).isNull();
+        assertThat( animalDto.getAge() ).isNull();
+        assertThat( animalDto.publicAge ).isNull();
+        assertThat( animalDto.getColor() ).isNull();
+        assertThat( animalDto.publicColor ).isNull();
+    }"
+"1969","81","275","274","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/fullFeatureTest/src/test/java/org/mapstruct/itest/simple/AnimalTest.java","24","34","-2147253536","-2147253444","0","0","void shouldNotPropagateIgnoredPropertyGivenViaTargetAttribute()","void shouldNotPropagateIgnoredPropertyGivenViaTargetAttribute(){
+        Animal animal = new Animal( ""Bruno"", 100, 23, ""black"" );
+
+        AnimalDto animalDto = AnimalMapper.INSTANCE.animalToDto( animal );
+
+        assertThat( animalDto ).isNotNull();
+        assertThat( animalDto.getName() ).isEqualTo( ""Bruno"" );
+        assertThat( animalDto.getSize() ).isEqualTo( 100 );
+        assertThat( animalDto.getAge() ).isNull();
+        assertThat( animalDto.getColor() ).isNull();
+    }"

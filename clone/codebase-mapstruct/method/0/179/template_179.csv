@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyStringConversionForReverseIterableMethod","void shouldApplyStringConversionForReverseIterableMethod(){
+        List<String> stringDates = Arrays.asList( ""06.07.2013"", ""14.02.2013"", ""11.04.2013"" );[*1*] 
+        String[] stringDates = new String[]{ ""06.07.2013"", ""14.02.2013"", ""11.04.2013"" };[*2*] 
+
+        List<Date> dates = SourceTargetMapper.INSTANCE.dateListToStringList( stringDates );
+
+        assertThat( dates ).isNotNull();
+        assertThat( dates ).containsExactly(
+            new GregorianCalendar( 2013, Calendar.JULY, 6 ).getTime(),
+            new GregorianCalendar( 2013, Calendar.FEBRUARY, 14 ).getTime(),
+            new GregorianCalendar( 2013, Calendar.APRIL, 11 ).getTime()
+        );
+    }
+","[*1*]:
+[*2*]:
+"

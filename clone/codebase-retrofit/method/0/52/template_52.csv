@@ -1,0 +1,53 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","resultThrowingInOnErrorDeliveredToPlugin","void resultThrowingInOnErrorDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler([*1*] 
+        throwable -> {[*2*] 
+[*3*] 
+[*4*] 
+[*5*] 
+[*6*] 
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);[*7*] 
+[*8*] 
+          }
+        });
+
+    RecordingMaybeObserver<Result<String>> observer = subscriberRule.create();
+    final RuntimeException first = new RuntimeException();
+    final RuntimeException second = new RuntimeException();
+    service
+        .result()
+        .subscribe(
+            new ForwardingObserver<Result<String>>(observer) {
+              @Override
+              public void onSuccess(Result<String> value) {
+                throw first;
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                throw second;
+              }
+            });
+
+    CompositeException composite = (CompositeException) throwableRef.get();
+    assertThat(composite.getExceptions()).containsExactly(first, second);
+  }
+","[*1*]:
+2, 0.2,     RxJavaPlugins.getInstance()
+[*2*]:
+[*3*]:
+2, 0.2,         .registerErrorHandler(
+[*4*]:
+2, 0.2,             new RxJavaErrorHandler() {
+[*5*]:
+2, 0.2,               @Override
+[*6*]:
+2, 0.2,               public void handleError(Throwable throwable) {
+[*7*]:
+[*8*]:
+2, 0.2,                   throw Exceptions.propagate(throwable);                }
+"

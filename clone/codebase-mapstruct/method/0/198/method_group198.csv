@@ -1,0 +1,42 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1138","198","637","636","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/methodgenerics/array/GenericArrayTest.java","35","45","-2147359212","-2147359139","0","0","void testGenericSourceTypeVar()","void testGenericSourceTypeVar(){
+
+        SourceTypeIsTypeVarArrayMapper.Source source =
+            new SourceTypeIsTypeVarArrayMapper.Source( new String[] { ""test"" } );
+        SourceTypeIsTypeVarArrayMapper.Target target = SourceTypeIsTypeVarArrayMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isNotNull();
+        assertThat( target.getProp().getWrapped() ).isEqualTo( ""test"" );
+
+    }"
+"1140","198","639","638","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/methodgenerics/plain/PlainTest.java","23","31","-2147359046","-2147358986","0","0","void testGenericReturnTypeVar()","void testGenericReturnTypeVar(){
+
+        ReturnTypeIsTypeVarMapper.Source source =
+            new ReturnTypeIsTypeVarMapper.Source( new ReturnTypeIsTypeVarMapper.GenericWrapper<>( ""test"" ) );
+        ReturnTypeIsTypeVarMapper.Target target = ReturnTypeIsTypeVarMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isEqualTo( ""test"" );
+    }"
+"1141","198","641","640","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/methodgenerics/plain/PlainTest.java","35","44","-2147358986","-2147358917","0","0","void testGenericSourceTypeVar()","void testGenericSourceTypeVar(){
+
+        SourceTypeIsTypeVarMapper.Source source = new SourceTypeIsTypeVarMapper.Source( ""test"" );
+        SourceTypeIsTypeVarMapper.Target target = SourceTypeIsTypeVarMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isNotNull();
+        assertThat( target.getProp().getWrapped() ).isEqualTo( ""test"" );
+
+    }"
+"1142","198","647","646","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/methodgenerics/plain/PlainTest.java","48","58","-2147358917","-2147358840","0","0","void testBothParameterized()","void testBothParameterized(){
+
+        BothParameterizedMapper.Source source =
+            new BothParameterizedMapper.Source( new BothParameterizedMapper.GenericSourceWrapper<>( ""test"" ) );
+        BothParameterizedMapper.Target target = BothParameterizedMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isNotNull();
+        assertThat( target.getProp().getWrapped() ).isEqualTo( ""test"" );
+
+    }"

@@ -1,0 +1,18 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","success","void success(){
+    Object body = new Object();
+    Response<Object> response = Response.success(body);[*1*] 
+    assertThat(response.raw()).isNotNull();[*2*] 
+    assertThat(response.raw()).isSameAs(successResponse);[*3*] 
+    assertThat(response.code()).isEqualTo(200);
+    assertThat(response.message()).isEqualTo(""OK"");
+    assertThat(response.headers().size()).isZero();
+    assertThat(response.isSuccessful()).isTrue();
+    assertThat(response.body()).isSameAs(body);
+    assertThat(response.errorBody()).isNull();
+  }
+","[*1*]:
+1, 0.5,     Response<Object> response = Response.success(body, successResponse);
+[*2*]:
+[*3*]:
+"

@@ -1,0 +1,38 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","create","Domain create(Dto source){
+        if ( source == null ) {[*1*] 
+            return null;[*2*] 
+        }[*3*] 
+
+        Domain domain = new Domain();[*4*] 
+        Domain domain = createNullDomain();[*5*] 
+
+            List<String> list = source.getStrings();
+            if ( list != null ) {
+                domain.setStrings( new LinkedHashSet<String>( list ) );
+            }
+            domain.setLongs( stringListToLongSet( source.getStrings() ) );
+            List<String> list1 = source.getStringsInitialized();
+            if ( list1 != null ) {
+                domain.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+            }
+            domain.setLongsInitialized( stringListToLongSet( source.getStringsInitialized() ) );
+            List<String> list2 = source.getStringsWithDefault();
+            if ( list2 != null ) {
+                domain.setStringsWithDefault( new ArrayList<String>( list2 ) );
+            }
+            else {
+                domain.setStringsWithDefault( helper.toList( ""3"" ) );
+            }[*6*] 
+        }
+
+        return domain;
+    }
+","[*1*]:
+1, 0.5,         if ( source != null ) {
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+"

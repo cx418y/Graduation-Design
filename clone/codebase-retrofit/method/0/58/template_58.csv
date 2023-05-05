@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","error","void error(){
+    Throwable error = new IOException();
+    Result<Object> result = Result.error(error);
+    assertThat(result.isError()).isTrue();
+    assertThat(result.error()).isSameAs(error);
+    assertThat(result.response()).isNull();
+  }
+",""

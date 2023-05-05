@@ -1,0 +1,20 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"350","70","254","253","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/frommap/FromMapMappingTest.java","150","158","-2147444098","-2147444035","0","0","void shouldMapWithDefinedMapping()","void shouldMapWithDefinedMapping(){
+        Map<String, Integer> sourceMap = new HashMap<>();
+        sourceMap.put( ""number"", 44 );
+
+        MapToBeanDefinedMapper.Target target = MapToBeanDefinedMapper.INSTANCE.toTarget( sourceMap );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getNormalInt() ).isEqualTo( ""44"" );
+    }"
+"354","70","254","259","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/frommap/FromMapMappingTest.java","204","213","-2147443813","-2147443750","0","0","void shouldMapUsingMappingMethod()","void shouldMapUsingMappingMethod(){
+        Map<String, Integer> sourceMap = new HashMap<>();
+        sourceMap.put( ""number"", 23 );
+
+        MapToBeanUsingMappingMethodMapper.Target target = MapToBeanUsingMappingMethodMapper.INSTANCE
+            .toTarget( sourceMap );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getNormalInt() ).isEqualTo( ""converted_23"" );
+    }"

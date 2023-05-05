@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseThrowingInOnNextDeliveredToError","void responseThrowingInOnNextDeliveredToError(){
+    server.enqueue(new MockResponse());[*1*] 
+
+    RecordingSubscriber<Response<String>> subscriber = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .response()
+        .safeSubscribe(
+            new ForwardingSubscriber<Response<String>>(subscriber) {
+              @Override
+              public void onNext(Response<String> value) {
+                throw e;
+              }
+            });
+
+    subscriber.assertError(e);
+  }
+","[*1*]:
+1, 0.14285714285714285,     server.enqueue(new MockResponse().setBody(""Hi""));
+"

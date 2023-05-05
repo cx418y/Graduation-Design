@@ -1,0 +1,89 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1971","253","825","824","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/jakartaJaxbTest/src/test/java/org/mapstruct/itest/jakarta/jaxb/JakartaJaxbBasedMapperTest.java","34","81","-2147253365","-2147252905","0","0","void shouldMapJakartaJaxb()throws ParseException, JAXBException","void shouldMapJakartaJaxb()throws ParseException, JAXBException{
+
+        SourceTargetMapper mapper = SourceTargetMapper.INSTANCE;
+
+        OrderDto source1 = new OrderDto();
+        source1.setOrderDetails( new OrderDetailsDto() );
+        source1.setOrderNumber( 11L );
+        source1.setOrderDate( createDate( ""31-08-1982 10:20:56"" ) );
+        source1.setShippingAddress( new ShippingAddressDto() );
+        source1.getShippingAddress().setCity( ""SmallTown"" );
+        source1.getShippingAddress().setHouseNumber( ""11a"" );
+        source1.getShippingAddress().setStreet( ""Awesome rd"" );
+        source1.getShippingAddress().setCountry( ""USA"" );
+        source1.getOrderDetails().setDescription( new ArrayList<String>() );
+        source1.getOrderDetails().setName( ""Shopping list for a Mapper"" );
+        source1.getOrderDetails().getDescription().add( ""1 MapStruct"" );
+        source1.getOrderDetails().getDescription().add( ""3 Lines of Code"" );
+        source1.getOrderDetails().getDescription().add( ""1 Dose of Luck"" );
+        source1.getOrderDetails().setStatus( OrderStatusDto.ORDERED );
+
+        OrderType target = mapper.targetToSource( source1 );
+
+        ObjectFactory of = new ObjectFactory();
+        System.out.println( toXml( of.createOrder( target ) ) );
+
+        OrderDto source2 = mapper.sourceToTarget( target );
+
+        assertThat( source2.getOrderNumber() ).isEqualTo( source1.getOrderNumber() );
+        assertThat( source2.getOrderDate() ).isEqualTo( source1.getOrderDate() );
+        assertThat( source2.getOrderDetails().getDescription().size() ).isEqualTo(
+            source1.getOrderDetails().getDescription().size()
+        );
+        assertThat( source2.getOrderDetails().getDescription().get( 0 ) ).isEqualTo(
+            source1.getOrderDetails().getDescription().get( 0 )
+        );
+        assertThat( source2.getOrderDetails().getDescription().get( 1 ) ).isEqualTo(
+            source1.getOrderDetails().getDescription().get( 1 )
+        );
+        assertThat( source2.getOrderDetails().getDescription().get( 2 ) ).isEqualTo(
+            source1.getOrderDetails().getDescription().get( 2 )
+        );
+        assertThat( source2.getOrderDetails().getName() ).isEqualTo( source1.getOrderDetails().getName() );
+        assertThat( source2.getOrderDetails().getStatus() ).isEqualTo( source1.getOrderDetails().getStatus() );
+    }"
+"2020","253","825","824","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/jaxbTest/src/test/java/org/mapstruct/itest/jaxb/JaxbBasedMapperTest.java","33","80","-2147248464","-2147248004","0","0","void shouldMapJaxb()throws ParseException, JAXBException","void shouldMapJaxb()throws ParseException, JAXBException{
+
+        SourceTargetMapper mapper = SourceTargetMapper.INSTANCE;
+
+        OrderDto source1 = new OrderDto();
+        source1.setOrderDetails( new OrderDetailsDto() );
+        source1.setOrderNumber( 11L );
+        source1.setOrderDate( createDate( ""31-08-1982 10:20:56"" ) );
+        source1.setShippingAddress( new ShippingAddressDto() );
+        source1.getShippingAddress().setCity( ""SmallTown"" );
+        source1.getShippingAddress().setHouseNumber( ""11a"" );
+        source1.getShippingAddress().setStreet( ""Awesome rd"" );
+        source1.getShippingAddress().setCountry( ""USA"" );
+        source1.getOrderDetails().setDescription( new ArrayList<String>() );
+        source1.getOrderDetails().setName( ""Shopping list for a Mapper"" );
+        source1.getOrderDetails().getDescription().add( ""1 MapStruct"" );
+        source1.getOrderDetails().getDescription().add( ""3 Lines of Code"" );
+        source1.getOrderDetails().getDescription().add( ""1 Dose of Luck"" );
+        source1.getOrderDetails().setStatus( OrderStatusDto.ORDERED );
+
+        OrderType target = mapper.targetToSource( source1 );
+
+        ObjectFactory of = new ObjectFactory();
+        System.out.println( toXml( of.createOrder( target ) ) );
+
+        OrderDto source2 = mapper.sourceToTarget( target );
+
+        assertThat( source2.getOrderNumber() ).isEqualTo( source1.getOrderNumber() );
+        assertThat( source2.getOrderDate() ).isEqualTo( source1.getOrderDate() );
+        assertThat( source2.getOrderDetails().getDescription().size() ).isEqualTo(
+            source1.getOrderDetails().getDescription().size()
+        );
+        assertThat( source2.getOrderDetails().getDescription().get( 0 ) ).isEqualTo(
+            source1.getOrderDetails().getDescription().get( 0 )
+        );
+        assertThat( source2.getOrderDetails().getDescription().get( 1 ) ).isEqualTo(
+            source1.getOrderDetails().getDescription().get( 1 )
+        );
+        assertThat( source2.getOrderDetails().getDescription().get( 2 ) ).isEqualTo(
+            source1.getOrderDetails().getDescription().get( 2 )
+        );
+        assertThat( source2.getOrderDetails().getName() ).isEqualTo( source1.getOrderDetails().getName() );
+        assertThat( source2.getOrderDetails().getStatus() ).isEqualTo( source1.getOrderDetails().getStatus() );
+    }"

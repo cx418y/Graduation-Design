@@ -1,0 +1,25 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","orderTypeToExternalOrderType","ExternalOrderType orderTypeToExternalOrderType(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case EXTRA: externalOrderType = ExternalOrderType.SPECIAL;
+            break;
+            case STANDARD: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case NORMAL: externalOrderType = ExternalOrderType.DEFAULT;
+            break;
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: throw new IllegalArgumentException( ""Unexpected enum constant: "" + orderType );
+        }
+
+        return externalOrderType;
+    }
+",""

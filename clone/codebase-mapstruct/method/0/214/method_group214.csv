@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1264","214","707","706","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/visibility/ConstructorVisibilityTest.java","30","41","-2147344633","-2147344558","0","0","void shouldUseSinglePublicConstructorAlways()","void shouldUseSinglePublicConstructorAlways(){
+        PersonDto source = new PersonDto();
+        source.setName( ""Bob"" );
+        source.setAge( 30 );
+
+        SimpleWithPublicConstructorMapper.Person target =
+            SimpleWithPublicConstructorMapper.INSTANCE.map( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getName() ).isEqualTo( ""Bob"" );
+        assertThat( target.getAge() ).isEqualTo( 30 );
+    }"
+"1265","214","709","708","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/visibility/ConstructorVisibilityTest.java","47","58","-2147344558","-2147344482","0","0","void shouldUsePublicParameterConstructorIfPresent()","void shouldUsePublicParameterConstructorIfPresent(){
+        PersonDto source = new PersonDto();
+        source.setName( ""Bob"" );
+        source.setAge( 30 );
+
+        SimpleWithPublicParameterlessConstructorMapper.Person target =
+            SimpleWithPublicParameterlessConstructorMapper.INSTANCE.map( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getName() ).isEqualTo( ""From Constructor"" );
+        assertThat( target.getAge() ).isEqualTo( -1 );
+    }"
+"1266","214","707","706","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/visibility/ConstructorVisibilityTest.java","64","75","-2147344482","-2147344407","0","0","void shouldUseDefaultAnnotatedConstructorAlways()","void shouldUseDefaultAnnotatedConstructorAlways(){
+        PersonDto source = new PersonDto();
+        source.setName( ""Bob"" );
+        source.setAge( 30 );
+
+        SimpleWithPublicParameterlessConstructorAndDefaultAnnotatedMapper.Person target =
+            SimpleWithPublicParameterlessConstructorAndDefaultAnnotatedMapper.INSTANCE.map( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getName() ).isEqualTo( ""Bob"" );
+        assertThat( target.getAge() ).isEqualTo( 30 );
+    }"

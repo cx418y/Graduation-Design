@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","responseSuccess200","void responseSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));
+
+    RecordingMaybeObserver<Response<String>> observer = observerRule.create();
+    service.response().subscribe(observer);
+    Response<String> response = observer.takeValue();
+    assertThat(response.isSuccessful()).isTrue();
+  }
+",""

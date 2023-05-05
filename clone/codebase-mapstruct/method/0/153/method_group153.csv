@@ -1,0 +1,15 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"899","153","508","507","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/exceptions/ExceptionTest.java","89","95","-2147389570","-2147389517","0","0","void shouldThrowRuntimeInMapKeyMapping()throws TestException2","void shouldThrowRuntimeInMapKeyMapping()throws TestException2{
+        Map<Integer, String> source = new HashMap<>();
+        source.put( 1, ""test"" );
+        SourceTargetMapper sourceTargetMapper = SourceTargetMapper.INSTANCE;
+        assertThatThrownBy( () -> sourceTargetMapper.integerKeyMapToLongKeyMap( source ) )
+            .isInstanceOf( RuntimeException.class );
+    }"
+"900","153","510","509","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/exceptions/ExceptionTest.java","99","105","-2147389517","-2147389463","0","0","void shouldThrowTestException2InMapKeyMapping()throws TestException2","void shouldThrowTestException2InMapKeyMapping()throws TestException2{
+        Map<Integer, String> source = new HashMap<>();
+        source.put( 2, ""test"" );
+        SourceTargetMapper sourceTargetMapper = SourceTargetMapper.INSTANCE;
+        assertThatThrownBy( () -> sourceTargetMapper.integerKeyMapToLongKeyMap( source ) )
+            .isInstanceOf( TestException2.class );
+    }"

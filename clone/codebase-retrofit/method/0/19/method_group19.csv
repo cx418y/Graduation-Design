@@ -1,0 +1,40 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"159","19","63","62","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CompletableFutureTest.java","65","78","-2147463472","-2147463402","0","0","void bodySuccess404()throws Exception","void bodySuccess404()throws Exception{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    CompletableFuture<String> future = service.body();
+    try {
+      future.get();
+      fail();
+    } catch (ExecutionException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(HttpException.class)          .isInstanceOf(HttpException.class)
+          .hasMessage(""HTTP 404 Client Error"");
+    }
+  }"
+"397","19","67","66","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/java8/src/test/java/retrofit2/adapter/java8/CompletableFutureTest.java","67","80","-2147433948","-2147433876","0","0","void bodySuccess404()throws Exception","void bodySuccess404()throws Exception{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    CompletableFuture<String> future = service.body();
+    try {
+      future.get();
+      fail();
+    } catch (ExecutionException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(HttpException.class)          .isInstanceOf(retrofit2.HttpException.class)
+          .hasMessage(""HTTP 404 Client Error"");
+    }
+  }"
+"524","19","67","66","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/guava/src/test/java/retrofit2/adapter/guava/ListenableFutureTest.java","67","80","-2147420947","-2147420875","0","0","void bodySuccess404()throws Exception","void bodySuccess404()throws Exception{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    ListenableFuture<String> future = service.body();
+    try {
+      future.get();
+      fail();
+    } catch (ExecutionException e) {
+      assertThat(e.getCause())
+          .isInstanceOf(HttpException.class)          .isInstanceOf(retrofit2.HttpException.class)
+          .hasMessage(""HTTP 404 Client Error"");
+    }
+  }"

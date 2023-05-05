@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testStringToLocalDate","void testStringToLocalDate(){
+        String dateTimeAsString = ""01.01.2014"";
+        Target target = new Target();
+        target.setLocalDate( dateTimeAsString );
+        LocalDate sourceDate =
+            new LocalDate( 2014, 1, 1 );[*1*] 
+
+        Source src = SourceTargetMapper.INSTANCE.targetToSourceLocalDateMapped( target );
+        assertThat( src ).isNotNull();
+        assertThat( src.getLocalDate() ).isEqualTo( sourceDate );
+    }
+","[*1*]:
+1, 0.5,             LocalDate.of( 2014, 1, 1 );
+"

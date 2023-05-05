@@ -1,0 +1,41 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"629","112","385","384","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1131/Issue1131Test.java","29","48","-2147417573","-2147417438","0","0","void shouldUseCreateWithSourceNested()","void shouldUseCreateWithSourceNested(){
+
+        Source source = new Source();
+        source.setNested( new Source.Nested() );
+        source.getNested().setProperty( ""something"" );
+        source.setMoreNested( new ArrayList<>() );
+
+        Target target = new Target();
+
+        Issue1131Mapper.CALLED_METHODS.clear();
+        Issue1131Mapper.INSTANCE.merge( source, target );
+
+        assertThat( target.getNested() ).isNotNull();
+        assertThat( target.getNested().getProperty() ).isEqualTo( ""something"" );
+        assertThat( target.getNested().getInternal() ).isEqualTo( ""from object factory"" );
+        assertThat( Issue1131Mapper.CALLED_METHODS ).containsExactly(
+            ""create(Source.Nested)"",
+            ""create(List<Source.Nested>)""
+        );
+    }"
+"630","112","387","386","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_1131/Issue1131Test.java","51","70","-2147417438","-2147417295","0","0","void shouldUseContextObjectFactory()","void shouldUseContextObjectFactory(){
+
+        Source source = new Source();
+        source.setNested( new Source.Nested() );
+        source.getNested().setProperty( ""something"" );
+        source.setMoreNested( new ArrayList<>() );
+
+        Target target = new Target();
+
+        Issue1131MapperWithContext.MappingContext context = new Issue1131MapperWithContext.MappingContext();
+        Issue1131MapperWithContext.INSTANCE.merge( source, target, context );
+
+        assertThat( target.getNested() ).isNotNull();
+        assertThat( target.getNested().getProperty() ).isEqualTo( ""something"" );
+        assertThat( target.getNested().getInternal() ).isEqualTo( ""from within @Context"" );
+        assertThat( context.getCalledMethods() ).containsExactly(
+            ""create(Source.Nested)"",
+            ""create(List<Source.Nested>)""
+        );
+    }"

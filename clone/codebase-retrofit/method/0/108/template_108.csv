@@ -1,0 +1,19 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","deserializeWrongValue","void deserializeWrongValue()throws IOException{
+    ByteString encoded = ByteString.decodeBase64(""////"");
+    server.enqueue(new MockResponse().setBody(new Buffer().write(encoded)));
+
+    Call<?> call = service.get();
+    try {
+      call.execute();
+      fail();
+    } catch (EOFException ignored) {
+      assertThat(e.getCause())[*1*] 
+          .isInstanceOf(InvalidProtocolBufferException.class)[*2*] 
+          .hasMessageContaining(""input ended unexpectedly"");[*3*] 
+    }
+  }
+","[*1*]:
+[*2*]:
+[*3*]:
+"

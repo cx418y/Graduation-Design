@@ -1,0 +1,28 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"637","110","357","356","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/java8/src/test/java/retrofit/converter/java8/Java8OptionalConverterFactoryTest.java","50","58","-2147409458","-2147409404","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(Java8OptionalConverterFactory.create())
+            .addConverterFactory(new AlwaysNullConverterFactory())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"662","110","357","356","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/guava/src/test/java/retrofit/converter/guava/GuavaOptionalConverterFactoryTest.java","50","58","-2147407573","-2147407519","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(GuavaOptionalConverterFactory.create())
+            .addConverterFactory(new AlwaysNullConverterFactory())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"673","110","357","356","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/scalars/src/test/java/retrofit2/converter/scalars/ScalarsConverterPrimitivesFactoryTest.java","94","102","-2147404772","-2147404718","0","0","void setUp()","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .addCallAdapterFactory(new DirectCallAdapterFactory())
+            .build();
+    service = retrofit.create(Service.class);
+  }"

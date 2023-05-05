@@ -1,0 +1,29 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","characterEncoding","void characterEncoding()throws Exception{
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<?xml version=\""1.0\"" ?>""
+                    + ""<!DOCTYPE contact[""
+                    + ""  <!ENTITY secret SYSTEM \""""
+                    + server.url(""/secret.txt"")
+                    + ""\"">""
+                    + ""]>""
+                    + ""<contact>""
+                    + ""<name>&secret;</name>""
+                    + ""</contact>""));
+    server.enqueue(new MockResponse().setBody(""hello""));
+
+    Call<Contact> call = service.getXml();
+    try {
+      Response<Contact> response = call.execute();
+      response.body();
+      fail();
+    } catch (RuntimeException expected) {
+      assertThat(expected).hasMessageContaining(""ParseError"");
+    }
+
+    assertThat(server.getRequestCount()).isEqualTo(1);
+  }
+",""

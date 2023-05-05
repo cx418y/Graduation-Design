@@ -1,0 +1,9 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","bodySuccess404","void bodySuccess404(){
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    RecordingObserver<String> observer = observerRule.create();
+    service.body().subscribe(observer);
+    observer.assertError(HttpException.class, ""HTTP 404 Client Error"");
+  }
+",""

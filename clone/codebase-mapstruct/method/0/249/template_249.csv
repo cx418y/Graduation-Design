@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","register","void register(Class<?> sourceClass, Class<?> targetClass, ConversionProvider conversion){[*1*] 
+        Type sourceType = typeFactory.getType( sourceClass );
+        Type targetType = typeFactory.getType( targetClass );
+
+        conversions.put( new Key( sourceType, targetType ), conversion );
+        conversions.put( new Key( targetType, sourceType ), inverse( conversion ) );
+    }
+","[*1*]:
+1, 0.5, void register(String sourceTypeName, Class<?> targetClass, ConversionProvider conversion){
+"

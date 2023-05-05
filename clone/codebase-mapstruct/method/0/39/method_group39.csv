@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"230","39","137","136","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/CollectionMappingTest.java","78","86","-2147456774","-2147456713","0","0","void shouldReverseMapList()","void shouldReverseMapList(){
+        Target target = new Target();
+        target.setStringList( Arrays.asList( ""Bob"", ""Alice"" ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getStringList() ).containsExactly( ""Bob"", ""Alice"" );
+    }"
+"1168","39","137","138","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/StreamMappingTest.java","75","83","-2147356982","-2147356921","0","0","void shouldReverseMapList()","void shouldReverseMapList(){
+        Target target = new Target();
+        target.setStringList( Arrays.asList( ""Bob"", ""Alice"" ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getStringStream() ).containsExactly( ""Bob"", ""Alice"" );
+    }"

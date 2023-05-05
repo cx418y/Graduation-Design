@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapIntoRecord","void shouldMapIntoRecord(){
+        CustomerEntity entity = new CustomerEntity();
+        entity.setName( ""Kermit"" );
+        entity.setMail( ""kermit@test.com"" );
+
+        CustomerDto customer = CustomerMapper.INSTANCE.toRecord( entity );
+
+        assertThat( customer ).isNotNull();
+        assertThat( customer.name() ).isEqualTo( ""Kermit"" );
+        assertThat( customer.email() ).isEqualTo( ""kermit@test.com"" );
+    }
+",""

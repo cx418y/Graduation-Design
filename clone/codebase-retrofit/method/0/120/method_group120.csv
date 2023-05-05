@@ -1,0 +1,63 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"685","120","369","368","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","189","219","-2147403421","-2147403301","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<?xml version=\""1.0\"" ?>""
+                    + ""<!DOCTYPE contact SYSTEM \""""
+                    + server.url(""/contact.dtd"")
+                    + ""\"">""
+                    + ""<contact>""
+                    + ""<name>&secret;</name>""
+                    + ""</contact>""));
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<!ELEMENT contact (name)>\n""
+                    + ""<!ELEMENT name (#PCDATA)>\n""
+                    + ""<!ENTITY secret \""hello\"">""));
+
+    Call<Contact> call = service.getXml();
+    try {
+      Response<Contact> response = call.execute();
+      response.body();
+      fail();
+    } catch (RuntimeException expected) {
+      assertThat(expected).hasMessageContaining(""ParseError"");
+    }
+
+    assertThat(server.getRequestCount()).isEqualTo(1);
+  }"
+"698","120","369","368","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","189","219","-2147402433","-2147402313","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<?xml version=\""1.0\"" ?>""
+                    + ""<!DOCTYPE contact SYSTEM \""""
+                    + server.url(""/contact.dtd"")
+                    + ""\"">""
+                    + ""<contact>""
+                    + ""<name>&secret;</name>""
+                    + ""</contact>""));
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<!ELEMENT contact (name)>\n""
+                    + ""<!ELEMENT name (#PCDATA)>\n""
+                    + ""<!ENTITY secret \""hello\"">""));
+
+    Call<Contact> call = service.getXml();
+    try {
+      Response<Contact> response = call.execute();
+      response.body();
+      fail();
+    } catch (RuntimeException expected) {
+      assertThat(expected).hasMessageContaining(""ParseError"");
+    }
+
+    assertThat(server.getRequestCount()).isEqualTo(1);
+  }"

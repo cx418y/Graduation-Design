@@ -1,0 +1,69 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"75","11","24","23","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/exception/CustomUnexpectedValueMappingExceptionDefinedInMapperImpl.java","36","52","-2147477844","-2147477793","0","0","ExternalOrderType withAnyRemaining(OrderType orderType)","ExternalOrderType withAnyRemaining(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: externalOrderType = ExternalOrderType.DEFAULT;
+        }
+
+        return externalOrderType;
+    }"
+"78","11","24","23","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/exception/CustomUnexpectedValueMappingExceptionDefinedInMapperConfigImpl.java","36","52","-2147477632","-2147477581","0","0","ExternalOrderType withAnyRemaining(OrderType orderType)","ExternalOrderType withAnyRemaining(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: externalOrderType = ExternalOrderType.DEFAULT;
+        }
+
+        return externalOrderType;
+    }"
+"81","11","24","23","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/exception/CustomUnexpectedValueMappingExceptionDefinedInMapperAndEnumMappingImpl.java","36","52","-2147477420","-2147477369","0","0","ExternalOrderType withAnyRemaining(OrderType orderType)","ExternalOrderType withAnyRemaining(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: externalOrderType = ExternalOrderType.DEFAULT;
+        }
+
+        return externalOrderType;
+    }"
+"84","11","24","23","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/value/exception/CustomUnexpectedValueMappingExceptionMapperImpl.java","36","52","-2147477208","-2147477157","0","0","ExternalOrderType withAnyRemaining(OrderType orderType)","ExternalOrderType withAnyRemaining(OrderType orderType){
+        if ( orderType == null ) {
+            return null;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: externalOrderType = ExternalOrderType.DEFAULT;
+        }
+
+        return externalOrderType;
+    }"

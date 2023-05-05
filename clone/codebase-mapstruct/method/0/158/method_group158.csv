@@ -1,0 +1,33 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"929","158","524","523","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/targetthis/TargetThisMappingTest.java","32","47","-2147386823","-2147386699","0","0","void testTargetingThis()","void testTargetingThis(){
+        CustomerDTO ce = new CustomerDTO();
+        ce.setName( ""customer name"" );
+
+        ItemDTO e = new ItemDTO();
+        e.setId( ""item id"" );
+        e.setStatus( 1 );
+        ce.setItem( e );
+
+        CustomerItem c = SimpleMapper.INSTANCE.map( ce );
+
+        assertThat( c ).isNotNull();
+        assertThat( c.getName() ).isNull();
+        assertThat( c.getId() ).isEqualTo( ce.getItem().getId() );
+        assertThat( c.getStatus() ).isEqualTo( ce.getItem().getStatus() );
+    }"
+"931","158","526","525","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/targetthis/TargetThisMappingTest.java","72","87","-2147386573","-2147386457","0","0","void testTargetingThisWithIgnore()","void testTargetingThisWithIgnore(){
+        CustomerDTO ce = new CustomerDTO();
+        ce.setName( ""customer name"" );
+
+        ItemDTO e = new ItemDTO();
+        e.setId( ""item id"" );
+        e.setStatus( 1 );
+        ce.setItem( e );
+
+        CustomerItem c = SimpleMapperWithIgnore.INSTANCE.map( ce );
+
+        assertThat( c ).isNotNull();
+        assertThat( c.getName() ).isEqualTo( ""customer name"" );
+        assertThat( c.getId() ).isNull();
+        assertThat( c.getStatus() ).isEqualTo( ce.getItem().getStatus() );
+    }"

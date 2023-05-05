@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testWildCardAsSourceType","void testWildCardAsSourceType(){
+
+        SourceWildCardExtendsMapper.Wrapper<BigInteger> wrapper =
+            new SourceWildCardExtendsMapper.Wrapper<>( new BigInteger( ""5"" ) );
+        SourceWildCardExtendsMapper.Source source = new SourceWildCardExtendsMapper.Source( wrapper );
+
+        SourceWildCardExtendsMapper.Target target = SourceWildCardExtendsMapper.INSTANCE.map( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isEqualTo( ""5"" );
+    }
+",""

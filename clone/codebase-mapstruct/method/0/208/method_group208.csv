@@ -1,0 +1,44 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1231","208","687","686","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","464","476","-2147348800","-2147348677","0","0","void shouldMapXmlGregorianCalendarToLocalTime()throws Exception","void shouldMapXmlGregorianCalendarToLocalTime()throws Exception{
+
+        XmlGregorianCalendarBean in = new XmlGregorianCalendarBean();
+        XMLGregorianCalendar xcal =
+            DatatypeFactory.newInstance().newXMLGregorianCalendarTime( 1, 1, 1, 100, 60 );
+        in.setxMLGregorianCalendar( xcal );
+
+        LocalTimeBean res = XmlGregorianCalendarToLocalTime.INSTANCE.toLocalTimeBean( in );
+        assertThat( res.getLocalTime().getHourOfDay() ).isEqualTo( 1 );
+        assertThat( res.getLocalTime().getMinuteOfHour() ).isEqualTo( 1 );
+        assertThat( res.getLocalTime().getSecondOfMinute() ).isEqualTo( 1 );
+        assertThat( res.getLocalTime().getMillisOfSecond() ).isEqualTo( 100 );
+    }"
+"1232","208","696","695","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","480","494","-2147348677","-2147348542","0","0","void shouldMapXmlGregorianCalendarWithoutMillisToLocalTime()throws Exception","void shouldMapXmlGregorianCalendarWithoutMillisToLocalTime()throws Exception{
+
+        XmlGregorianCalendarBean in = new XmlGregorianCalendarBean();
+        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+        xcal.setHour( 23 );
+        xcal.setMinute( 34 );
+        xcal.setSecond( 45 );
+        in.setxMLGregorianCalendar( xcal );
+
+        LocalTimeBean res = XmlGregorianCalendarToLocalTime.INSTANCE.toLocalTimeBean( in );
+        assertThat( res.getLocalTime().getHourOfDay() ).isEqualTo( 23 );
+        assertThat( res.getLocalTime().getMinuteOfHour() ).isEqualTo( 34 );
+        assertThat( res.getLocalTime().getSecondOfMinute() ).isEqualTo( 45 );
+        assertThat( res.getLocalTime().getMillisOfSecond() ).isEqualTo( 0 );
+    }"
+"1233","208","696","699","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","498","512","-2147348542","-2147348407","0","0","void shouldMapXmlGregorianCalendarWithoutSecondsToLocalTime()throws Exception","void shouldMapXmlGregorianCalendarWithoutSecondsToLocalTime()throws Exception{
+
+        XmlGregorianCalendarBean in = new XmlGregorianCalendarBean();
+        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+        xcal.setHour( 23 );
+        xcal.setMinute( 34 );
+        xcal.setTimezone( 60 );
+        in.setxMLGregorianCalendar( xcal );
+
+        LocalTimeBean res = XmlGregorianCalendarToLocalTime.INSTANCE.toLocalTimeBean( in );
+        assertThat( res.getLocalTime().getHourOfDay() ).isEqualTo( 23 );
+        assertThat( res.getLocalTime().getMinuteOfHour() ).isEqualTo( 34 );
+        assertThat( res.getLocalTime().getSecondOfMinute() ).isEqualTo( 0 );
+        assertThat( res.getLocalTime().getMillisOfSecond() ).isEqualTo( 0 );
+    }"

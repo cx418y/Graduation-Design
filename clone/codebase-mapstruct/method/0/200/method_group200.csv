@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1164","200","645","644","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/wildcard/WildCardTest.java","31","41","-2147357218","-2147357161","0","0","void shouldGenerateExtendsBoundSourceForgedStreamMethod()","void shouldGenerateExtendsBoundSourceForgedStreamMethod(){
+
+        ExtendsBoundSource source = new ExtendsBoundSource();
+
+        Target target = ExtendsBoundSourceTargetMapper.STM.map( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getElements() ).isNull();
+        assertThat( target.getListElements() ).isNull();
+
+    }"
+"1165","200","645","644","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/wildcard/WildCardTest.java","51","61","-2147357161","-2147357104","0","0","void shouldGenerateSuperBoundTargetForgedIterableMethod()","void shouldGenerateSuperBoundTargetForgedIterableMethod(){
+
+        Source source = new Source();
+
+        SuperBoundTarget target = SourceSuperBoundTargetMapper.STM.map( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getElements() ).isNull();
+        assertThat( target.getListElements() ).isNull();
+
+    }"

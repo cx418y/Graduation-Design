@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","characterEncoding","void characterEncoding()throws Exception{
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<?xml version=\""1.0\"" ?>""
+                    + ""<contact>""
+                    + ""<name>Бронтозавр \uD83E\uDD95 ティラノサウルス・レックス &#129430;</name>""
+                    + ""</contact>""));
+
+    Call<Contact> call = service.getXml();
+    Response<Contact> response = call.execute();
+    assertThat(response.body().name)
+        .isEqualTo(""Бронтозавр \uD83E\uDD95 ティラノサウルス・レックス \uD83E\uDD96"");
+  }
+",""

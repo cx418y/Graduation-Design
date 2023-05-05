@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"166","23","74","73","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/ResponseTest.java","44","54","-2147462971","-2147462850","0","0","void success()","void success(){
+    Object body = new Object();
+    Response<Object> response = Response.success(body);
+    assertThat(response.raw()).isNotNull();
+    assertThat(response.code()).isEqualTo(200);
+    assertThat(response.message()).isEqualTo(""OK"");
+    assertThat(response.headers().size()).isZero();
+    assertThat(response.isSuccessful()).isTrue();
+    assertThat(response.body()).isSameAs(body);
+    assertThat(response.errorBody()).isNull();
+  }"
+"169","23","84","83","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/ResponseTest.java","100","110","-2147462600","-2147462476","0","0","void successWithRawResponse()","void successWithRawResponse(){
+    Object body = new Object();
+    Response<Object> response = Response.success(body, successResponse);
+    assertThat(response.raw()).isSameAs(successResponse);
+    assertThat(response.code()).isEqualTo(200);
+    assertThat(response.message()).isEqualTo(""OK"");
+    assertThat(response.headers().size()).isZero();
+    assertThat(response.isSuccessful()).isTrue();
+    assertThat(response.body()).isSameAs(body);
+    assertThat(response.errorBody()).isNull();
+  }"

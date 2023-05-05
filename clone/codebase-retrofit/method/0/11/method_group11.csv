@@ -1,0 +1,51 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"117","11","29","28","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","436","460","-2147470075","-2147469930","0","0","void http204SkipsConverter()throws IOException","void http204SkipsConverter()throws IOException{
+    final Converter<ResponseBody, String> converter =
+        value -> {
+          throw new AssertionError();
+        };
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(
+                new ToStringConverterFactory() {
+                  @Override
+                  public Converter<ResponseBody, String> responseBodyConverter(
+                      Type type, Annotation[] annotations, Retrofit retrofit) {
+                    return converter;
+                  }
+                })
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse().setStatus(""HTTP/1.1 204 Nothin""));
+
+    Response<String> response = example.getString().execute();
+    assertThat(response.code()).isEqualTo(204);
+    assertThat(response.body()).isNull();
+  }"
+"118","11","29","28","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","463","487","-2147469930","-2147469785","0","0","void http205SkipsConverter()throws IOException","void http205SkipsConverter()throws IOException{
+    final Converter<ResponseBody, String> converter =
+        value -> {
+          throw new AssertionError();
+        };
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(
+                new ToStringConverterFactory() {
+                  @Override
+                  public Converter<ResponseBody, String> responseBodyConverter(
+                      Type type, Annotation[] annotations, Retrofit retrofit) {
+                    return converter;
+                  }
+                })
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse().setStatus(""HTTP/1.1 205 Nothin""));
+
+    Response<String> response = example.getString().execute();
+    assertThat(response.code()).isEqualTo(205);
+    assertThat(response.body()).isNull();
+  }"

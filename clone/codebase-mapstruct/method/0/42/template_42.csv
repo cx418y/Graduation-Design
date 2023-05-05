@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapSetAsCopy","void shouldMapSetAsCopy(){
+        Source source = new Source();
+        source.setStringSet( new HashSet<>( Arrays.asList( ""Bob"", ""Alice"" ) ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+        target.getStringSet().add( ""Bill"" );
+
+        assertThat( source.getStringSet() ).containsOnly( ""Bob"", ""Alice"" );
+    }
+",""

@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1025","177","582","581","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/date/DateConversionTest.java","45","55","-2147374122","-2147374021","0","0","void shouldApplyDateFormatForConversions()","void shouldApplyDateFormatForConversions(){
+        Source source = new Source();
+        source.setDate( new GregorianCalendar( 2013, Calendar.JULY, 6 ).getTime() );
+        source.setAnotherDate( new GregorianCalendar( 2013, Calendar.FEBRUARY, 14 ).getTime() );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getDate() ).isEqualTo( ""06.07.2013"" );
+        assertThat( target.getAnotherDate() ).isEqualTo( ""14.02.13 00:00"" );
+    }"
+"1026","177","582","581","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/date/DateConversionTest.java","60","70","-2147374021","-2147373920","0","0","void shouldApplyDateFormatForConversionsJdk11()","void shouldApplyDateFormatForConversionsJdk11(){
+        Source source = new Source();
+        source.setDate( new GregorianCalendar( 2013, Calendar.JULY, 6 ).getTime() );
+        source.setAnotherDate( new GregorianCalendar( 2013, Calendar.FEBRUARY, 14 ).getTime() );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getDate() ).isEqualTo( ""06.07.2013"" );
+        assertThat( target.getAnotherDate() ).isEqualTo( ""14.02.13, 00:00"" );
+    }"

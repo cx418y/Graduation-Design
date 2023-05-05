@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"386","69","247","246","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/main/java/retrofit2/adapter/rxjava3/BodyObservable.java","52","65","-2147435289","-2147435223","0","0","void onNext(Response<R> response)","void onNext(Response<R> response){
+      if (response.isSuccessful()) {
+        observer.onNext(response.body());
+      } else {
+        terminated = true;
+        Throwable t = new HttpException(response);
+        try {
+          observer.onError(t);
+        } catch (Throwable inner) {
+          Exceptions.throwIfFatal(inner);
+          RxJavaPlugins.onError(new CompositeException(t, inner));
+        }
+      }
+    }"
+"513","69","247","246","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/main/java/retrofit2/adapter/rxjava2/BodyObservable.java","52","65","-2147422288","-2147422222","0","0","void onNext(Response<R> response)","void onNext(Response<R> response){
+      if (response.isSuccessful()) {
+        observer.onNext(response.body());
+      } else {
+        terminated = true;
+        Throwable t = new HttpException(response);
+        try {
+          observer.onError(t);
+        } catch (Throwable inner) {
+          Exceptions.throwIfFatal(inner);
+          RxJavaPlugins.onError(new CompositeException(t, inner));
+        }
+      }
+    }"

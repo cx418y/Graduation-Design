@@ -1,0 +1,23 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testWithSourcesPresent","void testWithSourcesPresent(){
+
+        Source source = new Source();
+
+        source.setSomePrimitiveDouble( 5.0 );
+        source.setSomeInteger( 7 );
+        source.setSomeList( Arrays.asList( ""first"", ""second"" ) );
+        source.setSomeArray( new String[]{ ""x"", ""y"" } );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );[*1*] 
+[*2*] 
+
+        assertThat( target.getSomePrimitiveDouble() ).isEqualTo( 5.0 );
+        assertThat( target.getSomeInteger() ).isEqualTo( 7 );
+        assertThat( target.getSomeList() ).containsExactly( ""first"", ""second"" );
+        assertThat( target.getSomeArray() ).isEqualTo( new String[]{ ""x"", ""y""} );
+    }
+","[*1*]:
+1, 0.3333333333333333,         SourceTargetMapper.INSTANCE.sourceToTarget( source, target );
+[*2*]:
+1, 0.3333333333333333,         Target target = new Target();
+"

@@ -1,0 +1,23 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","orderTypeToExternalOrderType","ExternalOrderType orderTypeToExternalOrderType(OrderType orderType){
+        if ( orderType == null ) {
+            return ExternalOrderType.DEFAULT;
+        }
+
+        ExternalOrderType externalOrderType;
+
+        switch ( orderType ) {
+            case STANDARD: externalOrderType = null;
+            break;
+            case RETAIL: externalOrderType = ExternalOrderType.RETAIL;
+            break;
+            case B2B: externalOrderType = ExternalOrderType.B2B;
+            break;
+            default: externalOrderType = ExternalOrderType.SPECIAL;[*1*] 
+        }
+
+        return externalOrderType;
+    }
+","[*1*]:
+1, 0.5,             default: externalOrderType = null;
+"

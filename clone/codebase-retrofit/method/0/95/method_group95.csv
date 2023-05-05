@@ -1,0 +1,58 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"577","95","301","300","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/SingleThrowingTest.java","70","98","-2147416562","-2147416438","0","0","void bodyThrowingInOnSuccessDeliveredToPlugin()","void bodyThrowingInOnSuccessDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.getInstance()
+        .registerErrorHandler(
+            new RxJavaErrorHandler() {
+              @Override
+              public void handleError(Throwable throwable) {
+                if (!pluginRef.compareAndSet(null, throwable)) {
+                  throw Exceptions.propagate(throwable);                }
+              }
+            });
+
+    RecordingSubscriber<String> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingObserver<String>(observer) {
+              @Override
+              public void onSuccess(String value) {
+                throw e;
+              }
+            });
+
+    assertThat(pluginRef.get()).isSameAs(e);
+  }"
+"614","95","305","304","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava/src/test/java/retrofit2/adapter/rxjava/ObservableThrowingTest.java","86","115","-2147412337","-2147412209","0","0","void bodyThrowingInOnCompleteDeliveredToPlugin()","void bodyThrowingInOnCompleteDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.getInstance()
+        .registerErrorHandler(
+            new RxJavaErrorHandler() {
+              @Override
+              public void handleError(Throwable throwable) {
+                if (!pluginRef.compareAndSet(null, throwable)) {
+                  throw Exceptions.propagate(throwable);                }
+              }
+            });
+
+    RecordingSubscriber<String> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .unsafeSubscribe(
+            new ForwardingSubscriber<String>(observer) {
+              @Override
+              public void onCompleted() {
+                throw e;
+              }
+            });
+
+    observer.assertAnyValue();
+    assertThat(pluginRef.get()).isSameAs(e);
+  }"

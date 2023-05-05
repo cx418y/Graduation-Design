@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","findMapperReference","MapperReference findMapperReference(Method method){[*1*] 
+        for ( MapperReference ref : mapperReferences ) {
+            if ( ref.getType().equals( method.getDeclaringMapper() ) ) {
+                ref.setUsed( ref.isUsed() || !method.isStatic() );
+                ref.setTypeRequiresImport( true );
+                return ref;
+            }
+        }
+        return null;
+    }
+","[*1*]:
+1, 0.5, MapperReference findMapperReference(List<MapperReference> mapperReferences, SourceMethod method){
+"

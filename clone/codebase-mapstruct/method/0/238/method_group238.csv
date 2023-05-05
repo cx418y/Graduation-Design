@@ -1,0 +1,28 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1707","238","788","787","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/ContainerMappingMethod.java","72","82","-2147285940","-2147285889","0","0","Set<Type> getImportTypes()","Set<Type> getImportTypes(){
+        Set<Type> types = super.getImportTypes();
+        if ( elementAssignment != null ) {
+            types.addAll( elementAssignment.getImportTypes() );
+        }
+
+        if ( iterableCreation != null ) {
+            types.addAll( iterableCreation.getImportTypes() );
+        }
+        return types;
+    }"
+"1856","238","796","795","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/MapMappingMethod.java","268","283","-2147268468","-2147268400","0","0","Set<Type> getImportTypes()","Set<Type> getImportTypes(){
+        Set<Type> types = super.getImportTypes();
+
+        if ( keyAssignment != null ) {
+            types.addAll( keyAssignment.getImportTypes() );
+        }
+        if ( valueAssignment != null ) {
+            types.addAll( valueAssignment.getImportTypes() );
+        }
+
+        if ( iterableCreation != null ) {
+            types.addAll( iterableCreation.getImportTypes() );
+        }
+
+        return types;
+    }"

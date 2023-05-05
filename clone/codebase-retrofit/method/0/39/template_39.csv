@@ -1,0 +1,35 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","bodyThrowingInOnSuccessDeliveredToPlugin","void bodyThrowingInOnSuccessDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!throwableRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);
+          }
+        });
+
+    RecordingMaybeObserver<String> observer = subscriberRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .body()
+        .subscribe(
+            new ForwardingObserver<String>(observer) {
+              @Override
+              public void onSuccess(String value) {[*1*] 
+              public void onComplete() {[*2*] 
+                throw e;
+              }
+            });
+
+    subscriber.assertAnyValue();[*3*] 
+    assertThat(throwableRef.get().getCause()).isSameAs(e);[*4*] 
+    assertThat(throwableRef.get()).isInstanceOf(UndeliverableException.class).hasCause(e);[*5*] 
+  }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+"

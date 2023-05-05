@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","allAfterMappingMethods","List<Invocation> allAfterMappingMethods(Object source, Object target, Class<?> targetClass){
+        return new ArrayList<>( Arrays.asList(
+            new Invocation( ""noArgsAfterMapping"" ),
+            new Invocation( ""withSourceAfterMapping"", source ),
+            new Invocation( ""withSourceAsObjectAfterMapping"", source ),
+            new Invocation( ""withSourceAndTargetAfterMapping"", source, target ),
+            new Invocation( ""withTargetAfterMapping"", target ),[*1*] 
+            new Invocation( ""withTargetAsObjectAfterMapping"", target ),
+            new Invocation( ""withTargetAndTargetTypeAfterMapping"", target, targetClass ) ) );[*2*] 
+            new Invocation( ""withTargetAsObjectBeforeMapping"", emptyTarget ) ) );[*3*] 
+    }
+","[*1*]:
+1, 0.5,             new Invocation( ""withSourceAndTargetBeforeMapping"", source, emptyTarget ),
+[*2*]:
+[*3*]:
+"

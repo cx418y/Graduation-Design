@@ -1,0 +1,59 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"327","65","210","209","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/targetpropertyname/TargetPropertyNameTest.java","39","58","-2147447220","-2147447094","0","0","void conditionalMethodInMapperWithTargetPropertyName()","void conditionalMethodInMapperWithTargetPropertyName(){
+        ConditionalMethodInMapperWithTargetPropertyName mapper
+            = ConditionalMethodInMapperWithTargetPropertyName.INSTANCE;
+
+        EmployeeDto employeeDto = new EmployeeDto();
+        employeeDto.setFirstName( ""  "" );
+        employeeDto.setLastName( ""Testirovich"" );
+        employeeDto.setCountry( ""US"" );
+        employeeDto.setAddresses(
+            Collections.singletonList( new AddressDto( ""Testing St. 6"" ) )
+        );
+
+        Employee employee = mapper.map( employeeDto );
+        assertThat( employee.getLastName() ).isNull();
+        assertThat( employee.getFirstName() ).isNull();
+        assertThat( employee.getCountry() ).isEqualTo( ""US"" );
+        assertThat( employee.getAddresses() )
+            .extracting( Address::getStreet )
+            .containsExactly( ""Testing St. 6"" );
+    }"
+"328","65","214","213","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/targetpropertyname/TargetPropertyNameTest.java","64","81","-2147447094","-2147446977","0","0","void conditionalMethodForCollectionMapperWithTargetPropertyName()","void conditionalMethodForCollectionMapperWithTargetPropertyName(){
+        ConditionalMethodForCollectionMapperWithTargetPropertyName mapper
+            = ConditionalMethodForCollectionMapperWithTargetPropertyName.INSTANCE;
+
+        EmployeeDto employeeDto = new EmployeeDto();
+        employeeDto.setFirstName( ""  "" );
+        employeeDto.setLastName( ""Testirovich"" );
+        employeeDto.setCountry( ""US"" );
+        employeeDto.setAddresses(
+            Collections.singletonList( new AddressDto( ""Testing St. 6"" ) )
+        );
+
+        Employee employee = mapper.map( employeeDto );
+        assertThat( employee.getLastName() ).isNull();
+        assertThat( employee.getFirstName() ).isNull();
+        assertThat( employee.getCountry() ).isEqualTo( ""US"" );
+        assertThat( employee.getAddresses() ).isNull();
+    }"
+"329","65","210","209","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conditional/targetpropertyname/TargetPropertyNameTest.java","87","106","-2147446977","-2147446851","0","0","void conditionalMethodInUsesMapperWithTargetPropertyName()","void conditionalMethodInUsesMapperWithTargetPropertyName(){
+        ConditionalMethodInUsesMapperWithTargetPropertyName mapper
+            = ConditionalMethodInUsesMapperWithTargetPropertyName.INSTANCE;
+
+        EmployeeDto employeeDto = new EmployeeDto();
+        employeeDto.setFirstName( ""  "" );
+        employeeDto.setLastName( ""Testirovich"" );
+        employeeDto.setCountry( ""US"" );
+        employeeDto.setAddresses(
+            Collections.singletonList( new AddressDto( ""Testing St. 6"" ) )
+        );
+
+        Employee employee = mapper.map( employeeDto );
+        assertThat( employee.getLastName() ).isNull();
+        assertThat( employee.getFirstName() ).isNull();
+        assertThat( employee.getCountry() ).isEqualTo( ""US"" );
+        assertThat( employee.getAddresses() )
+            .extracting( Address::getStreet )
+            .containsExactly( ""Testing St. 6"" );
+    }"

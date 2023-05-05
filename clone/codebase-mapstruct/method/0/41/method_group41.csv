@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"237","41","143","142","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/CollectionMappingTest.java","180","188","-2147456184","-2147456117","0","0","void shouldReverseMapSet()","void shouldReverseMapSet(){
+        Target target = new Target();
+        target.setStringSet( new HashSet<>( Arrays.asList( ""Bob"", ""Alice"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getStringSet() ).contains( ""Bob"", ""Alice"" );
+    }"
+"1172","41","143","142","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/StreamMappingTest.java","119","127","-2147356712","-2147356645","0","0","void shouldReverseMapSet()","void shouldReverseMapSet(){
+        Target target = new Target();
+        target.setStringSet( new HashSet<>( Arrays.asList( ""Bob"", ""Alice"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getStringStreamToSet() ).contains( ""Bob"", ""Alice"" );
+    }"

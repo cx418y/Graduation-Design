@@ -1,0 +1,21 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","equals","boolean equals(Object o){
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        HouseDto houseDto = (HouseDto) o;
+
+        if ( year != houseDto.year ) {
+            return false;
+        }
+        if ( !Objects.equals( name, houseDto.name ) ) {
+            return false;
+        }
+        return Objects.equals( roof, houseDto.roof );
+
+    }
+",""

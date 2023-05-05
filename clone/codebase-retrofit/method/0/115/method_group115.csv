@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"680","115","389","388","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","92","106","-2147403866","-2147403801","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<?xml version=\""1.0\"" ?>""
+                    + ""<contact>""
+                    + ""<name>Бронтозавр \uD83E\uDD95 ティラノサウルス・レックス &#129430;</name>""
+                    + ""</contact>""));
+
+    Call<Contact> call = service.getXml();
+    Response<Contact> response = call.execute();
+    assertThat(response.body().name)
+        .isEqualTo(""Бронтозавр \uD83E\uDD95 ティラノサウルス・レックス \uD83E\uDD96"");
+  }"
+"693","115","389","388","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","92","106","-2147402878","-2147402813","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    server.enqueue(
+        new MockResponse()
+            .setBody(
+                """"
+                    + ""<?xml version=\""1.0\"" ?>""
+                    + ""<contact>""
+                    + ""<name>Бронтозавр \uD83E\uDD95 ティラノサウルス・レックス &#129430;</name>""
+                    + ""</contact>""));
+
+    Call<Contact> call = service.getXml();
+    Response<Contact> response = call.execute();
+    assertThat(response.body().name)
+        .isEqualTo(""Бронтозавр \uD83E\uDD95 ティラノサウルス・レックス \uD83E\uDD96"");
+  }"

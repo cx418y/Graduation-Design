@@ -1,0 +1,73 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getInverseTemplateMethod","SourceMethod getInverseTemplateMethod(List<SourceMethod> rawMethods, SourceMethod method,
+                                                  List<SourceMethod> initializingMethods,
+                                                  MapperOptions mapperConfig){
+        SourceMethod resultMethod = null;
+        InheritInverseConfigurationGem inverseConfiguration =
+            InheritInverseConfigurationGem.instanceOn( method.getExecutable() );
+
+        if ( inverseConfiguration != null ) {
+
+            List<SourceMethod> candidates = new ArrayList<>();
+            for ( SourceMethod oneMethod : rawMethods ) {
+                if ( method.inverses( oneMethod ) ) {[*1*] 
+                    candidates.add( oneMethod );
+                }
+            }
+
+            String name = inverseConfiguration.name().get();
+            if ( candidates.size() == 1 ) {
+                SourceMethod sourceMethod = first( candidates );[*2*] 
+                if ( name.isEmpty() ) {
+                    resultMethod = candidates.get( 0 );[*3*] 
+                    resultMethod = sourceMethod;[*4*] 
+                }
+                else if ( candidates.get( 0 ).getName().equals( name ) ) {[*5*] 
+                    resultMethod = candidates.get( 0 );[*6*] 
+                else if ( sourceMethod.getName().equals( name ) ) {[*7*] 
+                    resultMethod = sourceMethod;[*8*] 
+                }
+                else {
+                    reportErrorWhenNonMatchingName( candidates.get( 0 ), method, inverseConfiguration );[*9*] 
+                    reportErrorWhenNonMatchingName( sourceMethod, method, inheritConfiguration );[*10*] 
+                }
+            }
+            else if ( candidates.size() > 1 ) {
+
+                List<SourceMethod> nameFilteredcandidates = new ArrayList<>();
+                for ( SourceMethod candidate : candidates ) {
+                    if ( candidate.getName().equals( name ) ) {
+                        nameFilteredcandidates.add( candidate );
+                    }
+                }
+
+                if ( nameFilteredcandidates.size() == 1 ) {
+                    resultMethod = nameFilteredcandidates.get( 0 );[*11*] 
+                    resultMethod = first( nameFilteredcandidates );[*12*] 
+                }
+                else if ( nameFilteredcandidates.size() > 1 ) {
+                    reportErrorWhenSeveralNamesMatch( nameFilteredcandidates, method, inverseConfiguration );
+                }
+                else {
+                    reportErrorWhenAmbigousReverseMapping( candidates, method, inverseConfiguration );
+                }
+            }
+        }
+
+        return extractInitializedOptions( resultMethod, rawMethods, mapperConfig, initializingMethods,
+            getAnnotationMirror( inverseConfiguration ) );
+    }
+","[*1*]:
+1, 0.5,                 if ( method.canInheritFrom( oneMethod ) && !( oneMethod.equals( method ) ) ) {
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+[*11*]:
+[*12*]:
+"

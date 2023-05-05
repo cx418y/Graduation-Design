@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"242","28","95","94","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/Platform.java","247","255","-2147450224","-2147450168","0","0","boolean isSupported()","boolean isSupported(){
+      try {
+        Object version = Runtime.class.getMethod(""version"").invoke(null);
+        Integer feature = (Integer) version.getClass().getMethod(""feature"").invoke(version);
+        return feature >= 14;
+      } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException ignored) {
+        return false;
+      }
+    }"
+"243","28","95","94","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/Platform.java","299","307","-2147450168","-2147450112","0","0","boolean isSupported()","boolean isSupported(){
+      try {
+        Object version = Runtime.class.getMethod(""version"").invoke(null);
+        Integer feature = (Integer) version.getClass().getMethod(""feature"").invoke(version);
+        return feature >= 16;
+      } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException ignored) {
+        return false;
+      }
+    }"

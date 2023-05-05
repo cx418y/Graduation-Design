@@ -1,0 +1,19 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapOnlyExplicit","void shouldMapOnlyExplicit(){
+        PersonDto source = new PersonDto();
+        source.setId( 100L );
+        source.setName( ""John"" );
+        source.setLastName( ""Doe"" );
+
+        Person target = BuilderIgnoringMapper.INSTANCE.mapOnlyWithExplicit( source );
+
+        assertThat( target.getId() ).isNull();[*1*] 
+        assertThat( target.getName() ).isEqualTo( ""John"" );
+        assertThat( target.getLastName() ).isNull();[*2*] 
+        assertThat( target.getLastName() ).isEqualTo( ""Doe"" );[*3*] 
+    }
+","[*1*]:
+1, 0.5,         assertThat( target.getName() ).isEqualTo( ""John"" );
+[*2*]:
+[*3*]:
+"

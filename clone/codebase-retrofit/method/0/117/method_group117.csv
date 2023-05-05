@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"682","117","375","374","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","127","137","-2147403666","-2147403612","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    server.enqueue(new MockResponse().setBody(""This is not XML""));
+
+    Call<Contact> call = service.getXml();
+    try {
+      call.execute();
+      fail();
+    } catch (RuntimeException expected) {
+      assertThat(expected).hasMessageContaining(""ParseError"");
+    }
+  }"
+"695","117","375","374","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/jaxb3/src/test/java/retrofit2/converter/jaxb/JaxbConverterFactoryTest.java","127","137","-2147402678","-2147402624","0","0","void characterEncoding()throws Exception","void characterEncoding()throws Exception{
+    server.enqueue(new MockResponse().setBody(""This is not XML""));
+
+    Call<Contact> call = service.getXml();
+    try {
+      call.execute();
+      fail();
+    } catch (RuntimeException expected) {
+      assertThat(expected).hasMessageContaining(""ParseError"");
+    }
+  }"

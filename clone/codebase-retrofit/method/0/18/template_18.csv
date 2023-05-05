@@ -1,0 +1,29 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","timeoutExceeded","void timeoutExceeded()throws IOException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse().setHeadersDelay(500, TimeUnit.MILLISECONDS));
+
+    Call<String> call = example.getString();
+    call.timeout().timeout(100, TimeUnit.MILLISECONDS);
+    try {[*1*] 
+      call.execute();[*2*] 
+      fail();[*3*] 
+    } catch (InterruptedIOException expected) {[*4*] 
+    }[*5*] 
+[*6*] 
+  }
+","[*1*]:
+[*2*]:
+1, 0.3333333333333333,     Response<String> response = call.execute();
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+1, 0.3333333333333333,     assertThat(response.isSuccessful()).isTrue();
+"

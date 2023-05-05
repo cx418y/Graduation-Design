@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1297","217","718","717","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/unmappedsource/UnmappedSourceTest.java","79","88","-2147339928","-2147339861","0","0","""IGNORE"") @ProcessorOption(name = ""mapstruct.unmappedSourcePolicy"", value = ""ERROR"")@ExpectedCompilationOutcome(
+            value = CompilationResult.FAILED,
+            diagnostics =","""IGNORE"") @ProcessorOption(name = ""mapstruct.unmappedSourcePolicy"", value = ""ERROR"")@ExpectedCompilationOutcome(
+            value = CompilationResult.FAILED,
+            diagnostics ={
+                    @Diagnostic(type = org.mapstruct.ap.test.unmappedsource.SourceTargetMapperWithoutMapperConfig.class,
+                            kind = Kind.ERROR,
+                            line = 22,
+                            message = ""Unmapped source property: \""qux\"".""),
+                    @Diagnostic(type = org.mapstruct.ap.test.unmappedsource.SourceTargetMapperWithoutMapperConfig.class,
+                            kind = Kind.ERROR,
+                            line = 24,
+                            message = ""Unmapped source property: \""bar\""."")
+            }"
+"1298","217","718","719","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/unmappedsource/UnmappedSourceTest.java","100","109","-2147339861","-2147339794","0","0","""IGNORE"") @ProcessorOption(name = ""mapstruct.unmappedSourcePolicy"", value = ""WARN"")@ExpectedCompilationOutcome(
+            value = CompilationResult.SUCCEEDED,
+            diagnostics =","""IGNORE"") @ProcessorOption(name = ""mapstruct.unmappedSourcePolicy"", value = ""WARN"")@ExpectedCompilationOutcome(
+            value = CompilationResult.SUCCEEDED,
+            diagnostics ={
+                    @Diagnostic(type = org.mapstruct.ap.test.unmappedsource.SourceTargetMapperWithoutMapperConfig.class,
+                            kind = Kind.WARNING,
+                            line = 22,
+                            message = ""Unmapped source property: \""qux\"".""),
+                    @Diagnostic(type = org.mapstruct.ap.test.unmappedsource.SourceTargetMapperWithoutMapperConfig.class,
+                            kind = Kind.WARNING,
+                            line = 24,
+                            message = ""Unmapped source property: \""bar\""."")
+            }"

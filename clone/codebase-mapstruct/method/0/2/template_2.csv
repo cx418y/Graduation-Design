@@ -1,0 +1,17 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","sourceFooMapToTargetFooMap","Map<String, TargetFoo> sourceFooMapToTargetFooMap(Map<Long, SourceFoo> foos){
+        if ( foos == null ) {
+            return null;
+        }
+
+        Map<String, TargetFoo> map = new LinkedHashMap<String, TargetFoo>( Math.max( (int) ( foos.size() / .75f ) + 1, 16 ) );
+
+        for ( java.util.Map.Entry<Long, SourceFoo> entry : foos.entrySet() ) {
+            String key = String.valueOf( entry.getKey() );
+            TargetFoo value = sourceFooToTargetFoo( entry.getValue() );
+            map.put( key, value );
+        }
+
+        return map;
+    }
+",""

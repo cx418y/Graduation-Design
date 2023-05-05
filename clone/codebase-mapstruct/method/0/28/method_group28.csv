@@ -1,0 +1,65 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"11","28","85","84","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedtargetproperties/ChartEntryToArtistImpl.java","215","232","-2147482814","-2147482746","0","0","String chartSongArtistName(Chart chart)","String chartSongArtistName(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        String name = artist.getName();
+        if ( name == null ) {
+            return null;
+        }
+        return name;
+    }"
+"167","28","87","86","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/nestedsourceproperties/ArtistToChartEntryImpl.java","76","89","-2147467517","-2147467467","0","0","String songArtistName(Song song)","String songArtistName(Song song){
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        String name = artist.getName();
+        if ( name == null ) {
+            return null;
+        }
+        return name;
+    }"
+"194","28","87","86","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/constructor/nestedsource/ArtistToChartEntryImpl.java","98","111","-2147460727","-2147460677","0","0","String songArtistName(Song song)","String songArtistName(Song song){
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        String name = artist.getName();
+        if ( name == null ) {
+            return null;
+        }
+        return name;
+    }"
+"203","28","85","84","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/constructor/nestedtarget/ChartEntryToArtistImpl.java","149","166","-2147460117","-2147460049","0","0","String chartSongArtistName(Chart chart)","String chartSongArtistName(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        Artist artist = song.getArtist();
+        if ( artist == null ) {
+            return null;
+        }
+        String name = artist.getName();
+        if ( name == null ) {
+            return null;
+        }
+        return name;
+    }"

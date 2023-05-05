@@ -1,0 +1,42 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1219","206","663","662","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","237","249","-2147350638","-2147350555","0","0","void shouldNotMapXmlGregorianCalendarWithoutMinutes()throws Exception","void shouldNotMapXmlGregorianCalendarWithoutMinutes()throws Exception{
+
+        XmlGregorianCalendarBean in = new XmlGregorianCalendarBean();
+        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+        xcal.setYear( 1999 );
+        xcal.setMonth( 5 );
+        xcal.setDay( 25 );
+        xcal.setHour( 23 );
+        in.setxMLGregorianCalendar( xcal );
+
+        DateTimeBean res = XmlGregorianCalendarToDateTime.INSTANCE.toDateTimeBean( in );
+        assertThat( res.getDateTime() ).isNull();
+    }"
+"1226","206","663","662","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","374","387","-2147349446","-2147349363","0","0","void shouldNotMapXmlGregorianCalendarWithoutMinutesToLocalDateTime()throws Exception","void shouldNotMapXmlGregorianCalendarWithoutMinutesToLocalDateTime()throws Exception{
+
+        XmlGregorianCalendarBean in = new XmlGregorianCalendarBean();
+        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+        xcal.setYear( 1999 );
+        xcal.setMonth( 5 );
+        xcal.setDay( 25 );
+        xcal.setHour( 23 );
+        in.setxMLGregorianCalendar( xcal );
+
+        LocalDateTimeBean res = XmlGregorianCalendarToLocalDateTime.INSTANCE.toDateTimeBean( in );
+        assertThat( res.getLocalDateTime() ).isNull();
+
+    }"
+"1234","206","663","662","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","516","529","-2147348407","-2147348324","0","0","void shouldNotMapXmlGregorianCalendarWithoutMinutesToLocalTime()throws Exception","void shouldNotMapXmlGregorianCalendarWithoutMinutesToLocalTime()throws Exception{
+
+        XmlGregorianCalendarBean in = new XmlGregorianCalendarBean();
+        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar();
+        xcal.setYear( 1999 );
+        xcal.setMonth( 5 );
+        xcal.setDay( 25 );
+        xcal.setHour( 23 );
+        in.setxMLGregorianCalendar( xcal );
+
+        LocalTimeBean res = XmlGregorianCalendarToLocalTime.INSTANCE.toLocalTimeBean( in );
+        assertThat( res.getLocalTime() ).isNull();
+
+    }"

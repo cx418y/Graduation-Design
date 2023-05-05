@@ -1,0 +1,66 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"676","116","401","400","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNvmsDefaultMapper.java","29","35","-2147412123","-2147412063","0","0","= Mappers.getMapper( DomainDtoWithNvmsDefaultMapper.class );
+
+    @Mappings(","= Mappers.getMapper( DomainDtoWithNvmsDefaultMapper.class );
+
+    @Mappings({
+        @Mapping(target = ""strings"", source = ""strings""),
+        @Mapping(target = ""longs"", source = ""strings""),
+        @Mapping(target = ""stringsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""longsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""stringsWithDefault"", source = ""stringsWithDefault"", defaultValue = ""3"")
+   }"
+"677","116","401","400","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/DomainWithoutSetterDtoWithNvmsDefaultMapper.java","26","32","-2147412063","-2147412003","0","0","= Mappers.getMapper( DomainWithoutSetterDtoWithNvmsDefaultMapper.class );
+
+    @Mappings(","= Mappers.getMapper( DomainWithoutSetterDtoWithNvmsDefaultMapper.class );
+
+    @Mappings({
+        @Mapping(target = ""strings"", source = ""strings""),
+        @Mapping(target = ""longs"", source = ""strings""),
+        @Mapping(target = ""stringsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""longsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""stringsWithDefault"", source = ""stringsWithDefault"", defaultValue = ""3"")
+   }"
+"692","116","401","400","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/DomainWithoutSetterDtoWithNvmsNullMapper.java","26","32","-2147410438","-2147410378","0","0","= Mappers.getMapper( DomainWithoutSetterDtoWithNvmsNullMapper.class );
+
+    @Mappings(","= Mappers.getMapper( DomainWithoutSetterDtoWithNvmsNullMapper.class );
+
+    @Mappings({
+        @Mapping(target = ""strings"", source = ""strings""),
+        @Mapping(target = ""longs"", source = ""strings""),
+        @Mapping(target = ""stringsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""longsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""stringsWithDefault"", source = ""stringsWithDefault"", defaultValue = ""3"")
+    }"
+"693","116","401","400","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNcvsAlwaysMapper.java","29","35","-2147410378","-2147410318","0","0","); @BeanMapping( qualifiedByName = ""DomainObjectFactory"" )@Mappings(","); @BeanMapping( qualifiedByName = ""DomainObjectFactory"" )@Mappings({
+        @Mapping(target = ""strings"", source = ""strings""),
+        @Mapping(target = ""longs"", source = ""strings""),
+        @Mapping(target = ""stringsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""longsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""stringsWithDefault"", source = ""stringsWithDefault"", defaultValue = ""3"")
+    }"
+"694","116","401","400","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/DomainDtoWithPresenceCheckMapper.java","29","35","-2147410318","-2147410258","0","0","); @BeanMapping( qualifiedByName = ""DomainObjectFactory"" )@Mappings(","); @BeanMapping( qualifiedByName = ""DomainObjectFactory"" )@Mappings({
+        @Mapping(target = ""strings"", source = ""strings""),
+        @Mapping(target = ""longs"", source = ""strings""),
+        @Mapping(target = ""stringsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""longsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""stringsWithDefault"", source = ""stringsWithDefault"", defaultValue = ""3"")
+    }"
+"695","116","401","400","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNvmsNullMapper.java","29","35","-2147410258","-2147410198","0","0","); @BeanMapping( qualifiedByName = ""DomainObjectFactory"" )@Mappings(","); @BeanMapping( qualifiedByName = ""DomainObjectFactory"" )@Mappings({
+        @Mapping(target = ""strings"", source = ""strings""),
+        @Mapping(target = ""longs"", source = ""strings""),
+        @Mapping(target = ""stringsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""longsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""stringsWithDefault"", source = ""stringsWithDefault"", defaultValue = ""3"")
+    }"
+"706","116","401","400","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/DomainWithoutSetterDtoWithPresenceCheckMapper.java","26","32","-2147409398","-2147409338","0","0","= Mappers.getMapper( DomainWithoutSetterDtoWithPresenceCheckMapper.class );
+
+    @Mappings(","= Mappers.getMapper( DomainWithoutSetterDtoWithPresenceCheckMapper.class );
+
+    @Mappings({
+        @Mapping(target = ""strings"", source = ""strings""),
+        @Mapping(target = ""longs"", source = ""strings""),
+        @Mapping(target = ""stringsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""longsInitialized"", source = ""stringsInitialized""),
+        @Mapping(target = ""stringsWithDefault"", source = ""stringsWithDefault"", defaultValue = ""3"")
+    }"

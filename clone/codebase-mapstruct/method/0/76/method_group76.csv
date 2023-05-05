@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"388","76","233","232","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/callbacks/CallbackMethodTest.java","199","208","-2147441308","-2147441236","0","0","List<Invocation> allAfterMappingMethods(Object source, Object target, Class<?> targetClass)","List<Invocation> allAfterMappingMethods(Object source, Object target, Class<?> targetClass){
+        return new ArrayList<>( Arrays.asList(
+            new Invocation( ""noArgsAfterMapping"" ),
+            new Invocation( ""withSourceAfterMapping"", source ),
+            new Invocation( ""withSourceAsObjectAfterMapping"", source ),
+            new Invocation( ""withSourceAndTargetAfterMapping"", source, target ),
+            new Invocation( ""withTargetAfterMapping"", target ),
+            new Invocation( ""withTargetAsObjectAfterMapping"", target ),
+            new Invocation( ""withTargetAndTargetTypeAfterMapping"", target, targetClass ) ) );
+    }"
+"389","76","239","238","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/callbacks/CallbackMethodTest.java","210","219","-2147441236","-2147441164","0","0","List<Invocation> allBeforeMappingMethods(Object source, Object emptyTarget, Class<?> targetClass)","List<Invocation> allBeforeMappingMethods(Object source, Object emptyTarget, Class<?> targetClass){
+        return new ArrayList<>( Arrays.asList(
+            new Invocation( ""noArgsBeforeMapping"" ),
+            new Invocation( ""withSourceBeforeMapping"", source ),
+            new Invocation( ""withSourceAsObjectBeforeMapping"", source ),
+            new Invocation( ""withSourceAndTargetTypeBeforeMapping"", source, targetClass ),
+            new Invocation( ""withSourceAndTargetBeforeMapping"", source, emptyTarget ),
+            new Invocation( ""withTargetBeforeMapping"", emptyTarget ),
+            new Invocation( ""withTargetAsObjectBeforeMapping"", emptyTarget ) ) );
+    }"

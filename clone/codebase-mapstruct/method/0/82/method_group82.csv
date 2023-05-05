@@ -1,0 +1,22 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"433","82","267","266","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/ignore/IgnorePropertyTest.java","61","71","-2147437158","-2147437068","0","0","void propertyIsIgnoredInReverseMappingWhenSourceIsAlsoSpecifiedICWIgnore()","void propertyIsIgnoredInReverseMappingWhenSourceIsAlsoSpecifiedICWIgnore(){
+        AnimalDto animalDto = new AnimalDto( ""Bruno"", 100, 23, ""black"" );
+
+        Animal animal = AnimalMapper.INSTANCE.animalDtoToAnimal( animalDto );
+
+        assertThat( animal ).isNotNull();
+        assertThat( animalDto.getName() ).isEqualTo( ""Bruno"" );
+        assertThat( animalDto.getSize() ).isEqualTo( 100 );
+        assertThat( animal.getColour() ).isNull();
+        assertThat( animal.publicColour ).isNull();
+    }"
+"1970","82","271","270","0","/Users/macbook/Desktop/design/open/mapstruct/integrationtest/src/test/resources/fullFeatureTest/src/test/java/org/mapstruct/itest/simple/AnimalTest.java","37","46","-2147253444","-2147253365","0","0","void shouldNotPropagateIgnoredPropertyInReverseMappingWhenSourceAndTargetAreSpecified()","void shouldNotPropagateIgnoredPropertyInReverseMappingWhenSourceAndTargetAreSpecified(){
+        AnimalDto animalDto = new AnimalDto( ""Bruno"", 100, 23, ""black"" );
+
+        Animal animal = AnimalMapper.INSTANCE.animalDtoToAnimal( animalDto );
+
+        assertThat( animal ).isNotNull();
+        assertThat( animalDto.getName() ).isEqualTo( ""Bruno"" );
+        assertThat( animalDto.getSize() ).isEqualTo( 100 );
+        assertThat( animal.getColour() ).isNull();
+    }"

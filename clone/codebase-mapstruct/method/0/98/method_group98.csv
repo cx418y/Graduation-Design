@@ -1,0 +1,25 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"519","98","317","316","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/value/enum2enum/ErroneousOrderMapperDuplicateANY.java","23","29","-2147429000","-2147428944","0","0","= Mappers.getMapper( ErroneousOrderMapperDuplicateANY.class );
+
+    @ValueMappings(","= Mappers.getMapper( ErroneousOrderMapperDuplicateANY.class );
+
+    @ValueMappings({
+        @ValueMapping(source = ""EXTRA"", target = ""SPECIAL""),
+        @ValueMapping(source = ""STANDARD"", target = ""DEFAULT""),
+        @ValueMapping(source = ""NORMAL"", target = ""DEFAULT""),
+        @ValueMapping( source = ""<ANY_REMAINING>"", target = ""DEFAULT"" ),
+        @ValueMapping( source = ""<ANY_UNMAPPED>"", target = ""DEFAULT"" )
+    }"
+"530","98","317","316","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/value/enum2enum/ErroneousOrderMapperThrowExceptionAsSourceType.java","24","30","-2147427893","-2147427837","0","0","= Mappers.getMapper(
+        ErroneousOrderMapperThrowExceptionAsSourceType.class );
+
+    @ValueMappings(","= Mappers.getMapper(
+        ErroneousOrderMapperThrowExceptionAsSourceType.class );
+
+    @ValueMappings({
+        @ValueMapping(source = ""EXTRA"", target = ""SPECIAL""),
+        @ValueMapping(source = ""STANDARD"", target = ""DEFAULT""),
+        @ValueMapping(source = ""NORMAL"", target = ""DEFAULT""),
+        @ValueMapping(source = ""<ANY_REMAINING>"", target = ""DEFAULT""),
+        @ValueMapping(source = ""<THROW_EXCEPTION>"", target = ""DEFAULT"")
+    }"

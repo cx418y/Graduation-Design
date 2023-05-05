@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"316","46","172","171","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/AsyncTest.java","62","80","-2147441754","-2147441637","0","0","void setUp()","void setUp(){
+    ExecutorService executorService =
+        Executors.newCachedThreadPool(
+            r -> {
+              Thread thread = new Thread(r);
+              thread.setUncaughtExceptionHandler((t, e) -> uncaughtExceptions.add(e));
+              return thread;
+            });
+
+    OkHttpClient client =
+        new OkHttpClient.Builder().dispatcher(new Dispatcher(executorService)).build();
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .client(client)
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }"
+"439","46","172","178","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/AsyncTest.java","63","81","-2147430667","-2147430550","0","0","void setUp()","void setUp(){
+    ExecutorService executorService =
+        Executors.newCachedThreadPool(
+            r -> {
+              Thread thread = new Thread(r);
+              thread.setUncaughtExceptionHandler((t, e) -> uncaughtExceptions.add(e));
+              return thread;
+            });
+
+    OkHttpClient client =
+        new OkHttpClient.Builder().dispatcher(new Dispatcher(executorService)).build();
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .client(client)
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.createAsync())
+            .build();
+    service = retrofit.create(Service.class);
+  }"

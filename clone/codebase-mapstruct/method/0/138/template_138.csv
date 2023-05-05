@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","Mappers.getMapper","= Mappers.getMapper( FishTankMapperWithDocument.class );
+
+    @Mappings({
+        @Mapping(target = ""fish.kind"", source = ""fish.type""),[*1*] 
+        @Mapping(target = ""fish.name"", expression = ""java(\""Jaws\"")""),
+        @Mapping(target = ""plant"", ignore = true ),
+        @Mapping(target = ""ornament"", ignore = true ),
+        @Mapping(target = ""material"", ignore = true),
+        @Mapping(target = ""quality.document"", source = ""quality.report""),
+        @Mapping(target = ""quality.document.organisation.name"", constant = ""NoIdeaInc"" )
+    }
+","[*1*]:
+"

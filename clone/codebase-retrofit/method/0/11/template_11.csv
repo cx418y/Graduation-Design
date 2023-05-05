@@ -1,0 +1,27 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","http204SkipsConverter","void http204SkipsConverter()throws IOException{
+    final Converter<ResponseBody, String> converter =
+        value -> {
+          throw new AssertionError();
+        };
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(
+                new ToStringConverterFactory() {
+                  @Override
+                  public Converter<ResponseBody, String> responseBodyConverter(
+                      Type type, Annotation[] annotations, Retrofit retrofit) {
+                    return converter;
+                  }
+                })
+            .build();
+    Service example = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse().setStatus(""HTTP/1.1 204 Nothin""));
+
+    Response<String> response = example.getString().execute();
+    assertThat(response.code()).isEqualTo(204);
+    assertThat(response.body()).isNull();
+  }
+",""

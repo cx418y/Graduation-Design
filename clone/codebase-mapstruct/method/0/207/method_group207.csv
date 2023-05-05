@@ -1,0 +1,78 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1211","207","669","668","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","56","71","-2147352382","-2147352179","0","0","void shouldMapDateTimeToXmlGregorianCalendar()","void shouldMapDateTimeToXmlGregorianCalendar(){
+
+        DateTimeBean  in = new DateTimeBean();
+        DateTime dt = new DateTime(2010, 1, 15, 1, 1, 1, 100, DateTimeZone.forOffsetHours( -1 ) );
+        in.setDateTime( dt );
+        XmlGregorianCalendarBean res = DateTimeToXmlGregorianCalendar.INSTANCE.toXmlGregorianCalendarBean( in );
+
+        assertThat( res.getxMLGregorianCalendar().getYear() ).isEqualTo( 2010 );
+        assertThat( res.getxMLGregorianCalendar().getMonth() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getDay() ).isEqualTo( 15 );
+        assertThat( res.getxMLGregorianCalendar().getHour() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getMinute() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getSecond() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getMillisecond() ).isEqualTo( 100 );
+        assertThat( res.getxMLGregorianCalendar().getTimezone() ).isEqualTo( -60 );
+    }"
+"1212","207","673","672","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","75","87","-2147352179","-2147352043","0","0","void shouldMapIncompleteDateTimeToXmlGregorianCalendar()","void shouldMapIncompleteDateTimeToXmlGregorianCalendar(){
+
+        DateTimeBean  in = new DateTimeBean();
+        DateTime dt = new DateTime(2010, 1, 15, 1, 1 );
+        in.setDateTime( dt );
+        XmlGregorianCalendarBean res = DateTimeToXmlGregorianCalendar.INSTANCE.toXmlGregorianCalendarBean( in );
+
+        assertThat( res.getxMLGregorianCalendar().getYear() ).isEqualTo( 2010 );
+        assertThat( res.getxMLGregorianCalendar().getMonth() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getDay() ).isEqualTo( 15 );
+        assertThat( res.getxMLGregorianCalendar().getHour() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getMinute() ).isEqualTo( 1 );
+    }"
+"1221","207","679","678","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","269","284","-2147350437","-2147350241","0","0","void shouldMapLocalDateTimeToXmlGregorianCalendar()","void shouldMapLocalDateTimeToXmlGregorianCalendar(){
+
+        LocalDateTimeBean  in = new LocalDateTimeBean();
+        LocalDateTime dt = new LocalDateTime(2010, 1, 15, 1, 1, 1, 100 );
+        in.setLocalDateTime( dt );
+        XmlGregorianCalendarBean res = LocalDateTimeToXmlGregorianCalendar.INSTANCE.toXmlGregorianCalendarBean( in );
+
+        assertThat( res.getxMLGregorianCalendar().getYear() ).isEqualTo( 2010 );
+        assertThat( res.getxMLGregorianCalendar().getMonth() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getDay() ).isEqualTo( 15 );
+        assertThat( res.getxMLGregorianCalendar().getHour() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getMinute() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getSecond() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getMillisecond() ).isEqualTo( 100 );
+        assertThat( res.getxMLGregorianCalendar().getTimezone() ).isEqualTo( DatatypeConstants.FIELD_UNDEFINED );
+    }"
+"1222","207","683","682","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","288","303","-2147350241","-2147350049","0","0","void shouldMapIncompleteLocalDateTimeToXmlGregorianCalendar()","void shouldMapIncompleteLocalDateTimeToXmlGregorianCalendar(){
+
+        LocalDateTimeBean  in = new LocalDateTimeBean();
+        LocalDateTime dt = new LocalDateTime( 2010, 1, 15, 1, 1 );
+        in.setLocalDateTime( dt );
+        XmlGregorianCalendarBean res = LocalDateTimeToXmlGregorianCalendar.INSTANCE.toXmlGregorianCalendarBean( in );
+
+        assertThat( res.getxMLGregorianCalendar().getYear() ).isEqualTo( 2010 );
+        assertThat( res.getxMLGregorianCalendar().getMonth() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getDay() ).isEqualTo( 15 );
+        assertThat( res.getxMLGregorianCalendar().getHour() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getMinute() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getSecond() ).isEqualTo( 0 );
+        assertThat( res.getxMLGregorianCalendar().getMillisecond() ).isEqualTo( 0 );
+        assertThat( res.getxMLGregorianCalendar().getTimezone() ).isEqualTo( DatatypeConstants.FIELD_UNDEFINED );
+    }"
+"1230","207","689","688","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/jodatime/JodaTimeTest.java","445","460","-2147348996","-2147348800","0","0","void shouldMapIncompleteLocalTimeToXmlGregorianCalendar()","void shouldMapIncompleteLocalTimeToXmlGregorianCalendar(){
+
+        LocalTimeBean  in = new LocalTimeBean();
+        LocalTime dt = new LocalTime( 1, 1, 0, 100 );
+        in.setLocalTime( dt );
+        XmlGregorianCalendarBean res = LocalTimeToXmlGregorianCalendar.INSTANCE.toXmlGregorianCalendarBean( in );
+
+        assertThat( res.getxMLGregorianCalendar().getYear() ).isEqualTo( DatatypeConstants.FIELD_UNDEFINED );
+        assertThat( res.getxMLGregorianCalendar().getMonth() ).isEqualTo( DatatypeConstants.FIELD_UNDEFINED );
+        assertThat( res.getxMLGregorianCalendar().getDay() ).isEqualTo( DatatypeConstants.FIELD_UNDEFINED );
+        assertThat( res.getxMLGregorianCalendar().getHour() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getMinute() ).isEqualTo( 1 );
+        assertThat( res.getxMLGregorianCalendar().getSecond() ).isEqualTo( 0 );
+        assertThat( res.getxMLGregorianCalendar().getMillisecond() ).isEqualTo( 100 );
+        assertThat( res.getxMLGregorianCalendar().getTimezone() ).isEqualTo( DatatypeConstants.FIELD_UNDEFINED );
+    }"

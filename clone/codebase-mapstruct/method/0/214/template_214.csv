@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldUseSinglePublicConstructorAlways","void shouldUseSinglePublicConstructorAlways(){
+        PersonDto source = new PersonDto();
+        source.setName( ""Bob"" );
+        source.setAge( 30 );
+
+        SimpleWithPublicConstructorMapper.Person target =
+            SimpleWithPublicConstructorMapper.INSTANCE.map( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getName() ).isEqualTo( ""Bob"" );[*1*] 
+        assertThat( target.getAge() ).isEqualTo( 30 );
+    }
+","[*1*]:
+1, 0.3333333333333333,         assertThat( target.getAge() ).isEqualTo( -1 );
+"

@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldHaveJakartaInjection","void shouldHaveJakartaInjection(){
+        generatedSource.forMapper( CustomerJsr330DefaultCompileOptionFieldMapper.class )
+            .content()
+            .contains( ""import jakarta.inject.Inject;"" )
+            .contains( ""import jakarta.inject.Named;"" )
+            .contains( ""import jakarta.inject.Singleton;"" )
+            .contains( ""@Inject"" + lineSeparator() + ""    private GenderJsr330DefaultCompileOptionFieldMapper"" )
+            .doesNotContain( ""public CustomerJsr330DefaultCompileOptionFieldMapperImpl("" )
+            .doesNotContain( ""javax.inject"" );
+    }
+",""

@@ -1,0 +1,85 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"85","7","21","20","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","1066","1093","-2147474840","-2147474737","0","0","void requestConverterFactoryNoMatchThrows()","void requestConverterFactoryNoMatchThrows(){
+    Type type = String.class;
+    Annotation[] annotations = new Annotation[0];
+
+    NonMatchingConverterFactory nonMatchingFactory = new NonMatchingConverterFactory();
+
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(""http://example.com/"")
+            .addConverterFactory(nonMatchingFactory)
+            .build();
+
+    try {
+      retrofit.requestBodyConverter(type, annotations, annotations);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Could not locate RequestBody converter for class java.lang.String.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.helpers.NonMatchingConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+
+    assertThat(nonMatchingFactory.called).isTrue();
+  }"
+"88","7","25","24","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","1159","1186","-2147474470","-2147474369","0","0","void responseConverterFactoryNoMatchThrows()","void responseConverterFactoryNoMatchThrows(){
+    Type type = String.class;
+    Annotation[] annotations = new Annotation[0];
+
+    NonMatchingConverterFactory nonMatchingFactory = new NonMatchingConverterFactory();
+
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(""http://example.com/"")
+            .addConverterFactory(nonMatchingFactory)
+            .build();
+
+    try {
+      retrofit.responseBodyConverter(type, annotations);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Could not locate ResponseBody converter for class java.lang.String.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.helpers.NonMatchingConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+
+    assertThat(nonMatchingFactory.called).isTrue();
+  }"
+"96","7","25","24","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","1434","1461","-2147473340","-2147473239","0","0","void callAdapterFactoryNoMatchThrows()","void callAdapterFactoryNoMatchThrows(){
+    Type type = String.class;
+    Annotation[] annotations = new Annotation[0];
+
+    NonMatchingCallAdapterFactory nonMatchingFactory = new NonMatchingCallAdapterFactory();
+
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(""http://example.com/"")
+            .addCallAdapterFactory(nonMatchingFactory)
+            .build();
+
+    try {
+      retrofit.callAdapter(type, annotations);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Could not locate call adapter for class java.lang.String.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.helpers.NonMatchingCallAdapterFactory\n""
+                  + ""   * retrofit2.CompletableFutureCallAdapterFactory\n""
+                  + ""   * retrofit2.DefaultCallAdapterFactory"");
+    }
+
+    assertThat(nonMatchingFactory.called).isTrue();
+  }"

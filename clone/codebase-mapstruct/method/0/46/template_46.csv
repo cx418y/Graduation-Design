@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldReverseMapIntegerSetToStringSet","void shouldReverseMapIntegerSetToStringSet(){
+        Target target = new Target();
+        target.setAnotherStringSet( new HashSet<>( Arrays.asList( ""1"", ""2"" ) ) );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getAnotherIntegerSet() ).containsOnly( 1, 2 );
+    }
+",""

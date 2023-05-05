@@ -1,0 +1,32 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","requestConverterFactoryNoMatchThrows","void requestConverterFactoryNoMatchThrows(){
+    Type type = String.class;
+    Annotation[] annotations = new Annotation[0];
+
+    NonMatchingConverterFactory nonMatchingFactory = new NonMatchingConverterFactory();
+
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(""http://example.com/"")
+            .addConverterFactory(nonMatchingFactory)
+            .build();
+
+    try {
+      retrofit.responseBodyConverter(type, annotations);[*1*] 
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertThat(e)
+          .hasMessage(
+              """"
+                  + ""Could not locate RequestBody converter for class java.lang.String.\n""
+                  + ""  Tried:\n""
+                  + ""   * retrofit2.BuiltInConverters\n""
+                  + ""   * retrofit2.helpers.NonMatchingConverterFactory\n""
+                  + ""   * retrofit2.OptionalConverterFactory"");
+    }
+
+    assertThat(nonMatchingFactory.called).isTrue();
+  }
+","[*1*]:
+1, 0.3333333333333333,       retrofit.requestBodyConverter(type, annotations, annotations);
+"

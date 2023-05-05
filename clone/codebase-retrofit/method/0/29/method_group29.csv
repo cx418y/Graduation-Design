@@ -1,0 +1,37 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"249","29","109","108","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/main/java/retrofit2/OptionalConverterFactory.java","33","42","-2147449703","-2147449648","0","0","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit)","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit){
+    if (getRawType(type) != Optional.class) {
+      return null;
+    }
+
+    Type innerType = getParameterUpperBound(0, (ParameterizedType) type);
+    Converter<ResponseBody, Object> delegate =
+        retrofit.responseBodyConverter(innerType, annotations);
+    return new OptionalConverter<>(delegate);
+  }"
+"640","29","109","108","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/java8/src/main/java/retrofit/converter/java8/Java8OptionalConverterFactory.java","43","52","-2147409192","-2147409137","0","0","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit)","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit){
+    if (getRawType(type) != Optional.class) {
+      return null;
+    }
+
+    Type innerType = getParameterUpperBound(0, (ParameterizedType) type);
+    Converter<ResponseBody, Object> delegate =
+        retrofit.responseBodyConverter(innerType, annotations);
+    return new OptionalConverter<>(delegate);
+  }"
+"665","29","109","108","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/guava/src/main/java/retrofit/converter/guava/GuavaOptionalConverterFactory.java","40","49","-2147407306","-2147407251","0","0","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit)","Converter<ResponseBody, ?> responseBodyConverter(
+      Type type, Annotation[] annotations, Retrofit retrofit){
+    if (getRawType(type) != Optional.class) {
+      return null;
+    }
+
+    Type innerType = getParameterUpperBound(0, (ParameterizedType) type);
+    Converter<ResponseBody, Object> delegate =
+        retrofit.responseBodyConverter(innerType, annotations);
+    return new OptionalConverter<>(delegate);
+  }"

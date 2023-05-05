@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testTargetToSourceNullMapping","void testTargetToSourceNullMapping(){
+        Target target = new Target();
+        Source src = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( src ).isNotNull();
+        assertThat( src.getDateTime() ).isNull();
+        assertThat( src.getLocalDate() ).isNull();
+        assertThat( src.getLocalDateTime() ).isNull();
+        assertThat( src.getLocalTime() ).isNull();
+    }
+",""

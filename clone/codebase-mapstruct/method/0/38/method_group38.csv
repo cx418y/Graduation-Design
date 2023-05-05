@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"229","38","134","133","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/collection/CollectionMappingTest.java","66","74","-2147456835","-2147456774","0","0","void shouldMapListWithoutSetter()","void shouldMapListWithoutSetter(){
+        Source source = new Source();
+        source.setStringList2( Arrays.asList( ""Bob"", ""Alice"" ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getStringListNoSetter() ).containsExactly( ""Bob"", ""Alice"" );
+    }"
+"1167","38","134","135","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/java8stream/StreamMappingTest.java","64","72","-2147357043","-2147356982","0","0","void shouldMapListWithoutSetter()","void shouldMapListWithoutSetter(){
+        Source source = new Source();
+        source.setStringStream2( Stream.of( ""Bob"", ""Alice"" ) );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getStringListNoSetter() ).containsExactly( ""Bob"", ""Alice"" );
+    }"

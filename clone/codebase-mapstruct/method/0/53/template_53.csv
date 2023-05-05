@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testAddWithExceptionInThrowsClause","void testAddWithExceptionInThrowsClause()throws DogException{
+        AdderUsageObserver.setUsed( false );
+
+        Source source = new Source();
+        source.setPets( Arrays.asList( ""dog"" ) );
+
+        assertThatThrownBy(  () -> SourceTargetMapper.INSTANCE.toTarget( source ) )
+            .isInstanceOf( DogException.class );
+    }
+",""

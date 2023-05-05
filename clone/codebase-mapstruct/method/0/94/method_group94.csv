@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"488","94","327","326","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/nullvaluecheckstrategy/PresenceCheckTest.java","30","40","-2147432350","-2147432281","0","0","void testCallingMappingMethodWithNullSource()","void testCallingMappingMethodWithNullSource(){
+
+        RockFestivalSource source =  new RockFestivalSource();
+        RockFestivalTarget target = RockFestivalMapper.INSTANCE.map( source );
+        assertThat( target.getStage() ).isNull();
+
+        source.setArtistName( ""New Order"" );
+        target = RockFestivalMapper.INSTANCE.map( source );
+        assertThat( target.getStage() ).isEqualTo( Stage.THE_BARN );
+
+   }"
+"489","94","327","336","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/nullvaluecheckstrategy/PresenceCheckTest.java","43","53","-2147432281","-2147432212","0","0","void testCallingMappingMethodWithNullSourceWithConfig()","void testCallingMappingMethodWithNullSourceWithConfig(){
+
+        RockFestivalSource source =  new RockFestivalSource();
+        RockFestivalTarget target = RockFestivalMapperWithConfig.INSTANCE.map( source );
+        assertThat( target.getStage() ).isNull();
+
+        source.setArtistName( ""New Order"" );
+        target = RockFestivalMapperWithConfig.INSTANCE.map( source );
+        assertThat( target.getStage() ).isEqualTo( Stage.THE_BARN );
+
+   }"

@@ -1,0 +1,32 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","bodyThrowingInOnErrorDeliveredToPlugin","void bodyThrowingInOnErrorDeliveredToPlugin()throws InterruptedException{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!pluginRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+          latch.countDown();
+        });
+
+    TestObserver<Void> observer = new TestObserver<>();
+    final RuntimeException e = new RuntimeException();
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onError(Throwable throwable) {
+                errorRef.set(throwable);
+                throw e;
+              }
+            });
+
+    latch.await(1, SECONDS);
+    CompositeException composite = (CompositeException) pluginRef.get();
+    assertThat(composite.getExceptions()).containsExactly(errorRef.get(), e);
+  }
+",""

@@ -1,0 +1,12 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyBuiltInOnJAXBElement","void shouldApplyBuiltInOnJAXBElement(){
+        JaxbElementProperty source = new JaxbElementProperty();
+        source.setProp( createJaxb( ""TEST"" ) );
+        source.publicProp = createJaxb( ""PUBLIC TEST"" );
+
+        StringProperty target = JaxbMapper.INSTANCE.map( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isEqualTo( ""TEST"" );
+        assertThat( target.publicProp ).isEqualTo( ""PUBLIC TEST"" );
+    }
+",""

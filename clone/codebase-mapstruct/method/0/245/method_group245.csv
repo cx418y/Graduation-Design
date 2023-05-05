@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1920","245","786","785","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/AbstractJodaTypeToStringConversion.java","33","46","-2147259099","-2147259037","0","0","Set<Type> getToConversionImportTypes(ConversionContext conversionContext)","Set<Type> getToConversionImportTypes(ConversionContext conversionContext){
+        if ( conversionContext.getDateFormat() != null ) {
+            return Collections.singleton(
+                conversionContext.getTypeFactory()
+                    .getType( JodaTimeConstants.DATE_TIME_FORMAT_FQN )
+            );
+        }
+        else {
+            return asSet(
+                conversionContext.getTypeFactory().getType( JodaTimeConstants.DATE_TIME_FORMAT_FQN ),
+                conversionContext.getTypeFactory().getType( Locale.class )
+            );
+        }
+    }"
+"1921","245","786","785","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/conversion/AbstractJodaTypeToStringConversion.java","54","67","-2147259037","-2147258975","0","0","Set<Type> getFromConversionImportTypes(ConversionContext conversionContext)","Set<Type> getFromConversionImportTypes(ConversionContext conversionContext){
+        if ( conversionContext.getDateFormat() != null ) {
+            return Collections.singleton(
+                conversionContext.getTypeFactory()
+                    .getType( JodaTimeConstants.DATE_TIME_FORMAT_FQN )
+            );
+        }
+        else {
+            return asSet(
+                conversionContext.getTypeFactory().getType( JodaTimeConstants.DATE_TIME_FORMAT_FQN ),
+                conversionContext.getTypeFactory().getType( Locale.class )
+            );
+        }
+    }"

@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","XmlGregorianCalendarToJodaLocalTime","public XmlGregorianCalendarToJodaLocalTime(TypeFactory typeFactory){
+        this.parameter = new Parameter( ""xcal"", typeFactory.getType( XmlConstants.JAVAX_XML_XML_GREGORIAN_CALENDAR ) );
+        this.returnType = typeFactory.getType( JodaTimeConstants.LOCAL_TIME_FQN );
+        this.importTypes = asSet(
+[*1*] 
+            typeFactory.getType( XmlConstants.JAVAX_XML_DATATYPE_CONSTANTS ),
+            returnType,
+            parameter.getType() );
+    }
+","[*1*]:
+1, 0.25,             typeFactory.getType( XmlConstants.JAVAX_XML_DATATYPE_CONSTANTS ),
+"

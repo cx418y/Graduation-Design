@@ -1,0 +1,19 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"318","48","174","173","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/AsyncTest.java","99","107","-2147441574","-2147441504","0","0","void failure()throws InterruptedException","void failure()throws InterruptedException{
+    TestObserver<Void> observer = new TestObserver<>();
+    service.completable().subscribe(observer);
+    assertFalse(observer.await(1, SECONDS));
+
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+    observer.await(1, SECONDS);
+    observer.assertError(IOException.class);
+  }"
+"441","48","174","177","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/AsyncTest.java","100","108","-2147430487","-2147430417","0","0","void failure()throws InterruptedException","void failure()throws InterruptedException{
+    TestObserver<Void> observer = new TestObserver<>();
+    service.completable().subscribe(observer);
+    assertFalse(observer.await(1, SECONDS));
+
+    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+    observer.awaitTerminalEvent(1, SECONDS);
+    observer.assertError(IOException.class);
+  }"

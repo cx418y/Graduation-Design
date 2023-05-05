@@ -1,0 +1,83 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","nextRequestBodyConverter","Converter<T, RequestBody> nextRequestBodyConverter([*1*] 
+[*2*] 
+[*3*] 
+[*4*] 
+[*5*] 
+[*6*] 
+[*7*] 
+[*8*] 
+    Objects.requireNonNull(returnType, ""returnType == null"");
+    Objects.requireNonNull(annotations, ""annotations == null"");
+
+    int start = callAdapterFactories.indexOf(skipPast) + 1;
+    for (int i = start, count = callAdapterFactories.size(); i < count; i++) {
+[*9*] 
+[*10*] 
+[*11*] 
+[*12*] 
+[*13*] 
+[*14*] 
+      if (adapter != null) {
+[*15*] 
+        return (Converter<T, RequestBody>) converter;[*16*] 
+      }
+    }
+
+    StringBuilder builder =
+        new StringBuilder(""Could not locate call adapter for "").append(returnType).append("".\n"");[*17*] 
+[*18*] 
+[*19*] 
+[*20*] 
+    if (skipPast != null) {
+      builder.append(""  Skipped:"");
+      for (int i = 0; i < start; i++) {
+        builder.append(""\n   * "").append(callAdapterFactories.get(i).getClass().getName());
+      }
+      builder.append('\n');
+    }
+    builder.append(""  Tried:"");
+    for (int i = start, count = callAdapterFactories.size(); i < count; i++) {
+      builder.append(""\n   * "").append(callAdapterFactories.get(i).getClass().getName());
+    }
+    throw new IllegalArgumentException(builder.toString());
+  }
+","[*1*]:
+1, 0.3333333333333333, CallAdapter<?, ?> nextCallAdapter(
+[*2*]:
+1, 0.3333333333333333,       @Nullable CallAdapter.Factory skipPast, Type returnType, Annotation[] annotations){
+[*3*]:
+1, 0.3333333333333333,       @Nullable Converter.Factory skipPast,
+[*4*]:
+1, 0.3333333333333333,       Type type,
+[*5*]:
+1, 0.3333333333333333,       Annotation[] parameterAnnotations,
+[*6*]:
+1, 0.3333333333333333,       Annotation[] methodAnnotations){
+[*7*]:
+1, 0.3333333333333333,     Objects.requireNonNull(type, ""type == null"");
+[*8*]:
+1, 0.3333333333333333,       @Nullable Converter.Factory skipPast, Type type, Annotation[] annotations){
+[*9*]:
+1, 0.3333333333333333,       CallAdapter<?, ?> adapter = callAdapterFactories.get(i).get(returnType, annotations, this);
+[*10*]:
+1, 0.3333333333333333,       Converter.Factory factory = converterFactories.get(i);
+[*11*]:
+1, 0.3333333333333333,       Converter<?, RequestBody> converter =
+[*12*]:
+1, 0.3333333333333333,           factory.requestBodyConverter(type, parameterAnnotations, methodAnnotations, this);
+[*13*]:
+1, 0.3333333333333333,       Converter<ResponseBody, ?> converter =
+[*14*]:
+1, 0.3333333333333333,           converterFactories.get(i).responseBodyConverter(type, annotations, this);
+[*15*]:
+1, 0.3333333333333333,         return adapter;
+[*16*]:
+[*17*]:
+[*18*]:
+1, 0.3333333333333333,         new StringBuilder(""Could not locate ResponseBody converter for "")
+[*19*]:
+1, 0.3333333333333333,             .append(type)
+[*20*]:
+1, 0.3333333333333333,             .append("".\n"");
+"

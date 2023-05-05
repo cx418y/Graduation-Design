@@ -1,0 +1,31 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","throwingInOnCompleteDeliveredToPlugin","void throwingInOnCompleteDeliveredToPlugin()throws InterruptedException{
+    server.enqueue(new MockResponse());
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!errorRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+          latch.countDown();
+        });
+
+    TestObserver<Void> observer = new TestObserver<>();
+    final RuntimeException e = new RuntimeException();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    latch.await(1, SECONDS);
+    assertThat(errorRef.get().getCause()).isSameAs(e);[*1*] 
+  }
+","[*1*]:
+1, 0.5,     assertThat(errorRef.get()).isInstanceOf(UndeliverableException.class).hasCause(e);
+"

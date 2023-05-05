@@ -1,0 +1,73 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1712","239","784","783","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/assignment/LocalVarWrapper.java","34","45","-2147285605","-2147285544","0","0","List<Type> getThrownTypes()","List<Type> getThrownTypes(){
+        List<Type> parentThrownTypes = super.getThrownTypes();
+        List<Type> result = new ArrayList<>( parentThrownTypes );
+        for ( Type thrownTypeToExclude : thrownTypesToExclude ) {
+            for ( Type parentThrownType : parentThrownTypes ) {
+                if ( parentThrownType.isAssignableTo( thrownTypeToExclude ) ) {
+                    result.remove( parentThrownType );
+                }
+            }
+        }
+        return result;
+    }"
+"1714","239","784","783","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/assignment/UpdateWrapper.java","62","73","-2147285494","-2147285433","0","0","List<Type> getThrownTypes()","List<Type> getThrownTypes(){
+        List<Type> parentThrownTypes = super.getThrownTypes();
+        List<Type> result = new ArrayList<>( parentThrownTypes );
+        for ( Type thrownTypeToExclude : thrownTypesToExclude ) {
+            for ( Type parentThrownType : parentThrownTypes ) {
+                if ( parentThrownType.isAssignableTo( thrownTypeToExclude ) ) {
+                    result.remove( parentThrownType );
+                }
+            }
+        }
+        return result;
+    }"
+"1716","239","784","783","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/assignment/SetterWrapper.java","49","60","-2147285369","-2147285308","0","0","List<Type> getThrownTypes()","List<Type> getThrownTypes(){
+        List<Type> parentThrownTypes = super.getThrownTypes();
+        List<Type> result = new ArrayList<>( parentThrownTypes );
+        for ( Type thrownTypeToExclude : thrownTypesToExclude ) {
+            for ( Type parentThrownType : parentThrownTypes ) {
+                if ( parentThrownType.isAssignableTo( thrownTypeToExclude ) ) {
+                    result.remove( parentThrownType );
+                }
+            }
+        }
+        return result;
+    }"
+"1719","239","784","783","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/assignment/StreamAdderWrapper.java","42","53","-2147285143","-2147285082","0","0","List<Type> getThrownTypes()","List<Type> getThrownTypes(){
+        List<Type> parentThrownTypes = super.getThrownTypes();
+        List<Type> result = new ArrayList<>( parentThrownTypes );
+        for ( Type thrownTypeToExclude : thrownTypesToExclude ) {
+            for ( Type parentExceptionType : parentThrownTypes ) {
+                if ( parentExceptionType.isAssignableTo( thrownTypeToExclude ) ) {
+                    result.remove( parentExceptionType );
+                }
+            }
+        }
+        return result;
+    }"
+"1721","239","784","783","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/assignment/WrapperForCollectionsAndMaps.java","44","55","-2147285014","-2147284953","0","0","List<Type> getThrownTypes()","List<Type> getThrownTypes(){
+        List<Type> parentThrownTypes = super.getThrownTypes();
+        List<Type> result = new ArrayList<>( parentThrownTypes );
+        for ( Type thrownTypeToExclude : thrownTypesToExclude ) {
+            for ( Type parentThrownType : parentThrownTypes ) {
+                if ( parentThrownType.isAssignableTo( thrownTypeToExclude ) ) {
+                    result.remove( parentThrownType );
+                }
+            }
+        }
+        return result;
+    }"
+"1724","239","784","783","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/assignment/AdderWrapper.java","54","65","-2147284801","-2147284740","0","0","List<Type> getThrownTypes()","List<Type> getThrownTypes(){
+        List<Type> parentThrownTypes = super.getThrownTypes();
+        List<Type> result = new ArrayList<>( parentThrownTypes );
+        for ( Type thrownTypeToExclude : thrownTypesToExclude ) {
+            for ( Type parentExceptionType : parentThrownTypes ) {
+                if ( parentExceptionType.isAssignableTo( thrownTypeToExclude ) ) {
+                    result.remove( parentExceptionType );
+                }
+            }
+        }
+        return result;
+    }"

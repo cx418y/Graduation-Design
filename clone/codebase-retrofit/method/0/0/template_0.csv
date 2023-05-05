@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","failureExecute","void failureExecute(){
+    IOException failure = new IOException(""Hey"");
+    Call<Object> taco = Calls.failure(failure);
+    assertFalse(taco.isExecuted());
+    try {
+      taco.execute();
+      fail();
+    } catch (IOException e) {
+      assertSame(failure, e);
+    }
+    assertTrue(taco.isExecuted());
+  }
+",""

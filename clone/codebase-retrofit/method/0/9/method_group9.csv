@@ -1,0 +1,59 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"87","9","33","32","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","1131","1156","-2147474604","-2147474470","0","0","void responseConverterFactoryQueried()","void responseConverterFactoryQueried(){
+    final Converter<ResponseBody, ?> expectedAdapter =
+        new Converter<ResponseBody, Object>() {
+          @Nullable
+          @Override
+          public Object convert(ResponseBody value) {
+            throw new AssertionError();
+          }
+        };
+    Converter.Factory factory =
+        new Converter.Factory() {
+          @Nullable
+          @Override
+          public Converter<ResponseBody, ?> responseBodyConverter(
+              Type type, Annotation[] annotations, Retrofit retrofit) {
+            return String.class.equals(type) ? expectedAdapter : null;
+          }
+        };
+
+    Retrofit retrofit =
+        new Retrofit.Builder().baseUrl(""http://example.com/"").addConverterFactory(factory).build();
+
+    Converter<ResponseBody, ?> actualAdapter =
+        retrofit.responseBodyConverter(String.class, new Annotation[0]);
+    assertThat(actualAdapter).isSameAs(expectedAdapter);
+  }"
+"93","9","43","42","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/RetrofitTest.java","1295","1326","-2147473975","-2147473831","0","0","void callAdapterFactoryQueried()","void callAdapterFactoryQueried(){
+    final CallAdapter<?, ?> expectedAdapter =
+        new CallAdapter<Object, Object>() {
+          @Override
+          public Type responseType() {
+            throw new AssertionError();
+          }
+
+          @Override
+          public Object adapt(Call<Object> call) {
+            throw new AssertionError();
+          }
+        };
+    CallAdapter.Factory factory =
+        new CallAdapter.Factory() {
+          @Nullable
+          @Override
+          public CallAdapter<?, ?> get(
+              Type returnType, Annotation[] annotations, Retrofit retrofit) {
+            return String.class.equals(returnType) ? expectedAdapter : null;
+          }
+        };
+
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(""http://example.com/"")
+            .addCallAdapterFactory(factory)
+            .build();
+
+    CallAdapter<?, ?> actualAdapter = retrofit.callAdapter(String.class, new Annotation[0]);
+    assertThat(actualAdapter).isSameAs(expectedAdapter);
+  }"

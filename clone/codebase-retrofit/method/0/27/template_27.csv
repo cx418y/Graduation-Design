@@ -1,0 +1,24 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","invokeDefaultMethod","Object invokeDefaultMethod(
+        Method method, Class<?> declaringClass, Object proxy, Object... args)throws Throwable{
+      if (Build.VERSION.SDK_INT < 26) {[*1*] 
+        throw new UnsupportedOperationException([*2*] 
+            ""Calling default methods on API 24 and 25 is not supported"");[*3*] 
+      }[*4*] 
+      Constructor<Lookup> lookupConstructor = this.lookupConstructor;
+      if (lookupConstructor == null) {
+        lookupConstructor = Lookup.class.getDeclaredConstructor(Class.class, int.class);
+        lookupConstructor.setAccessible(true);
+        this.lookupConstructor = lookupConstructor;
+      }
+      return lookupConstructor
+          .newInstance(declaringClass, -1 )
+          .unreflectSpecial(method, declaringClass)
+          .bindTo(proxy)
+          .invokeWithArguments(args);
+    }
+","[*1*]:
+[*2*]:
+[*3*]:
+[*4*]:
+"

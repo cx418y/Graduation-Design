@@ -3,6 +3,7 @@ package fudan.design.clone.handler.thread;
 //import cn.edu.fdu.clone.recommend.construct.common.CodeBaseConstants;
 import fudan.design.clone.bean.MethodInfo;
 import fudan.design.clone.bean.State;
+import fudan.design.clone.bean.TemplateInfoCSV;
 import fudan.design.clone.bean.TemplateList;
 import fudan.design.clone.common.SAGAConstants;
 import fudan.design.clone.dto.Template;
@@ -10,7 +11,6 @@ import fudan.design.clone.dto.TemplateLineDIffList;
 import fudan.design.clone.dto.TemplateLineItem;
 import fudan.design.clone.extractor.MultiSet;
 import fudan.design.clone.extractor.TemplateInfo;
-import fudan.design.clone.extractor.TemplateLine;
 import fudan.design.clone.extractor.TemplateLineSet;
 import fudan.design.clone.handler.MethodResultHandler;
 import fudan.design.clone.service.ElasticsearchService;
@@ -27,7 +27,6 @@ import fudan.design.clone.utils.sagaUtils.TokenUtil;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
-import org.springframework.data.elasticsearch.annotations.Field;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -47,7 +46,7 @@ public class MethodGroupTask implements Runnable {
     private final ProcessCounter counter;
 
     @Resource
-    private ElasticsearchService service;
+    private ElasticsearchService elasticsearchService;
 
     public MethodGroupTask(String[] group, CountDownLatch countDownLatch, int groupId,
                            String sagaFolderPath, String granularity, ProcessCounter counter) {
@@ -99,8 +98,15 @@ public class MethodGroupTask implements Runnable {
 //            System.out.println(templateInfo.getRawTemplate().size());
 //            System.out.println(templateInfo.getFinalTemplate().size());
             List<TemplateLineSet> finalTemplate = templateInfo.getFinalTemplate();
-            saveTemplate(finalTemplate);
-            writeTemplate(finalTemplate);
+            Template template = saveTemplate(finalTemplate);
+
+            CSVWriter templateWriter = new CSVWriter(new FileWriter(outputDirPath + File.separator + String.format(CodeBaseConstants.TEMPLATE_CSV, groupId)));
+            List<String[]> templateCsvLine= new ArrayList<>();
+            templateCsvLine.add(TemplateInfoCSV.getCsvHeader());
+            templateCsvLine.add(getTemplateCsvLine(groupGroupId,template));
+            templateWriter.writeAll(templateCsvLine);
+            templateWriter.flush();
+            templateWriter.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -109,7 +115,6 @@ public class MethodGroupTask implements Runnable {
             counter.progress();
             countDownLatch.countDown();
         }
-
 
 
     }
@@ -131,6 +136,7 @@ public class MethodGroupTask implements Runnable {
             if (right.getBody() == null || right.getBody().length() == 0){
                 right.setSignature(CppCodeUtil.parseMethodSignature(path, startLine));
                 String body = right.getSignature()+CppCodeUtil.parseMethodBody(path, startLine, endLine);
+                System.out.println(body);
                 right.setBody(body);
                // System.out.println(path+startLine+","+endLine);
             }
@@ -197,8 +203,13 @@ public class MethodGroupTask implements Runnable {
         return csvLines;
     }
 
-    private void writeTemplate(List<TemplateLineSet> finalTemplate){
-
+    private String[] getTemplateCsvLine(int id,Template template){
+        String[] result = new String[4];
+        result[0] = id+"";
+        result[1] = template.getMethodName();
+        result[2] = template.getCommonString();
+        result[3] = extractDiffString(template.getTemplateDiffs());
+        return result;
     }
 
 //    private void saveTemplateToElasticsearch( List<TemplateLineSet> finalTemplate){
@@ -248,13 +259,13 @@ public class MethodGroupTask implements Runnable {
 //        TemplateList.addTemplate(template);
 //    }
 //
-    private void saveTemplate(List<TemplateLineSet> finalTemplate){
+    private Template saveTemplate(List<TemplateLineSet> finalTemplate){
         StringBuilder methodNameSB = new StringBuilder();
         List<TemplateLineItem> templateCommon = new ArrayList<>();
         List<TemplateLineDIffList> templateDetails = new ArrayList<>();
         TemplateLineSet methodNameSet = finalTemplate.get(0);
         if(methodNameSet.getMainLine() != null){
-            methodNameSB.append(getMethodNameByFirstLine(methodNameSet.getMainLine().getToken().getOriginLineString()));
+            methodNameSB.append(getMethodNameByFirstLine(methodNameSet.getMainLine().getToken().getOriginLineString())).append(", ");
         }else{
             for(MultiSet set : methodNameSet.getAlternateLines()){
                 methodNameSB.append(getMethodNameByFirstLine(set.getToken().getOriginLineString()));
@@ -289,9 +300,51 @@ public class MethodGroupTask implements Runnable {
         Template template = new Template();
         template.setMethodName(methodNameSB.toString());
         template.setTemplateCommon(templateCommon);
-        template.setTemplateDetails(templateDetails);
+        template.setTemplateDiffs(templateDetails);
+        template.setCommonString(extractCommonString(templateCommon));
+//        System.out.println("final template:");
+//        System.out.println("method name:" + methodNameSB);
+//        System.out.println("common");
+//        for(TemplateLineItem item:templateCommon){
+//            System.out.println("item: "+item);
+//        }
+//        System.out.println("details");
+//        for(TemplateLineDIffList list : templateDetails){
+//            System.out.println("de: "+list);
+//        }
         TemplateList.addTemplate(template);
+        return template;
 
+    }
+
+    public String extractCommonString(List<TemplateLineItem> templateCommon){
+        //List<TemplateLineItem> templateCommon = template.getTemplateCommon();
+        StringBuilder commonSB = new StringBuilder();
+        int missCount = 0;
+        for(int i = 0;i < templateCommon.size();i++){
+            TemplateLineItem item = templateCommon.get(i);
+            if(item!=null){
+                if(item.getFrequency() == 1) {
+                    commonSB.append(item.getContent()).append("\n");
+                }else{
+                    commonSB.append(item.getContent()).append("[*").append(++missCount).append("*] ").append("\n");
+                }
+            }else{
+                commonSB.append("[*").append(++missCount).append("*] ").append("\n");
+            }
+        }
+        return commonSB.toString();
+    }
+
+    public String extractDiffString(List<TemplateLineDIffList> templateDiffs){
+        StringBuilder diffSB = new StringBuilder();
+        for(TemplateLineDIffList diffList: templateDiffs){
+            diffSB.append("[*").append(diffList.getDiffId()).append("*]:").append("\n");
+            for(TemplateLineItem item:diffList.getItems()){
+                diffSB.append(item.getCount()).append(", ").append(item.getFrequency()).append(", ").append(item.getContent()).append("\n");
+            }
+        }
+        return diffSB.toString();
     }
 
     private String getMethodNameByFirstLine(String firstLine){

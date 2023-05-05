@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testChangeTargetField","void testChangeTargetField(String gradleVersion)throws IOException{
+        setup( gradleVersion );
+        getRunner().build();
+        File mapperFile = new File( sourceDirectory, ""org/mapstruct/itest/gradle/lib/TestMapper.java"" );
+        replaceInFile( mapperFile, ""field"", ""otherField"" );
+        BuildResult secondBuildResult = getRunner( ""--info"" ).build();
+
+        assertRecompiled( secondBuildResult, 2 );
+    }
+",""

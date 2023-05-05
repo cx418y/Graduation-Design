@@ -1,0 +1,55 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"319","49","181","180","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava3/src/test/java/retrofit2/adapter/rxjava3/AsyncTest.java","110","137","-2147441504","-2147441367","0","0","void throwingInOnCompleteDeliveredToPlugin()throws InterruptedException","void throwingInOnCompleteDeliveredToPlugin()throws InterruptedException{
+    server.enqueue(new MockResponse());
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!errorRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+          latch.countDown();
+        });
+
+    TestObserver<Void> observer = new TestObserver<>();
+    final RuntimeException e = new RuntimeException();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    latch.await(1, SECONDS);
+    assertThat(errorRef.get().getCause()).isSameAs(e);
+  }"
+"442","49","183","182","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/rxjava2/src/test/java/retrofit2/adapter/rxjava2/AsyncTest.java","111","138","-2147430417","-2147430278","0","0","void throwingInOnCompleteDeliveredToPlugin()throws InterruptedException","void throwingInOnCompleteDeliveredToPlugin()throws InterruptedException{
+    server.enqueue(new MockResponse());
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!errorRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+          latch.countDown();
+        });
+
+    TestObserver<Void> observer = new TestObserver<>();
+    final RuntimeException e = new RuntimeException();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    latch.await(1, SECONDS);
+    assertThat(errorRef.get()).isInstanceOf(UndeliverableException.class).hasCause(e);
+  }"

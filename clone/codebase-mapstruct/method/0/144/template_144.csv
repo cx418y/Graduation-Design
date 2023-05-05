@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","Mappers.getMapper","[*1*] 
+ChartEntry map(Song song);[*2*] 
+
+    @Mappings({
+        @Mapping(target = ""chartName"", ignore = true),
+        @Mapping(target = ""songTitle"", ignore = true),
+        @Mapping(target = ""artistName"", ignore = true),
+        @Mapping(target = ""recordedAt"", ignore = true),
+        @Mapping(target = ""city"", ignore = true),
+        @Mapping(target = ""position"", source = ""position"")
+    }
+","[*1*]:
+1, 0.3333333333333333, = Mappers.getMapper( ArtistToChartEntryErroneous.class );
+[*2*]:
+"

@@ -1,0 +1,77 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"140","17","55","54","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","1058","1095","-2147466686","-2147466486","0","0","void requestBeforeEnqueueCreates()throws IOException, InterruptedException","void requestBeforeEnqueueCreates()throws IOException, InterruptedException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service service = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse());
+
+    final AtomicInteger writeCount = new AtomicInteger();
+    Object a =
+        new Object() {
+          @Override
+          public String toString() {
+            writeCount.incrementAndGet();
+            return ""Hello"";
+          }
+        };
+    Call<String> call = service.postRequestBody(a);
+
+    call.request();
+    assertThat(writeCount.get()).isEqualTo(1);
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    call.enqueue(
+        new Callback<String>() {
+          @Override
+          public void onResponse(Call<String> call, Response<String> response) {
+            assertThat(writeCount.get()).isEqualTo(1);
+            latch.countDown();
+          }
+
+          @Override
+          public void onFailure(Call<String> call, Throwable t) {}
+        });
+    assertTrue(latch.await(10, SECONDS));
+  }"
+"143","17","59","58","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CallTest.java","1191","1228","-2147466007","-2147465807","0","0","void requestAfterEnqueueReturnsCachedValue()throws IOException, InterruptedException","void requestAfterEnqueueReturnsCachedValue()throws IOException, InterruptedException{
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new ToStringConverterFactory())
+            .build();
+    Service service = retrofit.create(Service.class);
+
+    server.enqueue(new MockResponse());
+
+    final AtomicInteger writeCount = new AtomicInteger();
+    Object a =
+        new Object() {
+          @Override
+          public String toString() {
+            writeCount.incrementAndGet();
+            return ""Hello"";
+          }
+        };
+    Call<String> call = service.postRequestBody(a);
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    call.enqueue(
+        new Callback<String>() {
+          @Override
+          public void onResponse(Call<String> call, Response<String> response) {
+            assertThat(writeCount.get()).isEqualTo(1);
+            latch.countDown();
+          }
+
+          @Override
+          public void onFailure(Call<String> call, Throwable t) {}
+        });
+    assertTrue(latch.await(10, SECONDS));
+
+    call.request();
+    assertThat(writeCount.get()).isEqualTo(1);
+  }"

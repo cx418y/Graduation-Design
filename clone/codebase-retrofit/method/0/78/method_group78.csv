@@ -1,0 +1,41 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"174","78","267","266","0","/Users/macbook/Desktop/design/open/retrofit/retrofit/src/test/java/retrofit2/CompletableFutureCallAdapterFactoryTest.java","96","105","-2147461757","-2147461707","0","0","void rawResponseTypeThrows()","void rawResponseTypeThrows(){
+    Type observableType = new TypeToken<CompletableFuture<Response>>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");
+    }
+  }"
+"395","78","267","266","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/java8/src/test/java/retrofit2/adapter/java8/Java8CallAdapterFactoryTest.java","99","108","-2147434052","-2147434002","0","0","void rawResponseTypeThrows()","void rawResponseTypeThrows(){
+    Type observableType = new TypeToken<CompletableFuture<Response>>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");
+    }
+  }"
+"522","78","267","266","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/guava/src/test/java/retrofit2/adapter/guava/GuavaCallAdapterFactoryTest.java","99","108","-2147421051","-2147421001","0","0","void rawResponseTypeThrows()","void rawResponseTypeThrows(){
+    Type observableType = new TypeToken<ListenableFuture<Response>>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");
+    }
+  }"
+"540","78","267","266","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-adapters/scala/src/test/java/retrofit2/adapter/scala/ScalaCallAdapterFactoryTest.java","97","106","-2147419503","-2147419453","0","0","void rawResponseTypeThrows()","void rawResponseTypeThrows(){
+    Type observableType = new TypeToken<Future<Response>>() {}.getType();
+    try {
+      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      fail();
+    } catch (IllegalStateException e) {
+      assertThat(e)
+          .hasMessage(""Response must be parameterized as Response<Foo> or Response<? extends Foo>"");
+    }
+  }"

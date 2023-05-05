@@ -1,0 +1,28 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","throwingInOnCompleteDeliveredToPlugin","void throwingInOnCompleteDeliveredToPlugin(){
+    server.enqueue(new MockResponse());
+
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    RxJavaPlugins.setErrorHandler(
+        throwable -> {
+          if (!errorRef.compareAndSet(null, throwable)) {
+            throw Exceptions.propagate(throwable);          }
+        });
+
+    RecordingCompletableObserver observer = observerRule.create();
+    final RuntimeException e = new RuntimeException();
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onComplete() {
+                throw e;
+              }
+            });
+
+    assertThat(errorRef.get().getCause()).isSameAs(e);[*1*] 
+  }
+","[*1*]:
+1, 0.5,     assertThat(errorRef.get()).isInstanceOf(UndeliverableException.class).hasCause(e);
+"

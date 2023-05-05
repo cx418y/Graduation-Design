@@ -1,0 +1,55 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1477","227","751","750","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/creation/MappingResolverImpl.java","887","904","-2147316731","-2147316593","0","0","void reportAmbiguousError(Map<SelectedMethod<T1>, List<SelectedMethod<T2>>> xCandidates, Type target)","void reportAmbiguousError(Map<SelectedMethod<T1>, List<SelectedMethod<T2>>> xCandidates, Type target){
+            StringBuilder result = new StringBuilder();
+            xCandidates.entrySet()
+                       .stream()
+                       .limit( attempt.reportingLimitAmbiguous )
+                       .forEach( e -> result.append( ""method(s)Y: "" )
+                                            .append( attempt.join( e.getValue() ) )
+                                            .append( "", methodX: "" )
+                                            .append( e.getKey().getMethod().describe() )
+                                            .append( ""; "" ) );
+            attempt.messager.printMessage(
+                attempt.mappingMethod.getExecutable(),
+                attempt.positionHint,
+                Message.GENERAL_AMBIGUOUS_MAPPING_METHODY_METHODX,
+                attempt.sourceRHS.getSourceType().getName() + "" "" + attempt.sourceRHS.getSourceParameterName(),
+                target.getName(),
+                result.toString() );
+        }"
+"1480","227","762","761","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/creation/MappingResolverImpl.java","1001","1018","-2147316157","-2147316023","0","0","void reportAmbiguousError(Map<ConversionAssignment, List<SelectedMethod<T>>> xRefCandidates, Type target)","void reportAmbiguousError(Map<ConversionAssignment, List<SelectedMethod<T>>> xRefCandidates, Type target){
+            StringBuilder result = new StringBuilder();
+            xRefCandidates.entrySet()
+                          .stream()
+                          .limit( attempt.reportingLimitAmbiguous )
+                          .forEach( e -> result.append( ""method(s)Y: "" )
+                                               .append( attempt.join( e.getValue() ) )
+                                               .append( "", conversionX: "" )
+                                               .append( e.getKey().shortName() )
+                                               .append( ""; "" ) );
+            attempt.messager.printMessage(
+                attempt.mappingMethod.getExecutable(),
+                attempt.positionHint,
+                Message.GENERAL_AMBIGUOUS_MAPPING_METHODY_CONVERSIONX,
+                attempt.sourceRHS.getSourceType().getName() + "" "" + attempt.sourceRHS.getSourceParameterName(),
+                target.getName(),
+                result.toString() );
+        }"
+"1483","227","770","769","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/processor/creation/MappingResolverImpl.java","1118","1135","-2147315584","-2147315450","0","0","void reportAmbiguousError(Map<ConversionAssignment, List<SelectedMethod<T>>> yRefCandidates, Type target)","void reportAmbiguousError(Map<ConversionAssignment, List<SelectedMethod<T>>> yRefCandidates, Type target){
+            StringBuilder result = new StringBuilder();
+            yRefCandidates.entrySet()
+                          .stream()
+                          .limit( attempt.reportingLimitAmbiguous )
+                          .forEach( e -> result.append( ""conversionY: "" )
+                                               .append( e.getKey().shortName() )
+                                               .append( "", method(s)X: "" )
+                                               .append( attempt.join( e.getValue() ) )
+                                               .append( ""; "" ) );
+            attempt.messager.printMessage(
+                attempt.mappingMethod.getExecutable(),
+                attempt.positionHint,
+                Message.GENERAL_AMBIGUOUS_MAPPING_CONVERSIONY_METHODX,
+                attempt.sourceRHS.getSourceType().getName() + "" "" + attempt.sourceRHS.getSourceParameterName(),
+                target.getName(),
+                result.toString() );
+        }"

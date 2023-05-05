@@ -1,0 +1,47 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","bodyThrowingInOnErrorDeliveredToPlugin","void bodyThrowingInOnErrorDeliveredToPlugin()throws InterruptedException{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    final CountDownLatch latch = new CountDownLatch(1);
+    final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
+    RxJavaPlugins.getInstance()
+        .registerErrorHandler(
+            new RxJavaErrorHandler() {
+              @Override
+              public void handleError(Throwable throwable) {
+                if (throwable instanceof OnErrorFailedException) {[*1*] 
+                if (!pluginRef.compareAndSet(null, throwable)) {
+                  throw Exceptions.propagate(throwable);                }
+                latch.countDown();
+                }[*2*] 
+              }
+            });
+
+    final TestSubscriber<Void> subscriber = new TestSubscriber<>();
+    final RuntimeException e = new RuntimeException();
+    final AtomicReference<Throwable> errorRef = new AtomicReference<>();
+    service
+        .completable()
+        .unsafeSubscribe(
+            new AsyncCompletableSubscriber() {
+              @Override
+              public void onCompleted() {
+                subscriber.onCompleted();
+              }
+
+              @Override
+              public void onError(Throwable t) {
+                errorRef.set(t);
+                throw e;
+              }
+            });
+
+    assertTrue(latch.await(1, SECONDS));
+    OnErrorFailedException failed = (OnErrorFailedException) pluginRef.get();[*3*] 
+    CompositeException composite = (CompositeException) pluginRef.get();
+    assertThat(composite.getExceptions()).containsExactly(errorRef.get(), e);
+  }
+","[*1*]:
+[*2*]:
+[*3*]:
+"

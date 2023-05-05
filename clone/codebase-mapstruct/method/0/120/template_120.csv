@@ -1,0 +1,14 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","doControlAsserts","void doControlAsserts( Domain domain1, Domain domain2){
+        assertThat( domain1 ).isEqualTo( domain2 );
+        assertThat( domain1.getStringsInitialized() ).containsOnly( ""5"" );
+        assertThat( domain1.getLongsInitialized() ).containsOnly( 5L );
+        assertThat( domain1.getStringsWithDefault() ).containsOnly( ""3"" );
+        assertThat( domain2.getStringsInitialized() ).containsOnly( ""5"" );
+        assertThat( domain2.getLongsInitialized() ).containsOnly( 5L );
+        assertThat( domain2.getStringsWithDefault() ).containsOnly( ""3"" );
+        assertThat( domain1.getStringsInitialized() ).isEqualTo( domain2.getStringsInitialized() );
+        assertThat( domain1.getLongsInitialized() ).isEqualTo( domain2.getLongsInitialized() );
+        assertThat( domain1.getStringsWithDefault() ).isEqualTo( domain2.getStringsWithDefault() );
+    }
+",""

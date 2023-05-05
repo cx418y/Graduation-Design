@@ -15,22 +15,18 @@ import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
 
 public class ReadManager implements Runnable {
 
-	public void addAttribute(String name, float value) {
-		// Remove the awkard .0 at the end of each number
+	public void addAttribute(String name, float value) throws Exception{
+		 // Remove the awkard .0 at the end of each number
 		String c = Float.toString(value);
 		float b;
-
-
 		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
 		((Element) current).setAttribute(name, str);
 	}
 
-	public void addAttribute3(String name, float value, int count3) {
-		// Remove the awkard .0 at the end of each number
+	public void addAttribute3(String name, float value, int count3) throws Exception{
+		 // Remove the awkard .0 at the end of each number
 		String c = Double.toString(value);
 		count3++;
-
-
 		if (str.endsWith(".0")) str = str.substring(0, str.length() - 2);
 		((Element) current).setAttribute(name, str);
 	}

@@ -1,0 +1,53 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1098","189","615","614","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/qualifier/QualifierTest.java","63","88","-2147363796","-2147363525","0","0","void shouldMatchClassAndMethod()","void shouldMatchClassAndMethod(){
+
+        OriginalRelease foreignMovies = new OriginalRelease();
+        foreignMovies.setTitle( ""Sixth Sense, The"" );
+        foreignMovies.setKeyWords( Arrays.asList( ""evergreen"", ""magnificent"" ) );
+        Map<String, List<String>> facts = new HashMap<>();
+        facts.put( ""director"", Arrays.asList( ""M. Night Shyamalan"" ) );
+        facts.put( ""cast"", Arrays.asList( ""Bruce Willis"", ""Haley Joel Osment"", ""Toni Collette"" ) );
+        facts.put( ""plot keywords"", Arrays.asList( ""boy"", ""child psychologist"", ""I see dead people"" ) );
+        foreignMovies.setFacts( facts );
+
+        GermanRelease germanMovies = MovieMapper.INSTANCE.toGerman( foreignMovies );
+        assertThat( germanMovies ).isNotNull();
+        assertThat( germanMovies.getTitle() ).isEqualTo( ""Der sechste Sinn"" );
+        assertThat( germanMovies.getKeyWords() ).isNotNull();
+        assertThat( germanMovies.getKeyWords().size() ).isEqualTo( 2 );
+        assertThat( germanMovies.getKeyWords() ).containsSequence( ""Evergreen"", ""Großartig"" );
+
+        assertThat( germanMovies.getFacts() ).isNotNull();
+        assertThat( germanMovies.getFacts() ).hasSize( 3 );
+        assertThat( germanMovies.getFacts() ).contains(
+                entry( ""Regisseur"", Arrays.asList( ""M. Night Shyamalan"" ) ),
+                entry( ""Besetzung"", Arrays.asList( ""Bruce Willis"", ""Haley Joel Osment"", ""Toni Collette"" ) ),
+            entry( ""Handlungstichwörter"", Arrays.asList( ""Jungen"", ""Kinderpsychologe"", ""Ich sehe tote Menschen"" ) )
+        );
+    }"
+"1112","189","615","614","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/selection/qualifier/named/NamedTest.java","57","82","-2147362085","-2147361814","0","0","void shouldMatchClassAndMethod()","void shouldMatchClassAndMethod(){
+
+        OriginalRelease foreignMovies = new OriginalRelease();
+        foreignMovies.setTitle( ""Sixth Sense, The"" );
+        foreignMovies.setKeyWords( Arrays.asList( ""evergreen"", ""magnificent"" ) );
+        Map<String, List<String>> facts = new HashMap<>();
+        facts.put( ""director"", Arrays.asList( ""M. Night Shyamalan"" ) );
+        facts.put( ""cast"", Arrays.asList( ""Bruce Willis"", ""Haley Joel Osment"", ""Toni Collette"" ) );
+        facts.put( ""plot keywords"", Arrays.asList( ""boy"", ""child psychologist"", ""I see dead people"" ) );
+        foreignMovies.setFacts( facts );
+
+        GermanRelease germanMovies = MovieMapper.INSTANCE.toGerman( foreignMovies );
+        assertThat( germanMovies ).isNotNull();
+        assertThat( germanMovies.getTitle() ).isEqualTo( ""Der sechste Sinn"" );
+        assertThat( germanMovies.getKeyWords() ).isNotNull();
+        assertThat( germanMovies.getKeyWords().size() ).isEqualTo( 2 );
+        assertThat( germanMovies.getKeyWords() ).containsSequence( ""Evergreen"", ""Großartig"" );
+
+        assertThat( germanMovies.getFacts() ).isNotNull();
+        assertThat( germanMovies.getFacts() ).hasSize( 3 );
+        assertThat( germanMovies.getFacts() ).contains(
+            entry( ""Regisseur"", Arrays.asList( ""M. Night Shyamalan"" ) ),
+            entry( ""Besetzung"", Arrays.asList( ""Bruce Willis"", ""Haley Joel Osment"", ""Toni Collette"" ) ),
+            entry( ""Handlungstichwörter"", Arrays.asList( ""Jungen"", ""Kinderpsychologe"", ""Ich sehe tote Menschen"" ) )
+        );
+    }"

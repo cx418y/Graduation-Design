@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","chartSongPositions","List<Integer> chartSongPositions(Chart chart){
+        if ( chart == null ) {
+            return null;
+        }
+        Song song = chart.getSong();
+        if ( song == null ) {
+            return null;
+        }
+        List<Integer> positions = song.getPositions();
+        if ( positions == null ) {
+            return null;
+        }
+        return positions;
+    }
+",""

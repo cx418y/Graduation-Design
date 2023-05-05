@@ -1,0 +1,50 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"472","91","299","298","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/presencecheck/spi/PresenceCheckTest.java","32","47","-2147433788","-2147433657","0","0","void testWithSourcesPresent()","void testWithSourcesPresent(){
+
+        Source source = new Source();
+
+        source.setSomePrimitiveDouble( 5.0 );
+        source.setSomeInteger( 7 );
+        source.setSomeList( Arrays.asList( ""first"", ""second"" ) );
+        source.setSomeArray( new String[]{ ""x"", ""y"" } );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target.getSomePrimitiveDouble() ).isEqualTo( 5.0 );
+        assertThat( target.getSomeInteger() ).isEqualTo( 7 );
+        assertThat( target.getSomeList() ).containsExactly( ""first"", ""second"" );
+        assertThat( target.getSomeArray() ).isEqualTo( new String[]{ ""x"", ""y""} );
+    }"
+"474","91","305","304","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/presencecheck/spi/PresenceCheckTest.java","68","84","-2147433553","-2147433415","0","0","void testUpdateMethodWithSourcesPresent()","void testUpdateMethodWithSourcesPresent(){
+
+        Source source = new Source();
+
+        source.setSomePrimitiveDouble( 5.0 );
+        source.setSomeInteger( 7 );
+        source.setSomeList( Arrays.asList( ""first"", ""second"" ) );
+        source.setSomeArray( new String[]{ ""x"", ""y"" } );
+
+        Target target = new Target();
+        SourceTargetMapper.INSTANCE.sourceToTarget( source, target );
+
+        assertThat( target.getSomePrimitiveDouble() ).isEqualTo( 5.0 );
+        assertThat( target.getSomeInteger() ).isEqualTo( 7 );
+        assertThat( target.getSomeList() ).containsExactly( ""first"", ""second"" );
+        assertThat( target.getSomeArray() ).isEqualTo( new String[]{ ""x"", ""y""} );
+    }"
+"476","91","299","309","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/source/presencecheck/spi/PresenceCheckTest.java","106","121","-2147433304","-2147433173","0","0","void testWithSourcesPresentAndDefault()","void testWithSourcesPresentAndDefault(){
+
+        Source source = new Source();
+
+        source.setSomePrimitiveDouble( 5.0 );
+        source.setSomeInteger( 7 );
+        source.setSomeList( Arrays.asList( ""first"", ""second"" ) );
+        source.setSomeArray( new String[]{ ""x"", ""y"" } );
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTargetWitDefaults( source );
+
+        assertThat( target.getSomePrimitiveDouble() ).isEqualTo( 5.0 );
+        assertThat( target.getSomeInteger() ).isEqualTo( 7 );
+        assertThat( target.getSomeList() ).containsExactly( ""first"", ""second"" );
+        assertThat( target.getSomeArray() ).isEqualTo( new String[]{ ""x"", ""y""} );
+   }"

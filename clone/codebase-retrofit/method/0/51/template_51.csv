@@ -1,0 +1,24 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","bodyThrowingFatalInOnErrorPropagates","void bodyThrowingFatalInOnErrorPropagates()throws InterruptedException{
+    server.enqueue(new MockResponse().setResponseCode(404));
+
+    final CountDownLatch latch = new CountDownLatch(1);
+
+    TestObserver<Void> observer = new TestObserver<>();
+    final Error e = new OutOfMemoryError(""Not real"");
+    service
+        .completable()
+        .subscribe(
+            new ForwardingCompletableObserver(observer) {
+              @Override
+              public void onError(Throwable throwable) {
+                throw e;
+              }
+            });
+
+    latch.await(1, SECONDS);
+
+    assertEquals(1, uncaughtExceptions.size());
+    assertSame(e, uncaughtExceptions.remove(0));
+  }
+",""

@@ -1,0 +1,56 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1731","240","792","791","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/PresenceCheckMethodResolver.java","102","125","-2147284137","-2147284050","0","0","MethodReference getPresenceCheckMethodReference(
+        Method method,
+        SelectedMethod<SourceMethod> matchingMethod,
+        MappingBuilderContext ctx
+    )","MethodReference getPresenceCheckMethodReference(
+        Method method,
+        SelectedMethod<SourceMethod> matchingMethod,
+        MappingBuilderContext ctx
+    ){
+
+        Parameter providingParameter =
+            method.getContextProvidedMethods().getParameterForProvidedMethod( matchingMethod.getMethod() );
+        if ( providingParameter != null ) {
+            return MethodReference.forParameterProvidedMethod(
+                matchingMethod.getMethod(),
+                providingParameter,
+                matchingMethod.getParameterBindings()
+            );
+        }
+        else {
+            MapperReference ref = MapperReference.findMapperReference(
+                ctx.getMapperReferences(),
+                matchingMethod.getMethod()
+            );
+
+            return MethodReference.forMapperReference(
+                matchingMethod.getMethod(),
+                ref,
+                matchingMethod.getParameterBindings()
+            );
+        }
+    }"
+"1842","240","792","791","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/model/ObjectFactoryMethodResolver.java","101","121","-2147270373","-2147270286","0","0","MethodReference getFactoryMethodReference(Method method,
+        SelectedMethod<SourceMethod> matchingFactoryMethod, MappingBuilderContext ctx)","MethodReference getFactoryMethodReference(Method method,
+        SelectedMethod<SourceMethod> matchingFactoryMethod, MappingBuilderContext ctx){
+        Parameter providingParameter =
+                method.getContextProvidedMethods().getParameterForProvidedMethod( matchingFactoryMethod.getMethod() );
+
+        if ( providingParameter != null ) {
+            return MethodReference.forParameterProvidedMethod(
+                matchingFactoryMethod.getMethod(),
+                providingParameter,
+                matchingFactoryMethod.getParameterBindings() );
+        }
+        else {
+            MapperReference ref = MapperReference.findMapperReference(
+                ctx.getMapperReferences(),
+                matchingFactoryMethod.getMethod() );
+
+            return MethodReference.forMapperReference(
+                matchingFactoryMethod.getMethod(),
+                ref,
+                matchingFactoryMethod.getParameterBindings() );
+        }
+    }"

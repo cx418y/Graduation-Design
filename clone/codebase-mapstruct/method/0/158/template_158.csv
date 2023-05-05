@@ -1,0 +1,20 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testTargetingThis","void testTargetingThis(){
+        CustomerDTO ce = new CustomerDTO();
+        ce.setName( ""customer name"" );
+
+        ItemDTO e = new ItemDTO();
+        e.setId( ""item id"" );
+        e.setStatus( 1 );
+        ce.setItem( e );
+
+        CustomerItem c = SimpleMapper.INSTANCE.map( ce );
+
+        assertThat( c ).isNotNull();
+        assertThat( c.getName() ).isEqualTo( ""customer name"" );[*1*] 
+        assertThat( c.getName() ).isNull();
+        assertThat( c.getStatus() ).isEqualTo( ce.getItem().getStatus() );
+    }
+","[*1*]:
+1, 0.5,         assertThat( c.getId() ).isEqualTo( ce.getItem().getId() );
+"

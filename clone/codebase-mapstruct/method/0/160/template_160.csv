@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyCustomNamingStrategy","void shouldApplyCustomNamingStrategy(){
+        GolfPlayer player = new GolfPlayer()
+            .withName( ""Jared"" )
+            .withHandicap( 9.2D );
+
+        GolfPlayerDto dto = GolfPlayerMapper.INSTANCE.golfPlayerToDto( player );
+
+        assertThat( dto ).isNotNull();
+        assertThat( dto.name() ).isEqualTo( ""Jared"" );
+        assertThat( dto.handicap() ).isEqualTo( 9.2D );
+    }
+",""

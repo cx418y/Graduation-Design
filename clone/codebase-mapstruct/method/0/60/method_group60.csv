@@ -1,0 +1,39 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"295","60","195","194","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluemapping/NullValueMappingTest.java","53","76","-2147450759","-2147450587","0","0","void shouldMapExpressionAndConstantRegardlessNullArg()","void shouldMapExpressionAndConstantRegardlessNullArg(){
+        Car car = new Car( ""Morris"", 2 );
+
+        CarDto carDto1 = CarMapper.INSTANCE.carToCarDto( car );
+
+        assertThat( carDto1 ).isNotNull();
+        assertThat( carDto1.getMake() ).isEqualTo( car.getMake() );
+        assertThat( carDto1.getSeatCount() ).isEqualTo( car.getNumberOfSeats() );
+        assertThat( carDto1.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto1.getCatalogId() ).isNotEmpty();
+
+        CarDto carDto2 = CarMapper.INSTANCE.carToCarDto( null );
+
+        assertThat( carDto2 ).isNotNull();
+        assertThat( carDto2.getMake() ).isNull();
+        assertThat( carDto2.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto2.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto2.getCatalogId() ).isNotEmpty();
+    }"
+"296","60","205","204","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nullvaluemapping/NullValueMappingTest.java","79","102","-2147450587","-2147450411","0","0","void shouldMapExpressionAndConstantRegardlessNullArgSeveralSources()","void shouldMapExpressionAndConstantRegardlessNullArgSeveralSources(){
+        Car car = new Car( ""Morris"", 2 );
+
+        CarDto carDto1 = CarMapper.INSTANCE.carToCarDto( car, ""ModelT"" );
+
+        assertThat( carDto1 ).isNotNull();
+        assertThat( carDto1.getMake() ).isEqualTo( car.getMake() );
+        assertThat( carDto1.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto1.getSeatCount() ).isEqualTo( car.getNumberOfSeats() );
+        assertThat( carDto1.getCatalogId() ).isNotEmpty();
+
+        CarDto carDto2 = CarMapper.INSTANCE.carToCarDto( null, ""ModelT"" );
+
+        assertThat( carDto2 ).isNotNull();
+        assertThat( carDto2.getMake() ).isNull();
+        assertThat( carDto2.getSeatCount() ).isEqualTo( 0 );
+        assertThat( carDto2.getModel() ).isEqualTo( ""ModelT"" );
+        assertThat( carDto2.getCatalogId() ).isNotEmpty();
+    }"

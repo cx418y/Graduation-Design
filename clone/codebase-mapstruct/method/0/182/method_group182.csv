@@ -1,0 +1,156 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1048","182","594","593","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/nativetypes/NumberConversionTest.java","176","206","-2147370781","-2147370452","0","0","void shouldApplyIntConversions()","void shouldApplyIntConversions(){
+        IntSource source = new IntSource();
+        source.setB( 1 );
+        source.setBb( 2 );
+        source.setS( 3 );
+        source.setSs( 4 );
+        source.setI( 5 );
+        source.setIi( 6 );
+        source.setL( 7 );
+        source.setLl( 8 );
+        source.setF( 9 );
+        source.setFf( 10 );
+        source.setD( 11 );
+        source.setDd( 12 );
+
+        IntTarget target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getB() ).isEqualTo( (byte) 1 );
+        assertThat( target.getBb() ).isEqualTo( Byte.valueOf( (byte) 2 ) );
+        assertThat( target.getS() ).isEqualTo( (short) 3 );
+        assertThat( target.getSs() ).isEqualTo( Short.valueOf( (short) 4 ) );
+        assertThat( target.getI() ).isEqualTo( 5 );
+        assertThat( target.getIi() ).isEqualTo( Integer.valueOf( 6 ) );
+        assertThat( target.getL() ).isEqualTo( 7 );
+        assertThat( target.getLl() ).isEqualTo( Long.valueOf( 8 ) );
+        assertThat( target.getF() ).isEqualTo( 9f );
+        assertThat( target.getFf() ).isEqualTo( Float.valueOf( 10f ) );
+        assertThat( target.getD() ).isEqualTo( 11d );
+        assertThat( target.getDd() ).isEqualTo( Double.valueOf( 12d ) );
+    }"
+"1049","182","594","593","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/nativetypes/NumberConversionTest.java","209","239","-2147370452","-2147370123","0","0","void shouldApplyIntWrapperConversions()","void shouldApplyIntWrapperConversions(){
+        IntWrapperSource source = new IntWrapperSource();
+        source.setB( 1 );
+        source.setBb( 2 );
+        source.setS( 3 );
+        source.setSs( 4 );
+        source.setI( 5 );
+        source.setIi( 6 );
+        source.setL( 7 );
+        source.setLl( 8 );
+        source.setF( 9 );
+        source.setFf( 10 );
+        source.setD( 11 );
+        source.setDd( 12 );
+
+        IntWrapperTarget target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getB() ).isEqualTo( (byte) 1 );
+        assertThat( target.getBb() ).isEqualTo( Byte.valueOf( (byte) 2 ) );
+        assertThat( target.getS() ).isEqualTo( (short) 3 );
+        assertThat( target.getSs() ).isEqualTo( Short.valueOf( (short) 4 ) );
+        assertThat( target.getI() ).isEqualTo( 5 );
+        assertThat( target.getIi() ).isEqualTo( Integer.valueOf( 6 ) );
+        assertThat( target.getL() ).isEqualTo( 7 );
+        assertThat( target.getLl() ).isEqualTo( Long.valueOf( 8 ) );
+        assertThat( target.getF() ).isEqualTo( 9f );
+        assertThat( target.getFf() ).isEqualTo( Float.valueOf( 10f ) );
+        assertThat( target.getD() ).isEqualTo( 11d );
+        assertThat( target.getDd() ).isEqualTo( Double.valueOf( 12d ) );
+    }"
+"1050","182","594","593","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/nativetypes/NumberConversionTest.java","242","272","-2147370123","-2147369794","0","0","void shouldApplyLongConversions()","void shouldApplyLongConversions(){
+        LongSource source = new LongSource();
+        source.setB( 1 );
+        source.setBb( 2 );
+        source.setS( 3 );
+        source.setSs( 4 );
+        source.setI( 5 );
+        source.setIi( 6 );
+        source.setL( 7 );
+        source.setLl( 8 );
+        source.setF( 9 );
+        source.setFf( 10 );
+        source.setD( 11 );
+        source.setDd( 12 );
+
+        LongTarget target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getB() ).isEqualTo( (byte) 1 );
+        assertThat( target.getBb() ).isEqualTo( Byte.valueOf( (byte) 2 ) );
+        assertThat( target.getS() ).isEqualTo( (short) 3 );
+        assertThat( target.getSs() ).isEqualTo( Short.valueOf( (short) 4 ) );
+        assertThat( target.getI() ).isEqualTo( 5 );
+        assertThat( target.getIi() ).isEqualTo( Integer.valueOf( 6 ) );
+        assertThat( target.getL() ).isEqualTo( 7 );
+        assertThat( target.getLl() ).isEqualTo( Long.valueOf( 8 ) );
+        assertThat( target.getF() ).isEqualTo( 9f );
+        assertThat( target.getFf() ).isEqualTo( Float.valueOf( 10f ) );
+        assertThat( target.getD() ).isEqualTo( 11d );
+        assertThat( target.getDd() ).isEqualTo( Double.valueOf( 12d ) );
+    }"
+"1052","182","594","593","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/nativetypes/NumberConversionTest.java","308","338","-2147369429","-2147369100","0","0","void shouldApplyFloatConversions()","void shouldApplyFloatConversions(){
+        FloatSource source = new FloatSource();
+        source.setB( 1 );
+        source.setBb( 2 );
+        source.setS( 3 );
+        source.setSs( 4 );
+        source.setI( 5 );
+        source.setIi( 6 );
+        source.setL( 7 );
+        source.setLl( 8 );
+        source.setF( 9 );
+        source.setFf( 10 );
+        source.setD( 11 );
+        source.setDd( 12 );
+
+        FloatTarget target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getB() ).isEqualTo( (byte) 1 );
+        assertThat( target.getBb() ).isEqualTo( Byte.valueOf( (byte) 2 ) );
+        assertThat( target.getS() ).isEqualTo( (short) 3 );
+        assertThat( target.getSs() ).isEqualTo( Short.valueOf( (short) 4 ) );
+        assertThat( target.getI() ).isEqualTo( 5 );
+        assertThat( target.getIi() ).isEqualTo( Integer.valueOf( 6 ) );
+        assertThat( target.getL() ).isEqualTo( 7 );
+        assertThat( target.getLl() ).isEqualTo( Long.valueOf( 8 ) );
+        assertThat( target.getF() ).isEqualTo( 9f );
+        assertThat( target.getFf() ).isEqualTo( Float.valueOf( 10f ) );
+        assertThat( target.getD() ).isEqualTo( 11d );
+        assertThat( target.getDd() ).isEqualTo( Double.valueOf( 12d ) );
+    }"
+"1054","182","594","593","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/conversion/nativetypes/NumberConversionTest.java","374","404","-2147368759","-2147368430","0","0","void shouldApplyDoubleConversions()","void shouldApplyDoubleConversions(){
+        DoubleSource source = new DoubleSource();
+        source.setB( 1 );
+        source.setBb( 2 );
+        source.setS( 3 );
+        source.setSs( 4 );
+        source.setI( 5 );
+        source.setIi( 6 );
+        source.setL( 7 );
+        source.setLl( 8 );
+        source.setF( 9 );
+        source.setFf( 10 );
+        source.setD( 11 );
+        source.setDd( 12 );
+
+        DoubleTarget target = SourceTargetMapper.INSTANCE.sourceToTarget( source );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getB() ).isEqualTo( (byte) 1 );
+        assertThat( target.getBb() ).isEqualTo( Byte.valueOf( (byte) 2 ) );
+        assertThat( target.getS() ).isEqualTo( (short) 3 );
+        assertThat( target.getSs() ).isEqualTo( Short.valueOf( (short) 4 ) );
+        assertThat( target.getI() ).isEqualTo( 5 );
+        assertThat( target.getIi() ).isEqualTo( Integer.valueOf( 6 ) );
+        assertThat( target.getL() ).isEqualTo( 7 );
+        assertThat( target.getLl() ).isEqualTo( Long.valueOf( 8 ) );
+        assertThat( target.getF() ).isEqualTo( 9f );
+        assertThat( target.getFf() ).isEqualTo( Float.valueOf( 10f ) );
+        assertThat( target.getD() ).isEqualTo( 11d );
+        assertThat( target.getDd() ).isEqualTo( Double.valueOf( 12d ) );
+    }"

@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","resultSuccess200","void resultSuccess200(){
+    server.enqueue(new MockResponse().setBody(""Hi""));[*1*] 
+
+    RecordingObserver<Result<String>> observer = observerRule.create();
+    service.result().subscribe(observer);
+    Result<String> result = observer.takeValue();
+    assertThat(result.isError()).isFalse();
+    assertThat(result.response().isSuccessful()).isTrue();
+    observer.assertComplete();[*2*] 
+  }
+","[*1*]:
+2, 0.125,     server.enqueue(new MockResponse());
+[*2*]:
+"

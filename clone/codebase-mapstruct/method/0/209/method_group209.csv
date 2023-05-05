@@ -1,0 +1,21 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1235","209","691","690","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/BuiltInTest.java","98","107","-2147348324","-2147348248","0","0","void shouldApplyBuiltInOnJAXBElement()","void shouldApplyBuiltInOnJAXBElement(){
+        JaxbElementProperty source = new JaxbElementProperty();
+        source.setProp( createJaxb( ""TEST"" ) );
+        source.publicProp = createJaxb( ""PUBLIC TEST"" );
+
+        StringProperty target = JaxbMapper.INSTANCE.map( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isEqualTo( ""TEST"" );
+        assertThat( target.publicProp ).isEqualTo( ""PUBLIC TEST"" );
+    }"
+"1236","209","691","690","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/builtin/BuiltInTest.java","115","124","-2147348248","-2147348172","0","0","void shouldApplyBuiltInOnJakartaJaxbElement()","void shouldApplyBuiltInOnJakartaJaxbElement(){
+        JakartaJaxbElementProperty source = new JakartaJaxbElementProperty();
+        source.setProp( createJakartaJaxb( ""TEST"" ) );
+        source.publicProp = createJakartaJaxb( ""PUBLIC TEST"" );
+
+        StringProperty target = JakartaJaxbMapper.INSTANCE.map( source );
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isEqualTo( ""TEST"" );
+        assertThat( target.publicProp ).isEqualTo( ""PUBLIC TEST"" );
+    }"

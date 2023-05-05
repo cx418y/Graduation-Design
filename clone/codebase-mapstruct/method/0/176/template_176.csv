@@ -1,0 +1,13 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyConversionsToMappedPropertiesForReverseMapping","void shouldApplyConversionsToMappedPropertiesForReverseMapping(){
+        Target target = new Target();
+        target.setQax( 42 );
+        target.setBaz( 23L );
+
+        Source source = SourceTargetMapper.INSTANCE.targetToSource( target );
+
+        assertThat( source ).isNotNull();
+        assertThat( source.getBaz() ).isEqualTo( 42 );
+        assertThat( source.getQax() ).isEqualTo( 23 );
+    }
+",""

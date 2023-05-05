@@ -1,0 +1,29 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"686","118","406","405","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913SetterMapperForCollectionsTest.java","230","243","-2147411207","-2147411097","0","0","void shouldReturnNullForUpdateWithPresenceChecker()","void shouldReturnNullForUpdateWithPresenceChecker(){
+
+        DtoWithPresenceCheck dto = new DtoWithPresenceCheck();
+        Domain domain = new Domain();
+        domain.setLongs( new HashSet<>() );
+        domain.getLongs().add( 10L );
+        domain.setStrings( new HashSet<>() );
+        domain.getStrings().add( ""30"" );
+        DomainDtoWithPresenceCheckMapper.INSTANCE.update( dto, domain );
+
+        doControlAsserts( domain );
+        assertThat( domain.getStrings() ).containsExactly( ""30"" );
+        assertThat( domain.getLongs() ).containsExactly( 10L );
+    }"
+"689","118","406","405","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/bugs/_913/Issue913SetterMapperForCollectionsTest.java","296","309","-2147410872","-2147410762","0","0","void shouldReturnNullForUpdateWithNcvsAlways()","void shouldReturnNullForUpdateWithNcvsAlways(){
+
+        DtoWithPresenceCheck dto = new DtoWithPresenceCheck();
+        Domain domain = new Domain();
+        domain.setLongs( new HashSet<>() );
+        domain.getLongs().add( 10L );
+        domain.setStrings( new HashSet<>() );
+        domain.getStrings().add( ""30"" );
+        DomainDtoWithNcvsAlwaysMapper.INSTANCE.update( dto, domain );
+
+        doControlAsserts( domain );
+        assertThat( domain.getStrings() ).containsExactly( ""30"" );
+        assertThat( domain.getLongs() ).containsExactly( 10L );
+    }"

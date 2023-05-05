@@ -1,0 +1,83 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"1409","224","736","735","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/internal/util/AccessorNamingUtils.java","85","111","-2147325966","-2147325869","0","0","String getQualifiedName(TypeMirror type)","String getQualifiedName(TypeMirror type){
+        DeclaredType declaredType = type.accept(
+            new SimpleTypeVisitor6<DeclaredType, Void>() {
+                @Override
+                public DeclaredType visitDeclared(DeclaredType t, Void p) {
+                    return t;
+                }
+            },
+            null
+        );
+
+        if ( declaredType == null ) {
+            return null;
+        }
+
+        TypeElement typeElement = declaredType.asElement().accept(
+            new SimpleElementVisitor6<TypeElement, Void>() {
+                @Override
+                public TypeElement visitType(TypeElement e, Void p) {
+                    return e;
+                }
+            },
+            null
+        );
+
+        return typeElement != null ? typeElement.getQualifiedName().toString() : null;
+    }"
+"1945","224","738","737","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/spi/DefaultBuilderProvider.java","109","136","-2147255939","-2147255842","0","0","TypeElement getTypeElement(TypeMirror type)","TypeElement getTypeElement(TypeMirror type){
+        if ( type.getKind() == TypeKind.ERROR ) {
+            throw new TypeHierarchyErroneousException( type );
+        }
+        DeclaredType declaredType = type.accept(
+            new SimpleTypeVisitor6<DeclaredType, Void>() {
+                @Override
+                public DeclaredType visitDeclared(DeclaredType t, Void p) {
+                    return t;
+                }
+            },
+            null
+        );
+
+        if ( declaredType == null ) {
+            return null;
+        }
+
+        return declaredType.asElement().accept(
+            new SimpleElementVisitor6<TypeElement, Void>() {
+                @Override
+                public TypeElement visitType(TypeElement e, Void p) {
+                    return e;
+                }
+            },
+            null
+        );
+    }"
+"1956","224","736","735","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/main/java/org/mapstruct/ap/spi/DefaultAccessorNamingStrategy.java","215","241","-2147254929","-2147254832","0","0","String getQualifiedName(TypeMirror type)","String getQualifiedName(TypeMirror type){
+        DeclaredType declaredType = type.accept(
+            new SimpleTypeVisitor6<DeclaredType, Void>() {
+                @Override
+                public DeclaredType visitDeclared(DeclaredType t, Void p) {
+                    return t;
+                }
+            },
+            null
+        );
+
+        if ( declaredType == null ) {
+            return null;
+        }
+
+        TypeElement typeElement = declaredType.asElement().accept(
+            new SimpleElementVisitor6<TypeElement, Void>() {
+                @Override
+                public TypeElement visitType(TypeElement e, Void p) {
+                    return e;
+                }
+            },
+            null
+        );
+
+        return typeElement != null ? typeElement.getQualifiedName().toString() : null;
+    }"

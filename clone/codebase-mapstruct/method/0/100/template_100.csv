@@ -1,0 +1,10 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplySuffixAndStripSuffixOnEnumToStringMapping","void shouldApplySuffixAndStripSuffixOnEnumToStringMapping(){
+        CheeseEnumToStringSuffixMapper mapper = CheeseEnumToStringSuffixMapper.INSTANCE;
+
+        assertThat( mapper.map( CheeseType.BRIE ) ).isEqualTo( ""BRIE_CHEESE_TYPE"" );
+        assertThat( mapper.map( ""BRIE_CHEESE_TYPE"" ) ).isEqualTo( CheeseType.BRIE );
+        assertThat( mapper.mapStripSuffix( ""BRIE"" ) ).isEqualTo( CheeseTypeSuffixed.BRIE_CHEESE_TYPE );
+        assertThat( mapper.mapStripSuffix( ""DEFAULT"" ) ).isEqualTo( CheeseTypeSuffixed.DEFAULT );
+    }
+",""

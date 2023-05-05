@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"656","105","335","334","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/wire/src/test/java/retrofit2/converter/wire/WireConverterFactoryTest.java","84","91","-2147408012","-2147407956","0","0","void deserializeEmpty()throws IOException","void deserializeEmpty()throws IOException{
+    server.enqueue(new MockResponse());
+
+    Call<Phone> call = service.get();
+    Response<Phone> response = call.execute();
+    Phone body = response.body();
+    assertThat(body.number).isNull();
+  }"
+"730","105","347","346","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/protobuf/src/test/java/retrofit2/converter/protobuf/ProtoConverterFactoryTest.java","101","108","-2147399705","-2147399647","0","0","void deserializeEmpty()throws IOException","void deserializeEmpty()throws IOException{
+    server.enqueue(new MockResponse());
+
+    Call<Phone> call = service.get();
+    Response<Phone> response = call.execute();
+    Phone body = response.body();
+    assertThat(body.hasNumber()).isFalse();
+  }"

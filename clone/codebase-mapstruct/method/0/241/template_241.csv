@@ -1,0 +1,23 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","getAllAvailableMethods","List<SourceMethod> getAllAvailableMethods(Method method, List<SourceMethod> sourceModelMethods){
+        ParameterProvidedMethods contextProvidedMethods = method.getContextProvidedMethods();
+        if ( contextProvidedMethods.isEmpty() ) {
+            return sourceModelMethods;
+        }
+
+        List<SourceMethod> methodsProvidedByParams = contextProvidedMethods
+            .getAllProvidedMethodsInParameterOrder( method.getContextParameters() );
+
+        List<SourceMethod> availableMethods =
+            new ArrayList<>( methodsProvidedByParams.size() + sourceModelMethods.size() );
+
+        for ( SourceMethod methodProvidedByParams : methodsProvidedByParams ) {
+            if ( methodProvidedByParams.isPresenceCheck() ) {
+                availableMethods.add( methodProvidedByParams );
+            }
+        }
+        availableMethods.addAll( sourceModelMethods );
+
+        return availableMethods;
+    }
+",""

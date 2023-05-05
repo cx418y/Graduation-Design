@@ -1,0 +1,17 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"853","143","476","475","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/destination/DestinationPackageNameTest.java","56","63","-2147394868","-2147394804","0","0","void shouldGenerateRightSuffixWithDecorator()","void shouldGenerateRightSuffixWithDecorator(){
+        DestinationPackageNameMapperDecorated instance = DestinationPackageNameMapperDecorated.INSTANCE;
+        assertThat( instance.getClass().getName() )
+                .isEqualTo( ""org.mapstruct.ap.test.destination.dest.DestinationPackageNameMapperDecoratedImpl"" );
+        assertThat( instance ).isInstanceOf( DestinationPackageNameMapperDecorator.class );
+        assertThat( ( (DestinationPackageNameMapperDecorator) instance ).delegate.getClass().getName() )
+                .isEqualTo( ""org.mapstruct.ap.test.destination.dest.DestinationPackageNameMapperDecoratedImpl_"" );
+    }"
+"855","143","476","475","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/destination/DestinationClassNameTest.java","66","73","-2147394704","-2147394640","0","0","void shouldGenerateRightNameWithDecorator()","void shouldGenerateRightNameWithDecorator(){
+        DestinationClassNameMapperDecorated instance = DestinationClassNameMapperDecorated.INSTANCE;
+        assertThat( instance.getClass().getSimpleName() )
+                .isEqualTo( ""MyDestinationClassNameMapperDecoratedCustomImpl"" );
+        assertThat( instance ).isInstanceOf( DestinationClassNameMapperDecorator.class );
+        assertThat( ( (DestinationClassNameMapperDecorator) instance ).delegate.getClass().getSimpleName() )
+                .isEqualTo( ""MyDestinationClassNameMapperDecoratedCustomImpl_"" );
+    }"

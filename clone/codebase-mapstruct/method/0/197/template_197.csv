@@ -1,0 +1,15 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","testGenericReturnTypeVarBothGeneric","void testGenericReturnTypeVarBothGeneric(){
+
+        ReturnTypeHasMultipleTypeVarBothGenericMapper.Pair pair
+            = new ReturnTypeHasMultipleTypeVarBothGenericMapper.Pair( ""test"", 5L );
+        ReturnTypeHasMultipleTypeVarBothGenericMapper.Source src =
+            new ReturnTypeHasMultipleTypeVarBothGenericMapper.Source( pair );
+        ReturnTypeHasMultipleTypeVarBothGenericMapper.Target target =
+            ReturnTypeHasMultipleTypeVarBothGenericMapper.INSTANCE.toTarget( src );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getProp() ).isNotNull();
+        assertThat( target.getProp() ).containsExactly( entry( ""test"", 5L ) );
+    }
+",""

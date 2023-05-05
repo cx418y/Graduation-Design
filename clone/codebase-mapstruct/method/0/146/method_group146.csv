@@ -1,0 +1,31 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"861","146","484","483","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/nestedsourceproperties/NestedSourcePropertiesTest.java","108","123","-2147393964","-2147393839","0","0","void shouldPickPropertyNameOverParameterName()","void shouldPickPropertyNameOverParameterName(){
+
+        Chart chart = new Chart();
+        chart.setName( ""Billboard"" );
+        chart.setType( ""record-sales"" );
+
+        ChartEntry chartEntry = ArtistToChartEntry.MAPPER.map( chart );
+
+        assertThat( chartEntry ).isNotNull();
+        assertThat( chartEntry.getArtistName() ).isNull();
+        assertThat( chartEntry.getChartName() ).isEqualTo( ""Billboard"" );
+        assertThat( chartEntry.getCity() ).isNull();
+        assertThat( chartEntry.getPosition() ).isEqualTo( 0 );
+        assertThat( chartEntry.getRecordedAt() ).isNull();
+        assertThat( chartEntry.getSongTitle() ).isNull();
+    }"
+"1275","146","488","487","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/constructor/nestedsource/NestedSourcePropertiesConstructorTest.java","115","128","-2147343221","-2147343105","0","0","void shouldPickPropertyNameOverParameterName()","void shouldPickPropertyNameOverParameterName(){
+
+        Chart chart = new Chart( ""record-sales"", ""Billboard"", null );
+
+        ChartEntry chartEntry = ArtistToChartEntry.MAPPER.map( chart );
+
+        assertThat( chartEntry ).isNotNull();
+        assertThat( chartEntry.getArtistName() ).isNull();
+        assertThat( chartEntry.getChartName() ).isEqualTo( ""Billboard"" );
+        assertThat( chartEntry.getCity() ).isNull();
+        assertThat( chartEntry.getPosition() ).isEqualTo( 0 );
+        assertThat( chartEntry.getRecordedAt() ).isNull();
+        assertThat( chartEntry.getSongTitle() ).isNull();
+    }"

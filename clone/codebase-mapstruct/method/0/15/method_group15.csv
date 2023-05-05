@@ -1,0 +1,63 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"107","15","46","45","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithNcvsAlwaysMapperImpl.java","24","54","-2147475159","-2147474979","0","0","Domain create(DtoWithPresenceCheck source)","Domain create(DtoWithPresenceCheck source){
+        if ( source == null ) {
+            return null;
+        }
+
+        Domain domain = createNullDomain();
+
+        if ( source.hasStrings() ) {
+            List<String> list = source.getStrings();
+            domain.setStrings( new LinkedHashSet<String>( list ) );
+        }
+        if ( source.hasStrings() ) {
+            domain.setLongs( stringListToLongSet( source.getStrings() ) );
+        }
+        if ( source.hasStringsInitialized() ) {
+            List<String> list1 = source.getStringsInitialized();
+            domain.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+        }
+        if ( source.hasStringsInitialized() ) {
+            domain.setLongsInitialized( stringListToLongSet( source.getStringsInitialized() ) );
+        }
+        if ( source.hasStringsWithDefault() ) {
+            List<String> list2 = source.getStringsWithDefault();
+            domain.setStringsWithDefault( new ArrayList<String>( list2 ) );
+        }
+        else {
+            domain.setStringsWithDefault( helper.toList( ""3"" ) );
+        }
+
+        return domain;
+    }"
+"111","15","46","45","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/resources/fixtures/org/mapstruct/ap/test/bugs/_913/DomainDtoWithPresenceCheckMapperImpl.java","24","54","-2147474090","-2147473910","0","0","Domain create(DtoWithPresenceCheck source)","Domain create(DtoWithPresenceCheck source){
+        if ( source == null ) {
+            return null;
+        }
+
+        Domain domain = createNullDomain();
+
+        if ( source.hasStrings() ) {
+            List<String> list = source.getStrings();
+            domain.setStrings( new LinkedHashSet<String>( list ) );
+        }
+        if ( source.hasStrings() ) {
+            domain.setLongs( stringListToLongSet( source.getStrings() ) );
+        }
+        if ( source.hasStringsInitialized() ) {
+            List<String> list1 = source.getStringsInitialized();
+            domain.setStringsInitialized( new LinkedHashSet<String>( list1 ) );
+        }
+        if ( source.hasStringsInitialized() ) {
+            domain.setLongsInitialized( stringListToLongSet( source.getStringsInitialized() ) );
+        }
+        if ( source.hasStringsWithDefault() ) {
+            List<String> list2 = source.getStringsWithDefault();
+            domain.setStringsWithDefault( new ArrayList<String>( list2 ) );
+        }
+        else {
+            domain.setStringsWithDefault( helper.toList( ""3"" ) );
+        }
+
+        return domain;
+    }"

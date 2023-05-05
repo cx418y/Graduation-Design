@@ -1,0 +1,16 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldMapSomeAdditionalTests1","void shouldMapSomeAdditionalTests1(){
+        Issue2101AdditionalMapper.Source source = new Issue2101AdditionalMapper.Source();
+        source.value = new Issue2101AdditionalMapper.NestedSource();
+        source.value.nestedValue1 = ""value1"";
+        source.value.nestedValue2 = ""value2"";
+        source.valueThrowOffPath = ""value3"";
+
+        Issue2101AdditionalMapper.Target target = Issue2101AdditionalMapper.INSTANCE.map1( source );
+        assertThat( target.value1 ).isEqualTo( ""value1"" );
+        assertThat( target.value2 ).isEqualTo( ""value2"" );
+        assertThat( target.value3 ).isEqualTo( ""value3"" );
+[*1*] 
+    }
+","[*1*]:
+"

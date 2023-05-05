@@ -1,0 +1,23 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"648","102","341","340","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/gson/src/test/java/retrofit2/converter/gson/GsonConverterFactoryTest.java","190","200","-2147408591","-2147408537","0","0","void requireFullResponseDocumentConsumption()throws Exception","void requireFullResponseDocumentConsumption()throws Exception{
+    server.enqueue(new MockResponse().setBody(""{\""theName\"":\""value\""}""));
+
+    Call<Value> call = service.value();
+    try {
+      call.execute();
+      fail();
+    } catch (JsonIOException e) {
+      assertThat(e).hasMessage(""JSON document was not fully consumed."");
+    }
+  }"
+"714","102","341","340","0","/Users/macbook/Desktop/design/open/retrofit/retrofit-converters/moshi/src/test/java/retrofit2/converter/moshi/MoshiConverterFactoryTest.java","306","316","-2147400948","-2147400894","0","0","void requireFullResponseDocumentConsumption()throws Exception","void requireFullResponseDocumentConsumption()throws Exception{
+    server.enqueue(new MockResponse().setBody(""{\""theName\"":\""value\""}""));
+
+    Call<Value> call = service.value();
+    try {
+      call.execute();
+      fail();
+    } catch (JsonDataException e) {
+      assertThat(e).hasMessage(""JSON document was not fully consumed."");
+    }
+  }"

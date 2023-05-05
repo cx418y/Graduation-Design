@@ -1,0 +1,11 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","setUp","void setUp(){
+    Retrofit retrofit =
+        new Retrofit.Builder()
+            .baseUrl(server.url(""/""))
+            .addConverterFactory(new StringConverterFactory())
+            .addCallAdapterFactory(Java8CallAdapterFactory.create())
+            .build();
+    service = retrofit.create(Service.class);
+  }
+",""

@@ -1,0 +1,19 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldApplyReverseMappings","void shouldApplyReverseMappings(){
+
+        OrderType result = OrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.SPECIAL );
+        assertThat( result ).isEqualTo( OrderType.EXTRA );
+
+        result = OrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.DEFAULT );
+        assertThat( result ).isEqualTo( OrderType.STANDARD );[*1*] 
+
+        result = OrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.RETAIL );
+        assertThat( result ).isEqualTo( OrderType.RETAIL );
+
+        result = OrderMapper.INSTANCE.externalOrderTypeToOrderType( ExternalOrderType.B2B );
+        assertThat( result ).isEqualTo( OrderType.B2B );
+
+    }
+","[*1*]:
+1, 0.5,         assertThat( result ).isNull();
+"

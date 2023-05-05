@@ -1,0 +1,20 @@
+"methodId","CG_T3","CG_T2","CG_T1","tokenCsvId","filePath","startLine","endLine","oriStartToken","oriEndToken","startToken","endToken","signature","body"
+"351","71","223","222","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/frommap/FromMapMappingTest.java","162","170","-2147444035","-2147443972","0","0","void shouldMapWithImpicitMapping()","void shouldMapWithImpicitMapping(){
+        Map<String, String> sourceMap = new HashMap<>();
+        sourceMap.put( ""name"", ""mapstruct"" );
+
+        MapToBeanImplicitMapper.Target target = MapToBeanImplicitMapper.INSTANCE.toTarget( sourceMap );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getName() ).isEqualTo( ""mapstruct"" );
+    }"
+"365","71","223","222","0","/Users/macbook/Desktop/design/open/mapstruct/processor/src/test/java/org/mapstruct/ap/test/frommap/FromMapMappingTest.java","374","383","-2147443002","-2147442939","0","0","void shouldNotReportUnmappedSourcePropertiesWithMap()","void shouldNotReportUnmappedSourcePropertiesWithMap(){
+        Map<String, String> sourceMap = new HashMap<>();
+        sourceMap.put( ""name"", ""mapstruct"" );
+
+        MapToBeanImplicitUnmappedSourcePolicyMapper.Target target =
+            MapToBeanImplicitUnmappedSourcePolicyMapper.INSTANCE.toTarget( sourceMap );
+
+        assertThat( target ).isNotNull();
+        assertThat( target.getName() ).isEqualTo( ""mapstruct"" );
+    }"

@@ -1,0 +1,45 @@
+"templateId","methodName","templateCommon","diffDetails"
+"0","shouldReverseNestedTarget","void shouldReverseNestedTarget(){
+
+        ChartEntry chartEntry = new ChartEntry();[*1*] 
+        chartEntry.setArtistName( ""Prince"" );[*2*] 
+        chartEntry.setChartName( ""US Billboard Hot Rock Songs"" );[*3*] 
+        chartEntry.setCity( ""Minneapolis"" );[*4*] 
+        chartEntry.setPosition( 1 );[*5*] 
+        chartEntry.setRecordedAt( ""Live, First Avenue, Minneapolis"" );[*6*] 
+        chartEntry.setSongTitle( ""Purple Rain"" );[*7*] 
+            ""US Billboard Hot Rock Songs"",[*8*] 
+            ""Purple Rain"",[*9*] 
+            ""Prince"",[*10*] 
+            ""Live, First Avenue, Minneapolis"",[*11*] 
+            ""Minneapolis"",[*12*] 
+            1[*13*] 
+        );[*14*] 
+
+        Chart chart = ChartEntryToArtist.MAPPER.map( chartEntry );
+        ChartEntry result = ChartEntryToArtist.MAPPER.map( chart );
+
+        assertThat( result ).isNotNull();
+        assertThat( result.getArtistName() ).isEqualTo( ""Prince"" );
+        assertThat( result.getChartName() ).isEqualTo( ""US Billboard Hot Rock Songs"" );
+        assertThat( result.getCity() ).isEqualTo( ""Minneapolis"" );
+        assertThat( result.getPosition() ).isEqualTo( 1 );
+        assertThat( result.getRecordedAt() ).isEqualTo( ""Live, First Avenue, Minneapolis"" );
+        assertThat( result.getSongTitle() ).isEqualTo( ""Purple Rain"" );
+    }
+","[*1*]:
+1, 0.5,         ChartEntry chartEntry = new ChartEntry(
+[*2*]:
+[*3*]:
+[*4*]:
+[*5*]:
+[*6*]:
+[*7*]:
+[*8*]:
+[*9*]:
+[*10*]:
+[*11*]:
+[*12*]:
+[*13*]:
+[*14*]:
+"
